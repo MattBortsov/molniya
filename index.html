@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Молния Тех — CRM для сервисного бизнеса на космической скорости</title>
+  <meta name="description" content="Операционно-аналитическая платформа для сервисного бизнеса: моек, СТО, бьюти и услуг. Запись, деньги, люди и прогноз — в одной CRM.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons and the disc scene -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+    <linearGradient id="mtgrad2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#B8442E"></stop><stop offset="1" stop-color="#D2634A"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="index.html">
+            <svg width="30" height="30" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.4" opacity="0.4"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.4" opacity="0.6" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+            <span class="mt-brand-name">Молния&nbsp;Тех</span>
+          </a>
+
+          <ul class="mt-nav-links">
+            <li><a class="mt-nav-link" href="#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <a class="mt-mobile-link" href="#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="#features">Функции</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в Telegram
+          </a>
+        </div>
+      </nav>
+
+      <section class="mt-hero" data-screen-label="Герой">
+        <div class="mt-hero-inner">
+
+          <h1 class="mt-hero-title">
+            Комплексная платформа для управления бизнесом и проектами
+          </h1>
+
+          <p class="mt-hero-sub">
+            Заряжает ваш бизнес на генерацию заработка
+          </p>
+
+          <ul class="mt-facets" aria-label="Что делает платформа">
+            <li class="mt-facet">
+              <span class="mt-facet-name">Запись</span>
+              <span class="mt-facet-note">расписание и загрузка</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name">Деньги</span>
+              <span class="mt-facet-note">зарплаты и расходы</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name">Люди</span>
+              <span class="mt-facet-note">смены и выработка</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name mt-facet-name--soon">AI</span>
+              <span class="mt-facet-note">ИИ-аналитика + прогноз бизнеса</span>
+            </li>
+          </ul>
+
+          <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в Telegram
+          </a>
+        </div>
+      </section>
+
+      <!-- PAIN -->
+      <section class="mt-section mt-section--pain mt-reveal" data-screen-label="Боль" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Где бизнес теряет деньги и время</h2>
+          <p class="mt-section-sub" style="max-width:600px">Не хватает на зарплату не потому, что клиентов мало — а потому, что где-то между записью, кассой и складом каждый день утекает по чуть-чуть.</p>
+        </div>
+        <div class="mt-grid mt-grid--cols-4">
+          <div class="mt-card">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C6543B" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h7M4 12h13M4 18h9M19 5l-3 4 3 4"></path></svg>
+            <div class="mt-card-title">Хаос и простои</div>
+            <p class="mt-card-text">Записи в разных местах, окна и переносы. Загрузка проседает в самых незаметных местах.</p>
+          </div>
+          <div class="mt-card">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C58A3C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M5 8c0 4 14 1 14 5 0 2.5-3 4-7 4M19 8c0-2.2-3-3.5-7-3.5"></path></svg>
+            <div class="mt-card-title">Деньги мимо кассы</div>
+            <p class="mt-card-text">Зарплаты и расходы считаются вручную. Реальную прибыль приходится угадывать.</p>
+          </div>
+          <div class="mt-card">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7A6A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 19c0-3 3-5 6-5s6 2 6 5M17 6l2 2 3-3"></path></svg>
+            <div class="mt-card-title">Люди на ручном управлении</div>
+            <p class="mt-card-text">Смены, выработка и мотивация держатся на вашей памяти и десятке таблиц.</p>
+          </div>
+          <div class="mt-card">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C6543B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7a11 11 0 0 1-5.5-1.5M4 4l16 16"></path></svg>
+            <div class="mt-card-title">Решения вслепую</div>
+            <p class="mt-card-text">Никакого прогноза: что будет в следующем месяце — загадка до последнего дня.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section id="how-it-works" class="mt-section mt-reveal" data-screen-label="Решение" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <div class="mt-eyebrow">Как это работает</div>
+          <h2 class="mt-section-title">Один источник правды <span class="mt-hero-accent">вместо десятка таблиц</span></h2>
+          <p class="mt-section-sub">Всё, что происходит в бизнесе, стекается в одно место. Дальше платформа сама считает и подсказывает.</p>
+        </div>
+        <div class="mt-grid mt-grid--cols-3">
+          <div class="mt-step">
+            <div class="mt-step-index">01</div>
+            <div class="mt-step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C6543B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"></rect><path d="M9 12H4M15 12h5M7 9 4 6M17 15l3 3"></path><circle cx="3.5" cy="5.5" r="1.6"></circle><circle cx="20.5" cy="18.5" r="1.6"></circle></svg>
+            </div>
+            <div class="mt-step-title">Данные</div>
+            <p class="mt-step-text">Записи, чеки, склад, смены — всё стекается в один поток. Платформа видит бизнес целиком.</p>
+          </div>
+          <div class="mt-step">
+            <div class="mt-step-index">02</div>
+            <div class="mt-step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C6543B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h13"></path><circle cx="18" cy="12" r="2"></circle><circle cx="20" cy="17" r="2"></circle></svg>
+            </div>
+            <div class="mt-step-title">Управление</div>
+            <p class="mt-step-text">Деньги и люди под контролем: зарплаты, расходы и загрузка считаются автоматически.</p>
+          </div>
+          <div class="mt-step mt-step--featured">
+            <div class="mt-step-index">03</div>
+            <div class="mt-step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C6543B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5-6 4 3 7-9"></path><path d="M16 7h4v4"></path></svg>
+            </div>
+            <div class="mt-step-title">Прогноз</div>
+            <p class="mt-step-text mt-step-text--muted">ИИ на ваших данных подскажет, где вырастет спрос и где утечёт прибыль. В разработке.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WORKS NOW -->
+      <section id="features" class="mt-section mt-section--tight-bottom mt-reveal" data-screen-label="Что уже работает" data-mt-reveal>
+        <div class="mt-section-head-row">
+          <div class="mt-section-head mt-section-head--wide">
+            <h2 class="mt-section-title">Одно приложение для бизнеса, вместо десятка разных</h2>
+            <p class="mt-section-sub" style="margin-top:16px">Модули работают как один механизм, без вашего участия.</p>
+          </div>
+        </div>
+        <div class="mt-grid mt-grid--cards">
+
+          <div class="mt-feature-card">
+            <div class="mt-feature-mock">
+              <img class="mt-feature-img" src="assets/img/schedule.jpg" alt="Экран журнала записи с расписанием боксов и клиентов" loading="lazy">
+            </div>
+            <div class="mt-feature-body">
+              <div class="mt-feature-title">Журнал записи</div>
+              <p class="mt-feature-text">Единое расписание, окна и загрузка мастеров и ресурсов в реальном времени.</p>
+            </div>
+          </div>
+
+          <div class="mt-feature-card">
+            <div class="mt-feature-mock">
+              <img class="mt-feature-img" src="assets/img/finance.jpg" alt="Экран финансов с зарплатами и штрафами сотрудников" loading="lazy">
+            </div>
+            <div class="mt-feature-body">
+              <div class="mt-feature-title">Расчёт зарплат</div>
+              <p class="mt-feature-text">Ставки, проценты, смены и бонусы считаются сами к концу месяца.</p>
+            </div>
+          </div>
+
+          <div class="mt-feature-card">
+            <div class="mt-feature-mock">
+              <img class="mt-feature-img" src="assets/img/analytics.jpg" alt="Экран аналитики с выручкой, записями и динамикой по дням" loading="lazy">
+            </div>
+            <div class="mt-feature-body">
+              <div class="mt-feature-title">Аналитика</div>
+              <p class="mt-feature-text">Выручка, средний чек и динамика по дням — вся картина бизнеса на одном экране.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ROADMAP (AI) -->
+      <section class="mt-section mt-section--tight-top mt-reveal" data-screen-label="Дорожная карта" data-mt-reveal>
+        <div class="mt-panel">
+          <div class="mt-panel-glow mt-panel-glow--top-right" aria-hidden="true"></div>
+          <div class="mt-panel-body">
+            <h2 class="mt-section-title mt-section-title--tight mt-panel-title">ИИ, который прогнозирует будущее вашего бизнеса</h2>
+            <p class="mt-section-sub mt-panel-sub">Молния учится на ваших данных, чтобы заранее показывать, куда движется бизнес — и подсказывать решения.</p>
+            <div class="mt-grid mt-grid--roadmap">
+              <div class="mt-dashed-card">
+                <div class="mt-dashed-title">Прогноз продаж</div>
+                <p class="mt-dashed-text">Сколько заработаете в следующем месяце — с учётом сезона и загрузки.</p>
+              </div>
+              <div class="mt-dashed-card">
+                <div class="mt-dashed-title">Прогноз расходов</div>
+                <p class="mt-dashed-text">Где и когда вырастут затраты, чтобы спланировать прибыль.</p>
+              </div>
+              <div class="mt-dashed-card">
+                <div class="mt-dashed-title">Готовые решения</div>
+                <p class="mt-dashed-text">Что поднять в цене, кого догрузить, где взять маржу. Все на ваших цифрах.</p>
+              </div>
+            </div>
+            <p class="mt-privacy-note">
+              Ваши данные остаются вашими.
+              <a href="privacy.html" class="mt-link-accent">Изучите, как мы защищаем ваши данные</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE -->
+      <section class="mt-section mt-reveal" data-screen-label="Кейс" data-mt-reveal>
+        <div class="mt-case-row">
+          <div class="mt-case-col">
+            <h2 class="mt-section-title mt-section-title--sm">Автомойка «Тритон»</h2>
+            <p class="mt-section-sub mt-section-sub--sm" style="max-width:480px">Видео / разбор кейса «Тритон»</p>
+            <div class="mt-quote">
+              <div class="mt-quote-mark">«</div>
+              <p class="mt-quote-text">зарплаты считаются автоматически, стало видно реальные расходы и прибыль. Впервые есть понимание, что происходит в бизнесе и где мы теряем маржу. Сейчас меньше ручного контроля и больше времени на развитие. Это главный эффект.</p>
+              <div class="mt-quote-attribution">
+                <span class="mt-quote-avatar"></span>
+                <span class="mt-quote-name">Владелец · «Тритон»</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-case-media-col">
+            <div class="mt-video-placeholder">
+              <div class="mt-video-glow" aria-hidden="true"></div>
+              <span class="mt-video-play"><svg width="24" height="24" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg></span>
+              <span class="mt-video-label">Видео / разбор кейса «Тритон» · скоро</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFER -->
+      <section class="mt-section mt-section--offer mt-reveal" data-screen-label="Оффер" data-mt-reveal>
+        <div class="mt-grid mt-grid--offer">
+          <div class="mt-offer-card">
+            <div class="mt-offer-title">Цены — скоро</div>
+            <p class="mt-offer-text">Готовим тарифы пред-запуска. Подписчики канала узнают цены первыми — и зафиксируют условия раннего доступа.</p>
+          </div>
+          <div class="mt-offer-card mt-offer-card--accent">
+            <div class="mt-offer-glow" aria-hidden="true"></div>
+            <span class="mt-offer-badge">Переход с другого сервиса</span>
+            <div class="mt-offer-subtitle">Спецусловия при переходе</div>
+            <p class="mt-offer-body-text">Уже на YClients или другом сервисе? Поможем перенести данные и дадим персональные условия.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
+        <div class="mt-final">
+          <div class="mt-final-glow" aria-hidden="true"></div>
+          <div class="mt-final-inner">
+            <div class="mt-final-icon">
+              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+            </div>
+            <h2 class="mt-final-title">Займите место на борту до старта</h2>
+            <p class="mt-final-sub">Подпишитесь на Telegram-канал: ранний доступ, цены пред-запуска и спецусловия при переходе с конкурента — первыми у подписчиков.</p>
+            <div class="mt-final-actions">
+              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+                Подписаться в Telegram
+              </a>
+            </div>
+            <div class="mt-final-note">Одна кнопка — и вы в курсе запуска.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand">
+            <svg width="24" height="24" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.4" opacity="0.4"></circle><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+            <span class="mt-footer-brand-name">Молния Тех</span>
+            <span class="mt-footer-year">· 2026</span>
+          </div>
+          <div class="mt-footer-links">
+            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
+            <span class="mt-footer-tag">Сделано на космической скорости</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
