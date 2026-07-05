@@ -486,8 +486,18 @@ a { color: inherit; }
   border-radius: var(--mt-radius-md);
   font-size: 14.5px;
   box-shadow: var(--mt-shine);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
 }
 .mt-btn-sticky:hover { transform: translateY(-3px); box-shadow: var(--mt-shine); }
+.mt-btn-sticky[data-visible="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity .25s ease, transform .25s ease;
+}
 
 .mt-footer-link {
   display: inline-flex;

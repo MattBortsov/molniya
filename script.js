@@ -52,6 +52,27 @@ function initReveal() {
   setTimeout(() => hidden.forEach(reveal), 1600);
 }
 
+/* ---- Sticky CTA: hidden over the hero (which has its own CTA), shown once it scrolls past ---- */
+function initStickyCta() {
+  const sticky = document.querySelector('.mt-btn-sticky');
+  const hero = document.querySelector('.mt-hero');
+  if (!sticky || !hero) return;
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          sticky.toggleAttribute('data-visible', !e.isIntersecting);
+        });
+      },
+      { rootMargin: '-64px 0px 0px 0px' }
+    );
+    io.observe(hero);
+  } else {
+    sticky.setAttribute('data-visible', 'true');
+  }
+}
+
 /* ---- Mobile menu toggle ---- */
 function initMobileMenu() {
   const burger = document.querySelector('.mt-nav-burger');
@@ -76,4 +97,5 @@ function initMobileMenu() {
 document.addEventListener('DOMContentLoaded', function () {
   initReveal();
   initMobileMenu();
+  initStickyCta();
 });
