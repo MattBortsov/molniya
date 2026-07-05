@@ -339,13 +339,88 @@ a { color: inherit; }
   border-bottom: 1px solid var(--mt-border);
 }
 .mt-hero-inner {
-  max-width: 1040px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: clamp(72px, 12vh, 132px) var(--mt-space-section-x) clamp(56px, 8vw, 96px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  .mt-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+    gap: clamp(32px, 5vw, 72px) clamp(32px, 5vw, 72px);
+    align-items: center;
+    text-align: left;
+  }
+  .mt-facets--full { grid-column: 1 / -1; }
+}
+
+.mt-hero-col--text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .mt-hero-col--text { align-items: flex-start; text-align: left; }
+}
+
+.mt-hero-col--media {
+  width: 100%;
+  margin-top: 48px;
+}
+@media (min-width: 900px) {
+  .mt-hero-col--media { margin-top: 0; }
+}
+
+/* hero media — screenshot with a play button, links out to the demo video */
+.mt-hero-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--mt-radius-2xl);
+  overflow: hidden;
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  transition: transform .2s, box-shadow .2s;
+}
+.mt-hero-media:hover { transform: translateY(-2px); }
+.mt-hero-media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.mt-hero-media-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--mt-radius-round);
+  background: var(--mt-tint-accent-strong);
+  border: 1px solid rgba(180, 74, 50, .32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+.mt-hero-media-caption {
+  margin: 14px 0 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--mt-text-muted);
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .mt-hero-media-caption { text-align: left; }
 }
 
 /* eyebrow — the "what is it" label, set like a registry tag */
