@@ -27,8 +27,8 @@ nginx и повесить certbot, либо проксировать с осно
 | Secret | Значение |
 |---|---|
 | `DEPLOY_HOST` | IP или адрес сервера |
-| `DEPLOY_USER` | SSH-пользователь |
+| `DEPLOY_USER` | SSH-пользователь (`deploy`, как у SEOSmith) |
 | `SSH_PRIVATE_KEY` | приватный ключ для SSH (тот, чей публичный ключ добавлен на сервере) |
-| `DEPLOY_PATH` | `/opt/molniya` |
+| `DEPLOY_PATH` | `/home/deploy/molniya` (рядом с `/home/deploy/seosmith`) |
 
 На сервере должны быть установлены `git` и `docker compose` (v2, команда `docker compose`, не `docker-compose`).
