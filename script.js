@@ -52,22 +52,37 @@ function initReveal() {
   setTimeout(() => hidden.forEach(reveal), 1600);
 }
 
-/* ---- Sticky CTA: hidden over the hero (which has its own CTA), shown once it scrolls past ---- */
+/* ---- Sticky CTA: hidden over the hero and the final CTA/footer (which have their own CTA),
+   shown only for the stretch of the page in between ---- */
 function initStickyCta() {
   const sticky = document.querySelector('.mt-btn-sticky');
   const hero = document.querySelector('.mt-hero');
+  const finalCta = document.querySelector('.mt-section--final-cta');
+  const footer = document.querySelector('.mt-footer');
   if (!sticky || !hero) return;
 
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          sticky.toggleAttribute('data-visible', !e.isIntersecting);
-        });
-      },
-      { rootMargin: '-64px 0px 0px 0px' }
-    );
-    io.observe(hero);
+    const guarded = new Set();
+    const sync = () => {
+      sticky.toggleAttribute('data-visible', guarded.size === 0);
+    };
+    const observe = (el, margin) => {
+      if (!el) return;
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) guarded.add(el);
+            else guarded.delete(el);
+          });
+          sync();
+        },
+        { rootMargin: margin }
+      );
+      io.observe(el);
+    };
+    observe(hero, '-64px 0px 0px 0px');
+    observe(finalCta, '0px 0px -64px 0px');
+    observe(footer, '0px 0px -64px 0px');
   } else {
     sticky.setAttribute('data-visible', 'true');
   }

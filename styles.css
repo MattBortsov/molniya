@@ -492,7 +492,7 @@ a { color: inherit; }
   transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
 }
 .mt-btn-sticky:hover { transform: translateY(-3px); box-shadow: var(--mt-shine); }
-.mt-btn-sticky[data-visible="true"] {
+.mt-btn-sticky[data-visible] {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
