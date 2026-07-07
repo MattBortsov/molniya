@@ -339,41 +339,37 @@ a { color: inherit; }
   border-bottom: 1px solid var(--mt-border);
 }
 
-/* full-bleed row: text + tablet mockup use the whole viewport width, not the 1160px container */
+/* centered column: title, tablet mockup and CTA stack on the title's own width */
 .mt-hero-full {
   width: 100%;
   margin: 0 auto;
-  padding: clamp(64px, 10vh, 112px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px);
+  padding: clamp(32px, 5vh, 56px) clamp(24px, 5vw, 64px) clamp(64px, 9vw, 104px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* below 1600px the text column can't clear 76px-font two-line width alongside a media
-   column, so the tablet mockup drops below the text; from 1600px up it sits beside it */
-@media (min-width: 900px) {
-  .mt-hero-full {
-    text-align: left;
-  }
-  .mt-hero-col--text { align-items: flex-start; }
-  .mt-hero-col--media { max-width: 460px; margin: 40px 0 0; }
-}
-
-@media (min-width: 1600px) {
-  .mt-hero-full {
-    display: grid;
-    grid-template-columns: minmax(720px, 1fr) minmax(280px, 400px);
-    gap: clamp(32px, 4vw, 64px);
-    align-items: center;
-  }
-  .mt-hero-col--media { max-width: none; margin: 0; }
-}
-
 .mt-hero-inner--facets {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 0 var(--mt-space-section-x) clamp(56px, 8vw, 96px);
+  padding: clamp(40px, 7vw, 72px) var(--mt-space-section-x) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* mini brand mark repeated above the facets, distinct from the sticky site nav */
+.mt-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mt-hero-brand-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--mt-text-heading);
 }
 
 .mt-hero-col--text {
@@ -381,11 +377,13 @@ a { color: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 980px;
 }
 
 .mt-hero-col--media {
   width: 100%;
-  margin-top: 48px;
+  margin: 36px 0 0;
 }
 
 /* tablet mockup — frames the product screenshot like a device, links out to the demo video */
@@ -393,7 +391,6 @@ a { color: inherit; }
   position: relative;
   display: block;
   width: 100%;
-  max-width: 460px;
   margin: 0 auto;
   aspect-ratio: 1280 / 950;
 }
@@ -448,9 +445,6 @@ a { color: inherit; }
   color: var(--mt-text-muted);
   text-align: center;
 }
-@media (min-width: 900px) {
-  .mt-hero-media-caption { text-align: left; }
-}
 
 /* eyebrow — the "what is it" label, set like a registry tag */
 .mt-hero-eyebrow {
@@ -480,29 +474,33 @@ a { color: inherit; }
   font-size: clamp(32px, 6.4vw, 76px);
   line-height: 1.06;
   letter-spacing: -.03em;
-  margin: 24px 0 0;
+  margin: 0;
   color: var(--mt-text-heading);
 }
 .mt-hero-accent { color: var(--mt-accent); }
 
 .mt-hero-sub {
-  max-width: 520px;
-  margin: 22px 0 0;
+  max-width: 420px;
+  margin: 14px 0 0;
   color: var(--mt-text-body);
-  font-size: clamp(19px, 2.6vw, 23px);
+  font-size: 16px;
   line-height: 1.5;
+  text-align: center;
 }
 
-/* signature — the 4 facets of the product as a hairline spec row */
+/* signature — the 4 facets of the product as a hairline spec row.
+   the divider only runs alongside the name line, not the description below it */
 .mt-facets {
   list-style: none;
-  margin: 40px 0 0;
+  margin: 32px 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid var(--mt-border-strong);
-  border-radius: var(--mt-radius-lg);
+  border-top: 1px solid var(--mt-border-strong);
+  border-left: 1px solid var(--mt-border-strong);
+  border-right: 1px solid var(--mt-border-strong);
+  border-radius: var(--mt-radius-lg) var(--mt-radius-lg) 0 0;
   background: var(--mt-surface);
   overflow: hidden;
 }
@@ -514,15 +512,18 @@ a { color: inherit; }
   flex-direction: column;
   gap: 5px;
   text-align: left;
-  border-left: 1px solid var(--mt-border);
 }
-.mt-facet:first-child { border-left: none; }
 .mt-facet-name {
   font-family: 'Unbounded', sans-serif;
   font-weight: 500;
   font-size: 17px;
+  line-height: 1.3;
   color: var(--mt-text-strong);
+  border-left: 1px solid var(--mt-border);
+  margin-left: -23px;
+  padding-left: 22px;
 }
+.mt-facet:first-child .mt-facet-name { border-left: none; margin-left: 0; }
 .mt-facet-name--soon { color: var(--mt-accent); }
 .mt-facet-note {
   font-size: 13px;
@@ -533,7 +534,7 @@ a { color: inherit; }
 /* below ~560px the spec row stacks into two rows of two */
 @media (max-width: 560px) {
   .mt-facet { flex-basis: 50%; min-width: 0; }
-  .mt-facet:nth-child(3) { border-left: none; }
+  .mt-facet:nth-child(3) .mt-facet-name { border-left: none; margin-left: 0; }
   .mt-facet:nth-child(n+3) { border-top: 1px solid var(--mt-border); }
 }
 
@@ -1089,6 +1090,11 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 16px;
 }
+.mt-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .mt-footer-brand {
   display: flex;
   align-items: center;
@@ -1101,12 +1107,15 @@ a { color: inherit; }
   color: var(--mt-text-strong);
 }
 .mt-footer-year { color: var(--mt-text-faint); font-size: 13.5px; }
+.mt-footer-sub {
+  font-size: 13px;
+  color: var(--mt-text-faint-2);
+}
 .mt-footer-links {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.mt-footer-tag { color: var(--mt-text-faint-2); font-size: 13px; }
 
 /* ============================================================
    PRIVACY PAGE
