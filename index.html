@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Молния Тех — CRM для сервисного бизнеса на космической скорости</title>
   <meta name="description" content="Операционно-аналитическая платформа для сервисного бизнеса: моек, СТО, бьюти и услуг. Запись, деньги, люди и прогноз — в одной CRM.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="styles.css?v=20260705">
 </head>
 <body>
@@ -26,7 +27,7 @@
       <!-- NAV -->
       <nav class="mt-nav">
         <div class="mt-nav-inner">
-          <a class="mt-brand" href="index.html">
+          <a class="mt-brand" href="/">
             <svg width="30" height="30" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.4" opacity="0.4"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.4" opacity="0.6" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
             <span class="mt-brand-name">Молния&nbsp;Тех</span>
           </a>
@@ -59,11 +60,11 @@
       </nav>
 
       <section class="mt-hero" data-screen-label="Герой">
-        <div class="mt-hero-inner">
+        <div class="mt-hero-full">
 
           <div class="mt-hero-col mt-hero-col--text">
             <h1 class="mt-hero-title">
-              Управляй бизнесом и планируй доходы
+              Управляй бизнесом<br>и планируй доходы
             </h1>
 
             <p class="mt-hero-sub">
@@ -77,15 +78,21 @@
           </div>
 
           <div class="mt-hero-col mt-hero-col--media">
-            <a class="mt-hero-media" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: быстрое знакомство с приложением">
-              <img class="mt-hero-media-img" src="assets/img/schedule.jpg" alt="Экран журнала записи с расписанием боксов и клиентов" loading="lazy">
-              <span class="mt-hero-media-play">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
+            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: быстрое знакомство с приложением">
+              <span class="mt-tablet-cam" aria-hidden="true"></span>
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="assets/img/schedule.jpg" alt="Экран журнала записи с расписанием боксов и клиентов" loading="lazy">
+                <span class="mt-tablet-play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
+                </span>
               </span>
             </a>
             <p class="mt-hero-media-caption">Быстрое знакомство с приложением</p>
           </div>
 
+        </div>
+
+        <div class="mt-hero-inner mt-hero-inner--facets">
           <ul class="mt-facets mt-facets--full" aria-label="Что делает платформа">
             <li class="mt-facet">
               <span class="mt-facet-name">Запись</span>
@@ -104,7 +111,6 @@
               <span class="mt-facet-note">ИИ-аналитика + прогноз бизнеса</span>
             </li>
           </ul>
-
         </div>
       </section>
 
