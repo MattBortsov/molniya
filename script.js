@@ -109,8 +109,34 @@ function initMobileMenu() {
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
 }
 
+/* ---- Cookie notice: show once until accepted, then remember in localStorage ---- */
+function initCookieBanner() {
+  const banner = document.getElementById('mt-cookie-banner');
+  const accept = document.getElementById('mt-cookie-accept');
+  if (!banner || !accept) return;
+
+  const STORAGE_KEY = 'mt_cookie_consent';
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === 'accepted') return;
+  } catch (e) {
+    // localStorage unavailable (private mode, blocked) — show banner every visit
+  }
+
+  banner.setAttribute('data-visible', 'true');
+
+  accept.addEventListener('click', function () {
+    try {
+      localStorage.setItem(STORAGE_KEY, 'accepted');
+    } catch (e) {
+      // ignore — banner will just reappear next visit
+    }
+    banner.removeAttribute('data-visible');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initReveal();
   initMobileMenu();
   initStickyCta();
+  initCookieBanner();
 });
