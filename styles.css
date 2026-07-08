@@ -933,34 +933,6 @@ a { color: inherit; }
   background: #E4DACB;
   border: 1px solid var(--mt-border-strong);
 }
-.mt-founder {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 24px;
-  border-radius: var(--mt-radius-lg);
-  border: 1px solid var(--mt-border);
-  background: var(--mt-surface);
-  max-width: 460px;
-}
-.mt-founder-avatar {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: var(--mt-radius-round);
-  background: linear-gradient(135deg, var(--mt-accent-grad-from), var(--mt-accent-strong));
-}
-.mt-founder-name {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: var(--mt-text-strong);
-}
-.mt-founder-role {
-  font-size: 13px;
-  color: var(--mt-text-faint-2);
-  margin-top: 2px;
-}
 .mt-quote-name {
   color: var(--mt-text-faint);
   font-size: 13.5px;
