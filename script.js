@@ -134,9 +134,21 @@ function initCookieBanner() {
   });
 }
 
+/* ---- Metrika goal: fire on any click that leads to the Telegram channel ---- */
+function initTelegramGoal() {
+  if (typeof window.ym !== 'function') return;
+
+  document.querySelectorAll('a[href*="t.me/"]').forEach((link) => {
+    link.addEventListener('click', function () {
+      window.ym(110503215, 'reachGoal', 'telegram_click');
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initReveal();
   initMobileMenu();
   initStickyCta();
   initCookieBanner();
+  initTelegramGoal();
 });
