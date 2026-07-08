@@ -1,2 +1,5 @@
 .DS_Store
 *.DS_Store
+
+# состояние cron-скрипта IndexNow — специфично для сервера, не для git
+.indexnow-seen
