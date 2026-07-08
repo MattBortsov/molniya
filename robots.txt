@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://molniya-tech.ru/sitemap.xml
