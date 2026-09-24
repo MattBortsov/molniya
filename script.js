@@ -1,8 +1,64 @@
 /* ============================================================
    Молния Тех — page behavior
-   Reveals sections on scroll (IntersectionObserver).
-   The hero is static; everything below it fades in on scroll.
+   Scroll-shaped hero, section reveals and shared page controls.
    ============================================================ */
+
+/* ---- Hero scene: turn the full-width nav and iPad into inset cards on scroll ---- */
+function initHeroScrollScene() {
+  const hero = document.querySelector('[data-mt-hero-scene]');
+  const nav = document.querySelector('.mt-nav');
+  if (!hero || !nav) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = 0;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  const smoothstep = (value) => value * value * (3 - 2 * value);
+  const easeOut = (value) => 1 - Math.pow(1 - value, 3);
+
+  const update = () => {
+    frame = 0;
+
+    const viewportHeight = window.innerHeight || 800;
+    const viewportWidth = window.innerWidth || 1280;
+    const sceneStart = hero.offsetTop - nav.offsetHeight;
+    const sceneScroll = Math.max(0, window.scrollY - sceneStart);
+
+    const navDistance = clamp(viewportHeight * .24, 160, 300);
+    const mediaDistance = clamp(viewportHeight * .34, 280, 460);
+    const navRaw = clamp(sceneScroll / navDistance, 0, 1);
+    const mediaRaw = clamp((sceneScroll - viewportHeight * .24) / mediaDistance, 0, 1);
+
+    const navProgress = reducedMotion.matches ? (navRaw > 0 ? 1 : 0) : easeOut(navRaw);
+    const mediaProgress = reducedMotion.matches ? (mediaRaw > 0 ? 1 : 0) : smoothstep(mediaRaw);
+    const compact = viewportWidth <= 720;
+
+    const navInset = navProgress * (compact ? 10 : Math.min(24, viewportWidth * .018));
+    const navScale = 1 - (navInset * 2 / viewportWidth);
+    const navTop = navProgress * (compact ? 10 : 18);
+    const navRadius = navProgress * (compact ? 14 : 18);
+    const mediaScale = 1 - mediaProgress * (compact ? .06 : .3);
+    const mediaOffset = mediaProgress * (compact ? 12 : 150);
+
+    nav.style.setProperty('--mt-nav-scale-x', navScale.toFixed(5));
+    nav.style.setProperty('--mt-nav-top', navTop.toFixed(2) + 'px');
+    nav.style.setProperty('--mt-nav-radius', navRadius.toFixed(2) + 'px');
+    nav.toggleAttribute('data-scrolled', navRaw > .04);
+
+    hero.style.setProperty('--mt-hero-media-scale', mediaScale.toFixed(5));
+    hero.style.setProperty('--mt-hero-media-offset', mediaOffset.toFixed(2) + 'px');
+  };
+
+  const requestUpdate = () => {
+    if (frame) return;
+    frame = window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  reducedMotion.addEventListener?.('change', requestUpdate);
+  update();
+}
 
 /* ---- Scroll reveal ---- */
 function initReveal() {
@@ -135,6 +191,7 @@ function initCookieBanner() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  initHeroScrollScene();
   initReveal();
   initMobileMenu();
   initStickyCta();

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 950" role="presentation">
+  <defs>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#252525"/>
+      <stop offset="0.12" stop-color="#080808"/>
+      <stop offset="0.88" stop-color="#111111"/>
+      <stop offset="1" stop-color="#2d2d2d"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9f9f8"/>
+      <stop offset="0.45" stop-color="#b9b9b7"/>
+      <stop offset="0.7" stop-color="#f3f3f1"/>
+      <stop offset="1" stop-color="#9b9b99"/>
+    </linearGradient>
+    <linearGradient id="pencil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.48" stop-color="#f4f4f2"/>
+      <stop offset="1" stop-color="#aaa9a7"/>
+    </linearGradient>
+    <radialGradient id="floor-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#000" stop-opacity=".42"/>
+      <stop offset=".72" stop-color="#000" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="body-cutout" maskUnits="userSpaceOnUse">
+      <rect width="1280" height="950" fill="#000"/>
+      <rect x="32" y="48" width="1216" height="860" rx="68" fill="#fff"/>
+      <rect x="70" y="80" width="1140" height="800" rx="18" fill="#000"/>
+    </mask>
+  </defs>
+
+  <ellipse cx="640" cy="918" rx="612" ry="28" fill="url(#floor-shadow)"/>
+
+  <rect x="32" y="48" width="1216" height="860" rx="68" fill="url(#bezel)" mask="url(#body-cutout)"/>
+  <rect x="32.75" y="48.75" width="1214.5" height="858.5" rx="67.25" fill="none" stroke="url(#metal)" stroke-width="3.5"/>
+  <rect x="67.5" y="77.5" width="1145" height="805" rx="20.5" fill="none" stroke="#414141" stroke-width="3"/>
+  <rect x="71" y="81" width="1138" height="798" rx="17" fill="none" stroke="#080808" stroke-width="2"/>
+
+  <g fill="#202020" opacity=".34">
+    <rect x="30" y="112" width="2.8" height="53" rx="1.4"/>
+    <rect x="30" y="190" width="2.8" height="44" rx="1.4"/>
+    <rect x="30" y="248" width="2.8" height="44" rx="1.4"/>
+  </g>
+
+  <g fill="#020202">
+    <circle cx="52" cy="410" r="8"/>
+    <circle cx="52" cy="474" r="7"/>
+    <circle cx="52" cy="539" r="7"/>
+  </g>
+  <circle cx="52" cy="474" r="2.2" fill="#46515a"/>
+
+  <g>
+    <ellipse cx="632" cy="47" rx="420" ry="7" fill="#000" opacity=".13"/>
+    <path d="M252 8h771c16 0 28 9 28 20s-12 20-28 20H252c-26-3-50-9-60-16-6-3-6-5 0-8 10-7 34-13 60-16Z" fill="url(#pencil)"/>
+    <path d="M252 8c-26 3-50 9-60 16-6 3-6 5 0 8 10 7 34 13 60 16-12-8-18-14-18-20s6-12 18-20Z" fill="#f4f4f2"/>
+    <ellipse cx="191" cy="28" rx="8" ry="7" fill="#f4f4f2"/>
+    <path d="M252 9v38" stroke="#c9c9c7" stroke-width="1.5" opacity=".72"/>
+    <path d="M268 11h744" stroke="#fff" stroke-opacity=".82" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
