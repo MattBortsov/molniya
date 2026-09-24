@@ -189,15 +189,12 @@ a { color: inherit; }
 .mt-brand {
   display: flex;
   align-items: center;
-  gap: 11px;
   text-decoration: none;
 }
-.mt-brand-name {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -.01em;
-  color: var(--mt-text-strong);
+.mt-brand-logo {
+  display: block;
+  width: 116px;
+  height: auto;
 }
 
 /* ---------- Keyframes ---------- */
@@ -364,13 +361,11 @@ a { color: inherit; }
 .mt-hero-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
-.mt-hero-brand-name {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 700;
-  font-size: 17px;
-  color: var(--mt-text-heading);
+.mt-hero-brand-logo {
+  display: block;
+  width: 136px;
+  height: auto;
 }
 
 .mt-hero-col--text {
@@ -1183,12 +1178,12 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
-.mt-footer-brand-name {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 500;
-  font-size: 14.5px;
-  color: var(--mt-text-strong);
+.mt-footer-brand-logo {
+  display: block;
+  width: 104px;
+  height: auto;
 }
 .mt-footer-year { color: var(--mt-text-faint); font-size: 13.5px; }
 .mt-footer-sub {
