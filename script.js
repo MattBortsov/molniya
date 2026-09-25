@@ -190,10 +190,117 @@ function initCookieBanner() {
   });
 }
 
+/* ---- Industry fit check through the same-origin API proxy ---- */
+function initIndustryFitForm() {
+  const form = document.querySelector('[data-industry-fit-form]');
+  if (!form) return;
+
+  const input = form.elements.business;
+  const honeypot = form.elements.website;
+  const button = form.querySelector('button[type="submit"]');
+  const buttonText = button?.querySelector('span');
+  const result = form.querySelector('[data-fit-result]');
+  const title = form.querySelector('[data-fit-title]');
+  const message = form.querySelector('[data-fit-message]');
+  const consultation = form.querySelector('[data-fit-consultation]');
+  const status = form.querySelector('[data-fit-status]');
+  if (!input || !button || !buttonText || !result || !title || !message || !consultation || !status) return;
+
+  const defaultButtonText = buttonText.textContent;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const business = input.value.trim();
+    if (business.length < 3) {
+      form.dataset.state = 'error';
+      status.textContent = 'Опишите сферу хотя бы несколькими словами.';
+      input.focus();
+      return;
+    }
+
+    form.dataset.state = 'loading';
+    result.hidden = true;
+    consultation.hidden = true;
+    status.textContent = 'Проверяем описание…';
+    button.disabled = true;
+    buttonText.textContent = 'Проверяем';
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 12000);
+
+    try {
+      const response = await fetch('/api/industry-fit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ business, website: honeypot?.value || '' }),
+        signal: controller.signal
+      });
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok || !payload.title || !payload.message) {
+        throw new Error(payload.error || 'Не удалось получить ответ');
+      }
+
+      title.textContent = payload.title;
+      message.textContent = payload.message;
+      consultation.hidden = !['clarify', 'not_fit'].includes(payload.status);
+      result.hidden = false;
+      form.dataset.state = payload.status || 'ready';
+      status.textContent = '';
+    } catch (error) {
+      form.dataset.state = 'error';
+      status.textContent = error.name === 'AbortError'
+        ? 'Проверка заняла больше обычного. Попробуйте ещё раз.'
+        : 'Сейчас не удалось проверить. Попробуйте ещё раз чуть позже.';
+    } finally {
+      window.clearTimeout(timeout);
+      button.disabled = false;
+      buttonText.textContent = defaultButtonText;
+    }
+  });
+}
+
+/* ---- Product screenshots: one screen at a time, chosen by the reader ---- */
+function initVisibilityGallery() {
+  const gallery = document.querySelector('[data-visibility-gallery]');
+  if (!gallery) return;
+
+  const tabs = Array.from(gallery.querySelectorAll('[data-visibility-tab]'));
+  const panels = Array.from(gallery.querySelectorAll('[data-visibility-panel]'));
+  if (tabs.length !== panels.length || !tabs.length) return;
+
+  const select = (index, focus = false) => {
+    tabs.forEach((tab, position) => {
+      const active = position === index;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panels[position].hidden = !active;
+    });
+    if (focus) tabs[index].focus();
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(index));
+    tab.addEventListener('keydown', (event) => {
+      let next = index;
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(next, true);
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScrollScene();
   initReveal();
   initMobileMenu();
   initStickyCta();
   initCookieBanner();
+  initIndustryFitForm();
+  initVisibilityGallery();
 });

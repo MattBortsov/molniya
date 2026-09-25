@@ -1,14 +1,30 @@
 # Молния Тех
 
-Статический лендинг: `index.html`, `blog/index.html`, `privacy.html`, общие `styles.css` / `script.js` / `fonts/` / `assets/`.
+Лендинг: статические страницы обслуживает Nginx, а небольшой Python API проксирует форму проверки сферы в OpenRouter Jev. Ключ остаётся только на сервере.
 
 ## Локальный просмотр
 
+Для полной проверки, включая форму Jev, создайте `.env` по `.env.example` и запустите:
+
 ```bash
-python3 -m http.server 8000
+python3 dev_server.py
 ```
 
-Открыть http://localhost:8000
+Открыть http://127.0.0.1:8000
+
+Если порт занят, можно выбрать другой:
+
+```bash
+python3 dev_server.py --port 8001
+```
+
+Для проверки контейнерной конфигурации используйте полный стек:
+
+```bash
+docker compose up -d
+```
+
+Открыть http://localhost:8090
 
 ## Деплой
 
@@ -56,3 +72,5 @@ docker compose up -d nginx
 | `DEPLOY_PATH` | `/home/deploy/molniya` (рядом с `/home/deploy/seosmith`) |
 
 На сервере должны быть установлены `git` и `docker compose` (v2, команда `docker compose`, не `docker-compose`).
+
+На сервере в `${DEPLOY_PATH}/.env` должны быть заданы `OPENROUTER_API_KEY` и, при необходимости, `OPENROUTER_MODEL`. Файл игнорируется Git и не удаляется при обновлении репозитория.

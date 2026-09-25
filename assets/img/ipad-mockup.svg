@@ -12,49 +12,52 @@
       <stop offset="0.7" stop-color="#f3f3f1"/>
       <stop offset="1" stop-color="#9b9b99"/>
     </linearGradient>
-    <linearGradient id="pencil" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="pencil" gradientUnits="userSpaceOnUse" x1="0" y1="8" x2="0" y2="47">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.48" stop-color="#f4f4f2"/>
-      <stop offset="1" stop-color="#aaa9a7"/>
+      <stop offset="0.22" stop-color="#fbfbfa"/>
+      <stop offset="0.58" stop-color="#f2f2f0"/>
+      <stop offset="0.8" stop-color="#d9d9d7"/>
+      <stop offset="1" stop-color="#a8a8a6"/>
     </linearGradient>
     <radialGradient id="floor-shadow" cx="50%" cy="50%" r="50%">
       <stop offset="0" stop-color="#000" stop-opacity=".42"/>
       <stop offset=".72" stop-color="#000" stop-opacity=".16"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </radialGradient>
+    <!-- Continuous corners, traced from the PNG; keep the slimmer bezel. -->
+    <path id="ipad-body" d="M114 48H1166C1208 48 1234 74 1234 116V836C1234 878 1208 904 1166 904H114C72 904 46 878 46 836V116C46 74 72 48 114 48Z"/>
     <mask id="body-cutout" maskUnits="userSpaceOnUse">
       <rect width="1280" height="950" fill="#000"/>
-      <rect x="32" y="48" width="1216" height="860" rx="68" fill="#fff"/>
-      <rect x="70" y="80" width="1140" height="800" rx="18" fill="#000"/>
+      <use href="#ipad-body" fill="#fff"/>
+      <rect x="82" y="84" width="1116" height="784" rx="18" fill="#000"/>
     </mask>
   </defs>
 
   <ellipse cx="640" cy="918" rx="612" ry="28" fill="url(#floor-shadow)"/>
 
-  <rect x="32" y="48" width="1216" height="860" rx="68" fill="url(#bezel)" mask="url(#body-cutout)"/>
-  <rect x="32.75" y="48.75" width="1214.5" height="858.5" rx="67.25" fill="none" stroke="url(#metal)" stroke-width="3.5"/>
-  <rect x="67.5" y="77.5" width="1145" height="805" rx="20.5" fill="none" stroke="#414141" stroke-width="3"/>
-  <rect x="71" y="81" width="1138" height="798" rx="17" fill="none" stroke="#080808" stroke-width="2"/>
+  <use href="#ipad-body" fill="url(#bezel)" mask="url(#body-cutout)"/>
+  <path d="M114 48.75H1166C1207.5 48.75 1233.25 74.5 1233.25 116V836C1233.25 877.5 1207.5 903.25 1166 903.25H114C72.5 903.25 46.75 877.5 46.75 836V116C46.75 74.5 72.5 48.75 114 48.75Z" fill="none" stroke="url(#metal)" stroke-width="3.5"/>
+  <rect x="79.5" y="81.5" width="1121" height="789" rx="20.5" fill="none" stroke="#414141" stroke-width="3"/>
+  <rect x="83" y="85" width="1114" height="782" rx="17" fill="none" stroke="#080808" stroke-width="2"/>
 
   <g fill="#202020" opacity=".34">
-    <rect x="30" y="112" width="2.8" height="53" rx="1.4"/>
-    <rect x="30" y="190" width="2.8" height="44" rx="1.4"/>
-    <rect x="30" y="248" width="2.8" height="44" rx="1.4"/>
+    <rect x="44" y="112" width="2.8" height="53" rx="1.4"/>
+    <rect x="44" y="190" width="2.8" height="44" rx="1.4"/>
+    <rect x="44" y="248" width="2.8" height="44" rx="1.4"/>
   </g>
 
   <g fill="#020202">
-    <circle cx="52" cy="410" r="8"/>
-    <circle cx="52" cy="474" r="7"/>
-    <circle cx="52" cy="539" r="7"/>
+    <circle cx="64" cy="410" r="8"/>
+    <circle cx="64" cy="474" r="7"/>
+    <circle cx="64" cy="539" r="7"/>
   </g>
-  <circle cx="52" cy="474" r="2.2" fill="#46515a"/>
+  <circle cx="64" cy="474" r="2.2" fill="#46515a"/>
 
   <g>
-    <ellipse cx="632" cy="47" rx="420" ry="7" fill="#000" opacity=".13"/>
-    <path d="M252 8h771c16 0 28 9 28 20s-12 20-28 20H252c-26-3-50-9-60-16-6-3-6-5 0-8 10-7 34-13 60-16Z" fill="url(#pencil)"/>
-    <path d="M252 8c-26 3-50 9-60 16-6 3-6 5 0 8 10 7 34 13 60 16-12-8-18-14-18-20s6-12 18-20Z" fill="#f4f4f2"/>
-    <ellipse cx="191" cy="28" rx="8" ry="7" fill="#f4f4f2"/>
-    <path d="M252 9v38" stroke="#c9c9c7" stroke-width="1.5" opacity=".72"/>
-    <path d="M268 11h744" stroke="#fff" stroke-opacity=".82" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="648" cy="47" rx="401" ry="5" fill="#000" opacity=".12"/>
+    <!-- One silhouette: tapered shoulder, short cone, softly rounded nib. -->
+    <path d="M326 8H1026C1037 8 1046 16.7 1046 27.5S1037 47 1026 47H326C314 47 302 44.5 291 42.5L258 35.5C252 34.3 249 32.5 249 29.5S252 24.7 258 23.5L291 16C302 13.5 314 8 326 8Z" fill="url(#pencil)"/>
+    <path d="M291 16.5V42" stroke="#999996" stroke-width=".8" stroke-opacity=".75"/>
+    <path d="M327 10H1025" stroke="#fff" stroke-opacity=".88" stroke-width="1.4" stroke-linecap="round"/>
   </g>
 </svg>
