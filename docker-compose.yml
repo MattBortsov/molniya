@@ -20,13 +20,13 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/security_headers.conf:/etc/nginx/security_headers.conf:ro
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost/"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/"]
       interval: 30s
       timeout: 5s
       retries: 3
 
   api:
-    image: python:3.12-alpine
+    build: ./api
     container_name: molniya-api
     restart: unless-stopped
     user: "65534:65534"
@@ -37,6 +37,7 @@ services:
       PYTHONDONTWRITEBYTECODE: "1"
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-typesafe/jev-1.13}
+      OPENROUTER_PROXY_URL: ${OPENROUTER_PROXY_URL:-}
     command: ["python", "/app/server.py"]
     expose:
       - "8080"

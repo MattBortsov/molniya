@@ -7,7 +7,9 @@
 Для полной проверки, включая форму Jev, создайте `.env` по `.env.example` и запустите:
 
 ```bash
-python3 dev_server.py
+python3.12 -m venv .venv
+.venv/bin/pip install -r api/requirements.txt
+.venv/bin/python dev_server.py
 ```
 
 Открыть http://127.0.0.1:8000
@@ -15,13 +17,13 @@ python3 dev_server.py
 Если порт занят, можно выбрать другой:
 
 ```bash
-python3 dev_server.py --port 8001
+.venv/bin/python dev_server.py --port 8001
 ```
 
 Для проверки контейнерной конфигурации используйте полный стек:
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 Открыть http://localhost:8090
@@ -73,4 +75,4 @@ docker compose up -d nginx
 
 На сервере должны быть установлены `git` и `docker compose` (v2, команда `docker compose`, не `docker-compose`).
 
-На сервере в `${DEPLOY_PATH}/.env` должны быть заданы `OPENROUTER_API_KEY` и, при необходимости, `OPENROUTER_MODEL`. Файл игнорируется Git и не удаляется при обновлении репозитория.
+На сервере в `${DEPLOY_PATH}/.env` должны быть заданы `OPENROUTER_API_KEY` и, при необходимости, `OPENROUTER_MODEL`. Для сервера, с которого OpenRouter блокирует прямые запросы, укажите `OPENROUTER_PROXY_URL` с SOCKS5-прокси; DNS через прокси включается автоматически. Эти значения хранятся только на сервере: `.env` игнорируется Git, закрыт от выдачи Nginx и не удаляется при обновлении репозитория. После запуска GitHub Actions проверяет реальный ответ Jev через публичный маршрут формы.

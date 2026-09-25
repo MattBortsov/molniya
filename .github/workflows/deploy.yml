@@ -24,4 +24,19 @@ jobs:
             fi
             git fetch origin
             git reset --hard origin/main
-            docker compose up -d --force-recreate
+            if [ ! -f .env ] || ! grep -Eq '^OPENROUTER_API_KEY=.+' .env; then
+              echo 'OPENROUTER_API_KEY is missing from the server .env'
+              exit 1
+            fi
+            docker compose up -d --build --force-recreate
+            for attempt in 1 2 3 4 5; do
+              if docker exec molniya-api python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)" >/dev/null 2>&1; then
+                break
+              fi
+              sleep 2
+            done
+            status=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"business":"Студия маникюра с записью клиентов по времени","website":""}' http://127.0.0.1:8090/api/industry-fit)
+            if [ "$status" != '200' ]; then
+              echo "Jev smoke check failed with HTTP $status"
+              exit 1
+            fi

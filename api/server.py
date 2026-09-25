@@ -6,12 +6,12 @@ import json
 import os
 import threading
 import time
-import urllib.error
-import urllib.request
 from collections import defaultdict, deque
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
+
+import requests
 
 
 OPENROUTER_URL = "https://openrouter.ai/api/alpha/decisions"
@@ -96,20 +96,26 @@ def call_jev(business: str) -> dict[str, Any]:
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY is not configured")
 
-    request = urllib.request.Request(
-        OPENROUTER_URL,
-        data=json.dumps(build_decision_request(business), ensure_ascii=False).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-            "HTTP-Referer": "https://molniya-tech.ru",
-            "X-OpenRouter-Title": "Molniya Tech",
-        },
-        method="POST",
-    )
+    proxy_url = os.getenv("OPENROUTER_PROXY_URL", "").strip()
+    if proxy_url.startswith("socks5://"):
+        proxy_url = "socks5h://" + proxy_url.removeprefix("socks5://")
+    proxies = {"https": proxy_url} if proxy_url else None
 
-    with urllib.request.urlopen(request, timeout=10) as response:
-        payload = json.loads(response.read().decode("utf-8"))
+    with requests.Session() as session:
+        session.trust_env = False
+        response = session.post(
+            OPENROUTER_URL,
+            json=build_decision_request(business),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "HTTP-Referer": "https://molniya-tech.ru",
+                "X-OpenRouter-Title": "Molniya Tech",
+            },
+            proxies=proxies,
+            timeout=10,
+        )
+        response.raise_for_status()
+        payload = response.json()
 
     answer = payload.get("answers", {}).get("fit", {})
     choice = answer.get("choice")
@@ -200,7 +206,7 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
 
         try:
             result = call_jev(business)
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError):
+        except (requests.RequestException, ValueError, RuntimeError):
             self._send_json(HTTPStatus.BAD_GATEWAY, {"error": "Сервис проверки временно недоступен"})
             return
 
