@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import hmac
 import os
 import threading
 import time
@@ -10,13 +12,20 @@ from collections import defaultdict, deque
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
+from urllib.parse import urlsplit
 
 import requests
+
+if __package__:
+    from . import blog as blog_store
+else:
+    import blog as blog_store
 
 
 OPENROUTER_URL = "https://openrouter.ai/api/alpha/decisions"
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "typesafe/jev-1.13")
 MAX_BODY_BYTES = 4_096
+MAX_WEBHOOK_BYTES = 2_000_000
 MAX_BUSINESS_LENGTH = 240
 RATE_WINDOW_SECONDS = 60
 RATE_REQUESTS = 8
@@ -142,27 +151,53 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
     server_version = "MolniyaApi/1.0"
     sys_version = ""
 
-    def _send_json(self, status: int, payload: dict[str, Any]) -> None:
-        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    def _send(self, status: int, body: bytes, content_type: str) -> None:
         self.send_response(status)
-        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_json(self, status: int, payload: dict[str, Any]) -> None:
+        self._send(status, json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
+
     def _client_ip(self) -> str:
         forwarded = self.headers.get("X-Real-IP", "").strip()
         return forwarded or self.client_address[0]
 
     def do_GET(self) -> None:  # noqa: N802
-        if self.path == "/health":
+        path = urlsplit(self.path).path
+        if path == "/health":
             self._send_json(HTTPStatus.OK, {"status": "ok"})
             return
+        if path in {"/blog", "/blog/", "/blog/index.html"}:
+            self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "index.html").read_bytes(), "text/html; charset=utf-8")
+            return
+        if path == "/sitemap.xml":
+            self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "sitemap.xml").read_bytes(), "application/xml; charset=utf-8")
+            return
+        if path.startswith("/blog/"):
+            slug = path.removeprefix("/blog/")
+            if blog_store.SLUG_RE.fullmatch(slug):
+                page = blog_store.DATA_DIR / f"{slug}.html"
+                if page.is_file():
+                    self._send(HTTPStatus.OK, page.read_bytes(), "text/html; charset=utf-8")
+                    return
+                target = blog_store.redirect_target(slug)
+                if target:
+                    self.send_response(HTTPStatus.MOVED_PERMANENTLY)
+                    self.send_header("Location", f"/blog/{target}")
+                    self.send_header("Content-Length", "0")
+                    self.end_headers()
+                    return
         self._send_json(HTTPStatus.NOT_FOUND, {"error": "Не найдено"})
 
     def do_POST(self) -> None:  # noqa: N802
+        if urlsplit(self.path).path == "/api/seosmith":
+            self._handle_seosmith()
+            return
         if self.path != "/api/industry-fit":
             self._send_json(HTTPStatus.NOT_FOUND, {"error": "Не найдено"})
             return
@@ -191,7 +226,7 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный JSON"})
             return
 
-        if payload.get("website"):
+        if not isinstance(payload, dict) or payload.get("website"):
             self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный запрос"})
             return
 
@@ -212,12 +247,53 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
 
         self._send_json(HTTPStatus.OK, result)
 
+    def _handle_seosmith(self) -> None:
+        secret = os.getenv("SEOSMITH_WEBHOOK_SECRET", "")
+        if not secret:
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Webhook не настроен"})
+            return
+        try:
+            content_length = int(self.headers.get("Content-Length", "0"))
+        except ValueError:
+            content_length = 0
+        if content_length <= 0 or content_length > MAX_WEBHOOK_BYTES:
+            self._send_json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"error": "Некорректный размер запроса"})
+            return
+        raw_body = self.rfile.read(content_length)
+        signature = self.headers.get("X-SeoSmith-Signature", "")
+        expected = "sha256=" + hmac.new(secret.encode("utf-8"), raw_body, hashlib.sha256).hexdigest()
+        if not hmac.compare_digest(signature, expected):
+            self._send_json(HTTPStatus.UNAUTHORIZED, {"error": "Неверная подпись"})
+            return
+        try:
+            payload = json.loads(raw_body)
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный JSON"})
+            return
+        if not isinstance(payload, dict):
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный запрос"})
+            return
+        if payload.get("event") != "article.published":
+            self._send_json(HTTPStatus.OK, {"ok": True, "skipped": True})
+            return
+        try:
+            article = blog_store.validate_article(payload.get("article"))
+            blog_store.upsert_article(article)
+        except ValueError as exc:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+            return
+        except OSError:
+            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "Не удалось сохранить статью"})
+            return
+        self._send_json(HTTPStatus.OK, {"ok": True})
+
     def log_message(self, _format: str, *_args: Any) -> None:
         # Intentionally avoid request logs: descriptions may contain business details.
         return
 
 
 def run() -> None:
+    blog_store.rebuild_public()
     host = os.getenv("API_HOST", "0.0.0.0")
     port = int(os.getenv("API_PORT", "8080"))
     server = ThreadingHTTPServer((host, port), MolniyaApiHandler)

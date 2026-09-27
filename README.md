@@ -76,3 +76,11 @@ docker compose up -d nginx
 На сервере должны быть установлены `git` и `docker compose` (v2, команда `docker compose`, не `docker-compose`).
 
 На сервере в `${DEPLOY_PATH}/.env` должны быть заданы `OPENROUTER_API_KEY` и, при необходимости, `OPENROUTER_MODEL`. Для сервера, с которого OpenRouter блокирует прямые запросы, укажите `OPENROUTER_PROXY_URL` с SOCKS5-прокси; DNS через прокси включается автоматически. Эти значения хранятся только на сервере: `.env` игнорируется Git, закрыт от выдачи Nginx и не удаляется при обновлении репозитория. После запуска GitHub Actions проверяет реальный ответ Jev через публичный маршрут формы.
+
+## SeoSmith webhook
+
+Коннектор SeoSmith отправляет `POST https://molniya-tech.ru/api/seosmith` с заголовком `X-SeoSmith-Signature: sha256=<HMAC-SHA256 тела запроса>`. Секрет задаётся через `SEOSMITH_WEBHOOK_SECRET` в `.env` локально и в `/home/deploy/molniya/.env` на сервере. После изменения `.env` пересоздайте API-контейнер командой `docker compose up -d --force-recreate api`; при первом деплое запускайте весь стек `docker compose up -d --build --force-recreate`.
+
+Статьи сохраняются в постоянном Docker-томе `molniya_blog-data`: исходные JSON-записи — в закрытом каталоге `.records/`, готовые HTML-страницы и sitemap — в корне тома. Локальный `dev_server.py` использует игнорируемый Git каталог `.blog-data/`. Nginx отдаёт `/blog`, `/blog/<slug>` и `/sitemap.xml` как статические файлы без запроса к Python API. API нужен только для webhook и редиректа со старого slug после переименования. При старте API обновляет готовые файлы из сохранённых записей и текущего шаблона. Первичный ключ обновления — `article.id`, запасной — `article.slug`. Для публичной статьи используется адрес Молнии `/blog/<slug>`, а исходное поле `article.url` хранится в записи.
+
+Кнопка теста коннектора SeoSmith отправляет подписанный `{"event":"test"}`: ожидаемый ответ `200 {"ok":true,"skipped":true}` без публикации статьи. Запрос с неверной подписью должен вернуть 401. После настройки коннектора проверьте настоящую публикацию по `/blog` и `/blog/<slug>`, затем отредактируйте её в SeoSmith и убедитесь, что карточка и страница изменились без второй карточки.

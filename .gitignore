@@ -6,6 +6,7 @@
 __pycache__/
 *.pyc
 .venv/
+.blog-data/
 
 # состояние cron-скрипта IndexNow — специфично для сервера, не для git
 .indexnow-seen

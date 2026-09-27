@@ -30,6 +30,7 @@ def load_local_env(path: Path) -> None:
 
 load_local_env(PROJECT_ROOT / ".env")
 
+from api import blog as blog_store  # noqa: E402
 from api.server import MolniyaApiHandler  # noqa: E402
 
 
@@ -40,7 +41,7 @@ class DevHandler(MolniyaApiHandler, SimpleHTTPRequestHandler):
         request_path = urlsplit(self.path).path
         parts = PurePosixPath(request_path).parts
 
-        if request_path == "/health":
+        if request_path == "/health" or request_path in {"/blog", "/blog/", "/sitemap.xml"} or request_path.startswith("/blog/"):
             MolniyaApiHandler.do_GET(self)
             return
         if request_path.startswith("/api/") or any(part.startswith(".") for part in parts):
@@ -60,6 +61,7 @@ def run() -> None:
     args = parser.parse_args()
 
     os.chdir(PROJECT_ROOT)
+    blog_store.rebuild_public()
     server = ThreadingHTTPServer((args.host, args.port), DevHandler)
     print(f"Molniya is available at http://{args.host}:{args.port}")
     try:
