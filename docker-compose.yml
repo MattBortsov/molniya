@@ -50,7 +50,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-typesafe/jev-1.13}
       OPENROUTER_PROXY_URL: ${OPENROUTER_PROXY_URL:-}
       SEOSMITH_WEBHOOK_SECRET: ${SEOSMITH_WEBHOOK_SECRET:-}
-      BLOG_TEMPLATE_DIR: /app/blog
+      BLOG_TEMPLATE_DIR: /blog-template
       BLOG_DATA_DIR: /data
     command: ["python", "/app/server.py"]
     expose:
@@ -59,7 +59,7 @@ services:
       - default
     volumes:
       - ./api:/app:ro
-      - ./blog:/app/blog:ro
+      - ./blog:/blog-template:ro
       - blog-data:/data
     tmpfs:
       - /tmp:size=8m
