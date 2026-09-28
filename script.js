@@ -151,19 +151,41 @@ function initNavDropdown() {
   const menu = item?.querySelector('.mt-dropdown-menu');
   if (!item || !btn || !menu) return;
 
+  let closeTimer = null;
+
   const open = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     btn.setAttribute('aria-expanded', 'true');
     item.setAttribute('data-open', 'true');
   };
 
+  const scheduleClose = (delay = 320) => {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      close();
+    }, delay);
+  };
+
   const close = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     btn.setAttribute('aria-expanded', 'false');
     item.removeAttribute('data-open');
   };
 
+  // Hover management with generous movement buffer
+  item.addEventListener('mouseenter', open);
+  item.addEventListener('mouseleave', () => scheduleClose(320));
+
+  // Toggle on click
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    const isOpen = item.getAttribute('data-open') === 'true';
     if (isOpen) close();
     else open();
   });
