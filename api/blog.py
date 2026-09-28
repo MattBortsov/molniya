@@ -232,9 +232,16 @@ def render_article(article: dict[str, Any]) -> str:
         f'  <meta name="keywords" content="{_escape(keywords)}">\n'
         f'  <link rel="canonical" href="{_escape(canonical)}">\n'
         f'  <meta property="og:type" content="article">\n'
+        f'  <meta property="og:site_name" content="Молния Тех">\n'
+        f'  <meta property="og:locale" content="ru_RU">\n'
         f'  <meta property="og:title" content="{_escape(title)}">\n'
         f'  <meta property="og:description" content="{_escape(description)}">\n'
         f'  <meta property="og:url" content="{_escape(canonical)}">\n'
+        f'  <meta property="og:image" content="{SITE_URL}/assets/img/schedule.jpg">\n'
+        f'  <meta name="twitter:card" content="summary_large_image">\n'
+        f'  <meta name="twitter:title" content="{_escape(title)}">\n'
+        f'  <meta name="twitter:description" content="{_escape(description)}">\n'
+        f'  <meta name="twitter:image" content="{SITE_URL}/assets/img/schedule.jpg">\n'
     )
     if article["json_ld"]:
         structured = article["json_ld"]
