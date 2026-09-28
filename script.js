@@ -144,7 +144,52 @@ function initStickyCta() {
   }
 }
 
-/* ---- Mobile menu toggle ---- */
+/* ---- Desktop "Для кого" dropdown ---- */
+function initNavDropdown() {
+  const item = document.querySelector('.mt-nav-item--dropdown');
+  const btn = item?.querySelector('.mt-nav-link--dropdown');
+  const menu = item?.querySelector('.mt-dropdown-menu');
+  if (!item || !btn || !menu) return;
+
+  const open = () => {
+    btn.setAttribute('aria-expanded', 'true');
+    item.setAttribute('data-open', 'true');
+  };
+
+  const close = () => {
+    btn.setAttribute('aria-expanded', 'false');
+    item.removeAttribute('data-open');
+  };
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    if (isOpen) close();
+    else open();
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!item.contains(e.target)) {
+      close();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      close();
+      btn.blur();
+    }
+  });
+
+  // Close on link click inside dropdown
+  menu.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', close);
+  });
+}
+
+/* ---- Mobile menu toggle & accordion ---- */
 function initMobileMenu() {
   const burger = document.querySelector('.mt-nav-burger');
   const menu = document.getElementById('mt-mobile-menu');
@@ -163,6 +208,19 @@ function initMobileMenu() {
 
   burger.addEventListener('click', toggle);
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+
+  // Mobile submenu accordion
+  const accordion = menu.querySelector('.mt-mobile-accordion');
+  const accBtn = accordion?.querySelector('.mt-mobile-accordion-btn');
+  if (accordion && accBtn) {
+    accBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = accBtn.getAttribute('aria-expanded') === 'true';
+      accBtn.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) accordion.removeAttribute('data-open');
+      else accordion.setAttribute('data-open', 'true');
+    });
+  }
 }
 
 /* ---- Cookie notice: show once until accepted, then remember in localStorage ---- */
@@ -298,6 +356,7 @@ function initVisibilityGallery() {
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScrollScene();
   initReveal();
+  initNavDropdown();
   initMobileMenu();
   initStickyCta();
   initCookieBanner();
