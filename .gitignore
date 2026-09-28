@@ -10,3 +10,4 @@ __pycache__/
 
 # состояние cron-скрипта IndexNow — специфично для сервера, не для git
 .indexnow-seen
+brag-output/

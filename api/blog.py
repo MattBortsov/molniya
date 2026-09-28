@@ -16,11 +16,13 @@ from xml.sax.saxutils import escape as xml_escape
 
 SITE_URL = "https://molniya-tech.ru"
 TEMPLATE_DIR = Path(os.getenv("BLOG_TEMPLATE_DIR", Path(__file__).resolve().parent.parent / "blog"))
+RECORDS_SEED_DIR = Path(os.getenv("BLOG_SEED_DIR", TEMPLATE_DIR / "records"))
 DATA_DIR = Path(os.getenv("BLOG_DATA_DIR", Path(__file__).resolve().parent.parent / ".blog-data"))
 RECORDS_DIR = DATA_DIR / ".records"
 REDIRECTS_PATH = DATA_DIR / ".redirects.json"
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 _write_lock = threading.Lock()
+
 
 
 def _articles() -> list[tuple[Path, dict[str, Any]]]:
@@ -55,6 +57,21 @@ def _prepare_storage() -> None:
         if destination.exists():
             raise OSError(f"Duplicate article record: {legacy.name}")
         os.replace(legacy, destination)
+
+
+def _sync_template_records() -> None:
+    if not RECORDS_SEED_DIR.is_dir():
+        return
+    existing_by_id = {row["id"]: path for path, row in _articles()}
+    existing_by_slug = {row["slug"]: path for path, row in _articles()}
+    for seed_path in sorted(RECORDS_SEED_DIR.glob("*.json")):
+        try:
+            data = json.loads(seed_path.read_text(encoding="utf-8"))
+            article = validate_article(data)
+        except Exception:
+            continue
+        target = existing_by_id.get(article["id"]) or existing_by_slug.get(article["slug"]) or (RECORDS_DIR / f"{article['slug']}.json")
+        _write_atomic(target, json.dumps(article, ensure_ascii=False))
 
 
 def validate_article(value: Any) -> dict[str, Any]:
@@ -137,6 +154,7 @@ def rebuild_public() -> None:
     """Refresh pages from durable records on API startup, including template edits."""
     with _write_lock:
         _prepare_storage()
+        _sync_template_records()
         rows = [row for _, row in _articles()]
         for article in rows:
             _write_atomic(DATA_DIR / f"{article['slug']}.html", render_article(article))

@@ -23,7 +23,11 @@ class SeoSmithWebhookTests(unittest.TestCase):
         patcher = patch.object(blog, "DATA_DIR", Path(self.directory.name))
         patcher.start()
         self.addCleanup(patcher.stop)
-        for name, path in (("RECORDS_DIR", Path(self.directory.name) / ".records"), ("REDIRECTS_PATH", Path(self.directory.name) / ".redirects.json")):
+        for name, path in (
+            ("RECORDS_DIR", Path(self.directory.name) / ".records"),
+            ("REDIRECTS_PATH", Path(self.directory.name) / ".redirects.json"),
+            ("RECORDS_SEED_DIR", Path(self.directory.name) / ".empty-seeds"),
+        ):
             path_patcher = patch.object(blog, name, path)
             path_patcher.start()
             self.addCleanup(path_patcher.stop)
@@ -122,6 +126,27 @@ class SeoSmithWebhookTests(unittest.TestCase):
         self.assertIn("Текст после перезапуска", (blog.DATA_DIR / "saved-post.html").read_text(encoding="utf-8"))
         self.assertIn("/blog/saved-post", (blog.DATA_DIR / "index.html").read_text(encoding="utf-8"))
 
+    def test_template_records_sync_and_rebuild(self):
+        seed_dir = Path(self.directory.name) / "seeds"
+        seed_dir.mkdir(parents=True, exist_ok=True)
+        sample = {
+            "id": "seed-1", "slug": "seed-post", "title": "Статья из репозитория",
+            "short_answer": "Краткий ответ", "insights": ["Вывод"],
+            "body_html": "<p>Контент из репозитория</p>",
+            "meta": {"title": "SEO", "description": "Desc", "keywords": "kw"},
+            "faq": [{"question": "Вопрос?", "answer": "Ответ!"}],
+            "json_ld": None,
+        }
+        (seed_dir / "seed-post.json").write_text(json.dumps(sample, ensure_ascii=False), encoding="utf-8")
+        with patch.object(blog, "RECORDS_SEED_DIR", seed_dir):
+            blog.rebuild_public()
+
+        self.assertTrue((blog.RECORDS_DIR / "seed-post.json").is_file())
+        self.assertIn("Контент из репозитория", (blog.DATA_DIR / "seed-post.html").read_text(encoding="utf-8"))
+        self.assertIn("/blog/seed-post", (blog.DATA_DIR / "index.html").read_text(encoding="utf-8"))
+        self.assertIn("/blog/seed-post", (blog.DATA_DIR / "sitemap.xml").read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()
+
