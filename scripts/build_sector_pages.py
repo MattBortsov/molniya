@@ -335,9 +335,9 @@ def build_auto_page() -> str:
 
   <script type="application/ld+json">{json_ld_str}</script>
 
-  <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260928-2">
+  <link rel="stylesheet" href="/styles.css?v=20260929-font">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -828,9 +828,9 @@ def build_404_page() -> str:
   <meta property="og:description" content="Запрошенная страница не найдена. Перейдите на главную страницу Молнии.">
   <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
 
-  <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260929-2">
+  <link rel="stylesheet" href="/styles.css?v=20260929-font">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
