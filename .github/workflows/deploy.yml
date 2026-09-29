@@ -34,7 +34,7 @@ jobs:
             fi
             docker compose build
             docker compose up -d
-            docker compose exec -T nginx nginx -s reload || docker compose restart nginx
+            docker compose restart nginx
             for attempt in 1 2 3 4 5; do
               if docker exec molniya-api python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)" >/dev/null 2>&1; then
                 break
