@@ -1047,7 +1047,7 @@ a { color: inherit; }
   min-width: 0;
   overflow: hidden;
   padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px) 0;
-  border: 1px solid var(--mt-border);
+  border: none;
   border-radius: 28px;
   background: #f8f7f5;
   box-shadow: 0 calc(var(--mt-split, 1) * 16px) calc(var(--mt-split, 1) * 36px) -10px rgba(42, 38, 32, calc(var(--mt-split, 1) * 0.07));
@@ -1190,7 +1190,7 @@ a { color: inherit; }
 .mt-overview-chart i:nth-child(5) { height: 54%; }.mt-overview-chart i:nth-child(6) { height: 77%; background: #c6543b; }
 .mt-overview-chart i:nth-child(7) { height: 65%; }.mt-overview-chart i:nth-child(8) { height: 89%; background: #c6543b; }
 .mt-overview-card--featured {
-  border-color: #303435;
+  border: none;
   background: #303435;
 }
 .mt-overview-card--featured h3 { color: #fff; }
@@ -1220,7 +1220,7 @@ a { color: inherit; }
 @supports (color: color-mix(in srgb, white, black)) {
   .mt-overview-card--featured {
     background: color-mix(in srgb, #303435 calc(var(--mt-split, 1) * 100%), #f8f7f5);
-    border-color: color-mix(in srgb, #303435 calc(var(--mt-split, 1) * 100%), var(--mt-border));
+    border: none;
   }
   .mt-overview-card--featured h3 {
     color: color-mix(in srgb, #ffffff calc(var(--mt-split, 1) * 100%), var(--mt-text-strong));

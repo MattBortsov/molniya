@@ -87,8 +87,10 @@ function initOverviewSplitScene() {
 
     state.forEach((item) => {
       const rect = item.grid.getBoundingClientRect();
-      const startY = vh * 0.92;
-      const endY = vh * 0.38;
+      // Start splitting later: only when grid is well inside viewport (68% of vh)
+      // and complete near comfortable reading height (20% of vh)
+      const startY = vh * 0.68;
+      const endY = vh * 0.20;
 
       const raw = clamp((startY - rect.top) / (startY - endY), 0, 1);
       item.target = smoothstep(raw);
