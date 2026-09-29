@@ -32,7 +32,8 @@ jobs:
               echo 'SEOSMITH_WEBHOOK_SECRET is missing from the server .env'
               exit 1
             fi
-            docker compose up -d --build --force-recreate
+            docker compose build
+            docker compose up -d
             for attempt in 1 2 3 4 5; do
               if docker exec molniya-api python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)" >/dev/null 2>&1; then
                 break
@@ -46,8 +47,9 @@ jobs:
             fi
             blog_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/blog)
             sitemap_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/sitemap.xml)
+            robots_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/robots.txt)
             webhook_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"event":"test"}' http://127.0.0.1:8090/api/seosmith)
-            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$webhook_status" != '401' ]; then
-              echo "Blog/webhook smoke check failed: blog=$blog_status sitemap=$sitemap_status unsigned_webhook=$webhook_status"
+            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$webhook_status" != '401' ]; then
+              echo "Blog/webhook smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status unsigned_webhook=$webhook_status"
               exit 1
             fi
