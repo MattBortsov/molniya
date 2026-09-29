@@ -28,20 +28,52 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://molniya-tech.ru/#organization",
-    "name": "Молния Тех",
-    "url": "https://molniya-tech.ru/",
-    "logo": "https://molniya-tech.ru/assets/img/logo/molniya-mark.svg",
-    "description": "Операционно-аналитическая платформа для сервисного бизнеса: моек, СТО, бьюти и услуг.",
-    "sameAs": ["https://t.me/molniya_tex"],
-    "legalName": "ИП Нестеренко Илья Александрович",
-    "taxID": "272198132745",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Санкт-Петербург",
-      "addressCountry": "RU"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://molniya-tech.ru/#organization",
+        "name": "Молния Тех",
+        "url": "https://molniya-tech.ru/",
+        "logo": "https://molniya-tech.ru/assets/img/logo/molniya-mark.svg",
+        "description": "Операционно-аналитическая платформа для сервисного бизнеса: моек, СТО, бьюти и услуг.",
+        "sameAs": ["https://t.me/molniya_tex"],
+        "legalName": "ИП Нестеренко Илья Александрович",
+        "taxID": "272198132745",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Санкт-Петербург",
+          "addressCountry": "RU"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://molniya-tech.ru/#website",
+        "url": "https://molniya-tech.ru/",
+        "name": "Молния Тех",
+        "description": "CRM для сервисного бизнеса на космической скорости",
+        "publisher": {
+          "@id": "https://molniya-tech.ru/#organization"
+        },
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://molniya-tech.ru/#software",
+        "name": "Молния Тех",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Онлайн-запись, расписание, клиенты, выполненные работы и расчёты с командой в одной системе.",
+        "url": "https://molniya-tech.ru/",
+        "author": {
+          "@id": "https://molniya-tech.ru/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "RUB"
+        }
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="styles.css?v=20260928-2">
