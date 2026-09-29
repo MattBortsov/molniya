@@ -337,7 +337,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260929-font">
+  <link rel="stylesheet" href="/styles.css?v=20260929-split">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -749,7 +749,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260928-2"></script>
+  <script src="/script.js?v=20260929-split"></script>
 </body>
 </html>
 '''
@@ -830,7 +830,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260929-font">
+  <link rel="stylesheet" href="/styles.css?v=20260929-split">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -890,7 +890,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260928-2"></script>
+  <script src="/script.js?v=20260929-split"></script>
 </body>
 </html>
 """

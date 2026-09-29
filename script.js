@@ -60,6 +60,86 @@ function initHeroScrollScene() {
   update();
 }
 
+/* ---- Overview split scene: 5 cards break out of 1 unified shape on scroll ---- */
+function initOverviewSplitScene() {
+  const grids = Array.from(document.querySelectorAll('.mt-overview-grid'));
+  if (!grids.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches) {
+    grids.forEach((g) => g.style.setProperty('--mt-split', '1'));
+    return;
+  }
+
+  const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+  const smoothstep = (t) => t * t * (3 - 2 * t);
+
+  const state = grids.map((grid) => ({
+    grid,
+    current: 1,
+    target: 1,
+  }));
+
+  let ticking = false;
+
+  const updateTargets = () => {
+    const vh = window.innerHeight || 800;
+
+    state.forEach((item) => {
+      const rect = item.grid.getBoundingClientRect();
+      const startY = vh * 0.92;
+      const endY = vh * 0.38;
+
+      const raw = clamp((startY - rect.top) / (startY - endY), 0, 1);
+      item.target = smoothstep(raw);
+    });
+  };
+
+  const render = () => {
+    let hasPending = false;
+
+    state.forEach((item) => {
+      item.current += (item.target - item.current) * 0.15;
+      if (Math.abs(item.target - item.current) < 0.002) {
+        item.current = item.target;
+      } else {
+        hasPending = true;
+      }
+      item.grid.style.setProperty('--mt-split', item.current.toFixed(4));
+    });
+
+    if (hasPending) {
+      requestAnimationFrame(render);
+    } else {
+      ticking = false;
+    }
+  };
+
+  const requestTick = () => {
+    updateTargets();
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(render);
+    }
+  };
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', requestTick);
+  reducedMotion.addEventListener?.('change', () => {
+    if (reducedMotion.matches) {
+      grids.forEach((g) => g.style.setProperty('--mt-split', '1'));
+    } else {
+      requestTick();
+    }
+  });
+
+  updateTargets();
+  state.forEach((item) => {
+    item.current = item.target;
+    item.grid.style.setProperty('--mt-split', item.current.toFixed(4));
+  });
+}
+
 /* ---- Scroll reveal ---- */
 function initReveal() {
   const els = Array.from(document.querySelectorAll('[data-mt-reveal]'));
@@ -377,6 +457,7 @@ function initVisibilityGallery() {
 
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScrollScene();
+  initOverviewSplitScene();
   initReveal();
   initNavDropdown();
   initMobileMenu();
