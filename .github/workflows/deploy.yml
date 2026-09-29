@@ -34,6 +34,7 @@ jobs:
             fi
             docker compose build
             docker compose up -d
+            docker compose exec -T nginx nginx -s reload || docker compose restart nginx
             for attempt in 1 2 3 4 5; do
               if docker exec molniya-api python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)" >/dev/null 2>&1; then
                 break
@@ -49,8 +50,13 @@ jobs:
             sitemap_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/sitemap.xml)
             robots_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/robots.txt)
             notfound_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/non-existent-page-check-404)
+            notfound_body=$(curl -sS --max-time 10 http://127.0.0.1:8090/non-existent-page-check-404)
             webhook_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"event":"test"}' http://127.0.0.1:8090/api/seosmith)
             if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$notfound_status" != '404' ] || [ "$webhook_status" != '401' ]; then
               echo "Smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status 404=$notfound_status unsigned_webhook=$webhook_status"
+              exit 1
+            fi
+            if ! echo "$notfound_body" | grep -q "mt-404-title"; then
+              echo "404 page body check failed: did not find mt-404-title in response"
               exit 1
             fi
