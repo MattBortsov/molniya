@@ -111,6 +111,21 @@ class SeoSmithWebhookTests(unittest.TestCase):
         self.assertEqual(self.post(payload, signed=False)[0], 401)
         self.assertEqual(self.post(payload), (200, {"ok": True, "skipped": True}))
 
+    def test_legacy_article_publisher_links_to_site_organization(self):
+        article = blog.validate_article({
+            "id": "legacy-article", "slug": "legacy-article", "title": "Статья",
+            "body_html": "<p>Текст статьи</p>",
+            "json_ld": [{
+                "@context": "https://schema.org", "@type": "BlogPosting",
+                "publisher": {"@type": "Organization", "name": "Молния Тех", "url": "https://molniya-tech.ru/"},
+            }],
+        })
+
+        blog.upsert_article(article)
+        page = self.get("/blog/legacy-article")
+        self.assertIn('"@id": "https://molniya-tech.ru/#organization"', page)
+        self.assertNotIn("@id", article["json_ld"][0]["publisher"])
+
     def test_startup_migrates_previous_records_and_rebuilds_static_pages(self):
         article = blog.validate_article({
             "id": 12, "slug": "saved-post", "title": "Сохранённая статья",
@@ -149,4 +164,3 @@ class SeoSmithWebhookTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

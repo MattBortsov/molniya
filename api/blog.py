@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import html
 import json
 import os
@@ -209,6 +210,31 @@ def _description(article: dict[str, Any]) -> str:
     return str(article["meta"].get("description") or article["short_answer"] or article["title"])
 
 
+def _link_organization_publisher(schema: Any) -> Any:
+    """Connect legacy SeoSmith article markup to the site's Organization node."""
+    schema = copy.deepcopy(schema)
+
+    def visit(node: Any) -> None:
+        if isinstance(node, list):
+            for item in node:
+                visit(item)
+        elif isinstance(node, dict):
+            article_type = node.get("@type")
+            if article_type in ("Article", "BlogPosting", "NewsArticle"):
+                publisher = node.get("publisher")
+                if (isinstance(publisher, dict)
+                        and not publisher.get("@id")
+                        and isinstance(publisher.get("url"), str)
+                        and publisher["url"].rstrip("/") == SITE_URL):
+                    publisher["@id"] = f"{SITE_URL}/#organization"
+            graph = node.get("@graph")
+            if isinstance(graph, (dict, list)):
+                visit(graph)
+
+    visit(schema)
+    return schema
+
+
 def render_blog(articles: list[dict[str, Any]] | None = None) -> str:
     page = (TEMPLATE_DIR / "index.html").read_text(encoding="utf-8")
     articles = sorted(articles if articles is not None else (row for _, row in _articles()), key=lambda row: row["slug"])
@@ -262,6 +288,7 @@ def render_article(article: dict[str, Any]) -> str:
             except json.JSONDecodeError:
                 structured = None
         if structured is not None:
+            structured = _link_organization_publisher(structured)
             seo += '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n'
     page = page.split("<!-- SEO START -->", 1)[0] + seo + page.split("<!-- SEO END -->", 1)[1]
 
