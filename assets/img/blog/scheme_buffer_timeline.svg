@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18191c"/>
+      <stop offset="100%" stop-color="#121316"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#24262c"/>
+      <stop offset="100%" stop-color="#1c1d22"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D2634A"/>
+      <stop offset="100%" stop-color="#F1AC71"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#27AE60"/>
+      <stop offset="100%" stop-color="#2ECC71"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#E74C3C"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" rx="20" fill="url(#bgGrad)"/>
+  <rect width="898" height="478" x="1" y="1" rx="19" fill="none" stroke="#333742" stroke-width="1.5"/>
+
+  <!-- Title Header -->
+  <text x="45" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Анатомия слота записи: почему без буфера ломается день</text>
+  <text x="45" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" fill="#9AA4B2">Сравнение жесткого расписания «впритык» и динамического слота в платформе «Молния»</text>
+
+  <!-- Scenario 1: Without Buffer (Error) -->
+  <g transform="translate(45, 105)">
+    <rect width="810" height="150" rx="14" fill="url(#cardGrad)" stroke="#3E2723" stroke-width="1.2" filter="url(#shadow)"/>
+    <circle cx="28" cy="28" r="10" fill="#E74C3C" opacity="0.2"/>
+    <text x="28" y="32" font-family="sans-serif" font-size="12" font-weight="bold" fill="#E74C3C" text-anchor="middle">✕</text>
+    <text x="48" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#FFA39E">Без буфера (стандартные слоты встык по 60 мин)</text>
+
+    <!-- Timeline Blocks -->
+    <rect x="25" y="55" width="370" height="42" rx="8" fill="#2C303B" stroke="#4A5162" stroke-width="1"/>
+    <text x="40" y="81" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E1E4EA">10:00 — 11:00  Кроссовер (Мойка кузова + консервация)</text>
+
+    <!-- Delay block -->
+    <rect x="405" y="55" width="130" height="42" rx="8" fill="url(#redGrad)" opacity="0.95"/>
+    <text x="470" y="81" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">+15 мин задержка</text>
+
+    <!-- Collision Block -->
+    <rect x="545" y="55" width="240" height="42" rx="8" fill="#3A1D1D" stroke="#E74C3C" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="665" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FF7875" text-anchor="middle">11:00 Клиент ждет в приемной!</text>
+
+    <text x="25" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" fill="#FF7875">
+      Итог: машина задержалась на 15 мин ➔ слоты сместились ➔ к 16:00 отставание от графика превышает 1 час.
+    </text>
+  </g>
+
+  <!-- Scenario 2: With Buffer in Molniya (Success) -->
+  <g transform="translate(45, 280)">
+    <rect width="810" height="160" rx="14" fill="url(#cardGrad)" stroke="#1B3826" stroke-width="1.2" filter="url(#shadow)"/>
+    <circle cx="28" cy="28" r="10" fill="#2ECC71" opacity="0.2"/>
+    <text x="28" y="33" font-family="sans-serif" font-size="12" font-weight="bold" fill="#2ECC71" text-anchor="middle">✓</text>
+    <text x="48" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#B7EB8F">В «Молнии»: динамический расчет времени + буфер</text>
+
+    <!-- Sub-blocks of smart slot -->
+    <!-- Preparation 5m -->
+    <rect x="25" y="55" width="85" height="46" rx="8" fill="#252A36" stroke="#3E4556" stroke-width="1"/>
+    <text x="67" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#9AA4B2" text-anchor="middle">Заезд</text>
+    <text x="67" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#6B778C" text-anchor="middle">5 мин</text>
+
+    <!-- Work by category 55m -->
+    <rect x="118" y="55" width="310" height="46" rx="8" fill="url(#accentGrad)" opacity="0.95"/>
+    <text x="273" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Работа по классу авто (Кроссовер)</text>
+    <text x="273" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#FFF2E8" text-anchor="middle">10:05 — 11:00 (55 мин)</text>
+
+    <!-- Smart Buffer 15m -->
+    <rect x="436" y="55" width="145" height="46" rx="8" fill="#1C3829" stroke="#2ECC71" stroke-width="1.2"/>
+    <text x="508" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#52C41A" text-anchor="middle">Буфер: уборка</text>
+    <text x="508" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#8CE165" text-anchor="middle">11:00 — 11:15 (15 мин)</text>
+
+    <!-- Next Client In Time -->
+    <rect x="589" y="55" width="196" height="46" rx="8" fill="url(#greenGrad)" opacity="0.95"/>
+    <text x="687" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">11:15 Заезд след. авто</text>
+    <text x="687" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#E8FFEA" text-anchor="middle">Точно в назначенный срок</text>
+
+    <text x="25" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" fill="#A0D995">
+      Итог: буфер поглощает технологические задержки ➔ клиенты заезжают минута в минуту ➔ посты работают на 100%.
+    </text>
+  </g>
+</svg>

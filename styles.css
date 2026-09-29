@@ -2095,6 +2095,26 @@ a { color: inherit; }
 .mt-article-body iframe { max-width: 100%; height: auto; }
 .mt-article-body table { display: block; max-width: 100%; overflow-x: auto; }
 
+.mt-article-figure {
+  margin: 36px 0;
+}
+.mt-article-figure img,
+.mt-article-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--mt-radius-xl);
+  border: 1px solid var(--mt-border);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.1);
+}
+.mt-article-figure figcaption {
+  margin-top: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--mt-text-muted);
+  text-align: center;
+}
+
 /* Article embeds: quotes, case study callouts, FAQ */
 .mt-article-quote {
   margin: 32px 0;
