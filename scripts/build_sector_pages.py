@@ -801,11 +801,137 @@ def sync_sitemap():
         print("Added /auto to sitemap.xml")
 
 
+def build_404_page() -> str:
+    """Builds the branded 404 error page matching the exact design system."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Страница не найдена — Молния Тех</title>
+  <meta name="description" content="Запрошенная страница не существует или была перемещена. Перейдите на главную страницу или в базу знаний Молнии.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FFFEFD">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/logo/icon-192.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="404 — Страница не найдена — Молния Тех">
+  <meta property="og:description" content="Запрошенная страница не найдена. Перейдите на главную страницу Молнии.">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20260929-2">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+    <linearGradient id="mtgrad2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#B8442E"></stop><stop offset="1" stop-color="#D2634A"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- 404 HERO -->
+      <main class="mt-404-main">
+        <div class="mt-404-container">
+          <div class="mt-404-code-wrap">
+            <span class="mt-404-code">404</span>
+            <div class="mt-404-spark" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="url(#mtgrad)"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+          </div>
+          <div class="mt-eyebrow mt-404-eyebrow">Ошибка 404 · Связь потеряна</div>
+          <h1 class="mt-404-title">Страница не найдена</h1>
+          <p class="mt-404-desc">
+            Похоже, ссылка устарела или в адресе опечатка.
+            Не переживайте: расписание, онлайн-запись и база знаний Молнии работают штатно.
+          </p>
+
+          <div class="mt-404-actions">
+            <a class="mt-btn mt-btn-cta" href="/">На главную страницу →</a>
+            <a class="mt-btn mt-btn-secondary" href="/blog">База знаний и блог</a>
+            <a class="mt-btn mt-btn-secondary" href="/auto">Для автобизнеса</a>
+          </div>
+
+          <div class="mt-404-cards">
+            <a class="mt-404-card" href="/">
+              <div class="mt-404-card-icon">⚡</div>
+              <div class="mt-404-card-info">
+                <span class="mt-404-card-title">Главная</span>
+                <span class="mt-404-card-text">Возможности платформы, демо и тарифы</span>
+              </div>
+            </a>
+            <a class="mt-404-card" href="/auto">
+              <div class="mt-404-card-icon">🚗</div>
+              <div class="mt-404-card-info">
+                <span class="mt-404-card-title">Автобизнес</span>
+                <span class="mt-404-card-text">Мойки, детейлинг, СТО и шиномонтаж</span>
+              </div>
+            </a>
+            <a class="mt-404-card" href="/blog">
+              <div class="mt-404-card-icon">📖</div>
+              <div class="mt-404-card-info">
+                <span class="mt-404-card-title">Блог</span>
+                <span class="mt-404-card-text">Статьи о записи, расчёте зарплат и кейсах</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-404-help">
+            Искали что-то конкретное или нашли битую ссылку?
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в Telegram →</a>
+          </div>
+        </div>
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20260928-2"></script>
+</body>
+</html>
+"""
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
     (ROOT_DIR / "auto.html").write_text(auto_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'auto.html'}")
+
+    print("Building 404 error page: /404.html...")
+    not_found_html = build_404_page()
+    (ROOT_DIR / "404.html").write_text(not_found_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / '404.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
@@ -815,3 +941,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

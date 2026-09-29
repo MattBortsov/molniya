@@ -48,8 +48,9 @@ jobs:
             blog_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/blog)
             sitemap_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/sitemap.xml)
             robots_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/robots.txt)
+            notfound_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/non-existent-page-check-404)
             webhook_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"event":"test"}' http://127.0.0.1:8090/api/seosmith)
-            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$webhook_status" != '401' ]; then
-              echo "Blog/webhook smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status unsigned_webhook=$webhook_status"
+            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$notfound_status" != '404' ] || [ "$webhook_status" != '401' ]; then
+              echo "Smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status 404=$notfound_status unsigned_webhook=$webhook_status"
               exit 1
             fi

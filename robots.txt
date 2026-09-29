@@ -3,12 +3,20 @@ Allow: /
 Disallow: /api/
 Disallow: /scripts/
 Disallow: /nginx/
+Disallow: /privacy.html
+Disallow: /privacy
+Disallow: /cookies.html
+Disallow: /cookies
 
 User-agent: Yandex
 Allow: /
 Disallow: /api/
 Disallow: /scripts/
 Disallow: /nginx/
+Disallow: /privacy.html
+Disallow: /privacy
+Disallow: /cookies.html
+Disallow: /cookies
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid /
 
 Sitemap: https://molniya-tech.ru/sitemap.xml
