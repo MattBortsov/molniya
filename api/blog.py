@@ -62,16 +62,27 @@ def _prepare_storage() -> None:
 def _sync_template_records() -> None:
     if not RECORDS_SEED_DIR.is_dir():
         return
-    existing_by_id = {row["id"]: path for path, row in _articles()}
-    existing_by_slug = {row["slug"]: path for path, row in _articles()}
+    articles = _articles()
+    existing_by_id = {row["id"]: (path, row) for path, row in articles}
+    existing_by_slug = {row["slug"]: (path, row) for path, row in articles}
+    redirects = _redirects()
     for seed_path in sorted(RECORDS_SEED_DIR.glob("*.json")):
         try:
             data = json.loads(seed_path.read_text(encoding="utf-8"))
             article = validate_article(data)
         except Exception:
             continue
-        target = existing_by_id.get(article["id"]) or existing_by_slug.get(article["slug"]) or (RECORDS_DIR / f"{article['slug']}.json")
+        target_info = existing_by_id.get(article["id"]) or existing_by_slug.get(article["slug"])
+        if target_info:
+            target, old = target_info
+            if old["slug"] != article["slug"]:
+                redirects[old["slug"]] = target.name
+        else:
+            target = RECORDS_DIR / f"{article['slug']}.json"
+        redirects.pop(article["slug"], None)
         _write_atomic(target, json.dumps(article, ensure_ascii=False))
+    if redirects:
+        _write_atomic(REDIRECTS_PATH, json.dumps(redirects, ensure_ascii=False))
 
 
 def validate_article(value: Any) -> dict[str, Any]:
@@ -261,13 +272,27 @@ def render_article(article: dict[str, Any]) -> str:
     summary = ''
     if items:
         summary = '<aside class="mt-article-insights"><h2>Главное из статьи</h2><ul>' + ''.join('<li>' + _escape(item) + '</li>' for item in items) + '</ul></aside>'
+    faq_html = ''
+    if article.get("faq") and isinstance(article["faq"], list):
+        faq_items = []
+        for item in article["faq"]:
+            if isinstance(item, dict):
+                q = item.get("question") or item.get("q")
+                a = item.get("answer") or item.get("a")
+                if q and a:
+                    faq_items.append(
+                        '<div class="mt-faq-item"><h3 class="mt-faq-q">' + _escape(q) + '</h3><p class="mt-faq-a">' + _escape(a) + '</p></div>'
+                    )
+        if faq_items:
+            faq_html = '<section class="mt-article-faq"><h2>Часто задаваемые вопросы</h2>' + ''.join(faq_items) + '</section>'
     content = (
         '<section class="mt-section mt-article-section"><div class="mt-article">'
         '<a class="mt-article-back" href="/blog">← Все статьи</a>'
         '<div class="mt-eyebrow">Блог Молнии</div>'
         '<h1 class="mt-section-title">' + _escape(article["title"]) + '</h1>'
         + intro + summary + '<div class="mt-article-body">' + article["body_html"] + '</div>'
-        '</div></section>\n'
+        + faq_html
+        + '</div></section>\n'
     )
     return page.split("<!-- BLOG CONTENT START -->", 1)[0] + content + page.split("<!-- BLOG CONTENT END -->", 1)[1]
 
