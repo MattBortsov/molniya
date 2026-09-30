@@ -193,12 +193,13 @@ def render_footer_html(asset_prefix: str = "") -> str:
               <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
-            <p class="mt-footer-legal">ИП Нестеренко Илья Александрович · ИНН 272198132745 · Санкт-Петербург</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
           <div class="mt-footer-links">
             <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
             <a class="mt-footer-link" href="/privacy.html">Конфиденциальность</a>
             <a class="mt-footer-link" href="/cookies.html">Cookies</a>
+            <a class="mt-footer-link" href="/requisites.html">Реквизиты</a>
           </div>
         </div>
       </footer>'''
@@ -664,7 +665,7 @@ def build_auto_page() -> str:
               «Раньше каждый вечер уходил час на сведение тетради с мойщиками, а по выходным была давка из-за джипов, которые не влезали по времени. В CRM Молния мы настроили онлайн-запись и нормативы по классам авто — расписание боксов стало идеальным, а выработка мастеров прозрачной.»
             </blockquote>
             <div class="mt-case-author">
-              Алексей Смирнов <span>· Руководитель детейлинг-центра, Санкт-Петербург</span>
+              Алексей Смирнов <span>· Руководитель детейлинг-центра, <span style="white-space:nowrap">Санкт-Петербург</span></span>
             </div>
           </div>
           <div class="mt-case-stats">
@@ -677,8 +678,8 @@ def build_auto_page() -> str:
               <span class="mt-case-label">Снижение неявок благодаря Telegram-напоминаниям</span>
             </div>
             <div class="mt-case-stat">
-              <span class="mt-case-num">0 мин</span>
-              <span class="mt-case-label">На ручной подсчёт сдельной зарплаты мойщиков и мастеров</span>
+              <span class="mt-case-num">0 <small>мин</small></span>
+              <span class="mt-case-label">На подсчёт зарплат и выработки мастеров</span>
             </div>
           </div>
         </div>
@@ -784,8 +785,9 @@ def sync_navigation_to_blog():
 
 
 def sync_sitemap():
-    """Ensures /auto is in sitemap.xml."""
+    """Ensures /auto and /requisites.html are in sitemap.xml."""
     content = SITEMAP_XML.read_text(encoding="utf-8")
+    changed = False
     if "https://molniya-tech.ru/auto" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/auto</loc>
@@ -794,8 +796,22 @@ def sync_sitemap():
   </url>
 """
         content = content.replace("</urlset>", url_entry + "</urlset>")
-        SITEMAP_XML.write_text(content, encoding="utf-8")
+        changed = True
         print("Added /auto to sitemap.xml")
+
+    if "https://molniya-tech.ru/requisites.html" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/requisites.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /requisites.html to sitemap.xml")
+
+    if changed:
+        SITEMAP_XML.write_text(content, encoding="utf-8")
 
 
 def build_404_page() -> str:
@@ -829,7 +845,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-steps">
+  <link rel="stylesheet" href="/styles.css?v=20260930-req">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -889,7 +905,286 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-steps"></script>
+  <script src="/script.js?v=20260930-req"></script>
+</body>
+</html>
+"""
+
+
+def build_requisites_page() -> str:
+    """Builds the official company requisites page for ООО 'МОЛНИЯ ТЕХ'."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+
+    title = "Реквизиты компании ООО «МОЛНИЯ ТЕХ» — Молния"
+    description = "Официальные банковские и юридические реквизиты ООО «МОЛНИЯ ТЕХ» (ИНН 7806637461, ОГРН 1267800068458) для договоров, счетов и безналичной оплаты."
+    canonical = "https://molniya-tech.ru/requisites.html"
+
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Молния Тех",
+        "legalName": "Общество с ограниченной ответственностью «МОЛНИЯ ТЕХ»",
+        "url": "https://molniya-tech.ru/",
+        "logo": "https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg",
+        "taxID": "7806637461",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н",
+            "addressLocality": "Санкт-Петербург",
+            "postalCode": "195112",
+            "addressCountry": "RU"
+        }
+    }
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False).replace("<", "\\u003c")
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="{canonical}">
+  <meta name="theme-color" content="#FFFEFD">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20260930-req">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <main class="mt-requisites-main">
+        <div class="mt-requisites-header">
+          <a href="/" class="mt-back-link">← На главную</a>
+          <h1 class="mt-requisites-title">Реквизиты компании</h1>
+          <p class="mt-requisites-sub">Официальные реквизиты ООО «МОЛНИЯ ТЕХ» для заключения договоров, выставления счетов и безналичных расчетов.</p>
+          <div class="mt-requisites-actions">
+            <a class="mt-btn-download" href="/assets/docs/molniya-requisites.pdf" download="Реквизиты_ООО_МОЛНИЯ_ТЕХ.pdf">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Скачать карточку реквизитов (PDF)
+            </a>
+            <button class="mt-btn-copy-all" type="button" id="copy-all-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Скопировать все реквизиты
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-requisites-layout">
+          <div class="mt-req-content">
+            <!-- Сведения об организации -->
+            <section class="mt-requisites-card">
+              <h2 class="mt-requisites-card-title">Сведения об организации</h2>
+              <div class="mt-requisites-table">
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Полное наименование организации</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОЛНИЯ ТЕХ"</span>
+                    <button class="mt-copy-btn" type="button" data-copy='ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОЛНИЯ ТЕХ"'>Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Сокращенное наименование</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">ООО «МОЛНИЯ ТЕХ»</span>
+                    <button class="mt-copy-btn" type="button" data-copy="ООО «МОЛНИЯ ТЕХ»">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Юридический адрес</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">195112, РОССИЯ, Г. САНКТ-ПЕТЕРБУРГ, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ МАЛАЯ ОХТА, ПР-КТ МАЛООХТИНСКИЙ, Д. 61, ЛИТЕРА А, ПОМЕЩ. 1-Н</span>
+                    <button class="mt-copy-btn" type="button" data-copy="195112, РОССИЯ, Г. САНКТ-ПЕТЕРБУРГ, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ МАЛАЯ ОХТА, ПР-КТ МАЛООХТИНСКИЙ, Д. 61, ЛИТЕРА А, ПОМЕЩ. 1-Н">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">ИНН</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">7806637461</span>
+                    <button class="mt-copy-btn" type="button" data-copy="7806637461">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">КПП</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">780601001</span>
+                    <button class="mt-copy-btn" type="button" data-copy="780601001">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">ОГРН</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">1267800068458</span>
+                    <button class="mt-copy-btn" type="button" data-copy="1267800068458">Скопировать</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Банковские реквизиты -->
+            <section class="mt-requisites-card">
+              <h2 class="mt-requisites-card-title">Банковские реквизиты</h2>
+              <div class="mt-requisites-table">
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Расчетный счет</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">40702810110002359085</span>
+                    <button class="mt-copy-btn" type="button" data-copy="40702810110002359085">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Банк</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">АО «ТБанк»</span>
+                    <button class="mt-copy-btn" type="button" data-copy="АО «ТБанк»">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">БИК банка</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">044525974</span>
+                    <button class="mt-copy-btn" type="button" data-copy="044525974">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">ИНН банка</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">7710140679</span>
+                    <button class="mt-copy-btn" type="button" data-copy="7710140679">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Корреспондентский счет</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">30101810145250000974</span>
+                    <button class="mt-copy-btn" type="button" data-copy="30101810145250000974">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Юридический адрес банка</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26</span>
+                    <button class="mt-copy-btn" type="button" data-copy="127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26">Скопировать</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- SIDEBAR: QR CODE -->
+          <aside class="mt-req-sidebar">
+            <div class="mt-qr-card">
+              <div class="mt-qr-title">Оплата по QR-коду</div>
+              <div class="mt-qr-img-wrap">
+                <img class="mt-qr-img" src="/assets/img/molniya-payment-qr.png" width="190" height="190" alt="QR-код для оплаты счета ООО МОЛНИЯ ТЕХ">
+              </div>
+              <p class="mt-qr-desc">Отсканируйте камерой смартфона или в приложении банка для моментального перевода по реквизитам счета без ручного ввода.</p>
+              <div class="mt-qr-bank">
+                <span class="mt-qr-bank-logo">Т</span>
+                <span>АО «ТБанк»</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/cookies.html" class="mt-link-accent">политике cookie</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20260930-req"></script>
+  <script>
+    document.querySelectorAll('.mt-copy-btn').forEach(btn => {{
+      btn.addEventListener('click', () => {{
+        const text = btn.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(() => {{
+          const original = btn.textContent;
+          btn.textContent = 'Скопировано!';
+          btn.classList.add('copied');
+          setTimeout(() => {{
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }}, 2000);
+        }});
+      }});
+    }});
+
+    const copyAllBtn = document.getElementById('copy-all-btn');
+    if (copyAllBtn) {{
+      copyAllBtn.addEventListener('click', () => {{
+        const fullText = `ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОЛНИЯ ТЕХ"
+Юридический адрес: 195112, РОССИЯ, Г. САНКТ-ПЕТЕРБУРГ, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ МАЛАЯ ОХТА, ПР-КТ МАЛООХТИНСКИЙ, Д. 61, ЛИТЕРА А, ПОМЕЩ. 1-Н
+ИНН: 7806637461
+КПП: 780601001
+ОГРН: 1267800068458
+Расчетный счет: 40702810110002359085
+Банк: АО «ТБанк»
+БИК: 044525974
+ИНН банка: 7710140679
+Корр. счет: 30101810145250000974
+Юр. адрес банка: 127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26`;
+        navigator.clipboard.writeText(fullText).then(() => {{
+          const originalHtml = copyAllBtn.innerHTML;
+          copyAllBtn.textContent = 'Все реквизиты скопированы!';
+          setTimeout(() => {{
+            copyAllBtn.innerHTML = originalHtml;
+          }}, 2500);
+        }});
+      }});
+    }}
+  </script>
 </body>
 </html>
 """
@@ -906,6 +1201,11 @@ def main():
     (ROOT_DIR / "404.html").write_text(not_found_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / '404.html'}")
 
+    print("Building requisites page: /requisites.html...")
+    req_html = build_requisites_page()
+    (ROOT_DIR / "requisites.html").write_text(req_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'requisites.html'}")
+
     sync_navigation_to_index()
     sync_navigation_to_blog()
     sync_sitemap()
@@ -914,4 +1214,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
