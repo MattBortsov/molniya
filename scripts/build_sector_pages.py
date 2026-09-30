@@ -339,7 +339,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-perf">
+  <link rel="stylesheet" href="/styles.css?v=20260930-steps">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -571,14 +571,14 @@ def build_auto_page() -> str:
       </section>
 
       <!-- AUTO JOURNEY -->
-      <section class="mt-section mt-journey mt-reveal" data-screen-label="Путь визита авто" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
+      <section class="mt-section mt-journey" data-screen-label="Путь визита авто">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
           <div class="mt-eyebrow">Рабочий процесс</div>
           <h2 class="mt-section-title">Один заезд авто. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
           <p class="mt-section-sub">Посмотрите, как система автоматизирует обслуживание автомобиля от онлайн-записи до выдачи ключей и выплаты мастеру.</p>
         </div>
 
-        <div class="mt-journey-example" aria-label="Пример прохождения записи">
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
           <span>Пример</span><strong>Комплексная мойка + Твёрдый воск</strong><span>Geely Monjaro · Бокс №1</span>
         </div>
 
@@ -751,7 +751,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-perf"></script>
+  <script src="/script.js?v=20260930-steps"></script>
 </body>
 </html>
 '''
@@ -834,7 +834,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-perf">
+  <link rel="stylesheet" href="/styles.css?v=20260930-steps">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -894,7 +894,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-perf"></script>
+  <script src="/script.js?v=20260930-steps"></script>
 </body>
 </html>
 """

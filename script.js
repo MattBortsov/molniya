@@ -118,6 +118,75 @@ function initOverviewSplitScene() {
   update();
 }
 
+/* ---- Journey steps: smooth progressive reveal on scroll ---- */
+function initJourneySteps() {
+  const lists = Array.from(document.querySelectorAll('.mt-journey-list'));
+  if (!lists.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  lists.forEach((list) => {
+    const steps = Array.from(list.querySelectorAll('.mt-journey-step'));
+    if (!steps.length) return;
+
+    if (reducedMotion.matches) {
+      steps.forEach((step) => step.setAttribute('data-revealed', ''));
+      return;
+    }
+
+    list.setAttribute('data-step-reveal', '');
+
+    const vh = window.innerHeight || 800;
+    const toObserve = [];
+
+    steps.forEach((step) => {
+      // If already in viewport upon initial load, reveal right away
+      if (step.getBoundingClientRect().top < vh * 0.85) {
+        step.setAttribute('data-revealed', '');
+      } else {
+        toObserve.push(step);
+      }
+    });
+
+    if (!toObserve.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      toObserve.forEach((s) => s.setAttribute('data-revealed', ''));
+      return;
+    }
+
+    let pending = [];
+    let flushTimer = null;
+
+    const flushQueue = () => {
+      pending.forEach((el, index) => {
+        setTimeout(() => {
+          el.setAttribute('data-revealed', '');
+        }, index * 120);
+      });
+      pending = [];
+      flushTimer = null;
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            io.unobserve(e.target);
+            pending.push(e.target);
+            if (!flushTimer) {
+              flushTimer = setTimeout(flushQueue, 35);
+            }
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    toObserve.forEach((s) => io.observe(s));
+  });
+}
+
 /* ---- Scroll reveal ---- */
 function initReveal() {
   const els = Array.from(document.querySelectorAll('[data-mt-reveal]'));
@@ -162,8 +231,8 @@ function initReveal() {
     hidden.forEach(reveal);
   }
 
-  // safety: reveal everything after 1.6s in case the observer never fires
-  setTimeout(() => hidden.forEach(reveal), 1600);
+  // safety: generous fallback in case observer doesn't fire over long period
+  setTimeout(() => hidden.forEach(reveal), 8000);
 }
 
 /* ---- Sticky CTA: hidden over the hero and the final CTA/footer (which have their own CTA),
@@ -436,6 +505,7 @@ function initVisibilityGallery() {
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScrollScene();
   initOverviewSplitScene();
+  initJourneySteps();
   initReveal();
   initNavDropdown();
   initMobileMenu();
