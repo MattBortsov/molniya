@@ -67,79 +67,56 @@ function initOverviewSplitScene() {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (reducedMotion.matches) {
-    grids.forEach((g) => g.style.setProperty('--mt-split', '1'));
+    grids.forEach((grid) => {
+      grid.style.setProperty('--mt-split', '1');
+      grid.setAttribute('data-split', '');
+    });
     return;
   }
 
+  let frame = 0;
   const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
   const smoothstep = (t) => t * t * (3 - 2 * t);
 
-  const state = grids.map((grid) => ({
-    grid,
-    current: 1,
-    target: 1,
-  }));
-
-  let ticking = false;
-
-  const updateTargets = () => {
+  const update = () => {
+    frame = 0;
     const vh = window.innerHeight || 800;
 
-    state.forEach((item) => {
-      const rect = item.grid.getBoundingClientRect();
-      // Start splitting later: only when grid is well inside viewport (68% of vh)
+    grids.forEach((grid) => {
+      const rect = grid.getBoundingClientRect();
+      // Start splitting later: only when grid is well inside viewport (65% of vh)
       // and complete near comfortable reading height (20% of vh)
-      const startY = vh * 0.68;
+      const startY = vh * 0.65;
       const endY = vh * 0.20;
 
       const raw = clamp((startY - rect.top) / (startY - endY), 0, 1);
-      item.target = smoothstep(raw);
+      const progress = smoothstep(raw);
+
+      grid.style.setProperty('--mt-split', progress.toFixed(4));
+      grid.toggleAttribute('data-split', progress > 0.45);
+      grid.setAttribute('data-split-initialized', '');
     });
   };
 
-  const render = () => {
-    let hasPending = false;
-
-    state.forEach((item) => {
-      item.current += (item.target - item.current) * 0.15;
-      if (Math.abs(item.target - item.current) < 0.002) {
-        item.current = item.target;
-      } else {
-        hasPending = true;
-      }
-      item.grid.style.setProperty('--mt-split', item.current.toFixed(4));
-    });
-
-    if (hasPending) {
-      requestAnimationFrame(render);
-    } else {
-      ticking = false;
-    }
+  const requestUpdate = () => {
+    if (frame) return;
+    frame = window.requestAnimationFrame(update);
   };
 
-  const requestTick = () => {
-    updateTargets();
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(render);
-    }
-  };
-
-  window.addEventListener('scroll', requestTick, { passive: true });
-  window.addEventListener('resize', requestTick);
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
   reducedMotion.addEventListener?.('change', () => {
     if (reducedMotion.matches) {
-      grids.forEach((g) => g.style.setProperty('--mt-split', '1'));
+      grids.forEach((grid) => {
+        grid.style.setProperty('--mt-split', '1');
+        grid.setAttribute('data-split', '');
+      });
     } else {
-      requestTick();
+      requestUpdate();
     }
   });
 
-  updateTargets();
-  state.forEach((item) => {
-    item.current = item.target;
-    item.grid.style.setProperty('--mt-split', item.current.toFixed(4));
-  });
+  update();
 }
 
 /* ---- Scroll reveal ---- */
