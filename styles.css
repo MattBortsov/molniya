@@ -3030,6 +3030,11 @@ a { color: inherit; }
   border-color: var(--mt-border-accent);
   transform: translateY(-1px);
 }
+.mt-btn-copy-all.copied {
+  border-color: #2e7d32;
+  color: #2e7d32;
+  background: rgba(56, 142, 60, 0.08);
+}
 .mt-requisites-layout {
   display: grid;
   grid-template-columns: 1fr 310px;

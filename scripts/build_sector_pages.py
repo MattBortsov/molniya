@@ -199,7 +199,7 @@ def render_footer_html(asset_prefix: str = "") -> str:
             <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
             <a class="mt-footer-link" href="/privacy.html">Конфиденциальность</a>
             <a class="mt-footer-link" href="/cookies.html">Cookies</a>
-            <a class="mt-footer-link" href="/requisites.html">Реквизиты</a>
+            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
           </div>
         </div>
       </footer>'''
@@ -785,9 +785,15 @@ def sync_navigation_to_blog():
 
 
 def sync_sitemap():
-    """Ensures /auto and /requisites.html are in sitemap.xml."""
+    """Ensures /auto and /requisites are in sitemap.xml."""
     content = SITEMAP_XML.read_text(encoding="utf-8")
     changed = False
+
+    # Clean up old .html variant if present
+    if "https://molniya-tech.ru/requisites.html" in content:
+        content = content.replace("https://molniya-tech.ru/requisites.html", "https://molniya-tech.ru/requisites")
+        changed = True
+
     if "https://molniya-tech.ru/auto" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/auto</loc>
@@ -799,16 +805,16 @@ def sync_sitemap():
         changed = True
         print("Added /auto to sitemap.xml")
 
-    if "https://molniya-tech.ru/requisites.html" not in content:
+    if "https://molniya-tech.ru/requisites" not in content:
         url_entry = """  <url>
-    <loc>https://molniya-tech.ru/requisites.html</loc>
+    <loc>https://molniya-tech.ru/requisites</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 """
         content = content.replace("</urlset>", url_entry + "</urlset>")
         changed = True
-        print("Added /requisites.html to sitemap.xml")
+        print("Added /requisites to sitemap.xml")
 
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
@@ -918,7 +924,7 @@ def build_requisites_page() -> str:
 
     title = "Реквизиты компании ООО «МОЛНИЯ ТЕХ» — Молния"
     description = "Официальные банковские и юридические реквизиты ООО «МОЛНИЯ ТЕХ» (ИНН 7806637461, ОГРН 1267800068458) для договоров, счетов и безналичной оплаты."
-    canonical = "https://molniya-tech.ru/requisites.html"
+    canonical = "https://molniya-tech.ru/requisites"
 
     json_ld = {
         "@context": "https://schema.org",
@@ -1144,47 +1150,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req"></script>
-  <script>
-    document.querySelectorAll('.mt-copy-btn').forEach(btn => {{
-      btn.addEventListener('click', () => {{
-        const text = btn.getAttribute('data-copy');
-        navigator.clipboard.writeText(text).then(() => {{
-          const original = btn.textContent;
-          btn.textContent = 'Скопировано!';
-          btn.classList.add('copied');
-          setTimeout(() => {{
-            btn.textContent = original;
-            btn.classList.remove('copied');
-          }}, 2000);
-        }});
-      }});
-    }});
-
-    const copyAllBtn = document.getElementById('copy-all-btn');
-    if (copyAllBtn) {{
-      copyAllBtn.addEventListener('click', () => {{
-        const fullText = `ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОЛНИЯ ТЕХ"
-Юридический адрес: 195112, РОССИЯ, Г. САНКТ-ПЕТЕРБУРГ, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ МАЛАЯ ОХТА, ПР-КТ МАЛООХТИНСКИЙ, Д. 61, ЛИТЕРА А, ПОМЕЩ. 1-Н
-ИНН: 7806637461
-КПП: 780601001
-ОГРН: 1267800068458
-Расчетный счет: 40702810110002359085
-Банк: АО «ТБанк»
-БИК: 044525974
-ИНН банка: 7710140679
-Корр. счет: 30101810145250000974
-Юр. адрес банка: 127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26`;
-        navigator.clipboard.writeText(fullText).then(() => {{
-          const originalHtml = copyAllBtn.innerHTML;
-          copyAllBtn.textContent = 'Все реквизиты скопированы!';
-          setTimeout(() => {{
-            copyAllBtn.innerHTML = originalHtml;
-          }}, 2500);
-        }});
-      }});
-    }}
-  </script>
+  <script src="/script.js?v=20260930-req2"></script>
 </body>
 </html>
 """

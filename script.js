@@ -502,7 +502,124 @@ function initVisibilityGallery() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+/* ---- Requisites page: copy to clipboard buttons ---- */
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(function () {
+      return legacyCopyToClipboard(text);
+    });
+  }
+  return legacyCopyToClipboard(text);
+}
+
+function legacyCopyToClipboard(text) {
+  return new Promise(function (resolve, reject) {
+    try {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.width = '2em';
+      textArea.style.height = '2em';
+      textArea.style.padding = '0';
+      textArea.style.border = 'none';
+      textArea.style.outline = 'none';
+      textArea.style.boxShadow = 'none';
+      textArea.style.background = 'transparent';
+      textArea.style.fontSize = '16px';
+      textArea.setAttribute('readonly', '');
+      document.body.appendChild(textArea);
+
+      textArea.focus();
+      textArea.select();
+      textArea.setSelectionRange(0, textArea.value.length);
+
+      var successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      if (successful) {
+        resolve();
+      } else {
+        reject(new Error('execCommand copy failed'));
+      }
+    } catch (err) {
+      if (textArea && textArea.parentNode) {
+        textArea.parentNode.removeChild(textArea);
+      }
+      reject(err);
+    }
+  });
+}
+
+function initRequisitesCopy() {
+  var copyButtons = document.querySelectorAll('.mt-copy-btn');
+  copyButtons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var text = btn.getAttribute('data-copy') || btn.closest('.mt-req-row')?.querySelector('.mt-req-value')?.textContent?.trim() || '';
+      if (!text) return;
+
+      copyTextToClipboard(text).then(function () {
+        if (!btn.getAttribute('data-orig')) {
+          btn.setAttribute('data-orig', btn.textContent.trim());
+        }
+        var orig = btn.getAttribute('data-orig');
+        btn.textContent = 'Скопировано!';
+        btn.classList.add('copied');
+
+        clearTimeout(btn._copyTimeout);
+        btn._copyTimeout = setTimeout(function () {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(function (err) {
+        console.error('Failed to copy: ', err);
+      });
+    });
+  });
+
+  var copyAllBtn = document.getElementById('copy-all-btn');
+  if (copyAllBtn) {
+    copyAllBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var fullText = [
+        'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОЛНИЯ ТЕХ"',
+        'Юридический адрес: 195112, РОССИЯ, Г. САНКТ-ПЕТЕРБУРГ, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ МАЛАЯ ОХТА, ПР-КТ МАЛООХТИНСКИЙ, Д. 61, ЛИТЕРА А, ПОМЕЩ. 1-Н',
+        'ИНН: 7806637461',
+        'КПП: 780601001',
+        'ОГРН: 1267800068458',
+        'Расчетный счет: 40702810110002359085',
+        'Банк: АО «ТБанк»',
+        'БИК: 044525974',
+        'ИНН банка: 7710140679',
+        'Корр. счет: 30101810145250000974',
+        'Юр. адрес банка: 127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26'
+      ].join('\n');
+
+      copyTextToClipboard(fullText).then(function () {
+        if (!copyAllBtn.getAttribute('data-orig-html')) {
+          copyAllBtn.setAttribute('data-orig-html', copyAllBtn.innerHTML);
+        }
+        var origHtml = copyAllBtn.getAttribute('data-orig-html');
+        copyAllBtn.textContent = 'Все реквизиты скопированы!';
+        copyAllBtn.classList.add('copied');
+
+        clearTimeout(copyAllBtn._copyTimeout);
+        copyAllBtn._copyTimeout = setTimeout(function () {
+          copyAllBtn.innerHTML = origHtml;
+          copyAllBtn.classList.remove('copied');
+        }, 2500);
+      }).catch(function (err) {
+        console.error('Failed to copy all: ', err);
+      });
+    });
+  }
+}
+
+var _domInitialized = false;
+function initApp() {
+  if (_domInitialized) return;
+  _domInitialized = true;
   initHeroScrollScene();
   initOverviewSplitScene();
   initJourneySteps();
@@ -513,4 +630,11 @@ document.addEventListener('DOMContentLoaded', function () {
   initCookieBanner();
   initIndustryFitForm();
   initVisibilityGallery();
-});
+  initRequisitesCopy();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
