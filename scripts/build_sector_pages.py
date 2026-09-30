@@ -36,9 +36,9 @@ SECTORS = [
         "desc": "Салоны красоты, барбершопы, ногтевые студии",
         "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
         "emoji": "✂️",
-        "active": False,
-        "badge": "Скоро",
-        "badge_class": "mt-dropdown-badge--soon",
+        "active": True,
+        "badge": "Решение",
+        "badge_class": "mt-dropdown-badge--active",
     },
     {
         "id": "health",
@@ -96,12 +96,10 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
     for s in SECTORS:
         href = f"/{s['slug']}" if s['active'] else f"/{s['slug']}"
         active_cls = " mt-dropdown-card--active" if s["slug"] == active_item else ""
-        badge_html = f'<span class="mt-dropdown-badge {s["badge_class"]}">{s["badge"]}</span>'
-
         grid_items.append(f'''              <a class="mt-dropdown-card{active_cls}" href="{href}" role="menuitem">
                 <div class="mt-dropdown-icon">{s["icon"]}</div>
                 <div class="mt-dropdown-info">
-                  <div class="mt-dropdown-title">{html.escape(s["title"])} {badge_html}</div>
+                  <div class="mt-dropdown-title">{html.escape(s["title"])}</div>
                   <div class="mt-dropdown-desc">{html.escape(s["desc"])}</div>
                 </div>
               </a>''')
@@ -747,7 +745,556 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-steps"></script>
+  <script src="/script.js?v=20260930-req2"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_beauty_page() -> str:
+    """Builds the complete beauty salon landing page matching the exact design system."""
+    nav_html = render_nav_html(active_item="beauty", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+
+    title = "CRM для салона красоты, барбершопа и студии маникюра — программа учета и онлайн-записи Молния"
+    description = "Программа и CRM для салона красоты, барбершопа и студии маникюра. Онлайн-запись 24/7, электронный журнал мастеров, расчёт зарплат, списание красителей по техкартам и Telegram-напоминания."
+    canonical = "https://molniya-tech.ru/beauty"
+
+    faq_items = [
+        {
+            "q": "Подходит ли программа для небольшого кабинета мастера или бьюти-коворкинга?",
+            "a": "Да. Молния одинаково удобна как для частного мастера или кабинета на 1–2 кресла, так и для сетевого салона красоты или барбершопа с десятками мастеров. Настройка расписания, списка услуг и мастеров занимает всего 15 минут."
+        },
+        {
+            "q": "Как работает учет красителей, оксидов и расходников по техкартам?",
+            "a": "В Молнии к каждой услуге можно привязать норму расхода материалов (например, краситель 40 г, оксид 60 мл, фольга, воротнички). При закрытии визита материалы автоматически списываются со склада, а система предупредит, если запасы подходят к концу."
+        },
+        {
+            "q": "Как рассчитывается сдельная зарплата мастеров, администраторов и аренда кресел?",
+            "a": "Для каждого сотрудника настраиваются персональные условия: процент от чека за услуги (например, 40%), процент от продажи домашнего ухода (например, 10%), фиксированная ставка за смену или вычет фиксированной стоимости аренды рабочего места."
+        },
+        {
+            "q": "Можно ли бесплатно перенести базу клиентов из YClients, DIKIDI, Altegio или Excel?",
+            "a": "Да! Наша служба заботы бесплатно помогает перенести базу клиентов с номерами телефонов, историей визитов, прайс-листом и данными мастеров. Вы переходите на Молнию без потери постоянных клиентов и пауз в работе салона."
+        },
+        {
+            "q": "Как клиенты записываются онлайн и получают напоминания в Telegram?",
+            "a": "Клиенты переходят по ссылке в соцсетях, на сайте или по QR-коду и выбирают удобное время и любимого мастера. Сервисный Telegram-бот автоматически подтверждает запись, напоминает о визите за 24 и 2 часа, снижая неявки на 85%."
+        },
+        {
+            "q": "Сохраняются ли формулы окрашивания и фото работ в карточке клиента?",
+            "a": "Да. Мастер прямо со смартфона может прикрепить фото «до/после» и записать точную формулу красителя (номера тонов, пропорции, время выдержки). При следующем визите клиента вся история доступна за 2 секунды."
+        },
+        {
+            "q": "Нужно ли устанавливать отдельное приложение на компьютер или планшет?",
+            "a": "Нет. Молния работает как быстрое веб-приложение в любом браузере на смартфоне, планшете или ноутбуке. Администратор может вести журнал на ресепшене с планшета, а мастера смотрят своё расписание в телефоне."
+        }
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        for item in faq_items
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния — CRM для салона красоты, барбершопа и студии маникюра",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB"
+            },
+            "description": description,
+            "url": canonical
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://molniya-tech.ru/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Для кого",
+                    "item": "https://molniya-tech.ru/#origin"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Красота",
+                    "item": canonical
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item["a"]
+                    }
+                }
+                for item in faq_items
+            ]
+        }
+    ]
+
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False).replace("<", "\\u003c")
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="keywords" content="crm для салона красоты, программа для салона красоты, crm для барбершопа, онлайн запись в салон красоты, электронный журнал записи, программа для студии маникюра, расчет зарплаты мастеров салона, учет материалов в салоне красоты, журнал мастеров, расписание мастеров">
+  <link rel="canonical" href="{canonical}">
+  <meta name="theme-color" content="#FFFEFD">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20260930-req2">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            CRM для салона красоты,<br><span class="mt-hero-accent">барбершопа и студии маникюра</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7, расписание мастеров, расчет зарплат и прозрачный учет материалов</p>
+              <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+                Подключить салон красоты
+              </a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для салона красоты">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Журнал мастеров</span>
+                <span class="mt-facet-note">онлайн-запись 24/7 без накладок</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зарплата и %</span>
+                <span class="mt-facet-note">автоматический расчёт выработки за смену</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Учёт материалов</span>
+                <span class="mt-facet-note">списание красителей и расходников</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">AI & Возвраты</span>
+                <span class="mt-facet-note">Telegram-напоминания и повторные визиты</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для салона красоты: расписание мастеров и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров салона в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE WORKPLACES STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка кресел и мастеров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Все кресла, кабинеты и мастера <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и управляющий видят статус каждого рабочего места, закреплённого мастера, текущую процедуру и сумму чека в реальном времени на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кресло 1 · Стилист</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Елена К. (Анна С.)</div>
+                <div class="mt-auto-car-tier">Airtouch + Тонирование</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сложное окрашивание + Уход</span>
+              <span class="mt-auto-price">8 500 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 2 · Ногтевой сервис</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Мария Д. (Екатерина М.)</div>
+                <div class="mt-auto-car-tier">Маникюр + SMART-педикюр</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💅</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Снятие + Гель-лак + Уход</span>
+              <span class="mt-auto-price">4 200 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кресло 3 · Барбершоп</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Артур Б. (Дмитрий В.)</div>
+                <div class="mt-auto-car-tier">Комплекс «Стрижка + Борода»</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💈</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Стрижка + Моделирование</span>
+              <span class="mt-auto-price">2 800 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 4 · Косметология</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ольга Н. (15:00)</div>
+                <div class="mt-auto-car-tier">Уход за кожей лица</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Пилинг + Массаж лица</span>
+              <span class="mt-auto-price">5 600 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEAUTY OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для салона красоты" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте бьюти-бизнесом <span class="mt-overview-hook">от первой записи до чистой прибыли</span></h2>
+          <p class="mt-section-sub">Программа для учета в салоне красоты, барбершопе и студии маникюра: расписание мастеров, карточки клиентов с формулами окрашивания, списание материалов и зарплаты без тетрадей.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3><span class="mt-overview-hook">Журнал записи</span> и расписание мастеров</h3>
+            <p>Клиенты записываются онлайн через сайт, соцсети или Telegram 24/7. Администратор управляет загрузкой кресел и кабинетов в один клик. Программа предотвращает накладки и «окна» между визитами.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание мастеров</span><span>Сегодня</span></div>
+              <div class="mt-overview-calendar"><span>10:00</span><div></div><span>11:30</span><div class="mt-overview-slot">Кресло 1 <small>Елена · Airtouch</small></div><span>13:00</span><div class="mt-overview-slot mt-overview-slot--light">Кабинет 2 <small>Мария · SMART-маникюр</small></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Карточка клиента и <span class="mt-overview-hook">история окрашиваний</span></h3>
+            <p>Вся история процедур, любимые мастера и точные формулы красителей (пропорции, граммовка, оксиды) сохраняются в карточке клиента. Новый мастер сразу видит историю волос или пожелания по ногтям.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Карточка клиента</span><span>Анна Смирнова</span></div>
+              <div class="mt-overview-stages"><span>Консультация</span><i></i><span>Процедура</span><i></i><span>Расчёт</span></div>
+              <div class="mt-overview-check">✓ <span>Формула: 8.1 (30г) + 9.16 (15г) + 3%</span></div>
+              <div class="mt-overview-check">✓ <span>Фото до окрашивания сохранено</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Складской учёт и <span class="mt-overview-hook">списание материалов</span></h3>
+            <p>Молния автоматически списывает красители, оксиды, уходы и одноразовые расходники по техкартам после каждой услуги. Точные остатки на складе и оповещения, когда краска заканчивается.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Остатки на складе</span><span>Красители и оксиды</span></div>
+              <div class="mt-overview-price-row"><span>Краситель L'Oreal #8.1</span><strong>140 г на складе</strong></div>
+              <div class="mt-overview-price-row"><span>Оксид 6% (Diactivateur)</span><strong>820 мл · В норме</strong></div>
+              <div class="mt-overview-price-tag">Автосписание по техкартам</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Telegram-уведомления <span class="mt-overview-hook">и возвращаемость</span></h3>
+            <p>Сервисные напоминания в Telegram за 24 и 2 часа снижают процент неявок до 85%. Автоматические приглашения на повторный визит через 3–4 недели стабильно возвращают клиентов без спама.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Статус записи</span><span>Telegram</span></div>
+              <div class="mt-overview-message">
+                Анна, напоминаем о записи к стилисту Елене завтра в 14:00. Ждём вас в студии!
+                <span class="mt-overview-reaction">💇‍♀️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>База клиентов CRM</span><strong>История визитов и формул →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата мастеров <span class="mt-overview-hook">и аренда кресел</span></h3>
+            <p>Гибкая настройка мотивации: процент от чека за услугу, процент от продажи косметики, фиксированная ставка за выход или учёт стоимости аренды кресла. Мастера видят выработку в телефоне в реальном времени.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка мастера</span><span>Елена К. (Смена)</span></div>
+              <div class="mt-overview-metrics"><span>Услуги<b>40%</b></span><span>Косметика<b>10%</b></span><span>Баланс<b>₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Подключить салон красоты</a>
+        </div>
+      </section>
+
+      <!-- BEAUTY JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь визита клиента">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиента. <span class="mt-hero-accent">Полный порядок в салоне.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу студии красоты: от бронирования слота до фиксации формулы окрашивания, списания красителя и расчета зарплаты.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Сложное окрашивание + Уход</strong><span>Стилист Елена К. · Кресло №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Онлайн-запись к любимому мастеру в удобное время</h3>
+              <p>Клиент выбирает услугу, мастера и время за 30 секунд в виджете онлайн-записи. Программа сразу бронирует окно в расписании, не допуская накладок, и присылает подтверждение в Telegram.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Онлайн-запись</span>
+                <span class="mt-journey-proof-badge">Подтверждена</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Анна Смирнова</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Airtouch + Тонирование</strong></div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Елена К. (Кресло №1)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер / Администратор</span>
+              <h3>Встреча клиента и фиксация формулы окрашивания</h3>
+              <p>Мастер открывает карточку визита в телефоне, смотрит историю прошлых процедур и записывает формулу красителя и примечания прямо во время консультации.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Визит #2841</span>
+                <span class="mt-journey-proof-badge">В процессе</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Формула</span><strong>8.1 (30г) + 9.16 (15г) + 3%</strong></div>
+              <div class="mt-journey-proof-row"><span>Фото «До»</span><strong>Прикреплено к карточке</strong></div>
+              <div class="mt-journey-proof-row"><span>Пожелания</span><strong>Кофе с овсяным молоком</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер</span>
+              <h3>Оказание услуги и допродажа домашнего ухода</h3>
+              <p>Мастер порекомендовал бессульфатный шампунь и маску для сохранения холодного блонда. Администратор добавил средства в чек в 1 клик — они сразу списались со склада.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Состав чека</span>
+                <span class="mt-journey-proof-badge">К оплате</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Airtouch + Тонирование</span><strong>8 500 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Шампунь для блонда</span><strong>2 400 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Итого чек</span><strong>10 900 ₽</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система & Владелец</span>
+              <h3>Оплата, расчёт зарплаты и напоминание на следующий визит</h3>
+              <p>Клиент получает электронный чек в Telegram. Программа начисляет мастеру 40% за услугу (3 400 ₽) и 10% за уход (240 ₽). Через 4 недели клиент получит автоприглашение на обновление цвета.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Расчёт мастера</span>
+                <span class="mt-journey-proof-badge">Начислено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Елена К. (выработка)</span><strong>+3 640 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Списание со склада</span><strong>Краситель -45г</strong></div>
+              <div class="mt-journey-proof-row"><span>Telegram-автоприглашение</span><strong>Запланировано через 28 дн</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс салона красоты" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс автоматизации бьюти-студии</div>
+            <h2 class="mt-case-title">Студия красоты и колористики «Lumière», 6 рабочих мест</h2>
+            <blockquote class="mt-case-quote">
+              «До Молнии вели запись в бумажном ежедневнике, а красители списывали раз в месяц «на глаз» с постоянными недостачами. В Молнии мы настроили онлайн-запись, техкарты расхода и автоматический процент стилистам. Мастера больше не спорят о зарплате, а запись заполнена на две недели вперёд.»
+            </blockquote>
+            <div class="mt-case-author">
+              Ирина Васильева <span>· Основательница студии красоты, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+42%</span>
+              <span class="mt-case-label">Рост повторных записей через Telegram-напоминания</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-90%</span>
+              <span class="mt-case-label">Снижение неявок благодаря автоматическому подтверждению</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>мин</small></span>
+              <span class="mt-case-label">На ручной расчёт зарплат мастеров и учёт красителей</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEAUTY FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о программе для салона красоты, барбершопа и студии маникюра</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте CRM Молния для своего салона красоты</h3>
+            <p>Бесплатно поможем перенести базу клиентов из тетради, Excel или старой CRM, настроить расписание мастеров, прайс-лист и схему зарплаты. Начните работу без пауз в сервисе.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
+        <div class="mt-final">
+          <div class="mt-final-glow" aria-hidden="true"></div>
+          <div class="mt-final-inner">
+            <div class="mt-final-icon">
+              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+            </div>
+            <h2 class="mt-final-title">Наведите идеальный порядок <span class="mt-hero-accent">в своём салоне красоты</span></h2>
+            <p class="mt-final-sub">Заполняйте расписание без окон, удерживайте клиентов и забудьте о ручных расчетах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
+            <div class="mt-final-actions">
+              <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+                Подключить салон красоты
+              </a>
+            </div>
+            <div class="mt-final-note">Новости об обновлениях и тарифах публикуем в Telegram-канале.</div>
+          </div>
+        </div>
+      </section>
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/cookies.html" class="mt-link-accent">политике cookie</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20260930-req2"></script>
 </body>
 </html>
 '''
@@ -815,6 +1362,17 @@ def sync_sitemap():
         content = content.replace("</urlset>", url_entry + "</urlset>")
         changed = True
         print("Added /requisites to sitemap.xml")
+
+    if "https://molniya-tech.ru/beauty" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/beauty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /beauty to sitemap.xml")
 
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
@@ -1161,6 +1719,11 @@ def main():
     auto_html = build_auto_page()
     (ROOT_DIR / "auto.html").write_text(auto_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'auto.html'}")
+
+    print("Building sector landing page: /beauty...")
+    beauty_html = build_beauty_page()
+    (ROOT_DIR / "beauty.html").write_text(beauty_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'beauty.html'}")
 
     print("Building 404 error page: /404.html...")
     not_found_html = build_404_page()
