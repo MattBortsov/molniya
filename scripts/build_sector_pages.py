@@ -209,34 +209,38 @@ def build_auto_page() -> str:
     nav_html = render_nav_html(active_item="auto", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
 
-    title = "Молния для автобизнеса — CRM и онлайн-запись для автомоек, детейлинга и СТО"
-    description = "Специализированная CRM для автобизнеса: расписание боксов и постов, нормативы по классам авто, сдельная зарплата мастеров, фотоосмотр кузова и Telegram-запись."
+    title = "CRM для автомойки, детейлинга и автосервиса — программа учета и онлайн-записи Молния"
+    description = "Программа и CRM для автомойки, детейлинга, СТО и шиномонтажа. Онлайн-запись 24/7, расписание боксов, электронные заказ-наряды с фотоосмотром кузова, учёт по классам авто и расчёт зарплаты мастеров."
     canonical = "https://molniya-tech.ru/auto"
 
     faq_items = [
         {
-            "q": "Подходит ли Молния для небольшой мойки на 2–3 бокса?",
-            "a": "Да. Молния отлично подходит как для компактных автомоек на 2 поста, так и для крупных детейлинг-центров и СТО с десятками постов и мастеров. Вы настраиваете количество рабочих мест и нормативы за 15 минут."
+            "q": "Подходит ли программа для небольшой автомойки на 2–3 бокса или компактного СТО?",
+            "a": "Да. Молния одинаково эффективна как для компактных автомоек на 2 поста, так и для крупных детейлинг-центров и СТО с десятками постов и мастеров. Вы настраиваете количество боксов, перечень услуг и нормативы за 15 минут."
         },
         {
-            "q": "Как система учитывает разницу во времени между седаном и крупным внедорожником?",
-            "a": "В Молнии встроен классификатор автомобилей. Вы один раз привязываете время и цену к категории (седан, кроссовер, рамный джип, микроавтобус). При записи система автоматически резервирует нужное окно в расписании бокса."
+            "q": "Как программа учитывает класс автомобиля (седан, кроссовер, внедорожник)?",
+            "a": "В Молнии встроен классификатор автомобилей. Вы один раз привязываете длительность и цену услуги к категории авто (седан, кроссовер, рамный джип, микроавтобус). При онлайн-записи система автоматически бронирует в расписании бокса нужное окно."
         },
         {
-            "q": "Можно ли начислять разный процент автомойщикам и детейлерам?",
-            "a": "Да, в карточке сотрудника и услуги настраивается гибкая модель: процент от чека (например, мойка 30%, полировка 45%), фиксированная ставка за выход или за конкретную операцию. Баланс рассчитывается мгновенно."
+            "q": "Как рассчитывается сдельная зарплата автомойщиков, детейлеров и механиков?",
+            "a": "В карточке каждого сотрудника настраивается персональная схема: процент от чека (например, мойка 30%, полировка 40%), фиксированная ставка за операцию или нормочасы. После выдачи авто выработка начисляется мгновенно на баланс смены."
         },
         {
-            "q": "Как клиенты узнают о записи и готовности автомобиля?",
-            "a": "Через автоматические сервисные сообщения в Telegram. Клиент получает подтверждение записи со ссылкой на заказ, напоминание за 2 часа до визита и оповещение «Ваш автомобиль готов к выдаче» в один клик мастера."
+            "q": "Как работает электронный заказ-наряд и фотоосмотр повреждений кузова?",
+            "a": "Мастер открывает электронный заказ-наряд на смартфоне или планшете перед заездом авто, делает фото царапин, сколов и уровня топлива и сохраняет в карточке заказа. Это надёжная защита от необоснованных претензий клиентов при выдаче."
         },
         {
-            "q": "Как работает фотоосмотр повреждений кузова?",
-            "a": "Мастер открывает заказ-наряд на смартфоне или планшете перед заездом машины, делает несколько фото сколов или царапин и сохраняет в карточке заказа. Это надёжная защита от необоснованных претензий клиентов при выдаче."
+            "q": "Как клиенты записываются на автомойку и получают уведомления в Telegram?",
+            "a": "Клиенты записываются онлайн через виджет на сайте, по ссылке в соцсетях или QR-коду. Сервисный Telegram-бот автоматически присылает подтверждение бронирования, напоминание за 2 часа до визита и оповещение «Ваш автомобиль готов к выдаче» со ссылкой на чек."
         },
         {
-            "q": "Как перенести базу клиентов из тетради или другой CRM?",
-            "a": "Наша служба заботы бесплатно помогает импортировать базу клиентов, перечень услуг и историю визитов при подключении. Вы начинаете работу без пауз и потери постоянных клиентов."
+            "q": "Подходит ли программа для шиномонтажа в период сезонного ажиотажа?",
+            "a": "Да, Молния идеально справляется с пиковыми сезонными нагрузками шиномонтажа: плотная запись без накладок, учет диаметра колес (R15–R22), сезонное хранение шин и оперативное распределение авто по постам переобувки."
+        },
+        {
+            "q": "Как бесплатно перенести базу клиентов и историю авто из другой программы или Excel?",
+            "a": "Наша служба заботы бесплатно помогает импортировать базу клиентов, историю визитов, прайс-лист и автомобили при подключении. Вы начинаете работу без остановки сервиса и потери постоянных клиентов."
         }
     ]
 
@@ -249,7 +253,7 @@ def build_auto_page() -> str:
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Молния — CRM для автобизнеса",
+            "name": "Молния — CRM для автомойки, детейлинга и автосервиса",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web, iOS, Android",
             "offers": {
@@ -310,7 +314,7 @@ def build_auto_page() -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
-  <meta name="keywords" content="crm для автомойки, программа для детейлинга, crm для автобизнеса, расписание боксов, автосервис онлайн запись, учет мойщиков">
+  <meta name="keywords" content="crm для автомойки, программа для автомойки, crm для автосервиса, программа для автосервиса, crm для детейлинга, программа для детейлинга, онлайн запись на автомойку, электронный заказ наряд, расписание боксов, учет на автомойке, программа для шиномонтажа, расчет зарплаты мойщиков">
   <link rel="canonical" href="{canonical}">
   <meta name="theme-color" content="#FFFEFD">
 
@@ -365,16 +369,16 @@ def build_auto_page() -> str:
         <div class="mt-hero-lead">
           <div class="mt-sector-badge">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-            Для автобизнеса
+            Автомойки · Детейлинг · СТО · Шиномонтаж
           </div>
 
           <h1 class="mt-hero-title">
-            Управляй боксами<br>и планируй прибыль
+            CRM для автомойки,<br><span class="mt-hero-accent">детейлинга и автосервиса</span>
           </h1>
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Специализированная система для автомоек, детейлинг-студий, СТО и шиномонтажей. Учитывает габариты авто, посты, допуслуги и прозрачную сдельную оплату.</p>
+              <p class="mt-hero-sub">Специализированная программа для учета на автомойке и СТО: онлайн-запись 24/7, расписание боксов, электронные заказ-наряды с фотоосмотром и прозрачный расчет зарплаты мастеров.</p>
               <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
                 Подключить автобизнес
@@ -384,19 +388,19 @@ def build_auto_page() -> str:
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для автобизнеса">
               <li class="mt-facet">
                 <span class="mt-facet-name">Боксы и посты</span>
-                <span class="mt-facet-note">распределение по длине и типу авто</span>
+                <span class="mt-facet-note">онлайн-запись и учет габаритов авто</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">Сдельная оплата</span>
                 <span class="mt-facet-note">нормочасы и % от чека за смену</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">Осмотр и дефекты</span>
-                <span class="mt-facet-note">чек-лист и фотофиксация до заезда</span>
+                <span class="mt-facet-name">Электронный заказ-наряд</span>
+                <span class="mt-facet-note">фотофиксация дефектов до заезда</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Сезон</span>
-                <span class="mt-facet-note">умный прогноз очередей и погоды</span>
+                <span class="mt-facet-note">прогноз очередей и динамический прайс</span>
               </li>
             </ul>
           </div>
@@ -406,14 +410,14 @@ def build_auto_page() -> str:
           <div class="mt-hero-media-motion">
             <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания боксов в Молнии">
               <span class="mt-tablet-screen">
-                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Журнал записи автомойки и детейлинга с расписанием боксов" width="1710" height="983" fetchpriority="high">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для автомойки и автосервиса: расписание боксов и электронный журнал записи" width="1710" height="983" fetchpriority="high">
                 <span class="mt-tablet-play">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </a>
-            <p class="mt-hero-media-caption">Расписание боксов и контроль загрузки постов в реальном времени</p>
+            <p class="mt-hero-media-caption">Электронный журнал записи и загрузка боксов автомойки в реальном времени</p>
           </div>
         </div>
 
@@ -423,14 +427,14 @@ def build_auto_page() -> str:
       <section class="mt-section mt-reveal" data-screen-label="Загрузка боксов" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <div class="mt-eyebrow">Мониторинг комплекса</div>
-          <h2 class="mt-section-title">Все посты и автомобили <span class="mt-overview-hook">как на ладони</span></h2>
-          <p class="mt-section-sub">Администратор и мастера видят статус каждого бокса, закреплённого мастера, марку авто и сумму заказ-наряда в одну секунду.</p>
+          <h2 class="mt-section-title">Все посты, боксы и заказ-наряды <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого бокса, закреплённого мастера, марку авто и сумму заказ-наряда в одну секунду на любом устройстве.</p>
         </div>
 
         <div class="mt-auto-bays">
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Бокс 1 · Мойка</span>
+              <span class="mt-auto-bay-title">Бокс 1 · Автомойка</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
             </div>
             <div class="mt-auto-car">
@@ -448,7 +452,7 @@ def build_auto_page() -> str:
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Бокс 2 · Детейлинг</span>
+              <span class="mt-auto-bay-title">Бокс 2 · Детейлинг-студия</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
             </div>
             <div class="mt-auto-car">
@@ -459,25 +463,25 @@ def build_auto_page() -> str:
               <span class="mt-dropdown-footer-icon">✨</span>
             </div>
             <div class="mt-auto-service">
-              <span>Полировка фар + Керамика</span>
+              <span>Полировка кузова + Керамика</span>
               <span class="mt-auto-price">14 500 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Пост 3 · СТО / Подъемник</span>
+              <span class="mt-auto-bay-title">Пост 3 · Автосервис / СТО</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
             </div>
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Geely Monjaro</div>
-                <div class="mt-auto-car-tier">II класс · Кроссовер</div>
+                <div class="mt-auto-car-tier">Заказ-наряд #1428 · ТО</div>
               </div>
               <span class="mt-dropdown-footer-icon">🔧</span>
             </div>
             <div class="mt-auto-service">
-              <span>Замена масла + Колодки</span>
+              <span>Замена масла + Диагностика</span>
               <span class="mt-auto-price">7 800 ₽</span>
             </div>
           </div>
@@ -490,12 +494,12 @@ def build_auto_page() -> str:
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Zeekr 001 (14:30)</div>
-                <div class="mt-auto-car-tier">I класс · Седан/Лифтбек</div>
+                <div class="mt-auto-car-tier">I класс · Сезонная смена шин</div>
               </div>
               <span class="mt-dropdown-footer-icon">🛞</span>
             </div>
             <div class="mt-auto-service">
-              <span>Сезонный шиномонтаж R21</span>
+              <span>Переобувка R21 + Балансировка</span>
               <span class="mt-auto-price">5 200 ₽</span>
             </div>
           </div>
@@ -506,13 +510,13 @@ def build_auto_page() -> str:
       <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для автобизнеса" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Ведите автобизнес <span class="mt-overview-hook">от заезда до чистой прибыли</span></h2>
-          <p class="mt-section-sub">Расписание постов, фотоосмотр, нормативы по классам авто и зарплаты сотрудников объединены в одной интуитивной системе.</p>
+          <p class="mt-section-sub">Программа для учета на автомойке, в детейлинге и автосервисе: расписание боксов, акты осмотра кузова, нормативы по классам авто и сдельные зарплаты без рутины в Excel.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3><span class="mt-overview-hook">Запись по боксам</span> и постам</h3>
-            <p>Клиент выбирает удобное время и бокс: пост экспресс-мойки, сухой пост детейлинга или подъемник. Система учитывает габариты авто и исключает простой оборудования.</p>
+            <h3><span class="mt-overview-hook">Журнал записи</span> по боксам и постам</h3>
+            <p>Клиенты записываются онлайн 24/7, а администратор распределяет авто по постам мойки, детейлинга или слесарного цеха СТО. Программа исключает накладки и простой оборудования.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Расписание боксов</span><span>Сегодня</span></div>
               <div class="mt-overview-calendar"><span>09:00</span><div></div><span>10:00</span><div class="mt-overview-slot">Бокс 1 <small>BMW X5 · Комплекс</small></div><span>11:30</span><div class="mt-overview-slot mt-overview-slot--light">Бокс 2 <small>Porsche · Полировка</small></div></div>
@@ -520,19 +524,19 @@ def build_auto_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3><span class="mt-overview-hook">Фотоосмотр кузова</span> до начала работ</h3>
-            <p>Мастер за 60 секунд фиксирует состояние кузова и дисков со смартфона: сколы, вмятины, трещины. Акт сохраняется в заказе — защита от претензий при выдаче.</p>
+            <h3><span class="mt-overview-hook">Акт осмотра и фото кузова</span> до начала работ</h3>
+            <p>Электронный заказ-наряд с фотофиксацией со смартфона за 60 секунд: сколы, царапины, состояние дисков и салона. Чек-лист сохраняется в CRM и защищает от спорных претензий при выдаче.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Чек-лист приёмки</span><span>Бокс 1</span></div>
-              <div class="mt-overview-stages"><span>Осмотр</span><i></i><span>Мойка</span><i></i><span>Выдача</span></div>
+              <div class="mt-overview-stages"><span>Осмотр</span><i></i><span>В работе</span><i></i><span>Выдача</span></div>
               <div class="mt-overview-check">✓ <span>Фото кузова по кругу (4 фото)</span></div>
               <div class="mt-overview-check">✓ <span>Скол на капоте зафиксирован</span></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Нормативы и цены <span class="mt-overview-hook">по классам авто</span></h3>
-            <p>Молния автоматически пересчитывает стоимость и длительность услуги: седан (40 мин), SUV (55 мин), джип (70 мин). В часы пик и непогоду действуют гибкие сезонные тарифы.</p>
+            <h3>Нормативы и прайс <span class="mt-overview-hook">по классам автомобилей</span></h3>
+            <p>Молния автоматически пересчитывает длительность и стоимость услуг: седан (40 мин), кроссовер (55 мин), рамный внедорожник (70 мин). Поддержка динамических тарифов в часы пик и непогоду.</p>
             <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Прайс по классам</span><span>Мойка «Люкс»</span></div>
               <div class="mt-overview-price-row"><span>I класс (Седан)</span><strong>2 200 ₽ · 40 мин</strong></div>
@@ -542,21 +546,21 @@ def build_auto_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-оповещение <span class="mt-overview-hook">«Автомобиль готов»</span></h3>
-            <p>Клиент получает подтверждение записи, схему проезда к боксу и автоматическое уведомление в Telegram сразу, когда авто готово к выдаче. Меньше очередей в клиентской зоне.</p>
+            <h3>Telegram-уведомления <span class="mt-overview-hook">и клиентская база</span></h3>
+            <p>Клиент получает подтверждение бронирования, напоминание за 2 часа и уведомление «Автомобиль готов к выдаче» со ссылкой на электронный чек. Вся история визитов и ТО сохраняется в карточке авто.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Статус готовности</span><span>Telegram</span></div>
               <div class="mt-overview-message">
                 Ваш Porsche Macan готов к выдаче в Боксе №2. Сумма к оплате: 4 500 ₽.
                 <span class="mt-overview-reaction">🚗</span>
               </div>
-              <div class="mt-overview-client-row"><span>Клиентская база</span><strong>История визитов и ТО →</strong></div>
+              <div class="mt-overview-client-row"><span>База клиентов CRM</span><strong>История визитов и ТО →</strong></div>
             </div>
           </article>
 
           <article class="mt-overview-card mt-overview-card--featured">
-            <h3>Прозрачная сдельная <span class="mt-overview-hook">зарплата мастеров</span></h3>
-            <p>Автоматическое начисление процента от чека или фиксированной ставки за каждую услугу сразу после выдачи авто. Мойщики видят свою выработку прямо на телефоне.</p>
+            <h3>Сдельная оплата <span class="mt-overview-hook">мойщиков и мастеров</span></h3>
+            <p>Автоматический расчет зарплаты мойщиков, детейлеров и автомехаников: процент от чека или ставка за операцию начисляются сразу после закрытия заказ-наряда. Мастера видят баланс смены в телефоне.</p>
             <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Выработка за смену</span><span>Смена №1</span></div>
               <div class="mt-overview-metrics"><span>Мойка<b>30%</b></span><span>Детейлинг<b>40%</b></span><span>К выплате<b>₽</b></span></div>
@@ -575,7 +579,7 @@ def build_auto_page() -> str:
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
           <div class="mt-eyebrow">Рабочий процесс</div>
           <h2 class="mt-section-title">Один заезд авто. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
-          <p class="mt-section-sub">Посмотрите, как система автоматизирует обслуживание автомобиля от онлайн-записи до выдачи ключей и выплаты мастеру.</p>
+          <p class="mt-section-sub">Посмотрите, как специализированная программа автоматизирует обслуживание автомобиля от онлайн-записи до выдачи ключей и начисления сдельной зарплаты.</p>
         </div>
 
         <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
@@ -587,8 +591,8 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">01</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Клиент</span>
-              <h3>Записывается онлайн и указывает класс авто</h3>
-              <p>Выбирает марку, кузов и комплекс услуг на сайте или в Telegram. Молния сразу резервирует окно нужной длины (55 минут вместо 40) с учётом кроссовера.</p>
+              <h3>Онлайн-запись с автоматическим учетом класса авто</h3>
+              <p>Клиент выбирает марку, тип кузова и комплекс услуг на сайте или через Telegram. Программа сразу резервирует окно нужной длительности (55 минут вместо 40) с учетом габаритов кроссовера.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
@@ -605,8 +609,8 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">02</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Администратор / Мастер</span>
-              <h3>Заезд в бокс и экспресс-осмотр кузова</h3>
-              <p>При заезде мастер за 60 секунд фотографирует сколы на капоте и притёртость на диске. Чек-лист прикрепляется к электронному заказ-наряду.</p>
+              <h3>Заезд в бокс и электронный заказ-наряд с фото</h3>
+              <p>Мастер открывает электронный заказ-наряд со смартфона и за 60 секунд фотографирует сколы на капоте и дисках. Акт осмотра прикрепляется к заказу до начала работ.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--process" aria-label="Чек-лист приёмки">
               <div class="mt-journey-proof-head">
@@ -623,8 +627,8 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">03</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Мастер</span>
-              <h3>Выполнение работ и допродажа в 1 тап</h3>
-              <p>Мастер заметил битумные пятна на порогах и согласовал с клиентом удаление за 900 ₽ прямо в системе. Сумма заказа автоматически пересчиталась.</p>
+              <h3>Выполнение работ и допродажа услуг в 1 тап</h3>
+              <p>Мастер заметил битумные пятна на порогах и добавил удаление битума (900 ₽) прямо в электронный заказ-наряд со смартфона. Сумма автоматически пересчиталась.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
               <div class="mt-journey-proof-head">
@@ -641,8 +645,8 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Владелец</span>
-              <h3>Оплата, выдача и прозрачный расчёт зарплаты</h3>
-              <p>Клиент оплачивает заказ картой или переводом. Система сразу начисляет мастеру Александру 35% (1 365 ₽) на баланс смены. Никаких вечерних споров и ручных таблиц.</p>
+              <h3>Выдача авто, Telegram-чек и расчет зарплаты мастеров</h3>
+              <p>Клиент получает оповещение о готовности и ссылку на чек в Telegram. Программа моментально начисляет мастеру 35% (1 365 ₽) на баланс смены — без ручных записей и споров.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
@@ -661,19 +665,19 @@ def build_auto_page() -> str:
       <section class="mt-case-section mt-reveal" data-screen-label="Кейс детейлинга" data-mt-reveal>
         <div class="mt-case-card">
           <div class="mt-case-header">
-            <div class="mt-case-tag">⚡ Кейс внедрения Молнии</div>
+            <div class="mt-case-tag">⚡ Кейс автоматизации автобизнеса</div>
             <h2 class="mt-case-title">Детейлинг-студия «Вектор», 4 поста</h2>
             <blockquote class="mt-case-quote">
-              «Раньше каждый вечер уходил час на сведение тетради с мойщиками, а по выходным была давка из-за джипов, которые не влезали по времени. В Молнии мы настроили нормативы по классам авто — расписание стало идеальным, а выручка выросла на треть.»
+              «Раньше каждый вечер уходил час на сведение тетради с мойщиками, а по выходным была давка из-за джипов, которые не влезали по времени. В CRM Молния мы настроили онлайн-запись и нормативы по классам авто — расписание боксов стало идеальным, а выработка мастеров прозрачной.»
             </blockquote>
             <div class="mt-case-author">
-              Алексей Смирнов <span>· Руководитель студии, Санкт-Петербург</span>
+              Алексей Смирнов <span>· Руководитель детейлинг-центра, Санкт-Петербург</span>
             </div>
           </div>
           <div class="mt-case-stats">
             <div class="mt-case-stat">
               <span class="mt-case-num">+35%</span>
-              <span class="mt-case-label">Рост выручки за счёт ликвидации пустых окон</span>
+              <span class="mt-case-label">Рост выручки автомойки за счёт плотной сетки записи</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">-86%</span>
@@ -681,7 +685,7 @@ def build_auto_page() -> str:
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">0 мин</span>
-              <span class="mt-case-label">На вечерний подсчёт зарплат и выработки мастеров</span>
+              <span class="mt-case-label">На ручной подсчёт сдельной зарплаты мойщиков и мастеров</span>
             </div>
           </div>
         </div>
@@ -691,13 +695,13 @@ def build_auto_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <div class="mt-eyebrow">Вопросы и ответы</div>
-          <h2 class="mt-section-title">Часто задаваемые вопросы по автобизнесу</h2>
+          <h2 class="mt-section-title">Вопросы о программе для автомойки, детейлинга и автосервиса</h2>
         </div>
         <div class="mt-before-start-grid">
           <article class="mt-before-start-highlight">
             <span>Подключение</span>
-            <h3>Попробуйте Молнию для своего автобизнеса</h3>
-            <p>Мы поможем бесплатно перенести вашу базу клиентов, настроить посты, классы авто и проценты мастеров. Оставьте заявку в нашем Telegram-канале.</p>
+            <h3>Попробуйте CRM Молния для своего автобизнеса</h3>
+            <p>Бесплатно поможем перенести базу клиентов из тетради или Excel, настроить боксы, прайс по классам авто и зарплаты мастеров. Начните работу без пауз в сервисе.</p>
             <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
           </article>
           <div class="mt-before-start-questions">
@@ -715,8 +719,8 @@ def build_auto_page() -> str:
             <div class="mt-final-icon">
               <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
             </div>
-            <h2 class="mt-final-title">Зарядите свой автобизнес <span class="mt-hero-accent">на полную мощность</span></h2>
-            <p class="mt-final-sub">Порядок в расписании боксов, лояльные клиенты и прозрачные расчёты с мастерами. Подключайтесь к Молнии.</p>
+            <h2 class="mt-final-title">Автоматизируйте свой автобизнес <span class="mt-hero-accent">на полную мощность</span></h2>
+            <p class="mt-final-sub">Управляйте расписанием боксов, исключите простой постов и забудьте о ручных таблицах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
             <div class="mt-final-actions">
               <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
               <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
