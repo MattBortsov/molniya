@@ -84,10 +84,9 @@ function initOverviewSplitScene() {
 
     grids.forEach((grid) => {
       const rect = grid.getBoundingClientRect();
-      // Start splitting later: only when grid is well inside viewport (65% of vh)
-      // and complete near comfortable reading height (20% of vh)
-      const startY = vh * 0.65;
-      const endY = vh * 0.20;
+      // Hold the joined shape on screen before the gaps and inner corners open.
+      const startY = vh * 0.38;
+      const endY = vh * 0.02;
 
       const raw = clamp((startY - rect.top) / (startY - endY), 0, 1);
       const progress = smoothstep(raw);

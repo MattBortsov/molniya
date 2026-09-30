@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
   <style>
-    :root { color: #17191E; }
+    :root { color: #131B2C; }
     @media (prefers-color-scheme: dark) { :root { color: #F2F1EE; } }
   </style>
   <circle cx="48" cy="48" r="11" fill="none" stroke="currentColor" stroke-width="8"/>
   <g transform="rotate(0 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="currentColor"/></g>
-  <g transform="rotate(60 48 48)"><rect x="44" y="8.5" width="8" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="5"/></g>
+  <g transform="rotate(60 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#DF5F3C"/></g>
   <g transform="rotate(120 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="currentColor"/></g>
   <g transform="rotate(180 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="currentColor"/></g>
   <g transform="rotate(240 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="currentColor"/></g>
