@@ -1134,9 +1134,9 @@ a { color: inherit; }
 .mt-overview-reaction { position: absolute; right: 10px; bottom: -12px; display: grid; min-width: 30px; height: 24px; padding: 0 6px; place-items: center; border: 2px solid #fff; border-radius: 999px; background: #fff; box-shadow: 0 3px 10px rgba(42, 36, 30, .12); font-size: 15px; line-height: 1; }
 .mt-overview-client-row { display: flex; justify-content: space-between; gap: 8px; margin-top: 20px; padding-top: 14px; border-top: 1px solid #f1ede9; font-size: 11px; }
 .mt-overview-client-row strong { color: #a5543c; }
-.mt-overview-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
-.mt-overview-metrics span { display: flex; justify-content: space-between; gap: 4px; padding: 11px 9px; border: 1px solid #eee9e5; border-radius: 9px; color: #786f68; font-size: 10px; }
-.mt-overview-metrics b { color: #c6543b; font-size: 15px; line-height: .8; }
+.mt-overview-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 16px; }
+.mt-overview-metrics span { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 10px 7px; border: 1px solid #eee9e5; border-radius: 9px; color: #786f68; font-size: 10px; white-space: nowrap; }
+.mt-overview-metrics b { color: #c6543b; font-size: 13.5px; line-height: 1; flex-shrink: 0; }
 .mt-overview-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 70px; margin-top: 10px; padding: 0 8px; border-bottom: 1px solid #eee9e5; }
 .mt-overview-chart i { width: 8%; border-radius: 5px 5px 0 0; background: #e6c1b4; }
 .mt-overview-chart i:nth-child(1) { height: 26%; }.mt-overview-chart i:nth-child(2) { height: 40%; }
@@ -2702,7 +2702,7 @@ a { color: inherit; }
   margin-top: 24px;
 }
 .mt-auto-bay {
-  padding: 18px;
+  padding: 16px;
   border-radius: var(--mt-radius-lg);
   background: var(--mt-surface);
   border: 1px solid var(--mt-border);
@@ -2714,20 +2714,24 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
 }
 .mt-auto-bay-title {
   font-family: 'Onest', 'Manrope', sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--mt-text-strong);
+  white-space: nowrap;
 }
 .mt-auto-bay-status {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--mt-radius-pill);
   text-transform: uppercase;
   letter-spacing: .03em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .mt-auto-bay-status--work {
   background: rgba(198, 84, 59, .12);
@@ -2755,23 +2759,37 @@ a { color: inherit; }
 }
 .mt-auto-car-name {
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--mt-text-strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .mt-auto-car-tier {
   font-size: 11px;
   color: var(--mt-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .mt-auto-service {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--mt-text-body);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+}
+.mt-auto-service > span:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .mt-auto-price {
   font-weight: 700;
   color: var(--mt-text-strong);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
