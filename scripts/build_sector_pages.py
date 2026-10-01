@@ -195,8 +195,8 @@ def render_footer_html(asset_prefix: str = "") -> str:
           </div>
           <div class="mt-footer-links">
             <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
-            <a class="mt-footer-link" href="/privacy.html">Конфиденциальность</a>
-            <a class="mt-footer-link" href="/cookies.html">Cookies</a>
+            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            <a class="mt-footer-link" href="/cookies">Cookies</a>
             <a class="mt-footer-link" href="/requisites">Реквизиты</a>
           </div>
         </div>
@@ -342,7 +342,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-bays">
+  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -438,7 +438,7 @@ def build_auto_page() -> str:
               <span class="mt-dropdown-footer-icon">🚗</span>
             </div>
             <div class="mt-auto-service">
-              <span>Комплекс «Люкс» + Воск</span>
+              <span>Комплекс «Люкс»</span>
               <span class="mt-auto-price">3 400 ₽</span>
             </div>
           </div>
@@ -481,7 +481,7 @@ def build_auto_page() -> str:
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Пост 4 · Шиномонтаж</span>
+              <span class="mt-auto-bay-title">Пост 4 · Шины</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
             </div>
             <div class="mt-auto-car">
@@ -492,7 +492,7 @@ def build_auto_page() -> str:
               <span class="mt-dropdown-footer-icon">🛞</span>
             </div>
             <div class="mt-auto-service">
-              <span>Шиномонтаж R21 + Баланс</span>
+              <span>Шиномонтаж R21</span>
               <span class="mt-auto-price">5 200 ₽</span>
             </div>
           </div>
@@ -698,7 +698,7 @@ def build_auto_page() -> str:
 {faq_html}
           </div>
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- FINAL CTA -->
@@ -732,7 +732,7 @@ def build_auto_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies.html" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -891,7 +891,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-req2">
+  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -982,43 +982,43 @@ def build_beauty_page() -> str:
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Елена К. (Анна С.)</div>
-                <div class="mt-auto-car-tier">Airtouch + Тонирование</div>
+                <div class="mt-auto-car-tier">Airtouch + Уход</div>
               </div>
               <span class="mt-dropdown-footer-icon">✂️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Сложное окрашивание + Уход</span>
+              <span>Сложное окрашивание</span>
               <span class="mt-auto-price">8 500 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Кабинет 2 · Ногтевой сервис</span>
+              <span class="mt-auto-bay-title">Пост 2 · Маникюр</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
             </div>
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Мария Д. (Екатерина М.)</div>
-                <div class="mt-auto-car-tier">Маникюр + SMART-педикюр</div>
+                <div class="mt-auto-car-tier">Маникюр + SMART</div>
               </div>
               <span class="mt-dropdown-footer-icon">💅</span>
             </div>
             <div class="mt-auto-service">
-              <span>Снятие + Гель-лак + Уход</span>
+              <span>Снятие + Покрытие</span>
               <span class="mt-auto-price">4 200 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Кресло 3 · Барбершоп</span>
+              <span class="mt-auto-bay-title">Кресло 3 · Барбер</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
             </div>
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Артур Б. (Дмитрий В.)</div>
-                <div class="mt-auto-car-tier">Комплекс «Стрижка + Борода»</div>
+                <div class="mt-auto-car-tier">Стрижка + Борода</div>
               </div>
               <span class="mt-dropdown-footer-icon">💈</span>
             </div>
@@ -1030,18 +1030,18 @@ def build_beauty_page() -> str:
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Кабинет 4 · Косметология</span>
+              <span class="mt-auto-bay-title">Пост 4 · Косметолог</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
             </div>
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Ольга Н. (15:00)</div>
-                <div class="mt-auto-car-tier">Уход за кожей лица</div>
+                <div class="mt-auto-car-tier">Уход за лицом</div>
               </div>
               <span class="mt-dropdown-footer-icon">✨</span>
             </div>
             <div class="mt-auto-service">
-              <span>Пилинг + Массаж лица</span>
+              <span>Пилинг + Массаж</span>
               <span class="mt-auto-price">5 600 ₽</span>
             </div>
           </div>
@@ -1247,7 +1247,7 @@ def build_beauty_page() -> str:
 {faq_html}
           </div>
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- FINAL CTA -->
@@ -1281,7 +1281,7 @@ def build_beauty_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies.html" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -1409,7 +1409,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-req">
+  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1531,7 +1531,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260930-req">
+  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1695,7 +1695,7 @@ def build_requisites_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies.html" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
