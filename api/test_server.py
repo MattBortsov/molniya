@@ -105,6 +105,23 @@ class LeadFormTests(unittest.TestCase):
         send.assert_not_called()
         self.assertEqual(self.stored_leads(), [])
 
+    def test_sector_source_is_saved_and_sent(self) -> None:
+        payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True, "source": "auto"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        self.assertEqual(self.stored_leads()[0]["source_slug"], "auto")
+        self.assertEqual(self.stored_leads()[0]["form_name"], "Автобизнес — бесплатный доступ")
+        self.assertEqual(send.call_args.args[0]["source_slug"], "auto")
+
+    def test_unknown_form_source_is_rejected(self) -> None:
+        payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True, "source": "unknown"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, _ = self.post_lead(payload)
+        self.assertEqual(status, 400)
+        self.assertEqual(self.stored_leads(), [])
+        send.assert_not_called()
+
     def test_honeypot_does_not_send(self) -> None:
         payload = {"website": "spam.example"}
         with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
@@ -139,6 +156,8 @@ class LeadFormTests(unittest.TestCase):
         self.assertEqual(session.post.call_args.kwargs["json"]["chat_id"], -1003993624474)
         message = session.post.call_args.kwargs["json"]["text"]
         self.assertIn("anna@example.com", message)
+        self.assertIn("Форма: Главная — бесплатный доступ", message)
+        self.assertIn("Страница: https://molniya-tech.ru/", message)
         self.assertIn("Согласие на обработку ПДн: чекбокс отмечен", message)
         self.assertIn("Проверено сервером: " + lead["received_at_utc"], message)
         self.assertIn("Текст чекбокса: Согласен на обработку персональных данных по политике конфиденциальности.", message)
@@ -187,6 +206,32 @@ class LeadFormTests(unittest.TestCase):
         send.assert_called_once_with(record)
         self.assertEqual(lead_store.pending_telegram_leads(), [])
         self.assertIsNotNone(self.stored_leads()[0]["telegram_sent_at_utc"])
+
+
+class LeadDatabaseMigrationTests(unittest.TestCase):
+    def test_existing_database_gets_source_columns_without_losing_leads(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            db_path = Path(directory) / "leads.sqlite3"
+            with sqlite3.connect(db_path) as connection:
+                connection.executescript("""
+                    CREATE TABLE consent_documents (sha256 TEXT PRIMARY KEY, url TEXT NOT NULL, html TEXT NOT NULL);
+                    CREATE TABLE leads (
+                        id TEXT PRIMARY KEY, received_at_utc TEXT NOT NULL, name TEXT NOT NULL,
+                        email TEXT NOT NULL, phone TEXT NOT NULL, consent_checked INTEGER NOT NULL,
+                        consent_text TEXT NOT NULL, consent_document_sha256 TEXT NOT NULL,
+                        telegram_sent_at_utc TEXT, telegram_attempts INTEGER NOT NULL DEFAULT 0,
+                        telegram_last_attempt_at_utc TEXT
+                    );
+                    INSERT INTO leads (id, received_at_utc, name, email, phone, consent_checked,
+                                       consent_text, consent_document_sha256)
+                    VALUES ('existing', '2026-10-02T00:00:00+00:00', 'Анна', 'anna@example.com',
+                            '+79991234567', 1, 'Согласен', 'old-hash');
+                """)
+            with patch.dict(os.environ, {"LEADS_DB_PATH": str(db_path)}):
+                lead_store.init_db()
+            with sqlite3.connect(db_path) as connection:
+                source = connection.execute("SELECT source_slug, form_name FROM leads WHERE id = 'existing'").fetchone()
+            self.assertEqual(source, ("home", "Главная — бесплатный доступ"))
 
 
 if __name__ == "__main__":

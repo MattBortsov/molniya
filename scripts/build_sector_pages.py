@@ -214,10 +214,39 @@ def render_footer_html(asset_prefix: str = "") -> str:
       </footer>'''
 
 
+def render_lead_form_html(source: str, title_html: str, description: str) -> str:
+    """Render the same contact form on every product landing page."""
+    source = html.escape(source, quote=True)
+    description = html.escape(description)
+    return f'''      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">{title_html}</h2>
+          <p class="mt-lead-sub">{description}</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="{source}">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Согласен на обработку персональных данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>'''
+
+
 def build_auto_page() -> str:
     """Builds the complete auto landing page matching the exact design system."""
     nav_html = render_nav_html(active_item="auto", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "auto",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для автобизнеса',
+        "Оставьте контакты — поможем запустить Молнию для автомойки, детейлинга или автосервиса.",
+    )
 
     title = "Программа для автомойки: CRM и онлайн-запись | Молния"
     description = "Молния — программа и CRM для автомойки: онлайн-запись клиентов, расписание боксов, учёт услуг и зарплат сотрудников. Подходит для детейлинг-студий."
@@ -383,10 +412,7 @@ def build_auto_page() -> str:
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
               <p class="mt-hero-sub">Онлайн-запись, расписание, электронные заказ-наряды и прозрачный расчет зарплат</p>
-              <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить автобизнес
-              </a>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для автобизнеса">
@@ -573,7 +599,7 @@ def build_auto_page() -> str:
         </div>
 
         <div class="mt-overview-action">
-          <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Подключить автобизнес</a>
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
         </div>
       </section>
 
@@ -711,27 +737,7 @@ def build_auto_page() -> str:
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
-      <!-- FINAL CTA -->
-      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
-        <div class="mt-final">
-          <div class="mt-final-glow" aria-hidden="true"></div>
-          <div class="mt-final-inner">
-            <div class="mt-final-icon">
-              {BRAND_MARK_SVG}
-            </div>
-            <h2 class="mt-final-title">Автоматизируйте свой автобизнес <span class="mt-hero-accent">на полную мощность</span></h2>
-            <p class="mt-final-sub">Управляйте расписанием боксов, исключите простой постов и забудьте о ручных таблицах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
-            <div class="mt-final-actions">
-              <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить автобизнес
-              </a>
-            </div>
-            <div class="mt-final-note">Новости об обновлениях и тарифах публикуем в Telegram-канале.</div>
-          </div>
-        </div>
-      </section>
+{lead_html}
 
 {footer_html}
 
@@ -755,7 +761,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req2"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 '''
@@ -766,6 +772,11 @@ def build_beauty_page() -> str:
     """Builds the complete beauty salon landing page matching the exact design system."""
     nav_html = render_nav_html(active_item="beauty", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "beauty",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для салона красоты',
+        "Оставьте контакты — поможем настроить запись, расписание мастеров и услуги.",
+    )
 
     title = "CRM для салона красоты: онлайн-запись и учёт | Молния"
     description = "Молния — CRM для салона красоты: онлайн-запись клиентов, расписание мастеров, учёт материалов и расчёт зарплаты. Подходит барбершопам и студиям маникюра."
@@ -931,10 +942,7 @@ def build_beauty_page() -> str:
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
               <p class="mt-hero-sub">Онлайн-запись 24/7, расписание мастеров, расчет зарплат и прозрачный учет материалов</p>
-              <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить салон красоты
-              </a>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для салона красоты">
@@ -1121,7 +1129,7 @@ def build_beauty_page() -> str:
         </div>
 
         <div class="mt-overview-action">
-          <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Подключить салон красоты</a>
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
         </div>
       </section>
 
@@ -1259,27 +1267,7 @@ def build_beauty_page() -> str:
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
-      <!-- FINAL CTA -->
-      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
-        <div class="mt-final">
-          <div class="mt-final-glow" aria-hidden="true"></div>
-          <div class="mt-final-inner">
-            <div class="mt-final-icon">
-              {BRAND_MARK_SVG}
-            </div>
-            <h2 class="mt-final-title">Наведите идеальный порядок <span class="mt-hero-accent">в своём салоне красоты</span></h2>
-            <p class="mt-final-sub">Заполняйте расписание без окон, удерживайте клиентов и забудьте о ручных расчетах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
-            <div class="mt-final-actions">
-              <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить салон красоты
-              </a>
-            </div>
-            <div class="mt-final-note">Новости об обновлениях и тарифах публикуем в Telegram-канале.</div>
-          </div>
-        </div>
-      </section>
+{lead_html}
 
 {footer_html}
 
@@ -1303,7 +1291,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req2"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 '''
@@ -1314,6 +1302,11 @@ def build_health_page() -> str:
     """Builds the complete health landing page matching the exact design system."""
     nav_html = render_nav_html(active_item="health", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "health",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для клиники',
+        "Оставьте контакты — расскажем о записи и расписании для вашей клиники или кабинета.",
+    )
 
     title = "CRM для клиники, студии массажа и стоматологии — программа учета пациентов и онлайн-записи Молния"
     description = (
@@ -1445,10 +1438,7 @@ def build_health_page() -> str:
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
               <p class="mt-hero-sub">Онлайн-запись 24/7, расписание кабинетов, электронная карта пациента и сдельный расчет зарплат</p>
-              <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить клинику
-              </a>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для медицины и оздоровления">
@@ -1635,7 +1625,7 @@ def build_health_page() -> str:
         </div>
 
         <div class="mt-overview-action">
-          <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Подключить клинику</a>
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
         </div>
       </section>
 
@@ -1773,27 +1763,7 @@ def build_health_page() -> str:
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
-      <!-- FINAL CTA -->
-      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
-        <div class="mt-final">
-          <div class="mt-final-glow" aria-hidden="true"></div>
-          <div class="mt-final-inner">
-            <div class="mt-final-icon">
-              {BRAND_MARK_SVG}
-            </div>
-            <h2 class="mt-final-title">Автоматизируйте свой медицинский бизнес <span class="mt-hero-accent">на полную мощность</span></h2>
-            <p class="mt-final-sub">Управляйте расписанием кабинетов, исключите пропуски приемов и забудьте о ручных отчетах по зарплатам. Подключайтесь к CRM Молния уже сегодня.</p>
-            <div class="mt-final-actions">
-              <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-                Подключить клинику
-              </a>
-            </div>
-            <div class="mt-final-note">Новости об обновлениях и тарифах публикуем в Telegram-канале.</div>
-          </div>
-        </div>
-      </section>
+{lead_html}
 
 {footer_html}
 
@@ -1817,7 +1787,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req2"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 '''
@@ -2045,7 +2015,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 """
@@ -2284,7 +2254,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20260930-req2"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 """
@@ -2504,7 +2474,7 @@ def build_privacy_page() -> str:
 
         <section class="mt-privacy-section">
           <h2>5. Заявка на доступ и консультацию</h2>
-          <p>Для обработки заявки на доступ к Молнии и связи с заявителем субъект персональных данных дает согласие на обработку его ПДн посредством проставления галочки при заполнении формы, размещенной на странице сайта <a href="https://molniya-tech.ru/" class="mt-link-accent">https://molniya-tech.ru/</a>.</p>
+          <p>Для обработки заявки на доступ к Молнии и связи с заявителем субъект персональных данных дает согласие на обработку его ПДн посредством проставления галочки при заполнении формы на главной странице или на страницах отраслевых решений сайта.</p>
 
           <p><strong>В форме необходимо указать следующие персональные данные:</strong></p>
           <ul>
@@ -2627,7 +2597,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-privacy"></script>
+  <script src="/script.js?v=20261002-formsource"></script>
 </body>
 </html>
 """

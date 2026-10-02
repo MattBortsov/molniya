@@ -14,6 +14,13 @@ from pathlib import Path
 SITE_ROOT = Path(__file__).resolve().parent.parent
 CONSENT_TEXT = "Согласен на обработку персональных данных по политике конфиденциальности."
 POLICY_URL = "https://molniya-tech.ru/privacy"
+FORM_NAMES = {
+    "home": "Главная — бесплатный доступ",
+    "auto": "Автобизнес — бесплатный доступ",
+    "beauty": "Красота — бесплатный доступ",
+    "health": "Здоровье — бесплатный доступ",
+}
+SOURCE_PATHS = {"home": "/", "auto": "/auto", "beauty": "/beauty", "health": "/health"}
 
 
 def _now() -> str:
@@ -57,6 +64,8 @@ def init_db() -> None:
                 name TEXT NOT NULL,
                 email TEXT NOT NULL,
                 phone TEXT NOT NULL,
+                source_slug TEXT NOT NULL DEFAULT 'home',
+                form_name TEXT NOT NULL DEFAULT 'Главная — бесплатный доступ',
                 consent_checked INTEGER NOT NULL CHECK (consent_checked = 1),
                 consent_text TEXT NOT NULL,
                 consent_document_sha256 TEXT NOT NULL REFERENCES consent_documents(sha256),
@@ -67,6 +76,11 @@ def init_db() -> None:
             CREATE INDEX IF NOT EXISTS leads_pending_telegram
             ON leads(telegram_sent_at_utc, telegram_last_attempt_at_utc);
         """)
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(leads)")}
+        if "source_slug" not in columns:
+            connection.execute("ALTER TABLE leads ADD COLUMN source_slug TEXT NOT NULL DEFAULT 'home'")
+        if "form_name" not in columns:
+            connection.execute("ALTER TABLE leads ADD COLUMN form_name TEXT NOT NULL DEFAULT 'Главная — бесплатный доступ'")
 
 
 def save_lead(lead: dict[str, str]) -> dict[str, str]:
@@ -80,6 +94,8 @@ def save_lead(lead: dict[str, str]) -> dict[str, str]:
         "name": lead["name"],
         "email": lead["email"],
         "phone": lead["phone"],
+        "source_slug": lead.get("source_slug", "home"),
+        "form_name": lead.get("form_name", FORM_NAMES["home"]),
         "consent_text": CONSENT_TEXT,
         "consent_document_sha256": policy_sha256,
     }
@@ -90,11 +106,13 @@ def save_lead(lead: dict[str, str]) -> dict[str, str]:
         )
         connection.execute(
             """INSERT INTO leads
-               (id, received_at_utc, name, email, phone, consent_checked, consent_text, consent_document_sha256)
-               VALUES (?, ?, ?, ?, ?, 1, ?, ?)""",
+               (id, received_at_utc, name, email, phone, source_slug, form_name,
+                consent_checked, consent_text, consent_document_sha256)
+               VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, ?)""",
             (
                 record["id"], record["received_at_utc"], record["name"], record["email"],
-                record["phone"], record["consent_text"], record["consent_document_sha256"],
+                record["phone"], record["source_slug"], record["form_name"],
+                record["consent_text"], record["consent_document_sha256"],
             ),
         )
     return record
@@ -116,7 +134,8 @@ def pending_telegram_leads(limit: int = 20) -> list[dict[str, str]]:
     cutoff = (datetime.now(timezone.utc) - timedelta(seconds=60)).isoformat(timespec="seconds")
     with closing(_connect()) as connection:
         rows = connection.execute(
-            """SELECT id, received_at_utc, name, email, phone, consent_text, consent_document_sha256
+            """SELECT id, received_at_utc, name, email, phone, source_slug, form_name,
+                      consent_text, consent_document_sha256
                FROM leads
                WHERE telegram_sent_at_utc IS NULL
                  AND (telegram_last_attempt_at_utc IS NULL OR telegram_last_attempt_at_utc <= ?)

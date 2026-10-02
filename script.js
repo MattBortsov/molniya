@@ -497,6 +497,7 @@ function initLeadForm() {
           name: form.elements.name.value.trim(),
           email: form.elements.email.value.trim(),
           phone: form.elements.phone.value.trim(),
+          source: form.dataset.leadSource,
           consent: form.elements.consent.checked,
           website: form.elements.website.value
         }),

@@ -171,6 +171,11 @@ def validate_lead(payload: Any) -> dict[str, str]:
         raise ValueError("Укажите корректную почту")
     if len(phone) > 32 or not re.fullmatch(r"\+?[\d\s().-]+", phone) or not 10 <= sum(char.isdigit() for char in phone) <= 15:
         raise ValueError("Укажите корректный телефон")
+    source = payload.get("source", "home")
+    if not isinstance(source, str) or source not in lead_store.FORM_NAMES:
+        raise ValueError("Неизвестная форма заявки")
+    fields["source_slug"] = source
+    fields["form_name"] = lead_store.FORM_NAMES[source]
     return fields
 
 
@@ -187,6 +192,8 @@ def send_lead_to_telegram(lead: dict[str, str]) -> None:
     text = (
         "Новая заявка с molniya-tech.ru\n"
         f"ID: {lead['id']}\n"
+        f"Форма: {lead['form_name']}\n"
+        f"Страница: https://molniya-tech.ru{lead_store.SOURCE_PATHS[lead['source_slug']]}\n"
         f"Имя: {lead['name']}\n"
         f"Почта: {lead['email']}\n"
         f"Телефон: {lead['phone']}\n"
