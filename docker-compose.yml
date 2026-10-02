@@ -10,6 +10,12 @@ services:
     volumes:
       - blog-data:/data
 
+  leads-data-init:
+    image: busybox:1.37
+    command: ["sh", "-c", "chown 65534:65534 /data && chmod 700 /data"]
+    volumes:
+      - leads-data:/data
+
   nginx:
     image: nginx:alpine
     container_name: molniya-nginx
@@ -42,6 +48,8 @@ services:
     depends_on:
       blog-data-init:
         condition: service_completed_successfully
+      leads-data-init:
+        condition: service_completed_successfully
     security_opt:
       - no-new-privileges:true
     environment:
@@ -55,6 +63,8 @@ services:
       TELEGRAM_PROXY_URL: ${TELEGRAM_PROXY_URL:-}
       BLOG_TEMPLATE_DIR: /blog-template
       BLOG_DATA_DIR: /data
+      LEADS_DB_PATH: /leads-data/leads.sqlite3
+      LEADS_POLICY_PATH: /policy/privacy.html
     command: ["python", "/app/server.py"]
     expose:
       - "8080"
@@ -64,6 +74,8 @@ services:
       - ./api:/app:ro
       - ./blog:/blog-template:ro
       - blog-data:/data
+      - leads-data:/leads-data
+      - ./privacy.html:/policy/privacy.html:ro
     tmpfs:
       - /tmp:size=8m
     healthcheck:
@@ -79,3 +91,4 @@ networks:
 
 volumes:
   blog-data:
+  leads-data:

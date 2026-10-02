@@ -1,12 +1,17 @@
 import json
 import os
+import sqlite3
+import stat
+import tempfile
 import threading
 import unittest
+from pathlib import Path
 from http.client import HTTPConnection
 from http.server import ThreadingHTTPServer
 from unittest.mock import patch
 
-from server import MolniyaApiHandler, build_decision_request, call_jev, format_public_result, send_lead_to_telegram, validate_lead
+import leads as lead_store
+from server import MolniyaApiHandler, build_decision_request, call_jev, format_public_result, retry_pending_leads_once, send_lead_to_telegram, validate_lead
 
 
 class IndustryFitTests(unittest.TestCase):
@@ -47,6 +52,13 @@ class IndustryFitTests(unittest.TestCase):
 
 class LeadFormTests(unittest.TestCase):
     def setUp(self) -> None:
+        self.storage = tempfile.TemporaryDirectory()
+        self.db_path = Path(self.storage.name) / "leads.sqlite3"
+        self.policy_path = Path(self.storage.name) / "privacy.html"
+        self.policy_path.write_text("<html>Редакция 1</html>", encoding="utf-8")
+        self.env = patch.dict(os.environ, {"LEADS_DB_PATH": str(self.db_path), "LEADS_POLICY_PATH": str(self.policy_path)})
+        self.env.start()
+        lead_store.init_db()
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), MolniyaApiHandler)
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
         self.thread.start()
@@ -55,6 +67,13 @@ class LeadFormTests(unittest.TestCase):
         self.server.shutdown()
         self.server.server_close()
         self.thread.join(timeout=2)
+        self.env.stop()
+        self.storage.cleanup()
+
+    def stored_leads(self) -> list[sqlite3.Row]:
+        with sqlite3.connect(self.db_path) as connection:
+            connection.row_factory = sqlite3.Row
+            return connection.execute("SELECT * FROM leads ORDER BY received_at_utc").fetchall()
 
     def post_lead(self, payload: dict) -> tuple[int, dict]:
         connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=2)
@@ -69,7 +88,13 @@ class LeadFormTests(unittest.TestCase):
         with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
             status, result = self.post_lead(payload)
         self.assertEqual((status, result), (200, {"ok": True}))
-        send.assert_called_once_with({"name": "Анна", "email": "anna@example.com", "phone": "+7 (999) 123-45-67"})
+        stored = self.stored_leads()
+        self.assertEqual(len(stored), 1)
+        self.assertEqual((stored[0]["name"], stored[0]["email"], stored[0]["phone"]), ("Анна", "anna@example.com", "+7 (999) 123-45-67"))
+        self.assertEqual(stored[0]["consent_checked"], 1)
+        self.assertIsNotNone(stored[0]["telegram_sent_at_utc"])
+        send.assert_called_once()
+        self.assertEqual(send.call_args.args[0]["id"], stored[0]["id"])
 
     def test_invalid_contact_or_missing_consent_is_rejected(self) -> None:
         payload = {"name": "А", "email": "wrong", "phone": "123", "consent": False}
@@ -78,6 +103,7 @@ class LeadFormTests(unittest.TestCase):
         self.assertEqual(status, 400)
         self.assertIn("error", result)
         send.assert_not_called()
+        self.assertEqual(self.stored_leads(), [])
 
     def test_honeypot_does_not_send(self) -> None:
         payload = {"website": "spam.example"}
@@ -85,16 +111,26 @@ class LeadFormTests(unittest.TestCase):
             status, result = self.post_lead(payload)
         self.assertEqual((status, result), (200, {"ok": True}))
         send.assert_not_called()
+        self.assertEqual(self.stored_leads(), [])
 
-    def test_missing_bot_token_does_not_report_success(self) -> None:
+    def test_missing_bot_token_queues_saved_lead(self) -> None:
         payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}
         with patch("server.rate_limit_allows", return_value=True), patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": ""}):
             status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        self.assertEqual(len(self.stored_leads()), 1)
+        self.assertIsNone(self.stored_leads()[0]["telegram_sent_at_utc"])
+
+    def test_database_failure_does_not_report_success_or_send(self) -> None:
+        payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.lead_store.save_lead", side_effect=OSError("disk full")), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
         self.assertEqual(status, 503)
         self.assertIn("error", result)
+        send.assert_not_called()
 
     def test_telegram_receives_only_validated_contact_fields(self) -> None:
-        lead = validate_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True})
+        lead = lead_store.save_lead(validate_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}))
         with patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_PROXY_URL": "", "OPENROUTER_PROXY_URL": ""}), patch("server.requests.Session") as session_factory:
             session = session_factory.return_value.__enter__.return_value
             session.post.return_value.json.return_value = {"ok": True}
@@ -104,13 +140,14 @@ class LeadFormTests(unittest.TestCase):
         message = session.post.call_args.kwargs["json"]["text"]
         self.assertIn("anna@example.com", message)
         self.assertIn("Согласие на обработку ПДн: чекбокс отмечен", message)
-        self.assertRegex(message, r"Проверено сервером: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC")
+        self.assertIn("Проверено сервером: " + lead["received_at_utc"], message)
         self.assertIn("Текст чекбокса: Согласен на обработку персональных данных по политике конфиденциальности.", message)
         self.assertIn("Политика: https://molniya-tech.ru/privacy", message)
+        self.assertIn("SHA-256 политики: " + lead["consent_document_sha256"], message)
         self.assertIsNone(session.post.call_args.kwargs["proxies"])
 
     def test_telegram_uses_existing_socks_proxy_when_needed(self) -> None:
-        lead = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"}
+        lead = lead_store.save_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"})
         env = {"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_PROXY_URL": "", "OPENROUTER_PROXY_URL": "socks5://user:pass@proxy.example:1080"}
         with patch.dict(os.environ, env), patch("server.requests.Session") as session_factory:
             session = session_factory.return_value.__enter__.return_value
@@ -118,12 +155,38 @@ class LeadFormTests(unittest.TestCase):
             send_lead_to_telegram(lead)
         self.assertEqual(session.post.call_args.kwargs["proxies"], {"https": "socks5h://user:pass@proxy.example:1080"})
 
-    def test_telegram_rejection_is_not_reported_as_success(self) -> None:
+    def test_telegram_rejection_keeps_lead_pending(self) -> None:
         payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}
         with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram", side_effect=ValueError("Telegram rejected")):
             status, result = self.post_lead(payload)
-        self.assertEqual(status, 502)
-        self.assertIn("error", result)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        stored = self.stored_leads()
+        self.assertEqual(len(stored), 1)
+        self.assertIsNone(stored[0]["telegram_sent_at_utc"])
+        self.assertEqual(stored[0]["telegram_attempts"], 1)
+
+    def test_consent_policy_snapshot_survives_policy_change(self) -> None:
+        lead = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"}
+        first = lead_store.save_lead(lead)
+        self.policy_path.write_text("<html>Редакция 2</html>", encoding="utf-8")
+        second = lead_store.save_lead(lead)
+        self.assertNotEqual(first["consent_document_sha256"], second["consent_document_sha256"])
+        with sqlite3.connect(self.db_path) as connection:
+            snapshots = dict(connection.execute("SELECT sha256, html FROM consent_documents"))
+        self.assertEqual(snapshots[first["consent_document_sha256"]], "<html>Редакция 1</html>")
+        self.assertEqual(snapshots[second["consent_document_sha256"]], "<html>Редакция 2</html>")
+        self.assertEqual(stat.S_IMODE(self.db_path.stat().st_mode), 0o600)
+
+    def test_failed_telegram_delivery_can_be_retried(self) -> None:
+        record = lead_store.save_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"})
+        lead_store.mark_telegram_attempt(record["id"], False)
+        with sqlite3.connect(self.db_path) as connection:
+            connection.execute("UPDATE leads SET telegram_last_attempt_at_utc = '2000-01-01T00:00:00+00:00' WHERE id = ?", (record["id"],))
+        with patch("server.send_lead_to_telegram") as send:
+            retry_pending_leads_once()
+        send.assert_called_once_with(record)
+        self.assertEqual(lead_store.pending_telegram_leads(), [])
+        self.assertIsNotNone(self.stored_leads()[0]["telegram_sent_at_utc"])
 
 
 if __name__ == "__main__":

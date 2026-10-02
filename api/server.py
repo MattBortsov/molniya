@@ -7,10 +7,10 @@ import hashlib
 import hmac
 import os
 import re
+import sqlite3
 import threading
 import time
 from collections import defaultdict, deque
-from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
@@ -19,9 +19,10 @@ from urllib.parse import urlsplit
 import requests
 
 if __package__:
-    from . import blog as blog_store
+    from . import blog as blog_store, leads as lead_store
 else:
     import blog as blog_store
+    import leads as lead_store
 
 
 OPENROUTER_URL = "https://openrouter.ai/api/alpha/decisions"
@@ -31,8 +32,6 @@ MAX_WEBHOOK_BYTES = 2_000_000
 MAX_BUSINESS_LENGTH = 240
 MAX_LEAD_BODY_BYTES = 2_048
 TELEGRAM_LEADS_CHAT_ID = "-1003993624474"
-LEAD_CONSENT_TEXT = "Согласен на обработку персональных данных по политике конфиденциальности."
-LEAD_POLICY_URL = "https://molniya-tech.ru/privacy"
 RATE_WINDOW_SECONDS = 60
 RATE_REQUESTS = 8
 
@@ -185,16 +184,17 @@ def send_lead_to_telegram(lead: dict[str, str]) -> None:
         proxy_url = "socks5h://" + proxy_url.removeprefix("socks5://")
     proxies = {"https": proxy_url} if proxy_url else None
 
-    consent_checked_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     text = (
         "Новая заявка с molniya-tech.ru\n"
+        f"ID: {lead['id']}\n"
         f"Имя: {lead['name']}\n"
         f"Почта: {lead['email']}\n"
         f"Телефон: {lead['phone']}\n"
         "Согласие на обработку ПДн: чекбокс отмечен\n"
-        f"Проверено сервером: {consent_checked_at}\n"
-        f"Текст чекбокса: {LEAD_CONSENT_TEXT}\n"
-        f"Политика: {LEAD_POLICY_URL}"
+        f"Проверено сервером: {lead['received_at_utc']}\n"
+        f"Текст чекбокса: {lead['consent_text']}\n"
+        f"Политика: {lead_store.POLICY_URL}\n"
+        f"SHA-256 политики: {lead['consent_document_sha256']}"
     )
     with requests.Session() as session:
         session.trust_env = False
@@ -208,6 +208,20 @@ def send_lead_to_telegram(lead: dict[str, str]) -> None:
         result = response.json()
         if not isinstance(result, dict) or result.get("ok") is not True:
             raise ValueError("Telegram rejected the message")
+
+
+def deliver_lead_notification(record: dict[str, str]) -> None:
+    try:
+        send_lead_to_telegram(record)
+    except (RuntimeError, requests.RequestException, ValueError):
+        sent = False
+    else:
+        sent = True
+    try:
+        lead_store.mark_telegram_attempt(record["id"], sent)
+    except (OSError, sqlite3.Error):
+        # The saved application remains pending for the retry worker.
+        pass
 
 
 class MolniyaApiHandler(BaseHTTPRequestHandler):
@@ -341,13 +355,11 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
             return
         try:
-            send_lead_to_telegram(lead)
-        except RuntimeError:
-            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Приём заявок временно недоступен"})
+            record = lead_store.save_lead(lead)
+        except (OSError, sqlite3.Error, UnicodeError):
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Не удалось сохранить заявку. Попробуйте позже."})
             return
-        except (requests.RequestException, ValueError):
-            self._send_json(HTTPStatus.BAD_GATEWAY, {"error": "Не удалось отправить заявку. Попробуйте позже."})
-            return
+        deliver_lead_notification(record)
         self._send_json(HTTPStatus.OK, {"ok": True})
 
     def _handle_seosmith(self) -> None:
@@ -397,10 +409,26 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
 
 def run() -> None:
     blog_store.rebuild_public()
+    lead_store.init_db()
+    threading.Thread(target=_retry_pending_leads, daemon=True, name="telegram-lead-retry").start()
     host = os.getenv("API_HOST", "0.0.0.0")
     port = int(os.getenv("API_PORT", "8080"))
     server = ThreadingHTTPServer((host, port), MolniyaApiHandler)
     server.serve_forever()
+
+
+def _retry_pending_leads() -> None:
+    while True:
+        time.sleep(60)
+        try:
+            retry_pending_leads_once()
+        except (OSError, sqlite3.Error):
+            continue
+
+
+def retry_pending_leads_once() -> None:
+    for record in lead_store.pending_telegram_leads():
+        deliver_lead_notification(record)
 
 
 if __name__ == "__main__":
