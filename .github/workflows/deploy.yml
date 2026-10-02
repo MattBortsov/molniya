@@ -22,6 +22,10 @@ jobs:
             if [ ! -d .git ]; then
               git clone https://github.com/MattBortsov/molniya.git .
             fi
+            if [ ! -f .env ] || ! grep -Eq '^TELEGRAM_BOT_TOKEN=[0-9]+:[A-Za-z0-9_-]+' .env; then
+              echo 'TELEGRAM_BOT_TOKEN is missing from the server .env'
+              exit 1
+            fi
             git fetch origin
             git reset --hard origin/main
             if [ ! -f .env ] || ! grep -Eq '^OPENROUTER_API_KEY=.+' .env; then
@@ -52,8 +56,9 @@ jobs:
             notfound_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:8090/non-existent-page-check-404)
             notfound_body=$(curl -sS --max-time 10 http://127.0.0.1:8090/non-existent-page-check-404)
             webhook_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"event":"test"}' http://127.0.0.1:8090/api/seosmith)
-            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$notfound_status" != '404' ] || [ "$webhook_status" != '401' ]; then
-              echo "Smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status 404=$notfound_status unsigned_webhook=$webhook_status"
+            lead_status=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json' -d '{"name":"A","email":"invalid","phone":"123","consent":false}' http://127.0.0.1:8090/api/lead)
+            if [ "$blog_status" != '200' ] || [ "$sitemap_status" != '200' ] || [ "$robots_status" != '200' ] || [ "$notfound_status" != '404' ] || [ "$webhook_status" != '401' ] || [ "$lead_status" != '400' ]; then
+              echo "Smoke check failed: blog=$blog_status sitemap=$sitemap_status robots=$robots_status 404=$notfound_status unsigned_webhook=$webhook_status invalid_lead=$lead_status"
               exit 1
             fi
             if ! echo "$notfound_body" | grep -q "mt-404-title"; then

@@ -41,15 +41,15 @@ SECTORS = [
         "badge_class": "mt-dropdown-badge--active",
     },
     {
-        "id": "health",
-        "slug": "health",
-        "title": "Здоровье",
-        "desc": "Клиники, массаж, частные кабинеты, спа",
-        "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg>',
-        "emoji": "🩺",
-        "active": True,
-        "badge": "Решение",
-        "badge_class": "mt-dropdown-badge--active",
+        "id": "spaces",
+        "slug": "spaces",
+        "title": "Аренда пространств",
+        "desc": "Коворкинги, футбольные и волейбольные поля, лофты для праздников",
+        "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg>',
+        "emoji": "🏟️",
+        "active": False,
+        "badge": "Скоро",
+        "badge_class": "mt-dropdown-badge--soon",
     },
     {
         "id": "education",
@@ -78,8 +78,9 @@ SECTORS = [
         "slug": "repair",
         "title": "Ремонт и сервис",
         "desc": "Сервисные центры, ремонт техники, ателье",
-        "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
-        "emoji": "🔧",
+        "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg>',
+        "mobile_icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg>',
+        "emoji": "📱",
         "active": False,
         "badge": "Скоро",
         "badge_class": "mt-dropdown-badge--soon",
@@ -97,24 +98,32 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
     grid_items = []
     mobile_items = []
     for s in SECTORS:
-        href = f"/{s['slug']}" if s['active'] else f"/{s['slug']}"
+        href = f"/{s['slug']}"
         active_cls = " mt-dropdown-card--active" if s["slug"] == active_item else ""
-        grid_items.append(f'''              <a class="mt-dropdown-card{active_cls}" href="{href}" role="menuitem">
+        card_tag = "a" if s["active"] else "div"
+        card_attrs = f' href="{href}" role="menuitem"' if s["active"] else ' aria-disabled="true"'
+        soon_cls = "" if s["active"] else " mt-dropdown-card--soon"
+        badge = "" if s["active"] else f'<span class="mt-dropdown-badge {s["badge_class"]}">{html.escape(s["badge"])}</span>'
+        grid_items.append(f'''              <{card_tag} class="mt-dropdown-card{active_cls}{soon_cls}"{card_attrs}>
                 <div class="mt-dropdown-icon">{s["icon"]}</div>
                 <div class="mt-dropdown-info">
-                  <div class="mt-dropdown-title">{html.escape(s["title"])}</div>
+                  <div class="mt-dropdown-title">{html.escape(s["title"])}{badge}</div>
                   <div class="mt-dropdown-desc">{html.escape(s["desc"])}</div>
                 </div>
-              </a>''')
+              </{card_tag}>''')
 
         m_highlight = " mt-mobile-sublink--highlight" if s["slug"] == active_item else ""
-        mobile_items.append(f'''            <a class="mt-mobile-sublink{m_highlight}" href="{href}">
-              <span class="mt-mobile-sublink-icon">{s["emoji"]}</span>
+        mobile_tag = "a" if s["active"] else "div"
+        mobile_attrs = f' href="{href}"' if s["active"] else ' aria-disabled="true"'
+        mobile_icon = s.get("mobile_icon", s["emoji"])
+        mobile_desc = s["desc"] if s["active"] else f'Скоро · {s["desc"]}'
+        mobile_items.append(f'''            <{mobile_tag} class="mt-mobile-sublink{m_highlight}"{mobile_attrs}>
+              <span class="mt-mobile-sublink-icon">{mobile_icon}</span>
               <span class="mt-mobile-sublink-info">
                 <strong>{html.escape(s["title"])}</strong>
-                <small>{html.escape(s["desc"])}</small>
+                <small>{html.escape(mobile_desc)}</small>
               </span>
-            </a>''')
+            </{mobile_tag}>''')
 
     cards_markup = "\n".join(grid_items)
     mobile_markup = "\n".join(mobile_items)
@@ -343,7 +352,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -891,7 +900,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1405,7 +1414,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1823,7 +1832,7 @@ def sync_navigation_to_index():
     start_marker = "<!-- NAV -->"
     end_marker = "</nav>"
     if start_marker in content and end_marker in content:
-        before = content.split(start_marker, 1)[0]
+        before = content.split(start_marker, 1)[0].rstrip(" \t")
         after = content.split(end_marker, 1)[1]
         content = before + nav_html + after
 
@@ -1831,7 +1840,7 @@ def sync_navigation_to_index():
     f_start = "<!-- FOOTER -->"
     f_end = "</footer>"
     if f_start in content and f_end in content:
-        before = content.split(f_start, 1)[0]
+        before = content.split(f_start, 1)[0].rstrip(" \t")
         after = content.split(f_end, 1)[1]
         content = before + footer_html + after
 
@@ -1851,7 +1860,7 @@ def sync_navigation_to_blog():
     start_marker = "<!-- NAV -->"
     end_marker = "</nav>"
     if start_marker in content and end_marker in content:
-        before = content.split(start_marker, 1)[0]
+        before = content.split(start_marker, 1)[0].rstrip(" \t")
         after = content.split(end_marker, 1)[1]
         content = before + nav_html + after
 
@@ -1859,7 +1868,7 @@ def sync_navigation_to_blog():
     f_start = "<!-- FOOTER -->"
     f_end = "</footer>"
     if f_start in content and f_end in content:
-        before = content.split(f_start, 1)[0]
+        before = content.split(f_start, 1)[0].rstrip(" \t")
         after = content.split(f_end, 1)[1]
         content = before + footer_html + after
 
@@ -1976,7 +1985,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2098,7 +2107,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2334,7 +2343,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-privacy">
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2494,16 +2503,17 @@ def build_privacy_page() -> str:
         </section>
 
         <section class="mt-privacy-section">
-          <h2>5. Получение консультации по использованию сайта Оператора</h2>
-          <p>Для цели получения консультации по использованию сайта Оператора субъект персональных данных дает согласие на обработку его ПДн посредством проставления галочки напротив соответствующей графы при заполнении формы, размещенной на странице сайта <a href="https://molniya-tech.ru/" class="mt-link-accent">https://molniya-tech.ru/</a>.</p>
+          <h2>5. Заявка на доступ и консультацию</h2>
+          <p>Для обработки заявки на доступ к Молнии и связи с заявителем субъект персональных данных дает согласие на обработку его ПДн посредством проставления галочки при заполнении формы, размещенной на странице сайта <a href="https://molniya-tech.ru/" class="mt-link-accent">https://molniya-tech.ru/</a>.</p>
 
           <p><strong>В форме необходимо указать следующие персональные данные:</strong></p>
           <ul>
-            <li>Фамилия, имя, отчество;</li>
+            <li>Имя;</li>
             <li>Номер мобильного телефона;</li>
             <li>Адрес электронной почты.</li>
           </ul>
 
+          <p>Сведения из формы направляются через Telegram в указанный Оператором канал для обработки заявки и ответа заявителю.</p>
           <p>Основанием для обработки персональных данных субъекта ПДн в данном случае является согласие на обработку персональных данных. Согласие на обработку ПДн действует в течение срока использования субъектом ПДн Сайта и услуг Оператора.</p>
 
           <p>Обработка ПДн в указанной цели прекращается в течение 30 дней с момента истечения срока действия согласия на обработку ПДн. Также субъект ПДн вправе отозвать свое согласие на обработку его персональных данных. В таком случае обработка ПДн в указанной цели прекращается в течение 30 дней с момента получения от субъекта ПДн отзыва согласия на обработку персональных данных в свободной форме в соответствии с п. 5 ст. 21 Федерального закона от 27.07.2006 г. № 152-ФЗ «О персональных данных».</p>
@@ -2662,4 +2672,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

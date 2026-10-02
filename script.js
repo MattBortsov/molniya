@@ -468,6 +468,63 @@ function initIndustryFitForm() {
   });
 }
 
+/* ---- Contact requests are sent through the same-origin API ---- */
+function initLeadForm() {
+  const form = document.querySelector('[data-lead-form]');
+  if (!form) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('[data-lead-status]');
+  const defaultButtonText = button.textContent;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || button.disabled) return;
+
+    button.disabled = true;
+    button.textContent = 'Отправляем…';
+    status.textContent = '';
+    status.removeAttribute('data-state');
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 12000);
+
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.elements.name.value.trim(),
+          email: form.elements.email.value.trim(),
+          phone: form.elements.phone.value.trim(),
+          consent: form.elements.consent.checked,
+          website: form.elements.website.value
+        }),
+        signal: controller.signal
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok !== true) {
+        throw new Error(payload.error || 'Не удалось отправить заявку');
+      }
+
+      form.reset();
+      status.dataset.state = 'success';
+      status.textContent = 'Заявка отправлена. Мы свяжемся с вами по указанным контактам.';
+    } catch (error) {
+      status.dataset.state = 'error';
+      status.textContent = error.name === 'AbortError'
+        ? 'Ответ задерживается. Проверьте связь и попробуйте позже.'
+        : error.name === 'TypeError'
+          ? 'Не удалось связаться с сервером. Попробуйте позже.'
+          : error.message || 'Не удалось отправить заявку. Попробуйте позже.';
+    } finally {
+      window.clearTimeout(timeout);
+      button.disabled = false;
+      button.textContent = defaultButtonText;
+    }
+  });
+}
+
 /* ---- Product screenshots: one screen at a time, chosen by the reader ---- */
 function initVisibilityGallery() {
   const gallery = document.querySelector('[data-visibility-gallery]');
@@ -629,6 +686,7 @@ function initApp() {
   initStickyCta();
   initCookieBanner();
   initIndustryFitForm();
+  initLeadForm();
   initVisibilityGallery();
   initRequisitesCopy();
 }

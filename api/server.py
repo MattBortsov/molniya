@@ -6,6 +6,7 @@ import json
 import hashlib
 import hmac
 import os
+import re
 import threading
 import time
 from collections import defaultdict, deque
@@ -27,6 +28,8 @@ OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "typesafe/jev-1.13")
 MAX_BODY_BYTES = 4_096
 MAX_WEBHOOK_BYTES = 2_000_000
 MAX_BUSINESS_LENGTH = 240
+MAX_LEAD_BODY_BYTES = 2_048
+TELEGRAM_LEADS_CHAT_ID = "-1003993624474"
 RATE_WINDOW_SECONDS = 60
 RATE_REQUESTS = 8
 
@@ -147,6 +150,58 @@ def rate_limit_allows(ip_address: str, now: float | None = None) -> bool:
         return True
 
 
+def validate_lead(payload: Any) -> dict[str, str]:
+    """Accept only the three contact fields needed to reply to an applicant."""
+    if not isinstance(payload, dict) or payload.get("consent") is not True:
+        raise ValueError("Подтвердите согласие на обработку данных")
+
+    fields: dict[str, str] = {}
+    for key in ("name", "email", "phone"):
+        value = payload.get(key)
+        if not isinstance(value, str):
+            raise ValueError("Заполните имя, почту и телефон")
+        fields[key] = " ".join(value.split())
+
+    name, email, phone = fields["name"], fields["email"], fields["phone"]
+    if not 2 <= len(name) <= 80 or any(ord(char) < 32 for char in name):
+        raise ValueError("Укажите имя от 2 до 80 символов")
+    if len(email) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email):
+        raise ValueError("Укажите корректную почту")
+    if len(phone) > 32 or not re.fullmatch(r"\+?[\d\s().-]+", phone) or not 10 <= sum(char.isdigit() for char in phone) <= 15:
+        raise ValueError("Укажите корректный телефон")
+    return fields
+
+
+def send_lead_to_telegram(lead: dict[str, str]) -> None:
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+    if not token:
+        raise RuntimeError("Telegram bot is not configured")
+
+    proxy_url = os.getenv("TELEGRAM_PROXY_URL", "").strip() or os.getenv("OPENROUTER_PROXY_URL", "").strip()
+    if proxy_url.startswith("socks5://"):
+        proxy_url = "socks5h://" + proxy_url.removeprefix("socks5://")
+    proxies = {"https": proxy_url} if proxy_url else None
+
+    text = (
+        "Новая заявка с molniya-tech.ru\n"
+        f"Имя: {lead['name']}\n"
+        f"Почта: {lead['email']}\n"
+        f"Телефон: {lead['phone']}"
+    )
+    with requests.Session() as session:
+        session.trust_env = False
+        response = session.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={"chat_id": int(os.getenv("TELEGRAM_LEADS_CHAT_ID", TELEGRAM_LEADS_CHAT_ID)), "text": text},
+            proxies=proxies,
+            timeout=8,
+        )
+        response.raise_for_status()
+        result = response.json()
+        if not isinstance(result, dict) or result.get("ok") is not True:
+            raise ValueError("Telegram rejected the message")
+
+
 class MolniyaApiHandler(BaseHTTPRequestHandler):
     server_version = "MolniyaApi/1.0"
     sys_version = ""
@@ -198,6 +253,9 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
         if urlsplit(self.path).path == "/api/seosmith":
             self._handle_seosmith()
             return
+        if urlsplit(self.path).path == "/api/lead":
+            self._handle_lead()
+            return
         if self.path != "/api/industry-fit":
             self._send_json(HTTPStatus.NOT_FOUND, {"error": "Не найдено"})
             return
@@ -246,6 +304,43 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             return
 
         self._send_json(HTTPStatus.OK, result)
+
+    def _handle_lead(self) -> None:
+        if not rate_limit_allows("lead:" + self._client_ip()):
+            self._send_json(HTTPStatus.TOO_MANY_REQUESTS, {"error": "Слишком много заявок. Попробуйте позже."})
+            return
+        if self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower() != "application/json":
+            self._send_json(HTTPStatus.UNSUPPORTED_MEDIA_TYPE, {"error": "Ожидается JSON"})
+            return
+        try:
+            content_length = int(self.headers.get("Content-Length", "0"))
+        except ValueError:
+            content_length = 0
+        if content_length <= 0 or content_length > MAX_LEAD_BODY_BYTES:
+            self._send_json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"error": "Некорректный размер запроса"})
+            return
+        try:
+            payload = json.loads(self.rfile.read(content_length).decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный JSON"})
+            return
+        if isinstance(payload, dict) and payload.get("website"):
+            self._send_json(HTTPStatus.OK, {"ok": True})
+            return
+        try:
+            lead = validate_lead(payload)
+        except ValueError as exc:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+            return
+        try:
+            send_lead_to_telegram(lead)
+        except RuntimeError:
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Приём заявок временно недоступен"})
+            return
+        except (requests.RequestException, ValueError):
+            self._send_json(HTTPStatus.BAD_GATEWAY, {"error": "Не удалось отправить заявку. Попробуйте позже."})
+            return
+        self._send_json(HTTPStatus.OK, {"ok": True})
 
     def _handle_seosmith(self) -> None:
         secret = os.getenv("SEOSMITH_WEBHOOK_SECRET", "")

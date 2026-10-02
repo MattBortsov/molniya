@@ -1,8 +1,12 @@
+import json
 import os
+import threading
 import unittest
+from http.client import HTTPConnection
+from http.server import ThreadingHTTPServer
 from unittest.mock import patch
 
-from server import build_decision_request, call_jev, format_public_result
+from server import MolniyaApiHandler, build_decision_request, call_jev, format_public_result, send_lead_to_telegram, validate_lead
 
 
 class IndustryFitTests(unittest.TestCase):
@@ -39,6 +43,82 @@ class IndustryFitTests(unittest.TestCase):
                 session.post.call_args.kwargs["proxies"],
                 {"https": "socks5h://user:pass@proxy.example:1080"},
             )
+
+
+class LeadFormTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.server = ThreadingHTTPServer(("127.0.0.1", 0), MolniyaApiHandler)
+        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+        self.thread.start()
+
+    def tearDown(self) -> None:
+        self.server.shutdown()
+        self.server.server_close()
+        self.thread.join(timeout=2)
+
+    def post_lead(self, payload: dict) -> tuple[int, dict]:
+        connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=2)
+        connection.request("POST", "/api/lead", body=json.dumps(payload), headers={"Content-Type": "application/json"})
+        response = connection.getresponse()
+        result = response.status, json.loads(response.read())
+        connection.close()
+        return result
+
+    def test_valid_lead_is_sent_once(self) -> None:
+        payload = {"name": "  Анна  ", "email": "anna@example.com", "phone": "+7 (999) 123-45-67", "consent": True, "website": ""}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        send.assert_called_once_with({"name": "Анна", "email": "anna@example.com", "phone": "+7 (999) 123-45-67"})
+
+    def test_invalid_contact_or_missing_consent_is_rejected(self) -> None:
+        payload = {"name": "А", "email": "wrong", "phone": "123", "consent": False}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual(status, 400)
+        self.assertIn("error", result)
+        send.assert_not_called()
+
+    def test_honeypot_does_not_send(self) -> None:
+        payload = {"website": "spam.example"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        send.assert_not_called()
+
+    def test_missing_bot_token_does_not_report_success(self) -> None:
+        payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}
+        with patch("server.rate_limit_allows", return_value=True), patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": ""}):
+            status, result = self.post_lead(payload)
+        self.assertEqual(status, 503)
+        self.assertIn("error", result)
+
+    def test_telegram_receives_only_validated_contact_fields(self) -> None:
+        lead = validate_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True})
+        with patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_PROXY_URL": "", "OPENROUTER_PROXY_URL": ""}), patch("server.requests.Session") as session_factory:
+            session = session_factory.return_value.__enter__.return_value
+            session.post.return_value.json.return_value = {"ok": True}
+            send_lead_to_telegram(lead)
+        self.assertFalse(session.trust_env)
+        self.assertEqual(session.post.call_args.kwargs["json"]["chat_id"], -1003993624474)
+        self.assertIn("anna@example.com", session.post.call_args.kwargs["json"]["text"])
+        self.assertIsNone(session.post.call_args.kwargs["proxies"])
+
+    def test_telegram_uses_existing_socks_proxy_when_needed(self) -> None:
+        lead = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"}
+        env = {"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_PROXY_URL": "", "OPENROUTER_PROXY_URL": "socks5://user:pass@proxy.example:1080"}
+        with patch.dict(os.environ, env), patch("server.requests.Session") as session_factory:
+            session = session_factory.return_value.__enter__.return_value
+            session.post.return_value.json.return_value = {"ok": True}
+            send_lead_to_telegram(lead)
+        self.assertEqual(session.post.call_args.kwargs["proxies"], {"https": "socks5h://user:pass@proxy.example:1080"})
+
+    def test_telegram_rejection_is_not_reported_as_success(self) -> None:
+        payload = {"name": "Анна", "email": "anna@example.com", "phone": "+79991234567", "consent": True}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram", side_effect=ValueError("Telegram rejected")):
+            status, result = self.post_lead(payload)
+        self.assertEqual(status, 502)
+        self.assertIn("error", result)
 
 
 if __name__ == "__main__":
