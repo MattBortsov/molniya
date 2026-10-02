@@ -101,7 +101,12 @@ class LeadFormTests(unittest.TestCase):
             send_lead_to_telegram(lead)
         self.assertFalse(session.trust_env)
         self.assertEqual(session.post.call_args.kwargs["json"]["chat_id"], -1003993624474)
-        self.assertIn("anna@example.com", session.post.call_args.kwargs["json"]["text"])
+        message = session.post.call_args.kwargs["json"]["text"]
+        self.assertIn("anna@example.com", message)
+        self.assertIn("Согласие на обработку ПДн: чекбокс отмечен", message)
+        self.assertRegex(message, r"Проверено сервером: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC")
+        self.assertIn("Текст чекбокса: Согласен на обработку персональных данных по политике конфиденциальности.", message)
+        self.assertIn("Политика: https://molniya-tech.ru/privacy", message)
         self.assertIsNone(session.post.call_args.kwargs["proxies"])
 
     def test_telegram_uses_existing_socks_proxy_when_needed(self) -> None:

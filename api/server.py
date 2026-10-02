@@ -10,6 +10,7 @@ import re
 import threading
 import time
 from collections import defaultdict, deque
+from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
@@ -30,6 +31,8 @@ MAX_WEBHOOK_BYTES = 2_000_000
 MAX_BUSINESS_LENGTH = 240
 MAX_LEAD_BODY_BYTES = 2_048
 TELEGRAM_LEADS_CHAT_ID = "-1003993624474"
+LEAD_CONSENT_TEXT = "Согласен на обработку персональных данных по политике конфиденциальности."
+LEAD_POLICY_URL = "https://molniya-tech.ru/privacy"
 RATE_WINDOW_SECONDS = 60
 RATE_REQUESTS = 8
 
@@ -182,11 +185,16 @@ def send_lead_to_telegram(lead: dict[str, str]) -> None:
         proxy_url = "socks5h://" + proxy_url.removeprefix("socks5://")
     proxies = {"https": proxy_url} if proxy_url else None
 
+    consent_checked_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     text = (
         "Новая заявка с molniya-tech.ru\n"
         f"Имя: {lead['name']}\n"
         f"Почта: {lead['email']}\n"
-        f"Телефон: {lead['phone']}"
+        f"Телефон: {lead['phone']}\n"
+        "Согласие на обработку ПДн: чекбокс отмечен\n"
+        f"Проверено сервером: {consent_checked_at}\n"
+        f"Текст чекбокса: {LEAD_CONSENT_TEXT}\n"
+        f"Политика: {LEAD_POLICY_URL}"
     )
     with requests.Session() as session:
         session.trust_env = False
