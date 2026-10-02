@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>CRM для клиники, студии массажа и стоматологии — программа учета пациентов и онлайн-записи Молния</title>
+  <meta name="description" content="Программа и CRM для медицинских центров, студий массажа, клиник и частных кабинетов: онлайн-запись пациентов 24/7, расписание кабинетов и врачей, электронная карта пациента, расчёт сдельной зарплаты и учет расходников.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/health">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="CRM для клиники, студии массажа и стоматологии — программа учета пациентов и онлайн-записи Молния">
+  <meta property="og:description" content="Программа и CRM для медицинских центров, студий массажа, клиник и частных кабинетов: онлайн-запись пациентов 24/7, расписание кабинетов и врачей, электронная карта пациента, расчёт сдельной зарплаты и учет расходников.">
+  <meta property="og:url" content="https://molniya-tech.ru/health">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM для клиники, студии массажа и стоматологии — программа учета пациентов и онлайн-записи Молния">
+  <meta name="twitter:description" content="Программа и CRM для медицинских центров, студий массажа, клиник и частных кабинетов: онлайн-запись пациентов 24/7, расписание кабинетов и врачей, электронная карта пациента, расчёт сдельной зарплаты и учет расходников.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — CRM для клиник, студий массажа и медицинских центров", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/health", "description": "Программа и CRM для медицинских центров, студий массажа, клиник и частных кабинетов: онлайн-запись пациентов 24/7, расписание кабинетов и врачей, электронная карта пациента, расчёт сдельной зарплаты и учет расходников.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и перенос базы пациентов"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261001-cards">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, спортивные секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Уход за животными</div>
+                  <div class="mt-dropdown-desc">Груминг-салоны, ветклиники, передержки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, спортивные секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Уход за животными</strong>
+                <small>Груминг-салоны, ветклиники, передержки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon">🔧</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в Telegram
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            CRM для клиники,<br><span class="mt-hero-accent">студии массажа и частной практики</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7, расписание кабинетов, электронная карта пациента и сдельный расчет зарплат</p>
+              <a class="mt-btn mt-btn-hero" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+                Подключить клинику
+              </a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для медицины и оздоровления">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Врачи и кабинеты</span>
+                <span class="mt-facet-note">онлайн-запись и учет длительности приемов</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Карта пациента</span>
+                <span class="mt-facet-note">протоколы осмотров, история и анализы</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зарплата и %</span>
+                <span class="mt-facet-note">сдельная оплата за прием и процедуры</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">AI & Профилактика</span>
+                <span class="mt-facet-note">Telegram-напоминания и повторные визиты</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клиники и медицинского центра: расписание врачей и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронный журнал записи и загрузка кабинетов клиники в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE CABINETS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка кабинетов и врачей" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Все кабинеты, врачи и пациенты <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и главный врач видят статус каждого кабинета, принимающего специалиста, процедуру и сумму чека в реальном времени на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Каб. 1 · Терапевт</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Сергей В. (Анна М.)</div>
+                <div class="mt-auto-car-tier">Первичный прием + ЭКГ</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🩺</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Консультация + ЭКГ</span>
+              <span class="mt-auto-price">3 500 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Каб. 2 · Стоматолог</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Марина К. (Игорь Д.)</div>
+                <div class="mt-auto-car-tier">Терапия + Снимок</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🦷</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Лечение кариеса</span>
+              <span class="mt-auto-price">6 800 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зал 3 · Массаж</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Павел Р. (Михаил С.)</div>
+                <div class="mt-auto-car-tier">Курс (сеанс 4 из 10)</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💆‍♂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Спортивный массаж</span>
+              <span class="mt-auto-price">4 200 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Каб. 4 · УЗИ</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ольга Н. (15:30)</div>
+                <div class="mt-auto-car-tier">УЗИ органов брюшной</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📋</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>УЗИ-скрининг</span>
+              <span class="mt-auto-price">4 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEALTH OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для медицины и клиник" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Ведите медицинский бизнес <span class="mt-overview-hook">от первого обращения до выздоровления</span></h2>
+          <p class="mt-section-sub">Программа для учета в медицинском центре, студии массажа и стоматологии: электронное расписание кабинетов, амбулаторные карты пациентов, списание расходников и прозрачные зарплаты без рутины в бумажных журналах.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3><span class="mt-overview-hook">Журнал записи</span> и расписание кабинетов</h3>
+            <p>Пациенты записываются онлайн через сайт, соцсети или Telegram 24/7. Администратор управляет загрузкой кабинетов, аппаратов и врачей в один клик. Программа предотвращает пересечения специалистов и простой оборудования.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание приемов</span><span>Сегодня</span></div>
+              <div class="mt-overview-calendar"><span>09:00</span><div></div><span>10:30</span><div class="mt-overview-slot">Каб. 1 <small>Терапевт · Прием + ЭКГ</small></div><span>12:00</span><div class="mt-overview-slot mt-overview-slot--light">Зал 3 <small>Массаж · Спина (курс)</small></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Электронная карта пациента <span class="mt-overview-hook">и протоколы приемов</span></h3>
+            <p>История визитов, анамнез, назначения, протоколы приемов и прикрепленные результаты анализов или снимков хранятся в защищенной карте пациента. Врач мгновенно видит динамику лечения перед началом консультации.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Карточка пациента</span><span>Сергей Васильев</span></div>
+              <div class="mt-overview-stages"><span>Осмотр</span><i></i><span>Протокол</span><i></i><span>Назначения</span></div>
+              <div class="mt-overview-check">✓ <span>Диагноз: Первичная консультация (здоров)</span></div>
+              <div class="mt-overview-check">✓ <span>Протокол осмотра и ЭКГ прикреплены</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Складской учёт медикаментов <span class="mt-overview-hook">и расходников</span></h3>
+            <p>Молния автоматически списывает одноразовые расходники, перчатки, простыни, ампулы и массажные масла по стандартам каждой услуги. Полный контроль остатков и уведомления, когда препараты на исходе.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Остатки на складе</span><span>Медикаменты и расходники</span></div>
+              <div class="mt-overview-price-row"><span>Стерильные перчатки (L)</span><strong>420 пар · В норме</strong></div>
+              <div class="mt-overview-price-row"><span>Масло массажное базовое</span><strong>1 450 мл на складе</strong></div>
+              <div class="mt-overview-price-tag">Автосписание по протоколу услуги</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Telegram-напоминания <span class="mt-overview-hook">и повторные приемы</span></h3>
+            <p>Автоматические напоминания в Telegram за 24 и 2 часа снижают долю пропущенных приемов до 88%. Система вовремя напоминает пациентам о плановых осмотрах, вакцинациях и повторных сеансах курса массажа.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Статус визита</span><span>Telegram</span></div>
+              <div class="mt-overview-message">
+                Сергей, напоминаем о приеме у терапевта завтра в 10:30. Кабинет №1. Пожалуйста, подтвердите визит.
+                <span class="mt-overview-reaction">🩺</span>
+              </div>
+              <div class="mt-overview-client-row"><span>База пациентов клиники</span><strong>История визитов и карты →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата врачей <span class="mt-overview-hook">и учет выработки</span></h3>
+            <p>Гибкая мотивация: процент от стоимости приема, фикс за смену, доплата за проведенные процедуры или учет аренды кабинета. Врачи и массажисты видят свою выработку прямо в телефоне без споров и задержек.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка врача</span><span>Анна М. (Смена)</span></div>
+              <div class="mt-overview-metrics"><span>Приемы<b>40%</b></span><span>Процедуры<b>15%</b></span><span>Баланс<b>₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Подключить клинику</a>
+        </div>
+      </section>
+
+      <!-- HEALTH JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь визита пациента">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит пациента. <span class="mt-hero-accent">Полный контроль в клинике.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как специализированная программа автоматизирует прием: от бронирования слота до фиксации протокола осмотра, автосписания медикаментов и прозрачного расчета зарплаты специалиста.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Первичная консультация + ЭКГ</strong><span>Терапевт Анна М. · Кабинет №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Пациент</span>
+              <h3>Онлайн-запись на прием без звонков администратору</h3>
+              <p>Пациент выбирает специальность, врача и удобный интервал за 30 секунд через Telegram или на сайте. Программа бронирует кабинет и временной слот нужной длительности с учетом регламента приема.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Онлайн-запись</span>
+                <span class="mt-journey-proof-badge">Подтверждена</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Пациент</span><strong>Сергей Васильев</strong></div>
+              <div class="mt-journey-proof-row"><span>Специалист</span><strong>Терапевт Анна М.</strong></div>
+              <div class="mt-journey-proof-row"><span>Кабинет</span><strong>Кабинет №1</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Врач / Специалист</span>
+              <h3>Электронная карта и протокол осмотра за 2 минуты</h3>
+              <p>Врач открывает электронную карту пациента со смартфона или планшета, изучает анамнез и вносит протокол осмотра и назначения в единую защищенную систему без бумажной рутины.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Прием #3124</span>
+                <span class="mt-journey-proof-badge">Протокол заполнен</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Диагноз</span><strong>Первичный осмотр (здоров)</strong></div>
+              <div class="mt-journey-proof-row"><span>ЭКГ</span><strong>Пленка сохранена в карте</strong></div>
+              <div class="mt-journey-proof-row"><span>Врач</span><strong>Анна М. (высшая категория)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Процедурный кабинет</span>
+              <h3>Оказание услуг и автоматическое списание материалов</h3>
+              <p>Во время приема проведены забор анализов и снятие ЭКГ. Программа автоматически списывает электроды, одноразовые простыни и антисептик со склада отделения по стандарту услуги.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Состав приема</span>
+                <span class="mt-journey-proof-badge">К оплате</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Прием терапевта</span><strong>2 500 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Снятие и расшифровка ЭКГ</span><strong>1 000 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Итого прием</span><strong>3 500 ₽</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система & Главврач</span>
+              <h3>Оплата, Telegram-памятка и начисление зарплаты врача</h3>
+              <p>Пациент получает электронный чек и рекомендации врача в Telegram. Программа моментально начисляет терапевту 40% (1 400 ₽) за прием — выработка рассчитывается без ручных таблиц и споров.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Расчёт врача</span>
+                <span class="mt-journey-proof-badge">Начислено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Анна М. (40%)</span><strong>+1 400 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Списание со склада</span><strong>Расходники списаны</strong></div>
+              <div class="mt-journey-proof-row"><span>Telegram-памятка</span><strong>«Рекомендации отправлены»</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс медицинского центра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс автоматизации клиники</div>
+            <h2 class="mt-case-title">Медицинский центр «Гармония», 5 кабинетов</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше администраторы путались в накладках врачей, а пациенты забывали о приемах. В Молнии мы настроили четкое расписание по кабинетам, электронные карты и Telegram-напоминания. Неявки снизились практически до нуля, а учет процедур и зарплат стал полностью автоматическим.»
+            </blockquote>
+            <div class="mt-case-author">
+              Елена Романова <span>· Главный врач и управляющая, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+38%</span>
+              <span class="mt-case-label">Рост загрузки кабинетов благодаря плотной сетке записи</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-88%</span>
+              <span class="mt-case-label">Снижение пропусков приемов благодаря Telegram-напоминаниям</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>мин</small></span>
+              <span class="mt-case-label">На ручной расчет зарплат врачей и сведение кассы смены</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEALTH FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о программе для клиник, массажных студий и частных кабинетов</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте CRM Молния для своей клиники или студии</h3>
+            <p>Бесплатно поможем перенести базу пациентов из Excel или старой МИС, настроить расписание кабинетов, прайс-лист и схему зарплаты врачей. Начните прием без пауз в работе.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+            <details><summary>Подходит ли программа для частной клиники, массажной студии и стоматологии?</summary><p>Да. В Молнии гибко настраивается профиль работы: кабинеты врачей, массажные кушетки, стоматологические кресла или процедурные кабинеты. Вы задаете длительность процедур, привязку аппаратов к кабинетам и правила записи пациентов.</p></details>
+            <details><summary>Как защищаются персональные данные пациентов (152-ФЗ)?</summary><p>Система соответствует требованиям 152-ФЗ: все данные хранятся на защищенных серверах в дата-центрах на территории РФ с шифрованием. Доступ строго разграничен по ролям: врачи видят медицинские карты своих пациентов, администраторы — журнал записи и оплату.</p></details>
+            <details><summary>Можно ли настраивать разную длительность приемов для разных специалистов?</summary><p>Да. Для каждой специальности и услуги задается индивидуальный хронометраж: например, первичный прием терапевта — 40 минут, повторный — 20 минут, сеанс массажа спины — 60 минут. При онлайн-записи система автоматически бронирует правильное окно в расписании.</p></details>
+            <details><summary>Как учитываются курсы процедур и абонементы (например, курс массажа)?</summary><p>Программа ведет автоматический учет визитов по курсам и абонементам. Администратор и специалист видят номер текущего сеанса (например, 4 из 10), остаток оплаченных процедур и дату рекомендованного следующего визита.</p></details>
+            <details><summary>Как происходит расчет зарплаты врачей и медицинского персонала?</summary><p>В системе настраивается любая схема мотивации: процент от стоимости приема, фиксированная ставка за смену/выход, процент от назначенных процедур или учет стоимости аренды кабинета. Выработка рассчитывается автоматически в реальном времени.</p></details>
+            <details><summary>Как бесплатно перенести базу пациентов и историю приемов из старой программы или Excel?</summary><p>Служба заботы Молнии бесплатно помогает перенести контакты пациентов, историю визитов, каталог услуг, прайс-лист и график специалистов. Вы начинаете работу без остановки приема и без потери данных.</p></details>
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-section--final-cta mt-reveal" data-screen-label="Финальный CTA" data-mt-reveal>
+        <div class="mt-final">
+          <div class="mt-final-glow" aria-hidden="true"></div>
+          <div class="mt-final-inner">
+            <div class="mt-final-icon">
+              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+            </div>
+            <h2 class="mt-final-title">Автоматизируйте свой медицинский бизнес <span class="mt-hero-accent">на полную мощность</span></h2>
+            <p class="mt-final-sub">Управляйте расписанием кабинетов, исключите пропуски приемов и забудьте о ручных отчетах по зарплатам. Подключайтесь к CRM Молния уже сегодня.</p>
+            <div class="mt-final-actions">
+              <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+              <a class="mt-btn mt-btn-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+                Подключить клинику
+              </a>
+            </div>
+            <div class="mt-final-note">Новости об обновлениях и тарифах публикуем в Telegram-канале.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+              <span class="mt-footer-year">· 2026</span>
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <div class="mt-footer-links">
+            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
+            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            <a class="mt-footer-link" href="/cookies">Cookies</a>
+            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20260930-req2"></script>
+</body>
+</html>
