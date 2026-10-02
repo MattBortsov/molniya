@@ -86,6 +86,9 @@ SECTORS = [
     },
 ]
 
+BRAND_MARK_SVG = '<svg width="56" height="56" viewBox="0 0 96 96" fill="none" aria-hidden="true"><circle cx="48" cy="48" r="11" fill="none" stroke="#131B2C" stroke-width="8"/><g transform="rotate(0 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(60 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#DF5F3C"/></g><g transform="rotate(120 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(180 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(240 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(300 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g></svg>'
+
+
 def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
     """Builds the single source of truth for navigation across all pages."""
     logo_path = f"{asset_prefix}assets/img/logo/molniya-logo-horizontal.svg" if asset_prefix else "/assets/img/logo/molniya-logo-horizontal.svg"
@@ -705,7 +708,7 @@ def build_auto_page() -> str:
           <div class="mt-final-glow" aria-hidden="true"></div>
           <div class="mt-final-inner">
             <div class="mt-final-icon">
-              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+              {BRAND_MARK_SVG}
             </div>
             <h2 class="mt-final-title">Автоматизируйте свой автобизнес <span class="mt-hero-accent">на полную мощность</span></h2>
             <p class="mt-final-sub">Управляйте расписанием боксов, исключите простой постов и забудьте о ручных таблицах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
@@ -1253,7 +1256,7 @@ def build_beauty_page() -> str:
           <div class="mt-final-glow" aria-hidden="true"></div>
           <div class="mt-final-inner">
             <div class="mt-final-icon">
-              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+              {BRAND_MARK_SVG}
             </div>
             <h2 class="mt-final-title">Наведите идеальный порядок <span class="mt-hero-accent">в своём салоне красоты</span></h2>
             <p class="mt-final-sub">Заполняйте расписание без окон, удерживайте клиентов и забудьте о ручных расчетах зарплат. Подключайтесь к CRM Молния уже сегодня.</p>
@@ -1767,7 +1770,7 @@ def build_health_page() -> str:
           <div class="mt-final-glow" aria-hidden="true"></div>
           <div class="mt-final-inner">
             <div class="mt-final-icon">
-              <svg width="56" height="56" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.45"></circle><ellipse cx="17" cy="17" rx="15" ry="5.5" stroke="url(#mtgrad)" stroke-width="1.2" opacity="0.65" transform="rotate(-28 17 17)"></ellipse><path d="M18.6 6.5 10.8 18.6H15.6L14 27.5 23.2 14.2H17.7Z" fill="url(#mtgrad)"></path></svg>
+              {BRAND_MARK_SVG}
             </div>
             <h2 class="mt-final-title">Автоматизируйте свой медицинский бизнес <span class="mt-hero-accent">на полную мощность</span></h2>
             <p class="mt-final-sub">Управляйте расписанием кабинетов, исключите пропуски приемов и забудьте о ручных отчетах по зарплатам. Подключайтесь к CRM Молния уже сегодня.</p>
