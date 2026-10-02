@@ -196,7 +196,6 @@ def render_footer_html(asset_prefix: str = "") -> str:
           <div class="mt-footer-links">
             <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
             <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
-            <a class="mt-footer-link" href="/cookies">Cookies</a>
             <a class="mt-footer-link" href="/requisites">Реквизиты</a>
           </div>
         </div>
@@ -731,7 +730,7 @@ def build_auto_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -1279,7 +1278,7 @@ def build_beauty_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -1793,7 +1792,7 @@ def build_health_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -1814,7 +1813,7 @@ def build_health_page() -> str:
 
 
 def sync_navigation_to_index():
-    """Syncs the DRY nav into index.html."""
+    """Syncs the DRY nav, footer, and cookie banner into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
     nav_html = render_nav_html(active_item="", asset_prefix="")
 
@@ -1823,13 +1822,26 @@ def sync_navigation_to_index():
     if start_marker in content and end_marker in content:
         before = content.split(start_marker, 1)[0]
         after = content.split(end_marker, 1)[1]
-        new_content = before + nav_html + after
-        INDEX_HTML.write_text(new_content, encoding="utf-8")
-        print("Updated navigation in index.html")
+        content = before + nav_html + after
+
+    footer_html = render_footer_html(asset_prefix="")
+    f_start = "<!-- FOOTER -->"
+    f_end = "</footer>"
+    if f_start in content and f_end in content:
+        before = content.split(f_start, 1)[0]
+        after = content.split(f_end, 1)[1]
+        content = before + footer_html + after
+
+    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
+    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
+    content = content.replace(old_cookie_link, new_cookie_link)
+
+    INDEX_HTML.write_text(content, encoding="utf-8")
+    print("Updated navigation, footer, and banner in index.html")
 
 
 def sync_navigation_to_blog():
-    """Syncs the DRY nav into blog/index.html."""
+    """Syncs the DRY nav, footer, and cookie banner into blog/index.html."""
     content = BLOG_INDEX_HTML.read_text(encoding="utf-8")
     nav_html = render_nav_html(active_item="blog", asset_prefix="../")
 
@@ -1838,9 +1850,22 @@ def sync_navigation_to_blog():
     if start_marker in content and end_marker in content:
         before = content.split(start_marker, 1)[0]
         after = content.split(end_marker, 1)[1]
-        new_content = before + nav_html + after
-        BLOG_INDEX_HTML.write_text(new_content, encoding="utf-8")
-        print("Updated navigation in blog/index.html")
+        content = before + nav_html + after
+
+    footer_html = render_footer_html(asset_prefix="../")
+    f_start = "<!-- FOOTER -->"
+    f_end = "</footer>"
+    if f_start in content and f_end in content:
+        before = content.split(f_start, 1)[0]
+        after = content.split(f_end, 1)[1]
+        content = before + footer_html + after
+
+    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
+    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
+    content = content.replace(old_cookie_link, new_cookie_link)
+
+    BLOG_INDEX_HTML.write_text(content, encoding="utf-8")
+    print("Updated navigation, footer, and banner in blog/index.html")
 
 
 def sync_sitemap():
@@ -2234,7 +2259,7 @@ def build_requisites_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -2332,13 +2357,6 @@ def build_privacy_page() -> str:
           <div class="mt-eyebrow" style="margin-top:20px">Юридическая информация</div>
           <h1 class="mt-hero-title" style="font-size:clamp(28px,4.5vw,44px);margin-top:14px;line-height:1.18">Политика обработки персональных данных</h1>
           <p class="mt-privacy-date">Редакция введена в действие: 2 октября 2026 г. · ООО «МОЛНИЯ ТЕХ»</p>
-
-          <div class="mt-privacy-actions">
-            <a class="mt-btn-download" href="/assets/docs/molniya-privacy-policy.pdf" download="Политика_обработки_персональных_данных_ООО_МОЛНИЯ_ТЕХ.pdf" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Скачать официальный документ (PDF, 157 КБ)
-            </a>
-          </div>
         </div>
 
         <div class="mt-privacy-callout">
@@ -2501,7 +2519,7 @@ def build_privacy_page() -> str:
           <p>После отзыва субъектом ПДн согласия на обработку ПДн Оператор вправе обрабатывать персональные данные в течение сроков, определенных в соответствии с законодательством (процессуальным, налоговым, гражданским, о бухгалтерском учете, пр.), для выполнения возложенных на него обязанностей, предупреждения и пресечения нарушений законов, наших правил, защиты пользователей от мошеннических и иных недобросовестных действий, а также для предоставления ответов на обращения.</p>
         </section>
 
-        <section class="mt-privacy-section">
+        <section class="mt-privacy-section" id="cookies">
           <h2>7. Cookie-файлы</h2>
           <p>На Сайте могут использоваться следующие cookie-файлы:</p>
 
@@ -2549,8 +2567,6 @@ def build_privacy_page() -> str:
             <li><a href="https://support.microsoft.com/ru-ru/microsoft-edge/удаление-файлов-cookie-в-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="mt-link-accent">Microsoft Edge</a></li>
             <li><a href="https://support.mozilla.org/ru/kb/uluchshennaya-zashita-ot-otslezhivaniya-v-firefox-dlya-dekstopa" target="_blank" rel="noopener" class="mt-link-accent">Mozilla Firefox</a></li>
           </ul>
-
-          <p style="margin-top:14px">Подробнее о файлах cookie и сервисах веб-аналитики — на странице <a href="/cookies" class="mt-link-accent">Политика файлов cookie</a>.</p>
         </section>
 
         <section class="mt-privacy-section">
@@ -2585,7 +2601,7 @@ def build_privacy_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/cookies" class="mt-link-accent">политике cookie</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
