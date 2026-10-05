@@ -51,7 +51,10 @@ class DevHandler(MolniyaApiHandler, SimpleHTTPRequestHandler):
 
     def translate_path(self, path: str) -> str:
         relative = super().translate_path(path)
-        return str(PROJECT_ROOT / Path(relative).relative_to(Path.cwd()))
+        resolved = PROJECT_ROOT / Path(relative).relative_to(Path.cwd())
+        if not resolved.exists() and resolved.with_suffix(".html").exists():
+            return str(resolved.with_suffix(".html"))
+        return str(resolved)
 
 
 def run() -> None:

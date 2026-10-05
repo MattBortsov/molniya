@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>CRM для груминг-салона: запись и расписание | Молния</title>
+  <meta name="description" content="CRM для груминг-салона: онлайн-запись, карточки питомцев, расписание столов и мастеров, напоминания клиентам и расчет зарплат грумеров.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/pets">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="CRM для груминг-салона: запись и расписание | Молния">
+  <meta property="og:description" content="CRM для груминг-салона: онлайн-запись, карточки питомцев, расписание столов и мастеров, напоминания клиентам и расчет зарплат грумеров.">
+  <meta property="og:url" content="https://molniya-tech.ru/pets">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM для груминг-салона: запись и расписание | Молния">
+  <meta name="twitter:description" content="CRM для груминг-салона: онлайн-запись, карточки питомцев, расписание столов и мастеров, напоминания клиентам и расчет зарплат грумеров.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Груминг-салоны", "item": "https://molniya-tech.ru/pets"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — CRM для груминг-салонов", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/pets", "description": "CRM для груминг-салона: онлайн-запись, карточки питомцев, расписание столов и мастеров, напоминания клиентам и расчет зарплат грумеров.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка расписания столов груминга"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Учитывает ли Молния разную длительность процедур для мелких и крупных пород?", "acceptedAnswer": {"@type": "Answer", "text": "Да. В каталоге услуг можно настроить индивидуальный хронометраж и стоимость для каждой категории: от йорка (1.5 часа) до самоеда или хаски (3–3.5 часа). При записи система автоматически резервирует правильный слот в расписании мастера, исключая накладки и задержки следующих клиентов."}}, {"@type": "Question", "name": "Можно ли вести подробную карточку питомца с историей стрижек и особенностями поведения?", "acceptedAnswer": {"@type": "Answer", "text": "Конечно. В карточке питомца сохраняются кличка, порода, вес, дата рождения, отметки о характере (боязнь фена, агрессия, чувствительная кожа), аллергии на косметику и история всех визитов с фотографиями «до и после»."}}, {"@type": "Question", "name": "Как рассчитывается сдельная зарплата грумеров?", "acceptedAnswer": {"@type": "Answer", "text": "Молния автоматически рассчитывает вознаграждение мастеров по гибким правилам: процент от стоимости стрижки или комплекса (например, 40–50%), надбавки за агрессию или вычес колтунов, вычет себестоимости премиальной косметики или фиксированная ставка за смену. Баланс мастера обновляется сразу после закрытия визита."}}, {"@type": "Question", "name": "Как работает онлайн-запись для владельцев питомцев?", "acceptedAnswer": {"@type": "Answer", "text": "Виджет онлайн-записи устанавливается на сайт, в соцсети и мессенджеры. Владелец выбирает вид животного (собака, кошка), породу, вес и нужный комплекс (стрижка, экспресс-линька, гигиена, чистка зубов), после чего выбирает мастера и удобное время. Запись мгновенно резервирует стол в салоне 24/7."}}, {"@type": "Question", "name": "Как отправляются напоминания владельцам и уведомление о готовности питомца?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисный Telegram-бот напоминает владельцу о визите за 24 и за 2 часа, а во время процедуры мастер или администратор в 1 клик отправляет уведомление: «Ваш питомец готов, можно забирать!». А через 4–6 недель система заботливо приглашает на регулярный уход, возвращая постоянных клиентов."}}, {"@type": "Question", "name": "Можно ли распределять записи между грумерами и столами?", "acceptedAnswer": {"@type": "Answer", "text": "Да. В расписании видна занятость мастеров и столов. При записи администратор выбирает подходящего грумера, длительность процедуры и свободное время, чтобы избежать пересечений."}}, {"@type": "Question", "name": "Как бесплатно перенести базу клиентов и питомцев из Excel или другой программы?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно помогает перенести базу владельцев, клички и породы питомцев, историю посещений, каталог услуг и график работы мастеров. Перенос выполняется за 1 день без остановки работы салона."}}]}]</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <div class="mt-dropdown-card mt-dropdown-card--soon" aria-disabled="true">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис<span class="mt-dropdown-badge mt-dropdown-badge--soon">Скоро</span></div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </div>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <div class="mt-mobile-sublink" aria-disabled="true">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Скоро · Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </div>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в Telegram
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            CRM для груминг-салонов:<br><span class="mt-hero-accent">запись и расписание</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Учет питомцев по породам и весу, онлайн-запись 24/7, расписание столов и мастеров, расчет зарплат и напоминания о регулярном груминге</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для зообизнеса">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Породы и вес</span>
+                <span class="mt-facet-note">авторасчет времени процедуры под породу</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Карточка питомца</span>
+                <span class="mt-facet-note">повадки, аллергии, ветпаспорт и история визитов</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зарплата мастеров</span>
+                <span class="mt-facet-note">сдельный расчет % от услуг с вычетом косметики</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">AI & Забота</span>
+                <span class="mt-facet-note">Telegram-напоминания о повторной стрижке через 4 недели</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для груминг-салонов: электронное расписание столов и запись питомцев" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронное расписание столов и мастеров груминга в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE STATIONS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка столов и мастеров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Все столы груминга, мастера и пушистые гости <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и руководитель видят статус каждого стола, текущую породу, назначенного мастера и этап процедуры в реальном времени на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 1 · Комплексный груминг</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Йоркширский терьер «Микки»</div>
+                <div class="mt-auto-car-tier">Мастер: Анна В. · Модельная стрижка + гигиена</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🐶</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс для мелких пород</span>
+              <span class="mt-auto-price">3 200 ₽ (в работе)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 2 · Экспресс-линька</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Самоедская собака «Буран»</div>
+                <div class="mt-auto-car-tier">Мастер: Денис С. · Вычес + турбосушка (28 кг)</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🐕</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Экспресс-линька крупных пород</span>
+              <span class="mt-auto-price">6 500 ₽ (в работе)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Ванная зона · Спа и гигиена</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Мейн-кун «Барс» (16:30)</div>
+                <div class="mt-auto-car-tier">Вычес + мытье без седации · Готов к выдаче</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🐱</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплексный уход за кошкой</span>
+              <span class="mt-auto-price">4 000 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 3 · Стрижка и уход</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Французский бульдог «Оскар» (17:00)</div>
+                <div class="mt-auto-car-tier">Владелец: Дмитрий · Стрижка по породе</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🐶</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Стрижка + уход за когтями</span>
+              <span class="mt-auto-price">2 400 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PETS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для зообизнеса" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Ведите заботливый зообизнес <span class="mt-overview-hook">от первого щенка до постоянного клиента</span></h2>
+          <p class="mt-section-sub">Программа для учета в груминг-салоне: расписание столов и мастеров, карточки питомцев, расчет зарплаты грумеров и автоматические напоминания владельцам.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Умный тайминг под породу <span class="mt-overview-hook">и вес питомца</span></h3>
+            <p>Наглядная шахматка по столам, ваннам и мастерам. Система автоматически резервирует нужное время: от 1.5 часов для йорка до 3.5 часов для самоеда. Никаких накладок и задержек клиентов.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание столов</span><span>Сегодня</span></div>
+              <div class="mt-overview-calendar"><span>14:00</span><div></div><span>15:30</span><div class="mt-overview-slot">Стол 1 <small>Йорк Микки · Комплекс 90 мин</small></div><span>17:00</span><div class="mt-overview-slot mt-overview-slot--light">Стол 2 <small>Самоед Буран · Экспресс-линька</small></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Карточка питомца: <span class="mt-overview-hook">повадки, аллергии и фото</span></h3>
+            <p>Карточка каждого питомца: порода, вес, аллергии на косметику, отметки о боязни фена или стрессе и фото стрижек «до и после» для сохранения пожеланий владельца.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Карточка питомца</span><span>Померанский шпиц «Марси»</span></div>
+              <div class="mt-overview-price-row"><span>Порода и вес</span><strong>Шпиц мини · 3.2 кг</strong></div>
+              <div class="mt-overview-price-row"><span>Особенности</span><strong>Боится громкого фена · Косметика Hydra</strong></div>
+              <div class="mt-overview-price-tag">История 8 визитов · Фотострижки в профиле</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись 24/7 <span class="mt-overview-hook">с выбором породы</span></h3>
+            <p>Владельцы записывают собак и кошек прямо с сайта и Telegram-канала. Форма сама предлагает выбрать породу, вес и допуслуги (чистка зубов, стрижка когтей), показывая точную стоимость.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись в салон</span><span>Груминг собак</span></div>
+              <div class="mt-overview-stages"><span>Порода</span><i></i><span>Услуга</span><i></i><span>Запись</span></div>
+              <div class="mt-overview-check">✓ <span>Питомец: Померанский шпиц (стрижка «Модерн»)</span></div>
+              <div class="mt-overview-check">✓ <span>Запись подтверждена: Сегодня 15:30</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Telegram-напоминания <span class="mt-overview-hook">и «Питомец готов!»</span></h3>
+            <p>Сервисный бот предупреждает о записи за 24 и 2 часа, отправляет уведомление в 1 клик, когда питомца можно забирать, и заботливо приглашает на повторный груминг через 4–6 недель.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Салон «Лапки»</span></div>
+              <div class="mt-overview-message">
+                Ольга, здравствуйте! Стрижка Марси завершена, питомец помыт и расчесан. Ждем вас в салоне до 18:00!
+                <span class="mt-overview-reaction">🐾</span>
+              </div>
+              <div class="mt-overview-client-row"><span>База клиентов и питомцев</span><strong>Цикл повторных визитов 4–5 недель →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата мастеров <span class="mt-overview-hook">и расход косметики</span></h3>
+            <p>Автоматический расчет зарплаты грумеров: процент от стоимости стрижки, доплаты за вычес колтунов и работу с тревожными питомцами, учет стоимости премиум-косметики. Баланс считается мгновенно.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка мастера</span><span>Анна В. (Топ-грумер)</span></div>
+              <div class="mt-overview-metrics"><span>Визиты<b>24</b></span><span>Питомцы<b>24</b></span><span>Зарплата<b>₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- PETS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь пушистого гостя">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один пушистый клиент. <span class="mt-hero-accent">Полный порядок в салоне.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует путь от онлайн-записи с выбором породы до приема в салоне, груминга, отправки фото хозяину и начисления зарплаты мастеру.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи в салон груминга" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Комплексный уход за шпицем</strong><span>Померанский шпиц «Марси» (3.2 кг)</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Владелец питомца</span>
+              <h3>Онлайн-запись с выбором породы за 1 минуту</h3>
+              <p>Хозяйка выбирает породу собаки, комплекс «Полный уход + экспресс-линька» и удобное время в виджете онлайн-записи. Слот на столе груминга бронируется автоматически.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Онлайн-запись</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Питомец</span><strong>Шпиц «Марси» (3.2 кг)</strong></div>
+              <div class="mt-journey-proof-row"><span>Комплекс</span><strong>Полный уход + вычес</strong></div>
+              <div class="mt-journey-proof-row"><span>Слот</span><strong>Сегодня, 15:30 (Стол 1)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор</span>
+              <h3>Прием питомца, осмотр шерсти и фиксация пожеланий</h3>
+              <p>Администратор встречает владельца с собакой, открывает карточку питомца в планшете, отмечает наличие колтунов и индивидуальные пожелания по длине шерсти.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка приема питомца">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Визит #1842</span>
+                <span class="mt-journey-proof-badge">В работе</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Анна В. (Топ-грумер)</strong></div>
+              <div class="mt-journey-proof-row"><span>Особенности</span><strong>Колтуны за ушами, боится фена</strong></div>
+              <div class="mt-journey-proof-row"><span>Косметика</span><strong>Линейка Hydra Sensitive</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Грумер</span>
+              <h3>Проведение процедур и фото результата «до/после»</h3>
+              <p>Мастер выполняет вычес, гигиенический уход, купание и породную стрижку. В завершение делает фото питомца для карточки и нажимает кнопку «Готово».</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Итоги ухода">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уход завершен</span>
+                <span class="mt-journey-proof-badge">Готово к выдаче</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Процедуры</span><strong>Стрижка по породе, чистка ушей</strong></div>
+              <div class="mt-journey-proof-row"><span>Время работы</span><strong>1 час 45 минут</strong></div>
+              <div class="mt-journey-proof-row"><span>Фотоотчет</span><strong>2 фото сохранены в CRM</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система & Владелец</span>
+              <h3>Кнопка «Готово!», оплата и расчет мастера</h3>
+              <p>Хозяйка мгновенно получает Telegram-сообщение: «Марси готова!». Администратор принимает оплату по карте или СБП, грумер видит начисленный %, а бот ставит напоминание на визит через месяц.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--analytics" aria-label="Расчет визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Расчет визита</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Сумма</span><strong>3 800 ₽ (карта / СБП)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата грумера</span><strong>1 710 ₽ (45% начислено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Telegram</span><strong>«Марси готова!» отправлено</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-section mt-case" data-screen-label="Кейс груминга" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-head">
+            <span class="mt-eyebrow">Реальный кейс внедрения</span>
+            <h2 class="mt-section-title">Как салон «Лапки & Хвостики» устранил накладки в расписании и увеличил повторные визиты на 35%</h2>
+            <p class="mt-section-sub">Сеть студий груминга «Лапки & Хвостики» (3 филиала, 12 рабочих столов) внедрила Молнию для управления записью, учета пород и расчета зарплат мастеров.</p>
+          </div>
+
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <strong>0 накладок</strong>
+              <span>авторасчет тайминга по породе и весу питомца</span>
+            </div>
+            <div class="mt-case-stat">
+              <strong>+35% визитов</strong>
+              <span>автонапоминания в Telegram через 4–6 недель</span>
+            </div>
+            <div class="mt-case-stat">
+              <strong>2 минуты</strong>
+              <span>вместо 4 часов на еженедельный расчет зарплат мастеров</span>
+            </div>
+          </div>
+
+          <blockquote class="mt-case-quote">
+            <p>«Раньше администраторы постоянно ошибались с длительностью записи: ставили хаски и шпица на одно и то же время, из-за чего мастера задерживались и нервничали. В Молнии система точно знает время под каждую породу, а кнопка "Питомец готов" с автосообщением в Telegram избавила наш холл от толпы ожидающих хозяев».</p>
+            <cite>Анастасия Белова · Основательница сети «Лапки & Хвостики»</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="mt-section mt-faq" data-screen-label="Частые вопросы" id="faq" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Часто задаваемые вопросы</h2>
+          <p class="mt-section-sub">Ответы на главные вопросы владельцев и управляющих груминг-салонов.</p>
+        </div>
+
+        <div class="mt-faq-list">
+            <details><summary>Учитывает ли Молния разную длительность процедур для мелких и крупных пород?</summary><p>Да. В каталоге услуг можно настроить индивидуальный хронометраж и стоимость для каждой категории: от йорка (1.5 часа) до самоеда или хаски (3–3.5 часа). При записи система автоматически резервирует правильный слот в расписании мастера, исключая накладки и задержки следующих клиентов.</p></details>
+            <details><summary>Можно ли вести подробную карточку питомца с историей стрижек и особенностями поведения?</summary><p>Конечно. В карточке питомца сохраняются кличка, порода, вес, дата рождения, отметки о характере (боязнь фена, агрессия, чувствительная кожа), аллергии на косметику и история всех визитов с фотографиями «до и после».</p></details>
+            <details><summary>Как рассчитывается сдельная зарплата грумеров?</summary><p>Молния автоматически рассчитывает вознаграждение мастеров по гибким правилам: процент от стоимости стрижки или комплекса (например, 40–50%), надбавки за агрессию или вычес колтунов, вычет себестоимости премиальной косметики или фиксированная ставка за смену. Баланс мастера обновляется сразу после закрытия визита.</p></details>
+            <details><summary>Как работает онлайн-запись для владельцев питомцев?</summary><p>Виджет онлайн-записи устанавливается на сайт, в соцсети и мессенджеры. Владелец выбирает вид животного (собака, кошка), породу, вес и нужный комплекс (стрижка, экспресс-линька, гигиена, чистка зубов), после чего выбирает мастера и удобное время. Запись мгновенно резервирует стол в салоне 24/7.</p></details>
+            <details><summary>Как отправляются напоминания владельцам и уведомление о готовности питомца?</summary><p>Сервисный Telegram-бот напоминает владельцу о визите за 24 и за 2 часа, а во время процедуры мастер или администратор в 1 клик отправляет уведомление: «Ваш питомец готов, можно забирать!». А через 4–6 недель система заботливо приглашает на регулярный уход, возвращая постоянных клиентов.</p></details>
+            <details><summary>Можно ли распределять записи между грумерами и столами?</summary><p>Да. В расписании видна занятость мастеров и столов. При записи администратор выбирает подходящего грумера, длительность процедуры и свободное время, чтобы избежать пересечений.</p></details>
+            <details><summary>Как бесплатно перенести базу клиентов и питомцев из Excel или другой программы?</summary><p>Служба заботы Молнии бесплатно помогает перенести базу владельцев, клички и породы питомцев, историю посещений, каталог услуг и график работы мастеров. Перенос выполняется за 1 день без остановки работы салона.</p></details>
+        </div>
+      </section>
+
+      <!-- LEAD FORM -->
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для груминг-салона</h2>
+          <p class="mt-lead-sub">Оставьте контакты — поможем настроить расписание столов, карточки питомцев с породами и онлайн-запись.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="pets">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Согласен на обработку персональных данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+              <span class="mt-footer-year">· 2026</span>
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <div class="mt-footer-links">
+            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
+            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261002-formsource"></script>
+</body>
+</html>

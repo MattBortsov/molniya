@@ -19,8 +19,19 @@ FORM_NAMES = {
     "auto": "Автобизнес — бесплатный доступ",
     "beauty": "Красота — бесплатный доступ",
     "health": "Здоровье — бесплатный доступ",
+    "spaces": "Аренда пространств — бесплатный доступ",
+    "education": "Образование — бесплатный доступ",
+    "pets": "Груминг-салоны — бесплатный доступ",
 }
-SOURCE_PATHS = {"home": "/", "auto": "/auto", "beauty": "/beauty", "health": "/health"}
+SOURCE_PATHS = {
+    "home": "/",
+    "auto": "/auto",
+    "beauty": "/beauty",
+    "health": "/health",
+    "spaces": "/spaces",
+    "education": "/education",
+    "pets": "/pets",
+}
 
 
 def _now() -> str:
