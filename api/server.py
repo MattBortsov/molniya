@@ -11,6 +11,7 @@ import sqlite3
 import threading
 import time
 from collections import defaultdict, deque
+from html import escape
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
@@ -189,25 +190,23 @@ def send_lead_to_telegram(lead: dict[str, str]) -> None:
         proxy_url = "socks5h://" + proxy_url.removeprefix("socks5://")
     proxies = {"https": proxy_url} if proxy_url else None
 
+    page_url = f"https://molniya-tech.ru{lead_store.SOURCE_PATHS[lead['source_slug']]}"
     text = (
-        "Новая заявка с molniya-tech.ru\n"
-        f"ID: {lead['id']}\n"
-        f"Форма: {lead['form_name']}\n"
-        f"Страница: https://molniya-tech.ru{lead_store.SOURCE_PATHS[lead['source_slug']]}\n"
-        f"Имя: {lead['name']}\n"
-        f"Почта: {lead['email']}\n"
-        f"Телефон: {lead['phone']}\n"
-        "Согласие на обработку ПДн: чекбокс отмечен\n"
-        f"Проверено сервером: {lead['received_at_utc']}\n"
-        f"Текст чекбокса: {lead['consent_text']}\n"
-        f"Политика: {lead_store.POLICY_URL}\n"
-        f"SHA-256 политики: {lead['consent_document_sha256']}"
+        f"<b>Заявка №{escape(lead['id'][:8].upper())}</b>\n\n"
+        "<b>Информация о клиенте:</b>\n"
+        f"Имя: {escape(lead['name'], quote=False)}\n"
+        f"Телефон: {escape(lead['phone'], quote=False)}\n"
+        f"Почта: {escape(lead['email'], quote=False)}\n\n"
+        "<b>Дополнительная информация:</b>\n"
+        f"Код заявки: <code>{escape(lead['id'])}</code>\n"
+        f"Форма: {escape(lead['form_name'], quote=False)}\n"
+        f'<a href="{escape(page_url, quote=True)}">{escape(page_url, quote=False)}</a>'
     )
     with requests.Session() as session:
         session.trust_env = False
         response = session.post(
             f"https://api.telegram.org/bot{token}/sendMessage",
-            json={"chat_id": int(os.getenv("TELEGRAM_LEADS_CHAT_ID", TELEGRAM_LEADS_CHAT_ID)), "text": text},
+            json={"chat_id": int(os.getenv("TELEGRAM_LEADS_CHAT_ID", TELEGRAM_LEADS_CHAT_ID)), "text": text, "parse_mode": "HTML"},
             proxies=proxies,
             timeout=8,
         )

@@ -92,6 +92,8 @@ class LeadFormTests(unittest.TestCase):
         self.assertEqual(len(stored), 1)
         self.assertEqual((stored[0]["name"], stored[0]["email"], stored[0]["phone"]), ("Анна", "anna@example.com", "+7 (999) 123-45-67"))
         self.assertEqual(stored[0]["consent_checked"], 1)
+        self.assertEqual(stored[0]["consent_text"], lead_store.CONSENT_TEXT)
+        self.assertEqual(len(stored[0]["consent_document_sha256"]), 64)
         self.assertIsNotNone(stored[0]["telegram_sent_at_utc"])
         send.assert_called_once()
         self.assertEqual(send.call_args.args[0]["id"], stored[0]["id"])
@@ -191,17 +193,35 @@ class LeadFormTests(unittest.TestCase):
             session.post.return_value.json.return_value = {"ok": True}
             send_lead_to_telegram(lead)
         self.assertFalse(session.trust_env)
-        self.assertEqual(session.post.call_args.kwargs["json"]["chat_id"], -1003993624474)
-        message = session.post.call_args.kwargs["json"]["text"]
+        payload = session.post.call_args.kwargs["json"]
+        self.assertEqual(payload["chat_id"], -1003993624474)
+        self.assertEqual(payload["parse_mode"], "HTML")
+        message = payload["text"]
+        self.assertIn("<b>Заявка №" + lead["id"][:8].upper() + "</b>", message)
+        self.assertIn("<b>Информация о клиенте:</b>", message)
+        self.assertIn("Имя: Анна", message)
+        self.assertIn("Телефон: +79991234567", message)
         self.assertIn("anna@example.com", message)
+        self.assertIn("<b>Дополнительная информация:</b>", message)
+        self.assertIn("Код заявки: <code>" + lead["id"] + "</code>", message)
         self.assertIn("Форма: Главная — бесплатный доступ", message)
-        self.assertIn("Страница: https://molniya-tech.ru/", message)
-        self.assertIn("Согласие на обработку ПДн: чекбокс отмечен", message)
-        self.assertIn("Проверено сервером: " + lead["received_at_utc"], message)
-        self.assertIn("Текст чекбокса: Я даю своё согласие на обработку персональных данных в соответствии с политикой конфиденциальности.", message)
-        self.assertIn("Политика: https://molniya-tech.ru/privacy", message)
-        self.assertIn("SHA-256 политики: " + lead["consent_document_sha256"], message)
+        self.assertIn('<a href="https://molniya-tech.ru/">https://molniya-tech.ru/</a>', message)
+        self.assertNotIn("Согласие на обработку ПДн", message)
+        self.assertNotIn("Проверено сервером", message)
+        self.assertNotIn("Текст чекбокса", message)
+        self.assertNotIn(lead_store.POLICY_URL, message)
+        self.assertNotIn(lead["consent_document_sha256"], message)
         self.assertIsNone(session.post.call_args.kwargs["proxies"])
+
+    def test_telegram_escapes_contact_fields_in_html_message(self) -> None:
+        lead = lead_store.save_lead(validate_lead({"name": "Анна <VIP>", "email": "anna+vip@example.com", "phone": "+79991234567", "consent": True}))
+        with patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_PROXY_URL": "", "OPENROUTER_PROXY_URL": ""}), patch("server.requests.Session") as session_factory:
+            session = session_factory.return_value.__enter__.return_value
+            session.post.return_value.json.return_value = {"ok": True}
+            send_lead_to_telegram(lead)
+        message = session.post.call_args.kwargs["json"]["text"]
+        self.assertIn("Имя: Анна &lt;VIP&gt;", message)
+        self.assertNotIn("Анна <VIP>", message)
 
     def test_telegram_uses_existing_socks_proxy_when_needed(self) -> None:
         lead = lead_store.save_lead({"name": "Анна", "email": "anna@example.com", "phone": "+79991234567"})
