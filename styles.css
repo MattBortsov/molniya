@@ -2100,12 +2100,11 @@ a { color: inherit; }
 .mt-footer-inner {
   max-width: var(--mt-content-max);
   margin: 0 auto;
-  padding: 30px var(--mt-space-section-x);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  padding: 48px var(--mt-space-section-x) 56px;
+  display: grid;
+  grid-template-columns: minmax(210px, .8fr) minmax(0, 2.2fr);
+  align-items: start;
+  gap: clamp(36px, 6vw, 92px);
 }
 .mt-footer-brand-col {
   display: flex;
@@ -2134,12 +2133,10 @@ a { color: inherit; }
   margin-top: 6px;
   opacity: 0.75;
 }
-.mt-footer-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-}
+.mt-footer-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 42px); }
+.mt-footer-nav-group { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: 13px; }
+.mt-footer-nav-group h3 { margin: 0 0 9px; color: var(--mt-text-faint); font-size: 13px; font-weight: 700; }
+.mt-footer-nav-group .mt-footer-link { display: block; font-weight: 500; line-height: 1.45; }
 
 /* The home footer is a beta invitation followed by three visual stories. */
 .mt-footer--home {
@@ -2214,17 +2211,20 @@ a { color: inherit; }
 .mt-footer-photo figcaption { position: absolute; z-index: 1; right: 24px; bottom: 24px; left: 24px; display: flex; flex-direction: column; gap: 8px; color: #fff; }
 .mt-footer-photo figcaption span { color: #f3c2a7; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .mt-footer-photo figcaption strong { font-family: 'Onest', 'Manrope', sans-serif; font-size: clamp(20px, 2vw, 27px); font-weight: 600; line-height: 1.18; }
-.mt-footer--home .mt-footer-inner { position: relative; z-index: 1; padding-top: 32px; padding-bottom: 42px; border-top: 1px solid rgba(255, 255, 255, .14); }
+.mt-footer--home .mt-footer-inner { position: relative; z-index: 1; border-top: 1px solid rgba(255, 255, 255, .14); }
+.mt-footer--home .mt-footer-nav-group h3 { color: #9da9a4; }
 .mt-footer--home .mt-footer-year,
 .mt-footer--home .mt-footer-sub,
 .mt-footer--home .mt-footer-legal { color: #9da9a4; }
 .mt-footer--home .mt-footer-link { color: #e0e7e2; }
 .mt-footer--home .mt-footer-link:hover { color: #f2ad82; }
 @media (max-width: 900px) {
+  .mt-footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .mt-footer-intro { grid-template-columns: 1fr; gap: 68px; }
   .mt-footer-process { max-width: 650px; }
 }
 @media (max-width: 720px) {
+  .mt-footer-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
   .mt-footer--home::after { top: 160px; right: -130px; width: 360px; height: 360px; box-shadow: 0 0 0 65px rgba(255, 255, 255, .018); }
   .mt-footer-beta-form .mt-lead-fields { grid-template-columns: 1fr; }
   .mt-footer-beta-form .mt-lead-field:last-child { grid-column: auto; }

@@ -204,9 +204,37 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
       </nav>'''
 
 
+def render_footer_nav_html() -> str:
+    """Link the footer to published sections and active sector pages."""
+    sector_links = "\n".join(
+        f'              <a class="mt-footer-link" href="/{html.escape(sector["slug"], quote=True)}">{html.escape(sector["title"])}</a>'
+        for sector in SECTORS if sector["active"]
+    )
+    return f'''          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+{sector_links}
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Молния</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Telegram-канал</a>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+          </nav>'''
+
+
 def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> str:
+    footer_nav_html = render_footer_nav_html()
     if home_variant:
-        return '''      <!-- FOOTER -->
+        return f'''      <!-- FOOTER -->
       <footer class="mt-footer mt-footer--home" id="beta" aria-labelledby="beta-title">
         <div class="mt-footer-showcase">
           <div class="mt-footer-intro">
@@ -257,11 +285,7 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> st
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
-          <div class="mt-footer-links">
-            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Telegram-канал</a>
-            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
-            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
-          </div>
+{footer_nav_html}
         </div>
       </footer>'''
     logo_path = f"{asset_prefix}assets/img/logo/molniya-logo-horizontal.svg" if asset_prefix else "/assets/img/logo/molniya-logo-horizontal.svg"
@@ -276,11 +300,7 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> st
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
-          <div class="mt-footer-links">
-            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>Telegram-канал</a>
-            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
-            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
-          </div>
+{footer_nav_html}
         </div>
       </footer>'''
 
@@ -452,7 +472,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -982,7 +1002,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1478,7 +1498,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2002,7 +2022,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2526,7 +2546,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3050,7 +3070,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3627,7 +3647,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3749,7 +3769,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3985,7 +4005,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-spacing">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-nav">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
