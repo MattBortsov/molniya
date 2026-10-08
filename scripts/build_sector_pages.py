@@ -231,7 +231,6 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> st
                 <li><span>02</span><div><strong>Вы работаете — мы слушаем</strong><p>Пользуйтесь Молнией в реальной работе. Мы изучаем технические логи и созваниваемся 1–2 раза в неделю на 15–30 минут: что удобно, что мешает, чего не хватает.</p></div></li>
                 <li><span>03</span><div><strong>Помогаем и улучшаем</strong><p>Отвечаем на вопросы, исправляем ошибки и даём небольшой бонус за найденные баги.</p></div></li>
               </ol>
-              <p class="mt-footer-access">После теста бесплатный доступ к текущим возможностям и доработкам периода беты останется у вас.</p>
             </div>
           </div>
           <div class="mt-footer-gallery" aria-label="Молния в работе сервисного бизнеса">
@@ -453,7 +452,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -983,7 +982,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1479,7 +1478,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2003,7 +2002,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2527,7 +2526,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3051,7 +3050,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3628,7 +3627,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3750,7 +3749,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3986,7 +3985,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer-solid">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-copy2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
