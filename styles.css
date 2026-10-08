@@ -2150,12 +2150,6 @@ a { color: inherit; }
   color: #f8f7f3;
   scroll-margin-top: 72px;
 }
-.mt-footer--home::before {
-  display: block;
-  height: clamp(100px, 12vw, 160px);
-  background: linear-gradient(180deg, var(--mt-bg) 0%, #737a75 52%, #111615 100%);
-  content: '';
-}
 .mt-footer--home::after {
   position: absolute;
   top: 190px;
@@ -2173,7 +2167,7 @@ a { color: inherit; }
   z-index: 1;
   max-width: var(--mt-content-max);
   margin: 0 auto;
-  padding: clamp(48px, 6vw, 80px) var(--mt-space-section-x) clamp(46px, 6vw, 78px);
+  padding: clamp(72px, 9vw, 120px) var(--mt-space-section-x) clamp(46px, 6vw, 78px);
 }
 .mt-footer-intro {
   display: grid;
