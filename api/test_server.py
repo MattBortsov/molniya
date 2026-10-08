@@ -198,7 +198,7 @@ class LeadFormTests(unittest.TestCase):
         self.assertIn("Страница: https://molniya-tech.ru/", message)
         self.assertIn("Согласие на обработку ПДн: чекбокс отмечен", message)
         self.assertIn("Проверено сервером: " + lead["received_at_utc"], message)
-        self.assertIn("Текст чекбокса: Согласен на обработку персональных данных по политике конфиденциальности.", message)
+        self.assertIn("Текст чекбокса: Я даю своё согласие на обработку персональных данных в соответствии с политикой конфиденциальности.", message)
         self.assertIn("Политика: https://molniya-tech.ru/privacy", message)
         self.assertIn("SHA-256 политики: " + lead["consent_document_sha256"], message)
         self.assertIsNone(session.post.call_args.kwargs["proxies"])

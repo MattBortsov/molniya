@@ -211,9 +211,7 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> st
         <div class="mt-footer-showcase">
           <div class="mt-footer-intro">
             <div class="mt-footer-signup">
-              <span class="mt-footer-kicker"><span aria-hidden="true"></span> Набор в бета-тестирование</span>
               <h2 id="beta-title">Попробуйте Молнию <em>в своём бизнесе</em></h2>
-              <p class="mt-footer-signup-text">Дадим тестовый доступ, проведём демонстрацию и поможем настроить Молнию. Оставьте контакты — обсудим участие в бета-тестировании.</p>
               <form class="mt-lead-form mt-footer-beta-form" data-lead-form data-lead-source="beta">
                 <div class="mt-lead-fields">
                   <label class="mt-lead-field" for="beta-name">Имя<input id="beta-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
@@ -221,13 +219,13 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> st
                   <label class="mt-lead-field" for="beta-email">Почта<input id="beta-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
                 </div>
                 <div class="mt-lead-honeypot" aria-hidden="true"><label for="beta-website">Сайт</label><input id="beta-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Согласен на обработку персональных данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>
+                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
                 <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Подать заявку на бета-тестирование</button>
                 <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
               </form>
             </div>
             <div class="mt-footer-process">
-              <p class="mt-footer-process-title">Как проходит тест</p>
+              <p class="mt-footer-process-intro">Дадим тестовый доступ, проведём демонстрацию и поможем настроить Молнию.</p>
               <ol>
                 <li><span>01</span><div><strong>Начинаем вместе</strong><p>Покажем продукт и поможем настроить его под ваши задачи.</p></div></li>
                 <li><span>02</span><div><strong>Вы работаете — мы слушаем</strong><p>Пользуйтесь Молнией в реальной работе. Мы изучаем технические логи и созваниваемся 1–2 раза в неделю на 15–30 минут: что удобно, что мешает, чего не хватает.</p></div></li>
@@ -304,7 +302,7 @@ def render_lead_form_html(source: str, title_html: str, description: str) -> str
               <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
             </div>
             <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Согласен на обработку персональных данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
             <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
             <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
           </form>
@@ -455,7 +453,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -985,7 +983,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1481,7 +1479,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2005,7 +2003,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2529,7 +2527,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3053,7 +3051,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3630,7 +3628,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3752,7 +3750,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3988,7 +3986,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer-refine">
   <script src="/metrika.js" defer></script>
 </head>
 <body>

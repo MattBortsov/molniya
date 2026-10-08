@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 SITE_ROOT = Path(__file__).resolve().parent.parent
-CONSENT_TEXT = "Согласен на обработку персональных данных по политике конфиденциальности."
+CONSENT_TEXT = "Я даю своё согласие на обработку персональных данных в соответствии с политикой конфиденциальности."
 POLICY_URL = "https://molniya-tech.ru/privacy"
 FORM_NAMES = {
     "home": "Главная — бесплатный доступ",
