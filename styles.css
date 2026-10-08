@@ -1288,7 +1288,6 @@ a { color: inherit; }
   background: #f2b452;
 }
 
-.mt-overview-action { display: flex; justify-content: center; margin-top: 40px; }
 @media (max-width: 980px) and (min-width: 761px) {
   .mt-overview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1309,8 +1308,6 @@ a { color: inherit; }
   }
   .mt-overview-card, .mt-overview-card:nth-child(-n+2) { grid-column: span 1; }
   .mt-overview-card > p { min-height: 0; }
-  .mt-overview-action { margin-top: 28px; }
-
   .mt-overview-card:nth-child(1) { border-radius: 28px 28px var(--mt-inner-radius) var(--mt-inner-radius); }
   .mt-overview-card:nth-child(2),
   .mt-overview-card:nth-child(3),
@@ -2004,7 +2001,7 @@ a { color: inherit; }
   font-size: 14px;
 }
 
-/* Final contact form on the home page */
+/* Shared contact form styling */
 .mt-section--lead {
   padding-top: clamp(72px, 9vw, 132px);
   padding-bottom: clamp(80px, 10vw, 144px);
@@ -2142,6 +2139,96 @@ a { color: inherit; }
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 20px;
+}
+
+/* The home footer is a beta invitation followed by three visual stories. */
+.mt-footer--home {
+  overflow: hidden;
+  border-top: 0;
+  background: radial-gradient(700px 480px at 17% 16%, rgba(198, 84, 59, .13), transparent 72%), #111615;
+  color: #f8f7f3;
+  scroll-margin-top: 72px;
+}
+.mt-footer-showcase {
+  max-width: var(--mt-content-max);
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 120px) var(--mt-space-section-x) clamp(46px, 6vw, 78px);
+}
+.mt-footer-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(48px, 7vw, 112px);
+  align-items: start;
+}
+.mt-footer-signup,
+.mt-footer-process { min-width: 0; }
+.mt-footer-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #efa787;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.mt-footer-kicker span { width: 8px; height: 8px; border-radius: 50%; background: #e26d4d; box-shadow: 0 0 0 5px rgba(226, 109, 77, .15); }
+.mt-footer-signup h2 {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #fff;
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+.mt-footer-signup h2 em { color: #f2ad82; font-style: normal; }
+.mt-footer-signup-text { max-width: 590px; margin: 24px 0 0; color: #b9c2bf; font-size: clamp(16px, 1.7vw, 19px); line-height: 1.58; }
+.mt-footer-beta-form { max-width: 650px; margin: 40px 0 0; }
+.mt-footer-beta-form .mt-lead-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mt-footer-beta-form .mt-lead-field:last-child { grid-column: 1 / -1; }
+.mt-footer-beta-form .mt-lead-field { color: #e6eae7; }
+.mt-footer-beta-form .mt-lead-field input { border-color: #e1e0db; background: #fff; }
+.mt-footer-beta-form .mt-lead-consent { justify-content: flex-start; max-width: none; margin-top: 22px; color: #aeb9b5; }
+.mt-footer-beta-form .mt-lead-consent a { color: #f3b08e; }
+.mt-footer-beta-form .mt-lead-submit { width: 100%; margin-top: 26px; justify-content: center; white-space: normal; text-align: center; line-height: 1.25; }
+.mt-footer-beta-form .mt-lead-submit::after { content: '↗'; margin-left: 8px; }
+.mt-footer-beta-form .mt-lead-status { color: #cbd3d0; }
+.mt-footer-beta-form .mt-lead-status[data-state="success"] { color: #a8dfb7; }
+.mt-footer-beta-form .mt-lead-status[data-state="error"] { color: #ffc0a8; }
+.mt-footer-process { padding-top: 6px; }
+.mt-footer-process-title { margin: 0 0 20px; color: #87938f; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mt-footer-process ol { margin: 0; padding: 0; list-style: none; }
+.mt-footer-process li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+.mt-footer-process li > span { padding-top: 2px; color: #e79771; font-size: 13px; font-weight: 700; }
+.mt-footer-process strong { color: #f8f7f3; font-family: 'Onest', 'Manrope', sans-serif; font-size: 18px; font-weight: 600; }
+.mt-footer-process li p { margin: 9px 0 0; color: #aeb9b5; font-size: 15px; line-height: 1.55; }
+.mt-footer-access { margin: 16px 0 0; padding-left: 48px; color: #f2ad82; font-size: 15px; line-height: 1.55; }
+.mt-footer-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 26px); margin-top: clamp(72px, 9vw, 124px); }
+.mt-footer-photo { position: relative; aspect-ratio: 1.48; min-width: 0; overflow: hidden; margin: 0; border-radius: clamp(18px, 2vw, 28px); background: #2a302d; }
+.mt-footer-photo::after { position: absolute; inset: 0; content: ''; background: linear-gradient(180deg, transparent 42%, rgba(10, 14, 13, .75)); pointer-events: none; }
+.mt-footer-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.mt-footer-photo figcaption { position: absolute; z-index: 1; right: 24px; bottom: 24px; left: 24px; display: flex; flex-direction: column; gap: 8px; color: #fff; }
+.mt-footer-photo figcaption span { color: #f3c2a7; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.mt-footer-photo figcaption strong { font-family: 'Onest', 'Manrope', sans-serif; font-size: clamp(20px, 2vw, 27px); font-weight: 600; line-height: 1.18; }
+.mt-footer--home .mt-footer-inner { padding-top: 32px; padding-bottom: 42px; border-top: 1px solid rgba(255, 255, 255, .14); }
+.mt-footer--home .mt-footer-year,
+.mt-footer--home .mt-footer-sub,
+.mt-footer--home .mt-footer-legal { color: #9da9a4; }
+.mt-footer--home .mt-footer-link { color: #e0e7e2; }
+.mt-footer--home .mt-footer-link:hover { color: #f2ad82; }
+@media (max-width: 900px) {
+  .mt-footer-intro { grid-template-columns: 1fr; gap: 68px; }
+  .mt-footer-process { max-width: 650px; }
+}
+@media (max-width: 720px) {
+  .mt-footer-beta-form .mt-lead-fields { grid-template-columns: 1fr; }
+  .mt-footer-beta-form .mt-lead-field:last-child { grid-column: auto; }
+  .mt-footer-gallery { grid-template-columns: 1fr; gap: 16px; margin-top: 70px; }
+  .mt-footer-photo { aspect-ratio: 1.6; }
+  .mt-footer-photo figcaption { right: 20px; bottom: 20px; left: 20px; }
+  .mt-footer-access { padding-left: 0; }
 }
 
 /* ============================================================

@@ -16,6 +16,7 @@ CONSENT_TEXT = "Согласен на обработку персональны�
 POLICY_URL = "https://molniya-tech.ru/privacy"
 FORM_NAMES = {
     "home": "Главная — бесплатный доступ",
+    "beta": "Главная — бета-тестирование",
     "auto": "Автобизнес — бесплатный доступ",
     "beauty": "Красота — бесплатный доступ",
     "health": "Здоровье — бесплатный доступ",
@@ -25,6 +26,7 @@ FORM_NAMES = {
 }
 SOURCE_PATHS = {
     "home": "/",
+    "beta": "/#beta",
     "auto": "/auto",
     "beauty": "/beauty",
     "health": "/health",

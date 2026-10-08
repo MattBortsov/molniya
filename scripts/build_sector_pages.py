@@ -90,7 +90,7 @@ SECTORS = [
 BRAND_MARK_SVG = '<svg width="56" height="56" viewBox="0 0 96 96" fill="none" aria-hidden="true"><circle cx="48" cy="48" r="11" fill="none" stroke="#131B2C" stroke-width="8"/><g transform="rotate(0 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(60 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#DF5F3C"/></g><g transform="rotate(120 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(180 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(240 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(300 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g></svg>'
 
 
-def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
+def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: bool = False) -> str:
     """Builds the single source of truth for navigation across all pages."""
     logo_path = f"{asset_prefix}assets/img/logo/molniya-logo-horizontal.svg" if asset_prefix else "/assets/img/logo/molniya-logo-horizontal.svg"
 
@@ -129,6 +129,18 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
     mobile_markup = "\n".join(mobile_items)
 
     blog_active = ' aria-current="page"' if active_item == "blog" else ''
+    cta_href = "/#beta" if beta_cta else "https://t.me/molniya_tex"
+    cta_attrs = "" if beta_cta else ' target="_blank" rel="noopener"'
+    cta_label = "Бета-тест" if beta_cta else "Подписаться"
+    cta_mobile_label = "Участвовать в бета-тесте" if beta_cta else "Подписаться в Telegram"
+    cta_nav_icon = ('<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                    '<path d="M5 12h14m-6-6 6 6-6 6"/></svg>' if beta_cta else
+                    '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>')
+    cta_mobile_icon = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                       'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                       '<path d="M5 12h14m-6-6 6 6-6 6"/></svg>' if beta_cta else
+                       '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>')
 
     return f'''      <!-- NAV -->
       <nav class="mt-nav">
@@ -161,9 +173,9 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
             <li><a class="mt-nav-link" href="/blog"{blog_active}>Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
+          <a class="mt-btn mt-btn-nav" href="{cta_href}"{cta_attrs}>
+            {cta_nav_icon}
+            {cta_label}
           </a>
 
           <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
@@ -184,15 +196,77 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "") -> str:
           <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
           <a class="mt-mobile-link" href="/#features">Функции</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
-          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться в Telegram
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="{cta_href}"{cta_attrs}>
+            {cta_mobile_icon}
+            {cta_mobile_label}
           </a>
         </div>
       </nav>'''
 
 
-def render_footer_html(asset_prefix: str = "") -> str:
+def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> str:
+    if home_variant:
+        return '''      <!-- FOOTER -->
+      <footer class="mt-footer mt-footer--home" id="beta" aria-labelledby="beta-title">
+        <div class="mt-footer-showcase">
+          <div class="mt-footer-intro">
+            <div class="mt-footer-signup">
+              <span class="mt-footer-kicker"><span aria-hidden="true"></span> Набор в бета-тестирование</span>
+              <h2 id="beta-title">Попробуйте Молнию <em>в своём бизнесе</em></h2>
+              <p class="mt-footer-signup-text">Дадим тестовый доступ, проведём демонстрацию и поможем настроить Молнию. Оставьте контакты — обсудим участие в бета-тестировании.</p>
+              <form class="mt-lead-form mt-footer-beta-form" data-lead-form data-lead-source="beta">
+                <div class="mt-lead-fields">
+                  <label class="mt-lead-field" for="beta-name">Имя<input id="beta-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+                  <label class="mt-lead-field" for="beta-phone">Телефон<input id="beta-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+                  <label class="mt-lead-field" for="beta-email">Почта<input id="beta-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+                </div>
+                <div class="mt-lead-honeypot" aria-hidden="true"><label for="beta-website">Сайт</label><input id="beta-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Согласен на обработку персональных данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>
+                <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Подать заявку на бета-тестирование</button>
+                <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+              </form>
+            </div>
+            <div class="mt-footer-process">
+              <p class="mt-footer-process-title">Как проходит тест</p>
+              <ol>
+                <li><span>01</span><div><strong>Начинаем вместе</strong><p>Покажем продукт и поможем настроить его под ваши задачи.</p></div></li>
+                <li><span>02</span><div><strong>Вы работаете — мы слушаем</strong><p>Пользуйтесь Молнией в реальной работе. Мы изучаем технические логи и созваниваемся 1–2 раза в неделю на 15–30 минут: что удобно, что мешает, чего не хватает.</p></div></li>
+                <li><span>03</span><div><strong>Помогаем и улучшаем</strong><p>Отвечаем на вопросы, исправляем ошибки и даём небольшой бонус за найденные баги.</p></div></li>
+              </ol>
+              <p class="mt-footer-access">После теста бесплатный доступ к текущим возможностям и доработкам периода беты останется у вас.</p>
+            </div>
+          </div>
+          <div class="mt-footer-gallery" aria-label="Молния в работе сервисного бизнеса">
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/booking.webp" alt="Администратор встречает клиента и проверяет запись на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>01 / Запись</span><strong>Расписание без путаницы</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/team-auto.webp" alt="Команда автосервиса сверяет рабочее расписание на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>02 / Команда</span><strong>Команда видит свою работу</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/insights-studio.webp" alt="Владелица студии занятий просматривает рабочие показатели за ноутбуком" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>03 / Показатели</span><strong>Данные всегда под рукой</strong></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
+              <span class="mt-footer-year">· 2026</span>
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <div class="mt-footer-links">
+            <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Telegram-канал</a>
+            <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+          </div>
+        </div>
+      </footer>'''
     logo_path = f"{asset_prefix}assets/img/logo/molniya-logo-horizontal.svg" if asset_prefix else "/assets/img/logo/molniya-logo-horizontal.svg"
     return f'''      <!-- FOOTER -->
       <footer class="mt-footer">
@@ -381,7 +455,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -911,7 +985,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1407,7 +1481,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1931,7 +2005,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2455,7 +2529,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2979,7 +3053,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3365,7 +3439,7 @@ def build_pets_page() -> str:
 def sync_navigation_to_index():
     """Syncs the DRY nav, footer, and cookie banner into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
-    nav_html = render_nav_html(active_item="", asset_prefix="")
+    nav_html = render_nav_html(active_item="", asset_prefix="", beta_cta=True)
 
     start_marker = "<!-- NAV -->"
     end_marker = "</nav>"
@@ -3374,7 +3448,7 @@ def sync_navigation_to_index():
         after = content.split(end_marker, 1)[1]
         content = before + nav_html + after
 
-    footer_html = render_footer_html(asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="", home_variant=True)
     f_start = "<!-- FOOTER -->"
     f_end = "</footer>"
     if f_start in content and f_end in content:
@@ -3556,7 +3630,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3678,7 +3752,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3914,7 +3988,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261002-audiences">
+  <link rel="stylesheet" href="/styles.css?v=20261008-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
