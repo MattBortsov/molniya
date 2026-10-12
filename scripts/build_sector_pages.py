@@ -80,10 +80,10 @@ SECTORS = [
         "desc": "Сервисные центры, ремонт техники, ателье",
         "icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg>',
         "mobile_icon": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg>',
-        "emoji": "📱",
-        "active": False,
-        "badge": "Скоро",
-        "badge_class": "mt-dropdown-badge--soon",
+        "emoji": "🛠️",
+        "active": True,
+        "badge": "Решение",
+        "badge_class": "mt-dropdown-badge--active",
     },
 ]
 
@@ -3545,6 +3545,523 @@ def build_pets_page() -> str:
     return page_html
 
 
+def build_repair_page() -> str:
+    """Builds the complete repair and service center landing page matching the exact design system."""
+    nav_html = render_nav_html(active_item="repair", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "repair",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для сервисного центра',
+        "Оставьте контакты — поможем настроить учет заказов, склад запчастей, рабочие места инженеров и онлайн-запись.",
+    )
+
+    title = "CRM для сервисного центра: учет ремонтов и заказов | Молния"
+    description = (
+        "Программа и CRM для сервисного центра: учет заказ-нарядов, склад запчастей, статусы ремонта, "
+        "печать квитанций, Telegram-уведомления клиентам и расчет зарплат инженеров."
+    )
+    canonical = "https://molniya-tech.ru/repair"
+
+    faqs = [
+        (
+            "Подходит ли Молния для сервисных центров электроники, бытовой техники и мастерских?",
+            "Да. Молния универсально настраивается под любой профиль: ремонт смартфонов и ноутбуков, бытовой техники, инструмента, часов, а также ателье и ремонт одежды. Для каждого направления можно задать свои типы устройств, этапы диагностики и технологические операции.",
+        ),
+        (
+            "Как устроен учет заказ-нарядов и печать квитанций клиентам?",
+            "При приеме устройства в ремонт администратор оформляет заказ-наряд за 1 минуту: фиксирует модель, серийный номер/IMEI, комплектность, внешние дефекты и причину обращения. Система автоматически печатает квитанцию с QR-кодом для клиента и маркировку на само устройство.",
+        ),
+        (
+            "Как работает склад запчастей и списание деталей в заказ?",
+            "Молния ведет учет остатков запчастей, расходников и аксессуаров. При проведении ремонта инженер прикрепляет нужную деталь к заказ-наряду — деталь списывается со склада автоматически, а ее себестоимость учитывается при расчете маржинальности заказа.",
+        ),
+        (
+            "Как клиенты узнают о завершении диагностики и готовности устройства?",
+            "Сервисный Telegram-бот отправляет автоматические уведомления: «Устройство принято в диагностику», «Согласование стоимости» и «Ваш заказ готов, можно забирать!». Клиенту больше не нужно звонить в сервис, а администратор экономит до 3 часов в день на звонках.",
+        ),
+        (
+            "Как рассчитывается сдельная зарплата мастеров и инженеров по ремонту?",
+            "Молния автоматически считает зарплату мастеров: процент от стоимости выполненных работ (за вычетом себестоимости запчастей), фиксированную ставку за смену или надбавки за сложную пайку/BGA. Начисления прозрачно видны инженеру и руководителю сразу после закрытия заказ-наряда.",
+        ),
+        (
+            "Можно ли контролировать гарантийные сроки и повторные обращения?",
+            "Да. В карточке заказа сохраняется гарантийный срок на работы и установленные запчасти. При повторном обращении клиента система по номеру телефона, серийному номеру или IMEI мгновенно находит предыдущий заказ и показывает, действует ли гарантия.",
+        ),
+        (
+            "Как бесплатно перенести базу клиентов, остатки склада и каталог услуг из Excel или другой CRM?",
+            "Служба заботы Молнии бесплатно помогает перенести базу клиентов, прайс-лист работ, номенклатуру запчастей и остатки склада из Excel, Google Таблиц, RemOnline или другой системы за 1 день без остановки работы сервиса.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Ремонт и сервис", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — CRM для сервисного центра и ремонта",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка учета ремонтов",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            CRM для сервисного центра:<br><span class="mt-hero-accent">учет ремонтов и склад</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Учет заказ-нарядов от приемки до выдачи, склад запчастей, рабочие места инженеров, уведомления клиентов в Telegram и прозрачный расчет сдельной зарплаты мастеров.</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для сервисного центра">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Заказ-наряды</span>
+                <span class="mt-facet-note">приемка за 1 мин с печатью квитанции и QR-кодом</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Склад запчастей</span>
+                <span class="mt-facet-note">автосписание деталей и контроль себестоимости</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зарплата инженеров</span>
+                <span class="mt-facet-note">сдельный расчет % от работ без рутины в Excel</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Telegram & Статусы</span>
+                <span class="mt-facet-note">автосообщения клиенту «Устройство готово!»</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для сервисного центра: учет заказ-нарядов и расписание инженеров" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронный журнал заказов и статус рабочих мест инженеров в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE STATIONS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка столов и инженеров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Все рабочие места инженеров и техника <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и руководитель видят статус каждого устройства, назначенного инженера, этап ремонта и сумму сметы в реальном времени на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 1 · Модульный ремонт</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">iPhone 14 Pro · Артем С.</div>
+                <div class="mt-auto-car-tier">Инженер: Александр П. · Замена дисплея + проклейка</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📱</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Замена дисплейного модуля</span>
+              <span class="mt-auto-price">7 800 ₽ (в работе)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 2 · Пайка и BGA</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">MacBook Pro 14 M1 · Екатерина М.</div>
+                <div class="mt-auto-car-tier">Инженер: Сергей К. · Цепь питания Type-C (нет заряда)</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💻</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Компонентный ремонт платы</span>
+              <span class="mt-auto-price">14 500 ₽ (в работе)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зона диагностики</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Roborock S7 · Денис В. (14:30)</div>
+                <div class="mt-auto-car-tier">Инженер: Михаил Т. · Ошибка лидара, не строит карту</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⚙️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Диагностика датчиков</span>
+              <span class="mt-auto-price">1 200 ₽ (согласование)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зона выдачи заказов</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">PlayStation 5 · Роман К. (16:00)</div>
+                <div class="mt-auto-car-tier">Администратор: Ольга · Чистка + замена жидкого металла</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎮</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплексная профилактика</span>
+              <span class="mt-auto-price">4 500 ₽ (готов к выдаче)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REPAIR OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для сервисного центра" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Ведите прозрачный учет ремонтов <span class="mt-overview-hook">от приемки до закрытия гарантии</span></h2>
+          <p class="mt-section-sub">Программа для учета в сервисном центре: заказ-наряды, склад деталей, зарплаты инженеров, онлайн-запись и оповещения клиентов в Telegram.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Заказ-наряды и статусы <span class="mt-overview-hook">от приемки до выдачи</span></h3>
+            <p>Прозрачная цепочка этапов: Принят → Диагностика → Согласование → В работе → Готов → Выдан. Печать квитанций с QR-кодом для клиента и наклеек со штрихкодом на само устройство за 1 минуту.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Заказ-наряд #2841</span><span>iPhone 14 Pro</span></div>
+              <div class="mt-overview-calendar"><span>Прием</span><div></div><span>14:00</span><div class="mt-overview-slot">Диагностика <small>Инженер Александр П.</small></div><span>16:30</span><div class="mt-overview-slot mt-overview-slot--light">Готов к выдаче <small>Счет 7 800 ₽</small></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Склад запчастей: <span class="mt-overview-hook">автосписание под заказ</span></h3>
+            <p>Партионный учет запчастей, контроль остатков дисплеев, аккумуляторов и расходников. Детали списываются прямо в заказ-наряд при выполнении ремонта с расчетом точной себестоимости.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Складской остаток</span><span>Дисплеи Apple</span></div>
+              <div class="mt-overview-price-row"><span>Дисплей iPhone 14 Pro (Orig)</span><strong>3 шт на складе</strong></div>
+              <div class="mt-overview-price-row"><span>Проклейка корпуса водостойкая</span><strong>18 шт · В норме</strong></div>
+              <div class="mt-overview-price-tag">Автосписание при закрытии наряда</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись и <span class="mt-overview-hook">проверка статуса заказа</span></h3>
+            <p>Клиенты бронируют удобное время для визита прямо с сайта и карт. А по номеру квитанции или QR-коду могут в любой момент проверить статус готовности устройства онлайн без звонков в сервис.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Статус ремонта</span><span>Заказ #2841</span></div>
+              <div class="mt-overview-stages"><span>Принят</span><i></i><span>В работе</span><i></i><span>Готов</span></div>
+              <div class="mt-overview-check">✓ <span>Устройство: Apple iPhone 14 Pro (Замена экрана)</span></div>
+              <div class="mt-overview-check">✓ <span>Статус: Готов к выдаче · Гарантия 90 дней</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Telegram-уведомления: <span class="mt-overview-hook">«Ваш заказ готов!»</span></h3>
+            <p>Сервисный Telegram-бот бесплатно уведомляет клиента о результатах диагностики, согласовывает смету ремонта и сообщает о готовности к выдаче. Экономия до 3 часов в день на звонках администратора.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Сервис «ТехноФикс»</span></div>
+              <div class="mt-overview-message">
+                Артем, добрый день! Ремонт iPhone 14 Pro завершен, устройство протестировано. Ждем вас на выдаче с 10:00 до 20:00!
+                <span class="mt-overview-reaction">⚡</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Экономия на звонках</span><strong>до 70% входящих вопросов о статусе →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата инженеров <span class="mt-overview-hook">и маржинальность</span></h3>
+            <p>Автоматический расчет зарплаты мастеров: процент от стоимости работы за вычетом себестоимости деталей, оклады, надбавки за сложную BGA-пайку. Руководитель видит чистую прибыль с каждого ремонта.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка инженера</span><span>Сергей К. (Пайка)</span></div>
+              <div class="mt-overview-metrics"><span>Заказы<b>18</b></span><span>Работы<b>84 000 ₽</b></span><span>Зарплата<b>₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- REPAIR JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь заказа в ремонте">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один заказ на ремонт. <span class="mt-hero-accent">Полный контроль каждого этапа.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует путь от приемки разбитого устройства до согласования сметы, списания детали со склада, выдачи клиенту и начисления зарплаты инженеру.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заказа в сервисном центре" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Замена дисплея iPhone 15 Pro</strong><span>Apple iPhone 15 Pro (IMEI 3548...)</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент & Приемщик</span>
+              <h3>Оформление заказ-наряда и квитанция с QR-кодом</h3>
+              <p>Администратор принимает устройство, отмечает пароль разблокировки, сколы на корпусе и причину обращения. Клиент получает квитанцию с QR-кодом, а на телефон наклеивается штрихкод.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример оформления заказ-наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ-наряд #3105</span>
+                <span class="mt-journey-proof-badge">Принят</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Устройство</span><strong>iPhone 15 Pro (Титановый)</strong></div>
+              <div class="mt-journey-proof-row"><span>Неисправность</span><strong>Разбит дисплей, нет изо</strong></div>
+              <div class="mt-journey-proof-row"><span>Комплект</span><strong>Устройство, без кабеля</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Инженер</span>
+              <h3>Диагностика и согласование сметы в Telegram</h3>
+              <p>Мастер проводит первичный осмотр, проверяет Face ID и системную плату, формирует смету в программе. Клиент мгновенно получает смету в Telegram и подтверждает ремонт в один клик.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Диагностика и согласование">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Диагностика #3105</span>
+                <span class="mt-journey-proof-badge">Согласовано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Инженер</span><strong>Александр П. (Стол 1)</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Плата цела, требуется экран</strong></div>
+              <div class="mt-journey-proof-row"><span>Смета</span><strong>11 500 ₽ (деталь + работа)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер & Склад</span>
+              <h3>Модульный ремонт и списание детали со склада</h3>
+              <p>Инженер устанавливает новый дисплейный модуль, переносит True Tone и восстанавливает влагозащитную проклейку. Деталь автоматически списывается с остатков склада сервиса.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Выполнение ремонта">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Ремонт завершен</span>
+                <span class="mt-journey-proof-badge">Тестирование</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Запчасть</span><strong>Дисплей 15 Pro (Оригинал)</strong></div>
+              <div class="mt-journey-proof-row"><span>Расходники</span><strong>Водостойкая проклейка 3M</strong></div>
+              <div class="mt-journey-proof-row"><span>Тесты</span><strong>Тачскрин, 120 Гц, Face ID — ОК</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система & Выдача</span>
+              <h3>Кнопка «Готово!», оплата, гарантия и зарплата мастера</h3>
+              <p>Клиент получает Telegram-сообщение: «Ваш iPhone готов!». При выдаче печатается гарантийный талон на 90 дней, клиент оплачивает заказ, а мастеру начисляется процент за выполненную работу.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--analytics" aria-label="Выдача и расчет">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Выдача заказа</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата</span><strong>11 500 ₽ (терминал / СБП)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата мастера</span><strong>2 400 ₽ (начислено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Гарантия</span><strong>Акт выдан на 90 дней</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-section mt-case" data-screen-label="Кейс сервисного центра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-head">
+            <span class="mt-eyebrow">Реальный кейс внедрения</span>
+            <h2 class="mt-section-title">Как сервисный центр «FixLab» избавился от потери деталей и сократил звонки о статусе ремонта на 70%</h2>
+            <p class="mt-section-sub">Сеть сервисных центров по ремонту цифровой и бытовой техники «FixLab» (3 филиала, 11 инженеров) перешла на Молнию для наведения порядка в складе и заказ-нарядах.</p>
+          </div>
+
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <strong>0 потерь</strong>
+              <span>запчастей благодаря точному учету списаний в заказ</span>
+            </div>
+            <div class="mt-case-stat">
+              <strong>-70% звонков</strong>
+              <span>«что с моим заказом» благодаря Telegram-уведомлениям</span>
+            </div>
+            <div class="mt-case-stat">
+              <strong>15 минут</strong>
+              <span>на еженедельный расчет зарплаты инженеров вместо 6 часов</span>
+            </div>
+          </div>
+
+          <blockquote class="mt-case-quote">
+            <p>«Раньше запчасти списывались кое-как в блокнотах, к концу месяца недостачи достигали десятков тысяч рублей. Плюс администраторы целыми днями висели на телефоне, отвечая клиентам о готовности. В Молнии каждый винтик привязан к заказу, а Telegram-бот сам сообщает клиентам о готовности. Управляющий теперь видит реальную чистую прибыль по каждому мастеру за секунды».</p>
+            <cite>Артем Смирнов · Совладелец сети «FixLab», Екатеринбург</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="mt-section mt-faq" data-screen-label="Частые вопросы" id="faq" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Часто задаваемые вопросы</h2>
+          <p class="mt-section-sub">Ответы на главные вопросы владельцев и управляющих сервисных центров и мастерских.</p>
+        </div>
+
+        <div class="mt-faq-list">
+{faq_html}
+        </div>
+      </section>
+
+      <!-- LEAD FORM -->
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261002-formsource"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
 def build_dikidi_page() -> str:
     """Builds the dedicated competitor migration landing page: /dikidi."""
     nav_html = render_nav_html(active_item="dikidi", asset_prefix="")
@@ -4856,6 +5373,17 @@ def sync_sitemap():
         changed = True
         print("Added /pets to sitemap.xml")
 
+    if "https://molniya-tech.ru/repair" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/repair</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /repair to sitemap.xml")
+
     if "https://molniya-tech.ru/dikidi" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/dikidi</loc>
@@ -5607,6 +6135,11 @@ def main():
     pets_html = build_pets_page()
     (ROOT_DIR / "pets.html").write_text(pets_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'pets.html'}")
+
+    print("Building sector landing page: /repair...")
+    repair_html = build_repair_page()
+    (ROOT_DIR / "repair.html").write_text(repair_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'repair.html'}")
 
     print("Building competitor migration landing page: /dikidi.html...")
     dikidi_html = build_dikidi_page()

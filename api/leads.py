@@ -23,6 +23,7 @@ FORM_NAMES = {
     "spaces": "Аренда пространств — бесплатный доступ",
     "education": "Образование — бесплатный доступ",
     "pets": "Груминг-салоны — бесплатный доступ",
+    "repair": "Ремонт и сервис — бесплатный доступ",
     "dikidi": "Переход с DIKIDI — 3 месяца бесплатно",
     "yclients": "Переход с YCLIENTS — 3 месяца бесплатно",
 }
@@ -35,6 +36,7 @@ SOURCE_PATHS = {
     "spaces": "/spaces",
     "education": "/education",
     "pets": "/pets",
+    "repair": "/repair",
     "dikidi": "/dikidi",
     "yclients": "/yclients",
 }
