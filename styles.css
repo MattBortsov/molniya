@@ -3471,3 +3471,88 @@ a { color: inherit; }
   font-size: 14px;
   line-height: 1;
 }
+
+/* ============================================================
+   DIKIDI MIGRATION & COMPARISON TABLE
+   ============================================================ */
+.mt-compare-section {
+  padding: clamp(50px, 7vw, 90px) var(--mt-space-section-x);
+}
+.mt-compare-wrap {
+  max-width: var(--mt-content-max);
+  margin: 36px auto 0;
+  border-radius: var(--mt-radius-2xl);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 12px 36px rgba(70, 52, 36, .05);
+}
+.mt-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14.5px;
+  line-height: 1.5;
+  min-width: 680px;
+}
+.mt-compare-table th,
+.mt-compare-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--mt-border-soft);
+  vertical-align: middle;
+}
+.mt-compare-table th {
+  background: var(--mt-surface-tint);
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  font-size: 14.5px;
+}
+.mt-compare-table th:nth-child(2) {
+  color: #7a6e65;
+  width: 34%;
+}
+.mt-compare-table th:nth-child(3) {
+  color: var(--mt-accent-strong);
+  background: rgba(198, 84, 59, .08);
+  width: 38%;
+}
+.mt-compare-table td:nth-child(1) {
+  font-weight: 600;
+  color: var(--mt-text-strong);
+  width: 28%;
+}
+.mt-compare-table td:nth-child(2) {
+  color: var(--mt-text-body);
+}
+.mt-compare-table td:nth-child(3) {
+  background: rgba(198, 84, 59, .025);
+  font-weight: 600;
+  color: var(--mt-text-strong);
+}
+.mt-compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.mt-compare-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #2e7d32;
+  font-weight: 700;
+}
+.mt-compare-warn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #c46200;
+  font-weight: 600;
+}
+.mt-compare-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--mt-accent-strong);
+  font-weight: 700;
+}
+

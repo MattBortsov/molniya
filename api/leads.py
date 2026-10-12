@@ -23,6 +23,7 @@ FORM_NAMES = {
     "spaces": "Аренда пространств — бесплатный доступ",
     "education": "Образование — бесплатный доступ",
     "pets": "Груминг-салоны — бесплатный доступ",
+    "dikidi": "Переход с DIKIDI — 3 месяца бесплатно",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -33,6 +34,7 @@ SOURCE_PATHS = {
     "spaces": "/spaces",
     "education": "/education",
     "pets": "/pets",
+    "dikidi": "/dikidi",
 }
 
 
