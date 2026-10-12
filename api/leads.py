@@ -24,6 +24,7 @@ FORM_NAMES = {
     "education": "Образование — бесплатный доступ",
     "pets": "Груминг-салоны — бесплатный доступ",
     "dikidi": "Переход с DIKIDI — 3 месяца бесплатно",
+    "yclients": "Переход с YCLIENTS — 3 месяца бесплатно",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -35,6 +36,7 @@ SOURCE_PATHS = {
     "education": "/education",
     "pets": "/pets",
     "dikidi": "/dikidi",
+    "yclients": "/yclients",
 }
 
 
