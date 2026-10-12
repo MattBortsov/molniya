@@ -231,8 +231,63 @@ def render_footer_nav_html() -> str:
           </nav>'''
 
 
-def render_footer_html(asset_prefix: str = "", home_variant: bool = False) -> str:
+def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikidi_variant: bool = False) -> str:
     footer_nav_html = render_footer_nav_html()
+    if dikidi_variant:
+        return f'''      <!-- FOOTER -->
+      <footer class="mt-footer mt-footer--home" id="contact" aria-labelledby="contact-title">
+        <div class="mt-footer-showcase">
+          <div class="mt-footer-intro">
+            <div class="mt-footer-signup">
+              <h2 id="contact-title">Получите 3 месяца бесплатно <em>при переходе с DIKIDI</em></h2>
+              <form class="mt-lead-form mt-footer-beta-form" data-lead-form data-lead-source="dikidi">
+                <div class="mt-lead-fields">
+                  <label class="mt-lead-field" for="dikidi-name">Имя<input id="dikidi-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+                  <label class="mt-lead-field" for="dikidi-phone">Телефон<input id="dikidi-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+                  <label class="mt-lead-field" for="dikidi-email">Почта<input id="dikidi-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+                </div>
+                <div class="mt-lead-honeypot" aria-hidden="true"><label for="dikidi-website">Сайт</label><input id="dikidi-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+                <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить 3 месяца бесплатно</button>
+                <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+              </form>
+            </div>
+            <div class="mt-footer-process">
+              <p class="mt-footer-process-intro">Бесплатно перенесём базу из DIKIDI и настроим Молнию под ваш бизнес за 15 минут.</p>
+              <ol>
+                <li><span>01</span><div><strong>Выгрузка из DIKIDI</strong><p>Скачайте базу клиентов, историю и прайс в Excel в 1 клик.</p></div></li>
+                <li><span>02</span><div><strong>Служба заботы переносит всё за вас</strong><p>Бережно импортируем базу без пауз в приёме клиентов и потери данных.</p></div></li>
+                <li><span>03</span><div><strong>3 месяца бесплатно</strong><p>Работайте на максимальном тарифе без ограничений и экономьте на SMS с первого дня.</p></div></li>
+              </ol>
+            </div>
+          </div>
+          <div class="mt-footer-gallery" aria-label="Молния в работе сервисного бизнеса">
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/booking.webp" alt="Администратор встречает клиента и проверяет запись на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>01 / Запись</span><strong>Простая Онлайн-запись</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/team-auto.webp" alt="Команда сервиса сверяет рабочее расписание на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>02 / Команда</span><strong>Ясная загрузка дня</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/insights-studio.webp" alt="Владелица студии занятий просматривает рабочие показатели за ноутбуком" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>03 / Показатели</span><strong>Данные для роста</strong></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
+              <span class="mt-footer-year">· 2026</span>
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+{footer_nav_html}
+        </div>
+      </footer>'''
     if home_variant:
         return f'''      <!-- FOOTER -->
       <footer class="mt-footer mt-footer--home" id="beta" aria-labelledby="beta-title">
@@ -529,15 +584,12 @@ def build_auto_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания боксов в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для автомойки и автосервиса: расписание боксов и электронный журнал записи" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка боксов автомойки в реальном времени</p>
           </div>
         </div>
@@ -1059,15 +1111,12 @@ def build_beauty_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для салона красоты: расписание мастеров и электронный журнал записи" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров салона в реальном времени</p>
           </div>
         </div>
@@ -1555,15 +1604,12 @@ def build_health_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клиники и медицинского центра: расписание врачей и электронный журнал записи" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка кабинетов клиники в реальном времени</p>
           </div>
         </div>
@@ -2079,15 +2125,12 @@ def build_spaces_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для аренды пространств и залов: шахматка броней и электронное расписание" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Интерактивная шахматка броней и загрузка площадок в реальном времени</p>
           </div>
         </div>
@@ -2603,15 +2646,12 @@ def build_education_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для учебных центров и курсов: расписание групп и электронный журнал посещаемости" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронное расписание занятий и загрузка аудиторий в реальном времени</p>
           </div>
         </div>
@@ -3127,15 +3167,12 @@ def build_pets_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для груминг-салонов: электронное расписание столов и запись питомцев" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронное расписание столов и мастеров груминга в реальном времени</p>
           </div>
         </div>
@@ -3456,12 +3493,7 @@ def build_pets_page() -> str:
 def build_dikidi_page() -> str:
     """Builds the dedicated competitor migration landing page: /dikidi."""
     nav_html = render_nav_html(active_item="dikidi", asset_prefix="")
-    footer_html = render_footer_html(asset_prefix="")
-    lead_html = render_lead_form_html(
-        "dikidi",
-        'Получите <span class="mt-hero-accent">3 месяца работы бесплатно</span> при переходе с DIKIDI',
-        "Оставьте контакты — служба заботы свяжется с вами, бесплатно перенесет базу и настроит Молнию под ваш бизнес.",
-    )
+    footer_html = render_footer_html(asset_prefix="", dikidi_variant=True)
 
     title = "Переходите с DIKIDI на Молнию: 3 месяца бесплатно | Молния Тех"
     description = "Специальные условия перехода с DIKIDI Business на Молнию: 3 месяца в подарок, бесплатный перенос базы клиентов, расписания и прайса за 15 минут. Без дорогих SMS и с полной защитой базы."
@@ -3652,15 +3684,12 @@ def build_dikidi_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Молния CRM: электронный журнал расписания и онлайн-запись клиентов" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров в реальном времени</p>
           </div>
         </div>
@@ -4011,8 +4040,6 @@ def build_dikidi_page() -> str:
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
-
-{lead_html}
 
 {footer_html}
 

@@ -751,7 +751,7 @@ a { color: inherit; }
   border-radius: 1.612903% / 2.295918%;
   background: #000;
 }
-.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35); outline-offset: 2px; }
+a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35); outline-offset: 2px; }
 .mt-tablet-img {
   display: block;
   width: 100%;

@@ -236,15 +236,12 @@
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <a class="mt-tablet" href="https://rutube.ru/video/bf11679edec2bbe548a54f9adf6bc3ca/" target="_blank" rel="noopener" aria-label="Смотреть видео: работа расписания в Молнии">
+            <div class="mt-tablet">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Молния CRM: электронный журнал расписания и онлайн-запись клиентов" width="1710" height="983" fetchpriority="high">
-                <span class="mt-tablet-play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#C6543B"><path d="M8 5v14l11-7z"></path></svg>
-                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </a>
+            </div>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров в реальном времени</p>
           </div>
         </div>
@@ -602,31 +599,52 @@
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
-      <!-- LEAD FORM -->
-      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
-        <div class="mt-lead">
-          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">3 месяца работы бесплатно</span> при переходе с DIKIDI</h2>
-          <p class="mt-lead-sub">Оставьте контакты — служба заботы свяжется с вами, бесплатно перенесет базу и настроит Молнию под ваш бизнес.</p>
-          <form class="mt-lead-form" data-lead-form data-lead-source="dikidi">
-            <div class="mt-lead-fields">
-              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
-              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
-              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
-            </div>
-            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
-            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
-            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-
       <!-- FOOTER -->
-      <footer class="mt-footer">
+      <footer class="mt-footer mt-footer--home" id="contact" aria-labelledby="contact-title">
+        <div class="mt-footer-showcase">
+          <div class="mt-footer-intro">
+            <div class="mt-footer-signup">
+              <h2 id="contact-title">Получите 3 месяца бесплатно <em>при переходе с DIKIDI</em></h2>
+              <form class="mt-lead-form mt-footer-beta-form" data-lead-form data-lead-source="dikidi">
+                <div class="mt-lead-fields">
+                  <label class="mt-lead-field" for="dikidi-name">Имя<input id="dikidi-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+                  <label class="mt-lead-field" for="dikidi-phone">Телефон<input id="dikidi-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+                  <label class="mt-lead-field" for="dikidi-email">Почта<input id="dikidi-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+                </div>
+                <div class="mt-lead-honeypot" aria-hidden="true"><label for="dikidi-website">Сайт</label><input id="dikidi-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+                <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить 3 месяца бесплатно</button>
+                <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+              </form>
+            </div>
+            <div class="mt-footer-process">
+              <p class="mt-footer-process-intro">Бесплатно перенесём базу из DIKIDI и настроим Молнию под ваш бизнес за 15 минут.</p>
+              <ol>
+                <li><span>01</span><div><strong>Выгрузка из DIKIDI</strong><p>Скачайте базу клиентов, историю и прайс в Excel в 1 клик.</p></div></li>
+                <li><span>02</span><div><strong>Служба заботы переносит всё за вас</strong><p>Бережно импортируем базу без пауз в приёме клиентов и потери данных.</p></div></li>
+                <li><span>03</span><div><strong>3 месяца бесплатно</strong><p>Работайте на максимальном тарифе без ограничений и экономьте на SMS с первого дня.</p></div></li>
+              </ol>
+            </div>
+          </div>
+          <div class="mt-footer-gallery" aria-label="Молния в работе сервисного бизнеса">
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/booking.webp" alt="Администратор встречает клиента и проверяет запись на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>01 / Запись</span><strong>Простая Онлайн-запись</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/team-auto.webp" alt="Команда сервиса сверяет рабочее расписание на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>02 / Команда</span><strong>Ясная загрузка дня</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/insights-studio.webp" alt="Владелица студии занятий просматривает рабочие показатели за ноутбуком" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>03 / Показатели</span><strong>Данные для роста</strong></figcaption>
+            </figure>
+          </div>
+        </div>
         <div class="mt-footer-inner">
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
-              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
               <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
