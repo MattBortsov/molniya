@@ -875,6 +875,24 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
 }
 .mt-btn-cta:hover { transform: translateY(-3px); box-shadow: var(--mt-shine); }
 
+.mt-btn-secondary {
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 13px;
+  font-size: 15.5px;
+  background: var(--mt-surface);
+  color: var(--mt-text-strong);
+  border: 1px solid var(--mt-border-strong);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+}
+.mt-btn-secondary:hover {
+  background: #FFF;
+  border-color: var(--mt-accent);
+  color: var(--mt-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(198, 84, 59, .15);
+}
+
 .mt-btn-sticky {
   position: fixed;
   right: 20px;
@@ -3686,8 +3704,23 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
 
 .mt-pricing-btn {
   width: 100%;
+  margin-top: auto;
+  padding: 16px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
   text-align: center;
   justify-content: center;
+  box-sizing: border-box;
+  color: var(--mt-text-on-accent);
+  background: linear-gradient(135deg, var(--mt-accent-grad-from), var(--mt-accent-grad-to));
+  box-shadow: 0 4px 16px rgba(198, 84, 59, .24);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.mt-pricing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(198, 84, 59, .38);
 }
 
 .mt-pricing-banner {
