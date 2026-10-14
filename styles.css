@@ -3577,6 +3577,30 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
 /* ============================================================
    PRICING PAGE STYLES
    ============================================================ */
+.mt-hero--pricing {
+  padding-bottom: 0;
+  border-bottom: none;
+  background: transparent;
+}
+
+.mt-hero-lead--pricing {
+  min-height: auto;
+  padding: clamp(48px, 7vh, 80px) clamp(24px, 4vw, 48px) clamp(16px, 2vh, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mt-hero-title--center {
+  text-align: center;
+  max-width: none;
+  margin: 0 auto;
+}
+
 .mt-pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

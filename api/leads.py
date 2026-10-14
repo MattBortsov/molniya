@@ -27,6 +27,7 @@ FORM_NAMES = {
     "pricing": "Тарифы — заявка на подключение",
     "dikidi": "Переход с DIKIDI — 3 месяца бесплатно",
     "yclients": "Переход с YCLIENTS — 3 месяца бесплатно",
+    "about": "О компании — заявка на подключение",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -41,6 +42,7 @@ SOURCE_PATHS = {
     "pricing": "/pricing",
     "dikidi": "/dikidi",
     "yclients": "/yclients",
+    "about": "/about",
 }
 
 

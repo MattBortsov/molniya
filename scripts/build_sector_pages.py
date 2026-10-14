@@ -130,10 +130,11 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
 
     blog_active = ' aria-current="page"' if active_item == "blog" else ''
     pricing_active = ' aria-current="page"' if active_item == "pricing" else ''
+    about_active = ' aria-current="page"' if active_item == "about" else ''
     cta_href = "/#beta" if beta_cta else "https://t.me/molniya_tex"
     cta_attrs = "" if beta_cta else ' target="_blank" rel="noopener"'
     cta_label = "Бета-тест" if beta_cta else "Подписаться"
-    cta_mobile_label = "Участвовать в бета-тесте" if beta_cta else "Подписаться в Telegram"
+    cta_mobile_label = "Участвовать в бета-тесте" if beta_cta else "Подписаться в мессенджере"
     cta_nav_icon = ('<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
                     'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                     '<path d="M5 12h14m-6-6 6 6-6 6"/></svg>' if beta_cta else
@@ -165,13 +166,14 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
                     <span class="mt-dropdown-footer-icon">⚡</span>
                     <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
                   </div>
-                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram →</a>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
                 </div>
               </div>
             </li>
             <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
             <li><a class="mt-nav-link" href="/#features">Функции</a></li>
             <li><a class="mt-nav-link" href="/pricing"{pricing_active}>Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about"{about_active}>О компании</a></li>
             <li><a class="mt-nav-link" href="/blog"{blog_active}>Блог</a></li>
           </ul>
 
@@ -198,6 +200,7 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
           <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
           <a class="mt-mobile-link" href="/#features">Функции</a>
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="{cta_href}"{cta_attrs}>
             {cta_mobile_icon}
@@ -223,12 +226,13 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
               <a class="mt-footer-link" href="/#features">Функции</a>
               <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
               <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
               <a class="mt-footer-link" href="/blog">Блог</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
-              <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Telegram-канал</a>
+              <a class="mt-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Канал в мессенджере</a>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
             </div>
@@ -261,7 +265,7 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
               <ol>
                 <li><span>01</span><div><strong>Быстрый старт за 15 минут</strong><p>Поможем настроить услуги, графики мастеров и онлайн-запись.</p></div></li>
                 <li><span>02</span><div><strong>14 дней без оплаты</strong><p>Тестируйте тариф «Бизнес» в реальной работе без ограничений и без ввода карты.</p></div></li>
-                <li><span>03</span><div><strong>Экономия с первого дня</strong><p>Бесплатные Telegram-боты вместо SMS и никаких доплат за каждого нового мастера.</p></div></li>
+                <li><span>03</span><div><strong>Экономия с первого дня</strong><p>Бесплатные Боты в мессенджерах вместо SMS и никаких доплат за каждого нового мастера.</p></div></li>
               </ol>
             </div>
           </div>
@@ -530,8 +534,8 @@ def build_auto_page() -> str:
             "a": "Мастер открывает электронный заказ-наряд на смартфоне или планшете перед заездом авто, делает фото царапин, сколов и уровня топлива и сохраняет в карточке заказа. Это надёжная защита от необоснованных претензий клиентов при выдаче."
         },
         {
-            "q": "Как клиенты записываются на автомойку и получают уведомления в Telegram?",
-            "a": "Клиенты записываются онлайн через виджет на сайте, по ссылке в соцсетях или QR-коду. Сервисный Telegram-бот автоматически присылает подтверждение бронирования, напоминание за 2 часа до визита и оповещение «Ваш автомобиль готов к выдаче» со ссылкой на чек."
+            "q": "Как клиенты записываются на автомойку и получают уведомления в мессенджере?",
+            "a": "Клиенты записываются онлайн через виджет на сайте, по ссылке в соцсетях или QR-коду. Сервисный бот в мессенджере автоматически присылает подтверждение бронирования, напоминание за 2 часа до визита и оповещение «Ваш автомобиль готов к выдаче» со ссылкой на чек."
         },
         {
             "q": "Подходит ли программа для шиномонтажа в период сезонного ажиотажа?",
@@ -832,10 +836,10 @@ def build_auto_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-уведомления <span class="mt-overview-hook">и клиентская база</span></h3>
+            <h3>Уведомления в мессенджер <span class="mt-overview-hook">и клиентская база</span></h3>
             <p>Клиент получает подтверждение бронирования, напоминание за 2 часа и уведомление «Автомобиль готов к выдаче» со ссылкой на электронный чек. Вся история визитов и ТО сохраняется в карточке авто.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Статус готовности</span><span>Telegram</span></div>
+              <div class="mt-overview-ui-head"><span>Статус готовности</span><span>Мессенджер</span></div>
               <div class="mt-overview-message">
                 Ваш Porsche Macan готов к выдаче в Боксе №2. Сумма к оплате: 4 500 ₽.
                 <span class="mt-overview-reaction">🚗</span>
@@ -877,7 +881,7 @@ def build_auto_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Клиент</span>
               <h3>Онлайн-запись с автоматическим учетом класса авто</h3>
-              <p>Клиент выбирает марку, тип кузова и комплекс услуг на сайте или через Telegram. Программа сразу резервирует окно нужной длительности (55 минут вместо 40) с учетом габаритов кроссовера.</p>
+              <p>Клиент выбирает марку, тип кузова и комплекс услуг на сайте или через мессенджер. Программа сразу резервирует окно нужной длительности (55 минут вместо 40) с учетом габаритов кроссовера.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
@@ -930,8 +934,8 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Владелец</span>
-              <h3>Выдача авто, Telegram-чек и расчет зарплаты мастеров</h3>
-              <p>Клиент получает оповещение о готовности и ссылку на чек в Telegram. Программа моментально начисляет мастеру 35% (1 365 ₽) на баланс смены — без ручных записей и споров.</p>
+              <h3>Выдача авто, чек в мессенджер и расчет зарплаты мастеров</h3>
+              <p>Клиент получает оповещение о готовности и ссылку на чек в мессенджере. Программа моментально начисляет мастеру 35% (1 365 ₽) на баланс смены — без ручных записей и споров.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
@@ -940,7 +944,7 @@ def build_auto_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Александр В. (35%)</span><strong>+1 365 ₽</strong></div>
               <div class="mt-journey-proof-row"><span>Выручка автомойки</span><strong>+2 535 ₽</strong></div>
-              <div class="mt-journey-proof-row"><span>Статус Telegram</span><strong>«Автомобиль выдан»</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус в мессенджере</span><strong>«Автомобиль выдан»</strong></div>
             </div>
           </article>
         </div>
@@ -966,7 +970,7 @@ def build_auto_page() -> str:
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">-86%</span>
-              <span class="mt-case-label">Снижение неявок благодаря Telegram-напоминаниям</span>
+              <span class="mt-case-label">Снижение неявок благодаря напоминаниям в мессенджере</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">0 <small>мин</small></span>
@@ -985,7 +989,7 @@ def build_auto_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>Попробуйте CRM Молния для своего автобизнеса</h3>
             <p>Бесплатно поможем перенести базу клиентов из тетради или Excel, настроить боксы, прайс по классам авто и зарплаты мастеров. Начните работу без пауз в сервисе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -1057,8 +1061,8 @@ def build_beauty_page() -> str:
             "a": "Да! Наша служба заботы бесплатно помогает перенести базу клиентов с номерами телефонов, историей визитов, прайс-листом и данными мастеров. Вы переходите на Молнию без потери постоянных клиентов и пауз в работе салона."
         },
         {
-            "q": "Как клиенты записываются онлайн и получают напоминания в Telegram?",
-            "a": "Клиенты переходят по ссылке в соцсетях, на сайте или по QR-коду и выбирают удобное время и любимого мастера. Сервисный Telegram-бот автоматически подтверждает запись, напоминает о визите за 24 и 2 часа, снижая неявки на 85%."
+            "q": "Как клиенты записываются онлайн и получают напоминания в мессенджер?",
+            "a": "Клиенты переходят по ссылке в соцсетях, на сайте или по QR-коду и выбирают удобное время и любимого мастера. Сервисный бот в мессенджере автоматически подтверждает запись, напоминает о визите за 24 и 2 часа, снижая неявки на 85%."
         },
         {
             "q": "Сохраняются ли формулы окрашивания и фото работ в карточке клиента?",
@@ -1217,7 +1221,7 @@ def build_beauty_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Возвраты</span>
-                <span class="mt-facet-note">Telegram-напоминания и повторные визиты</span>
+                <span class="mt-facet-note">Напоминания в мессенджер и повторные визиты</span>
               </li>
             </ul>
           </div>
@@ -1329,7 +1333,7 @@ def build_beauty_page() -> str:
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
             <h3><span class="mt-overview-hook">Журнал записи</span> и расписание мастеров</h3>
-            <p>Клиенты записываются онлайн через сайт, соцсети или Telegram 24/7. Администратор управляет загрузкой кресел и кабинетов в один клик. Программа предотвращает накладки и «окна» между визитами.</p>
+            <p>Клиенты записываются онлайн через сайт, соцсети или мессенджер 24/7. Администратор управляет загрузкой кресел и кабинетов в один клик. Программа предотвращает накладки и «окна» между визитами.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Расписание мастеров</span><span>Сегодня</span></div>
               <div class="mt-overview-calendar"><span>10:00</span><div></div><span>11:30</span><div class="mt-overview-slot">Кресло 1 <small>Елена · Airtouch</small></div><span>13:00</span><div class="mt-overview-slot mt-overview-slot--light">Кабинет 2 <small>Мария · SMART-маникюр</small></div></div>
@@ -1359,10 +1363,10 @@ def build_beauty_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-уведомления <span class="mt-overview-hook">и возвращаемость</span></h3>
-            <p>Сервисные напоминания в Telegram за 24 и 2 часа снижают процент неявок до 85%. Автоматические приглашения на повторный визит через 3–4 недели стабильно возвращают клиентов без спама.</p>
+            <h3>Уведомления в мессенджер <span class="mt-overview-hook">и возвращаемость</span></h3>
+            <p>Сервисные напоминания в мессенджер за 24 и 2 часа снижают процент неявок до 85%. Автоматические приглашения на повторный визит через 3–4 недели стабильно возвращают клиентов без спама.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Статус записи</span><span>Telegram</span></div>
+              <div class="mt-overview-ui-head"><span>Статус записи</span><span>Мессенджер</span></div>
               <div class="mt-overview-message">
                 Анна, напоминаем о записи к стилисту Елене завтра в 14:00. Ждём вас в студии!
                 <span class="mt-overview-reaction">💇‍♀️</span>
@@ -1404,7 +1408,7 @@ def build_beauty_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Клиент</span>
               <h3>Онлайн-запись к любимому мастеру в удобное время</h3>
-              <p>Клиент выбирает услугу, мастера и время за 30 секунд в виджете онлайн-записи. Программа сразу бронирует окно в расписании, не допуская накладок, и присылает подтверждение в Telegram.</p>
+              <p>Клиент выбирает услугу, мастера и время за 30 секунд в виджете онлайн-записи. Программа сразу бронирует окно в расписании, не допуская накладок, и присылает подтверждение в мессенджер.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
@@ -1458,7 +1462,7 @@ def build_beauty_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Владелец</span>
               <h3>Оплата, расчёт зарплаты и напоминание на следующий визит</h3>
-              <p>Клиент получает электронный чек в Telegram. Программа начисляет мастеру 40% за услугу (3 400 ₽) и 10% за уход (240 ₽). Через 4 недели клиент получит автоприглашение на обновление цвета.</p>
+              <p>Клиент получает электронный чек в мессенджере. Программа начисляет мастеру 40% за услугу (3 400 ₽) и 10% за уход (240 ₽). Через 4 недели клиент получит автоприглашение на обновление цвета.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
@@ -1467,7 +1471,7 @@ def build_beauty_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Елена К. (выработка)</span><strong>+3 640 ₽</strong></div>
               <div class="mt-journey-proof-row"><span>Списание со склада</span><strong>Краситель -45г</strong></div>
-              <div class="mt-journey-proof-row"><span>Telegram-автоприглашение</span><strong>Запланировано через 28 дн</strong></div>
+              <div class="mt-journey-proof-row"><span>Автоприглашение в мессенджере</span><strong>Запланировано через 28 дн</strong></div>
             </div>
           </article>
         </div>
@@ -1489,7 +1493,7 @@ def build_beauty_page() -> str:
           <div class="mt-case-stats">
             <div class="mt-case-stat">
               <span class="mt-case-num">+42%</span>
-              <span class="mt-case-label">Рост повторных записей через Telegram-напоминания</span>
+              <span class="mt-case-label">Рост повторных записей через Напоминания в мессенджер</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">-90%</span>
@@ -1512,7 +1516,7 @@ def build_beauty_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>Попробуйте CRM Молния для своего салона красоты</h3>
             <p>Бесплатно поможем перенести базу клиентов из тетради, Excel или старой CRM, настроить расписание мастеров, прайс-лист и схему зарплаты. Начните работу без пауз в сервисе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -1710,7 +1714,7 @@ def build_health_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Профилактика</span>
-                <span class="mt-facet-note">Telegram-напоминания и повторные визиты</span>
+                <span class="mt-facet-note">Напоминания в мессенджер и повторные визиты</span>
               </li>
             </ul>
           </div>
@@ -1822,7 +1826,7 @@ def build_health_page() -> str:
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
             <h3><span class="mt-overview-hook">Журнал записи</span> и расписание кабинетов</h3>
-            <p>Пациенты записываются онлайн через сайт, соцсети или Telegram 24/7. Администратор управляет загрузкой кабинетов, аппаратов и врачей в один клик. Программа предотвращает пересечения специалистов и простой оборудования.</p>
+            <p>Пациенты записываются онлайн через сайт, соцсети или мессенджер 24/7. Администратор управляет загрузкой кабинетов, аппаратов и врачей в один клик. Программа предотвращает пересечения специалистов и простой оборудования.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Расписание приемов</span><span>Сегодня</span></div>
               <div class="mt-overview-calendar"><span>09:00</span><div></div><span>10:30</span><div class="mt-overview-slot">Каб. 1 <small>Терапевт · Прием + ЭКГ</small></div><span>12:00</span><div class="mt-overview-slot mt-overview-slot--light">Зал 3 <small>Массаж · Спина (курс)</small></div></div>
@@ -1852,10 +1856,10 @@ def build_health_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-напоминания <span class="mt-overview-hook">и повторные приемы</span></h3>
-            <p>Автоматические напоминания в Telegram за 24 и 2 часа снижают долю пропущенных приемов до 88%. Система вовремя напоминает пациентам о плановых осмотрах, вакцинациях и повторных сеансах курса массажа.</p>
+            <h3>Напоминания в мессенджер <span class="mt-overview-hook">и повторные приемы</span></h3>
+            <p>Автоматические напоминания в мессенджер за 24 и 2 часа снижают долю пропущенных приемов до 88%. Система вовремя напоминает пациентам о плановых осмотрах, вакцинациях и повторных сеансах курса массажа.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Статус визита</span><span>Telegram</span></div>
+              <div class="mt-overview-ui-head"><span>Статус визита</span><span>Мессенджер</span></div>
               <div class="mt-overview-message">
                 Сергей, напоминаем о приеме у терапевта завтра в 10:30. Кабинет №1. Пожалуйста, подтвердите визит.
                 <span class="mt-overview-reaction">🩺</span>
@@ -1897,7 +1901,7 @@ def build_health_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Пациент</span>
               <h3>Онлайн-запись на прием без звонков администратору</h3>
-              <p>Пациент выбирает специальность, врача и удобный интервал за 30 секунд через Telegram или на сайте. Программа бронирует кабинет и временной слот нужной длительности с учетом регламента приема.</p>
+              <p>Пациент выбирает специальность, врача и удобный интервал за 30 секунд через мессенджер или на сайте. Программа бронирует кабинет и временной слот нужной длительности с учетом регламента приема.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
@@ -1950,8 +1954,8 @@ def build_health_page() -> str:
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Главврач</span>
-              <h3>Оплата, Telegram-памятка и начисление зарплаты врача</h3>
-              <p>Пациент получает электронный чек и рекомендации врача в Telegram. Программа моментально начисляет терапевту 40% (1 400 ₽) за прием — выработка рассчитывается без ручных таблиц и споров.</p>
+              <h3>Оплата, памятка в мессенджер и начисление зарплаты врача</h3>
+              <p>Пациент получает электронный чек и рекомендации врача в мессенджере. Программа моментально начисляет терапевту 40% (1 400 ₽) за прием — выработка рассчитывается без ручных таблиц и споров.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
@@ -1960,7 +1964,7 @@ def build_health_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Анна М. (40%)</span><strong>+1 400 ₽</strong></div>
               <div class="mt-journey-proof-row"><span>Списание со склада</span><strong>Расходники списаны</strong></div>
-              <div class="mt-journey-proof-row"><span>Telegram-памятка</span><strong>«Рекомендации отправлены»</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка в мессенджере</span><strong>«Рекомендации отправлены»</strong></div>
             </div>
           </article>
         </div>
@@ -1973,7 +1977,7 @@ def build_health_page() -> str:
             <div class="mt-case-tag">⚡ Кейс автоматизации клиники</div>
             <h2 class="mt-case-title">Медицинский центр «Гармония», 5 кабинетов</h2>
             <blockquote class="mt-case-quote">
-              «Раньше администраторы путались в накладках врачей, а пациенты забывали о приемах. В Молнии мы настроили четкое расписание по кабинетам, электронные карты и Telegram-напоминания. Неявки снизились практически до нуля, а учет процедур и зарплат стал полностью автоматическим.»
+              «Раньше администраторы путались в накладках врачей, а пациенты забывали о приемах. В Молнии мы настроили четкое расписание по кабинетам, электронные карты и Напоминания в мессенджер. Неявки снизились практически до нуля, а учет процедур и зарплат стал полностью автоматическим.»
             </blockquote>
             <div class="mt-case-author">
               Елена Романова <span>· Главный врач и управляющая, <span style="white-space:nowrap">Санкт-Петербург</span></span>
@@ -1986,7 +1990,7 @@ def build_health_page() -> str:
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">-88%</span>
-              <span class="mt-case-label">Снижение пропусков приемов благодаря Telegram-напоминаниям</span>
+              <span class="mt-case-label">Снижение пропусков приемов благодаря напоминаниям в мессенджере</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">0 <small>мин</small></span>
@@ -2005,7 +2009,7 @@ def build_health_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>Попробуйте CRM Молния для своей клиники или студии</h3>
             <p>Бесплатно поможем перенести базу пациентов из Excel или старой МИС, настроить расписание кабинетов, прайс-лист и схему зарплаты врачей. Начните прием без пауз в работе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -2069,7 +2073,7 @@ def build_spaces_page() -> str:
         ),
         (
             "Как система защищает от двойных бронирований (овербукинга)?",
-            "Все бронирования — с сайта, из Telegram, соцсетей или внесенные администратором вручную — мгновенно попадают в единый календарь в реальном времени. Если слот занят, клиент физически не может выбрать это время в виджете, что полностью исключает накладки и конфликты.",
+            "Все бронирования — с сайта, из мессенджера, соцсетей или внесенные администратором вручную — мгновенно попадают в единый календарь в реальном времени. Если слот занят, клиент физически не может выбрать это время в виджете, что полностью исключает накладки и конфликты.",
         ),
         (
             "Можно ли настроить разные тарифы для разного времени суток и выходных дней?",
@@ -2231,7 +2235,7 @@ def build_spaces_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Комьюнити</span>
-                <span class="mt-facet-note">Telegram-напоминания и повторные брони</span>
+                <span class="mt-facet-note">Напоминания в мессенджер и повторные брони</span>
               </li>
             </ul>
           </div>
@@ -2351,8 +2355,8 @@ def build_spaces_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Онлайн-виджет бронирования <span class="mt-overview-hook">и Telegram-бот</span></h3>
-            <p>Клиенты сами видят свободные окна и бронируют слоты на сайте или в Telegram 24/7. Никаких бесконечных переписок в мессенджерах: система сама покажет фото зала, стоимость и правила аренды.</p>
+            <h3>Онлайн-виджет бронирования <span class="mt-overview-hook">и бот в мессенджере</span></h3>
+            <p>Клиенты сами видят свободные окна и бронируют слоты на сайте или в мессенджере 24/7. Никаких бесконечных переписок в мессенджерах: система сама покажет фото зала, стоимость и правила аренды.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Онлайн-бронь</span><span>Зал «Циклорама»</span></div>
               <div class="mt-overview-stages"><span>Выбор зала</span><i></i><span>Слот</span><i></i><span>Предоплата</span></div>
@@ -2373,10 +2377,10 @@ def build_spaces_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-напоминания арендаторам <span class="mt-overview-hook">и правила отмены</span></h3>
+            <h3>Напоминания в мессенджер арендаторам <span class="mt-overview-hook">и правила отмены</span></h3>
             <p>Бот отправляет гостям код от двери или схему проезда, напоминает о времени визита за 24 и 2 часа и запрашивает подтверждение. Неявки снижаются на 85%, а отмены происходят строго по регламенту.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Напоминание арендатору</span><span>Telegram</span></div>
+              <div class="mt-overview-ui-head"><span>Напоминание арендатору</span><span>Мессенджер</span></div>
               <div class="mt-overview-message">
                 Екатерина, напоминаем о брони зала «Лофт» завтра в 14:00. Код от домофона: 4821#. Пожалуйста, подтвердите визит.
                 <span class="mt-overview-reaction">🏟️</span>
@@ -2526,7 +2530,7 @@ def build_spaces_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>Попробуйте CRM Молния для своего пространства</h3>
             <p>Бесплатно поможем настроить календарную сетку залов, тарифы по часам и дням недели, каталог оборудования и правила предоплаты. Начните принимать онлайн-брони уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -2590,7 +2594,7 @@ def build_education_page() -> str:
         ),
         (
             "Как работает автоматический учет абонементов и списание занятий?",
-            "При отметке визита ученика в журнале занятие автоматически списывается с его баланса в 1 клик. Программа отслеживает срок действия абонемента, остаток уроков и заблаговременно напоминает родителям или ученику о продлении через Telegram.",
+            "При отметке визита ученика в журнале занятие автоматически списывается с его баланса в 1 клик. Программа отслеживает срок действия абонемента, остаток уроков и заблаговременно напоминает родителям или ученику о продлении через мессенджер.",
         ),
         (
             "Можно ли настроить заморозку абонементов и перерасчет по справкам?",
@@ -2606,7 +2610,7 @@ def build_education_page() -> str:
         ),
         (
             "Как ученики и родители получают напоминания о занятиях?",
-            "Сервисный Telegram-бот отправляет автоматические уведомления за 24 и за 2 часа до урока: напоминает время, кабинет и тему занятия. Это снижает число пропусков без уважительной причины на 80% и избавляет администраторов от ручных обзвонов.",
+            "Сервисный бот в мессенджере отправляет автоматические уведомления за 24 и за 2 часа до урока: напоминает время, кабинет и тему занятия. Это снижает число пропусков без уважительной причины на 80% и избавляет администраторов от ручных обзвонов.",
         ),
         (
             "Как бесплатно перенести базу учеников и историю абонементов из Excel или старой CRM?",
@@ -2752,7 +2756,7 @@ def build_education_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Забота</span>
-                <span class="mt-facet-note">Telegram-напоминания об уроках и продлениях</span>
+                <span class="mt-facet-note">Напоминания в мессенджер об уроках и продлениях</span>
               </li>
             </ul>
           </div>
@@ -2894,10 +2898,10 @@ def build_education_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-напоминания ученикам <span class="mt-overview-hook">и родителям</span></h3>
+            <h3>Напоминания в мессенджер ученикам <span class="mt-overview-hook">и родителям</span></h3>
             <p>Сервисный бот предупреждает о занятии за 24 и 2 часа, напоминает взять сменную обувь или форму, а родителям отправляет отчет об успеваемости и напоминание о скором окончании абонемента.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Школа «Ритм»</span></div>
+              <div class="mt-overview-ui-head"><span>Уведомление в мессенджер</span><span>Школа «Ритм»</span></div>
               <div class="mt-overview-message">
                 Елена, напоминаем: сегодня в 18:30 у Софии урок танцев в Зале №2. Пожалуйста, не забудьте чешки.
                 <span class="mt-overview-reaction">🩰</span>
@@ -2939,7 +2943,7 @@ def build_education_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Родитель / Ученик</span>
               <h3>Онлайн-запись на пробный урок за 1 минуту</h3>
-              <p>Родитель выбирает направление, удобный филиал и время пробного занятия через виджет на сайте или в Telegram. Слот в группе резервируется автоматически.</p>
+              <p>Родитель выбирает направление, удобный филиал и время пробного занятия через виджет на сайте или в мессенджере. Слот в группе резервируется автоматически.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
@@ -2993,7 +2997,7 @@ def build_education_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Руководитель</span>
               <h3>Оплата абонемента, расчет педагога и автонапоминания</h3>
-              <p>Родитель оплачивает абонемент на 8 занятий. Программа автоматически начисляет ставку преподавателю, формирует график уроков и отправляет памятку в Telegram.</p>
+              <p>Родитель оплачивает абонемент на 8 занятий. Программа автоматически начисляет ставку преподавателю, формирует график уроков и отправляет памятку в мессенджере.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчет">
               <div class="mt-journey-proof-head">
@@ -3002,7 +3006,7 @@ def build_education_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Абонемент</span><strong>8 уроков (6 400 ₽)</strong></div>
               <div class="mt-journey-proof-row"><span>Начислено педагогу</span><strong>+800 ₽ за урок</strong></div>
-              <div class="mt-journey-proof-row"><span>Telegram-бот</span><strong>«График уроков отправлен»</strong></div>
+              <div class="mt-journey-proof-row"><span>Бот в мессенджере</span><strong>«График уроков отправлен»</strong></div>
             </div>
           </article>
         </div>
@@ -3047,7 +3051,7 @@ def build_education_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>Попробуйте CRM Молния для своего учебного центра</h3>
             <p>Бесплатно поможем настроить расписание групп, типы абонементов, правила заморозок и формулы зарплат педагогов. Запустите центр без пауз в учебном процессе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -3123,7 +3127,7 @@ def build_pets_page() -> str:
         ),
         (
             "Как отправляются напоминания владельцам и уведомление о готовности питомца?",
-            "Сервисный Telegram-бот напоминает владельцу о визите за 24 и за 2 часа, а во время процедуры мастер или администратор в 1 клик отправляет уведомление: «Ваш питомец готов, можно забирать!». А через 4–6 недель система заботливо приглашает на регулярный уход, возвращая постоянных клиентов.",
+            "Сервисный бот в мессенджере напоминает владельцу о визите за 24 и за 2 часа, а во время процедуры мастер или администратор в 1 клик отправляет уведомление: «Ваш питомец готов, можно забирать!». А через 4–6 недель система заботливо приглашает на регулярный уход, возвращая постоянных клиентов.",
         ),
         (
             "Можно ли распределять записи между грумерами и столами?",
@@ -3273,7 +3277,7 @@ def build_pets_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Забота</span>
-                <span class="mt-facet-note">Telegram-напоминания о повторной стрижке через 4 недели</span>
+                <span class="mt-facet-note">Напоминания в мессенджер о повторной стрижке через 4 недели</span>
               </li>
             </ul>
           </div>
@@ -3405,7 +3409,7 @@ def build_pets_page() -> str:
 
           <article class="mt-overview-card">
             <h3>Онлайн-запись 24/7 <span class="mt-overview-hook">с выбором породы</span></h3>
-            <p>Владельцы записывают собак и кошек прямо с сайта и Telegram-канала. Форма сама предлагает выбрать породу, вес и допуслуги (чистка зубов, стрижка когтей), показывая точную стоимость.</p>
+            <p>Владельцы записывают собак и кошек прямо с сайта и канала в мессенджере. Форма сама предлагает выбрать породу, вес и допуслуги (чистка зубов, стрижка когтей), показывая точную стоимость.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Онлайн-запись в салон</span><span>Груминг собак</span></div>
               <div class="mt-overview-stages"><span>Порода</span><i></i><span>Услуга</span><i></i><span>Запись</span></div>
@@ -3415,10 +3419,10 @@ def build_pets_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-напоминания <span class="mt-overview-hook">и «Питомец готов!»</span></h3>
+            <h3>Напоминания в мессенджер <span class="mt-overview-hook">и «Питомец готов!»</span></h3>
             <p>Сервисный бот предупреждает о записи за 24 и 2 часа, отправляет уведомление в 1 клик, когда питомца можно забирать, и заботливо приглашает на повторный груминг через 4–6 недель.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Салон «Лапки»</span></div>
+              <div class="mt-overview-ui-head"><span>Уведомление в мессенджер</span><span>Салон «Лапки»</span></div>
               <div class="mt-overview-message">
                 Ольга, здравствуйте! Стрижка Марси завершена, питомец помыт и расчесан. Ждем вас в салоне до 18:00!
                 <span class="mt-overview-reaction">🐾</span>
@@ -3514,7 +3518,7 @@ def build_pets_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Владелец</span>
               <h3>Кнопка «Готово!», оплата и расчет мастера</h3>
-              <p>Хозяйка мгновенно получает Telegram-сообщение: «Марси готова!». Администратор принимает оплату по карте или СБП, грумер видит начисленный %, а бот ставит напоминание на визит через месяц.</p>
+              <p>Хозяйка мгновенно получает сообщение в мессенджере: «Марси готова!». Администратор принимает оплату по карте или СБП, грумер видит начисленный %, а бот ставит напоминание на визит через месяц.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--analytics" aria-label="Расчет визита">
               <div class="mt-journey-proof-head">
@@ -3523,7 +3527,7 @@ def build_pets_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Сумма</span><strong>3 800 ₽ (карта / СБП)</strong></div>
               <div class="mt-journey-proof-row"><span>Зарплата грумера</span><strong>1 710 ₽ (45% начислено)</strong></div>
-              <div class="mt-journey-proof-row"><span>Telegram</span><strong>«Марси готова!» отправлено</strong></div>
+              <div class="mt-journey-proof-row"><span>Мессенджер</span><strong>«Марси готова!» отправлено</strong></div>
             </div>
           </article>
         </div>
@@ -3545,7 +3549,7 @@ def build_pets_page() -> str:
             </div>
             <div class="mt-case-stat">
               <strong>+35% визитов</strong>
-              <span>автонапоминания в Telegram через 4–6 недель</span>
+              <span>автонапоминания в мессенджер через 4–6 недель</span>
             </div>
             <div class="mt-case-stat">
               <strong>2 минуты</strong>
@@ -3554,7 +3558,7 @@ def build_pets_page() -> str:
           </div>
 
           <blockquote class="mt-case-quote">
-            <p>«Раньше администраторы постоянно ошибались с длительностью записи: ставили хаски и шпица на одно и то же время, из-за чего мастера задерживались и нервничали. В Молнии система точно знает время под каждую породу, а кнопка "Питомец готов" с автосообщением в Telegram избавила наш холл от толпы ожидающих хозяев».</p>
+            <p>«Раньше администраторы постоянно ошибались с длительностью записи: ставили хаски и шпица на одно и то же время, из-за чего мастера задерживались и нервничали. В Молнии система точно знает время под каждую породу, а кнопка "Питомец готов" с автосообщением в мессенджере избавила наш холл от толпы ожидающих хозяев».</p>
             <cite>Анастасия Белова · Основательница сети «Лапки & Хвостики»</cite>
           </blockquote>
         </div>
@@ -3617,7 +3621,7 @@ def build_repair_page() -> str:
     title = "CRM для сервисного центра: учет ремонтов и заказов | Молния"
     description = (
         "Программа и CRM для сервисного центра: учет заказ-нарядов, склад запчастей, статусы ремонта, "
-        "печать квитанций, Telegram-уведомления клиентам и расчет зарплат инженеров."
+        "печать квитанций, Уведомления в мессенджер клиентам и расчет зарплат инженеров."
     )
     canonical = "https://molniya-tech.ru/repair"
 
@@ -3636,7 +3640,7 @@ def build_repair_page() -> str:
         ),
         (
             "Как клиенты узнают о завершении диагностики и готовности устройства?",
-            "Сервисный Telegram-бот отправляет автоматические уведомления: «Устройство принято в диагностику», «Согласование стоимости» и «Ваш заказ готов, можно забирать!». Клиенту больше не нужно звонить в сервис, а администратор экономит до 3 часов в день на звонках.",
+            "Сервисный бот в мессенджере отправляет автоматические уведомления: «Устройство принято в диагностику», «Согласование стоимости» и «Ваш заказ готов, можно забирать!». Клиенту больше не нужно звонить в сервис, а администратор экономит до 3 часов в день на звонках.",
         ),
         (
             "Как рассчитывается сдельная зарплата мастеров и инженеров по ремонту?",
@@ -3771,7 +3775,7 @@ def build_repair_page() -> str:
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Учет заказ-нарядов от приемки до выдачи, склад запчастей, рабочие места инженеров, уведомления клиентов в Telegram и прозрачный расчет сдельной зарплаты мастеров.</p>
+              <p class="mt-hero-sub">Учет заказ-нарядов от приемки до выдачи, склад запчастей, рабочие места инженеров, уведомления клиентов в мессенджер и прозрачный расчет сдельной зарплаты мастеров.</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
@@ -3789,7 +3793,7 @@ def build_repair_page() -> str:
                 <span class="mt-facet-note">сдельный расчет % от работ без рутины в Excel</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name mt-facet-name--soon">Telegram & Статусы</span>
+                <span class="mt-facet-name mt-facet-name--soon">Мессенджеры & Статусы</span>
                 <span class="mt-facet-note">автосообщения клиенту «Устройство готово!»</span>
               </li>
             </ul>
@@ -3896,7 +3900,7 @@ def build_repair_page() -> str:
       <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для сервисного центра" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Ведите прозрачный учет ремонтов <span class="mt-overview-hook">от приемки до закрытия гарантии</span></h2>
-          <p class="mt-section-sub">Программа для учета в сервисном центре: заказ-наряды, склад деталей, зарплаты инженеров, онлайн-запись и оповещения клиентов в Telegram.</p>
+          <p class="mt-section-sub">Программа для учета в сервисном центре: заказ-наряды, склад деталей, зарплаты инженеров, онлайн-запись и оповещения клиентов в мессенджере.</p>
         </div>
 
         <div class="mt-overview-grid">
@@ -3932,10 +3936,10 @@ def build_repair_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Telegram-уведомления: <span class="mt-overview-hook">«Ваш заказ готов!»</span></h3>
-            <p>Сервисный Telegram-бот бесплатно уведомляет клиента о результатах диагностики, согласовывает смету ремонта и сообщает о готовности к выдаче. Экономия до 3 часов в день на звонках администратора.</p>
+            <h3>Уведомления в мессенджер: <span class="mt-overview-hook">«Ваш заказ готов!»</span></h3>
+            <p>Сервисный бот в мессенджере бесплатно уведомляет клиента о результатах диагностики, согласовывает смету ремонта и сообщает о готовности к выдаче. Экономия до 3 часов в день на звонках администратора.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Сервис «ТехноФикс»</span></div>
+              <div class="mt-overview-ui-head"><span>Уведомление в мессенджер</span><span>Сервис «ТехноФикс»</span></div>
               <div class="mt-overview-message">
                 Артем, добрый день! Ремонт iPhone 14 Pro завершен, устройство протестировано. Ждем вас на выдаче с 10:00 до 20:00!
                 <span class="mt-overview-reaction">⚡</span>
@@ -3994,8 +3998,8 @@ def build_repair_page() -> str:
             <div class="mt-journey-index">02</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Инженер</span>
-              <h3>Диагностика и согласование сметы в Telegram</h3>
-              <p>Мастер проводит первичный осмотр, проверяет Face ID и системную плату, формирует смету в программе. Клиент мгновенно получает смету в Telegram и подтверждает ремонт в один клик.</p>
+              <h3>Диагностика и согласование сметы в мессенджере</h3>
+              <p>Мастер проводит первичный осмотр, проверяет Face ID и системную плату, формирует смету в программе. Клиент мгновенно получает смету в мессенджер и подтверждает ремонт в один клик.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--process" aria-label="Диагностика и согласование">
               <div class="mt-journey-proof-head">
@@ -4031,7 +4035,7 @@ def build_repair_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система & Выдача</span>
               <h3>Кнопка «Готово!», оплата, гарантия и зарплата мастера</h3>
-              <p>Клиент получает Telegram-сообщение: «Ваш iPhone готов!». При выдаче печатается гарантийный талон на 90 дней, клиент оплачивает заказ, а мастеру начисляется процент за выполненную работу.</p>
+              <p>Клиент получает сообщение в мессенджере: «Ваш iPhone готов!». При выдаче печатается гарантийный талон на 90 дней, клиент оплачивает заказ, а мастеру начисляется процент за выполненную работу.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--analytics" aria-label="Выдача и расчет">
               <div class="mt-journey-proof-head">
@@ -4062,7 +4066,7 @@ def build_repair_page() -> str:
             </div>
             <div class="mt-case-stat">
               <strong>-70% звонков</strong>
-              <span>«что с моим заказом» благодаря Telegram-уведомлениям</span>
+              <span>«что с моим заказом» благодаря уведомлениям в мессенджере</span>
             </div>
             <div class="mt-case-stat">
               <strong>15 минут</strong>
@@ -4071,7 +4075,7 @@ def build_repair_page() -> str:
           </div>
 
           <blockquote class="mt-case-quote">
-            <p>«Раньше запчасти списывались кое-как в блокнотах, к концу месяца недостачи достигали десятков тысяч рублей. Плюс администраторы целыми днями висели на телефоне, отвечая клиентам о готовности. В Молнии каждый винтик привязан к заказу, а Telegram-бот сам сообщает клиентам о готовности. Управляющий теперь видит реальную чистую прибыль по каждому мастеру за секунды».</p>
+            <p>«Раньше запчасти списывались кое-как в блокнотах, к концу месяца недостачи достигали десятков тысяч рублей. Плюс администраторы целыми днями висели на телефоне, отвечая клиентам о готовности. В Молнии каждый винтик привязан к заказу, а бот в мессенджере сам сообщает клиентам о готовности. Управляющий теперь видит реальную чистую прибыль по каждому мастеру за секунды».</p>
             <cite>Артем Смирнов · Совладелец сети «FixLab», Екатеринбург</cite>
           </blockquote>
         </div>
@@ -4127,7 +4131,7 @@ def build_pricing_page() -> str:
     footer_html = render_footer_html(asset_prefix="", pricing_variant=True)
 
     title = "Тарифы CRM Молния — от 1 490 ₽/мес | Честные цены без переплат за мастеров"
-    description = "Прозрачные тарифы CRM Молния для сферы услуг. Онлайн-запись 24/7, уведомления в Telegram за 0 ₽, склад, онлайн-касса и расчет зарплат. До 15 мастеров без доплат."
+    description = "Прозрачные тарифы CRM Молния для сферы услуг. Онлайн-запись 24/7, уведомления в мессенджер за 0 ₽, склад, онлайн-касса и расчет зарплат. До 15 мастеров без доплат."
     canonical = "https://molniya-tech.ru/pricing"
 
     faq_items = [
@@ -4140,8 +4144,8 @@ def build_pricing_page() -> str:
             "a": "Нет! В тарифе «Бизнес» уже включено до 15 мастеров и сотрудников без каких-либо доплат за каждого человека, а в тарифе «Сеть» количество сотрудников не ограничено. Мы не взимаем скрытых платежей за расширение вашей команды."
         },
         {
-            "q": "Сколько стоят уведомления клиентам и как работает Telegram-бот?",
-            "a": "Все уведомления о записях, напоминания за 24 и 2 часа до визита, ссылки на перенос и отмену, а также электронные чеки отправляются через фирменного Telegram-бота абсолютно бесплатно (0 ₽). Вы можете полностью отказаться от платных SMS и экономить от 10 000 до 35 000 ₽ каждый месяц."
+            "q": "Сколько стоят уведомления клиентам и как работает бот в мессенджере?",
+            "a": "Все уведомления о записях, напоминания за 24 и 2 часа до визита, ссылки на перенос и отмену, а также электронные чеки отправляются через фирменного бота в мессенджере абсолютно бесплатно (0 ₽). Вы можете полностью отказаться от платных SMS и экономить от 10 000 до 35 000 ₽ каждый месяц."
         },
         {
             "q": "Как происходит перенос данных при переходе с YCLIENTS или DIKIDI?",
@@ -4181,7 +4185,7 @@ def build_pricing_page() -> str:
                     "name": "Тариф Старт",
                     "price": "1490",
                     "priceCurrency": "RUB",
-                    "description": "До 2 сотрудников, онлайн-запись 24/7, журнал визитов, Telegram-уведомления за 0 ₽"
+                    "description": "До 2 сотрудников, онлайн-запись 24/7, журнал визитов, Уведомления в мессенджер за 0 ₽"
                 },
                 {
                     "@type": "Offer",
@@ -4297,44 +4301,17 @@ def build_pricing_page() -> str:
 {nav_html}
 
       <!-- HERO -->
-      <section class="mt-hero" data-screen-label="Тарифы">
+      <section class="mt-hero mt-hero--pricing" data-screen-label="Тарифы">
 
-        <div class="mt-hero-lead">
-
-          <h1 class="mt-hero-title">Тарифы Молнии</h1>
-
-          <div class="mt-hero-bottom">
-            <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Фиксированная абонентская плата без скрытых комиссий и наценок за сотрудников. Бесплатные напоминания клиентам в Telegram вместо дорогих пакетов SMS.</p>
-              <a class="mt-btn mt-btn-hero" href="#contact">Подключить бесплатно</a>
-            </div>
-
-            <ul class="mt-facets mt-facets--full" aria-label="Преимущества тарифов Молнии">
-              <li class="mt-facet">
-                <span class="mt-facet-name">14 дней бесплатно</span>
-                <span class="mt-facet-note">полный доступ без ввода карты</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">0 ₽ за уведомления</span>
-                <span class="mt-facet-note">в Telegram вместо платных SMS</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">До 15 мастеров</span>
-                <span class="mt-facet-note">без доплат в тарифе «Бизнес»</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">Перенос за 15 мин</span>
-                <span class="mt-facet-note">из YCLIENTS, DIKIDI, Excel</span>
-              </li>
-            </ul>
-          </div>
+        <div class="mt-hero-lead mt-hero-lead--pricing">
+          <h1 class="mt-hero-title mt-hero-title--center">Тарифы Молнии</h1>
         </div>
 
       </section>
 
       <!-- MIGRATION SPECIAL OFFER BANNER -->
       <section class="mt-section mt-reveal" data-screen-label="Спецпредложение миграции" data-mt-reveal style="padding-top:0">
-        <div class="mt-pricing-banner">
+        <div class="mt-pricing-banner" style="margin-top:0">
           <div class="mt-pricing-banner-info">
             <h3>Переходите с другой CRM? Дарим 3 месяца в подарок!</h3>
             <p>Если вы уже используете YCLIENTS, DIKIDI или другую систему — бесплатно перенесём базу клиентов, историю визитов, прайс-лист и сотрудников за 15 минут и активируем 3 месяца максимального тарифа без оплаты.</p>
@@ -4347,13 +4324,12 @@ def build_pricing_page() -> str:
       </section>
 
       <!-- PRICING TIERS GRID -->
-      <section id="plans" class="mt-section mt-reveal" data-screen-label="Планы тарифов" data-mt-reveal>
+      <section id="plans" class="mt-section mt-reveal" data-screen-label="Планы тарифов" data-mt-reveal style="padding-top:0">
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Тарифные планы CRM Молния</h2>
           <p class="mt-section-sub">Прозрачные условия без звездочек и неожиданных списаний. Тестовый период 14 дней на тарифе «Бизнес» включен для всех новых пользователей.</p>
         </div>
 
-        <div class="mt-pricing-grid" aria-label="Тарифные планы">
+        <div class="mt-pricing-grid" aria-label="Тарифные планы" style="margin-top:24px">
 
           <!-- Plan 1: Старт -->
           <article class="mt-pricing-card">
@@ -4367,7 +4343,7 @@ def build_pricing_page() -> str:
               <li class="mt-pricing-feature">{check_icon}<span><strong>До 2 рабочих мест</strong> / мастеров</span></li>
               <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-запись 24/7</strong> по прямой ссылке и на сайте</span></li>
               <li class="mt-pricing-feature">{check_icon}<span><strong>Журнал визитов</strong> и единая клиентская база</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Telegram-бот за 0 ₽</strong> (напоминания и чеки)</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>бот в мессенджере за 0 ₽</strong> (напоминания и чеки)</span></li>
               <li class="mt-pricing-feature">{check_icon}<span>Защита клиентской базы от копирования мастерами</span></li>
               <li class="mt-pricing-feature">{check_icon}<span>Электронные карты лояльности и скидки</span></li>
               <li class="mt-pricing-feature">{check_icon}<span>Базовая аналитика выручки и визитов</span></li>
@@ -4392,8 +4368,8 @@ def build_pricing_page() -> str:
               <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-касса 54-ФЗ</strong> и интеграция с эквайрингом</span></li>
               <li class="mt-pricing-feature">{check_icon}<span>Детальная финансовая и управленческая аналитика</span></li>
               <li class="mt-pricing-feature">{check_icon}<span>Индивидуальные права доступа для персонала</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Интеграция с Яндекс Картами, 2ГИС и Telegram</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Приоритетная поддержка в Telegram 7 дней в неделю</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Интеграция с Яндекс Картами, 2ГИС и мессенджерами</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Приоритетная поддержка в мессенджере 7 дней в неделю</span></li>
             </ul>
             <a class="mt-btn mt-pricing-btn" href="#contact">Подключить бесплатно</a>
           </article>
@@ -4446,7 +4422,7 @@ def build_pricing_page() -> str:
               <h3 class="mt-pricing-calc-title">CRM Молния (Тариф «Бизнес»)</h3>
               <div class="mt-pricing-calc-row"><span>Тариф «Бизнес» (3 490 ₽ × 12 мес):</span><strong>41 880 ₽</strong></div>
               <div class="mt-pricing-calc-row"><span>Доплата за мастеров:</span><strong style="color:#2e7d32">0 ₽ (до 15 мастеров включено)</strong></div>
-              <div class="mt-pricing-calc-row"><span>Telegram-уведомления клиентам:</span><strong style="color:#2e7d32">0 ₽ (неограниченно)</strong></div>
+              <div class="mt-pricing-calc-row"><span>Уведомления в мессенджер клиентам:</span><strong style="color:#2e7d32">0 ₽ (неограниченно)</strong></div>
               <div class="mt-pricing-calc-row"><span>Склад, расчет зарплат, касса, API:</span><strong style="color:#2e7d32">0 ₽ (включено в тариф)</strong></div>
               <div class="mt-pricing-calc-total"><span>Итоговые расходы в год:</span><span style="color:#2e7d32">41 880 ₽ / год</span></div>
             </div>
@@ -4502,7 +4478,7 @@ def build_pricing_page() -> str:
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Уведомления клиентам в Telegram</td>
+                <td>Уведомления клиентам в мессенджере</td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
@@ -4575,7 +4551,7 @@ def build_pricing_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>14 дней тест-драйва без привязки карты</h3>
             <p>Попробуйте полную версию тарифа «Бизнес» в реальной работе. Наша служба заботы бесплатно перенесет базу и обучит команду.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Задать вопрос в Telegram ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Задать вопрос в мессенджере ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -4637,11 +4613,11 @@ def build_dikidi_page() -> str:
         },
         {
             "q": "Как работает онлайн-запись и сохранятся ли ссылки для клиентов?",
-            "a": "Вы получаете прямую ссылку на виджет онлайн-записи и готовые кнопки для сайта, Telegram, группы ВКонтакте и профилей на Яндекс и 2ГИС Картах. Клиенты смогут записываться круглосуточно, выбирая услугу, мастера и время, но теперь запись ведёт строго на ваш салон — без чужих агрегаторов и рекламы конкурентов."
+            "a": "Вы получаете прямую ссылку на виджет онлайн-записи и готовые кнопки для сайта, мессенджеров, группы ВКонтакте и профилей на Яндекс и 2ГИС Картах. Клиенты смогут записываться круглосуточно, выбирая услугу, мастера и время, но теперь запись ведёт строго на ваш салон — без чужих агрегаторов и рекламы конкурентов."
         },
         {
             "q": "Как отправляются напоминания клиентам и действительно ли они бесплатны?",
-            "a": "Да! В Молнию встроен сервисный Telegram-бот, который автоматически присылает подтверждения, напоминания за 24 и 2 часа до визита, а также электронные чеки. Вы не платите за пакеты SMS или WhatsApp (которые в DIKIDI обходятся в тысячи рублей каждый месяц) — расходы на сервисные уведомления равны 0 ₽."
+            "a": "Да! В Молнию встроен сервисный бот в мессенджере, который автоматически присылает подтверждения, напоминания за 24 и 2 часа до визита, а также электронные чеки. Вы не платите за пакеты SMS или WhatsApp (которые в DIKIDI обходятся в тысячи рублей каждый месяц) — расходы на сервисные уведомления равны 0 ₽."
         },
         {
             "q": "Смогут ли сотрудники и мастера пользоваться расписанием со смартфонов?",
@@ -4780,7 +4756,7 @@ def build_dikidi_page() -> str:
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Все привычные возможности DIKIDI Business — онлайн-запись, журнал, расчет зарплат и склад — в сверхбыстрой CRM. Бесплатный перенос базы за 15 минут, уведомления в Telegram за 0 ₽ и надёжная защита от ухода клиентов к конкурентам.</p>
+              <p class="mt-hero-sub">Все привычные возможности DIKIDI Business — онлайн-запись, журнал, расчет зарплат и склад — в сверхбыстрой CRM. Бесплатный перенос базы за 15 минут, уведомления в мессенджер за 0 ₽ и надёжная защита от ухода клиентов к конкурентам.</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить 3 месяца бесплатно</a>
             </div>
 
@@ -4795,7 +4771,7 @@ def build_dikidi_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">0 ₽ за уведомления</span>
-                <span class="mt-facet-note">сервисный Telegram вместо платных SMS</span>
+                <span class="mt-facet-note">сервисный мессенджер вместо платных SMS</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">База только ваша</span>
@@ -4910,10 +4886,10 @@ def build_dikidi_page() -> str:
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3>Telegram-уведомления <span class="mt-overview-hook">за 0 ₽ вместо дорогих SMS</span></h3>
-            <p>В DIKIDI рассылки и напоминания требуют платных пакетов SMS (от 4–6 ₽ за сообщение), которые быстро съедают десятки тысяч рублей. В Молнии сервисный Telegram-бот отправляет напоминания и чеки совершенно бесплатно.</p>
+            <h3>Уведомления в мессенджер <span class="mt-overview-hook">за 0 ₽ вместо дорогих SMS</span></h3>
+            <p>В DIKIDI рассылки и напоминания требуют платных пакетов SMS (от 4–6 ₽ за сообщение), которые быстро съедают десятки тысяч рублей. В Молнии сервисный бот в мессенджере отправляет напоминания и чеки совершенно бесплатно.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Сервисный Telegram-бот</span><span>0 ₽ / без лимитов</span></div>
+              <div class="mt-overview-ui-head"><span>Сервисный бот в мессенджере</span><span>0 ₽ / без лимитов</span></div>
               <div class="mt-overview-message">
                 Анна, напоминаем о записи завтра в 14:00 к мастеру Елене. Ждём вас!
                 <span class="mt-overview-reaction">👍</span>
@@ -4935,7 +4911,7 @@ def build_dikidi_page() -> str:
 
           <article class="mt-overview-card">
             <h3>Онлайн-запись 24/7 <span class="mt-overview-hook">по прямым ссылкам и на картах</span></h3>
-            <p>Клиенты бронируют слоты в 1 клик с вашего сайта, из Telegram, группы ВКонтакте и профилей в Яндекс и 2ГИС Картах. Программа автоматически проверяет занятость и предотвращает накладки и пустые окна.</p>
+            <p>Клиенты бронируют слоты в 1 клик с вашего сайта, из мессенджеров, группы ВКонтакте и профилей в Яндекс и 2ГИС Картах. Программа автоматически проверяет занятость и предотвращает накладки и пустые окна.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Электронный журнал</span><span>Без накладок</span></div>
               <div class="mt-overview-calendar"><span>10:00</span><div></div><span>11:30</span><div class="mt-overview-slot">Кресло 1 <small>Елена · Airtouch</small></div><span>13:00</span><div class="mt-overview-slot mt-overview-slot--light">Кабинет 2 <small>Мария · SMART-уход</small></div></div>
@@ -4994,12 +4970,12 @@ def build_dikidi_page() -> str:
               <tr>
                 <td>Онлайн-запись 24/7</td>
                 <td>Есть (каталог, ссылки, виджет)</td>
-                <td><span class="mt-compare-check">✓ Есть (прямые ссылки, сайт, соцсети, карты, Telegram)</span></td>
+                <td><span class="mt-compare-check">✓ Есть (прямые ссылки, сайт, соцсети, карты, мессенджеры)</span></td>
               </tr>
               <tr>
                 <td>Уведомления и напоминания</td>
                 <td><span class="mt-compare-warn">⚠ Платные SMS и WhatsApp (от 5 000 до 30 000 ₽/мес)</span></td>
-                <td><span class="mt-compare-check">✓ Бесплатный Telegram-бот (0 ₽/мес без лимитов)</span></td>
+                <td><span class="mt-compare-check">✓ Бесплатный бот в мессенджере (0 ₽/мес без лимитов)</span></td>
               </tr>
               <tr>
                 <td>Защита клиентской базы</td>
@@ -5074,7 +5050,7 @@ def build_dikidi_page() -> str:
                 </div>
                 <div class="mt-migration-settings">
                   <span>Онлайн-запись</span>
-                  <span>Telegram-боты 0 ₽</span>
+                  <span>Боты в мессенджерах 0 ₽</span>
                   <span>Расчёт зарплат</span>
                   <span>Склад и техкарты</span>
                   <span>AI-аналитика</span>
@@ -5132,7 +5108,7 @@ def build_dikidi_page() -> str:
           <div class="mt-case-stats">
             <div class="mt-case-stat">
               <span class="mt-case-num">0 ₽</span>
-              <span class="mt-case-label">За напоминания в Telegram вместо 19 000 ₽ на SMS</span>
+              <span class="mt-case-label">За напоминания в мессенджер вместо 19 000 ₽ на SMS</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">15 <small>мин</small></span>
@@ -5140,7 +5116,7 @@ def build_dikidi_page() -> str:
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">+38%</span>
-              <span class="mt-case-label">Рост повторных визитов за счёт Telegram-ботов</span>
+              <span class="mt-case-label">Рост повторных визитов за счёт ботов в мессенджерах</span>
             </div>
           </div>
         </div>
@@ -5155,7 +5131,7 @@ def build_dikidi_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>3 месяца бесплатно и бережный перенос базы</h3>
             <p>Поможем выгрузить данные из DIKIDI, перенести клиентов, историю визитов, прайс и мастеров. Начните экономить на SMS уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -5199,7 +5175,7 @@ def build_yclients_page() -> str:
     footer_html = render_footer_html(asset_prefix="", yclients_variant=True)
 
     title = "Аналог YCLIENTS: быстрый переход на Молнию — 3 месяца бесплатно | Альтернатива YCLIENTS"
-    description = "Ищете современный аналог YCLIENTS? Переходите на CRM Молнию: 3 месяца работы в подарок, бесплатный перенос базы клиентов за 15 минут, уведомления в Telegram за 0 ₽ вместо дорогих SMS."
+    description = "Ищете современный аналог YCLIENTS? Переходите на CRM Молнию: 3 месяца работы в подарок, бесплатный перенос базы клиентов за 15 минут, уведомления в мессенджер за 0 ₽ вместо дорогих SMS."
     canonical = "https://molniya-tech.ru/yclients"
 
     faq_items = [
@@ -5209,7 +5185,7 @@ def build_yclients_page() -> str:
         },
         {
             "q": "Почему Молния — выгодная альтернатива YCLIENTS?",
-            "a": "Молния решает главные проблемы пользователей YCLIENTS: отправка сервисных уведомлений в Telegram за 0 ₽ вместо дорогих SMS (экономия до 35 000 ₽/мес), чистый и быстрый интерфейс без перегруженных меню (время отклика 0.2 сек) и прозрачный тариф без наценок за каждого нового мастера в штате."
+            "a": "Молния решает главные проблемы пользователей YCLIENTS: отправка сервисных уведомлений в мессенджере за 0 ₽ вместо дорогих SMS (экономия до 35 000 ₽/мес), чистый и быстрый интерфейс без перегруженных меню (время отклика 0.2 сек) и прозрачный тариф без наценок за каждого нового мастера в штате."
         },
         {
             "q": "Не потеряются ли контакты клиентов, история визитов и прайс-лист?",
@@ -5221,11 +5197,11 @@ def build_yclients_page() -> str:
         },
         {
             "q": "Как работает онлайн-запись и сохранятся ли ссылки для клиентов?",
-            "a": "Вы получаете прямую ссылку на стильный виджет онлайн-записи и готовые кнопки для сайта, Telegram, группы ВКонтакте и профилей на Яндекс и 2ГИС Картах. Клиенты бронируют удобное время в 1 клик со смартфона, выбирая услугу и любимого мастера. Интерфейс онлайн-записи прост и интуитивен."
+            "a": "Вы получаете прямую ссылку на стильный виджет онлайн-записи и готовые кнопки для сайта, мессенджеров, группы ВКонтакте и профилей на Яндекс и 2ГИС Картах. Клиенты бронируют удобное время в 1 клик со смартфона, выбирая услугу и любимого мастера. Интерфейс онлайн-записи прост и интуитивен."
         },
         {
             "q": "Как отправляются напоминания клиентам и действительно ли они бесплатны?",
-            "a": "Да! В Молнию встроен сервисный Telegram-бот, который автоматически присылает подтверждения, напоминания за 24 и 2 часа до визита, а также электронные чеки. Вы не платите за пакеты SMS или сторонние шлюзы WhatsApp (Wahelp, ChatApp), которые в YCLIENTS обходятся в круглую сумму."
+            "a": "Да! В Молнию встроен сервисный бот в мессенджере, который автоматически присылает подтверждения, напоминания за 24 и 2 часа до визита, а также электронные чеки. Вы не платите за пакеты SMS или сторонние шлюзы WhatsApp (Wahelp, ChatApp), которые в YCLIENTS обходятся в круглую сумму."
         },
         {
             "q": "Что произойдёт по окончании 3 месяцев бесплатного периода?",
@@ -5361,7 +5337,7 @@ def build_yclients_page() -> str:
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Все привычные возможности YCLIENTS — онлайн-запись, журнал мастеров, склад и расчет зарплат — в лёгкой и современной CRM. Бесплатный перенос базы за 15 минут, уведомления в Telegram за 0 ₽ и честный тариф без доплат за каждого нового сотрудника.</p>
+              <p class="mt-hero-sub">Все привычные возможности YCLIENTS — онлайн-запись, журнал мастеров, склад и расчет зарплат — в лёгкой и современной CRM. Бесплатный перенос базы за 15 минут, уведомления в мессенджер за 0 ₽ и честный тариф без доплат за каждого нового сотрудника.</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить 3 месяца бесплатно</a>
             </div>
 
@@ -5376,7 +5352,7 @@ def build_yclients_page() -> str:
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">0 ₽ за уведомления</span>
-                <span class="mt-facet-note">сервисный Telegram вместо платных SMS</span>
+                <span class="mt-facet-note">сервисный мессенджер вместо платных SMS</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">Честный тариф</span>
@@ -5491,10 +5467,10 @@ def build_yclients_page() -> str:
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3>Telegram-уведомления <span class="mt-overview-hook">за 0 ₽ вместо дорогих SMS</span></h3>
-            <p>В YCLIENTS рассылки и напоминания требуют платных пакетов SMS (от 4–7 ₽ за сообщение) или сторонних ботов (от 3 000 до 6 000 ₽/мес). Салон на 1 500 записей тратит на SMS до 35 000 ₽ ежемесячно. В Молнии сервисный Telegram-бот отправляет напоминания и чеки совершенно бесплатно.</p>
+            <h3>Уведомления в мессенджер <span class="mt-overview-hook">за 0 ₽ вместо дорогих SMS</span></h3>
+            <p>В YCLIENTS рассылки и напоминания требуют платных пакетов SMS (от 4–7 ₽ за сообщение) или сторонних ботов (от 3 000 до 6 000 ₽/мес). Салон на 1 500 записей тратит на SMS до 35 000 ₽ ежемесячно. В Молнии сервисный бот в мессенджере отправляет напоминания и чеки совершенно бесплатно.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Сервисный Telegram-бот</span><span>0 ₽ / без лимитов</span></div>
+              <div class="mt-overview-ui-head"><span>Сервисный бот в мессенджере</span><span>0 ₽ / без лимитов</span></div>
               <div class="mt-overview-message">
                 Анна, напоминаем о записи завтра в 14:00 к мастеру Елене. Ждём вас!
                 <span class="mt-overview-reaction">👍</span>
@@ -5580,7 +5556,7 @@ def build_yclients_page() -> str:
               <tr>
                 <td>Уведомления и напоминания</td>
                 <td><span class="mt-compare-warn">⚠ Платные SMS и боты (от 10 000 до 35 000 ₽/мес)</span></td>
-                <td><span class="mt-compare-check">✓ Бесплатный Telegram-бот (0 ₽/мес без лимитов)</span></td>
+                <td><span class="mt-compare-check">✓ Бесплатный бот в мессенджере (0 ₽/мес без лимитов)</span></td>
               </tr>
               <tr>
                 <td>Простота интерфейса</td>
@@ -5590,7 +5566,7 @@ def build_yclients_page() -> str:
               <tr>
                 <td>Онлайн-запись 24/7</td>
                 <td>Есть (виджет, интеграции)</td>
-                <td><span class="mt-compare-check">✓ Есть (прямые ссылки, сайт, соцсети, карты, Telegram)</span></td>
+                <td><span class="mt-compare-check">✓ Есть (прямые ссылки, сайт, соцсети, карты, мессенджеры)</span></td>
               </tr>
               <tr>
                 <td>Журнал записей и расписание</td>
@@ -5660,7 +5636,7 @@ def build_yclients_page() -> str:
                 </div>
                 <div class="mt-migration-settings">
                   <span>Онлайн-запись</span>
-                  <span>Telegram-боты 0 ₽</span>
+                  <span>Боты в мессенджерах 0 ₽</span>
                   <span>Расчёт зарплат</span>
                   <span>Склад и техкарты</span>
                   <span>AI-аналитика</span>
@@ -5718,7 +5694,7 @@ def build_yclients_page() -> str:
           <div class="mt-case-stats">
             <div class="mt-case-stat">
               <span class="mt-case-num">0 ₽</span>
-              <span class="mt-case-label">За напоминания в Telegram вместо 31 000 ₽ на SMS</span>
+              <span class="mt-case-label">За напоминания в мессенджер вместо 31 000 ₽ на SMS</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">15 <small>мин</small></span>
@@ -5741,7 +5717,7 @@ def build_yclients_page() -> str:
           <article class="mt-before-start-highlight">
             <h3>3 месяца бесплатно и бережный перенос базы</h3>
             <p>Поможем выгрузить данные из YCLIENTS, перенести клиентов, историю визитов, прайс и мастеров. Начните экономить на SMS уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram-канал ↗</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
@@ -5972,6 +5948,21 @@ def sync_sitemap():
         changed = True
         print("Added /pricing to sitemap.xml")
 
+    if "https://molniya-tech.ru/about.html" in content:
+        content = content.replace("https://molniya-tech.ru/about.html", "https://molniya-tech.ru/about")
+        changed = True
+
+    if "https://molniya-tech.ru/about" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /about to sitemap.xml")
+
     # Clean up old .html variant if present
     if "https://molniya-tech.ru/privacy.html" in content:
         content = content.replace("https://molniya-tech.ru/privacy.html", "https://molniya-tech.ru/privacy")
@@ -5990,6 +5981,280 @@ def sync_sitemap():
 
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
+
+
+def build_about_page() -> str:
+    """Builds the dedicated company about page: /about."""
+    nav_html = render_nav_html(active_item="about", asset_prefix="", beta_cta=True)
+    footer_html = render_footer_html(asset_prefix="")
+
+    title = "О компании Молния Тех — разработчик CRM платформы для сервисного бизнеса"
+    description = "«Молния Тех» создаёт операционную платформу для сферы услуг. Онлайн-запись, расписание, процессы, склад, расчет зарплат и AI-прогноз бизнеса связаны в одном приложении."
+    canonical = "https://molniya-tech.ru/about"
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta name="theme-color" content="#FFFEFD">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@graph": [
+      {{
+        "@type": "AboutPage",
+        "@id": "https://molniya-tech.ru/about#webpage",
+        "url": "https://molniya-tech.ru/about",
+        "name": "О компании ООО «МОЛНИЯ ТЕХ»",
+        "description": "«Молния Тех» создаёт операционно-аналитическую платформу для сервисного бизнеса.",
+        "isPartOf": {{
+          "@id": "https://molniya-tech.ru/#website"
+        }}
+      }},
+      {{
+        "@type": "Organization",
+        "@id": "https://molniya-tech.ru/#organization",
+        "name": "Молния Тех",
+        "legalName": "Общество с ограниченной ответственностью «МОЛНИЯ ТЕХ»",
+        "url": "https://molniya-tech.ru/",
+        "logo": "https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg",
+        "taxID": "7806637461",
+        "address": {{
+          "@type": "PostalAddress",
+          "streetAddress": "пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н",
+          "addressLocality": "Санкт-Петербург",
+          "postalCode": "195112",
+          "addressCountry": "RU"
+        }}
+      }}
+    ]
+  }}
+  </script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+    <linearGradient id="mtgrad2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#B8442E"></stop><stop offset="1" stop-color="#D2634A"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <main class="mt-main" id="main-content">
+
+        <!-- ABOUT HERO -->
+        <section class="mt-section mt-hero mt-reveal" data-screen-label="О компании" data-mt-reveal>
+          <div class="mt-hero-lead">
+            <div class="mt-eyebrow">О компании</div>
+            <h1 class="mt-hero-title">Молния Тех: наводим порядок в операциях сервисного бизнеса</h1>
+            <p class="mt-hero-sub" style="font-size:1.25rem;line-height:1.6;margin-bottom:1.25rem">«Молния Тех» создаёт операционно-аналитическую платформу для сервисного бизнеса: автосервисов, детейлинга, салонов красоты, клиник, груминга и аренды пространств. Мы убрали перегруженные меню, зависания и скрытые доплаты за мастеров, чтобы команды управляли записью, процессами и финансами на высокой скорости и с полным контролем.</p>
+            <p class="mt-hero-sub" style="font-size:1.15rem;font-weight:600;color:var(--mt-accent)">Онлайн-запись, расписание, процесс работ, склад, расчёт зарплат и AI-прогноз будущего бизнеса связаны в одном приложении.</p>
+          </div>
+        </section>
+
+        <!-- MISSION & PRINCIPLES -->
+        <section class="mt-section mt-reveal" data-mt-reveal>
+          <div class="mt-section-head">
+            <div class="mt-eyebrow">Наша миссия</div>
+            <h2 class="mt-section-title">Каким должен быть софт для сферы услуг</h2>
+            <p class="mt-section-sub">Сервисный бизнес зарабатывает на качестве и внимании к клиентам, а не на борьбе с медленными программами.</p>
+          </div>
+          <div class="mt-overview-grid">
+            <article class="mt-overview-card">
+              <h3>Скорость отклика <span class="mt-overview-hook">0.2 секунды</span></h3>
+              <p>Программа мгновенно открывается в браузере любого устройства — на смартфонах мастеров, планшетах администраторов и ноутбуках. Никаких подвисаний в часы пик.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Честные тарифы <span class="mt-overview-hook">без скрытых доплат</span></h3>
+              <p>Фиксированная стоимость без поборов за каждого нового мастера в штате и наценок на SMS — сервисные уведомления клиентам уходят в мессенджер бесплатно.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Единая система <span class="mt-overview-hook">вместо десятка сервисов</span></h3>
+              <p>Запись, этапы выполнения работ, списание материалов со склада по себестоимости и расчёт зарплат объединены без ручных таблиц и костылей.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- PRODUCT OVERVIEW -->
+        <section class="mt-section mt-reveal" data-mt-reveal>
+          <div class="mt-section-head">
+            <div class="mt-eyebrow">Возможности</div>
+            <h2 class="mt-section-title">Что умеет платформа Молния</h2>
+            <p class="mt-section-sub">Все ключевые инструменты для управления записью, процессами и финансами.</p>
+          </div>
+          <div class="mt-overview-grid">
+            <article class="mt-overview-card">
+              <h3><span class="mt-overview-hook">Онлайн-запись</span> и календарь</h3>
+              <p>Удобный виджет 24/7 для сайта, карт и соцсетей. Клиенты сами бронируют слоты, а расписание защищено от накладок и пустых окон.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Уведомления <span class="mt-overview-hook">в мессенджер</span></h3>
+              <p>Автоматические подтверждения и напоминания о визите за 24 и 2 часа без платных пакетов SMS (0 ₽ за отправку сообщений).</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Этапы и <span class="mt-overview-hook">чек-листы работ</span></h3>
+              <p>Кастомные цепочки статусов под ваше направление: от фотофиксации при приёмке до чек-листа мастера и контроля качества при выдаче.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Склад и <span class="mt-overview-hook">расходные материалы</span></h3>
+              <p>Автоматическое списание запчастей и материалов со склада по себестоимости в момент закрытия заказ-наряда.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>Расчёт зарплат <span class="mt-overview-hook">и мотивация</span></h3>
+              <p>Гибкие сдельные ставки, проценты от услуг и продаж. Прозрачные начисления рассчитываются автоматически за смену.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3>AI-прогнозирование <span class="mt-overview-hook">и аналитика</span></h3>
+              <p>Умная оценка плотности загрузки по часам, прогноз выручки и заблаговременное предупреждение о кассовых разрывах.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECTORS -->
+        <section class="mt-section mt-reveal" data-mt-reveal>
+          <div class="mt-section-head">
+            <div class="mt-eyebrow">Отрасли</div>
+            <h2 class="mt-section-title">Решения под особенности вашего бизнеса</h2>
+            <p class="mt-section-sub">Каждая отрасль получает готовую конфигурацию с нужными статусами и спецификой.</p>
+          </div>
+          <div class="mt-overview-grid">
+            <article class="mt-overview-card">
+              <h3><a href="/auto" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Автобизнес →</span></a></h3>
+              <p>Детейлинг, автомойки, автосервисы и шиномонтаж: учет боксов, чек-листы кузова, склад автозапчастей и нормы времени.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/beauty" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Красота →</span></a></h3>
+              <p>Салоны красоты, барбершопы, ногтевые студии: график мастеров, карточки гостей, формулы окрашивания и списание косметики.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/health" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Здоровье →</span></a></h3>
+              <p>Клиники, стоматологии, массажные центры: электронные медкарты, протоколы приемов и учет расходных материалов.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/spaces" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Аренда пространств →</span></a></h3>
+              <p>Коворкинги, лофты, спортивные залы: интерактивная шахматка броней, учет залогов и доп. оборудования без накладок.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/education" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Образование →</span></a></h3>
+              <p>Курсы, студии танцев, языковые школы: расписание аудиторий, учет абонементов, посещаемость и зарплаты преподавателей.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/pets" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Груминг →</span></a></h3>
+              <p>Груминг-салоны: учет питомцев, пород, расписание столов и мастеров, автонапоминания владельцам о повторной стрижке.</p>
+            </article>
+            <article class="mt-overview-card">
+              <h3><a href="/repair" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Ремонт техники →</span></a></h3>
+              <p>Сервисные центры: заказ-наряды с актами дефектовки, склад деталей, зарплаты инженеров и печать гарантийных талонов.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- LEAD CAPTURE FORM -->
+        <section class="mt-section mt-lead mt-reveal" id="beta" data-mt-reveal>
+          <div class="mt-lead-container">
+            <div class="mt-section-head mt-section-head--center">
+              <div class="mt-eyebrow">Подключение</div>
+              <h2 class="mt-section-title">Попробуйте Молнию в деле</h2>
+              <p class="mt-section-sub">14 дней бесплатного доступа. Бесплатно перенесём вашу базу из любой системы за 15 минут.</p>
+            </div>
+            <form class="mt-lead-form" data-lead-form data-lead-source="about">
+              <div class="mt-lead-fields">
+                <label class="mt-lead-field" for="about-name">Имя<input id="about-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+                <label class="mt-lead-field" for="about-phone">Телефон<input id="about-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+                <label class="mt-lead-field" for="about-email">Почта<input id="about-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              </div>
+              <div class="mt-lead-honeypot" aria-hidden="true"><label for="about-website">Сайт</label><input id="about-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+              <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+              <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+              <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <!-- LEGAL & REQUISITES -->
+        <section class="mt-section mt-reveal" data-mt-reveal>
+          <div class="mt-section-head">
+            <div class="mt-eyebrow">Реквизиты</div>
+            <h2 class="mt-section-title">Юридическая информация</h2>
+          </div>
+          <div class="mt-requisites-card">
+            <table class="mt-requisites-table">
+              <tbody>
+                <tr><td>Организация</td><td>ООО «МОЛНИЯ ТЕХ»</td></tr>
+                <tr><td>ИНН / КПП</td><td>7806637461 / 780601001</td></tr>
+                <tr><td>ОГРН</td><td>1267800068458</td></tr>
+                <tr><td>Юридический адрес</td><td>195112, г. Санкт-Петербург, вн.тер.г. муниципальный округ Малая Охта, пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н, ком. 4-48</td></tr>
+                <tr><td>Электронная почта</td><td><a href="mailto:info@molniya-tech.ru" class="mt-link-accent">info@molniya-tech.ru</a></td></tr>
+              </tbody>
+            </table>
+            <div style="margin-top:1.25rem">
+              <a href="/requisites" class="mt-link-accent">Все банковские и юридические реквизиты →</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261002-formsource"></script>
+</body>
+</html>
+"""
 
 
 def build_404_page() -> str:
@@ -6066,7 +6331,7 @@ def build_404_page() -> str:
 
           <div class="mt-404-help">
             Искали что-то конкретное или нашли битую ссылку?
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в Telegram →</a>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в мессенджер →</a>
           </div>
         </div>
       </main>
@@ -6551,7 +6816,7 @@ def build_privacy_page() -> str:
             <li>Адрес электронной почты.</li>
           </ul>
 
-          <p>Заявка, отметка о согласии, время её получения и действовавшая редакция Политики сохраняются в базе данных Оператора. Уведомление о заявке также направляется через Telegram в указанный Оператором канал для обработки заявки и ответа заявителю.</p>
+          <p>Заявка, отметка о согласии, время её получения и действовавшая редакция Политики сохраняются в базе данных Оператора. Уведомление о заявке также направляется через мессенджер в указанный Оператором канал для обработки заявки и ответа заявителю.</p>
           <p>Основанием для обработки персональных данных субъекта ПДн в данном случае является согласие на обработку персональных данных. Согласие на обработку ПДн действует в течение срока использования субъектом ПДн Сайта и услуг Оператора.</p>
 
           <p>Обработка ПДн в указанной цели прекращается в течение 30 дней с момента истечения срока действия согласия на обработку ПДн. Также субъект ПДн вправе отозвать свое согласие на обработку его персональных данных. В таком случае обработка ПДн в указанной цели прекращается в течение 30 дней с момента получения от субъекта ПДн отзыва согласия на обработку персональных данных в свободной форме в соответствии с п. 5 ст. 21 Федерального закона от 27.07.2006 г. № 152-ФЗ «О персональных данных».</p>
@@ -6726,6 +6991,11 @@ def main():
     not_found_html = build_404_page()
     (ROOT_DIR / "404.html").write_text(not_found_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / '404.html'}")
+
+    print("Building about page: /about.html...")
+    about_html = build_about_page()
+    (ROOT_DIR / "about.html").write_text(about_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'about.html'}")
 
     print("Building requisites page: /requisites.html...")
     req_html = build_requisites_page()
