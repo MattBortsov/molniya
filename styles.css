@@ -4011,5 +4011,108 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   }
 }
 
+/* Social networks block on About page */
+.mt-about-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.mt-about-social-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: clamp(24px, 3vw, 32px);
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.mt-about-social-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 84, 59, .35);
+  box-shadow: 0 14px 36px -10px rgba(42, 38, 32, .1);
+}
+
+.mt-about-social-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mt-about-social-icon--tg {
+  background: rgba(41, 169, 234, .12);
+  color: #229ED9;
+}
+
+.mt-about-social-icon--in {
+  background: rgba(10, 102, 194, .12);
+  color: #0A66C2;
+}
+
+.mt-about-social-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.mt-about-social-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-about-social-header h3 {
+  margin: 0;
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+}
+
+.mt-about-social-arrow {
+  color: var(--mt-accent);
+  font-size: 20px;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
+
+.mt-about-social-card:hover .mt-about-social-arrow {
+  transform: translateX(4px);
+}
+
+.mt-about-social-info p {
+  margin: 10px 0 16px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mt-text-body);
+}
+
+.mt-about-social-handle {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-accent);
+  background: rgba(223, 95, 60, .08);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .mt-about-social-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 
 
