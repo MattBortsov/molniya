@@ -3842,4 +3842,174 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   margin-top: 6px;
 }
 
+/* ==========================================================================
+   ABOUT PAGE (.mt-about-*)
+   ========================================================================== */
+
+.mt-hero--about {
+  padding-bottom: clamp(40px, 5vw, 64px);
+  background: transparent;
+  border-bottom: 1px solid var(--mt-border);
+}
+
+.mt-about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: stretch;
+  padding: clamp(36px, 5vh, 64px) clamp(24px, 4vw, 48px) 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mt-about-hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mt-about-hero-title {
+  margin: 0;
+  color: var(--mt-text-heading);
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.mt-about-hero-anchor {
+  margin: 24px 0 0;
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--mt-accent);
+}
+
+.mt-about-hero-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl, 28px);
+  padding: clamp(24px, 3.5vw, 40px);
+  box-shadow: 0 16px 40px -12px rgba(42, 38, 32, .06);
+}
+
+.mt-about-hero-lead {
+  margin: 0;
+  color: var(--mt-text-body);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+}
+
+.mt-about-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--mt-border-soft);
+}
+
+.mt-about-hero-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mt-about-hero-metric strong {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  letter-spacing: -.02em;
+}
+
+.mt-about-hero-metric span {
+  font-size: 13px;
+  color: var(--mt-text-muted);
+  line-height: 1.3;
+}
+
+/* Grids for About page that fill 100% of the container without holes */
+.mt-about-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.mt-about-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.mt-about-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(24px, 2.5vw, 32px);
+  border: 1px solid var(--mt-border-soft);
+  border-radius: 24px;
+  background: #f8f7f5;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.mt-about-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(198, 84, 59, .3);
+  box-shadow: 0 12px 32px -8px rgba(42, 38, 32, .1);
+}
+
+.mt-about-card h3 {
+  margin: 0;
+  color: var(--mt-text-strong);
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.mt-about-card p {
+  margin: 14px 0 0;
+  color: var(--mt-text-body);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.mt-about-card--cta {
+  background: linear-gradient(135deg, #fdf6f3 0%, #f8f7f5 100%);
+  border-color: rgba(198, 84, 59, .25);
+}
+
+@media (max-width: 1080px) {
+  .mt-about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .mt-about-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mt-about-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .mt-about-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .mt-about-hero-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+
 

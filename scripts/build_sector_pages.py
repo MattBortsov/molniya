@@ -6052,7 +6052,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261014-about">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6076,32 +6076,48 @@ def build_about_page() -> str:
       <main class="mt-main" id="main-content">
 
         <!-- ABOUT HERO -->
-        <section class="mt-section mt-hero mt-reveal" data-screen-label="О компании" data-mt-reveal>
-          <div class="mt-hero-lead">
-            <div class="mt-eyebrow">О компании</div>
-            <h1 class="mt-hero-title">Молния Тех: наводим порядок в операциях сервисного бизнеса</h1>
-            <p class="mt-hero-sub" style="font-size:1.25rem;line-height:1.6;margin-bottom:1.25rem">«Молния Тех» создаёт операционно-аналитическую платформу для сервисного бизнеса: автосервисов, детейлинга, салонов красоты, клиник, груминга и аренды пространств. Мы убрали перегруженные меню, зависания и скрытые доплаты за мастеров, чтобы команды управляли записью, процессами и финансами на высокой скорости и с полным контролем.</p>
-            <p class="mt-hero-sub" style="font-size:1.15rem;font-weight:600;color:var(--mt-accent)">Онлайн-запись, расписание, процесс работ, склад, расчёт зарплат и AI-прогноз будущего бизнеса связаны в одном приложении.</p>
+        <section class="mt-section mt-hero--about mt-reveal" data-screen-label="О компании" data-mt-reveal>
+          <div class="mt-about-hero-grid">
+            <div class="mt-about-hero-main">
+              <h1 class="mt-about-hero-title">Молния Тех: наводим порядок в операциях сервисного бизнеса</h1>
+              <p class="mt-about-hero-anchor">Онлайн-запись, расписание, процесс работ, склад, расчёт зарплат и AI-прогноз будущего бизнеса связаны в одном приложении.</p>
+            </div>
+            <div class="mt-about-hero-card">
+              <p class="mt-about-hero-lead">«Молния Тех» создаёт операционно-аналитическую платформу для сервисного бизнеса: автосервисов, детейлинга, салонов красоты, клиник, груминга и аренды пространств. Мы убрали перегруженные меню, зависания и скрытые доплаты за мастеров, чтобы команды управляли записью, процессами и финансами на высокой скорости и с полным контролем.</p>
+              <div class="mt-about-hero-metrics">
+                <div class="mt-about-hero-metric">
+                  <strong>0.2 сек</strong>
+                  <span>отклик платформы</span>
+                </div>
+                <div class="mt-about-hero-metric">
+                  <strong>0 ₽</strong>
+                  <span>боты в мессенджерах</span>
+                </div>
+                <div class="mt-about-hero-metric">
+                  <strong>14 дней</strong>
+                  <span>тест-драйв сервиса</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- MISSION & PRINCIPLES -->
         <section class="mt-section mt-reveal" data-mt-reveal>
           <div class="mt-section-head">
-            <div class="mt-eyebrow">Наша миссия</div>
             <h2 class="mt-section-title">Каким должен быть софт для сферы услуг</h2>
             <p class="mt-section-sub">Сервисный бизнес зарабатывает на качестве и внимании к клиентам, а не на борьбе с медленными программами.</p>
           </div>
-          <div class="mt-overview-grid">
-            <article class="mt-overview-card">
+          <div class="mt-about-grid-3">
+            <article class="mt-about-card">
               <h3>Скорость отклика <span class="mt-overview-hook">0.2 секунды</span></h3>
               <p>Программа мгновенно открывается в браузере любого устройства — на смартфонах мастеров, планшетах администраторов и ноутбуках. Никаких подвисаний в часы пик.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Честные тарифы <span class="mt-overview-hook">без скрытых доплат</span></h3>
               <p>Фиксированная стоимость без поборов за каждого нового мастера в штате и наценок на SMS — сервисные уведомления клиентам уходят в мессенджер бесплатно.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Единая система <span class="mt-overview-hook">вместо десятка сервисов</span></h3>
               <p>Запись, этапы выполнения работ, списание материалов со склада по себестоимости и расчёт зарплат объединены без ручных таблиц и костылей.</p>
             </article>
@@ -6111,32 +6127,31 @@ def build_about_page() -> str:
         <!-- PRODUCT OVERVIEW -->
         <section class="mt-section mt-reveal" data-mt-reveal>
           <div class="mt-section-head">
-            <div class="mt-eyebrow">Возможности</div>
             <h2 class="mt-section-title">Что умеет платформа Молния</h2>
             <p class="mt-section-sub">Все ключевые инструменты для управления записью, процессами и финансами.</p>
           </div>
-          <div class="mt-overview-grid">
-            <article class="mt-overview-card">
+          <div class="mt-about-grid-3">
+            <article class="mt-about-card">
               <h3><span class="mt-overview-hook">Онлайн-запись</span> и календарь</h3>
               <p>Удобный виджет 24/7 для сайта, карт и соцсетей. Клиенты сами бронируют слоты, а расписание защищено от накладок и пустых окон.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Уведомления <span class="mt-overview-hook">в мессенджер</span></h3>
               <p>Автоматические подтверждения и напоминания о визите за 24 и 2 часа без платных пакетов SMS (0 ₽ за отправку сообщений).</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Этапы и <span class="mt-overview-hook">чек-листы работ</span></h3>
               <p>Кастомные цепочки статусов под ваше направление: от фотофиксации при приёмке до чек-листа мастера и контроля качества при выдаче.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Склад и <span class="mt-overview-hook">расходные материалы</span></h3>
               <p>Автоматическое списание запчастей и материалов со склада по себестоимости в момент закрытия заказ-наряда.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>Расчёт зарплат <span class="mt-overview-hook">и мотивация</span></h3>
               <p>Гибкие сдельные ставки, проценты от услуг и продаж. Прозрачные начисления рассчитываются автоматически за смену.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3>AI-прогнозирование <span class="mt-overview-hook">и аналитика</span></h3>
               <p>Умная оценка плотности загрузки по часам, прогноз выручки и заблаговременное предупреждение о кассовых разрывах.</p>
             </article>
@@ -6146,38 +6161,41 @@ def build_about_page() -> str:
         <!-- SECTORS -->
         <section class="mt-section mt-reveal" data-mt-reveal>
           <div class="mt-section-head">
-            <div class="mt-eyebrow">Отрасли</div>
             <h2 class="mt-section-title">Решения под особенности вашего бизнеса</h2>
             <p class="mt-section-sub">Каждая отрасль получает готовую конфигурацию с нужными статусами и спецификой.</p>
           </div>
-          <div class="mt-overview-grid">
-            <article class="mt-overview-card">
+          <div class="mt-about-grid-4">
+            <article class="mt-about-card">
               <h3><a href="/auto" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Автобизнес →</span></a></h3>
               <p>Детейлинг, автомойки, автосервисы и шиномонтаж: учет боксов, чек-листы кузова, склад автозапчастей и нормы времени.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/beauty" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Красота →</span></a></h3>
               <p>Салоны красоты, барбершопы, ногтевые студии: график мастеров, карточки гостей, формулы окрашивания и списание косметики.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/health" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Здоровье →</span></a></h3>
               <p>Клиники, стоматологии, массажные центры: электронные медкарты, протоколы приемов и учет расходных материалов.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/spaces" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Аренда пространств →</span></a></h3>
               <p>Коворкинги, лофты, спортивные залы: интерактивная шахматка броней, учет залогов и доп. оборудования без накладок.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/education" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Образование →</span></a></h3>
               <p>Курсы, студии танцев, языковые школы: расписание аудиторий, учет абонементов, посещаемость и зарплаты преподавателей.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/pets" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Груминг →</span></a></h3>
               <p>Груминг-салоны: учет питомцев, пород, расписание столов и мастеров, автонапоминания владельцам о повторной стрижке.</p>
             </article>
-            <article class="mt-overview-card">
+            <article class="mt-about-card">
               <h3><a href="/repair" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Ремонт техники →</span></a></h3>
               <p>Сервисные центры: заказ-наряды с актами дефектовки, склад деталей, зарплаты инженеров и печать гарантийных талонов.</p>
+            </article>
+            <article class="mt-about-card mt-about-card--cta">
+              <h3><a href="#beta" style="text-decoration:none;color:inherit"><span class="mt-overview-hook">Другие сферы →</span></a></h3>
+              <p>Гибкая настройка этапов работ, статусов заказов, склада и расчета зарплат под специфику любого сервисного бизнеса.</p>
             </article>
           </div>
         </section>
@@ -6186,7 +6204,6 @@ def build_about_page() -> str:
         <section class="mt-section mt-lead mt-reveal" id="beta" data-mt-reveal>
           <div class="mt-lead-container">
             <div class="mt-section-head mt-section-head--center">
-              <div class="mt-eyebrow">Подключение</div>
               <h2 class="mt-section-title">Попробуйте Молнию в деле</h2>
               <p class="mt-section-sub">14 дней бесплатного доступа. Бесплатно перенесём вашу базу из любой системы за 15 минут.</p>
             </div>
@@ -6207,7 +6224,6 @@ def build_about_page() -> str:
         <!-- LEGAL & REQUISITES -->
         <section class="mt-section mt-reveal" data-mt-reveal>
           <div class="mt-section-head">
-            <div class="mt-eyebrow">Реквизиты</div>
             <h2 class="mt-section-title">Юридическая информация</h2>
           </div>
           <div class="mt-requisites-card">
