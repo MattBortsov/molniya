@@ -129,6 +129,7 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
     mobile_markup = "\n".join(mobile_items)
 
     blog_active = ' aria-current="page"' if active_item == "blog" else ''
+    pricing_active = ' aria-current="page"' if active_item == "pricing" else ''
     cta_href = "/#beta" if beta_cta else "https://t.me/molniya_tex"
     cta_attrs = "" if beta_cta else ' target="_blank" rel="noopener"'
     cta_label = "Бета-тест" if beta_cta else "Подписаться"
@@ -170,6 +171,7 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
             </li>
             <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
             <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing"{pricing_active}>Тарифы</a></li>
             <li><a class="mt-nav-link" href="/blog"{blog_active}>Блог</a></li>
           </ul>
 
@@ -195,6 +197,7 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
           </div>
           <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
           <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="{cta_href}"{cta_attrs}>
             {cta_mobile_icon}
@@ -219,6 +222,7 @@ def render_footer_nav_html() -> str:
               <h3>Молния</h3>
               <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
               <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
               <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
               <a class="mt-footer-link" href="/blog">Блог</a>
             </div>
@@ -231,8 +235,63 @@ def render_footer_nav_html() -> str:
           </nav>'''
 
 
-def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikidi_variant: bool = False, yclients_variant: bool = False) -> str:
+def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikidi_variant: bool = False, yclients_variant: bool = False, pricing_variant: bool = False) -> str:
     footer_nav_html = render_footer_nav_html()
+    if pricing_variant:
+        return f'''      <!-- FOOTER -->
+      <footer class="mt-footer mt-footer--home" id="contact" aria-labelledby="contact-title">
+        <div class="mt-footer-showcase">
+          <div class="mt-footer-intro">
+            <div class="mt-footer-signup">
+              <h2 id="contact-title">Подключите Молнию <em>на выгодных условиях</em></h2>
+              <form class="mt-lead-form mt-footer-beta-form" data-lead-form data-lead-source="pricing">
+                <div class="mt-lead-fields">
+                  <label class="mt-lead-field" for="pricing-name">Имя<input id="pricing-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+                  <label class="mt-lead-field" for="pricing-phone">Телефон<input id="pricing-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+                  <label class="mt-lead-field" for="pricing-email">Почта<input id="pricing-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+                </div>
+                <div class="mt-lead-honeypot" aria-hidden="true"><label for="pricing-website">Сайт</label><input id="pricing-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+                <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Попробовать 14 дней бесплатно</button>
+                <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+              </form>
+            </div>
+            <div class="mt-footer-process">
+              <p class="mt-footer-process-intro">14 дней бесплатного доступа. Бесплатно перенесём базу из любой системы за 15 минут.</p>
+              <ol>
+                <li><span>01</span><div><strong>Быстрый старт за 15 минут</strong><p>Поможем настроить услуги, графики мастеров и онлайн-запись.</p></div></li>
+                <li><span>02</span><div><strong>14 дней без оплаты</strong><p>Тестируйте тариф «Бизнес» в реальной работе без ограничений и без ввода карты.</p></div></li>
+                <li><span>03</span><div><strong>Экономия с первого дня</strong><p>Бесплатные Telegram-боты вместо SMS и никаких доплат за каждого нового мастера.</p></div></li>
+              </ol>
+            </div>
+          </div>
+          <div class="mt-footer-gallery" aria-label="Молния в работе сервисного бизнеса">
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/booking.webp" alt="Администратор встречает клиента и проверяет запись на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>01 / Запись</span><strong>Простая Онлайн-запись</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/team-auto.webp" alt="Команда сервиса сверяет рабочее расписание на планшете" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>02 / Команда</span><strong>Ясная загрузка дня</strong></figcaption>
+            </figure>
+            <figure class="mt-footer-photo">
+              <img src="/assets/img/footer/insights-studio.webp" alt="Владелица студии занятий просматривает рабочие показатели за ноутбуком" width="1536" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>03 / Показатели</span><strong>Данные для роста</strong></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
+              <span class="mt-footer-year">· 2026</span>
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+{footer_nav_html}
+        </div>
+      </footer>'''
     if yclients_variant:
         return f'''      <!-- FOOTER -->
       <footer class="mt-footer mt-footer--home" id="contact" aria-labelledby="contact-title">
@@ -582,7 +641,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1109,7 +1168,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1602,7 +1661,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2123,7 +2182,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2644,7 +2703,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3165,7 +3224,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3682,7 +3741,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4062,6 +4121,520 @@ def build_repair_page() -> str:
     return page_html
 
 
+def build_pricing_page() -> str:
+    """Builds the dedicated product pricing page: /pricing."""
+    nav_html = render_nav_html(active_item="pricing", asset_prefix="", beta_cta=True)
+    footer_html = render_footer_html(asset_prefix="", pricing_variant=True)
+
+    title = "Тарифы CRM Молния — от 1 490 ₽/мес | Честные цены без переплат за мастеров"
+    description = "Прозрачные тарифы CRM Молния для сферы услуг. Онлайн-запись 24/7, уведомления в Telegram за 0 ₽, склад, онлайн-касса и расчет зарплат. До 15 мастеров без доплат."
+    canonical = "https://molniya-tech.ru/pricing"
+
+    faq_items = [
+        {
+            "q": "Есть ли бесплатный пробный период?",
+            "a": "Да, вам доступно 14 дней полноценного бесплатного доступа ко всем функциям тарифа «Бизнес». При регистрации не требуется привязывать банковскую карту, а по истечении срока данные никуда не исчезнут."
+        },
+        {
+            "q": "Нужно ли доплачивать за каждого добавленного мастера?",
+            "a": "Нет! В тарифе «Бизнес» уже включено до 15 мастеров и сотрудников без каких-либо доплат за каждого человека, а в тарифе «Сеть» количество сотрудников не ограничено. Мы не взимаем скрытых платежей за расширение вашей команды."
+        },
+        {
+            "q": "Сколько стоят уведомления клиентам и как работает Telegram-бот?",
+            "a": "Все уведомления о записях, напоминания за 24 и 2 часа до визита, ссылки на перенос и отмену, а также электронные чеки отправляются через фирменного Telegram-бота абсолютно бесплатно (0 ₽). Вы можете полностью отказаться от платных SMS и экономить от 10 000 до 35 000 ₽ каждый месяц."
+        },
+        {
+            "q": "Как происходит перенос данных при переходе с YCLIENTS или DIKIDI?",
+            "a": "Наша служба заботы бесплатно перенесет вашу базу клиентов, историю визитов, справочник услуг и мастеров за 15–20 минут. Работа вашего салона или сервиса не прерывается ни на минуту. Кроме того, при переходе мы дарим 3 месяца работы бесплатно."
+        },
+        {
+            "q": "Включен ли складской учет и расчет зарплаты в стоимость?",
+            "a": "Да, в тарифах «Бизнес» и «Сеть» полноценный складской учет с автосписанием расходников по нормам и технологическим картам, а также модуль расчета сдельной зарплаты мастеров и премий уже включены в стоимость без доплат."
+        },
+        {
+            "q": "Можно ли изменить тариф или отказаться от подписки?",
+            "a": "Вы можете повысить или понизить тариф в любой момент в личном кабинете. Никаких долгосрочных контрактов или штрафов: неизрасходованный баланс автоматически пересчитывается в пользу нового тарифа."
+        },
+        {
+            "q": "Соответствует ли Молния закону о персональных данных № 152-ФЗ?",
+            "a": "Да, на 100%. Сервера и базы данных физически размещены на территории Российской Федерации (ООО «ТАЙМВЭБ.КЛАУД»), передача данных защищена TLS-шифрованием, а безопасность персональных данных подтверждена нормативной документацией."
+        }
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        for item in faq_items
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "CRM Молния — Тарифы",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "description": description,
+            "url": canonical,
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Тариф Старт",
+                    "price": "1490",
+                    "priceCurrency": "RUB",
+                    "description": "До 2 сотрудников, онлайн-запись 24/7, журнал визитов, Telegram-уведомления за 0 ₽"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Тариф Бизнес",
+                    "price": "3490",
+                    "priceCurrency": "RUB",
+                    "description": "До 15 мастеров без доплат, складской учет, расчет сдельной зарплаты, касса 54-ФЗ"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Тариф Сеть",
+                    "price": "6990",
+                    "priceCurrency": "RUB",
+                    "description": "Неограниченно филиалов и мастеров, сквозная аналитика, API, персональный менеджер"
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://molniya-tech.ru/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Тарифы",
+                    "item": canonical
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item["a"]
+                    }
+                }
+                for item in faq_items
+            ]
+        }
+    ]
+
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False).replace("<", "\\u003c")
+
+    check_icon = '<svg class="mt-pricing-feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>'
+    table_check = '<span class="mt-compare-check"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Включено</span>'
+    table_dash = '<span style="color:var(--mt-text-muted)">—</span>'
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="keywords" content="тарифы crm молния, стоимость молния тех, цена crm для салона, сколько стоит онлайн запись, альтернатива yclients тарифы, dikidi цены, crm без доплат за мастеров">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Тарифы" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <div class="mt-sector-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Честные тарифы · Без скрытых платежей
+          </div>
+
+          <h1 class="mt-hero-title">
+            Прозрачные тарифы Молнии:<br><span class="mt-hero-accent">платите за сервис, а не за мастеров</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Фиксированная абонентская плата без скрытых комиссий и наценок за сотрудников. Бесплатные напоминания клиентам в Telegram вместо дорогих пакетов SMS.</p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="mt-btn mt-btn-hero" href="#contact">Попробовать 14 дней бесплатно</a>
+                <a class="mt-btn mt-btn-secondary" href="#plans">Смотреть тарифы</a>
+              </div>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества тарифов Молнии">
+              <li class="mt-facet">
+                <span class="mt-facet-name">14 дней бесплатно</span>
+                <span class="mt-facet-note">полный доступ без ввода карты</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">0 ₽ за уведомления</span>
+                <span class="mt-facet-note">в Telegram вместо платных SMS</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">До 15 мастеров</span>
+                <span class="mt-facet-note">без доплат в тарифе «Бизнес»</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Перенос за 15 мин</span>
+                <span class="mt-facet-note">из YCLIENTS, DIKIDI, Excel</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="CRM Молния: электронный журнал расписания и расчет тарифа" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронный журнал записи и прозрачное управление филиалом</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MIGRATION SPECIAL OFFER BANNER -->
+      <section class="mt-section mt-reveal" data-screen-label="Спецпредложение миграции" data-mt-reveal style="padding-top:0">
+        <div class="mt-pricing-banner">
+          <div class="mt-pricing-banner-info">
+            <h3>Переходите с другой CRM? Дарим 3 месяца в подарок!</h3>
+            <p>Если вы уже используете YCLIENTS, DIKIDI или другую систему — бесплатно перенесём базу клиентов, историю визитов, прайс-лист и сотрудников за 15 минут и активируем 3 месяца максимального тарифа без оплаты.</p>
+          </div>
+          <div class="mt-pricing-banner-cta" style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="mt-btn mt-btn-secondary" href="/yclients">Переход с YCLIENTS →</a>
+            <a class="mt-btn mt-btn-secondary" href="/dikidi">Переход с DIKIDI →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING TIERS GRID -->
+      <section id="plans" class="mt-section mt-reveal" data-screen-label="Планы тарифов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Тарифные планы CRM Молния</h2>
+          <p class="mt-section-sub">Прозрачные условия без звездочек и неожиданных списаний. Тестовый период 14 дней на тарифе «Бизнес» включен для всех новых пользователей.</p>
+        </div>
+
+        <div class="mt-pricing-grid" aria-label="Тарифные планы">
+
+          <!-- Plan 1: Старт -->
+          <article class="mt-pricing-card">
+            <h3 class="mt-pricing-tier-name">Старт</h3>
+            <p class="mt-pricing-tier-desc">Для соло-мастеров, частной практики и небольших кабинетов до 2 сотрудников.</p>
+            <div class="mt-pricing-price-wrap">
+              <span class="mt-pricing-price">1 490 ₽</span>
+              <span class="mt-pricing-period">/ месяц</span>
+            </div>
+            <ul class="mt-pricing-features">
+              <li class="mt-pricing-feature">{check_icon}<span><strong>До 2 рабочих мест</strong> / мастеров</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-запись 24/7</strong> по прямой ссылке и на сайте</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Журнал визитов</strong> и единая клиентская база</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Telegram-бот за 0 ₽</strong> (напоминания и чеки)</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Защита клиентской базы от копирования мастерами</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Электронные карты лояльности и скидки</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Базовая аналитика выручки и визитов</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Мобильная версия для смартфонов и планшетов</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-pricing-btn" href="#contact">Подключить Старт</a>
+          </article>
+
+          <!-- Plan 2: Бизнес (Хит) -->
+          <article class="mt-pricing-card mt-pricing-card--popular">
+            <div class="mt-pricing-badge-popular">Хит продаж</div>
+            <h3 class="mt-pricing-tier-name">Бизнес</h3>
+            <p class="mt-pricing-tier-desc">Полная автоматизация салона, студии, клиники или автосервиса до 15 мастеров.</p>
+            <div class="mt-pricing-price-wrap">
+              <span class="mt-pricing-price">3 490 ₽</span>
+              <span class="mt-pricing-period">/ месяц</span>
+            </div>
+            <ul class="mt-pricing-features">
+              <li class="mt-pricing-feature">{check_icon}<span><strong>До 15 мастеров БЕЗ доплат</strong> за человека</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Все возможности</strong> тарифа «Старт»</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Складской учёт</strong> и списание по техкартам</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Расчёт сдельной зарплаты</strong> мастеров и бонусов</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-касса 54-ФЗ</strong> и интеграция с эквайрингом</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Детальная финансовая и управленческая аналитика</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Индивидуальные права доступа для персонала</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Интеграция с Яндекс Картами, 2ГИС и Telegram</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Приоритетная поддержка в Telegram 7 дней в неделю</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-hero mt-pricing-btn" href="#contact">Попробовать Бизнес бесплатно</a>
+          </article>
+
+          <!-- Plan 3: Сеть -->
+          <article class="mt-pricing-card">
+            <h3 class="mt-pricing-tier-name">Сеть</h3>
+            <p class="mt-pricing-tier-desc">Для сетевых брендов, франшиз и компаний с несколькими филиалами.</p>
+            <div class="mt-pricing-price-wrap">
+              <span class="mt-pricing-price">6 990 ₽</span>
+              <span class="mt-pricing-period">/ месяц</span>
+            </div>
+            <ul class="mt-pricing-features">
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Неограниченно филиалов</strong> и сотрудников</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Все возможности</strong> тарифа «Бизнес»</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Единая база клиентов</strong> по сети с разграничением прав</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Сквозная сетевая аналитика</strong> и сравнение филиалов</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Централизованное управление прайсами и складами</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Открытый API и Webhooks для интеграций</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Персональный менеджер внедрения</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Обучение администраторов и управляющих</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span>Выделенная линия поддержки и SLA 99.9%</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-pricing-btn" href="#contact">Подключить Сеть</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- COST COMPARISON & SAVINGS CARD -->
+      <section id="savings" class="mt-section mt-reveal" data-screen-label="Экономия с Молнией" data-mt-reveal>
+        <div class="mt-pricing-savings-card">
+          <div class="mt-section-head" style="margin-bottom:0">
+            <h2 class="mt-section-title">Сколько вы экономите с Молнией каждый год?</h2>
+            <p class="mt-section-sub">Сравнение реальных годовых расходов для салона на 8 мастеров с базой 1 500 активных клиентов:</p>
+          </div>
+
+          <div class="mt-pricing-savings-grid">
+
+            <div class="mt-pricing-calc-box mt-pricing-calc-box--other">
+              <h3 class="mt-pricing-calc-title">Другие CRM (YCLIENTS / DIKIDI с платными опциями)</h3>
+              <div class="mt-pricing-calc-row"><span>Базовый тариф CRM в год:</span><strong>36 000 ₽</strong></div>
+              <div class="mt-pricing-calc-row"><span>Доплата за мастеров (свыше 5):</span><strong>~28 800 ₽</strong></div>
+              <div class="mt-pricing-calc-row"><span>SMS-напоминания (1 500 кл. × 2 SMS × 4.5 ₽):</span><strong>162 000 ₽</strong></div>
+              <div class="mt-pricing-calc-row"><span>Платные модули и WhatsApp-шлюзы:</span><strong>~36 000 ₽</strong></div>
+              <div class="mt-pricing-calc-total"><span>Итоговые расходы в год:</span><span style="color:#B8442E">~262 800 ₽ / год</span></div>
+            </div>
+
+            <div class="mt-pricing-calc-box mt-pricing-calc-box--molniya">
+              <h3 class="mt-pricing-calc-title">CRM Молния (Тариф «Бизнес»)</h3>
+              <div class="mt-pricing-calc-row"><span>Тариф «Бизнес» (3 490 ₽ × 12 мес):</span><strong>41 880 ₽</strong></div>
+              <div class="mt-pricing-calc-row"><span>Доплата за мастеров:</span><strong style="color:#2e7d32">0 ₽ (до 15 мастеров включено)</strong></div>
+              <div class="mt-pricing-calc-row"><span>Telegram-уведомления клиентам:</span><strong style="color:#2e7d32">0 ₽ (неограниченно)</strong></div>
+              <div class="mt-pricing-calc-row"><span>Склад, расчет зарплат, касса, API:</span><strong style="color:#2e7d32">0 ₽ (включено в тариф)</strong></div>
+              <div class="mt-pricing-calc-total"><span>Итоговые расходы в год:</span><span style="color:#2e7d32">41 880 ₽ / год</span></div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:28px;padding:18px 24px;background:rgba(46,125,50,.08);border:1px solid rgba(46,125,50,.25);border-radius:var(--mt-radius-xl);text-align:center">
+            <span style="font-size:18px;font-weight:800;color:#2e7d32">Ваша чистая выгода: более 220 000 ₽ в год чистой экономии без потери функционала!</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURE COMPARISON TABLE -->
+      <section id="features" class="mt-compare-section mt-reveal" data-screen-label="Сравнение тарифов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Сравнение возможностей <span class="mt-hero-accent">по тарифам</span></h2>
+          <p class="mt-section-sub">Подробная матрица функций для выбора подходящего тарифа под масштаб вашего бизнеса.</p>
+        </div>
+
+        <div class="mt-compare-wrap" aria-label="Таблица сравнения тарифов Молнии">
+          <table class="mt-compare-table">
+            <thead>
+              <tr>
+                <th style="width:34%">Возможность</th>
+                <th style="width:22%">Старт</th>
+                <th style="width:22%;color:var(--mt-accent-strong);background:rgba(198,84,59,.08)">Бизнес (Хит)</th>
+                <th style="width:22%">Сеть</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Стоимость в месяц</td>
+                <td><strong>1 490 ₽</strong></td>
+                <td><strong style="color:var(--mt-accent-strong)">3 490 ₽</strong></td>
+                <td><strong>6 990 ₽</strong></td>
+              </tr>
+              <tr>
+                <td>Количество мастеров / сотрудников</td>
+                <td>До 2 мастеров</td>
+                <td><span class="mt-compare-star">★ До 15 мастеров</span></td>
+                <td>Неограниченно</td>
+              </tr>
+              <tr>
+                <td>Доплата за дополнительных сотрудников</td>
+                <td>0 ₽</td>
+                <td><span class="mt-compare-check">✓ 0 ₽ (без доплат)</span></td>
+                <td>0 ₽</td>
+              </tr>
+              <tr>
+                <td>Онлайн-запись 24/7 (виджет, ссылка, карты)</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Уведомления клиентам в Telegram</td>
+                <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
+                <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
+                <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
+              </tr>
+              <tr>
+                <td>Электронный журнал и карточки клиентов</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Защита клиентской базы от копирования</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Складской учёт и автосписание материалов</td>
+                <td>{table_dash}</td>
+                <td><span class="mt-compare-check">✓ По техкартам</span></td>
+                <td><span class="mt-compare-check">✓ Сеть складов</span></td>
+              </tr>
+              <tr>
+                <td>Автоматический расчёт сдельной зарплаты</td>
+                <td>{table_dash}</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Онлайн-касса и фискальные чеки (54-ФЗ)</td>
+                <td>{table_dash}</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Аналитика и управленческие отчёты</td>
+                <td>Базовая</td>
+                <td>Полная аналитика</td>
+                <td>Сквозная по филиалам</td>
+              </tr>
+              <tr>
+                <td>Интеграция с Яндекс Картами и 2ГИС</td>
+                <td>По ссылке</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Открытый API и Webhooks</td>
+                <td>{table_dash}</td>
+                <td>По запросу</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Техническая поддержка</td>
+                <td>В чате</td>
+                <td>Приоритетная (7 дней)</td>
+                <td>Выделенный менеджер + SLA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы о тарифах" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Часто задаваемые вопросы о тарифах</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>14 дней тест-драйва без привязки карты</h3>
+            <p>Попробуйте полную версию тарифа «Бизнес» в реальной работе. Наша служба заботы бесплатно перенесет базу и обучит команду.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Задать вопрос в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+      Подписаться
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261014-pricing"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
 def build_dikidi_page() -> str:
     """Builds the dedicated competitor migration landing page: /dikidi."""
     nav_html = render_nav_html(active_item="dikidi", asset_prefix="")
@@ -4194,7 +4767,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4775,7 +5348,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5406,6 +5979,21 @@ def sync_sitemap():
         changed = True
         print("Added /yclients to sitemap.xml")
 
+    if "https://molniya-tech.ru/pricing.html" in content:
+        content = content.replace("https://molniya-tech.ru/pricing.html", "https://molniya-tech.ru/pricing")
+        changed = True
+
+    if "https://molniya-tech.ru/pricing" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/pricing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /pricing to sitemap.xml")
+
     # Clean up old .html variant if present
     if "https://molniya-tech.ru/privacy.html" in content:
         content = content.replace("https://molniya-tech.ru/privacy.html", "https://molniya-tech.ru/privacy")
@@ -5457,7 +6045,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5579,7 +6167,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5815,7 +6403,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261012-dikidi">
+  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6140,6 +6728,11 @@ def main():
     repair_html = build_repair_page()
     (ROOT_DIR / "repair.html").write_text(repair_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'repair.html'}")
+
+    print("Building pricing landing page: /pricing.html...")
+    pricing_html = build_pricing_page()
+    (ROOT_DIR / "pricing.html").write_text(pricing_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'pricing.html'}")
 
     print("Building competitor migration landing page: /dikidi.html...")
     dikidi_html = build_dikidi_page()

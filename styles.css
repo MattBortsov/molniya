@@ -3556,3 +3556,233 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   font-weight: 700;
 }
 
+/* ============================================================
+   PRICING PAGE STYLES
+   ============================================================ */
+.mt-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .mt-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mt-pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: 36px 30px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.mt-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -12px rgba(32, 27, 21, .09);
+  border-color: rgba(198, 84, 59, .3);
+}
+
+.mt-pricing-card--popular {
+  background: linear-gradient(180deg, #FAF2E8, #FFFFFF);
+  border: 2px solid var(--mt-accent);
+  box-shadow: 0 12px 32px -8px rgba(198, 84, 59, .15);
+}
+
+.mt-pricing-badge-popular {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--mt-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: 4px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(198, 84, 59, .25);
+}
+
+.mt-pricing-tier-name {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  margin: 0 0 8px;
+}
+
+.mt-pricing-tier-desc {
+  font-size: 14.5px;
+  color: var(--mt-text-body-2);
+  line-height: 1.45;
+  margin: 0 0 20px;
+  min-height: 42px;
+}
+
+.mt-pricing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 16px 0 20px;
+  border-top: 1px solid var(--mt-border-soft);
+  border-bottom: 1px solid var(--mt-border-soft);
+  margin-bottom: 24px;
+}
+
+.mt-pricing-price {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--mt-text-strong);
+  line-height: 1;
+}
+
+.mt-pricing-period {
+  font-size: 14.5px;
+  color: var(--mt-text-muted);
+}
+
+.mt-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex-grow: 1;
+}
+
+.mt-pricing-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--mt-text-body);
+}
+
+.mt-pricing-feature-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--mt-accent);
+}
+
+.mt-pricing-feature strong {
+  color: var(--mt-text-strong);
+}
+
+.mt-pricing-btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.mt-pricing-banner {
+  margin: 48px 0 16px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(198, 84, 59, .06), rgba(210, 99, 74, .12));
+  border: 1px solid rgba(198, 84, 59, .25);
+  border-radius: var(--mt-radius-2xl);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.mt-pricing-banner-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  margin: 0 0 6px;
+}
+
+.mt-pricing-banner-info p {
+  font-size: 15px;
+  color: var(--mt-text-body);
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.5;
+}
+
+.mt-pricing-banner-cta {
+  flex-shrink: 0;
+}
+
+.mt-pricing-savings-card {
+  margin-top: 48px;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: 36px 32px;
+}
+
+.mt-pricing-savings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .mt-pricing-savings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mt-pricing-calc-box {
+  padding: 22px 24px;
+  border-radius: var(--mt-radius-xl);
+  border: 1px solid var(--mt-border);
+}
+
+.mt-pricing-calc-box--other {
+  background: #FAF8F6;
+}
+
+.mt-pricing-calc-box--molniya {
+  background: linear-gradient(180deg, #FDF7F0, #FFF);
+  border-color: rgba(198, 84, 59, .35);
+  box-shadow: 0 8px 24px -6px rgba(198, 84, 59, .12);
+}
+
+.mt-pricing-calc-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--mt-text-strong);
+}
+
+.mt-pricing-calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--mt-text-body);
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--mt-border-soft);
+}
+
+.mt-pricing-calc-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--mt-text-strong);
+  padding-top: 14px;
+  margin-top: 6px;
+}
+
+

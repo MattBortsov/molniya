@@ -24,6 +24,7 @@ FORM_NAMES = {
     "education": "Образование — бесплатный доступ",
     "pets": "Груминг-салоны — бесплатный доступ",
     "repair": "Ремонт и сервис — бесплатный доступ",
+    "pricing": "Тарифы — заявка на подключение",
     "dikidi": "Переход с DIKIDI — 3 месяца бесплатно",
     "yclients": "Переход с YCLIENTS — 3 месяца бесплатно",
 }
@@ -37,6 +38,7 @@ SOURCE_PATHS = {
     "education": "/education",
     "pets": "/pets",
     "repair": "/repair",
+    "pricing": "/pricing",
     "dikidi": "/dikidi",
     "yclients": "/yclients",
 }
