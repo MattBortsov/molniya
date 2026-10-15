@@ -118,6 +118,63 @@ function initOverviewSplitScene() {
   update();
 }
 
+/* ---- Modules split scene: 6 cards diverge on scroll ---- */
+function initModulesSplitScene() {
+  const grids = Array.from(document.querySelectorAll('.mt-modules-grid'));
+  if (!grids.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches) {
+    grids.forEach((grid) => {
+      grid.style.setProperty('--mt-split', '1');
+      grid.setAttribute('data-split', '');
+    });
+    return;
+  }
+
+  let frame = 0;
+  const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+  const smoothstep = (t) => t * t * (3 - 2 * t);
+
+  const update = () => {
+    frame = 0;
+    const vh = window.innerHeight || 800;
+
+    grids.forEach((grid) => {
+      const rect = grid.getBoundingClientRect();
+      const startY = vh * 0.88;
+      const endY = vh * 0.22;
+
+      const raw = clamp((startY - rect.top) / (startY - endY), 0, 1);
+      const progress = smoothstep(raw);
+
+      grid.style.setProperty('--mt-split', progress.toFixed(4));
+      grid.toggleAttribute('data-split', progress > 0.6);
+      grid.setAttribute('data-split-initialized', '');
+    });
+  };
+
+  const requestUpdate = () => {
+    if (frame) return;
+    frame = window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  reducedMotion.addEventListener?.('change', () => {
+    if (reducedMotion.matches) {
+      grids.forEach((grid) => {
+        grid.style.setProperty('--mt-split', '1');
+        grid.setAttribute('data-split', '');
+      });
+    } else {
+      requestUpdate();
+    }
+  });
+
+  update();
+}
+
 /* ---- Journey steps: smooth progressive reveal on scroll ---- */
 function initJourneySteps() {
   const lists = Array.from(document.querySelectorAll('.mt-journey-list'));
@@ -680,6 +737,7 @@ function initApp() {
   _domInitialized = true;
   initHeroScrollScene();
   initOverviewSplitScene();
+  initModulesSplitScene();
   initJourneySteps();
   initReveal();
   initNavDropdown();

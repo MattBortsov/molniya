@@ -4137,22 +4137,22 @@ def build_pricing_page() -> str:
     nav_html = render_nav_html(active_item="pricing", asset_prefix="", beta_cta=True)
     footer_html = render_footer_html(asset_prefix="", pricing_variant=True)
 
-    title = "Тарифы CRM Молния — от 3 000 ₽/мес | Честные цены без переплат за мастеров"
-    description = "Прозрачные тарифы CRM Молния для сферы услуг. Базовый тариф от 3 000 ₽/мес включает журнал визитов, онлайн-запись, базу клиентов и лояльность без доплат за сотрудников (до 1000 мастеров). Подключаемые модули: ЗП, склад, аналитика, ИИ, CRM."
+    title = "Тарифы CRM Молния — 3 000 ₽/мес | Честные цены без переплат за мастеров"
+    description = "Прозрачные тарифы CRM Молния для сферы услуг. Базовый тариф 3 000 ₽/мес включает журнал визитов, онлайн-запись, базу клиентов и лояльность без доплат за сотрудников (до 1000 мастеров). Подключаемые блоки: ЗП, склад, аналитика, ИИ, CRM, касса."
     canonical = "https://molniya-tech.ru/pricing"
 
     faq_items = [
         {
             "q": "Сколько стоит основной тариф и что в него входит?",
-            "a": "Стоимость основного тарифа — от 3 000 ₽ в месяц. В него входит полный ключевой контур для ежедневной работы: электронный журнал визитов, круглосуточная онлайн-запись 24/7, единая база клиентов с историей посещений, программа лояльности (бонусы, скидки), защита базы от выгрузки и сервисные уведомления клиентам в мессенджере за 0 ₽."
+            "a": "Стоимость основного тарифа — 3 000 ₽ в месяц. В него входит полный ключевой контур для ежедневной работы: электронный журнал визитов, круглосуточная онлайн-запись 24/7, единая база клиентов с историей посещений, программа лояльности (бонусы, скидки), защита базы от выгрузки и сервисные уведомления клиентам в мессенджере за 0 ₽."
         },
         {
             "q": "Правда ли, что нет доплаты за сотрудников?",
             "a": "Да, абсолютно! В Молнии нет искусственных комиссий или доплат за каждого добавленного сотрудника. Даже на базовом тарифе вы можете подключить хоть до 1 000 сотрудников и мастеров — стоимость подписки от этого не увеличивается."
         },
         {
-            "q": "Как работают подключаемые платные модули (ЗП, склад, аналитика, ИИ, CRM)?",
-            "a": "Молния построена по модульной архитектуре: вы платите только за то, что реально используете. Если вам нужен автоматический расчет сдельной зарплаты мастеров, складской учет с автосписанием по техкартам, управленческая аналитика, ИИ-ассистент или CRM-автоворонки — нужный модуль активируется в один клик."
+            "q": "Как работают подключаемые блоки (ЗП, склад, аналитика, ИИ, CRM, касса)?",
+            "a": "Молния построена по модульной архитектуре: вы платите только за то, что реально используете. Если вам нужен автоматический расчет сдельной зарплаты мастеров, складской учет с автосписанием по техкартам, управленческая аналитика, ИИ-ассистент, CRM-автоворонки или интеграция с онлайн-кассой 54-ФЗ — нужный блок активируется в один клик."
         },
         {
             "q": "Есть ли бесплатный пробный период?",
@@ -4164,7 +4164,7 @@ def build_pricing_page() -> str:
         },
         {
             "q": "Как происходит перенос данных при переходе с YCLIENTS или DIKIDI?",
-            "a": "Наша служба заботы бесплатно перенесет базу клиентов, историю визитов, прайс-лист и сотрудников за 15–20 минут без остановки рабочих процессов. Кроме того, при переходе мы дарим 3 месяца работы в подарок!"
+            "a": "Наша служба заботы бесплатно поможет с переездом из другой системы: перенесет базу клиентов, историю визитов, прайс-лист и сотрудников за 15–20 минут без остановки рабочих процессов. Кроме того, при переходе мы дарим 3 месяца работы в подарок!"
         },
         {
             "q": "Соответствует ли Молния закону о персональных данных № 152-ФЗ?",
@@ -4196,8 +4196,8 @@ def build_pricing_page() -> str:
                 },
                 {
                     "@type": "Offer",
-                    "name": "Подключаемые модули",
-                    "description": "Зарплата (ЗП), складской учет, аналитика и отчеты, ИИ-ассистент, CRM и автоворонки"
+                    "name": "Подключаемые блоки",
+                    "description": "Зарплата (ЗП), складской учет, аналитика и отчеты, ИИ-ассистент, CRM и автоворонки, касса 54-ФЗ"
                 }
             ]
         },
@@ -4278,7 +4278,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261015-modules">
+  <link rel="stylesheet" href="/styles.css?v=20261015-split6">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4330,31 +4330,30 @@ def build_pricing_page() -> str:
               <li class="mt-pricing-feature">{check_icon}<span><strong>Программа лояльности</strong> (бонусы, скидки, карты)</span></li>
               <li class="mt-pricing-feature">{check_icon}<span><strong>Уведомления в мессенджере за 0 ₽</strong> (подтверждения и чеки)</span></li>
               <li class="mt-pricing-feature">{check_icon}<span><strong>Защита клиентской базы</strong> от копирования персоналом</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Мобильная версия</strong> для смартфонов, планшетов и ПК</span></li>
             </ul>
           </div>
 
           <div class="mt-pricing-core-action">
             <div class="mt-pricing-price-wrap">
-              <span class="mt-pricing-price">от 3 000 ₽</span>
+              <span class="mt-pricing-price">3 000 ₽</span>
               <span class="mt-pricing-period">/ месяц</span>
             </div>
             <p style="font-size:13.5px;color:var(--mt-text-muted);margin:0 0 20px;line-height:1.4">14 дней полного доступа бесплатно<br>без привязки банковской карты</p>
             <a class="mt-btn mt-pricing-btn" href="#contact">Подключить бесплатно</a>
-            <div style="margin-top:14px;font-size:12.5px;color:var(--mt-text-body-2);line-height:1.4">Бесплатный перенос базы за 15 минут</div>
+            <div style="margin-top:14px;font-size:12.5px;color:var(--mt-text-body-2);line-height:1.4">Поможем с переездом из другой системы.</div>
           </div>
         </article>
 
       </section>
 
       <!-- ADD-ON MODULES SECTION -->
-      <section id="modules" class="mt-section mt-reveal" data-screen-label="Подключаемые модули" data-mt-reveal>
+      <section id="modules" class="mt-section mt-reveal" data-screen-label="Подключаемые блоки" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Подключаемые <span class="mt-hero-accent">платные блоки</span></h2>
+          <h2 class="mt-section-title">Подключаемые <span class="mt-hero-accent">блоки</span></h2>
           <p class="mt-section-sub">Расширяйте возможности вашей CRM по мере роста. Подключайте только те инструменты, которые действительно нужны вашему бизнесу.</p>
         </div>
 
-        <div class="mt-modules-grid" aria-label="Платные блоки">
+        <div class="mt-modules-grid" aria-label="Подключаемые блоки">
 
           <!-- Module 1: Зарплата -->
           <article class="mt-module-card">
@@ -4441,6 +4440,23 @@ def build_pricing_page() -> str:
             <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
           </article>
 
+          <!-- Module 6: Касса и платежи -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <h3 class="mt-module-title">Касса и платежи (54-ФЗ)</h3>
+            </div>
+            <p class="mt-module-desc">Прием безналичных оплат, эквайринг, онлайн-чеки по 54-ФЗ и предоплата при онлайн-записи.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Подключение онлайн-касс (Атол, Эвотор) и фискализация</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Предоплата и депозиты через СБП и карты в онлайн-записи</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Раздельный учет: безнал, наличные, подарочные сертификаты</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
+          </article>
+
         </div>
 
         <!-- MIGRATION SPECIAL OFFER BANNER -->
@@ -4512,8 +4528,8 @@ def build_pricing_page() -> str:
             <tbody>
               <tr>
                 <td>Стоимость в месяц</td>
-                <td><strong style="color:var(--mt-accent-strong)">от 3 000 ₽</strong></td>
-                <td><strong>от 3 000 ₽ + выбранные блоки</strong></td>
+                <td><strong style="color:var(--mt-accent-strong)">3 000 ₽</strong></td>
+                <td><strong>3 000 ₽ + выбранные блоки</strong></td>
               </tr>
               <tr>
                 <td>Количество сотрудников и мастеров</td>
@@ -4556,11 +4572,6 @@ def build_pricing_page() -> str:
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Мобильная версия для всех устройств</td>
-                <td>{table_check}</td>
-                <td>{table_check}</td>
-              </tr>
-              <tr>
                 <td>Расчет зарплаты (ЗП) мастеров и ведомости</td>
                 <td><span style="color:var(--mt-text-muted)">Подключаемый блок</span></td>
                 <td>{table_check}</td>
@@ -4584,6 +4595,11 @@ def build_pricing_page() -> str:
                 <td>CRM, сегментация базы и автоворонки возврата</td>
                 <td>{table_dash}</td>
                 <td><span class="mt-compare-check">✓ Блок «CRM»</span></td>
+              </tr>
+              <tr>
+                <td>Касса, 54-ФЗ и безналичные платежи</td>
+                <td>{table_dash}</td>
+                <td><span class="mt-compare-check">✓ Блок «Касса»</span></td>
               </tr>
               <tr>
                 <td>Техническая поддержка и помощь с миграцией</td>
@@ -4635,7 +4651,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261015-modules"></script>
+  <script src="/script.js?v=20261015-split6"></script>
 </body>
 </html>
 '''
