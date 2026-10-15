@@ -4137,34 +4137,34 @@ def build_pricing_page() -> str:
     nav_html = render_nav_html(active_item="pricing", asset_prefix="", beta_cta=True)
     footer_html = render_footer_html(asset_prefix="", pricing_variant=True)
 
-    title = "Тарифы CRM Молния — от 1 490 ₽/мес | Честные цены без переплат за мастеров"
-    description = "Прозрачные тарифы CRM Молния для сферы услуг. Онлайн-запись 24/7, уведомления в мессенджер за 0 ₽, склад, онлайн-касса и расчет зарплат. До 15 мастеров без доплат."
+    title = "Тарифы CRM Молния — от 3 000 ₽/мес | Честные цены без переплат за мастеров"
+    description = "Прозрачные тарифы CRM Молния для сферы услуг. Базовый тариф от 3 000 ₽/мес включает журнал визитов, онлайн-запись, базу клиентов и лояльность без доплат за сотрудников (до 1000 мастеров). Подключаемые модули: ЗП, склад, аналитика, ИИ, CRM."
     canonical = "https://molniya-tech.ru/pricing"
 
     faq_items = [
         {
-            "q": "Есть ли бесплатный пробный период?",
-            "a": "Да, вам доступно 14 дней полноценного бесплатного доступа ко всем функциям тарифа «Бизнес». При регистрации не требуется привязывать банковскую карту, а по истечении срока данные никуда не исчезнут."
+            "q": "Сколько стоит основной тариф и что в него входит?",
+            "a": "Стоимость основного тарифа — от 3 000 ₽ в месяц. В него входит полный ключевой контур для ежедневной работы: электронный журнал визитов, круглосуточная онлайн-запись 24/7, единая база клиентов с историей посещений, программа лояльности (бонусы, скидки), защита базы от выгрузки и сервисные уведомления клиентам в мессенджере за 0 ₽."
         },
         {
-            "q": "Нужно ли доплачивать за каждого добавленного мастера?",
-            "a": "Нет! В тарифе «Бизнес» уже включено до 15 мастеров и сотрудников без каких-либо доплат за каждого человека, а в тарифе «Сеть» количество сотрудников не ограничено. Мы не взимаем скрытых платежей за расширение вашей команды."
+            "q": "Правда ли, что нет доплаты за сотрудников?",
+            "a": "Да, абсолютно! В Молнии нет искусственных комиссий или доплат за каждого добавленного сотрудника. Даже на базовом тарифе вы можете подключить хоть до 1 000 сотрудников и мастеров — стоимость подписки от этого не увеличивается."
+        },
+        {
+            "q": "Как работают подключаемые платные модули (ЗП, склад, аналитика, ИИ, CRM)?",
+            "a": "Молния построена по модульной архитектуре: вы платите только за то, что реально используете. Если вам нужен автоматический расчет сдельной зарплаты мастеров, складской учет с автосписанием по техкартам, управленческая аналитика, ИИ-ассистент или CRM-автоворонки — нужный модуль активируется в один клик."
+        },
+        {
+            "q": "Есть ли бесплатный пробный период?",
+            "a": "Да, каждому новому клиенту доступно 14 дней полноценного бесплатного доступа без привязки банковской карты. Наша служба заботы бесплатно поможет настроить расписание и перенести вашу базу."
         },
         {
             "q": "Сколько стоят уведомления клиентам и как работает бот в мессенджере?",
-            "a": "Все уведомления о записях, напоминания за 24 и 2 часа до визита, ссылки на перенос и отмену, а также электронные чеки отправляются через фирменного бота в мессенджере абсолютно бесплатно (0 ₽). Вы можете полностью отказаться от платных SMS и экономить от 10 000 до 35 000 ₽ каждый месяц."
+            "a": "Все подтверждения записей, напоминания за 24 и 2 часа до визита, ссылки на перенос и отмену, а также электронные чеки отправляются через фирменного бота в мессенджере абсолютно бесплатно (0 ₽). Вы можете полностью отказаться от платных SMS и экономить десятки тысяч рублей в месяц."
         },
         {
             "q": "Как происходит перенос данных при переходе с YCLIENTS или DIKIDI?",
-            "a": "Наша служба заботы бесплатно перенесет вашу базу клиентов, историю визитов, справочник услуг и мастеров за 15–20 минут. Работа вашего салона или сервиса не прерывается ни на минуту. Кроме того, при переходе мы дарим 3 месяца работы бесплатно."
-        },
-        {
-            "q": "Включен ли складской учет и расчет зарплаты в стоимость?",
-            "a": "Да, в тарифах «Бизнес» и «Сеть» полноценный складской учет с автосписанием расходников по нормам и технологическим картам, а также модуль расчета сдельной зарплаты мастеров и премий уже включены в стоимость без доплат."
-        },
-        {
-            "q": "Можно ли изменить тариф или отказаться от подписки?",
-            "a": "Вы можете повысить или понизить тариф в любой момент в личном кабинете. Никаких долгосрочных контрактов или штрафов: неизрасходованный баланс автоматически пересчитывается в пользу нового тарифа."
+            "a": "Наша служба заботы бесплатно перенесет базу клиентов, историю визитов, прайс-лист и сотрудников за 15–20 минут без остановки рабочих процессов. Кроме того, при переходе мы дарим 3 месяца работы в подарок!"
         },
         {
             "q": "Соответствует ли Молния закону о персональных данных № 152-ФЗ?",
@@ -4189,24 +4189,15 @@ def build_pricing_page() -> str:
             "offers": [
                 {
                     "@type": "Offer",
-                    "name": "Тариф Старт",
-                    "price": "1490",
+                    "name": "Основной тариф",
+                    "price": "3000",
                     "priceCurrency": "RUB",
-                    "description": "До 2 сотрудников, онлайн-запись 24/7, журнал визитов, Уведомления в мессенджер за 0 ₽"
+                    "description": "Хоть до 1 000 сотрудников без доплат, онлайн-запись 24/7, журнал визитов, клиентская база, программа лояльности, сервисные уведомления в мессенджере за 0 ₽"
                 },
                 {
                     "@type": "Offer",
-                    "name": "Тариф Бизнес",
-                    "price": "3490",
-                    "priceCurrency": "RUB",
-                    "description": "До 15 мастеров без доплат, складской учет, расчет сдельной зарплаты, касса 54-ФЗ"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Тариф Сеть",
-                    "price": "6990",
-                    "priceCurrency": "RUB",
-                    "description": "Неограниченно филиалов и мастеров, сквозная аналитика, API, персональный менеджер"
+                    "name": "Подключаемые модули",
+                    "description": "Зарплата (ЗП), складской учет, аналитика и отчеты, ИИ-ассистент, CRM и автоворонки"
                 }
             ]
         },
@@ -4287,7 +4278,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261015-modules">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4316,77 +4307,138 @@ def build_pricing_page() -> str:
 
       </section>
 
-      <!-- PRICING TIERS GRID -->
-      <section id="plans" class="mt-section mt-reveal" data-screen-label="Планы тарифов" data-mt-reveal style="padding-top:0">
+      <!-- PRICING CORE PLAN -->
+      <section id="plans" class="mt-section mt-reveal" data-screen-label="Основной тариф" data-mt-reveal style="padding-top:0">
         <div class="mt-section-head mt-section-head--center">
-          <p class="mt-section-sub">Прозрачные условия без звездочек и неожиданных списаний. Тестовый период 14 дней на тарифе «Бизнес» включен для всех новых пользователей.</p>
+          <p class="mt-section-sub">Прозрачные условия без звездочек и неожиданных списаний. Тестовый период 14 дней полного доступа включен для всех новых пользователей.</p>
         </div>
 
-        <div class="mt-pricing-grid" aria-label="Тарифные планы" style="margin-top:24px">
+        <article class="mt-pricing-core-card">
+          <div class="mt-pricing-core-info">
+            <div class="mt-pricing-staff-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>0 ₽ за персонал · Хоть до 1 000 сотрудников без доплат</span>
+            </div>
+            <h2 class="mt-pricing-tier-name" style="font-size:28px">Основной тариф</h2>
+            <p class="mt-pricing-tier-desc" style="min-height:auto;font-size:15px;margin-bottom:16px">Всё необходимое для ежедневной работы бизнеса в сфере услуг. Единая подписка без скрытых платежей за расширение команды.</p>
 
-          <!-- Plan 1: Старт -->
-          <article class="mt-pricing-card">
-            <h3 class="mt-pricing-tier-name">Старт</h3>
-            <p class="mt-pricing-tier-desc">Для соло-мастеров, частной практики и небольших кабинетов до 2 сотрудников.</p>
+            <ul class="mt-pricing-core-features">
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Хоть до 1 000 сотрудников</strong> без наценок и доплат</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Электронный журнал визитов</strong> и расписание мастеров</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-запись 24/7</strong> (виджет, прямая ссылка, карты)</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Единая база клиентов</strong> с историей посещений</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Программа лояльности</strong> (бонусы, скидки, карты)</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Уведомления в мессенджере за 0 ₽</strong> (подтверждения и чеки)</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Защита клиентской базы</strong> от копирования персоналом</span></li>
+              <li class="mt-pricing-feature">{check_icon}<span><strong>Мобильная версия</strong> для смартфонов, планшетов и ПК</span></li>
+            </ul>
+          </div>
+
+          <div class="mt-pricing-core-action">
             <div class="mt-pricing-price-wrap">
-              <span class="mt-pricing-price">1 490 ₽</span>
+              <span class="mt-pricing-price">от 3 000 ₽</span>
               <span class="mt-pricing-period">/ месяц</span>
             </div>
-            <ul class="mt-pricing-features">
-              <li class="mt-pricing-feature">{check_icon}<span><strong>До 2 рабочих мест</strong> / мастеров</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-запись 24/7</strong> по прямой ссылке и на сайте</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Журнал визитов</strong> и единая клиентская база</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>бот в мессенджере за 0 ₽</strong> (напоминания и чеки)</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Защита клиентской базы от копирования мастерами</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Электронные карты лояльности и скидки</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Базовая аналитика выручки и визитов</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Мобильная версия для смартфонов и планшетов</span></li>
-            </ul>
+            <p style="font-size:13.5px;color:var(--mt-text-muted);margin:0 0 20px;line-height:1.4">14 дней полного доступа бесплатно<br>без привязки банковской карты</p>
             <a class="mt-btn mt-pricing-btn" href="#contact">Подключить бесплатно</a>
+            <div style="margin-top:14px;font-size:12.5px;color:var(--mt-text-body-2);line-height:1.4">Бесплатный перенос базы за 15 минут</div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ADD-ON MODULES SECTION -->
+      <section id="modules" class="mt-section mt-reveal" data-screen-label="Подключаемые модули" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Подключаемые <span class="mt-hero-accent">платные блоки</span></h2>
+          <p class="mt-section-sub">Расширяйте возможности вашей CRM по мере роста. Подключайте только те инструменты, которые действительно нужны вашему бизнесу.</p>
+        </div>
+
+        <div class="mt-modules-grid" aria-label="Платные блоки">
+
+          <!-- Module 1: Зарплата -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              </div>
+              <h3 class="mt-module-title">Зарплата (ЗП)</h3>
+            </div>
+            <p class="mt-module-desc">Автоматический расчет сдельной зарплаты, процентов от услуг и товаров, окладов и премий.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Индивидуальные ставки и проценты для каждого мастера</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Авторасчет премий, штрафов, чаевых и KPI</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Детализированные расчетные ведомости в 1 клик</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
           </article>
 
-          <!-- Plan 2: Бизнес -->
-          <article class="mt-pricing-card mt-pricing-card--popular">
-            <h3 class="mt-pricing-tier-name">Бизнес</h3>
-            <p class="mt-pricing-tier-desc">Полная автоматизация салона, студии, клиники или автосервиса до 15 мастеров.</p>
-            <div class="mt-pricing-price-wrap">
-              <span class="mt-pricing-price">3 490 ₽</span>
-              <span class="mt-pricing-period">/ месяц</span>
+          <!-- Module 2: Аналитика -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h3 class="mt-module-title">Аналитика</h3>
             </div>
-            <ul class="mt-pricing-features">
-              <li class="mt-pricing-feature">{check_icon}<span><strong>До 15 мастеров БЕЗ доплат</strong> за человека</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Все возможности</strong> тарифа «Старт»</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Складской учёт</strong> и списание по техкартам</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Расчёт сдельной зарплаты</strong> мастеров и бонусов</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Онлайн-касса 54-ФЗ</strong> и интеграция с эквайрингом</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Детальная финансовая и управленческая аналитика</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Индивидуальные права доступа для персонала</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Интеграция с Яндекс Картами, 2ГИС и мессенджерами</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Приоритетная поддержка в мессенджере 7 дней в неделю</span></li>
+            <p class="mt-module-desc">Глубокая финансовая и управленческая аналитика в реальном времени без ручных таблиц.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Отчеты по чистой выручке, марже и среднему чеку</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Загрузка рабочих мест, кабинетов и выработка мастеров</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Когортный анализ и динамика возвращаемости клиентов</span></li>
             </ul>
-            <a class="mt-btn mt-pricing-btn" href="#contact">Подключить бесплатно</a>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
           </article>
 
-          <!-- Plan 3: Сеть -->
-          <article class="mt-pricing-card">
-            <h3 class="mt-pricing-tier-name">Сеть</h3>
-            <p class="mt-pricing-tier-desc">Для сетевых брендов, франшиз и компаний с несколькими филиалами.</p>
-            <div class="mt-pricing-price-wrap">
-              <span class="mt-pricing-price">6 990 ₽</span>
-              <span class="mt-pricing-period">/ месяц</span>
+          <!-- Module 3: Склад -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <h3 class="mt-module-title">Склад</h3>
             </div>
-            <ul class="mt-pricing-features">
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Неограниченно филиалов</strong> и сотрудников</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Все возможности</strong> тарифа «Бизнес»</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Единая база клиентов</strong> по сети с разграничением прав</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span><strong>Сквозная сетевая аналитика</strong> и сравнение филиалов</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Централизованное управление прайсами и складами</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Открытый API и Webhooks для интеграций</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Персональный менеджер внедрения</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Обучение администраторов и управляющих</span></li>
-              <li class="mt-pricing-feature">{check_icon}<span>Выделенная линия поддержки и SLA 99.9%</span></li>
+            <p class="mt-module-desc">Прозрачный учет материалов и товаров для домашнего ухода с защитой от недостач.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Автосписание материалов по технологическим картам визита</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Контроль минимальных остатков и оповещения о закупках</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Учет себестоимости, партий и быстрая инвентаризация</span></li>
             </ul>
-            <a class="mt-btn mt-pricing-btn" href="#contact">Подключить бесплатно</a>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
+          </article>
+
+          <!-- Module 4: ИИ -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <h3 class="mt-module-title">ИИ (Искусственный интеллект)</h3>
+            </div>
+            <p class="mt-module-desc">Умный AI-ассистент для оптимизации расписания, прогнозирования нагрузки и удержания клиентов.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Предиктивное прогнозирование пиковой загрузки и свободных окон</span></li>
+              <li class="mt-module-feature">{check_icon}<span>AI-подсказки по выводу мастеров и специальным предложениям</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Автогенерация ответов на отзывы и сервисных сообщений</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
+          </article>
+
+          <!-- Module 5: CRM -->
+          <article class="mt-module-card">
+            <div class="mt-module-header">
+              <div class="mt-module-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="mt-module-title">CRM и маркетинг</h3>
+            </div>
+            <p class="mt-module-desc">Умная сегментация базы, автоворонки повторных продаж и возврат «уснувших» клиентов.</p>
+            <ul class="mt-module-features">
+              <li class="mt-module-feature">{check_icon}<span>Автоматическая RFM-сегментация (новички, постоянные, спящие)</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Триггерные цепочки реактивации потерянных клиентов</span></li>
+              <li class="mt-module-feature">{check_icon}<span>Сквозной учет источников записей и возврат инвестиций в рекламу</span></li>
+            </ul>
+            <a class="mt-btn mt-btn-secondary mt-module-btn" href="#contact">Подключить</a>
           </article>
 
         </div>
@@ -4425,18 +4477,18 @@ def build_pricing_page() -> str:
             </div>
 
             <div class="mt-pricing-calc-box mt-pricing-calc-box--molniya">
-              <h3 class="mt-pricing-calc-title">CRM Молния (Тариф «Бизнес»)</h3>
-              <div class="mt-pricing-calc-row"><span>Тариф «Бизнес» (3 490 ₽ × 12 мес):</span><strong>41 880 ₽</strong></div>
-              <div class="mt-pricing-calc-row"><span>Доплата за мастеров:</span><strong style="color:#2e7d32">0 ₽ (до 15 мастеров включено)</strong></div>
+              <h3 class="mt-pricing-calc-title">CRM Молния (Основной тариф)</h3>
+              <div class="mt-pricing-calc-row"><span>Основной тариф (3 000 ₽ × 12 мес):</span><strong>36 000 ₽</strong></div>
+              <div class="mt-pricing-calc-row"><span>Доплата за сотрудников:</span><strong style="color:#2e7d32">0 ₽ (хоть до 1 000 сотрудников)</strong></div>
               <div class="mt-pricing-calc-row"><span>Уведомления в мессенджер клиентам:</span><strong style="color:#2e7d32">0 ₽ (неограниченно)</strong></div>
-              <div class="mt-pricing-calc-row"><span>Склад, расчет зарплат, касса, API:</span><strong style="color:#2e7d32">0 ₽ (включено в тариф)</strong></div>
-              <div class="mt-pricing-calc-total"><span>Итоговые расходы в год:</span><span style="color:#2e7d32">41 880 ₽ / год</span></div>
+              <div class="mt-pricing-calc-row"><span>Визиты, онлайн-запись, база, лояльность:</span><strong style="color:#2e7d32">0 ₽ (включено в тариф)</strong></div>
+              <div class="mt-pricing-calc-total"><span>Итоговые расходы в год:</span><span style="color:#2e7d32">36 000 ₽ / год</span></div>
             </div>
 
           </div>
 
           <div style="margin-top:28px;padding:18px 24px;background:rgba(46,125,50,.08);border:1px solid rgba(46,125,50,.25);border-radius:var(--mt-radius-xl);text-align:center">
-            <span style="font-size:18px;font-weight:800;color:#2e7d32">Ваша чистая выгода: более 220 000 ₽ в год чистой экономии без потери функционала!</span>
+            <span style="font-size:18px;font-weight:800;color:#2e7d32">Ваша чистая выгода: более 220 000 ₽ в год чистой экономии без скрытых переплат!</span>
           </div>
         </div>
       </section>
@@ -4444,104 +4496,99 @@ def build_pricing_page() -> str:
       <!-- FEATURE COMPARISON TABLE -->
       <section id="features" class="mt-compare-section mt-reveal" data-screen-label="Сравнение тарифов" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Сравнение возможностей <span class="mt-hero-accent">по тарифам</span></h2>
-          <p class="mt-section-sub">Подробная матрица функций для выбора подходящего тарифа под масштаб вашего бизнеса.</p>
+          <h2 class="mt-section-title">Сравнение возможностей <span class="mt-hero-accent">по блокам</span></h2>
+          <p class="mt-section-sub">Вся базовая функциональность включена по умолчанию. Подключайте платные блоки под конкретные задачи.</p>
         </div>
 
-        <div class="mt-compare-wrap" aria-label="Таблица сравнения тарифов Молнии">
+        <div class="mt-compare-wrap" aria-label="Таблица возможностей тарифа Молнии">
           <table class="mt-compare-table">
             <thead>
               <tr>
-                <th style="width:34%">Возможность</th>
-                <th style="width:22%">Старт</th>
-                <th style="width:22%;color:var(--mt-accent-strong);background:rgba(198,84,59,.08)">Бизнес</th>
-                <th style="width:22%">Сеть</th>
+                <th style="width:40%">Возможность</th>
+                <th style="width:30%;color:var(--mt-accent-strong);background:rgba(198,84,59,.08)">Основной тариф</th>
+                <th style="width:30%">С подключаемыми блоками</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Стоимость в месяц</td>
-                <td><strong>1 490 ₽</strong></td>
-                <td><strong style="color:var(--mt-accent-strong)">3 490 ₽</strong></td>
-                <td><strong>6 990 ₽</strong></td>
+                <td><strong style="color:var(--mt-accent-strong)">от 3 000 ₽</strong></td>
+                <td><strong>от 3 000 ₽ + выбранные блоки</strong></td>
               </tr>
               <tr>
-                <td>Количество мастеров / сотрудников</td>
-                <td>До 2 мастеров</td>
-                <td><span class="mt-compare-star">★ До 15 мастеров</span></td>
-                <td>Неограниченно</td>
+                <td>Количество сотрудников и мастеров</td>
+                <td><span class="mt-compare-star">★ Хоть до 1 000 сотрудников</span></td>
+                <td><span class="mt-compare-star">★ Хоть до 1 000 сотрудников</span></td>
               </tr>
               <tr>
-                <td>Доплата за дополнительных сотрудников</td>
-                <td>0 ₽</td>
+                <td>Доплата за расширение команды</td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без доплат)</span></td>
-                <td>0 ₽</td>
+                <td><span class="mt-compare-check">✓ 0 ₽ (без доплат)</span></td>
               </tr>
               <tr>
-                <td>Онлайн-запись 24/7 (виджет, ссылка, карты)</td>
-                <td>{table_check}</td>
+                <td>Электронный журнал визитов и расписание</td>
                 <td>{table_check}</td>
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Уведомления клиентам в мессенджере</td>
+                <td>Онлайн-запись 24/7 (виджет, прямая ссылка, карты)</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Единая клиентская база с историей визитов</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Программа лояльности (скидки, бонусы, баллы)</td>
+                <td>{table_check}</td>
+                <td>{table_check}</td>
+              </tr>
+              <tr>
+                <td>Сервисные уведомления в мессенджере клиентам</td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
                 <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
-                <td><span class="mt-compare-check">✓ 0 ₽ (без лимитов)</span></td>
               </tr>
               <tr>
-                <td>Электронный журнал и карточки клиентов</td>
-                <td>{table_check}</td>
-                <td>{table_check}</td>
-                <td>{table_check}</td>
-              </tr>
-              <tr>
-                <td>Защита клиентской базы от копирования</td>
-                <td>{table_check}</td>
+                <td>Защита базы от копирования мастерами</td>
                 <td>{table_check}</td>
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Складской учёт и автосписание материалов</td>
-                <td>{table_dash}</td>
-                <td><span class="mt-compare-check">✓ По техкартам</span></td>
-                <td><span class="mt-compare-check">✓ Сеть складов</span></td>
-              </tr>
-              <tr>
-                <td>Автоматический расчёт сдельной зарплаты</td>
-                <td>{table_dash}</td>
+                <td>Мобильная версия для всех устройств</td>
                 <td>{table_check}</td>
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Онлайн-касса и фискальные чеки (54-ФЗ)</td>
-                <td>{table_dash}</td>
-                <td>{table_check}</td>
+                <td>Расчет зарплаты (ЗП) мастеров и ведомости</td>
+                <td><span style="color:var(--mt-text-muted)">Подключаемый блок</span></td>
                 <td>{table_check}</td>
               </tr>
               <tr>
-                <td>Аналитика и управленческие отчёты</td>
+                <td>Управленческая аналитика и финансовые отчеты</td>
                 <td>Базовая</td>
-                <td>Полная аналитика</td>
-                <td>Сквозная по филиалам</td>
+                <td><span class="mt-compare-check">✓ Блок «Аналитика»</span></td>
               </tr>
               <tr>
-                <td>Интеграция с Яндекс Картами и 2ГИС</td>
-                <td>По ссылке</td>
-                <td>{table_check}</td>
-                <td>{table_check}</td>
-              </tr>
-              <tr>
-                <td>Открытый API и Webhooks</td>
+                <td>Складской учет и автосписание по техкартам</td>
                 <td>{table_dash}</td>
-                <td>По запросу</td>
-                <td>{table_check}</td>
+                <td><span class="mt-compare-check">✓ Блок «Склад»</span></td>
               </tr>
               <tr>
-                <td>Техническая поддержка</td>
-                <td>В чате</td>
-                <td>Приоритетная (7 дней)</td>
-                <td>Выделенный менеджер + SLA</td>
+                <td>ИИ-ассистент и предиктивное расписание</td>
+                <td>{table_dash}</td>
+                <td><span class="mt-compare-check">✓ Блок «ИИ»</span></td>
+              </tr>
+              <tr>
+                <td>CRM, сегментация базы и автоворонки возврата</td>
+                <td>{table_dash}</td>
+                <td><span class="mt-compare-check">✓ Блок «CRM»</span></td>
+              </tr>
+              <tr>
+                <td>Техническая поддержка и помощь с миграцией</td>
+                <td>В чате 7 дней в неделю</td>
+                <td>Приоритетная линия + персональный менеджер</td>
               </tr>
             </tbody>
           </table>
@@ -4556,7 +4603,7 @@ def build_pricing_page() -> str:
         <div class="mt-before-start-grid">
           <article class="mt-before-start-highlight">
             <h3>14 дней тест-драйва без привязки карты</h3>
-            <p>Попробуйте полную версию тарифа «Бизнес» в реальной работе. Наша служба заботы бесплатно перенесет базу и обучит команду.</p>
+            <p>Попробуйте полную версию Молнии в реальной работе. Наша служба заботы бесплатно перенесет базу и обучит команду.</p>
             <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Задать вопрос в мессенджере ↗</a>
           </article>
           <div class="mt-before-start-questions">
@@ -4588,7 +4635,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261014-pricing"></script>
+  <script src="/script.js?v=20261015-modules"></script>
 </body>
 </html>
 '''
