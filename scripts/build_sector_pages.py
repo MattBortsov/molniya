@@ -210,6 +210,15 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
       </nav>'''
 
 
+def render_sticky_cta_html() -> str:
+    """Render the sticky floating CTA button across all pages."""
+    return '''    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>'''
+
+
 def render_footer_nav_html() -> str:
     """Link the footer to published sections and active sector pages."""
     sector_links = "\n".join(
@@ -222,7 +231,7 @@ def render_footer_nav_html() -> str:
 {sector_links}
             </div>
             <div class="mt-footer-nav-group">
-              <h3>Молния</h3>
+              <h3>Компания</h3>
               <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
               <a class="mt-footer-link" href="/#features">Функции</a>
               <a class="mt-footer-link" href="/pricing">Тарифы</a>
@@ -234,6 +243,17 @@ def render_footer_nav_html() -> str:
               <h3>Информация</h3>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
               <div class="mt-footer-socials" aria-label="Социальные сети">
                 <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
@@ -295,12 +315,14 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
               <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
-              <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
 {footer_nav_html}
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
         </div>
       </footer>'''
     if yclients_variant:
@@ -350,12 +372,14 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
               <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
-              <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
 {footer_nav_html}
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
         </div>
       </footer>'''
     if dikidi_variant:
@@ -405,12 +429,14 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
               <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
-              <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
 {footer_nav_html}
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
         </div>
       </footer>'''
     if home_variant:
@@ -460,12 +486,14 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
               <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal-white.svg" width="327" height="96" alt="Молния Тех">
-              <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
 {footer_nav_html}
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
         </div>
       </footer>'''
     logo_path = f"{asset_prefix}assets/img/logo/molniya-logo-horizontal.svg" if asset_prefix else "/assets/img/logo/molniya-logo-horizontal.svg"
@@ -475,12 +503,14 @@ def render_footer_html(asset_prefix: str = "", home_variant: bool = False, dikid
           <div class="mt-footer-brand-col">
             <div class="mt-footer-brand">
               <img class="mt-footer-brand-logo" src="{logo_path}" width="327" height="96" alt="Молния Тех">
-              <span class="mt-footer-year">· 2026</span>
             </div>
             <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
             <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
           </div>
 {footer_nav_html}
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
         </div>
       </footer>'''
 
@@ -652,7 +682,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1023,8 +1053,8 @@ def build_auto_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -1179,7 +1209,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1550,8 +1580,8 @@ def build_beauty_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -1672,7 +1702,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2043,8 +2073,8 @@ def build_health_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -2193,7 +2223,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2564,8 +2594,8 @@ def build_spaces_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -2714,7 +2744,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3085,8 +3115,8 @@ def build_education_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -3235,7 +3265,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3602,8 +3632,8 @@ def build_pets_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -3752,7 +3782,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4119,8 +4149,8 @@ def build_repair_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -4278,7 +4308,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261015-split6">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4645,8 +4675,8 @@ def build_pricing_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -4790,7 +4820,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5225,8 +5255,8 @@ def build_dikidi_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -5371,7 +5401,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5811,8 +5841,8 @@ def build_yclients_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -5827,7 +5857,7 @@ def build_yclients_page() -> str:
 
 
 def sync_navigation_to_index():
-    """Syncs the DRY nav, footer, and cookie banner into index.html."""
+    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
     nav_html = render_nav_html(active_item="", asset_prefix="", beta_cta=True)
 
@@ -5850,12 +5880,18 @@ def sync_navigation_to_index():
     new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
     content = content.replace(old_cookie_link, new_cookie_link)
 
+    sticky_start = "<!-- sticky floating CTA -->"
+    if sticky_start in content:
+        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
+        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
+        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
+
     INDEX_HTML.write_text(content, encoding="utf-8")
     print("Updated navigation, footer, and banner in index.html")
 
 
 def sync_navigation_to_blog():
-    """Syncs the DRY nav, footer, and cookie banner into blog/index.html."""
+    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into blog/index.html."""
     content = BLOG_INDEX_HTML.read_text(encoding="utf-8")
     nav_html = render_nav_html(active_item="blog", asset_prefix="../")
 
@@ -5877,6 +5913,12 @@ def sync_navigation_to_blog():
     old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
     new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
     content = content.replace(old_cookie_link, new_cookie_link)
+
+    sticky_start = "<!-- sticky floating CTA -->"
+    if sticky_start in content:
+        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
+        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
+        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
 
     BLOG_INDEX_HTML.write_text(content, encoding="utf-8")
     print("Updated navigation, footer, and banner in blog/index.html")
@@ -6112,6 +6154,8 @@ def build_about_page() -> str:
           "https://www.linkedin.com/company/molniya-tech"
         ],
         "taxID": "7806637461",
+        "telephone": "+7-812-724-21-24",
+        "email": "info@molniya-tech.ru",
         "address": {{
           "@type": "PostalAddress",
           "streetAddress": "пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н",
@@ -6126,7 +6170,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-about2">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6326,6 +6370,7 @@ def build_about_page() -> str:
                 <tr><td>ИНН / КПП</td><td>7806637461 / 780601001</td></tr>
                 <tr><td>ОГРН</td><td>1267800068458</td></tr>
                 <tr><td>Юридический адрес</td><td>195112, г. Санкт-Петербург, вн.тер.г. муниципальный округ Малая Охта, пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н, ком. 4-48</td></tr>
+                <tr><td>Телефон</td><td><a href="tel:+78127242124" class="mt-link-accent">8 (812) 724-21-24</a></td></tr>
                 <tr><td>Электронная почта</td><td><a href="mailto:info@molniya-tech.ru" class="mt-link-accent">info@molniya-tech.ru</a></td></tr>
               </tbody>
             </table>
@@ -6353,8 +6398,8 @@ def build_about_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -6396,7 +6441,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6450,8 +6495,8 @@ def build_404_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -6483,6 +6528,8 @@ def build_requisites_page() -> str:
             "https://www.linkedin.com/company/molniya-tech"
         ],
         "taxID": "7806637461",
+        "telephone": "+7-812-724-21-24",
+        "email": "info@molniya-tech.ru",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "пр-кт Малоохтинский, д. 61, литера А, помещ. 1-Н",
@@ -6522,7 +6569,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6605,6 +6652,20 @@ def build_requisites_page() -> str:
                   <div class="mt-req-val-wrap">
                     <span class="mt-req-value">1267800068458</span>
                     <button class="mt-copy-btn" type="button" data-copy="1267800068458">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Телефон</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">8 (812) 724-21-24</span>
+                    <button class="mt-copy-btn" type="button" data-copy="8 (812) 724-21-24">Скопировать</button>
+                  </div>
+                </div>
+                <div class="mt-req-row">
+                  <span class="mt-req-label">Электронная почта</span>
+                  <div class="mt-req-val-wrap">
+                    <span class="mt-req-value">info@molniya-tech.ru</span>
+                    <button class="mt-copy-btn" type="button" data-copy="info@molniya-tech.ru">Скопировать</button>
                   </div>
                 </div>
               </div>
@@ -6693,8 +6754,8 @@ def build_requisites_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
@@ -6758,7 +6819,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261014-pricing">
+  <link rel="stylesheet" href="/styles.css?v=20261016-footer">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7036,8 +7097,8 @@ def build_privacy_page() -> str:
 
     <!-- sticky floating CTA -->
     <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-      Подписаться
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
     </a>
 
   </div>
