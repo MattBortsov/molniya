@@ -1338,6 +1338,14 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   .mt-overview-stages span { padding: 7px 6px; font-size: 10px; }
 }
 
+.mt-overview-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(36px, 5vw, 52px);
+  text-align: center;
+}
+
 /* Origin story: an editorial interlude, deliberately unlike the card sections */
 .mt-origin {
   position: relative;
@@ -2783,6 +2791,35 @@ a.mt-origin-model-row:focus-visible {
   border-radius: 20px;
   background: #fff;
   box-shadow: 0 16px 38px rgba(42, 31, 19, .055);
+}
+.mt-journey-proof-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 11px;
+}
+.mt-journey-proof-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  line-height: 1.3;
+}
+.mt-journey-proof-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--mt-radius-pill);
+  background: rgba(57, 117, 76, .09);
+  color: #2e7d32;
+  border: 1px solid rgba(57, 117, 76, .22);
+  line-height: 1.35;
+  white-space: nowrap;
+  letter-spacing: .02em;
 }
 .mt-journey-proof > strong { display: block; margin: 19px 0; color: var(--mt-text-strong); font-size: 20px; }
 .mt-journey-proof-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid #eee8e1; color: var(--mt-text-body); font-size: 13px; }
