@@ -94,11 +94,11 @@
    ============================================================ */
 :root {
   /* colors — surface */
-  --mt-bg: #fffefd;
-  --mt-surface: #FFFEFD;
-  --mt-surface-2: #F0EAE0;
-  --mt-surface-tint: #FCF7F0;
-  --mt-surface-tint-2: #FFFCF7;
+  --mt-bg: #ffffff;
+  --mt-surface: #ffffff;
+  --mt-surface-2: #f7f4ef;
+  --mt-surface-tint: #faf7f2;
+  --mt-surface-tint-2: #ffffff;
 
   /* colors — text */
   --mt-text: #2A2620;
@@ -130,7 +130,7 @@
   --mt-tint-accent-soft: rgba(198, 84, 59, .07);
   --mt-tint-accent: rgba(198, 84, 59, .12);
   --mt-tint-accent-strong: rgba(198, 84, 59, .14);
-  --mt-nav-bg: rgba(252, 249, 243, .82);
+  --mt-nav-bg: rgba(255, 255, 255, .88);
 
   /* radii */
   --mt-radius-sm: 8px;
@@ -205,14 +205,14 @@ a { color: inherit; }
 }
 .mt-atmosphere--glow {
   background:
-    radial-gradient(950px 620px at 80% -8%, rgba(198, 84, 59, .14), transparent 60%),
-    radial-gradient(720px 540px at -5% 16%, rgba(210, 99, 74, .13), transparent 55%),
-    radial-gradient(800px 700px at 50% 108%, rgba(198, 84, 59, .08), transparent 60%);
+    radial-gradient(950px 620px at 80% -8%, rgba(198, 84, 59, .05), transparent 60%),
+    radial-gradient(720px 540px at -5% 16%, rgba(210, 99, 74, .04), transparent 55%),
+    radial-gradient(800px 700px at 50% 108%, rgba(198, 84, 59, .03), transparent 60%);
 }
 .mt-atmosphere--grid {
   background-image:
-    linear-gradient(rgba(92, 70, 46, .025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 70, 46, .025) 1px, transparent 1px);
+    linear-gradient(rgba(92, 70, 46, .015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 70, 46, .015) 1px, transparent 1px);
   background-size: 66px 66px;
   -webkit-mask-image: radial-gradient(circle at 50% 12%, #000, transparent 78%);
   mask-image: radial-gradient(circle at 50% 12%, #000, transparent 78%);
@@ -328,7 +328,7 @@ a { color: inherit; }
   left: -20px;
   width: 640px;
   max-width: min(640px, 92vw);
-  background: rgba(255, 254, 253, 0.97);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: var(--mt-blur-nav);
   -webkit-backdrop-filter: var(--mt-blur-nav);
   border: 1px solid var(--mt-border-strong);
@@ -1065,10 +1065,10 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   min-width: 0;
   overflow: hidden;
   padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px) 0;
-  border: none;
+  border: 1px solid rgba(70, 52, 36, .07);
   border-radius: 28px;
-  background: #f8f7f5;
-  box-shadow: 0 12px 32px -8px rgba(42, 38, 32, calc(.06 * var(--mt-split)));
+  background: #faf8f5;
+  box-shadow: 0 12px 32px -8px rgba(42, 38, 32, calc(.04 * var(--mt-split)));
 }
 .mt-overview-card:nth-child(-n+2) { grid-column: span 3; }
 
@@ -2703,7 +2703,7 @@ a.mt-origin-model-row:focus-visible {
   padding: 12px 20px;
   border: 1px solid var(--mt-border-accent);
   border-radius: 999px;
-  background: #fff8ef;
+  background: #fffdfa;
   color: var(--mt-text-body);
   font-size: 14px;
 }
@@ -2914,7 +2914,7 @@ a.mt-origin-model-row:focus-visible {
 .mt-migration-switch > span { width: 19px; height: 19px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(53, 31, 21, .18); }
 
 .mt-before-start-grid { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 4vw, 64px); align-items: start; margin-top: 38px; }
-.mt-before-start-highlight { padding: 30px; border: 1px solid var(--mt-border-accent); border-radius: 23px; background: #fff7ee; }
+.mt-before-start-highlight { padding: 30px; border: 1px solid var(--mt-border-accent); border-radius: 23px; background: #fffdfa; }
 .mt-before-start-highlight > span, .mt-future span { color: var(--mt-accent-strong); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .mt-before-start-highlight h3 { margin: 17px 0 12px; color: var(--mt-text-strong); font-family: 'Onest', 'Manrope', sans-serif; font-size: clamp(20px, 2vw, 25px); font-weight: 600; line-height: 1.3; }
 .mt-before-start-highlight p { margin: 0; color: var(--mt-text-body); font-size: 15px; line-height: 1.6; }
