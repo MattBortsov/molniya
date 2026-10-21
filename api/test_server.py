@@ -136,6 +136,33 @@ class LeadFormTests(unittest.TestCase):
         self.assertEqual(self.stored_leads()[0]["form_name"], "Аренда пространств — бесплатный доступ")
         self.assertEqual(send.call_args.args[0]["source_slug"], "spaces")
 
+    def test_photostudios_sector_source_is_saved_and_sent(self) -> None:
+        payload = {"name": "Артем", "email": "artem@example.com", "phone": "+79991234567", "consent": True, "source": "photostudios"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        self.assertEqual(self.stored_leads()[0]["source_slug"], "photostudios")
+        self.assertEqual(self.stored_leads()[0]["form_name"], "Фотостудии — бесплатный доступ")
+        self.assertEqual(send.call_args.args[0]["source_slug"], "photostudios")
+
+    def test_cleaning_sector_source_is_saved_and_sent(self) -> None:
+        payload = {"name": "Ольга", "email": "olga@example.com", "phone": "+79991234567", "consent": True, "source": "cleaning"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        self.assertEqual(self.stored_leads()[0]["source_slug"], "cleaning")
+        self.assertEqual(self.stored_leads()[0]["form_name"], "Клининг — бесплатный доступ")
+        self.assertEqual(send.call_args.args[0]["source_slug"], "cleaning")
+
+    def test_psychologist_sector_source_is_saved_and_sent(self) -> None:
+        payload = {"name": "Дарья", "email": "daria@example.com", "phone": "+79991234567", "consent": True, "source": "psychologist"}
+        with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:
+            status, result = self.post_lead(payload)
+        self.assertEqual((status, result), (200, {"ok": True}))
+        self.assertEqual(self.stored_leads()[0]["source_slug"], "psychologist")
+        self.assertEqual(self.stored_leads()[0]["form_name"], "Психологи — бесплатный доступ")
+        self.assertEqual(send.call_args.args[0]["source_slug"], "psychologist")
+
     def test_education_sector_source_is_saved_and_sent(self) -> None:
         payload = {"name": "Елена", "email": "elena@example.com", "phone": "+79991234567", "consent": True, "source": "education"}
         with patch("server.rate_limit_allows", return_value=True), patch("server.send_lead_to_telegram") as send:

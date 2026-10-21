@@ -1547,6 +1547,19 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
   padding: 13px 12px;
   border-top: 1px solid rgba(255, 255, 255, .2);
   border-radius: 0 14px 14px 0;
+  text-decoration: none;
+  transition: background var(--mt-dur-fast, .18s) ease, transform var(--mt-dur-fast, .18s) ease;
+}
+a.mt-origin-model-row:hover {
+  background: rgba(255, 255, 255, .05);
+  transform: translateX(4px);
+}
+a.mt-origin-model-row:hover strong {
+  color: #f1ac71;
+}
+a.mt-origin-model-row:focus-visible {
+  outline: 2px solid #f1ac71;
+  outline-offset: 2px;
 }
 .mt-origin-row-icon {
   position: relative;
@@ -1572,7 +1585,10 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
 }
 .mt-origin-row-icon svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
 .mt-origin-art--beauty { transform: rotate(-2deg); border-radius: 52% 48% 43% 57% / 48% 55% 45% 52%; }
+.mt-origin-art--health { transform: rotate(1deg); border-radius: 46% 54% 52% 48% / 54% 48% 52% 46%; }
 .mt-origin-art--spaces { border-radius: 42% 58% 50% 50% / 57% 44% 56% 43%; }
+.mt-origin-art--photostudios { transform: rotate(2deg); border-radius: 53% 47% 45% 55% / 47% 53% 47% 53%; }
+.mt-origin-art--cleaning { transform: rotate(-2deg); border-radius: 48% 52% 54% 46% / 52% 46% 54% 48%; }
 .mt-origin-art--education { transform: rotate(2deg); border-radius: 50% 50% 57% 43% / 45% 56% 44% 55%; }
 .mt-origin-art--pets { border-radius: 58% 42% 48% 52% / 50% 44% 56% 50%; }
 .mt-origin-art--repair { transform: rotate(-2deg); border-radius: 47% 53% 55% 45% / 55% 48% 52% 45%; }
@@ -4489,6 +4505,81 @@ a.mt-tablet:hover .mt-tablet-screen { outline: 2px solid rgba(198, 84, 59, .35);
     gap: 16px;
   }
 }
+
+/* ============================================================
+   SUB-NICHES & MICRO-LANDING CARDS IN INDUSTRY HUBS
+   ============================================================ */
+.mt-subniche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.mt-subniche-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.mt-subniche-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 84, 59, .4);
+  box-shadow: 0 12px 32px -8px rgba(42, 38, 32, .1);
+}
+
+.mt-subniche-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(223, 95, 60, .08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.mt-subniche-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mt-subniche-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mt-subniche-arrow {
+  color: var(--mt-accent);
+  transition: transform .2s ease;
+  font-weight: 600;
+}
+
+.mt-subniche-card:hover .mt-subniche-arrow {
+  transform: translateX(4px);
+}
+
+.mt-subniche-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--mt-text-body);
+}
+
 
 
 
