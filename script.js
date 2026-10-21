@@ -567,7 +567,10 @@ function initLeadForm() {
 
       form.reset();
       status.dataset.state = 'success';
-      status.textContent = 'Заявка отправлена. Мы свяжемся с вами по указанным контактам.';
+      status.textContent = 'Заявка отправлена! Открываем страницу с презентацией…';
+      window.setTimeout(() => {
+        window.location.href = '/thanks';
+      }, 350);
     } catch (error) {
       status.dataset.state = 'error';
       status.textContent = error.name === 'AbortError'

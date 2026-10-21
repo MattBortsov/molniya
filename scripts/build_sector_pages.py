@@ -1092,7 +1092,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -1619,7 +1619,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -1958,7 +1958,7 @@ def build_health_page() -> str:
       <section class="mt-section mt-reveal" data-screen-label="Частная практика" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Специализированные решения <span class="mt-overview-hook">для частных специалистов</span></h2>
-          <p class="mt-section-sub">Если вы ведёте индивидуальный приём, используйте профильные модули Молнии с индивидуальным регламентом консультаций и персональным Telegram-ботом.</p>
+          <p class="mt-section-sub">Если вы ведёте индивидуальный приём, используйте персональную страницу записи Молнии с регламентом слотов, буфером на отдых и анкетами приёма.</p>
         </div>
 
         <div class="mt-subniche-grid">
@@ -1966,7 +1966,7 @@ def build_health_page() -> str:
             <div class="mt-subniche-icon">🧠</div>
             <div class="mt-subniche-content">
               <div class="mt-subniche-title">Психологи и психотерапевты <span class="mt-subniche-arrow">→</span></div>
-              <div class="mt-subniche-desc">Онлайн-запись на консультации (слоты 50 минут + буфер на заметки), 100% предоплата от поздних отмен, личный Telegram-бот и конфиденциальные карточки клиентов.</div>
+              <div class="mt-subniche-desc">Персональная страница записи 24/7, свободные слоты по 50 минут с буфером на заметки, формы приёма с вопросами под услугу и защищённый профиль клиента.</div>
             </div>
           </a>
         </div>
@@ -2130,7 +2130,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -2651,7 +2651,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -3172,7 +3172,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -3693,7 +3693,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -3701,50 +3701,50 @@ def build_cleaning_page() -> str:
 
 
 def build_psychologist_page() -> str:
-    """Builds the complete psychologist micro-landing page matching the exact design system."""
+    """Builds the complete psychologist micro-landing page matching the exact presentation features."""
     nav_html = render_nav_html(active_item="health", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
     lead_html = render_lead_form_html(
         "psychologist",
         'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для частной практики',
-        "Оставьте контакты — поможем подключить личного бота для записи, настроить буферы между сессиями и онлайн-оплату.",
+        "Оставьте контакты — покажем Молнию на примере вашей практики и поможем настроить персональную страницу записи.",
     )
 
     title = "Подключить онлайн-запись для психолога — CRM и расписание"
     description = (
         "Программа и онлайн-запись для частнопрактикующих психологов и психотерапевтов: "
-        "слоты по 50 минут с буфером на заметки, 100% предоплата, личный Telegram-бот и карточки клиентов."
+        "персональная страница 24/7, слоты по 50 минут с буфером на отдых, формы приёма и профиль клиента с личными заметками."
     )
     canonical = "https://molniya-tech.ru/psychologist"
 
     faqs = [
         (
-            "Как работает правило отмены за 24 часа и онлайн-предоплата?",
-            "Вы можете включить обязательную 100% онлайн-предоплату через СБП или банковские карты при бронировании сессии. Если клиент отменяет или переносит запись менее чем за 24 часа (или в другой заданный вами срок), система удерживает стоимость консультации в соответствии с правилами вашего терапевтического контракта.",
+            "Как клиенты записываются на консультации через Молнию?",
+            "Вы получаете персональную страницу записи с вашим брендом и короткой ссылкой для соцсетей, мессенджеров или визиток (также виджет можно встроить на личный сайт). Клиенты заходят с любого устройства без установки приложений, видят свободные слоты, отвечают на ваши вводные вопросы и сразу получают подтверждение.",
         ),
         (
-            "Можно ли настроить автоматический перерыв между консультациями (например, 10 или 15 минут)?",
-            "Да. Вы задаете базовую длительность сессии (например, 50 минут) и обязательный интервал (буфер) после нее (например, 10 минут). Программа автоматически резервирует слот целиком (60 минут), предотвращая запись клиентов впритык и давая вам время на отдых и записи.",
+            "Как настроить буфер между сессиями на отдых и заметки?",
+            "Вы задаете длительность консультации (например, 50 минут) и обязательный буфер после нее (например, 10 или 15 минут). Программа автоматически бронирует слот с запасом — клиенты физически не смогут записаться встык, и у вас всегда будет время выпить чай и внести мысли в карточку.",
         ),
         (
-            "Подходит ли программа для онлайн-консультаций (Zoom, Google Meet, Telegram)?",
-            "Да. Вы можете разделить услуги на онлайн-сессии и очные приемы в кабинете. Для онлайн-консультаций система автоматически генерирует или отправляет постоянную ссылку на звонок (Zoom, Яндекс Телемост, Google Meet) в напоминаниях клиенту.",
+            "Как работают напоминания клиентам о предстоящей сессии?",
+            "Система автоматически отправляет клиенту мгновенное подтверждение сразу после записи, а накануне визита — дружеское напоминание по E-mail, в мессенджер или по SMS (на выбор). Клиент точно знает дату, время и формат (ссылку на звонок или адрес кабинета), что снижает неявки до минимума.",
         ),
         (
-            "Как обеспечивается конфиденциальность заметок и данных клиентов по 152-ФЗ?",
-            "Все данные хранятся на защищенных серверах в дата-центрах РФ с шифрованием в строгом соответствии с 152-ФЗ. Доступ к заметкам и карточкам клиентов имеете только вы: вход защищен двухфакторной аутентификацией и биометрией на вашем устройстве.",
+            "Можно ли задавать клиенту вопросы до сессии (запрос, формат, согласие)?",
+            "Да. В Молнии настраиваются формы приёма под каждую услугу: контакты, первичный запрос, согласие с правилами отмены или анкета. Вы видите все ответы в карточке записи и приходите на встречу уже подготовленным.",
         ),
         (
-            "Могу ли я совмещать очные приемы в арендованном кабинете и онлайн-сессии?",
-            "Да. В расписании можно настроить разные типы локаций и временные окна: например, по вторникам и четвергам вы принимаете очно в психологическом кабинете, а в остальные дни работаете онлайн. Клиент при записи видит только доступные форматы и точный адрес кабинета.",
+            "Где сохраняются заметки по клиентам и конфиденциальна ли эта информация?",
+            "У каждого клиента формируется единый централизованный профиль: история прошлых и будущих встреч, формы приёма и ваши личные заметки. Доступ строго разграничен и защищен по 152-ФЗ — ваши заметки видите только вы со своего смартфона или компьютера.",
         ),
         (
-            "Как клиенты записываются через Telegram-бота? Нужны ли сложные настройки?",
-            "Подключение занимает 2 минуты: создается ваш персональный сервисный бот (или используется готовый виджет). Вы размещаете ссылку в Telegram, соцсетях или на сайте. Клиент нажимает кнопку, выбирает свободное окно, оплачивает консультацию и сразу получает подтверждение.",
+            "Подходит ли программа для совмещения онлайн-консультаций и очных приёмов в кабинете?",
+            "Да. Вы настраиваете разные типы встреч (онлайн-сессия в Zoom/Телемосте или очный приём в кабинете). В расписании можно гибко задавать часы приёма для разных локаций и быстро переносить встречи перетаскиванием (drag-and-drop).",
         ),
         (
-            "Можно ли вести учет абонементов на пакеты сессий (например, 5 или 10 консультаций)?",
-            "Да. Система поддерживает продажу пакетов консультаций со скидкой. Баланс оплаченных встреч привязывается к карточке клиента, а при бронировании очередного слота сессия автоматически списывается с его баланса.",
+            "Как бесплатно перенести базу клиентов и историю встреч в Молнию?",
+            "Служба заботы Молнии бесплатно помогает перенести контакты клиентов, заметки и график из таблиц Excel, блокнотов или сторонних программ. Вы начнете работу в единой системе без остановки консультаций.",
         ),
     ]
 
@@ -3775,7 +3775,7 @@ def build_psychologist_page() -> str:
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "RUB",
-                "description": "Бесплатный демо-доступ и настройка расписания частной практики",
+                "description": "Бесплатный демо-доступ и настройка персональной страницы записи",
             },
             "publisher": {
                 "@type": "Organization",
@@ -3868,7 +3868,7 @@ def build_psychologist_page() -> str:
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Слоты по 50 минут с интервалами на заметки, онлайн-предоплата от поздних отмен, запись через личный Telegram-бот и защищенные карточки клиентов</p>
+              <p class="mt-hero-sub">Персональная страница записи 24/7, свободные слоты по 50 минут с буфером на отдых, формы приёма и профиль клиента с личными заметками</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
@@ -3878,16 +3878,16 @@ def build_psychologist_page() -> str:
                 <span class="mt-facet-note">автоматический буфер между сессиями</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">100% предоплата</span>
-                <span class="mt-facet-note">правило отмены за 24 часа без потерь</span>
+                <span class="mt-facet-name">Доступно 24/7</span>
+                <span class="mt-facet-note">персональная страница без приложений</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">Бот в Telegram</span>
-                <span class="mt-facet-note">клиенты бронируют без звонков и переписки</span>
+                <span class="mt-facet-name">Формы приёма</span>
+                <span class="mt-facet-note">вопросы под услугу и история обращений</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name mt-facet-name--soon">Конфиденциально</span>
-                <span class="mt-facet-note">заметки и анамнез защищены по 152-ФЗ</span>
+                <span class="mt-facet-name mt-facet-name--soon">Напоминания</span>
+                <span class="mt-facet-note">E-mail, мессенджер или SMS на выбор</span>
               </li>
             </ul>
           </div>
@@ -3901,7 +3901,7 @@ def build_psychologist_page() -> str:
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </div>
-            <p class="mt-hero-media-caption">Электронное расписание консультаций и сетка сессий психолога в реальном времени</p>
+            <p class="mt-hero-media-caption">Электронное расписание консультаций и свободные слоты специалиста в реальном времени</p>
           </div>
         </div>
 
@@ -3910,8 +3910,8 @@ def build_psychologist_page() -> str:
       <!-- LIVE SESSIONS STATUS -->
       <section class="mt-section mt-reveal" data-screen-label="Расписание сессий" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Каждая сессия, клиент и оплата <span class="mt-overview-hook">под вашим контролем</span></h2>
-          <p class="mt-section-sub">Вы видите статус каждой консультации, формат встречи (онлайн или очный прием в кабинете), факт оплаты и контактные данные клиента прямо в смартфоне.</p>
+          <h2 class="mt-section-title">Каждая консультация, клиент и время <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Вы видите статус каждой записи, формат встречи (онлайн или очный приём в кабинете), ответы на вводные вопросы и контактные данные клиента прямо в смартфоне.</p>
         </div>
 
         <div class="mt-auto-bays">
@@ -3922,7 +3922,7 @@ def build_psychologist_page() -> str:
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Анна К. (Zoom)</div>
+                <div class="mt-auto-car-name">Анна К. (Онлайн-звонок)</div>
                 <div class="mt-auto-car-tier">Первичная консультация · 50 мин</div>
               </div>
               <span class="mt-dropdown-footer-icon">💻</span>
@@ -3958,7 +3958,7 @@ def build_psychologist_page() -> str:
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Личное время психолога</div>
+                <div class="mt-auto-car-name">Личное время специалиста</div>
                 <div class="mt-auto-car-tier">Заполнение карточек, отдых</div>
               </div>
               <span class="mt-dropdown-footer-icon">☕</span>
@@ -3971,13 +3971,13 @@ def build_psychologist_page() -> str:
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">13:00 · Семейная терапия</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--done">Оплачено</span>
+              <span class="mt-auto-bay-title">13:00 · Семейная консультация</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Подтверждено</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Дмитрий и Ольга (Zoom)</div>
-                <div class="mt-auto-car-tier">Парная сессия · 90 мин</div>
+                <div class="mt-auto-car-name">Дмитрий и Ольга (Парная)</div>
+                <div class="mt-auto-car-tier">Семейная встреча · 90 мин</div>
               </div>
               <span class="mt-dropdown-footer-icon">👥</span>
             </div>
@@ -3992,61 +3992,61 @@ def build_psychologist_page() -> str:
       <!-- PSYCHOLOGIST OVERVIEW VALUE GRID -->
       <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для психологов" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Ведите психологическую практику <span class="mt-overview-hook">в спокойном и бережном ритме</span></h2>
-          <p class="mt-section-sub">Программа для частнопрактикующих психологов и терапевтов: электронное расписание с буфером на отдых, безопасные заметки к сессиям, напоминания клиентам и автоматическая предоплата.</p>
+          <h2 class="mt-section-title">Ведите психологическую практику <span class="mt-overview-hook">без рутины и перегрузок</span></h2>
+          <p class="mt-section-sub">Один сервис вместо телефона, мессенджеров, таблиц и блокнотов: персональная страница бронирования 24/7, буферы между сессиями, профиль клиента с личными заметками и дружеские напоминания.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3>Плотное расписание <span class="mt-overview-hook">без накладок и выгорания</span></h3>
-            <p>Настройте длительность консультации (50 или 60 минут) и обязательный интервал (10–15 минут) на отдых, чай и фиксацию инсайтов. Программа автоматически резервирует слот целиком — клиенты не смогут записаться встык.</p>
+            <h3>Свободные слоты <span class="mt-overview-hook">и буфер на отдых и подготовку</span></h3>
+            <p>Задайте часы приёма, длительность консультаций и обязательный буфер (10–15 минут) на отдых, чай и фиксацию инсайтов. Программа не позволит клиентам записаться впритык или вне графика — вы защищены от перегрузок.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Расписание консультаций</span><span>Сегодня</span></div>
-              <div class="mt-overview-calendar"><span>10:00</span><div class="mt-overview-slot">Анна К. <small>Индивидуальная · Zoom (50 мин)</small></div><span>11:00</span><div class="mt-overview-slot mt-overview-slot--light">Михаил В. <small>Кабинет №4 (50 мин)</small></div><span>12:00</span><div></div></div>
+              <div class="mt-overview-ui-head"><span>Расписание консультаций</span><span>Свободно / Буфер</span></div>
+              <div class="mt-overview-calendar"><span>10:00</span><div class="mt-overview-slot">Анна К. <small>Индивидуальная (50 мин)</small></div><span>11:00</span><div class="mt-overview-slot mt-overview-slot--light">Михаил В. <small>Кабинет №4 (50 мин)</small></div><span>12:00</span><div></div></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>100% онлайн-предоплата <span class="mt-overview-hook">и защита от срыва сессий</span></h3>
-            <p>Защитите терапевтический сеттинг: слот бронируется только после внесения онлайн-оплаты через СБП или банковскую карту. При отмене менее чем за 24 часа оплата удерживается по правилам вашего терапевтического контракта.</p>
+            <h3>Персональная страница записи <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
+            <p>Короткая ссылка для соцсетей, визиток, шапки профиля или встраиваемый виджет на сайт. Страница с вашим описанием и услугами работает 24/7 с любого устройства — телефона, планшета или компьютера без установки приложений.</p>
             <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Оплата сессии</span><span>СБП / Карта</span></div>
-              <div class="mt-overview-price-row"><span>Индивидуальная терапия</span><strong>4 000 ₽ · 100% предоплата</strong></div>
-              <div class="mt-overview-price-row"><span>Правило отмены</span><strong>Не позднее чем за 24 часа</strong></div>
-              <div class="mt-overview-price-tag">Защита от пустых окон и неявок</div>
+              <div class="mt-overview-ui-head"><span>Страница бронирования</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Индивидуальная консультация</span><strong>50 мин · Выбор слота</strong></div>
+              <div class="mt-overview-price-row"><span>Удобная короткая ссылка</span><strong>Для соцсетей и мессенджеров</strong></div>
+              <div class="mt-overview-price-tag">Клиенты записываются сами в любое время</div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Запись через Telegram-бота <span class="mt-overview-hook">без бесконечной переписки</span></h3>
-            <p>Разместите ссылку на персонального бота в шапке профиля или отправляйте клиентам в мессенджере. Бот сам покажет свободные окна с учетом вашего графика, примет оплату и напомнит о встрече за 24 и 2 часа.</p>
+            <h3>Напоминания без лишних действий <span class="mt-overview-hook">и меньше неявок</span></h3>
+            <p>Клиент получает мгновенное подтверждение сразу после бронирования, а накануне визита — автоматическое дружеское напоминание по E-mail, в мессенджер или по SMS (на выбор). Вам не приходится отправлять повторные сообщения вручную.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Сервисный Telegram-бот</span><span>Автозапись</span></div>
+              <div class="mt-overview-ui-head"><span>Автоматические напоминания</span><span>Без рутины</span></div>
               <div class="mt-overview-message">
-                Анна, ваша сессия подтверждена на завтра в 10:00 (Zoom). Ссылка на подключение: zoom.us/j/molniya...
+                Анна, напоминаем о консультации завтра в 10:00. Ссылка на подключение отправлена на вашу почту.
                 <span class="mt-overview-reaction">⚡</span>
               </div>
-              <div class="mt-overview-client-row"><span>Личный бот психолога</span><strong>Без звонков и переписок →</strong></div>
+              <div class="mt-overview-client-row"><span>E-mail, мессенджер или SMS</span><strong>На выбор клиента →</strong></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Конфиденциальные карточки <span class="mt-overview-hook">и заметки по сессиям</span></h3>
-            <p>Фиксируйте феноменологию, гипотезы, сеттинг, домашние задания и динамику терапии в защищенном профиле клиента. Доступ к записям защищен по 152-ФЗ и открывается только вам по биометрии или паролю.</p>
+            <h3>Формы приёма и единый профиль <span class="mt-overview-hook">с личными заметками</span></h3>
+            <p>Настройте вводные вопросы под услугу: запрос, контакты, согласие. В централизованном профиле клиента сохраняются история встреч, динамика и ваши конфиденциальные заметки для персонального ведения терапии.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Карточка клиента</span><span>Анна К. (Конфиденциально)</span></div>
-              <div class="mt-overview-stages"><span>Запрос</span><i></i><span>Гипотезы</span><i></i><span>Динамика</span></div>
-              <div class="mt-overview-check">✓ <span>Терапевтический контракт подписан</span></div>
-              <div class="mt-overview-check">✓ <span>Заметки к сессии #4 зафиксированы</span></div>
+              <div class="mt-overview-stages"><span>Контакты</span><i></i><span>Запрос</span><i></i><span>Заметки</span></div>
+              <div class="mt-overview-check">✓ <span>Форма приёма заполнена клиентом</span></div>
+              <div class="mt-overview-check">✓ <span>Личные заметки доступны только вам</span></div>
             </div>
           </article>
 
           <article class="mt-overview-card mt-overview-card--featured">
-            <h3>Онлайн и очные приёмы <span class="mt-overview-hook">в едином календаре</span></h3>
-            <p>Принимайте клиентов очно в арендованном кабинете и удаленно по видеосвязи. Бот автоматически отправляет ссылку на Zoom для онлайн-встреч или адрес кабинета со схемой прохода для очных консультаций.</p>
+            <h3>Гибкое управление календарём <span class="mt-overview-hook">с любого устройства</span></h3>
+            <p>Перетаскивайте встречи для быстрой перепланировки в один клик. Проверяйте и меняйте расписание из кабинета, дома или в пути со смартфона — день перестроится мгновенно без ручных правок.</p>
             <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Форматы консультаций</span><span>Синхронизация</span></div>
-              <div class="mt-overview-metrics"><span>Онлайн<b>Zoom</b></span><span>Очно<b>Кабинет</b></span><span>Доход<b>₽</b></span></div>
+              <div class="mt-overview-ui-head"><span>Управление расписанием</span><span>Drag & Drop</span></div>
+              <div class="mt-overview-metrics"><span>Перенос<b>1 клик</b></span><span>Устройства<b>iOS / Android</b></span><span>Контроль<b>24/7</b></span></div>
               <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
           </article>
@@ -4060,12 +4060,12 @@ def build_psychologist_page() -> str:
       <!-- PSYCHOLOGIST JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь клиента к психологу">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
-          <h2 class="mt-section-title">Один клиент частной практики. <span class="mt-hero-accent">Полный порядок в сеттинге.</span></h2>
-          <p class="mt-section-sub">Посмотрите, как система автоматизирует запись к психологу: от выбора времени в Telegram-боте до внесения предоплаты, автонапоминаний со ссылкой на Zoom и сохранения заметок.</p>
+          <h2 class="mt-section-title">Один клиент частной практики. <span class="mt-hero-accent">Полный порядок в расписании.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует запись к психологу: от выбора времени на странице бронирования до ответов на вводные вопросы, автонапоминаний и сохранения заметок.</p>
         </div>
 
         <div class="mt-journey-example" aria-label="Пример прохождения консультации" data-mt-reveal data-mt-delay="80">
-          <span>Пример</span><strong>Индивидуальная онлайн-консультация</strong><span>Длительность 50 минут + 10 минут буфер</span>
+          <span>Пример</span><strong>Индивидуальная консультация</strong><span>Длительность 50 минут + 10 минут буфер на заметки</span>
         </div>
 
         <div class="mt-journey-list">
@@ -4073,8 +4073,8 @@ def build_psychologist_page() -> str:
             <div class="mt-journey-index">01</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Клиент</span>
-              <h3>Выбор формата и свободного слота в боте за 30 секунд</h3>
-              <p>Клиент переходит по ссылке в вашем Telegram-канале или соцсетях, выбирает формат (онлайн или очный прием) и нажимает на свободное окно в актуальном графике.</p>
+              <h3>Выбор услуги и удобного слота на странице записи 24/7</h3>
+              <p>Клиент переходит по вашей короткой ссылке в соцсетях или мессенджере, выбирает онлайн-консультацию или очный приём и видит только актуальные свободные слоты.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования консультации">
               <div class="mt-journey-proof-head">
@@ -4082,7 +4082,7 @@ def build_psychologist_page() -> str:
                 <span class="mt-journey-proof-badge">Слот выбран</span>
               </div>
               <div class="mt-journey-proof-row"><span>Клиент</span><strong>Анна К.</strong></div>
-              <div class="mt-journey-proof-row"><span>Формат</span><strong>Онлайн-консультация (Zoom)</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Индивидуальная консультация (50 мин)</strong></div>
               <div class="mt-journey-proof-row"><span>Время</span><strong>Среда, 10:00 – 10:50</strong></div>
             </div>
           </article>
@@ -4090,18 +4090,18 @@ def build_psychologist_page() -> str:
           <article class="mt-journey-step">
             <div class="mt-journey-index">02</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Оплата и сеттинг</span>
-              <h3>100% онлайн-предоплата и принятие правил отмены</h3>
-              <p>Клиент оплачивает консультацию через СБП или банковскую карту прямо в интерфейсе и соглашается с правилом отмены за 24 часа. Слот моментально блокируется в вашем календаре.</p>
+              <span class="mt-journey-actor">Форма приёма</span>
+              <h3>Ответы на вводные вопросы и мгновенное подтверждение</h3>
+              <p>Клиент указывает контактные данные, кратко описывает свой запрос и сразу получает подтверждение записи. Слот автоматически блокируется в вашем календаре.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Подтверждение оплаты">
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Оплата #4912</span>
-                <span class="mt-journey-proof-badge">Оплачено 100%</span>
+                <span class="mt-journey-proof-title">Запись #4912</span>
+                <span class="mt-journey-proof-badge">Подтверждена</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Сумма</span><strong>4 000 ₽ через СБП</strong></div>
-              <div class="mt-journey-proof-row"><span>Сеттинг</span><strong>Отмена за 24ч принята</strong></div>
-              <div class="mt-journey-proof-row"><span>Статус</span><strong>Запись подтверждена</strong></div>
+              <div class="mt-journey-proof-row"><span>Формат</span><strong>Онлайн-звонок (Zoom)</strong></div>
+              <div class="mt-journey-proof-row"><span>Запрос</span><strong>Тревожность и выгорание</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Внесено в расписание</strong></div>
             </div>
           </article>
 
@@ -4109,17 +4109,17 @@ def build_psychologist_page() -> str:
             <div class="mt-journey-index">03</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Система</span>
-              <h3>Автонапоминания и ссылка на видеовстречу за 2 часа</h3>
-              <p>Бот отправляет напоминание накануне и за 2 часа до начала консультации, прикрепляя прямую ссылку на звонок в Zoom или схему прохода в кабинет при очной встрече.</p>
+              <h3>Дружеские автонапоминания накануне консультации</h3>
+              <p>Система заблаговременно отправляет клиенту напоминание по E-mail, в мессенджер или по SMS с деталями встречи (ссылка на видеозвонок или схема прохода в кабинет).</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
-                <span class="mt-journey-proof-badge">Доставлено</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Тайминг</span><strong>За 2 часа до сессии</strong></div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Мессенджер / E-mail / SMS</strong></div>
               <div class="mt-journey-proof-row"><span>Ссылка</span><strong>zoom.us/j/molniya-4912</strong></div>
-              <div class="mt-journey-proof-row"><span>Статус</span><strong>Клиент подтвердил подключение</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Клиент знает, где и когда быть</strong></div>
             </div>
           </article>
 
@@ -4127,17 +4127,17 @@ def build_psychologist_page() -> str:
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Психолог</span>
-              <h3>Сессия 50 минут, заметки в буфер и учет доходов</h3>
-              <p>Вы спокойно проводите сессию, вносите ключевые инсайты в защищенную карточку клиента во время 10-минутного интервала. Доход мгновенно отражается в финансовой аналитике.</p>
+              <h3>Сессия, личные заметки в буфер и история встреч</h3>
+              <p>Вы спокойно проводите сессию, фиксируете важные тезисы в карточке клиента во время 10-минутного буфера. Вся история обращений доступна в едином окне в любой момент.</p>
             </div>
             <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сессии">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Завершение встречи</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Длительность</span><strong>50 мин консультация + 10 мин буфер</strong></div>
-              <div class="mt-journey-proof-row"><span>Заметки</span><strong>Сохранены в карточке клиента</strong></div>
-              <div class="mt-journey-proof-row"><span>Доход</span><strong>+4 000 ₽ в баланс практики</strong></div>
+              <div class="mt-journey-proof-row"><span>Тайминг</span><strong>50 мин сессия + 10 мин буфер</strong></div>
+              <div class="mt-journey-proof-row"><span>Заметки</span><strong>Сохранены в профиле клиента</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий шаг</span><strong>Клиент записан на повторный приём</strong></div>
             </div>
           </article>
         </div>
@@ -4150,7 +4150,7 @@ def build_psychologist_page() -> str:
             <div class="mt-case-tag">⚡ Кейс частной психологической практики</div>
             <h2 class="mt-case-title">Дарья Соколова, частнопрактикующий психолог</h2>
             <blockquote class="mt-case-quote">
-              «Раньше до 20% времени уходило на согласование слотов в WhatsApp и переживания из-за отмен за пару часов до сессии. С Молнией запись перешла в личного бота с обязательной предоплатой. Никаких пустых окон, опозданий и неловких разговоров про деньги — система делает это деликатно и автоматически.»
+              «Раньше до 2 часов в день уходило на бесконечные переписки в WhatsApp с согласованием времени и напоминаниями. С Молнией у меня появилась персональная страница записи: клиенты сами выбирают свободные слоты в удобное время. Больше никаких накладок, а буфер между консультациями позволяет спокойно вести заметки и не выгорать.»
             </blockquote>
             <div class="mt-case-author">
               Дарья Соколова <span>· Клинический психолог, КПТ-терапевт, <span style="white-space:nowrap">Москва</span></span>
@@ -4158,16 +4158,16 @@ def build_psychologist_page() -> str:
           </div>
           <div class="mt-case-stats">
             <div class="mt-case-stat">
-              <span class="mt-case-num">0 ₽</span>
-              <span class="mt-case-label">Потерь от отмен день-в-день благодаря правилу предоплаты</span>
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок в расписании благодаря автоматическим буферам между сессиями</span>
             </div>
             <div class="mt-case-stat">
-              <span class="mt-case-num">3.5 ч</span>
-              <span class="mt-case-label">В неделю сэкономлено на переписке и подборе слотов в чатах</span>
+              <span class="mt-case-num">2 ч</span>
+              <span class="mt-case-label">В день сэкономлено на ручной координации и переписках о времени</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">100%</span>
-              <span class="mt-case-label">Клиентов бронируют консультации через личного бота</span>
+              <span class="mt-case-label">Записей и заметок по клиентам хранятся в одном удобном профиле</span>
             </div>
           </div>
         </div>
@@ -4181,7 +4181,7 @@ def build_psychologist_page() -> str:
         <div class="mt-before-start-grid">
           <article class="mt-before-start-highlight">
             <h3>Попробуйте Молнию для своей частной практики</h3>
-            <p>Бесплатно поможем подключить личного Telegram-бота, настроить расписание консультаций с буферными интервалами и онлайн-предоплату. Начните работу без потери клиентов.</p>
+            <p>Бесплатно поможем настроить персональную страницу записи, буферные интервалы между сессиями, форму приёма под ваши консультации и перенести базу клиентов.</p>
             <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
           </article>
           <div class="mt-before-start-questions">
@@ -4215,11 +4215,102 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
     return page_html
+
+
+def build_thanks_page() -> str:
+    """Builds the branded Thank You page with direct presentation download."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спасибо за заявку — Молния Тех</title>
+  <meta name="description" content="Спасибо за обращение в Молнию! Ваша заявка успешно принята. Скачайте подробную презентацию возможностей платформы.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/thanks">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261021-psychologist">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- THANKS MAIN -->
+      <main class="mt-404-main">
+        <div class="mt-404-container">
+          <div class="mt-404-spark" aria-hidden="true" style="margin-bottom: 20px;">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h1 class="mt-404-title">Спасибо! Ваша заявка принята</h1>
+          <p class="mt-404-desc">
+            Мы свяжемся с вами в ближайшее время по указанным контактам.
+            А пока изучите подробную презентацию: как устроена онлайн-запись 24/7, управление расписанием и единая база клиентов.
+          </p>
+
+          <div class="mt-404-actions" style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+            <a class="mt-btn mt-btn-hero" href="/assets/docs/molniya-presentation.pdf" download="Презентация Молния Тех.pdf" style="display:inline-flex; align-items:center; gap:10px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Скачать презентацию Молнии (PDF, 1.3 МБ)
+            </a>
+            <a href="/" class="mt-link-subtle" style="font-size:14px; text-decoration:none;">Вернуться на главную страницу →</a>
+          </div>
+
+          <div class="mt-404-help" style="margin-top:36px;">
+            Срочный вопрос или хотите начать быстрее?
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в Telegram напрямую →</a>
+          </div>
+        </div>
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261021-thanks"></script>
+</body>
+</html>
+"""
 
 
 def build_education_page() -> str:
@@ -4736,7 +4827,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -5253,7 +5344,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -5770,7 +5861,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -6876,7 +6967,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -7462,7 +7553,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 '''
@@ -8060,7 +8151,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 """
@@ -8157,7 +8248,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 """
@@ -8416,7 +8507,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 """
@@ -8759,7 +8850,98 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261002-formsource"></script>
+  <script src="/script.js?v=20261021-thanks"></script>
+</body>
+</html>
+"""
+
+
+def build_thanks_page() -> str:
+    """Builds the branded Thank You page with direct presentation download."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спасибо за заявку — Молния Тех</title>
+  <meta name="description" content="Спасибо за обращение в Молнию! Ваша заявка успешно принята. Скачайте подробную презентацию возможностей платформы.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/thanks">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261021-psychologist">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- THANKS MAIN -->
+      <main class="mt-404-main">
+        <div class="mt-404-container">
+          <div class="mt-404-spark" aria-hidden="true" style="margin-bottom: 20px;">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h1 class="mt-404-title">Спасибо! Ваша заявка принята</h1>
+          <p class="mt-404-desc">
+            Мы свяжемся с вами в ближайшее время по указанным контактам.
+            А пока изучите подробную презентацию: как устроена онлайн-запись 24/7, управление расписанием и единая база клиентов.
+          </p>
+
+          <div class="mt-404-actions" style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+            <a class="mt-btn mt-btn-hero" href="/assets/docs/molniya-presentation.pdf" download="Презентация Молния Тех.pdf" style="display:inline-flex; align-items:center; gap:10px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Скачать презентацию Молнии (PDF, 1.3 МБ)
+            </a>
+            <a href="/" class="mt-link-subtle" style="font-size:14px; text-decoration:none;">Вернуться на главную страницу →</a>
+          </div>
+
+          <div class="mt-404-help" style="margin-top:36px;">
+            Срочный вопрос или хотите начать быстрее?
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в Telegram напрямую →</a>
+          </div>
+        </div>
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261021-thanks"></script>
 </body>
 </html>
 """
@@ -8850,6 +9032,11 @@ def main():
     privacy_html = build_privacy_page()
     (ROOT_DIR / "privacy.html").write_text(privacy_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'privacy.html'}")
+
+    print("Building thank you page: /thanks.html...")
+    thanks_html = build_thanks_page()
+    (ROOT_DIR / "thanks.html").write_text(thanks_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'thanks.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
