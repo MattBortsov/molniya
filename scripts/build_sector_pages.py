@@ -10434,6 +10434,10 @@ def build_trainers_page() -> str:
               <span class="mt-case-num">2.5 ч</span>
               <span class="mt-case-label">В день сэкономлено на рутинных ответах в чатах и согласовании времени</span>
             </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Оплаченных пакетов и тренировок учтены без бумажных блокнотов</span>
+            </div>
           </div>
         </div>
       </section>
@@ -10930,6 +10934,10 @@ def build_martial_arts_page() -> str:
             <div class="mt-case-stat">
               <span class="mt-case-num">0</span>
               <span class="mt-case-label">Случаев переполнения татами благодаря автоматическому лимиту мест</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">3 ч</span>
+              <span class="mt-case-label">В день сэкономлено администратором на подтверждениях и ручной записи групп</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">100%</span>
