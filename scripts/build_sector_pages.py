@@ -3645,6 +3645,13 @@ def build_cleaning_page() -> str:
               <div class="mt-subniche-desc">Калькулятор створок и этажности, мытьё москитных сеток, откосов и витрин без разводов.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/pest-control">
+            <div class="mt-subniche-icon">🛡️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Службы дезинсекции и дезинфекции <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Обработка холодным туманом, гарантийные талоны 12 мес, учёт химикатов и акты СанПиН.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -9018,6 +9025,17 @@ def sync_sitemap():
         content = content.replace("</urlset>", url_entry + "</urlset>")
         changed = True
         print("Added /window-cleaning to sitemap.xml")
+
+    if "https://molniya-tech.ru/pest-control" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/pest-control</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /pest-control to sitemap.xml")
 
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
@@ -14970,6 +14988,481 @@ def build_window_cleaning_page() -> str:
 
 
 
+def build_pest_control_page() -> str:
+    """Builds the complete pest control and disinfection service micro-landing page."""
+    nav_html = render_nav_html(active_item="cleaning", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "pest-control",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для службы дезинсекции',
+        "Оставьте контакты — поможем настроить калькулятор обработки помещений, маршруты дезинфекторов, электронные гарантийные талоны и учёт препаратов.",
+    )
+
+    title = "Онлайн-запись на дезинсекцию и дезинфекцию — CRM службы СЭС"
+    description = (
+        "Программа для служб дезинсекции, дезинфекции и дератизации: онлайн-запись 24/7, "
+        "маршруты выездных мастеров, электронные гарантийные талоны и акты СанПиН."
+    )
+    canonical = "https://molniya-tech.ru/pest-control"
+
+    faqs = [
+        (
+            "Как клиенты рассчитывают стоимость и вызывают дезинфектора через Молнию?",
+            "Вы получаете конфиденциальный виджет онлайн-записи для сайта, Telegram, группы VK и карт. Клиент выбирает вредителей (клопы, тараканы, блохи, муравьи, грызуны, плесень или клещи на участке), тип объекта (1-2-3 комнатная квартира, частный дом, общепит, склад, офис), площадь и метод обработки (холодный туман, горячий туман, барьерная защита). Программа мгновенно рассчитывает стоимость и предлагает свободные окна.",
+        ),
+        (
+            "Как система отправляет клиенту памятку по подготовке квартиры к дезинсекции?",
+            "Сразу после подтверждения брони сервисный бот отправляет клиенту пошаговую инструкцию: убрать продукты питания и посуду в пакеты, изолировать домашних животных, отодвинуть мебель от стен и покинуть помещение на 2–3 часа во время и после распыления. Это защищает жильцов и экономит время мастера на месте.",
+        ),
+        (
+            "Как устроен учет гарантийных талонов (от 12 месяцев) и повторных выездов?",
+            "Программа автоматически формирует электронный гарантийный талон с уникальным номером, датой обработки и списком использованных препаратов (двойная дозировка, микрокапсулы). Если в течение гарантийного срока клиент обращается повторно, диспетчер видит всю историю первичной обработки и оформляет льготный гарантийный выезд.",
+        ),
+        (
+            "Как формируются акты обследования и дезинфекции для Роспотребнадзора (B2B)?",
+            "Для коммерческих объектов (рестораны, кафе, склады, пищевые производства) Молния генерирует официальные акты санитарно-эпидемиологического обследования и дезинфекционных работ по форме СанПиН с указанием концентрации действующих веществ. Документы подписываются онлайн и готовы к проверкам надзорных органов.",
+        ),
+        (
+            "Как система распределяет выезды дезинфекторов по районам с ULV-генераторами?",
+            "Программа группирует адреса по территориальным секторам, закладывая 30–45 минут на дорогу между выездами и время на проветривание респираторов и промывку оборудования. Мастер видит в смартфоне адрес, состав паразитов, этаж и рекомендованный химический состав.",
+        ),
+        (
+            "Как контролировать склад инсектицидов и расход действующего вещества?",
+            "Система автоматически списывает препараты (хлорпирифос, циперметрин, неоникотиноиды) со склада по технологическим нормам расхода на квадратный метр или количество комнат. Вы защищены от перерасхода и хищения дорогостоящей химии.",
+        ),
+        (
+            "Как бесплатно перенести клиентскую базу и договоры из Excel или старой программы?",
+            "Служба заботы Молнии бесплатно настроит прайс-лист на дезинсекцию, дезинфекцию и дератизацию, шаблоны актов и перенесет базу заказчиков и гарантийных обязательств из таблиц или CRM за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Клининг", "item": "https://molniya-tech.ru/cleaning"},
+                {"@type": "ListItem", "position": 3, "name": "Дезинсекция и дезинфекция", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для служб дезинсекции и дезинфекции",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и калькулятор дезинсекции для службы СЭС",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- PEST CONTROL HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для дезинсекции и дезинфекции: <span class="mt-hero-accent">онлайн-запись и акты СанПиН</span></h1>
+          <p class="mt-hero-desc">Конфиденциальный калькулятор обработки квартир и бизнеса 24/7, маршруты дезинфекторов с холодным туманом, электронные гарантийные талоны и учёт препаратов на складе.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_pest_control" target="_blank" rel="noopener">Подключить службу СЭС</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для служб дезинсекции и дезинфекции">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Квартиры и бизнес</span>
+                <span class="mt-facet-note">дезинсекция, дезинфекция, дератизация</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Холодный туман</span>
+                <span class="mt-facet-note">ULV-обработка и барьерная защита</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Гарантия 12 мес</span>
+                <span class="mt-facet-note">электронный талон и повторные выезды</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Акты СанПиН</span>
+                <span class="mt-facet-note">документы для Роспотребнадзора</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для дезинсекции: расписание выездов дезинфекторов" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронный график выездов дезинфекторов, адреса, типы вредителей и статусы обработки в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="График дезинфекторов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый заказ, дезинфектор и препарат <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Диспетчеры и мастера видят маршруты по районам города, состав вредителей, дозировку препаратов и статус обработки на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Дезинфектор Роман В. · Холодный туман ULV · Невский р-н</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Обработка</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Квартира 2-комнатная (52 м²) · Уничтожение клопов</div>
+                <div class="mt-auto-car-tier">Холодный туман + Микрокапсулированный барьер · Гарантия 12 мес</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🛡️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплексная дезинсекция (1.5 часа)</span>
+              <span class="mt-auto-price">4 200 ₽ · В работе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Дезинфектор Роман В. · Дорога и промывка ULV</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв на дорогу (40 мин)</div>
+                <div class="mt-auto-car-tier">Переезд: ул. Дыбенко → пр. Большевиков, смена фильтров респиратора</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буфер на маршрут</span>
+              <span class="mt-auto-price">До 16:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Дезинфектор Роман В. · Ресторан «Мята» (пр. Большевиков)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Кухня и склад 120 м² · Дератизация + Дезинсекция</div>
+                <div class="mt-auto-car-tier">Акт СанПиН для Роспотребнадзора · Оплата по счету B2B</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🏢</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Пест-контроль B2B</span>
+              <span class="mt-auto-price">8 500 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PEST CONTROL OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для дезинсекции" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы службы дезинсекции и дезинфекции <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, накрутки цен на пороге и бумажной волокиты: анонимный онлайн-калькулятор 24/7, маршруты мастеров, акты СанПиН и складской учет препаратов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Конфиденциальный калькулятор 24/7 <span class="mt-overview-hook">без неловких звонков</span></h3>
+            <p>Клиент сам выбирает тип вредителей (клопы, тараканы, грызуны), количество комнат или метраж склада и метод обработки. Точная цена фиксируется без навязывания лишних доплат на пороге.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Калькулятор СЭС</span><span>Анонимный заказ</span></div>
+              <div class="mt-overview-calendar"><span>14:00</span><div class="mt-overview-slot">Клопы 2-комн. <small>4 200 ₽</small></div><span>15:30</span><div class="mt-overview-slot mt-overview-slot--light">Дорога <small>40 мин</small></div><span>16:10</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Маршруты мастеров с туманом <span class="mt-overview-hook">по районам без задержек</span></h3>
+            <p>Система распределяет заявки по территориальным секторам, закладывая 30–45 минут на дорогу и подготовку оборудования. Дезинфекторы прибывают строго вовремя в защитной экипировке.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Логистика выездов</span><span>Без холостого пробега</span></div>
+              <div class="mt-overview-price-row"><span>Невский район</span><strong>3 выезда в секторе</strong></div>
+              <div class="mt-overview-price-row"><span>Буфер на переезд</span><strong>40 минут в графике</strong></div>
+              <div class="mt-overview-price-tag">Экономия до 2 часов на разъездах в день</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Электронные гарантийные талоны <span class="mt-overview-hook">и контроль повторных выездов</span></h3>
+            <p>Программа фиксирует дату обработки, дозировку препарата и выдает клиенту электронный талон гарантии на 12 месяцев. При повторном обращении диспетчер моментально видит всю историю наряда.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Гарантия 12 месяцев</span><span>Электронный талон</span></div>
+              <div class="mt-overview-message">
+                Наряд #8410: Препарат «Ксулат C25» (микрокапсулы). Гарантийный талон отправлен клиенту в Telegram.
+                <span class="mt-overview-reaction">📄</span>
+              </div>
+              <div class="mt-overview-client-row"><span>История обработки</span><strong>Защита от спорных гарантий →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Акты СанПиН для Роспотребнадзора <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Автоматическое формирование журналов учета дезинфекции и актов выполненных работ по нормам СанПиН для ресторанов, кафе и пищевых складов. Электронная подпись и выгрузка в PDF.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Документы B2B</span><span>Нормы СанПиН</span></div>
+              <div class="mt-overview-stages"><span>Обследование</span><i></i><span>Акт</span><i></i><span>Журнал</span></div>
+              <div class="mt-overview-check">✓ <span>Акт дезинфекции сформирован по форме</span></div>
+              <div class="mt-overview-check">✓ <span>Документы готовы к проверке надзора</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад инсектицидов и списание <span class="mt-overview-hook">по нормам расхода</span></h3>
+            <p>Автоматическое списание концентратов препаратов с учетом обрабатываемой площади. Полная прозрачность остатков на складе и защита от нецелевого расхода дорогостоящей химии.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Складской учёт химии</span><span>Нормы списания</span></div>
+              <div class="mt-overview-metrics"><span>Препараты<b>100% учёт</b></span><span>ULV-туман<b>6 генераторов</b></span><span>Хищения<b>0 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- PEST CONTROL JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь заказа дезинсекции">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один выезд на дезинсекцию. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу службы СЭС: от анонимного заказа на сайте до памятки жильцам, ULV-обработки и выдачи электронного гарантийного талона.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заказа" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Уничтожение клопов в 2-комнатной квартире (52 м²)</strong><span>Холодный туман ULV + Микрокапсулированный барьер · Гарантия 12 месяцев</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Анонимный выбор паразитов, метража и даты выезда на сайте 24/7</h3>
+              <p>Клиент указывает 2 комнаты, выбирает обработку от постельных клопов холодным туманом с барьером и видит точную цену 4 200 ₽ без звонков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ обработки</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Анонимный заказ (ул. Дыбенко)</strong></div>
+              <div class="mt-journey-proof-row"><span>Объект</span><strong>Квартира 2-комн. (Клопы + Барьер)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 14:00 – 15:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация наряда, подбор препарата и назначение мастера</h3>
+              <p>Система закрепляет заказ за мастером Романом В., работающим в Невском районе, резервирует слот и списывает технологическую норму концентрата.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Наряд #9120</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>4 200 ₽ (с гарантией)</strong></div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Роман В. (ULV-генератор #1)</strong></div>
+              <div class="mt-journey-proof-row"><span>Препарат</span><strong>Микрокапсулы (150 мл списано)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Памятка по подготовке квартиры и маршрутный лист дезинфектора</h3>
+              <p>Сервисный бот отправляет клиенту чек-лист подготовки (убрать посуду, продукты, животных), а мастеру — адрес, код домофона и дозировку химии.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка жильцам</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Покинуть квартиру на 2.5 ч · Проветрить</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Квартира готова к приезду мастера</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Дезинфектор</span>
+              <h3>Осмотр очагов, обработка холодным туманом и гарантийный акт</h3>
+              <p>Мастер распыляет холодный туман, наносит барьер по периметру плинтусов и выписывает гарантийный талон на 12 месяцев. Начислено 40% за выезд.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог заказа</span>
+                <span class="mt-journey-proof-badge">Выполнено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>4 200 ₽ (Оплачено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Гарантия</span><strong>Талон #GT-9120 на 12 месяцев</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата мастера</span><strong>+1 680 ₽ (40% начислено)</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс службы дезинсекции" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс службы дезинсекции и пест-контроля</div>
+            <h2 class="mt-case-title">Олег Мельников, основатель службы СЭС «ЭкоБарьер»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше клиенты стеснялись звонить и выспрашивать про клопов по телефону, а мастера на объекте накручивали цены в 3 раза, вызывая волну негатива и отзывов. В Молнии клиенты оформляют конфиденциальный заказ на сайте за 1 минуту, а система автоматически отправляет памятку по подготовке продуктов и комнат. Число закрытых заявок выросло на 40%, а учет препаратов по нарядам спас нас от хищений концентратов на 180 000 ₽ в месяц.»
+            </blockquote>
+            <div class="mt-case-author">
+              Олег Мельников <span>· Основатель службы СЭС (8 дезинфекторов, B2C и B2B контракты), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Конфликтов по стоимости благодаря фиксированному расчету в онлайн-виджете</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Точность складского учета расхода концентратов инсектицидов по нарядам</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+40%</span>
+              <span class="mt-case-label">Рост числа заказов благодаря анонимной онлайн-записи и памятке подготовки</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PEST CONTROL FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для дезинсекции</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своей службы дезинсекции</h3>
+            <p>Бесплатно поможем настроить калькулятор обработки помещений, районную маршрутизацию, акты СанПиН и складской учет инсектицидов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -15060,6 +15553,11 @@ def main():
     window_cleaning_html = build_window_cleaning_page()
     (ROOT_DIR / "window-cleaning.html").write_text(window_cleaning_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'window-cleaning.html'}")
+
+    print("Building sector landing page: /pest-control...")
+    pest_control_html = build_pest_control_page()
+    (ROOT_DIR / "pest-control.html").write_text(pest_control_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'pest-control.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
