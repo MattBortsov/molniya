@@ -12,3 +12,8 @@ __pycache__/
 # состояние cron-скрипта IndexNow — специфично для сервера, не для git
 .indexnow-seen
 brag-output/
+
+# Локальная память и инструкции AI-ассистентов
+GEMINI.md
+CLAUDE.md
+
