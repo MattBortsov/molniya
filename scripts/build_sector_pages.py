@@ -2550,6 +2550,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Сетка игр со свободным перемещением, учёт шлемов и контроллеров, буфер на дезинфекцию и пакеты праздников.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/karting">
+            <div class="mt-subniche-icon">🏎️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Картинг-центры и автодромы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Сетка 10-минутных заездов, учёт детских и взрослых картов, телеметрия круга и мини-гран-при.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8900,6 +8907,17 @@ def sync_sitemap():
         changed = True
         print("Added /vr-arena to sitemap.xml")
 
+    if "https://molniya-tech.ru/karting" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/karting</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /karting to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -12001,6 +12019,481 @@ def build_vr_arena_page() -> str:
 
 
 
+def build_karting_page() -> str:
+    """Builds the complete karting centers and indoor tracks micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "karting",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего картинг-центра',
+        "Оставьте контакты — поможем настроить расписание 10-минутных заездов, парк техники, буфер на пит-лейне и форму онлайн-бронирования.",
+    )
+
+    title = "Онлайн-запись на картинг и в картинг-центр — CRM и расписание заездов"
+    description = (
+        "Программа для картинг-центров и автодромов: онлайн-запись на заезды 24/7, "
+        "учёт детских и взрослых картов, буфер на пит-лейне, бронь турниров и напоминания."
+    )
+    canonical = "https://molniya-tech.ru/karting"
+
+    faqs = [
+        (
+            "Как пилоты и компании бронируют заезды на картинг через Молнию?",
+            "Вы получаете персональную страницу онлайн-записи с описанием конфигурации трассы, парка картов (детские, взрослые Honda GX, двухместные Twin-карты) и форматов (прокатные сессии по 10 минут, пакеты заездов, аренда трассы под турнир). Ссылка размещается на сайте, в Telegram, соцсетях или картах. Гости видят только открытые свободные слоты и бронируют заезд за 1 минуту.",
+        ),
+        (
+            "Как система распределяет детские и взрослые карты в заездах в целях безопасности?",
+            "В расписании можно настроить правила совместимости: запретить одновременный выезд детских картов со взрослыми мощными машинами или выделить отдельные детские сессии. Программа контролирует лимит машин на трассе (например, строго до 8–10 картов) и исключает опасный перегруз трека.",
+        ),
+        (
+            "Как настраивается обязательный буфер между заездами на пит-лейне?",
+            "Система автоматически закладывает технический перерыв (5–10 минут) между заездами. За это время маршалы и инструкторы успевают провести посадку и высадку пилотов, отрегулировать сиденья и педальные узлы, выдать шлемы и провести инструктаж по технике безопасности и флагам.",
+        ),
+        (
+            "Как работает бронирование корпоративных турниров и пакетов «Мини Гран-при»?",
+            "Организаторы могут забронировать аренду всей трассы на 1–2 часа с проведением полноценного гоночного турнира: разминка, квалификация на лучшее время круга, финальный заезд с общего старта по светофору и награждение на подиуме. Система блокирует трассу на всё время мероприятия единым заказом.",
+        ),
+        (
+            "Можно ли бронировать лаунж-зону или банкетную комнату вместе с заездами?",
+            "Да. При оформлении праздника (например, детского дня рождения или корпоратива) клиенты могут добавить аренду лаунж-зоны с видом на трек для пиццы и торта. Программа резервирует комнату отдыха до или после гоночной сессии, защищая от накладок между разными праздничными компаниями.",
+        ),
+        (
+            "Как система напоминает гостям о заезде и предотвращает опоздания на инструктаж?",
+            "Сразу после бронирования гость получает подтверждение, а за 24 и 2 часа до старта — напоминание в Telegram или по SMS с требованием приехать за 15 минут до заезда для прохождения инструктажа и подбора экипировки (шлем, подшлемник, защита шеи). Опоздания на пит-лейн сокращаются на 85%.",
+        ),
+        (
+            "Как быстро перенести расписание и базу пилотов из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно переносит конфигурацию вашей трассы, парк картов, сетку прокатных заездов, прайс-лист турниров и базу постоянных пилотов с клубными правами. Перенос занимает 15 минут и проходит без прерывания приема броней на сайте.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись на картинг", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для картинг-центров",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания заездов картинг-центра",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- KARTING HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для картинг-центров: <span class="mt-hero-accent">онлайн-запись и управление заездами</span></h1>
+          <p class="mt-hero-desc">Интерактивная сетка заездов 24/7, учёт детских и взрослых картов, автоматический буфер на пит-лейне, бронь турниров Мини Гран-при и напоминания пилотам без очередей.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_karting" target="_blank" rel="noopener">Подключить автодром</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для картинг-центров">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Заезды 10 мин</span>
+                <span class="mt-facet-note">сетка сессий без накладок на треке</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Парк картов</span>
+                <span class="mt-facet-note">детские, взрослые и twin-карты</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Буфер на пит-лейне</span>
+                <span class="mt-facet-note">посадка, экипировка и инструктаж</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Турниры и лаунж</span>
+                <span class="mt-facet-note">Мини Гран-при, подиум и банкеты</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для картинг-центров: расписание заездов и бронирование картов" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание заездов на треке, статус картов и бронь пит-лейна в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание заездов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый заезд, карт и пилот <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Маршалы трассы и администраторы видят текущий заезд на треке, статус готовности пит-лейна и расписание следующих сессий на любом планшете.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">15:10 · Прокатный заезд · Взрослые</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">На трассе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">8 картов Honda GX270 · 7 мин в заезде</div>
+                <div class="mt-auto-car-tier">Лучший круг: Карт #4 (31.42 с) · Маршал: Алексей</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🏎️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сессия 10 минут</span>
+              <span class="mt-auto-price">9 600 ₽ (8 пилотов)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">15:20 · Пит-лейн · Посадка и экипировка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (10 мин)</div>
+                <div class="mt-auto-car-tier">Смена пилотов, выдача шлемов, регулировка педалей</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Подготовка заезда</span>
+              <span class="mt-auto-price">До 15:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">15:30 · Детский заезд · Рост 120+ см</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">6 детских картов GX160 · Инструктор на треке</div>
+                <div class="mt-auto-car-tier">Ограничитель скорости включен · Оплата онлайн</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🏁</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Детская сессия 10 мин</span>
+              <span class="mt-auto-price">6 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KARTING OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для картинг-центров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы картинг-центра и автодрома <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, живых очередей и путаницы на кассе: онлайн-расписание заездов 24/7, буфер на посадку пилотов, разделение детских и взрослых заездов и учет соревнований.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Сетка прокатных заездов <span class="mt-overview-hook">без очередей на пит-лейне</span></h3>
+            <p>Задайте точную длительность сессий (10 минут) с автоматическим буфером на посадку и инструктаж (5–10 минут). Пилоты выходят на трек строго по расписанию без задержек и давки у турникетов.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка заездов</span><span>Буфер 10 мин</span></div>
+              <div class="mt-overview-calendar"><span>15:10</span><div class="mt-overview-slot">Взрослый заезд <small>8 картов</small></div><span>15:20</span><div class="mt-overview-slot mt-overview-slot--light">Посадка пилотов <small>10 мин</small></div><span>15:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Виджет онлайн-записи 24/7 <span class="mt-overview-hook">в фирменном стиле автодрома</span></h3>
+            <p>Короткая ссылка для сайта, соцсетей или карт. Гости сами выбирают дату, время, тип заезда (детский, взрослый, двухместный карт) и оплачивают слоты онлайн, не теряя время в очереди на ресепшене.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Бронирование заезда</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Прокатный заезд (10 мин)</span><strong>Взрослый карт Honda GX270</strong></div>
+              <div class="mt-overview-price-row"><span>Короткая ссылка для соцсетей</span><strong>Мгновенное бронирование</strong></div>
+              <div class="mt-overview-price-tag">Пилоты бронируют слоты сами в любое время</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Контроль парка техники <span class="mt-overview-hook">и безопасность на треке</span></h3>
+            <p>Программа следит за лимитом машин на полотне и правилами безопасности: разделяет заезды детей и взрослых, учитывает двухместные карты и защищает от перегруза трассы сверх норматива.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Парк техники</span><span>Мониторинг трека</span></div>
+              <div class="mt-overview-message">
+                Заезд 15:30: 6 детских картов GX160 занято. Лимит 8 машин. Допуск взрослых заблокирован по правилам безопасности.
+                <span class="mt-overview-reaction">🏎️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Безопасность пилотов</span><strong>Контроль совместимости техники →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Корпоративные турниры и лаунж <span class="mt-overview-hook">в едином заказе</span></h3>
+            <p>Компании бронируют закрытие трассы под Мини Гран-при (разминка, квалификация, финал) и лаунж-зону для банкета в один клик. Система бронирует трек и зал единым заказом без пересечения с прокатом.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пакет «Мини Гран-при»</span><span>Трасса + Лаунж</span></div>
+              <div class="mt-overview-stages"><span>Квалификация</span><i></i><span>Финал</span><i></i><span>Подиум</span></div>
+              <div class="mt-overview-check">✓ <span>Трасса закрыта под турнир (1.5 часа)</span></div>
+              <div class="mt-overview-check">✓ <span>Лаунж-зона с видом на трек забронирована</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Табель смен маршалов и механиков <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Программа фиксирует количество выпущенных заездов и часов работы каждого маршала, инструктора и механика. В конце смены табель готов к расчету сдельной оплаты без ручных записей в тетрадях.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт работы команды</span><span>Цифровой табель</span></div>
+              <div class="mt-overview-metrics"><span>Заезды<b>48 в смене</b></span><span>Маршалы<b>4 на треке</b></span><span>Учёт<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- KARTING JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь пилота на заезд">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один заезд на треке. <span class="mt-hero-accent">Полный порядок на автодроме.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует картинг-центр: от выбора сессии на сайте до авто-буфера на пит-лейне и телеметрии лучшего круга.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заезда" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Прокатный заезд 8 пилотов (Honda GX270)</strong><span>Длительность 10 минут + 10 минут буфер на посадку, экипировку и инструктаж</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Пилот</span>
+              <h3>Выбор формата заезда, числа картов и слота на сайте 24/7</h3>
+              <p>Гость открывает страницу бронирования автодрома, выбирает взрослый прокат на 4 пилота и видит только реальные свободные заезды.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование заезда</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Компания</span><strong>Илья К. (4 пилота)</strong></div>
+              <div class="mt-journey-proof-row"><span>Техника</span><strong>Взрослые карты GX270 (10 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 15:10 – 15:20</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Аренда экипировки, доплата и фиксация предоплаты</h3>
+              <p>Пилоты выбирают подшлемники и комбинезоны, вносят предоплату онлайн, а система блокирует 4 карта в заезде без риска перегруза трассы.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ #5120</span>
+                <span class="mt-journey-proof-badge">Оплачено онлайн</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Заезд</span><strong>4 800 ₽ (4 карта по 1 200 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Экипировка</span><strong>4 подшлемника включено</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Слоты в заезде зафиксированы</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматические напоминания и тайминг прибытия в Telegram</h3>
+              <p>Сервисный бот отправляет пилоту точный маршрут к автодрому, напоминание приехать за 15 минут для инструктажа и требования к закрытой обуви.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Инструкция пилоту</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Инструктаж в 14:55 · Закрытая обувь</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Пилоты вовремя на пит-лейне</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Маршал & Система</span>
+              <h3>Проведение заезда, телеметрия круга и подготовка смены</h3>
+              <p>Заезд успешно финиширует по клетчатому флагу. 10-минутный буфер позволяет безопасно высадить пилотов и посадить следующую группу.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат заезда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог сессии</span>
+                <span class="mt-journey-proof-badge">Финиш</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Лучший круг</span><strong>Карт #4 · 31.42 с (Распечатано)</strong></div>
+              <div class="mt-journey-proof-row"><span>Табель смены</span><strong>Заезд учтен маршалам и механику</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер пит-лейна</span><strong>Посадка следующего заезда в 15:20</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс картинг-центра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс крытого картинг-центра</div>
+            <h2 class="mt-case-title">Сергей Новиков, управляющий картинг-центром «Apex Karting»</h2>
+            <blockquote class="mt-case-quote">
+              «По выходным у стойки администратора раньше стояла плотная живая очередь: люди спорили за места в ближайшем заезде, родители требовали пустить детей вместе со взрослыми, а старты сдвигались на 20 минут из-за долгой посадки на пит-лейне. С Молнией гости бронируют заезды онлайн, выбирая детский или взрослый заезд, а система жестко держит 10-минутный буфер между сессиями. Живая очередь исчезла, а пропускная способность трека выросла на 28%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Сергей Новиков <span>· Управляющий картинг-центром (трасса 450 м, 16 картов), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Задержек стартов благодаря автоматическому буферу на посадку пилотов</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">3 ч</span>
+              <span class="mt-case-label">В день сэкономлено администраторами на ручной рассадке и ответах в чатах</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+28%</span>
+              <span class="mt-case-label">Рост пропускной способности трассы и броней корпоративных турниров</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KARTING FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для картинг-центров</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего картинг-центра</h3>
+            <p>Бесплатно поможем настроить расписание заездов, лимиты картов на треке, буфер на пит-лейне, форму онлайн-записи и пакеты турниров.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -12061,6 +12554,11 @@ def main():
     vr_arena_html = build_vr_arena_page()
     (ROOT_DIR / "vr-arena.html").write_text(vr_arena_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'vr-arena.html'}")
+
+    print("Building sector landing page: /karting...")
+    karting_html = build_karting_page()
+    (ROOT_DIR / "karting.html").write_text(karting_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'karting.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
