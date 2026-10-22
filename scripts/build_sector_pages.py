@@ -1990,6 +1990,13 @@ def build_health_page() -> str:
               <div class="mt-subniche-desc">Персональный календарь тренировок, пакеты занятий, замеры прогресса, автонапоминания клиентам и ведение базы без блокнотов.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/martial-arts">
+            <div class="mt-subniche-icon">🥊</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Клубы единоборств и бокса <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Расписание рингов и татами, детские и взрослые группы, лимиты мест, учёт абонементов и заморозок на время сборов.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8794,6 +8801,17 @@ def sync_sitemap():
         changed = True
         print("Added /trainers to sitemap.xml")
 
+    if "https://molniya-tech.ru/martial-arts" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/martial-arts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /martial-arts to sitemap.xml")
+
     if "https://molniya-tech.ru/spaces" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/spaces</loc>
@@ -10341,6 +10359,390 @@ def build_trainers_page() -> str:
 
 
 
+def build_martial_arts_page() -> str:
+    """Builds the complete martial arts and boxing clubs micro-landing page."""
+    nav_html = render_nav_html(active_item="health", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "martial-arts",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для клуба единоборств',
+        "Оставьте контакты — покажем Молнию на примере вашего зала и поможем настроить сетку татами, рингов, учет детских и взрослых групп и абонементов.",
+    )
+
+    title = "Онлайн-запись в клуб единоборств и секцию бокса: CRM и расписание"
+    description = (
+        "Программа для клубов единоборств, секций бокса и MMA: "
+        "онлайн-запись спортсменов 24/7, расписание рингов и татами, учёт абонементов и напоминания."
+    )
+    canonical = "https://molniya-tech.ru/martial-arts"
+
+    faqs = [
+        (
+            "Как спортсмены и родители записываются на тренировки через Молнию?",
+            "Вы получаете персональную страницу записи клуба с вашим логотипом, фотографиями залов и перечнем направлений (классический бокс, кикбоксинг, тайский бокс/муай-тай, ММА, самбо, дзюдо, BJJ и грэпплинг). Ссылку можно разместить в Telegram, ВК, на сайте или отправить в родительские чаты. Спортсмен или родитель видит актуальное расписание, возрастные группы и записывается за 1 минуту без скачивания приложений.",
+        ),
+        (
+            "Как настраиваются лимиты мест в группах на татами и в ринге?",
+            "Для каждого направления и зала вы задаёте максимальное количество участников (например, строго 12 человек в ринговой зоне или 16 спортсменов на татами). Как только лимит исчерпан, запись на этот слот блокируется, что предотвращает давку на снарядах и травмоопасную скученность во время спаррингов.",
+        ),
+        (
+            "Как вести учёт абонементов (на 8, 12 тренировок, безлимит) и заморозок на время сборов?",
+            "В карточке спортсмена отображается тариф: разовое посещение, абонемент на количество занятий или безлимитная карта на месяц/год. При каждой отметке прихода тренировка списывается автоматически. Если боец уезжает на спортивные сборы, соревнования или заболел, администратор может заморозить абонемент в один клик на нужный срок.",
+        ),
+        (
+            "Можно ли вести учёт детских групп с контактами родителей и медицинскими справками?",
+            "Да. В профиле юного спортсмена фиксируются ФИО и телефоны обоих родителей, дата рождения, весовая категория, а также отметка о наличии действующей медицинской справки (допуска к контактным видам спорта) и согласия на участие в спаррингах.",
+        ),
+        (
+            "Как разделить индивидуальные тренировки тренеров и групповые занятия?",
+            "В расписании наглядно разграничены групповые тренировки по расписанию и персональная аренда ринга/ковра для индивидуальной работы с тренером на лапах или снарядах. Тренеры видят свои персональные слоты в личном календаре на смартфоне.",
+        ),
+        (
+            "Как работают автоматические напоминания перед тренировкой?",
+            "Накануне занятия спортсмен (или родитель ребёнка) получает автоматическое уведомление в Telegram, E-mail или по SMS с указанием времени тренировки, зала и напоминанием взять необходимую экипировку (бинты, капу, перчатки, щитки). Это снижает число пропусков и опозданий.",
+        ),
+        (
+            "Как быстро перенести базу бойцов и абонементы из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно помогает перенести список спортсменов, действующие абонементы с остатком тренировок и график тренеров из Excel, Google Таблиц или других CRM (YClients, Мой Класс, 1С). Перенос занимает 15 минут и не прерывает тренировочный процесс зала.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Здоровье и спорт", "item": "https://molniya-tech.ru/health"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись в клуб единоборств", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для клубов единоборств и секций бокса",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания залов единоборств",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Онлайн-запись и расписание<br><span class="mt-hero-accent">для клубов единоборств и бокса</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Персональная страница записи 24/7, сетка рингов и татами, учёт детских и взрослых групп, контроль абонементов и напоминания бойцам без рутины в чатах</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для клубов единоборств">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Лимиты залов</span>
+                <span class="mt-facet-note">контроль мест на татами и в ринге</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Доступно 24/7</span>
+                <span class="mt-facet-note">онлайн-запись бойцов без звонков</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Абонементы</span>
+                <span class="mt-facet-note">пакеты тренировок, безлимиты и заморозки</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Напоминания</span>
+                <span class="mt-facet-note">E-mail, мессенджер или SMS спортсменам</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клуба единоборств: расписание рингов, татами и учет спортсменов" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание тренировок бойцовского клуба и загрузка залов в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание рингов и татами" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый ринг, татами и группа <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Администратор и тренеры видят наполняемость групп, статус абонементов и свободные места на снарядах с любого устройства.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">09:00 · Ринг 1 · Персональный бокс: Лапы & Снаряды</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В ринге</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Артём В. · Тренер: Денис К.</div>
+                <div class="mt-auto-car-tier">Постановка удара и защита · Разовое занятие</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🥊</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Персональная тренировка</span>
+              <span class="mt-auto-price">Оплачено</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">16:30 · Татами 1 · Самбо и дзюдо (Дети 8–12 лет)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Полная группа</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Группа: Самбо Дети · Тренер: Руслан Б.</div>
+                <div class="mt-auto-car-tier">12 из 12 спортсменов · Справки проверены</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🥋</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Детская секция</span>
+              <span class="mt-auto-price">По абонементу</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">19:30 · Октагон & Татами 2 · BJJ No-Gi & Грэпплинг</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--hold">Осталось 2 места</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Взрослая группа · Тренер: Мурад А.</div>
+                <div class="mt-auto-car-tier">16 из 18 мест · Борьба в партере</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🤼‍♂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Вечерняя группа</span>
+              <span class="mt-auto-price">По абонементу</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENARIO CARDS -->
+      <section class="mt-section mt-section--flush-top" data-screen-label="Ключевые возможности">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Всё для управления клубом единоборств <span class="mt-hero-accent">в единой системе</span></h2>
+          <p class="mt-section-sub">Избавьтесь от рутины в тетрадях и WhatsApp: управляйте сеткой залов, учитывайте взносы и заморозки без ошибок.</p>
+        </div>
+
+        <div class="mt-features-grid">
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="60">
+            <div class="mt-scenario-card-badge">Залы и зоны</div>
+            <h3 class="mt-scenario-card-title">Расписание рингов, татами и снарядных зон</h3>
+            <p class="mt-scenario-card-desc">Настройте лимиты спортсменов для каждой зоны зала: ринга, борцовского ковра или мешков. Система контролирует количество записей, не допускает переполнения групп и сохраняет безопасную дистанцию для спаррингов и бросковой техники.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="120">
+            <div class="mt-scenario-card-badge">Абонементы</div>
+            <h3 class="mt-scenario-card-title">Учёт абонементов, безлимитов и заморозок</h3>
+            <p class="mt-scenario-card-desc">Автоматическое списание визитов при отметке входа спортсмена, учёт срока действия клубных карт и быстрая заморозка. Если боец уезжает на спортивные сборы или восстанавливается после травмы, администратор ставит заморозку в один клик.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="180">
+            <div class="mt-scenario-card-badge">Группы</div>
+            <h3 class="mt-scenario-card-title">Детские и взрослые группы: списки и допуски</h3>
+            <p class="mt-scenario-card-desc">Удобное разделение потоков: детские группы по возрастам (6–9 лет, 10–14 лет), новички, любители и выступающая сборная клуба. В карточке спортсмена сохраняются контакты родителей, допуски врача и согласия на спарринги.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="240">
+            <div class="mt-scenario-card-badge">Напоминания</div>
+            <h3 class="mt-scenario-card-title">Автонапоминания бойцам и родителям в Telegram</h3>
+            <p class="mt-scenario-card-desc">Сервисный Telegram-бот отправляет напоминание о тренировке за 24 и 2 часа до начала. Спортсмен не забудет форму, капу и бинты, а родители вовремя привезут ребёнка в зал. Число пропусков снижается до минимума.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MIGRATION BLOCK -->
+      <section class="mt-section mt-migration" data-screen-label="Быстрый старт" data-mt-reveal>
+        <div class="mt-migration-grid">
+          <div class="mt-migration-copy">
+            <h2 class="mt-section-title">Перенесите базу бойцов и абонементы <span class="mt-hero-accent">за 15 минут</span></h2>
+            <p class="mt-migration-lead">Служба заботы Молнии бесплатно перенесёт список спортсменов, действующие абонементы с остатком тренировок и график тренеров из Excel, Google Таблиц или другой CRM. Без остановки работы клуба и без потери клиентских контактов.</p>
+            <ul class="mt-migration-points">
+              <li>Импорт базы спортсменов и номеров родителей из любого источника</li>
+              <li>Перенос действующих абонементов и безлимитных карт клуба</li>
+              <li>Настройка зон (ринг, татами, октагон, мешки) и лимитов участников</li>
+              <li>Персональная ссылка на расписание клуба в день обращения</li>
+            </ul>
+          </div>
+          <div class="mt-migration-card">
+            <div class="mt-migration-badge">Бесплатный переход</div>
+            <div class="mt-migration-card-title">Поможем запустить расписание клуба сегодня</div>
+            <p class="mt-migration-card-desc">Оставьте заявку — специалист покажет систему на реальных тренировках, перенесёт списки спортсменов и настроит сетку залов.</p>
+            <a class="mt-btn mt-btn-hero" href="#contact">Подключить клуб бесплатно</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-section mt-faq" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Частые вопросы <span class="mt-overview-hook">клубов единоборств</span></h2>
+          <p class="mt-section-sub">Ответы на ключевые вопросы об онлайн-записи, контроле лимитов на татами и учёте абонементов.</p>
+        </div>
+
+        <div class="mt-faq-list">
+{faq_html}
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-final-cta" data-screen-label="Финальный призыв" data-mt-reveal>
+        <div class="mt-final-cta-card">
+          <div class="mt-final-cta-mark" aria-hidden="true">{BRAND_MARK_SVG}</div>
+          <h2 class="mt-final-cta-title">Наведите идеальный порядок в залах и тренировках</h2>
+          <p class="mt-final-cta-desc">Подключите онлайн-запись для клуба единоборств, забудьте о рутине в мессенджерах и сохраняйте полную загрузку каждого татами и ринга.</p>
+          <div class="mt-final-cta-actions">
+            <a class="mt-btn mt-btn-hero" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-accent" href="https://t.me/molniya_tex?start=sector_martial_arts" target="_blank" rel="noopener">Подключить клуб</a>
+          </div>
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -10386,6 +10788,11 @@ def main():
     trainers_html = build_trainers_page()
     (ROOT_DIR / "trainers.html").write_text(trainers_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'trainers.html'}")
+
+    print("Building sector landing page: /martial-arts...")
+    martial_arts_html = build_martial_arts_page()
+    (ROOT_DIR / "martial-arts.html").write_text(martial_arts_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'martial-arts.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
