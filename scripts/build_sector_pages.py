@@ -6380,16 +6380,22 @@ def build_pets_page() -> str:
         </div>
       </section>
 
-      <!-- FAQ SECTION -->
-      <section class="mt-section mt-faq" data-screen-label="Частые вопросы" id="faq" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Часто задаваемые вопросы</h2>
-          <p class="mt-section-sub">Ответы на главные вопросы владельцев и управляющих груминг-салонов.</p>
+      <!-- PETS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о программе для груминг-салонов</h2>
         </div>
-
-        <div class="mt-faq-list">
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего груминг-салона</h3>
+            <p>Бесплатно поможем настроить расписание столов и ванн, прайс-лист по породам, зарплаты мастеров и перенести базу хвостатых клиентов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
 {faq_html}
+          </div>
         </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- LEAD FORM -->
@@ -6897,16 +6903,22 @@ def build_repair_page() -> str:
         </div>
       </section>
 
-      <!-- FAQ SECTION -->
-      <section class="mt-section mt-faq" data-screen-label="Частые вопросы" id="faq" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Часто задаваемые вопросы</h2>
-          <p class="mt-section-sub">Ответы на главные вопросы владельцев и управляющих сервисных центров и мастерских.</p>
+      <!-- REPAIR FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о программе для сервисных центров и мастерских</h2>
         </div>
-
-        <div class="mt-faq-list">
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего сервисного центра</h3>
+            <p>Бесплатно поможем настроить журнал заказов, статусы ремонта, печать квитанций и перенести базу постоянных клиентов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
 {faq_html}
+          </div>
         </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- LEAD FORM -->
@@ -10426,29 +10438,22 @@ def build_trainers_page() -> str:
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section class="mt-section mt-faq" data-screen-label="Вопросы и ответы" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Частые вопросы <span class="mt-overview-hook">персональных тренеров</span></h2>
-          <p class="mt-section-sub">Ответы на ключевые вопросы об онлайн-записи, учёте пакетов занятий и контроле графика тренировок.</p>
+      <!-- TRAINERS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для персональных тренеров</h2>
         </div>
-
-        <div class="mt-faq-list">
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию в своей работе тренера</h3>
+            <p>Бесплатно поможем настроить календарь тренировок, баланс пакетов занятий, персональную страницу записи и перенести базу подопечных.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
 {faq_html}
-        </div>
-      </section>
-
-      <!-- FINAL CTA -->
-      <section class="mt-section mt-final-cta" data-screen-label="Финальный призыв" data-mt-reveal>
-        <div class="mt-final-cta-card">
-          <div class="mt-final-cta-mark" aria-hidden="true">{BRAND_MARK_SVG}</div>
-          <h2 class="mt-final-cta-title">Наведите идеальный порядок в тренировках и записях</h2>
-          <p class="mt-final-cta-desc">Подключите персональную страницу записи, забудьте о бесконечных переписках в чатах и контролируйте оплату каждого занятия.</p>
-          <div class="mt-final-cta-actions">
-            <a class="mt-btn mt-btn-hero" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-accent" href="https://t.me/molniya_tex?start=sector_trainers" target="_blank" rel="noopener">Подключить тренера</a>
           </div>
         </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -10934,29 +10939,22 @@ def build_martial_arts_page() -> str:
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section class="mt-section mt-faq" data-screen-label="Вопросы и ответы" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Частые вопросы <span class="mt-overview-hook">клубов единоборств</span></h2>
-          <p class="mt-section-sub">Ответы на ключевые вопросы об онлайн-записи, контроле лимитов на татами и учёте абонементов.</p>
+      <!-- MARTIAL ARTS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для клубов единоборств</h2>
         </div>
-
-        <div class="mt-faq-list">
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего бойцовского клуба</h3>
+            <p>Бесплатно поможем настроить расписание татами и рингов, лимиты мест в группах, форму онлайн-записи и перенести базу спортсменов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
 {faq_html}
-        </div>
-      </section>
-
-      <!-- FINAL CTA -->
-      <section class="mt-section mt-final-cta" data-screen-label="Финальный призыв" data-mt-reveal>
-        <div class="mt-final-cta-card">
-          <div class="mt-final-cta-mark" aria-hidden="true">{BRAND_MARK_SVG}</div>
-          <h2 class="mt-final-cta-title">Наведите идеальный порядок в залах и тренировках</h2>
-          <p class="mt-final-cta-desc">Подключите онлайн-запись для клуба единоборств, забудьте о рутине в мессенджерах и сохраняйте полную загрузку каждого татами и ринга.</p>
-          <div class="mt-final-cta-actions">
-            <a class="mt-btn mt-btn-hero" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-accent" href="https://t.me/molniya_tex?start=sector_martial_arts" target="_blank" rel="noopener">Подключить клуб</a>
           </div>
         </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
