@@ -2521,6 +2521,31 @@ def build_spaces_page() -> str:
         </div>
       </section>
 
+      <!-- SPACES SUB-NICHES & ENTERTAINMENT -->
+      <section class="mt-section mt-reveal" data-screen-label="Готовые решения для площадок" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для студий и площадок</span></h2>
+          <p class="mt-section-sub">Для фотостудий, квест-румов и тематических локаций. Используйте специализированные страницы записи с шахматкой залов, буфером на уборку и бронью оборудования.</p>
+        </div>
+
+        <div class="mt-subniche-grid">
+          <a class="mt-subniche-card" href="/photostudios">
+            <div class="mt-subniche-icon">📸</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Фотостудии и циклорамы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Почасовая бронь залов 24/7, учёт импульсного и постоянного света, гримёрных мест и автонапоминания фотографам.</div>
+            </div>
+          </a>
+          <a class="mt-subniche-card" href="/quests">
+            <div class="mt-subniche-icon">🗝️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Квест-румы и перформансы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Сетка сеансов с буфером на сборку локации, доплата за участников, выбор уровня страха и бронь лаунж-зоны.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- SPACES JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь бронирования пространства">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
@@ -8846,6 +8871,17 @@ def sync_sitemap():
         changed = True
         print("Added /photostudios to sitemap.xml")
 
+    if "https://molniya-tech.ru/quests" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/quests</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /quests to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -10997,6 +11033,481 @@ def build_martial_arts_page() -> str:
 
 
 
+def build_quests_page() -> str:
+    """Builds the complete quest rooms and performances micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "quests",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего квест-рума',
+        "Оставьте контакты — поможем настроить расписание локаций, авто-буфер на сборку комнат, виджет онлайн-бронирования и доплату за игроков.",
+    )
+
+    title = "Онлайн-бронирование квестов и перформансов — CRM и расписание сеансов"
+    description = (
+        "Программа для квест-румов и перформансов: онлайн-бронирование сеансов 24/7, "
+        "автобуфер на сборку комнат, доплата за участников, бронь лаунж-зоны и напоминания."
+    )
+    canonical = "https://molniya-tech.ru/quests"
+
+    faqs = [
+        (
+            "Как команды бронируют сеансы квестов через Молнию?",
+            "Вы получаете персональную страницу бронирования с вашим логотипом, описанием квестов, фото локаций, возрастным цензом (12+, 16+, 18+) и выбором уровня контакта или страха (лайт, медиум, хард). Короткая ссылка размещается в соцсетях, на сайте или в агрегаторах. Команда видит только открытые свободные слоты и бронирует сеанс за 1 минуту без ожидания ответа оператора.",
+        ),
+        (
+            "Как работает буфер между сеансами на перезапуск локации и реквизита?",
+            "Система автоматически закладывает обязательный технический перерыв (например, 15 или 20 минут) после каждой игры. Это время автоматически блокируется в сетке: оператор успевает вернуть реквизит на исходные места, сбросить электромагнитные замки, проверить рации и подготовить спецэффекты до прихода следующей команды.",
+        ),
+        (
+            "Как настраивается доплата за дополнительных игроков сверх базового тарифа?",
+            "В тарифе квеста вы задаёте базовую стоимость (например, до 4 участников включительно) и цену за каждого следующего игрока (например, +800 ₽ за 5-го, 6-го и 7-го участника). При бронировании команда указывает точное число участников, и виджет автоматически рассчитывает итоговую сумму, исключая споры на входе.",
+        ),
+        (
+            "Можно ли бронировать лаунж-зону для праздника или дня рождения вместе с игрой?",
+            "Да. Гости могут добавить бронь комнаты отдыха для чаепития и торта (например, на 1 или 2 часа) сразу после прохождения квеста. Система резервирует лаунж-зону единым заказом, гарантируя, что площадка свободна и готова к приему праздника без накладок между компаниями.",
+        ),
+        (
+            "Как система напоминает игрокам и защищает от опозданий и срывов сеансов?",
+            "Сразу после бронирования капитан команды получает подтверждение с деталями заказа, а за 24 и 2 часа до игры — напоминание в Telegram или по SMS. В сообщении приходят точный адрес, код домофона, видео-схема входа и рекомендация приехать за 10 минут до начала для инструктажа.",
+        ),
+        (
+            "Как Молния учитывает смены операторов и гонорары актеров перформанса?",
+            "В карточке каждого сеанса фиксируются работавший оператор и актеры смены. Программа автоматически рассчитывает выплаты по вашим правилам: фиксированная ставка за игру, процент от чека или надбавки за ночные сеансы и хард-контакт. Прозрачный табель готов в конце недели в один клик.",
+        ),
+        (
+            "Как быстро перенести расписание и базу игроков из другой программы или Excel?",
+            "Служба заботы Молнии бесплатно помогает перенести список квестов, сетку сеансов, прайс-лист, тарифы выходного дня и базу постоянных гостей. Перенос занимает 15 минут и проходит без прерывания приема броней на сайте.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование квестов", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-бронирование и CRM для квест-румов",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания сеансов квестов",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- QUESTS HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для квест-румов: <span class="mt-hero-accent">онлайн-бронирование сеансов и расписание</span></h1>
+          <p class="mt-hero-desc">Интерактивная сетка сеансов 24/7, автоматический буфер 15–20 минут на сборку локации, доплата за участников, бронь лаунж-зоны и напоминания командам без звонков и путаницы.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_quests" target="_blank" rel="noopener">Подключить квест-рум</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для квест-румов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сеансы 60–90 мин</span>
+                <span class="mt-facet-note">сетка игр без ручных накладок</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Буфер на сборку</span>
+                <span class="mt-facet-note">автопауза 15 мин на сброс локации</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Доплата за игроков</span>
+                <span class="mt-facet-note">автопересчёт за 5-го и 6-го участника</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Лаунж-зона</span>
+                <span class="mt-facet-note">бронь комнат под торт и праздники</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для квест-румов: расписание сеансов и онлайн-бронирование" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание сеансов квестов, бронь комнат и статус локаций в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание сеансов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая локация, сеанс и бронь <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Администраторы и операторы видят статус комнат, время до окончания игры и готовность локации к следующей команде на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">14:30 · «Тайна особняка» · Эскейп</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В игре</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Команда «Детективы» (5 чел.)</div>
+                <div class="mt-auto-car-tier">Сеанс 75 мин · 38 мин в игре · Оператор: Илья</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🗝️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Эскейп-квест (75 мин)</span>
+              <span class="mt-auto-price">3 800 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">16:00 · «Проклятый цирк» · Перформанс</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (15 мин)</div>
+                <div class="mt-auto-car-tier">Сброс магнитных замков, подготовка реквизита</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎪</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сборка локации</span>
+              <span class="mt-auto-price">До 16:15</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">17:00 · «Ограбление банка» + Лаунж</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">День рождения Максима (7 чел.)</div>
+                <div class="mt-auto-car-tier">Игра 60 мин + комната праздника 1.5 часа</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎂</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Квест + Праздник</span>
+              <span class="mt-auto-price">6 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для квест-румов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы квест-рума и перформанса <span class="mt-overview-hook">в едином сервисе</span></h2>
+          <p class="mt-section-sub">Один инструмент вместо блокнотов, таблиц и хаоса в чатах: онлайн-бронирование сеансов 24/7, буфер на сборку локации, доплата за участников, бронь лаунж-зоны и прозрачный учет смен.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Сетка сеансов и буфер на сборку <span class="mt-overview-hook">без задержек на входе</span></h3>
+            <p>Задайте фиксированное расписание игр с автоматическим техническим перерывом (15–20 минут). Операторы успевают сбросить загадки, вернуть предметы на места и проветрить комнату до прихода следующих гостей.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка сеансов</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>14:30</span><div class="mt-overview-slot">«Особняк» <small>5 игроков</small></div><span>16:00</span><div class="mt-overview-slot mt-overview-slot--light">Сборка локации <small>15 мин</small></div><span>16:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Виджет бронирования 24/7 <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
+            <p>Короткая ссылка для соцсетей, Telegram или встраиваемый виджет на сайт. Игроки выбирают квест, уровень страха (лайт/медиум/хард), число участников и бронируют сеанс за минуту без ожидания оператора.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выбор сеанса</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>«Проклятый цирк» (Перформанс)</span><strong>75 мин · Контакт: Хард</strong></div>
+              <div class="mt-overview-price-row"><span>Короткая ссылка для сайта и соцсетей</span><strong>Мгновенное бронирование</strong></div>
+              <div class="mt-overview-price-tag">Команды сами бронируют слоты в любое время</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автодоплата за игроков и ночные игры <span class="mt-overview-hook">без споров на входе</span></h3>
+            <p>Базовый тариф на 2–4 человека и автопересчёт за каждого дополнительного участника. Программа сама добавляет наценку на вечерние и ночные сеансы, выводя прозрачный чек при бронировании.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расчёт тарифа</span><span>Калькулятор</span></div>
+              <div class="mt-overview-message">
+                Сеанс «Особняк» (4 чел.): 3 500 ₽ + 2 доп. игрока (+1 600 ₽) = 5 100 ₽. Предоплата 1 000 ₽ зафиксирована.
+                <span class="mt-overview-reaction">🗝️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Тариф выходного дня</span><strong>Наценка учтена автоматически →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Бронь лаунж-зоны и праздников <span class="mt-overview-hook">в едином заказе</span></h3>
+            <p>Гости бронируют прохождение квеста и комнату отдыха для чаепития и торта в один клик. Система защищает от пересечения двух компаний в зоне ожидания и контролирует время праздника.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пакет «День рождения»</span><span>Квест + Лаунж</span></div>
+              <div class="mt-overview-stages"><span>Квест 60м</span><i></i><span>Лаунж 1.5ч</span><i></i><span>Торт</span></div>
+              <div class="mt-overview-check">✓ <span>Комната праздника забронирована</span></div>
+              <div class="mt-overview-check">✓ <span>Поздравление актера добавлено</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Табель смен операторов и актеров <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Система фиксирует количество проведенных игр каждого оператора и актера перформанса. В конце периода табель автоматически готов к расчету сдельной оплаты по фиксированной ставке за игру или проценту от чека.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт смен команды</span><span>Цифровой табель</span></div>
+              <div class="mt-overview-metrics"><span>Игры<b>24 в смене</b></span><span>Актеры<b>4 на локации</b></span><span>Учёт<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- QUESTS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь команды на квест">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один сеанс квеста. <span class="mt-hero-accent">Полный порядок на локации.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу квест-рума: от выбора свободного слота на сайте до авто-буфера на сборку комнат и расчёта зарплаты актеров.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения бронирования" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Квест-перформанс «Проклятый цирк» (Хард)</strong><span>Длительность 75 минут + 15 минут буфер на сброс локации и грим</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Команда</span>
+              <h3>Выбор квеста, уровня контакта и времени на сайте 24/7</h3>
+              <p>Капитан команды открывает страницу бронирования, выбирает квест, уровень контакта (Хард с актерами) и видит только реальные свободные сеансы.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование сеанса</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Команда</span><strong>Максим Т. (6 игроков)</strong></div>
+              <div class="mt-journey-proof-row"><span>Квест</span><strong>«Проклятый цирк» · Контакт: Хард</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 16:15 – 17:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Указание числа игроков, доплата и бронь лаунжа</h3>
+              <p>Капитан указывает 6 игроков (база на 4 + 2 доплаты) и добавляет 1 час лаунж-зоны. Система автоматически фиксирует сумму заказа и предоплату.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь #3890</span>
+                <span class="mt-journey-proof-badge">Предоплата 1 500 ₽</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>Квест 5 200 ₽ + Лаунж 1 500 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Праздник</span><strong>День рождения · Чай, торт</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Слот и лаунж-зона забронированы</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматические напоминания и схема проезда в Telegram</h3>
+              <p>Бот отправляет капитану точную схему входа во двор, видео-подсказку ориентиров и правила: приехать за 10 минут, удобная обувь без каблуков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Инструкция</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / E-mail / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Код ворот: #4120 · Ждём в 16:05</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Команда вовремя без опозданий</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Оператор & Актер</span>
+              <h3>Проведение игры, 15 минут буфера и расчет смены</h3>
+              <p>Команда успешно проходит квест. Оператор за 15 минут перезапускает локацию и замки, а система начисляет выплату за сеанс оператору и актеру.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сеанса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог сеанса</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Доплата на входе</span><strong>5 200 ₽ принято в кассу</strong></div>
+              <div class="mt-journey-proof-row"><span>Табель смены</span><strong>Игра учтена оператору и актеру</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер на сборку</span><strong>Локация готова к 17:45</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс квест-рума" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс сети квестов и перформансов</div>
+            <h2 class="mt-case-title">Артём Селезнёв, сооснователь сети «Фобия & Логика»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше по вечерам субботы был постоянный стресс: игроки задерживались в комнатах, операторы не успевали собрать тайники и сбросить электромагнитные замки, а следующая команда уже нервничала в коридоре. С Молнией мы настроили обязательный 15-минутный буфер между сеансами и автодоплату за 5-го и 6-го участника. Больше никаких накладок, а брони лаунж-зоны для праздников выросли более чем на 30%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Артём Селезнёв <span>· Сооснователь сети квест-румов (3 локации, 5 комнат), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок и задержек сеансов благодаря авто-буферу на сборку комнат</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2.5 ч</span>
+              <span class="mt-case-label">В день сэкономлено администраторами на подтверждениях и ручных звонках</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+32%</span>
+              <span class="mt-case-label">Рост броней лаунж-зоны и ночных сеансов через круглосуточный виджет</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для квест-румов</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего квест-рума</h3>
+            <p>Бесплатно поможем настроить расписание локаций, авто-буфер на сборку комнат, уровни контакта, форму онлайн-бронирования и тарифы доплаты за игроков.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -11047,6 +11558,11 @@ def main():
     martial_arts_html = build_martial_arts_page()
     (ROOT_DIR / "martial-arts.html").write_text(martial_arts_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'martial-arts.html'}")
+
+    print("Building sector landing page: /quests...")
+    quests_html = build_quests_page()
+    (ROOT_DIR / "quests.html").write_text(quests_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'quests.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
