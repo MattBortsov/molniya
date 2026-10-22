@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн-бронирование комнат в антикафе — CRM и таймер гостей</title>
+  <meta name="description" content="Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания.">
+  <link rel="canonical" href="https://molniya-tech.ru/anticafe">
+  <meta property="og:title" content="Онлайн-бронирование комнат в антикафе — CRM и таймер гостей">
+  <meta property="og:description" content="Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания.">
+  <meta property="og:url" content="https://molniya-tech.ru/anticafe">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Онлайн-бронирование комнат в антикафе — CRM и таймер гостей">
+  <meta name="twitter:description" content="Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование комнат в антикафе", "item": "https://molniya-tech.ru/anticafe"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-бронирование и система учета для антикафе", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/anticafe", "description": "Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка бронирования комнат и столов антикафе"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как гости и компании бронируют тематические комнаты в антикафе через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную страницу онлайн-бронирования залов (VIP-комнаты с PlayStation 5 / Xbox, кинозал с проектором для лекций и кинопоказов, комната для Мафии и настольных ролевых игр D&D) или столов в общем зале. Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время, количество человек и сразу видят только свободные окна."}}, {"@type": "Question", "name": "Как работает поминутный учет времени гостей и автоматический стоп-чек?", "acceptedAnswer": {"@type": "Answer", "text": "При входе администратор открывает визит гостя или компании по номеру выданной карты или бейджа. Программа ведет поминутный биллинг по установленному тарифу (например, 3.5 ₽/мин). При достижении порога стоп-чека (например, 800 ₽ за день) начисление минут автоматически останавливается. При расчете на кассе гость платит справедливую сумму без споров и ручных расчетов на калькуляторе."}}, {"@type": "Question", "name": "Как настраивается автоматический буфер между бронями комнат на уборку и проветривание?", "acceptedAnswer": {"@type": "Answer", "text": "Система автоматически закладывает технический перерыв (10–15 минут) после каждого сеанса в комнате. За это время хостес успевает собрать чашки, проветрить помещение, протереть джойстики антисептиком и разложить карточки настольных игр перед приходом следующих гостей."}}, {"@type": "Question", "name": "Можно ли бронировать всё антикафе или отдельный зал под день рождения или корпоратив?", "acceptedAnswer": {"@type": "Answer", "text": "Да. В виджете настраиваются пакетные тарифы аренды локации под ключ: праздник с караоке, турнир по Mortal Kombat / FIFA, настольные ролевые игры или закрытая вечеринка. Вы можете включить обязательную предоплату (например, 30% или 50%) и зафиксировать правила пробкового сбора за свой торт, пиццу и напитки."}}, {"@type": "Question", "name": "Как система ведет учет настольных игр, игровых консолей и оборудования?", "acceptedAnswer": {"@type": "Answer", "text": "В программе можно вести каталог доступных настолок (от простых пати-геймов до сложных стратегий) и игровых манипуляторов. Администратор видит, в какой комнате находятся геймпады PS5, микрофоны для караоке или редкие коробки игр, что исключает потерю компонентов и путаницу между залами."}}, {"@type": "Question", "name": "Как Молния снижает процент неявок и напоминает гостям о бронировании?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисный бот отправляет гостям подтверждение брони сразу после оформления, а за 24 и 2 часа до визита — напоминание в Telegram или по SMS. В сообщении указываются адрес, код домофона, напоминание о сменной обуви или носочках и правила отмены. Неявки на праздники и в VIP-комнаты сокращаются на 80%."}}, {"@type": "Question", "name": "Как быстро перенести расписание залов и базу постоянных гостей из Excel или другой системы?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно настроит список комнат, сетку тарифов (минуты, часы, стоп-чеки), правила буфера и перенесет базу резидентов и историю визитов из таблиц или старой CRM. Перенос выполняется за 15 минут без остановки работы антикафе."}}]}]
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+    <div class="mt-page-content">
+
+      <!-- ANTICAFE HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для антикафе: <span class="mt-hero-accent">онлайн-бронирование комнат и таймер гостей</span></h1>
+          <p class="mt-hero-desc">Интерактивная сетка VIP-комнат с PS5 и кинозалов 24/7, поминутный биллинг со стоп-чеком, автоматический буфер на уборку и проветривание, пакеты дней рождения и учёт настольных игр.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_anticafe" target="_blank" rel="noopener">Подключить тайм-клуб</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для антикафе и тайм-клубов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">VIP-комнаты</span>
+                <span class="mt-facet-note">бронь PS5, кинозала и Мафии</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Таймер гостей</span>
+                <span class="mt-facet-note">поминутный тариф со стоп-чеком</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Буфер 15 мин</span>
+                <span class="mt-facet-note">уборка посуды и проветривание</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Праздники</span>
+                <span class="mt-facet-note">дни рождения, турниры и лаунж</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для антикафе: расписание комнат и таймер гостей" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронная шахматка комнат, таймер открытых визитов и статус стоп-чека в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание комнат" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая комната, стол и гость <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Хостес и администраторы видят открытые таймеры гостей в общем зале, брони комнат с PS5 и готовность помещений на любом планшете.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">VIP 1 · PlayStation 5 · Компания 6 человек</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В комнате</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">FC 25 и Mortal Kombat 1 · В игре 1 ч 45 мин</div>
+                <div class="mt-auto-car-tier">Тариф: 800 ₽/час · Безлимитный чай и печенье</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎮</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Аренда VIP-комнаты (2 часа)</span>
+              <span class="mt-auto-price">1 600 ₽ · Чек открыт</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кинозал · Буфер на уборку и проветривание</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (15 мин)</div>
+                <div class="mt-auto-car-tier">Уборка посуды, проветривание, подготовка проектора</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Подготовка зала</span>
+              <span class="mt-auto-price">До 17:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Комната «Мафия» · Турнир 12 игроков</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ведущий клуба · Заказ пиццы и напитков</div>
+                <div class="mt-auto-car-tier">Предоплата 50% внесена онлайн · Бронь с 17:30</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎲</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сессия 3 часа</span>
+              <span class="mt-auto-price">4 500 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTICAFE OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для антикафе" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы антикафе и тайм-клуба <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, ручных секундомеров и путаницы на кассе: онлайн-бронь комнат 24/7, поминутный таймер со стоп-чеком, буфер на чистоту и учет праздников.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Бронирование комнат 24/7 <span class="mt-overview-hook">без телефонных накладок</span></h3>
+            <p>Гости сами выбирают VIP-комнату с PlayStation 5, проекторный кинозал или стол для настолок, видят свободные часы и вносят предоплату. Никаких двойных броней в пятницу вечером.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка комнат</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>16:00</span><div class="mt-overview-slot">VIP 1 · PS5 <small>2 часа</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Проветривание <small>15 мин</small></div><span>18:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Таймер гостей и стоп-чек <span class="mt-overview-hook">без ручных подсчетов</span></h3>
+            <p>Фиксируйте время входа гостя по номеру карты или столика. Система сама считает минуты и вовремя останавливает биллинг на сумме дневного стоп-чека без споров на выходе.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Таймер гостя</span><span>Стоп-чек активен</span></div>
+              <div class="mt-overview-price-row"><span>Тариф (3.5 ₽/мин)</span><strong>Стоп-чек: 800 ₽</strong></div>
+              <div class="mt-overview-price-row"><span>Время визита (4 ч 15 мин)</span><strong>К оплате: 800 ₽</strong></div>
+              <div class="mt-overview-price-tag">Биллинг остановлен по достижении стоп-чека</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Буфер на чистоту и проветривание <span class="mt-overview-hook">между компаниями</span></h3>
+            <p>Автоматическое окно в 10–15 минут после каждой аренды комнаты. Хостес успевает собрать посуду, протереть джойстики антисептиком, проветрить помещение и сложить настолки.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Буфер чистоты</span><span>Подготовка зала</span></div>
+              <div class="mt-overview-message">
+                Сессия в кинозале завершена в 17:15. Буфер 15 минут заблокирован. Следующая бронь: 17:30.
+                <span class="mt-overview-reaction">✨</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Статус помещения</span><strong>Проветривание и дезинфекция →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Пакеты праздников и дней рождения <span class="mt-overview-hook">с предоплатой</span></h3>
+            <p>Готовые тарифы для больших компаний: аренда зала на 3–5 часов, пробковый сбор, ведущий Мафии или турнир по файтингам. Бронь закрепляется предоплатой и не слетает.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пакет «День рождения»</span><span>Зал + PS5</span></div>
+              <div class="mt-overview-stages"><span>Аренда 3ч</span><i></i><span>Пробковый сбор</span><i></i><span>Торт</span></div>
+              <div class="mt-overview-check">✓ <span>Предоплата 50% внесена онлайн</span></div>
+              <div class="mt-overview-check">✓ <span>VIP-комната забронирована единым заказом</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Каталог настолок и консолей <span class="mt-overview-hook">под полным контролем</span></h3>
+            <p>Ведите каталог редких настольных игр, геймпадов и VR-шлемов. Программа подскажет администратору, в какой комнате находится инвентарь и кто из гостей за него отвечает.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Инвентарь клуба</span><span>Учёт оборудования</span></div>
+              <div class="mt-overview-metrics"><span>Настолки<b>180 коробок</b></span><span>Геймпады<b>12 шт</b></span><span>Сохранность<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- ANTICAFE JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь компании в антикафе">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один вечер компании в антикафе. <span class="mt-hero-accent">Идеальный порядок в тайм-клубе.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния управляет визитом: от онлайн-брони комнаты с PS5 до авто-буфера на проветривание и прозрачного чека на выходе.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения визита" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Бронь VIP-комнаты с PS5 (компания 6 человек)</strong><span>2 часа игры + 15 минут буфер на уборку и дезинфекцию джойстиков</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Гость</span>
+              <h3>Выбор VIP-комнаты, времени и бронирование на сайте 24/7</h3>
+              <p>Организатор компании открывает страницу бронирования тайм-клуба, выбирает комнату с PS5 на 2 часа и видит свободные слоты без звонков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь VIP-комнаты</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Компания</span><strong>Михаил В. (6 гостей)</strong></div>
+              <div class="mt-journey-proof-row"><span>Формат</span><strong>VIP 1 · PlayStation 5 + Настолки</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 18:00 – 20:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Дополнительные услуги, пробковый сбор и предоплата</h3>
+              <p>Гость добавляет опцию пробкового сбора за свой торт и пиццу, вносит предоплату онлайн, а комната фиксируется в расписании клуба.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ #3490</span>
+                <span class="mt-journey-proof-badge">Предоплата 50%</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Аренда зала</span><strong>1 600 ₽ (2 часа)</strong></div>
+              <div class="mt-journey-proof-row"><span>Пробковый сбор</span><strong>400 ₽ (своя еда)</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Комната закреплена</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание о сменке, правилах клуба и маршруте в Telegram</h3>
+              <p>Сервисный бот отправляет гостю точный маршрут к антикафе, код домофона, напоминание о сменной обуви или носочках и подтверждение времени.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка гостю</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Ждём к 18:00 · Домофон 42B · Сменка</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Компания приходит вовремя</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор</span>
+              <h3>Встреча компании, отдых и 15-минутный буфер на проветривание</h3>
+              <p>Гости отлично проводят время за играми. По окончании сеанса включается 15-минутный буфер: хостес убирает посуду и протирает джойстики.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог визита</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата остатка</span><strong>1 000 ₽ на кассе</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер чистоты</span><strong>Проветривание до 20:15</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующая бронь</span><strong>Зал готов к 20:15</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс антикафе" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс тайм-клуба и антикафе</div>
+            <h2 class="mt-case-title">Денис Васильев, основатель тайм-клуба «Play &amp; Chill»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше по вечерам субботы у стойки творился хаос: администратор на калькуляторе высчитывал минуты для 30 человек, кто-то забывал сдать карточку, а компании в VIP-комнате с PS5 задерживались на 20 минут, пока под дверью возмущались следующие гости. В Молнии брони комнат идут строго через онлайн-виджет с 15-минутным буфером на проветривание, а время каждого гостя считается автоматически со стоп-чеком. Опоздания и накладки комнат прекратились полностью, а выручка с аренды залов выросла на 34%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Денис Васильев <span>· Основатель антикафе (3 VIP-комнаты, общий зал на 40 мест), <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок и задержек между бронями VIP-комнат благодаря авто-буферу</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2.5 ч</span>
+              <span class="mt-case-label">В день экономит администратор на ручном подсчете минут и стоп-чеков</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+34%</span>
+              <span class="mt-case-label">Рост выручки от предварительного бронирования залов под праздники</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTICAFE FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для антикафе</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего антикафе</h3>
+            <p>Бесплатно поможем настроить сетку комнат, таймер минут и стоп-чеки, буфер на проветривание, виджет онлайн-бронирования и пакеты праздников.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+            <details><summary>Как гости и компании бронируют тематические комнаты в антикафе через Молнию?</summary><p>Вы получаете персональную страницу онлайн-бронирования залов (VIP-комнаты с PlayStation 5 / Xbox, кинозал с проектором для лекций и кинопоказов, комната для Мафии и настольных ролевых игр D&amp;D) или столов в общем зале. Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время, количество человек и сразу видят только свободные окна.</p></details>
+            <details><summary>Как работает поминутный учет времени гостей и автоматический стоп-чек?</summary><p>При входе администратор открывает визит гостя или компании по номеру выданной карты или бейджа. Программа ведет поминутный биллинг по установленному тарифу (например, 3.5 ₽/мин). При достижении порога стоп-чека (например, 800 ₽ за день) начисление минут автоматически останавливается. При расчете на кассе гость платит справедливую сумму без споров и ручных расчетов на калькуляторе.</p></details>
+            <details><summary>Как настраивается автоматический буфер между бронями комнат на уборку и проветривание?</summary><p>Система автоматически закладывает технический перерыв (10–15 минут) после каждого сеанса в комнате. За это время хостес успевает собрать чашки, проветрить помещение, протереть джойстики антисептиком и разложить карточки настольных игр перед приходом следующих гостей.</p></details>
+            <details><summary>Можно ли бронировать всё антикафе или отдельный зал под день рождения или корпоратив?</summary><p>Да. В виджете настраиваются пакетные тарифы аренды локации под ключ: праздник с караоке, турнир по Mortal Kombat / FIFA, настольные ролевые игры или закрытая вечеринка. Вы можете включить обязательную предоплату (например, 30% или 50%) и зафиксировать правила пробкового сбора за свой торт, пиццу и напитки.</p></details>
+            <details><summary>Как система ведет учет настольных игр, игровых консолей и оборудования?</summary><p>В программе можно вести каталог доступных настолок (от простых пати-геймов до сложных стратегий) и игровых манипуляторов. Администратор видит, в какой комнате находятся геймпады PS5, микрофоны для караоке или редкие коробки игр, что исключает потерю компонентов и путаницу между залами.</p></details>
+            <details><summary>Как Молния снижает процент неявок и напоминает гостям о бронировании?</summary><p>Сервисный бот отправляет гостям подтверждение брони сразу после оформления, а за 24 и 2 часа до визита — напоминание в Telegram или по SMS. В сообщении указываются адрес, код домофона, напоминание о сменной обуви или носочках и правила отмены. Неявки на праздники и в VIP-комнаты сокращаются на 80%.</p></details>
+            <details><summary>Как быстро перенести расписание залов и базу постоянных гостей из Excel или другой системы?</summary><p>Служба заботы Молнии бесплатно настроит список комнат, сетку тарифов (минуты, часы, стоп-чеки), правила буфера и перенесет базу резидентов и историю визитов из таблиц или старой CRM. Перенос выполняется за 15 минут без остановки работы антикафе.</p></details>
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего антикафе</h2>
+          <p class="mt-lead-sub">Оставьте контакты — поможем настроить бронирование комнат с PS5, поминутный таймер со стоп-чеком, учёт настольных игр и виджет онлайн-записи.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="anticafe">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>

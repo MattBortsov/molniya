@@ -2557,6 +2557,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Сетка 10-минутных заездов, учёт детских и взрослых картов, телеметрия круга и мини-гран-при.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/anticafe">
+            <div class="mt-subniche-icon">☕</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Антикафе и тайм-клубы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Бронь комнат с PS5 и кинозалов, таймер гостей со стоп-чеком, учёт настолок и буфер на проветривание.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8918,6 +8925,17 @@ def sync_sitemap():
         changed = True
         print("Added /karting to sitemap.xml")
 
+    if "https://molniya-tech.ru/anticafe" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/anticafe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /anticafe to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -12494,6 +12512,481 @@ def build_karting_page() -> str:
 
 
 
+def build_anticafe_page() -> str:
+    """Builds the complete anticafe and time-club micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "anticafe",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего антикафе',
+        "Оставьте контакты — поможем настроить бронирование комнат с PS5, поминутный таймер со стоп-чеком, учёт настольных игр и виджет онлайн-записи.",
+    )
+
+    title = "Онлайн-бронирование комнат в антикафе — CRM и таймер гостей"
+    description = (
+        "Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, "
+        "поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания."
+    )
+    canonical = "https://molniya-tech.ru/anticafe"
+
+    faqs = [
+        (
+            "Как гости и компании бронируют тематические комнаты в антикафе через Молнию?",
+            "Вы получаете персональную страницу онлайн-бронирования залов (VIP-комнаты с PlayStation 5 / Xbox, кинозал с проектором для лекций и кинопоказов, комната для Мафии и настольных ролевых игр D&D) или столов в общем зале. Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время, количество человек и сразу видят только свободные окна.",
+        ),
+        (
+            "Как работает поминутный учет времени гостей и автоматический стоп-чек?",
+            "При входе администратор открывает визит гостя или компании по номеру выданной карты или бейджа. Программа ведет поминутный биллинг по установленному тарифу (например, 3.5 ₽/мин). При достижении порога стоп-чека (например, 800 ₽ за день) начисление минут автоматически останавливается. При расчете на кассе гость платит справедливую сумму без споров и ручных расчетов на калькуляторе.",
+        ),
+        (
+            "Как настраивается автоматический буфер между бронями комнат на уборку и проветривание?",
+            "Система автоматически закладывает технический перерыв (10–15 минут) после каждого сеанса в комнате. За это время хостес успевает собрать чашки, проветрить помещение, протереть джойстики антисептиком и разложить карточки настольных игр перед приходом следующих гостей.",
+        ),
+        (
+            "Можно ли бронировать всё антикафе или отдельный зал под день рождения или корпоратив?",
+            "Да. В виджете настраиваются пакетные тарифы аренды локации под ключ: праздник с караоке, турнир по Mortal Kombat / FIFA, настольные ролевые игры или закрытая вечеринка. Вы можете включить обязательную предоплату (например, 30% или 50%) и зафиксировать правила пробкового сбора за свой торт, пиццу и напитки.",
+        ),
+        (
+            "Как система ведет учет настольных игр, игровых консолей и оборудования?",
+            "В программе можно вести каталог доступных настолок (от простых пати-геймов до сложных стратегий) и игровых манипуляторов. Администратор видит, в какой комнате находятся геймпады PS5, микрофоны для караоке или редкие коробки игр, что исключает потерю компонентов и путаницу между залами.",
+        ),
+        (
+            "Как Молния снижает процент неявок и напоминает гостям о бронировании?",
+            "Сервисный бот отправляет гостям подтверждение брони сразу после оформления, а за 24 и 2 часа до визита — напоминание в Telegram или по SMS. В сообщении указываются адрес, код домофона, напоминание о сменной обуви или носочках и правила отмены. Неявки на праздники и в VIP-комнаты сокращаются на 80%.",
+        ),
+        (
+            "Как быстро перенести расписание залов и базу постоянных гостей из Excel или другой системы?",
+            "Служба заботы Молнии бесплатно настроит список комнат, сетку тарифов (минуты, часы, стоп-чеки), правила буфера и перенесет базу резидентов и историю визитов из таблиц или старой CRM. Перенос выполняется за 15 минут без остановки работы антикафе.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование комнат в антикафе", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-бронирование и система учета для антикафе",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка бронирования комнат и столов антикафе",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- ANTICAFE HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для антикафе: <span class="mt-hero-accent">онлайн-бронирование комнат и таймер гостей</span></h1>
+          <p class="mt-hero-desc">Интерактивная сетка VIP-комнат с PS5 и кинозалов 24/7, поминутный биллинг со стоп-чеком, автоматический буфер на уборку и проветривание, пакеты дней рождения и учёт настольных игр.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_anticafe" target="_blank" rel="noopener">Подключить тайм-клуб</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для антикафе и тайм-клубов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">VIP-комнаты</span>
+                <span class="mt-facet-note">бронь PS5, кинозала и Мафии</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Таймер гостей</span>
+                <span class="mt-facet-note">поминутный тариф со стоп-чеком</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Буфер 15 мин</span>
+                <span class="mt-facet-note">уборка посуды и проветривание</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Праздники</span>
+                <span class="mt-facet-note">дни рождения, турниры и лаунж</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для антикафе: расписание комнат и таймер гостей" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронная шахматка комнат, таймер открытых визитов и статус стоп-чека в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание комнат" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая комната, стол и гость <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Хостес и администраторы видят открытые таймеры гостей в общем зале, брони комнат с PS5 и готовность помещений на любом планшете.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">VIP 1 · PlayStation 5 · Компания 6 человек</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В комнате</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">FC 25 и Mortal Kombat 1 · В игре 1 ч 45 мин</div>
+                <div class="mt-auto-car-tier">Тариф: 800 ₽/час · Безлимитный чай и печенье</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎮</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Аренда VIP-комнаты (2 часа)</span>
+              <span class="mt-auto-price">1 600 ₽ · Чек открыт</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кинозал · Буфер на уборку и проветривание</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (15 мин)</div>
+                <div class="mt-auto-car-tier">Уборка посуды, проветривание, подготовка проектора</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Подготовка зала</span>
+              <span class="mt-auto-price">До 17:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Комната «Мафия» · Турнир 12 игроков</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ведущий клуба · Заказ пиццы и напитков</div>
+                <div class="mt-auto-car-tier">Предоплата 50% внесена онлайн · Бронь с 17:30</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎲</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сессия 3 часа</span>
+              <span class="mt-auto-price">4 500 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTICAFE OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для антикафе" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы антикафе и тайм-клуба <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, ручных секундомеров и путаницы на кассе: онлайн-бронь комнат 24/7, поминутный таймер со стоп-чеком, буфер на чистоту и учет праздников.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Бронирование комнат 24/7 <span class="mt-overview-hook">без телефонных накладок</span></h3>
+            <p>Гости сами выбирают VIP-комнату с PlayStation 5, проекторный кинозал или стол для настолок, видят свободные часы и вносят предоплату. Никаких двойных броней в пятницу вечером.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка комнат</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>16:00</span><div class="mt-overview-slot">VIP 1 · PS5 <small>2 часа</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Проветривание <small>15 мин</small></div><span>18:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Таймер гостей и стоп-чек <span class="mt-overview-hook">без ручных подсчетов</span></h3>
+            <p>Фиксируйте время входа гостя по номеру карты или столика. Система сама считает минуты и вовремя останавливает биллинг на сумме дневного стоп-чека без споров на выходе.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Таймер гостя</span><span>Стоп-чек активен</span></div>
+              <div class="mt-overview-price-row"><span>Тариф (3.5 ₽/мин)</span><strong>Стоп-чек: 800 ₽</strong></div>
+              <div class="mt-overview-price-row"><span>Время визита (4 ч 15 мин)</span><strong>К оплате: 800 ₽</strong></div>
+              <div class="mt-overview-price-tag">Биллинг остановлен по достижении стоп-чека</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Буфер на чистоту и проветривание <span class="mt-overview-hook">между компаниями</span></h3>
+            <p>Автоматическое окно в 10–15 минут после каждой аренды комнаты. Хостес успевает собрать посуду, протереть джойстики антисептиком, проветрить помещение и сложить настолки.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Буфер чистоты</span><span>Подготовка зала</span></div>
+              <div class="mt-overview-message">
+                Сессия в кинозале завершена в 17:15. Буфер 15 минут заблокирован. Следующая бронь: 17:30.
+                <span class="mt-overview-reaction">✨</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Статус помещения</span><strong>Проветривание и дезинфекция →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Пакеты праздников и дней рождения <span class="mt-overview-hook">с предоплатой</span></h3>
+            <p>Готовые тарифы для больших компаний: аренда зала на 3–5 часов, пробковый сбор, ведущий Мафии или турнир по файтингам. Бронь закрепляется предоплатой и не слетает.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пакет «День рождения»</span><span>Зал + PS5</span></div>
+              <div class="mt-overview-stages"><span>Аренда 3ч</span><i></i><span>Пробковый сбор</span><i></i><span>Торт</span></div>
+              <div class="mt-overview-check">✓ <span>Предоплата 50% внесена онлайн</span></div>
+              <div class="mt-overview-check">✓ <span>VIP-комната забронирована единым заказом</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Каталог настолок и консолей <span class="mt-overview-hook">под полным контролем</span></h3>
+            <p>Ведите каталог редких настольных игр, геймпадов и VR-шлемов. Программа подскажет администратору, в какой комнате находится инвентарь и кто из гостей за него отвечает.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Инвентарь клуба</span><span>Учёт оборудования</span></div>
+              <div class="mt-overview-metrics"><span>Настолки<b>180 коробок</b></span><span>Геймпады<b>12 шт</b></span><span>Сохранность<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- ANTICAFE JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь компании в антикафе">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один вечер компании в антикафе. <span class="mt-hero-accent">Идеальный порядок в тайм-клубе.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния управляет визитом: от онлайн-брони комнаты с PS5 до авто-буфера на проветривание и прозрачного чека на выходе.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения визита" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Бронь VIP-комнаты с PS5 (компания 6 человек)</strong><span>2 часа игры + 15 минут буфер на уборку и дезинфекцию джойстиков</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Гость</span>
+              <h3>Выбор VIP-комнаты, времени и бронирование на сайте 24/7</h3>
+              <p>Организатор компании открывает страницу бронирования тайм-клуба, выбирает комнату с PS5 на 2 часа и видит свободные слоты без звонков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь VIP-комнаты</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Компания</span><strong>Михаил В. (6 гостей)</strong></div>
+              <div class="mt-journey-proof-row"><span>Формат</span><strong>VIP 1 · PlayStation 5 + Настолки</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 18:00 – 20:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Дополнительные услуги, пробковый сбор и предоплата</h3>
+              <p>Гость добавляет опцию пробкового сбора за свой торт и пиццу, вносит предоплату онлайн, а комната фиксируется в расписании клуба.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ #3490</span>
+                <span class="mt-journey-proof-badge">Предоплата 50%</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Аренда зала</span><strong>1 600 ₽ (2 часа)</strong></div>
+              <div class="mt-journey-proof-row"><span>Пробковый сбор</span><strong>400 ₽ (своя еда)</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Комната закреплена</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание о сменке, правилах клуба и маршруте в Telegram</h3>
+              <p>Сервисный бот отправляет гостю точный маршрут к антикафе, код домофона, напоминание о сменной обуви или носочках и подтверждение времени.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка гостю</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Ждём к 18:00 · Домофон 42B · Сменка</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Компания приходит вовремя</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор</span>
+              <h3>Встреча компании, отдых и 15-минутный буфер на проветривание</h3>
+              <p>Гости отлично проводят время за играми. По окончании сеанса включается 15-минутный буфер: хостес убирает посуду и протирает джойстики.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог визита</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата остатка</span><strong>1 000 ₽ на кассе</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер чистоты</span><strong>Проветривание до 20:15</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующая бронь</span><strong>Зал готов к 20:15</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс антикафе" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс тайм-клуба и антикафе</div>
+            <h2 class="mt-case-title">Денис Васильев, основатель тайм-клуба «Play &amp; Chill»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше по вечерам субботы у стойки творился хаос: администратор на калькуляторе высчитывал минуты для 30 человек, кто-то забывал сдать карточку, а компании в VIP-комнате с PS5 задерживались на 20 минут, пока под дверью возмущались следующие гости. В Молнии брони комнат идут строго через онлайн-виджет с 15-минутным буфером на проветривание, а время каждого гостя считается автоматически со стоп-чеком. Опоздания и накладки комнат прекратились полностью, а выручка с аренды залов выросла на 34%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Денис Васильев <span>· Основатель антикафе (3 VIP-комнаты, общий зал на 40 мест), <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок и задержек между бронями VIP-комнат благодаря авто-буферу</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2.5 ч</span>
+              <span class="mt-case-label">В день экономит администратор на ручном подсчете минут и стоп-чеков</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+34%</span>
+              <span class="mt-case-label">Рост выручки от предварительного бронирования залов под праздники</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTICAFE FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для антикафе</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего антикафе</h3>
+            <p>Бесплатно поможем настроить сетку комнат, таймер минут и стоп-чеки, буфер на проветривание, виджет онлайн-бронирования и пакеты праздников.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -12559,6 +13052,11 @@ def main():
     karting_html = build_karting_page()
     (ROOT_DIR / "karting.html").write_text(karting_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'karting.html'}")
+
+    print("Building sector landing page: /anticafe...")
+    anticafe_html = build_anticafe_page()
+    (ROOT_DIR / "anticafe.html").write_text(anticafe_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'anticafe.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
