@@ -2571,6 +2571,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Бронь парных от 2 часов, выбор веников и банщика, санитарные часы и предоплата онлайн.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/glamping">
+            <div class="mt-subniche-icon">⛺</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Глэмпинги и гриль-беседки <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Посуточная и почасовая бронь домиков и шатров, залог за чистоту, мангальные зоны и дрова.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8954,6 +8961,17 @@ def sync_sitemap():
         changed = True
         print("Added /saunas to sitemap.xml")
 
+    if "https://molniya-tech.ru/glamping" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/glamping</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /glamping to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -13480,6 +13498,481 @@ def build_saunas_page() -> str:
 
 
 
+def build_glamping_page() -> str:
+    """Builds the complete glamping parks and grill gazebos micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "glamping",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего глэмпинга или базы отдыха',
+        "Оставьте контакты — поможем настроить шахматку домиков и беседок, учёт залогов за чистоту, допуслуги и приём онлайн-предоплаты.",
+    )
+
+    title = "Онлайн-бронирование глэмпингов и беседок — CRM и шахматка"
+    description = (
+        "Программа для глэмпингов, баз отдыха и гриль-беседок: онлайн-бронирование домиков и шатров 24/7, "
+        "залоги за чистоту, допуслуги и шахматка без накладок."
+    )
+    canonical = "https://molniya-tech.ru/glamping"
+
+    faqs = [
+        (
+            "Как гости бронируют домики, шатры и беседки через Молнию?",
+            "Вы получаете персональный модуль онлайн-бронирования для сайта, соцсетей (VK, Telegram) и карт (Яндекс Карты, 2ГИС). В виджете отображаются все категории объектов: сафари-тенты, геокупола, A-frame домики с террасой, а также открытые и закрытые гриль-беседки. Гости выбирают даты заезда или часы аренды и бронируют отдых за 1 минуту.",
+        ),
+        (
+            "Как система совмещает посуточную аренду жилья и почасовую бронь беседок?",
+            "Программа поддерживает гибридный график. Для жилых шатров и домиков действует посуточная тарификация со стандартным временем заезда (14:00) и выезда (12:00). Для гриль-беседок и мангальных зон настраивается почасовая сетка с минимальным порогом аренды (например, от 3–4 часов) и шагом продления.",
+        ),
+        (
+            "Как работает учет обеспечительного залога за чистоту и имущество?",
+            "В форме бронирования можно включить обязательный обеспечительный депозит (залог, например 5 000 ₽). Программа фиксирует внесение залога, а при выезде администратор или горничная проверяет сохранность имущества по цифровому чек-листу и возвращает депозит гостю в один клик.",
+        ),
+        (
+            "Как гости добавляют к заказу растопку банного чана фурако, дрова и инвентарь?",
+            "При оформлении брони клиент может выбрать дополнительные платные опции: растопка горячего кедрового чана с травами, аренда мангала и казана, охапки березовых дров, уголь, решетки, сапборды или велосипеды. Сумма допуслуг автоматически прибавляется к общему чеку.",
+        ),
+        (
+            "Как настраивается буферное время на уборку домиков и дезинфекцию беседок?",
+            "Система автоматически удерживает техническое окно (2 часа для посуточных домиков с 12:00 до 14:00 и 45–60 минут для беседок). Горничные и клинеры успевают сменить постельное белье, провести влажную уборку, вывезти мусор и подготовить мангал до приезда следующих гостей.",
+        ),
+        (
+            "Как система напоминает гостям о заезде и отправляет схему проезда?",
+            "Сразу после внесения предоплаты гость получает ваучер бронирования, а за 24 и 2 часа до заезда — сообщение в Telegram или по SMS с геолокацией глэмпинга, схемой проезда по грунтовым дорогам, памяткой по теплым вещам и кодом от въездных ворот.",
+        ),
+        (
+            "Как бесплатно перенести базу броней и домиков из Bnovo, Travelline или Excel?",
+            "Служба заботы Молнии бесплатно настроит схему вашего глэмпинг-парка, прайс-лист в будни и выходные, правила залогов и перенесет текущую шахматку броней из таблиц или PMS. Перенос занимает 15 минут без риска потери броней.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование глэмпингов и беседок", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-бронирование и система учета для глэмпингов и беседок",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка шахматки глэмпинг-парка",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- GLAMPING HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для глэмпингов и беседок: <span class="mt-hero-accent">онлайн-бронирование и шахматка</span></h1>
+          <p class="mt-hero-desc">Интерактивная шахматка домиков и гриль-беседок 24/7, учёт залога за чистоту, допродажи чанов фурако и дров, автоматический буфер на клининг и онлайн-предоплата.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_glamping" target="_blank" rel="noopener">Подключить глэмпинг</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для глэмпингов и баз отдыха">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Посуточно и по часам</span>
+                <span class="mt-facet-note">домики, шатры и беседки</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Залог за чистоту</span>
+                <span class="mt-facet-note">контроль имущества и чекаут</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Чаны и допуслуги</span>
+                <span class="mt-facet-note">фурако, дрова, угли и казаны</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Буфер на клининг</span>
+                <span class="mt-facet-note">уборка территории без накладок</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для глэмпингов: шахматка бронирования домиков и беседок" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронная шахматка домиков и беседок, статус уборки и растопки чанов в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Шахматка глэмпинга" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый шатер, беседка и гость <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Управляющие и горничные видят текущие брони домиков, статус растопки чанов и готовность гриль-беседок на любом планшете.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Сафари-тент #3 «Озеро» · Заезд 14:00 (2 суток)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Заселение</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Купольный шатер с террасой · Банный чан фурако</div>
+                <div class="mt-auto-car-tier">Гости: 4 человека · Залог 5 000 ₽ внесен онлайн</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⛺</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Проживание 2 суток + Чан</span>
+              <span class="mt-auto-price">28 000 ₽ · Подтверждено</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Гриль-беседка «Лесная» · Клининг территории</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (60 мин)</div>
+                <div class="mt-auto-car-tier">Уборка мангала, вывоз мусора, дезинфекция мебели</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Клининг и проветривание</span>
+              <span class="mt-auto-price">До 17:00</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">A-frame домик #1 · Компания 6 человек</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Бронь с 17:00</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Панорамные окна, гриль Weber · Охапка дров</div>
+                <div class="mt-auto-car-tier">Предоплата 50% внесена онлайн · Заезд сегодня</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🌲</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Суточная аренда</span>
+              <span class="mt-auto-price">14 500 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GLAMPING OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для глэмпингов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы глэмпинга и базы отдыха <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, несостыковок заездов и путаницы с ключами: онлайн-шахматка домиков и беседок 24/7, залоги за чистоту, допуслуги и приём предоплаты.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Посуточная и почасовая шахматка <span class="mt-overview-hook">в едином календаре без накладок</span></h3>
+            <p>Объединяйте посуточную аренду жилых домиков (A-frame, геокупола, сафари-тенты) и почасовую бронь гриль-беседок в единой системе. Никаких пересечений гостей и путаницы с ключами.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Шахматка глэмпинга</span><span>Посуточно / часы</span></div>
+              <div class="mt-overview-calendar"><span>14:00</span><div class="mt-overview-slot">A-frame #1 <small>Заезд 2 суток</small></div><span>12:00</span><div class="mt-overview-slot mt-overview-slot--light">Клининг <small>2 часа</small></div><span>14:00</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт залога за чистоту и имущество <span class="mt-overview-hook">без конфликтов</span></h3>
+            <p>Фиксируйте обеспечительный депозит (залог) при бронировании онлайн или на ресепшене. Администратор проводит быстрый чекаут по чек-листу и возвращает залог в один клик без споров.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Контроль залогов</span><span>Чекаут онлайн</span></div>
+              <div class="mt-overview-price-row"><span>Обеспечительный залог</span><strong>5 000 ₽ внесен</strong></div>
+              <div class="mt-overview-price-row"><span>Проверка по чек-листу</span><strong>Имущество в порядке</strong></div>
+              <div class="mt-overview-price-tag">Возврат залога гостю в 1 клик</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Аренда чана фурако, дрова и казан <span class="mt-overview-hook">в одном чеке</span></h3>
+            <p>Гости добавляют горячий банный чан на травах, охапки березовых дров, решетки, угли, аренду сапбордов или велосипедов прямо в форме бронирования. Средний чек вырастает на 38%.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Дополнительные опции</span><span>Выручка +38%</span></div>
+              <div class="mt-overview-message">
+                Бронь тент #3: Горячий чан фурако к 19:00, 2 охапки дров, чугунный казан. Служба заботы уведомлена.
+                <span class="mt-overview-reaction">🪵</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Допуслуги парка</span><strong>Автоматическое добавление к чеку →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Обязательная предоплата <span class="mt-overview-hook">и защита от срыва броней на выходные</span></h3>
+            <p>Принимайте онлайн-аванс (30–50%) через СБП или интернет-эквайринг. Гости гарантированно приезжают к заселению, а вы защищены от «пустых» броней в высокий сезон и праздники.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Фиксация брони</span><span>Предоплата СБП</span></div>
+              <div class="mt-overview-stages"><span>Бронь</span><i></i><span>Аванс 50%</span><i></i><span>Заезд</span></div>
+              <div class="mt-overview-check">✓ <span>Аванс зачислен на расчетный счет</span></div>
+              <div class="mt-overview-check">✓ <span>Домик закреплен за гостем</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Табель горничных и службы заботы <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Программа ставит задачи клинерам на уборку сразу после выезда и фиксирует подготовку каждого домика к 14:00. Прозрачный учёт выполненных уборок без бумажных чек-листов.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт клининга</span><span>Контроль готовности</span></div>
+              <div class="mt-overview-metrics"><span>Домики<b>12 убрано</b></span><span>Чек-лист<b>100% готов</b></span><span>К 14:00<b>Вовремя</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- GLAMPING JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь гостя в глэмпинг">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один уикенд гостей на природе. <span class="mt-hero-accent">Полный порядок в глэмпинг-парке.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния управляет отдыхом: от брони сафари-тента на сайте до растопки горячего чана фурако и быстрого чекаута с возвратом залога.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения бронирования" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Сафари-тент с террасой (2 суток, 4 гостя)</strong><span>Проживание + горячий банный чан фурако + буфер на клининг и смену белья</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Гость</span>
+              <h3>Выбор домика или беседки, дат отдыха и допуслуг на сайте 24/7</h3>
+              <p>Гость выбирает сафари-тент с видом на озеро, указывает 2 суток, добавляет горячий чан фурако и охапку дров без переписок в мессенджерах.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь тент #3</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Гость</span><strong>Екатерина С. (4 человека)</strong></div>
+              <div class="mt-journey-proof-row"><span>Объект</span><strong>Сафари-тент «Озеро» + Чан</strong></div>
+              <div class="mt-journey-proof-row"><span>Даты</span><strong>Пятница – Воскресенье (2 суток)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация слота, заказ чана и внесение предоплаты онлайн</h3>
+              <p>Клиент вносит 50% предоплату и залог за чистоту через СБП, система блокирует даты в шахматке и ставит задачу на растопку чана к 18:00.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ #8930</span>
+                <span class="mt-journey-proof-badge">Аванс 50%</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Проживание</span><strong>22 000 ₽ (2 суток)</strong></div>
+              <div class="mt-journey-proof-row"><span>Чан и дрова</span><strong>6 000 ₽ (включено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Залог</span><strong>5 000 ₽ (зафиксирован)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Маршрут, правила заезда и инструкция по заселению в Telegram</h3>
+              <p>Сервисный бот отправляет гостю геолокацию парка, схему проезда, код от въездного шлагбаума и памятку по правилам тихого часа.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка гостю</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Заезд с 14:00 · Шлагбаум #4 · Чан в 18:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Гости прибывают без накладок</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Служба заботы</span>
+              <h3>Заселение гостей, отдых и регламентный клининг территории</h3>
+              <p>Гости наслаждаются уикендом на природе. При выезде администратор быстро осматривает шатер, возвращает залог, а клининг готовит тент к 14:00.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог заезда</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата остатка</span><strong>14 000 ₽ при заезде</strong></div>
+              <div class="mt-journey-proof-row"><span>Залог</span><strong>5 000 ₽ возвращен гостю</strong></div>
+              <div class="mt-journey-proof-row"><span>Клининг</span><strong>Тент убран к 14:00</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс глэмпинг-парка" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс эко-парка</div>
+            <h2 class="mt-case-title">Роман Васильев, сооснователь эко-парка «Лесные Шатры»</h2>
+            <blockquote class="mt-case-quote">
+              «В сезон у нас творился сумасшедший дом: администраторы вручную вели шахматку 10 домиков и 4 гриль-беседок в блокноте, гости забывали внести предоплату и срывали субботние брони, а горничные не понимали, какую беседку нужно убрать в первую очередь. С Молнией гости бронируют шатры и беседки на сайте с 50% предоплатой и залогом за чистоту, а клининг получает уведомление о буфере сразу после выезда. Пустые простои исчезли, а выручка от допродажи чанов и дров выросла на 38%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Роман Васильев <span>· Сооснователь глэмпинга (10 сафари-тентов, 4 гриль-беседки, чаны), <span style="white-space:nowrap">Карелия</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Овербукингов и накладок между посуточными домиками и беседками</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">60 мин</span>
+              <span class="mt-case-label">Буфер на уборку и смену белья строго в графике к заезду в 14:00</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+38%</span>
+              <span class="mt-case-label">Рост выручки от допродажи горячих чанов фурако, дров и решеток</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GLAMPING FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для глэмпингов</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего глэмпинга</h3>
+            <p>Бесплатно поможем настроить шахматку домиков и беседок, залоги за чистоту, каталог чанов и дров, виджет бронирования и онлайн-предоплату.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -13555,6 +14048,11 @@ def main():
     saunas_html = build_saunas_page()
     (ROOT_DIR / "saunas.html").write_text(saunas_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'saunas.html'}")
+
+    print("Building sector landing page: /glamping...")
+    glamping_html = build_glamping_page()
+    (ROOT_DIR / "glamping.html").write_text(glamping_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'glamping.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
