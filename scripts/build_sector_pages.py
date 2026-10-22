@@ -3638,6 +3638,13 @@ def build_cleaning_page() -> str:
               <div class="mt-subniche-desc">Расчёт стоимости от посадочных мест диванов, выезд мастера с экстрактором, фото «до/после» и гарантийный талон.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/window-cleaning">
+            <div class="mt-subniche-icon">🪟</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Мойка окон, балконов и витрин <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Калькулятор створок и этажности, мытьё москитных сеток, откосов и витрин без разводов.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -9000,6 +9007,17 @@ def sync_sitemap():
         content = content.replace("</urlset>", url_entry + "</urlset>")
         changed = True
         print("Added /furniture-cleaning to sitemap.xml")
+
+    if "https://molniya-tech.ru/window-cleaning" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/window-cleaning</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /window-cleaning to sitemap.xml")
 
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
@@ -14477,6 +14495,481 @@ def build_furniture_cleaning_page() -> str:
 
 
 
+def build_window_cleaning_page() -> str:
+    """Builds the complete window, balcony and storefront cleaning micro-landing page."""
+    nav_html = render_nav_html(active_item="cleaning", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "window-cleaning",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для сервиса мойки окон',
+        "Оставьте контакты — поможем настроить калькулятор створок и балконов, график выездных бригад, учёт высотных работ и расчет зарплат.",
+    )
+
+    title = "Онлайн-заказ мойки окон, балконов и витрин — CRM и выезд мастеров"
+    description = (
+        "Программа для мойки окон, балконов, фасадов и витрин: онлайн-калькулятор створок 24/7, "
+        "маршруты выездных бригад, чек-листы без разводов и сдельная зарплата."
+    )
+    canonical = "https://molniya-tech.ru/window-cleaning"
+
+    faqs = [
+        (
+            "Как клиенты рассчитывают стоимость и заказывают мойку окон через Молнию?",
+            "Вы получаете удобный онлайн-калькулятор для сайта, группы VK, мессенджеров и карт. Клиент выбирает тип объекта (квартира, загородный дом, офис, магазин с витринами), указывает число стандартных створок (открывающиеся и глухие), балконных блоков, панорамных секций в пол и этаж. Система мгновенно показывает честную цену и предлагает открытые слоты выезда мастеров.",
+        ),
+        (
+            "Как калькулятор рассчитывает сложные опции: москитные сетки, откосы и после ремонта?",
+            "В форме заказа клиент может добавить мойку москитных сеток, очистку подоконников и наружных отливов, удаление защитной строительной пленки, скотча и цементных капель после ремонта. Программа рассчитывает нормочасы на каждый элемент и формирует прозрачную смету без споров на адресе.",
+        ),
+        (
+            "Как система составляет маршруты выездных мастеров с инвентарем и стремянками?",
+            "Программа группирует адреса по секторам города, автоматически добавляя буфер на дорогу (30–45 минут) с учетом пробок. Мастера видят свой маршрутный лист, этажность, необходимость длинных телескопических штанг (до 10 метров) или стремянок прямо на смартфоне.",
+        ),
+        (
+            "Как Молния помогает контролировать качество мойки без разводов?",
+            "В мобильном интерфейсе мастера заложен цифровой чек-лист сдачи объекта: проверка светопрозрачности стекла с двух сторон, чистота межрамного пространства и резиновых уплотнителей, сухость откосов и подоконников. Клиент подписывает электронный акт прямо на экране смартфона.",
+        ),
+        (
+            "Как устроен сдельный расчёт зарплаты мастеров-мойщиков (35–45%)?",
+            "После закрытия заказ-наряда программа автоматически рассчитывает сдельную выработку мастера: процент от чека (35–45%) с учетом надбавок за сложные нестандартные створки, работу на высоте или удаление скотча. Зарплатный табель формируется моментально без бумажных записей.",
+        ),
+        (
+            "Как система напоминает клиентам о визите и предупреждает о погодных условиях?",
+            "Сервисный бот отправляет клиенту напоминание накануне и за 1 час до выезда с контактами мастера. При сильном ветре или проливном дожде система позволяет диспетчеру в один клик согласовать перенос наружной мойки на удобное сухое окно с сохранением внутренней чистки.",
+        ),
+        (
+            "Как бесплатно перенести клиентскую базу и прайс-лист из Excel или другой CRM?",
+            "Служба заботы Молнии бесплатно настроит прайс-лист по типам окон и створок, перенесет базу постоянных заказчиков (включая коммерческие объекты с регулярной мойкой витрин) из таблиц или старой CRM за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Клининг", "item": "https://molniya-tech.ru/cleaning"},
+                {"@type": "ListItem", "position": 3, "name": "Мойка окон и витрин", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для мойки окон, балконов и витрин",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и калькулятор створок для мойки окон",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- WINDOW CLEANING HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для мойки окон и витрин: <span class="mt-hero-accent">калькулятор створок и выезд мастеров</span></h1>
+          <p class="mt-hero-desc">Онлайн-расчёт мойки окон, балконов и витрин 24/7, маршрутизация мастеров по районам, чек-листы чистоты без разводов и сдельная зарплата без рутины.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_window_cleaning" target="_blank" rel="noopener">Подключить мойку окон</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для сервиса мойки окон">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Створки и балконы</span>
+                <span class="mt-facet-note">точный расчёт без переплат</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Логистика бригад</span>
+                <span class="mt-facet-note">маршруты по районам без пробок</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Чек-лист без разводов</span>
+                <span class="mt-facet-note">акт сдачи и подпись на экране</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Зарплата 35–45%</span>
+                <span class="mt-facet-note">автоматический расчёт смены</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для мойки окон: расписание выездов мастеров" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронный график выездов мастеров по мойке окон, адреса, этажность и статусы выполнения в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="График мастеров мойки окон" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый заказ, мастер и створка <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Диспетчеры и мастера видят маршруты по районам города, число створок, этажность и статус выполнения на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Денис Л. · Сгоны Ettore / Штанга 6м · Московский р-н</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Мойка стекол</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Квартира 3-комнатная · 8 створок + Лоджия 6м</div>
+                <div class="mt-auto-car-tier">Мытье рам, москитных сеток, откосов · Без разводов</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🪟</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Мойка окон под ключ (2 часа)</span>
+              <span class="mt-auto-price">5 400 ₽ · В работе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Денис Л. · Дорога между заказами</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв на дорогу (35 мин)</div>
+                <div class="mt-auto-car-tier">Переезд: Московский пр. → ул. Ленсовета, дозаправка химии</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буфер на маршрут</span>
+              <span class="mt-auto-price">До 15:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Денис Л. · Витрина кофейни (ул. Ленсовета)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Панорамные витрины 24 м² · Двусторонняя мойка</div>
+                <div class="mt-auto-car-tier">Удаление следов скотча и пыли · Оплата по безналу B2B</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🏢</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Мойка витрин B2B</span>
+              <span class="mt-auto-price">4 200 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WINDOW OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для мойки окон" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы службы мойки окон и витрин <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, споров о цене на месте и накладок: онлайн-калькулятор створок 24/7, маршруты мастеров по районам, чек-листы без разводов и сдельная зарплата.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Калькулятор створок и балконов 24/7 <span class="mt-overview-hook">вместо долгих созвонов</span></h3>
+            <p>Клиент указывает количество открывающихся и глухих створок, площадь остекления балкона и этаж. Виджет показывает фиксированную стоимость без неприятных сюрпризов на объекте.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Калькулятор створок</span><span>Выезд мастера</span></div>
+              <div class="mt-overview-calendar"><span>13:00</span><div class="mt-overview-slot">8 створок + лоджия <small>5 400 ₽</small></div><span>15:00</span><div class="mt-overview-slot mt-overview-slot--light">Дорога <small>35 мин</small></div><span>15:35</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Маршруты мастеров по районам <span class="mt-overview-hook">без опозданий и пробок</span></h3>
+            <p>Система распределяет заявки по территориальным кластерам и закладывает 30–45 минут на дорогу между адресами. Мастера приезжают точно к оговоренному времени без задержек.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Логистика выездов</span><span>Без холостого пробега</span></div>
+              <div class="mt-overview-price-row"><span>Московский район</span><strong>4 выезда в кластере</strong></div>
+              <div class="mt-overview-price-row"><span>Буфер на переезд</span><strong>35 минут в графике</strong></div>
+              <div class="mt-overview-price-tag">Экономия до 2.5 часов на разъездах в день</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Чек-лист качества без разводов <span class="mt-overview-hook">и электронная подпись</span></h3>
+            <p>Мастер отмечает в чек-листе чистоту рам, откосов, уплотнителей и идеальную прозрачность стекол. Клиент принимает работу и расписывается прямо на экране смартфона.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Чек-лист сдачи</span><span>Прозрачность 100%</span></div>
+              <div class="mt-overview-message">
+                Заказ #6180: Створки вымыты с 2 сторон, рамы обеспылены, разводы отсутствуют. Акт подписан заказчиком.
+                <span class="mt-overview-reaction">✨</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Акт приёмки</span><strong>Электронная подпись клиента →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сдельная зарплата мастеров (35–45%) <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Программа автоматически начисляет выработку мастера сразу после закрытия наряда, учитывая доплаты за мытье москиток, снятие скотча и высотные работы.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расчёт выработки</span><span>Сдельная оплата</span></div>
+              <div class="mt-overview-stages"><span>Заказ</span><i></i><span>Чек-лист</span><i></i><span>Выплата</span></div>
+              <div class="mt-overview-check">✓ <span>Начислено 40% мастеру на баланс</span></div>
+              <div class="mt-overview-check">✓ <span>Электронный чек отправлен клиенту</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Учёт штанг, сгонов и химии <span class="mt-overview-hook">под полным контролем</span></h3>
+            <p>Контролируйте наличие шубок, сгонов, телескопических штанг и безопасных моющих средств на складе. Закрепление комплектов инвентаря за выездными мастерами.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Склад и инвентарь</span><span>Штанги и сгоны</span></div>
+              <div class="mt-overview-metrics"><span>Штанги 10м<b>4 комплекта</b></span><span>Сгоны Unger<b>100% учёт</b></span><span>Потери<b>0 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- WINDOW JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь заказа мойки окон">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один выезд на мойку окон. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу службы: от расчета створок на сайте до чек-листа чистоты без разводов и начисления сдельной зарплаты.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заказа" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Мойка окон в 3-комнатной квартире (8 створок + лоджия)</strong><span>Выезд в Московский район · Инвентарь Unger / Ettore</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Расчёт стоимости окон по числу створок и выбор времени на сайте 24/7</h3>
+              <p>Клиент указывает 8 створок, лоджию и мытьё москитных сеток. Виджет показывает точную цену 5 400 ₽ и предлагает свободные слоты без звонков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ наряда</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Сергей В. (Московский пр.)</strong></div>
+              <div class="mt-journey-proof-row"><span>Объект</span><strong>8 створок + Лоджия 6м + 3 сетки</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 13:00 – 15:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация наряда, выбор опций москиток и назначение мастера</h3>
+              <p>Программа проверяет территориальный сектор, назначает мастера Дениса Л. и бронирует заказ в его мобильном расписании с буфером на переезд.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Наряд #7120</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>5 400 ₽ (с сетками)</strong></div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Денис Л. (Сгоны + Штанга 6м)</strong></div>
+              <div class="mt-journey-proof-row"><span>Район</span><strong>Московский (сектор 3)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Маршрутный лист мастера, напоминание клиенту и чек-лист инвентаря</h3>
+              <p>Сервисный бот отправляет клиенту статус «Мастер в пути», а мастеру — этаж, адрес, код домофона и напоминание взять штангу для лоджии.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Маршрут мастера</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / Мобильный веб</strong></div>
+              <div class="mt-journey-proof-row"><span>Адрес</span><strong>Московский пр., 172, кв. 64 (8 этаж)</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Мастер прибывает точно к 13:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер</span>
+              <h3>Мойка рам и стекол, сушка сгоном, подпись акта и сдача без разводов</h3>
+              <p>Мастер моет рамы и стекла, сушит створки сгоном, отмечает чек-лист и закрывает наряд. Программа начисляет мастеру 40% (2 160 ₽) за смену.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог заказа</span>
+                <span class="mt-journey-proof-badge">Выполнено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>5 400 ₽ (Оплачено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата мастера</span><strong>+2 160 ₽ (40% начислено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий адрес</span><strong>Выезд на Ленсовета в 15:30</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс мойки окон" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс службы мойки окон и витрин</div>
+            <h2 class="mt-case-title">Артем Воронов, руководитель компании «Кристалл Клир»</h2>
+            <blockquote class="mt-case-quote">
+              «Весной и осенью у нас шквал звонков: диспетчеры путались в створках и балконах, клиенты жаловались, что на месте цена выросла в полтора раза, а мастера теряли по 3 часа в день в пробках между дальними районами. В Молнии клиенты рассчитывают точную стоимость по створкам на сайте, а система формирует плотные районные маршруты с авто-буфером на переезды. Заказов в день стало на 35% больше, а жалобы на пересмотр цен на объекте исчезли полностью.»
+            </blockquote>
+            <div class="mt-case-author">
+              Артем Воронов <span>· Руководитель службы (8 выездных мастеров по мойке окон), <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Споров о стоимости на адресе благодаря прозрачному калькулятору створок</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">35 мин</span>
+              <span class="mt-case-label">Буфер на дорогу между адресами в одном районе без опозданий мастеров</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+35%</span>
+              <span class="mt-case-label">Рост числа выполненных заказов в смену за счет плотной районной логистики</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WINDOW FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для мойки окон</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своей службы мойки окон</h3>
+            <p>Бесплатно поможем настроить калькулятор створок и балконов, районную маршрутизацию, чек-листы сдачи и сдельный расчет зарплат.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -14562,6 +15055,11 @@ def main():
     furniture_cleaning_html = build_furniture_cleaning_page()
     (ROOT_DIR / "furniture-cleaning.html").write_text(furniture_cleaning_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'furniture-cleaning.html'}")
+
+    print("Building sector landing page: /window-cleaning...")
+    window_cleaning_html = build_window_cleaning_page()
+    (ROOT_DIR / "window-cleaning.html").write_text(window_cleaning_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'window-cleaning.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
