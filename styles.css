@@ -2823,7 +2823,7 @@ a.mt-origin-model-row:focus-visible {
 }
 .mt-journey-proof > strong { display: block; margin: 19px 0; color: var(--mt-text-strong); font-size: 20px; }
 .mt-journey-proof-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid #eee8e1; color: var(--mt-text-body); font-size: 13px; }
-.mt-journey-proof-row strong { color: #39754c; }
+.mt-journey-proof-row strong { color: var(--mt-text-strong); font-weight: 700; }
 .mt-journey-time { display: grid; grid-template-columns: 55px 1fr; gap: 12px; align-items: center; padding-top: 10px; color: #8e867b; font-size: 12px; }
 .mt-journey-time i { height: 1px; background: #eee8e1; }
 .mt-journey-time strong { padding: 9px 12px; border-left: 3px solid #bf6549; border-radius: 5px; background: #faf0e9; color: #644333; font-size: 13px; }
