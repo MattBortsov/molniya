@@ -1958,7 +1958,7 @@ def build_health_page() -> str:
       <section class="mt-section mt-reveal" data-screen-label="Частная практика" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для студий и специалистов</span></h2>
-          <p class="mt-section-sub">Если вы ведёте профильную студию или индивидуальный приём, используйте готовые страницы записи Молнии с регламентом слотов, буфером на отдых и анкетами приёма.</p>
+          <p class="mt-section-sub">Для студии или индивидуальных занятий. Используйте индивидуальные страницы записи со слотами, буфером на отдых и анкетами приёма.</p>
         </div>
 
         <div class="mt-subniche-grid">
