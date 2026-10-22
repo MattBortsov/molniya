@@ -3623,6 +3623,24 @@ def build_cleaning_page() -> str:
         </div>
       </section>
 
+      <!-- CLEANING SUBNICHE SECTION -->
+      <section class="mt-section mt-reveal" data-screen-label="Специализированные решения для клининга" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для клининга и выездных служб</span></h2>
+          <p class="mt-section-sub">Для химчистки мебели, мытья окон и служб дезинфекции. Используйте специализированные страницы записи с расчётом посадочных мест, створок и выездным графиком.</p>
+        </div>
+
+        <div class="mt-subniche-grid">
+          <a class="mt-subniche-card" href="/furniture-cleaning">
+            <div class="mt-subniche-icon">🛋️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Химчистка мягкой мебели и ковров <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Расчёт стоимости от посадочных мест диванов, выезд мастера с экстрактором, фото «до/после» и гарантийный талон.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- CLEANING JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь выполнения заказа уборки">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
@@ -8972,6 +8990,17 @@ def sync_sitemap():
         changed = True
         print("Added /glamping to sitemap.xml")
 
+    if "https://molniya-tech.ru/furniture-cleaning" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/furniture-cleaning</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /furniture-cleaning to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -13973,6 +14002,481 @@ def build_glamping_page() -> str:
 
 
 
+def build_furniture_cleaning_page() -> str:
+    """Builds the complete upholstery and carpet cleaning micro-landing page."""
+    nav_html = render_nav_html(active_item="cleaning", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "furniture-cleaning",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для сервиса химчистки мебели',
+        "Оставьте контакты — поможем настроить калькулятор посадочных мест, график выезда мастеров, фотофиксацию пятен и расчет зарплат.",
+    )
+
+    title = "Онлайн-запись на химчистку мебели и ковров — CRM и выезд мастеров"
+    description = (
+        "Программа для химчистки мягкой мебели и ковров: калькулятор посадочных мест диванов 24/7, "
+        "маршруты выездных мастеров, фото «до/после» и сдельная зарплата."
+    )
+    canonical = "https://molniya-tech.ru/furniture-cleaning"
+
+    faqs = [
+        (
+            "Как клиенты рассчитывают стоимость и вызывают мастера по химчистке через Молнию?",
+            "Вы получаете интерактивный виджет-калькулятор для сайта, группы VK, Telegram и карт. Клиент выбирает тип мебели (прямой или угловой диван, кресло, матрас, стулья, ковер), указывает количество посадочных мест, ткань (жаккард, флок, велюр, кожа) и характер загрязнений. Система мгновенно показывает точную цену и предлагает свободные окна в графике мастеров.",
+        ),
+        (
+            "Как устроен расчет стоимости от посадочных мест, подушек и спального места?",
+            "В калькуляторе настраиваются прозрачные базовые тарифы: стандартное посадочное место (например, 700–900 ₽), угловая секция, раскладное спальное место и диванные подушки. Программа также учитывает дополнительные опции: выведение сложных пятен (урина, кровь, маркеры, кофе), нейтрализация запахов энзимами и экспресс-сушка мебели феном.",
+        ),
+        (
+            "Как система составляет маршруты выездных мастеров с экстракторами по районам?",
+            "Программа распределяет заявки с учетом геолокации и районов города, автоматически закладывая буферное время (30–45 минут) на дорогу между адресами и погрузку экстракторов (Santoemma, Karcher Puzzi). Это исключает опоздания мастеров и лишний холостой пробег по пробкам.",
+        ),
+        (
+            "Как работает фотофиксация состояния обивки «до» и «после» чистки?",
+            "Мастер прикрепляет фотографии мебели со своего смартфона прямо в цифровой заказ-наряд перед началом работы (фиксируя застарелые пятна, потертости и повреждения ткани) и после завершения экстракции. Фотографии защищают компанию от необоснованных претензий и автоматически попадают в архив заказа.",
+        ),
+        (
+            "Как рассчитывается сдельная зарплата мастеров химчистки?",
+            "Для каждого специалиста можно задать процент от чека (например, 35–45% в зависимости от квалификации и использования собственной или корпоративной химии) либо фиксированную ставку за посадочное место. Сразу после подписания акта и закрытия заказа наряд отправляется в зарплатную ведомость.",
+        ),
+        (
+            "Как система отправляет напоминания клиентам накануне выезда?",
+            "Сервисный бот отправляет клиенту подтверждение сразу после оформления, а накануне и за 1 час до визита — уведомление в Telegram или SMS с именем мастера, временем прибытия, напоминанием освободить диван от вещей и ссылкой на карточку заказа.",
+        ),
+        (
+            "Как бесплатно перенести клиентскую базу и прайс-лист из Excel или старой CRM?",
+            "Служба заботы Молнии бесплатно настроит каталог вашей мебели, формулы расчета по посадочным местам, перенесет базу постоянных клиентов с историей чисток и адресами из Excel или любой CRM за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Клининг", "item": "https://molniya-tech.ru/cleaning"},
+                {"@type": "ListItem", "position": 3, "name": "Химчистка мебели и ковров", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для выездной химчистки мебели",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и калькулятор посадочных мест для химчистки",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- FURNITURE HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для химчистки мебели: <span class="mt-hero-accent">калькулятор посадочных мест и выезд мастеров</span></h1>
+          <p class="mt-hero-desc">Онлайн-расчёт стоимости чистки диванов и матрасов 24/7, маршруты мастеров с экстракторами по районам, фотофиксация пятен «до/после» и сдельная зарплата без рутины.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_furniture_cleaning" target="_blank" rel="noopener">Подключить химчистку</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для выездной химчистки">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Посадочные места</span>
+                <span class="mt-facet-note">точный расчёт диванов и матрасов</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">График мастеров</span>
+                <span class="mt-facet-note">маршруты по районам без пробок</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Фото «до/после»</span>
+                <span class="mt-facet-note">фиксация пятен и акт приёмки</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Зарплата 35–45%</span>
+                <span class="mt-facet-note">прозрачный расчёт за смену</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для химчистки мебели: расписание выездов мастеров" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание выездов мастеров с экстракторами, адреса и статусы чистки в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="График мастеров химчистки" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый заказ, мастер и экстрактор <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Диспетчеры и мастера видят маршруты по районам города, прикрепленные фото загрязнений и статус выполнения чистки на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Антон К. · Santoemma Sabrina · Приморский р-н</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Экстракция</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Диван угловой 4 места + Выдвижное спальное место</div>
+                <div class="mt-auto-car-tier">Выведение пятен кофе и слайма · Защитная сушка феном</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🛋️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Химчистка дивана (2.5 часа)</span>
+              <span class="mt-auto-price">4 800 ₽ · В работе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Антон К. · Дорога между заказами</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв на дорогу (40 мин)</div>
+                <div class="mt-auto-car-tier">Переезд: ул. Оптиков → Комендантский пр., погрузка химии</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буфер на маршрут</span>
+              <span class="mt-auto-price">До 16:00</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Мастер Антон К. · Выезд на дом (Комендантский пр.)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Матрас ортопедический 180×200 (две стороны)</div>
+                <div class="mt-auto-car-tier">Удаление пятен и запахов · Предоплата 50% онлайн</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🛏️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Химчистка матраса</span>
+              <span class="mt-auto-price">3 900 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FURNITURE OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для химчистки мебели" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы сервиса химчистки мебели <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, споров о цене на пороге и накладок: онлайн-калькулятор посадочных мест 24/7, маршруты мастеров по районам, фото «до/после» и сдельная зарплата.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Калькулятор посадочных мест 24/7 <span class="mt-overview-hook">вместо долгих переписок</span></h3>
+            <p>Клиент выбирает прямой или угловой диван, спальное место, матрас или кресла. Калькулятор показывает прозрачную смету с учетом выведения пятен и антибактериальной сушки феном.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Калькулятор дивана</span><span>Выезд мастера</span></div>
+              <div class="mt-overview-calendar"><span>13:30</span><div class="mt-overview-slot">Угловой 4 места <small>4 800 ₽</small></div><span>16:00</span><div class="mt-overview-slot mt-overview-slot--light">Дорога <small>40 мин</small></div><span>16:40</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Маршруты мастеров по районам <span class="mt-overview-hook">без опозданий и пробок</span></h3>
+            <p>Система распределяет адреса по территориальным секторам и закладывает 30–45 минут на дорогу между выездами. Мастера приезжают строго к назначенному времени без накладок.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Логистика бригад</span><span>Без холостого пробега</span></div>
+              <div class="mt-overview-price-row"><span>Приморский район</span><strong>3 выезда в секторе</strong></div>
+              <div class="mt-overview-price-row"><span>Буфер на переезд</span><strong>40 минут в графике</strong></div>
+              <div class="mt-overview-price-tag">Экономия до 2 часов на разъездах в день</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Фотофиксация пятен «до» и «после» <span class="mt-overview-hook">в карточке заказа</span></h3>
+            <p>Мастер фотографирует мебель со смартфона до начала экстракции, фиксируя износ обивки и застарелые загрязнения. Фото защищают компанию от необоснованных претензий и споров.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Цифровой наряд</span><span>Фотофиксация</span></div>
+              <div class="mt-overview-message">
+                Заказ #4120: Фото обивки «до» прикреплены (кофе, следы фломастера). Акт согласован с клиентом.
+                <span class="mt-overview-reaction">📸</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Состояние ткани</span><strong>Защита от претензий 100% →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сдельная зарплата мастеров (35–45%) <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Автоматический расчёт выработки мастера сразу после закрытия наряда. Программа учитывает надбавки за сложные ткани, сушку и продажу защитной пропитки от пятен.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расчёт выработки</span><span>Сдельная оплата</span></div>
+              <div class="mt-overview-stages"><span>Заказ</span><i></i><span>Акт</span><i></i><span>Выплата</span></div>
+              <div class="mt-overview-check">✓ <span>Начислено 40% мастеру на баланс</span></div>
+              <div class="mt-overview-check">✓ <span>Электронный чек отправлен клиенту</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад профессиональной химии <span class="mt-overview-hook">и контроль экстракторов</span></h3>
+            <p>Контролируйте выдачу пятновыводителей, энзимов, нейтрализаторов запахов и закрепление дорогостоящих экстракторов (Santoemma, Karcher Puzzi) за конкретными специалистами.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Оборудование и химия</span><span>Складской учёт</span></div>
+              <div class="mt-overview-metrics"><span>Экстракторы<b>6 аппаратов</b></span><span>Пятновыводители<b>100% учёт</b></span><span>Потери<b>0 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- FURNITURE JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь заказа химчистки">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один выезд на химчистку дивана. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу мастера: от расчета по посадочным местам на сайте до фотофиксации пятен и начисления зарплаты за смену.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заказа" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Химчистка углового дивана 4 места + экспресс-сушка</strong><span>Выезд в Приморский район · Экстрактор Santoemma Sabrina</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Расчёт стоимости дивана по числу мест и выбор времени выезда 24/7</h3>
+              <p>Клиент указывает угловой диван на 4 посадочных места, добавляет сушку мебели феном и видит точную стоимость без сюрпризов на месте.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ наряда</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Марина В. (ул. Оптиков)</strong></div>
+              <div class="mt-journey-proof-row"><span>Объект</span><strong>Угловой диван 4 места + Сушка</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 13:30 – 16:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация наряда, выбор опций сушки и назначение мастера</h3>
+              <p>Система проверяет геолокацию, назначает мастера Антона К., работающего в Приморском районе, и бронирует слот в его мобильном календаре.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Наряд #5420</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>4 800 ₽ (с сушкой)</strong></div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Антон К. (Santoemma #2)</strong></div>
+              <div class="mt-journey-proof-row"><span>Район</span><strong>Приморский (сектор 2)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Маршрутный лист мастера, напоминание клиенту и чек-лист химии</h3>
+              <p>Сервисный бот отправляет клиенту статус «Мастер выехал к вам», а мастеру — точный адрес, код домофона и состав пятен для подбора энзимов.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Маршрут мастера</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / Мобильный веб</strong></div>
+              <div class="mt-journey-proof-row"><span>Адрес</span><strong>ул. Оптиков, 45, к. 1, кв. 118</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Мастер прибывает строго к 13:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер</span>
+              <h3>Фото «до», глубокая экстракция, сушка и сдача работы</h3>
+              <p>Мастер делает фото «до», выводит пятна, сушит мебель феном и закрывает наряд. Программа начисляет мастеру 40% (1 920 ₽) на баланс смены.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог заказа</span>
+                <span class="mt-journey-proof-badge">Выполнено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>4 800 ₽ (Оплачено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата мастера</span><strong>+1 920 ₽ (40% начислено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий адрес</span><strong>Выезд на Комендантский в 16:00</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс химчистки мебели" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс выездной химчистки мебели</div>
+            <h2 class="mt-case-title">Дмитрий Савельев, основатель сервиса химчистки «ДиванПро»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше диспетчер тратил по 20 минут на созвон с каждым клиентом, высчитывая размер дивана на пальцах, а мастера застревали в пробках через весь город. В Молнии клиенты рассчитывают диваны по посадочным местам на сайте за минуту, а программа группирует выезды по районам с авто-буфером на дорогу. Время согласования заказов сократилось в 4 раза, а средний чек вырос на 31% благодаря допродаже экспресс-сушки и чистки матрасов в виджете.»
+            </blockquote>
+            <div class="mt-case-author">
+              Дмитрий Савельев <span>· Основатель сервиса (6 выездных мастеров с Santoemma), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Опозданий мастеров благодаря авто-буферу на переезды между адресами</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2.5 ч</span>
+              <span class="mt-case-label">В день сэкономлено диспетчером на ручных расчетах диванов и звонках</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+31%</span>
+              <span class="mt-case-label">Рост среднего чека за счет допродажи сушки феном и чистки подушек в виджете</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FURNITURE FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для химчистки мебели</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего сервиса химчистки</h3>
+            <p>Бесплатно поможем настроить калькулятор посадочных мест, маршрутизацию по районам, фотофиксацию пятен и сдельный расчет зарплат.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -14053,6 +14557,11 @@ def main():
     glamping_html = build_glamping_page()
     (ROOT_DIR / "glamping.html").write_text(glamping_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'glamping.html'}")
+
+    print("Building sector landing page: /furniture-cleaning...")
+    furniture_cleaning_html = build_furniture_cleaning_page()
+    (ROOT_DIR / "furniture-cleaning.html").write_text(furniture_cleaning_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'furniture-cleaning.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
