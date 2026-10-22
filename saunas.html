@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн-бронирование бань и саун — CRM и расписание парных</title>
+  <meta name="description" content="Программа для банных комплексов и саун: онлайн-бронирование парных от 2 часов 24/7, учёт услуг банщика и веников, санитарные часы и предоплата.">
+  <link rel="canonical" href="https://molniya-tech.ru/saunas">
+  <meta property="og:title" content="Онлайн-бронирование бань и саун — CRM и расписание парных">
+  <meta property="og:description" content="Программа для банных комплексов и саун: онлайн-бронирование парных от 2 часов 24/7, учёт услуг банщика и веников, санитарные часы и предоплата.">
+  <meta property="og:url" content="https://molniya-tech.ru/saunas">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Онлайн-бронирование бань и саун — CRM и расписание парных">
+  <meta name="twitter:description" content="Программа для банных комплексов и саун: онлайн-бронирование парных от 2 часов 24/7, учёт услуг банщика и веников, санитарные часы и предоплата.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование бань и саун", "item": "https://molniya-tech.ru/saunas"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-бронирование и система учета для бань и саун", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/saunas", "description": "Программа для банных комплексов и саун: онлайн-бронирование парных от 2 часов 24/7, учёт услуг банщика и веников, санитарные часы и предоплата.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка шахматки парных банного комплекса"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как гости бронируют парные и бани через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете фирменную страницу онлайн-бронирования парных (русская парная на дровах, финская сауна, турецкий хаммам, кедровая бочка или спа-зона с бассейном). Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время сеанса, количество человек и сразу видят только свободные парные."}}, {"@type": "Question", "name": "Как система соблюдает минимальное время аренды (например, строго от 2 часов)?", "acceptedAnswer": {"@type": "Answer", "text": "В настройках каждой парной задается минимальная продолжительность бронирования (2, 3 или 4 часа) и шаг продления (по 30 или 60 минут). Программа не позволит забронировать сеанс меньше установленного лимита, исключая появление нерентабельных коротких «окон» в расписании."}}, {"@type": "Question", "name": "Как настраивается обязательный санитарный час между компаниями?", "acceptedAnswer": {"@type": "Answer", "text": "Программа автоматически закладывает технический перерыв (30–45 минут) после окончания каждого парения. За это время истопники и клинеры успевают провести влажную уборку, проветрить парную, продезинфицировать полки, поменять простыни, очистить купель и подкинуть дров для следующих гостей."}}, {"@type": "Question", "name": "Как клиенты добавляют к брони услуги банщика (пармейстера), веники и аренду чана?", "acceptedAnswer": {"@type": "Answer", "text": "При выборе времени гость может в один клик добавить авторское парение с пармейстером, мыльный массаж в хаммаме, дубовые или березовые веники, аренду горячего чана на травах, простыни и травяной чай. Стоимость дополнительных услуг автоматически суммируется в итоговый чек."}}, {"@type": "Question", "name": "Как работает внесение онлайн-предоплаты и защита от пустых топок?", "acceptedAnswer": {"@type": "Answer", "text": "При бронировании система предлагает внести предоплату (например, 30% или 50%) через интернет-эквайринг или СБП. Слот фиксируется только после подтверждения платежа. Это гарантирует, что к приезду гостей парная будет протоплена, а комплекс защищен от срывов вечерних прайм-слотов."}}, {"@type": "Question", "name": "Как система напоминает гостям о бронировании и предупреждает о времени подготовки?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисный бот отправляет подтверждение брони сразу после оплаты, а за 24 и 2 часа до начала — напоминание в Telegram или по SMS с точным адресом, схемой проезда, напоминанием о купальных принадлежностях и правилах отмены. Неявки сокращаются на 85%."}}, {"@type": "Question", "name": "Как быстро перенести текущее расписание и базу гостей из Excel или тетради?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно настроит список ваших парных, чанов и зон отдыха, график работы банщиков, прайс-лист на веники и перенесет базу постоянных гостей из таблиц или старой CRM. Перенос занимает 15 минут без перерыва в приёме гостей."}}]}]
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+    <div class="mt-page-content">
+
+      <!-- SAUNAS HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для бань и саун: <span class="mt-hero-accent">онлайн-бронирование парных и санитарные часы</span></h1>
+          <p class="mt-hero-desc">Интерактивная шахматка парных от 2 часов 24/7, автоматический буфер на уборку и просушку, учёт услуг банщика и веников, приём предоплаты онлайн и напоминания гостям.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_saunas" target="_blank" rel="noopener">Подключить банный комплекс</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для бань и банных комплексов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Парные от 2 часов</span>
+                <span class="mt-facet-note">шахматка слотов без часовых дыр</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Услуги банщика</span>
+                <span class="mt-facet-note">авторское парение, веники и чаны</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Санитарный час</span>
+                <span class="mt-facet-note">уборка, просушка и дезинфекция</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Предоплата онлайн</span>
+                <span class="mt-facet-note">защита от пустых топок и простоев</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для бань и саун: шахматка парных и бронирование" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронная шахматка парных, статус готовности пара и расписание банщиков в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание парных" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая парная, банщик и заказ <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Администраторы и истопники видят текущие парения в срубах, статус санитарного часа и готовность чанов на любом планшете.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Русская парная на дровах · Компания 6 человек</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Парение</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Кедровая купель и чан · Сеанс с 16:00 (3 часа)</div>
+                <div class="mt-auto-car-tier">Пармейстер: Иван · 2 дубовых веника, травяной чай</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🪵</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Аренда парной (3 часа)</span>
+              <span class="mt-auto-price">10 500 ₽ · В работе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Финская сауна · Санитарный час и уборка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (45 мин)</div>
+                <div class="mt-auto-car-tier">Дезинфекция полков, замена простыней, проветривание</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Санитарный час</span>
+              <span class="mt-auto-price">До 18:00</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Хаммам и спа-зона · Компания 8 человек</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Мыльный массаж и пилинг · Бассейн с подогревом</div>
+                <div class="mt-auto-car-tier">Предоплата 50% внесена онлайн · Бронь с 18:00</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🌿</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сессия 2.5 часа</span>
+              <span class="mt-auto-price">12 000 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SAUNAS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для бань и саун" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы банного комплекса и сауны <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, пустых вечерних топок и накладок: онлайн-бронь парных от 2 часов 24/7, санитарные часы, учёт банщиков и приём предоплаты.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Почасовая бронь парных 24/7 <span class="mt-overview-hook">с порогом от 2 часов</span></h3>
+            <p>Гости сами выбирают русскую парную на дровах, финскую сауну или хаммам на сайте. Система соблюдает минимальный порог брони (от 2 часов) и исключает нерентабельные часовые «дыры» в расписании.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка парных</span><span>Минимум 2 часа</span></div>
+              <div class="mt-overview-calendar"><span>16:00</span><div class="mt-overview-slot">Русская баня <small>3 часа</small></div><span>19:00</span><div class="mt-overview-slot mt-overview-slot--light">Санитарный час <small>45 мин</small></div><span>19:45</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Санитарный час и уборка <span class="mt-overview-hook">между сеансами без задержек</span></h3>
+            <p>Автоматический буфер (30–45 минут) после каждого парения. Персонал успевает провести влажную уборку, продезинфицировать полки, сменить простыни и подготовить парную к следующим гостям.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Санитарный регламент</span><span>Авто-буфер</span></div>
+              <div class="mt-overview-price-row"><span>Просушка и проветривание</span><strong>30–45 минут</strong></div>
+              <div class="mt-overview-price-row"><span>Подготовка пара и купели</span><strong>По готовности</strong></div>
+              <div class="mt-overview-price-tag">Парная защищена от накладок между гостями</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Услуги пармейстера и веники <span class="mt-overview-hook">в одном чеке</span></h3>
+            <p>При оформлении брони гости сразу заказывают авторское парение, мыльный массаж, дубовые и березовые веники, аренду чана на травах и чайную церемонию. Средний чек растет без давления на входе.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Банные программы</span><span>Допуслуги</span></div>
+              <div class="mt-overview-message">
+                Бронь 18:00: Парение в 4 руки, 2 дубовых веника, кедровый чан с пихтой. Пармейстер назначен.
+                <span class="mt-overview-reaction">🌿</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Пакет услуг</span><strong>Увеличивает средний чек на 45% →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Обязательная предоплата <span class="mt-overview-hook">и защита от срыва вечерних слотов</span></h3>
+            <p>Фиксация аванса (30–50%) онлайн через интернет-эквайринг или СБП. Гости ценят забронированное время, а вы защищены от пустых топок и простоя банщиков в пятницу и субботу.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Фиксация брони</span><span>Предоплата СБП</span></div>
+              <div class="mt-overview-stages"><span>Бронь</span><i></i><span>Аванс 50%</span><i></i><span>Топка</span></div>
+              <div class="mt-overview-check">✓ <span>Предоплата получена на счет</span></div>
+              <div class="mt-overview-check">✓ <span>Парная протоплена строго к приезду</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Табель банщиков и истопников <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Программа фиксирует количество часов аренды, выходы истопников и количество проведенных парений каждым мастером. В конце смены зарплатный табель готов без споров и бумажных тетрадей.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт смен мастеров</span><span>Цифровой табель</span></div>
+              <div class="mt-overview-metrics"><span>Парения<b>14 сессий</b></span><span>Мастера<b>3 пармейстера</b></span><span>Точность<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- SAUNAS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь гостей в банный комплекс">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один вечер компании в бане. <span class="mt-hero-accent">Идеальный порядок в комплексе.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния управляет банным днем: от брони сруба на сайте до подготовки легкого пара и санитарного часа после выезда.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения бронирования" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Русская баня на дровах (компания 6 человек)</strong><span>3 часа аренды + 45 минут санитарный час на просушку и дезинфекцию</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Гость</span>
+              <h3>Выбор парной, времени от 2 часов и банных услуг на сайте 24/7</h3>
+              <p>Гость выбирает сруб на дровах, указывает длительность 3 часа, добавляет 2 дубовых веника и чан на свежем воздухе без звонков.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь сруба</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Гость</span><strong>Алексей Т. (6 гостей)</strong></div>
+              <div class="mt-journey-proof-row"><span>Парная</span><strong>Русская изба на дровах + Чан</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 16:00 – 19:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Выбор пармейстера, веников и фиксация предоплаты онлайн</h3>
+              <p>Клиент вносит 50% предоплату через СБП, система блокирует слот в расписании и ставит задачу истопнику растопить парную к 15:00.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ #7280</span>
+                <span class="mt-journey-proof-badge">Аванс 50%</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Аренда</span><strong>9 000 ₽ (3 часа)</strong></div>
+              <div class="mt-journey-proof-row"><span>Веники и чан</span><strong>3 500 ₽ (включено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Топка назначена на 15:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Памятка гостям, правила парной и схема проезда в Telegram</h3>
+              <p>Сервисный бот отправляет гостю геолокацию комплекса, правила бани, памятку о купальных принадлежностях и код ворот.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка гостю</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Парная готова к 16:00 · Чан заварен</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Гости приезжают вовремя</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Истопник & Клининг</span>
+              <h3>Парение гостей, расчет и 45-минутный санитарный час</h3>
+              <p>После парения включается санитарный регламент: клинеры моют полки антисептиком, заменяют текстиль и проветривают сруб до 19:45.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог визита</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата остатка</span><strong>6 250 ₽ на кассе</strong></div>
+              <div class="mt-journey-proof-row"><span>Санитарный час</span><strong>Дезинфекция до 19:45</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующая бронь</span><strong>Сруб готов к 19:45</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс банного комплекса" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс банного клуба</div>
+            <h2 class="mt-case-title">Михаил Громов, управляющий банным клубом «Пар &amp; Усадьба»</h2>
+            <blockquote class="mt-case-quote">
+              «В пятницу и субботу телефон разрывался, а администраторы путали брони: одну компанию записали в еще горячую парную без уборки, а другая забронировала вечерний прайм-тайм и не приехала без предоплаты. С Молнией гости бронируют парные на сайте строго от 2 часов с 50% предоплатой, а система сама закладывает 45-минутный санитарный час на просушку и дезинфекцию полков. Пустые топки прекратились, а допродажи веников и программ парения выросли в 2.5 раза.»
+            </blockquote>
+            <div class="mt-case-author">
+              Михаил Громов <span>· Управляющий банным комплексом (4 парных, чаны, открытый бассейн), <span style="white-space:nowrap">Подмосковье</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Сорванных броней в прайм-тайм благодаря обязательной онлайн-предоплате</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">45 мин</span>
+              <span class="mt-case-label">Санитарный час строго в графике для идеальной чистоты и просушки парных</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+42%</span>
+              <span class="mt-case-label">Рост выручки за счет допродажи программ парения, веников и чанов в виджете</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SAUNAS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для бань и саун</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего банного комплекса</h3>
+            <p>Бесплатно поможем настроить расписание парных от 2 часов, санитарные часы, каталог веников и программ парения, виджет бронирования и онлайн-предоплату.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+            <details><summary>Как гости бронируют парные и бани через Молнию?</summary><p>Вы получаете фирменную страницу онлайн-бронирования парных (русская парная на дровах, финская сауна, турецкий хаммам, кедровая бочка или спа-зона с бассейном). Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время сеанса, количество человек и сразу видят только свободные парные.</p></details>
+            <details><summary>Как система соблюдает минимальное время аренды (например, строго от 2 часов)?</summary><p>В настройках каждой парной задается минимальная продолжительность бронирования (2, 3 или 4 часа) и шаг продления (по 30 или 60 минут). Программа не позволит забронировать сеанс меньше установленного лимита, исключая появление нерентабельных коротких «окон» в расписании.</p></details>
+            <details><summary>Как настраивается обязательный санитарный час между компаниями?</summary><p>Программа автоматически закладывает технический перерыв (30–45 минут) после окончания каждого парения. За это время истопники и клинеры успевают провести влажную уборку, проветрить парную, продезинфицировать полки, поменять простыни, очистить купель и подкинуть дров для следующих гостей.</p></details>
+            <details><summary>Как клиенты добавляют к брони услуги банщика (пармейстера), веники и аренду чана?</summary><p>При выборе времени гость может в один клик добавить авторское парение с пармейстером, мыльный массаж в хаммаме, дубовые или березовые веники, аренду горячего чана на травах, простыни и травяной чай. Стоимость дополнительных услуг автоматически суммируется в итоговый чек.</p></details>
+            <details><summary>Как работает внесение онлайн-предоплаты и защита от пустых топок?</summary><p>При бронировании система предлагает внести предоплату (например, 30% или 50%) через интернет-эквайринг или СБП. Слот фиксируется только после подтверждения платежа. Это гарантирует, что к приезду гостей парная будет протоплена, а комплекс защищен от срывов вечерних прайм-слотов.</p></details>
+            <details><summary>Как система напоминает гостям о бронировании и предупреждает о времени подготовки?</summary><p>Сервисный бот отправляет подтверждение брони сразу после оплаты, а за 24 и 2 часа до начала — напоминание в Telegram или по SMS с точным адресом, схемой проезда, напоминанием о купальных принадлежностях и правилах отмены. Неявки сокращаются на 85%.</p></details>
+            <details><summary>Как быстро перенести текущее расписание и базу гостей из Excel или тетради?</summary><p>Служба заботы Молнии бесплатно настроит список ваших парных, чанов и зон отдыха, график работы банщиков, прайс-лист на веники и перенесет базу постоянных гостей из таблиц или старой CRM. Перенос занимает 15 минут без перерыва в приёме гостей.</p></details>
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своего банного комплекса</h2>
+          <p class="mt-lead-sub">Оставьте контакты — поможем настроить бронирование парных от 2 часов, учёт веников и программ парения, санитарные часы и приём предоплаты.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="saunas">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
