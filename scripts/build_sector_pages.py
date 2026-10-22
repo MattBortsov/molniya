@@ -1983,6 +1983,13 @@ def build_health_page() -> str:
               <div class="mt-subniche-desc">Сетка утренних и вечерних практик, бронь ковриков и реформеров, запись в мини-группы и автосписание занятий по абонементам.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/trainers">
+            <div class="mt-subniche-icon">💪</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Персональные тренеры и нутрициологи <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Персональный календарь тренировок, пакеты занятий, замеры прогресса, автонапоминания клиентам и ведение базы без блокнотов.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8776,6 +8783,17 @@ def sync_sitemap():
         changed = True
         print("Added /yoga to sitemap.xml")
 
+    if "https://molniya-tech.ru/trainers" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/trainers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /trainers to sitemap.xml")
+
     if "https://molniya-tech.ru/spaces" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/spaces</loc>
@@ -9939,51 +9957,51 @@ def build_privacy_page() -> str:
 
 
 
-def build_yoga_page() -> str:
-    """Builds the complete yoga and pilates studio micro-landing page."""
+def build_trainers_page() -> str:
+    """Builds the complete personal trainers and nutritionists micro-landing page."""
     nav_html = render_nav_html(active_item="health", asset_prefix="")
     footer_html = render_footer_html(asset_prefix="")
     lead_html = render_lead_form_html(
-        "yoga",
-        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии йоги и пилатеса',
-        "Оставьте контакты — покажем Молнию на примере вашей студии и поможем настроить расписание залов, реформеров и форму записи учеников.",
+        "trainers",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для персонального тренера',
+        "Оставьте контакты — покажем Молнию на примере вашей практики и поможем настроить страницу записи подопечных, баланс пакетов и расписание тренировок.",
     )
 
-    title = "Подключить онлайн-запись для студии йоги и пилатеса — расписание и CRM"
+    title = "Онлайн-запись для персонального тренера: CRM и расписание тренировок"
     description = (
-        "Программа и онлайн-запись для студий йоги и пилатеса: "
-        "наглядное расписание залов 24/7, бронь ковриков и реформеров, учёт абонементов и напоминания ученикам."
+        "Программа для персональных фитнес-тренеров и нутрициологов: "
+        "онлайн-запись подопечных 24/7, учёт пакетов тренировок, замеры тела и расписание без хаоса в чатах."
     )
-    canonical = "https://molniya-tech.ru/yoga"
+    canonical = "https://molniya-tech.ru/trainers"
 
     faqs = [
         (
-            "Как ученики записываются на практики йоги и пилатеса через Молнию?",
-            "Вы получаете персональную страницу записи студии с вашим логотипом, фотографиями залов и перечнем направлений (хатха-йога, аштанга, виньяса, пилатес на матах и реформерах, здоровая спина, медитации). Ссылка размещается в соцсетях, мессенджерах или виджетом на сайте. Ученик видит актуальную сетку практик, оставшиеся коврики или реформеры и записывается за 1 минуту без скачивания приложений.",
+            "Как подопечные записываются на персональные тренировки через Молнию?",
+            "Вы получаете персональную ссылку на расписание с вашим фото, квалификацией и перечнем услуг (разовая тренировка, сплит на двоих, пакет занятий, ведение по питанию). Ссылку можно закрепить в шапке профиля соцсетей, отправить в Telegram или закрепить в переписке. Клиент видит только открытые свободные слоты и бронирует удобный час за 30 секунд без установки приложений.",
         ),
         (
-            "Как настраивается лимит мест на ковриках и пилатес-реформерах?",
-            "Для каждого зала и направления вы указываете точную вместимость (например, 10–12 ковриков в большом зале или строго 6 реформеров в студии пилатеса). Как только все места заняты, программа закрывает запись на этот слот, предотвращая овербукинг и нехватку оборудования.",
+            "Как система ведёт учёт пакетов тренировок (блоков на 8, 10 или 12 занятий)?",
+            "При оформлении пакета вы указываете количество занятий и срок действия блока. После каждой проведённой тренировки система списывает 1 занятие из баланса. Подопечный и тренер всегда видят актуальный остаток (например, «Осталось 3 из 10»), а перед последней тренировкой программа предупреждает о необходимости продления.",
         ),
         (
-            "Как работает лист ожидания, если в группе закончились места?",
-            "Если все коврики или реформеры заняты, ученик может записаться в лист ожидания. Если кто-то из записавшихся отменяет визит накануне, система автоматически предлагает освободившееся место следующему по очереди или отправляет быстрое уведомление.",
+            "Что происходит, если подопечный отменяет занятие в последний момент?",
+            "Вы сами устанавливаете регламент отмены — например, не позднее чем за 12 или 24 часа до тренировки. Если клиент отменяет визит вовремя, слот мгновенно освобождается для других желающих. Если отмена происходит позже установленного срока, занятие автоматически отмечается как списанное из пакета, защищая ваше рабочее время и доход.",
         ),
         (
-            "Как вести учёт абонементов (пакетных, утренних, безлимитных) и заморозок?",
-            "В карточке ученика фиксируется тип абонемента (разовое занятие, 4, 8, 12 практик или безлимит на месяц), срок действия и правила заморозки. При отметке посещения тренировка автоматически списывается с баланса, а ученик видит количество оставшихся занятий.",
+            "Можно ли настроить буфер между тренировками на отдых и заполнение дневника?",
+            "Да. Вы задаёте автоматический интервал (например, 15 минут) между записями. Система не позволит забронировать слоты впритык: у вас всегда будет время перевести дух, выпить воды, подготовить снаряды и зафиксировать в карточке подопечного рабочие веса и выполненные подходы.",
         ),
         (
-            "Можно ли настроить буфер между практиками на проветривание зала и смену инвентаря?",
-            "Да. Вы задаёте обязательный технический перерыв (например, 15–20 минут) между уроками. Система автоматически учитывает его в сетке: группы не сталкиваются у входа, инструктор успевает подготовить реформеры, продезинфицировать коврики и зажечь благовония к следующей практике.",
+            "Подходит ли программа для нутрициологов и ведения клиентов онлайн?",
+            "Да. В списке услуг можно разделить очные тренировки в зале и онлайн-консультации по видеосвязи. Для нутрициологических сессий можно настроить анкету сбора данных: вес, объёмы, пищевые привычки, аллергии и цели клиента, чтобы вы получили вводные данные ещё до начала созвона.",
         ),
         (
-            "Где фиксируются ограничения по здоровью, травмы и уровень подготовки ученика?",
-            "В форму онлайн-записи можно включить вопросы анкеты: опыт практики (новичок/продолжающий), травмы суставов, боли в пояснице, беременность. Преподаватель видит эти заметки в карточке записи до начала занятия и адаптирует асаны или упражнения на реформере.",
+            "Что делать, если я тренирую в нескольких разных фитнес-клубах или на выезде?",
+            "В расписании Молнии можно создать несколько локаций — например, «Зал на Ленина», «Студия на Мира» или «Выездные тренировки». Для каждого дня вы указываете, в каком клубе работаете. Подопечный выбирает нужный зал и видит свободные часы только для этой локации.",
         ),
         (
-            "Как бесплатно перенести базу учеников и расписание из другой CRM или Excel?",
-            "Служба заботы Молнии бесплатно переносит базу учеников, действующие абонементы с остатком занятий и график преподавателей из Excel, Google Таблиц или сторонних систем (YClients, Dikidi, Fitbase и др.). Перенос занимает 15 минут и проходит без прерывания расписания студии.",
+            "Сколько стоит использование Молнии для индивидуального тренера?",
+            "Для персональных фитнес-тренеров и нутрициологов действует бесплатный доступ со всеми возможностями: онлайн-расписание, карточки подопечных, учёт баланса пакетов и автоматические напоминания. Никаких скрытых платежей и комиссий с ваших клиентов.",
         ),
     ]
 
@@ -9998,14 +10016,14 @@ def build_yoga_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Здоровье и медицина", "item": "https://molniya-tech.ru/health"},
-                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись для студий йоги и пилатеса", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Здоровье и фитнес", "item": "https://molniya-tech.ru/health"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись для персонального тренера", "item": canonical},
             ],
         },
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Молния Тех — онлайн-запись и CRM для студий йоги и пилатеса",
+            "name": "Молния Тех — онлайн-запись и CRM для персональных тренеров",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web, iOS, Android, macOS, Windows",
             "url": canonical,
@@ -10014,7 +10032,7 @@ def build_yoga_page() -> str:
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "RUB",
-                "description": "Бесплатный демо-доступ и настройка расписания залов студии",
+                "description": "Бесплатный демо-доступ и настройка расписания тренировок",
             },
             "publisher": {
                 "@type": "Organization",
@@ -10102,31 +10120,31 @@ def build_yoga_page() -> str:
 
         <div class="mt-hero-lead">
           <h1 class="mt-hero-title">
-            Онлайн-запись и расписание<br><span class="mt-hero-accent">для студий йоги и пилатеса</span>
+            Онлайн-запись и расписание<br><span class="mt-hero-accent">для персональных тренеров</span>
           </h1>
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Персональная страница записи 24/7, наглядное расписание залов и реформеров, учёт абонементов и напоминания ученикам без рутины в чатах</p>
+              <p class="mt-hero-sub">Персональная страница записи 24/7, учёт пакетов тренировок, замеры прогресса и напоминания подопечным без хаоса в мессенджерах</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
-            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий йоги и пилатеса">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для персональных тренеров">
               <li class="mt-facet">
-                <span class="mt-facet-name">Лимиты залов</span>
-                <span class="mt-facet-note">контроль мест по коврикам и реформерам</span>
+                <span class="mt-facet-name">Пакеты занятий</span>
+                <span class="mt-facet-note">автоучёт остатка тренировок и продлений</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">Доступно 24/7</span>
-                <span class="mt-facet-note">страница записи без приложений</span>
+                <span class="mt-facet-note">онлайн-запись подопечных без звонков</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">Абонементы</span>
-                <span class="mt-facet-note">разовые практики, пакеты и безлимиты</span>
+                <span class="mt-facet-name">Замеры и цели</span>
+                <span class="mt-facet-note">динамика веса, объёмов и рабочие веса</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">Напоминания</span>
-                <span class="mt-facet-note">E-mail, мессенджер или SMS на выбор</span>
+                <span class="mt-facet-note">E-mail, мессенджер или SMS подопечным</span>
               </li>
             </ul>
           </div>
@@ -10136,298 +10154,159 @@ def build_yoga_page() -> str:
           <div class="mt-hero-media-motion">
             <div class="mt-tablet">
               <span class="mt-tablet-screen">
-                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии йоги и пилатеса: расписание практик и залов" width="1710" height="983" fetchpriority="high">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для персонального тренера: расписание тренировок и учет подопечных" width="1710" height="983" fetchpriority="high">
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </div>
-            <p class="mt-hero-media-caption">Электронное расписание практик и загрузка залов студии в реальном времени</p>
+            <p class="mt-hero-media-caption">Электронное расписание персональных тренировок и учет подопечных в реальном времени</p>
           </div>
         </div>
 
       </section>
 
       <!-- LIVE SCHEDULE STATUS -->
-      <section class="mt-section mt-reveal" data-screen-label="Расписание практик" data-mt-reveal>
+      <section class="mt-section mt-reveal" data-screen-label="Расписание тренировок" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Каждая практика, зал и реформер <span class="mt-overview-hook">под вашим контролем</span></h2>
-          <p class="mt-section-sub">Администратор и преподаватели видят занятость залов, статус групп и число оставшихся мест в реальном времени с любого устройства.</p>
+          <h2 class="mt-section-title">Каждый подопечный, слот и пакет <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Вы видите занятость времени, статус тренировок и количество оставшихся занятий у каждого подопечного с любого устройства.</p>
         </div>
 
         <div class="mt-auto-bays">
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">08:30 · Хатха-йога: Утренний флоу</span>
+              <span class="mt-auto-bay-title">08:00 · Силовая зона · Сплит грудь/трицепс</span>
               <span class="mt-auto-bay-status mt-auto-bay-status--work">В зале</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Дарья К. · Зал 1 «Лотос»</div>
-                <div class="mt-auto-car-tier">Групповая практика · 10 из 10 ковриков</div>
+                <div class="mt-auto-car-name">Михаил Р. · Пакет 8 из 10</div>
+                <div class="mt-auto-car-tier">Жим 95 кг 4х6 · Замеры объёмов в пятницу</div>
               </div>
-              <span class="mt-dropdown-footer-icon">🌿</span>
+              <span class="mt-dropdown-footer-icon">🏋️‍♂️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Утренняя хатха</span>
-              <span class="mt-auto-price">По абонементу</span>
+              <span>Персональная тренировка (60 мин)</span>
+              <span class="mt-auto-price">По пакету</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">10:15 · Пилатес на реформерах</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--done">Подтверждено</span>
+              <span class="mt-auto-bay-title">12:00 · Функционал & Кардио · Кор и баланс</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Максим В. · Зал 2 «Реформер»</div>
-                <div class="mt-auto-car-tier">Мини-группа · 5 из 6 реформеров</div>
+                <div class="mt-auto-car-name">Екатерина Д. · Пакет 2 из 10</div>
+                <div class="mt-auto-car-tier">Круговой тренинг + МФР ролл · Пульс до 145</div>
               </div>
-              <span class="mt-dropdown-footer-icon">⚡</span>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Пилатес Reformer</span>
-              <span class="mt-auto-price">Пробный урок</span>
+              <span>Функциональный тренинг</span>
+              <span class="mt-auto-price">По пакету</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">11:30 · Проветривание и подготовка</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+              <span class="mt-auto-bay-title">17:00 · Силовая зона · Присед и жим ногами</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--hold">Продление</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Технический перерыв</div>
-                <div class="mt-auto-car-tier">Дезинфекция ковриков, настройка пружин</div>
+                <div class="mt-auto-car-name">Максим Т. · Пакет 10 из 10 (финал)</div>
+                <div class="mt-auto-car-tier">Присед 120 кг · Напомнить об оплате блока</div>
               </div>
-              <span class="mt-dropdown-footer-icon">✨</span>
+              <span class="mt-dropdown-footer-icon">🎯</span>
             </div>
             <div class="mt-auto-service">
-              <span>Буферное время</span>
-              <span class="mt-auto-price">В расписании</span>
-            </div>
-          </div>
-
-          <div class="mt-auto-bay">
-            <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">12:00 · Здоровая спина и йогатерапия</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--done">Подтверждено</span>
-            </div>
-            <div class="mt-auto-car">
-              <div>
-                <div class="mt-auto-car-name">Елена М. · Зал 1 «Лотос»</div>
-                <div class="mt-auto-car-tier">Мягкая терапевтическая практика · 8 из 8 ковриков</div>
-              </div>
-              <span class="mt-dropdown-footer-icon">🧘</span>
-            </div>
-            <div class="mt-auto-service">
-              <span>Йогатерапия</span>
-              <span class="mt-auto-price">По абонементу</span>
+              <span>Силовая тренировка</span>
+              <span class="mt-auto-price">Оплата блока</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- YOGA OVERVIEW VALUE GRID -->
-      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий йоги и пилатеса" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Управляйте студией йоги и пилатеса <span class="mt-overview-hook">без накладок и путаницы в чатах</span></h2>
-          <p class="mt-section-sub">Один сервис вместо блокнотов, таблиц и бесконечных сообщений: онлайн-расписание 24/7, контроль вместимости залов, бронь реформеров, учёт абонементов и автоматические напоминания ученикам.</p>
-        </div>
-
-        <div class="mt-overview-grid">
-          <article class="mt-overview-card">
-            <h3>Сетка практик и лимиты оборудования <span class="mt-overview-hook">без переполнения групп</span></h3>
-            <p>Задайте точное число мест под размер каждого зала или количество реформеров. Система автоматически блокирует запись на полный слот, защищая от перегрузки залов и обеспечивая комфорт практики.</p>
-            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Расписание залов</span><span>Вместимость</span></div>
-              <div class="mt-overview-calendar"><span>08:30</span><div class="mt-overview-slot">Зал 1: Хатха-йога <small>10 из 10 мест</small></div><span>10:15</span><div class="mt-overview-slot mt-overview-slot--light">Зал 2: Реформер <small>5 из 6 мест</small></div><span>11:30</span><div></div></div>
-            </div>
-          </article>
-
-          <article class="mt-overview-card">
-            <h3>Персональная страница записи <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
-            <p>Короткая ссылка для соцсетей, Telegram или встраиваемый виджет на сайт студии. Ученики сами выбирают практику (хатха, аштанга, пилатес, медитация), преподавателя и удобный слот за 1 минуту без ожидания ответа в директ.</p>
-            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Страница бронирования</span><span>Доступно 24/7</span></div>
-              <div class="mt-overview-price-row"><span>Классический пилатес</span><strong>55 мин · Выбор реформера</strong></div>
-              <div class="mt-overview-price-row"><span>Удобная короткая ссылка</span><strong>Для соцсетей и мессенджеров</strong></div>
-              <div class="mt-overview-price-tag">Ученики записываются сами в любое время</div>
-            </div>
-          </article>
-
-          <article class="mt-overview-card">
-            <h3>Автоматические напоминания <span class="mt-overview-hook">и меньше пропусков практик</span></h3>
-            <p>Ученик получает мгновенное подтверждение после бронирования, а накануне практики — напоминание по E-mail, в мессенджер или по SMS. Он успеет предупредить об отмене, и место освободится для ученика из листа ожидания.</p>
-            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Автоматические напоминания</span><span>Без рутины</span></div>
-              <div class="mt-overview-message">
-                Ольга, напоминаем о практике хатха-йоги завтра в 08:30 в Зале «Лотос». Ждём вас за 10 минут до начала!
-                <span class="mt-overview-reaction">🌿</span>
-              </div>
-              <div class="mt-overview-client-row"><span>E-mail, мессенджер или SMS</span><strong>На выбор клиента →</strong></div>
-            </div>
-          </article>
-
-          <article class="mt-overview-card">
-            <h3>Учёт абонементов, пакетов и заморозок <span class="mt-overview-hook">в профиле ученика</span></h3>
-            <p>Фиксируйте разовые практики, пробные визиты, пакетные абонементы на 4, 8 или 12 занятий и безлимиты. В централизованном профиле сохраняются история визитов, противопоказания по здоровью и остаток тренировок.</p>
-            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Карточка ученика</span><span>Ольга С. (Абонемент)</span></div>
-              <div class="mt-overview-stages"><span>Пробный</span><i></i><span>Абонемент 12</span><i></i><span>Остаток: 7</span></div>
-              <div class="mt-overview-check">✓ <span>Абонемент активен (списание по факту)</span></div>
-              <div class="mt-overview-check">✓ <span>История практик и противопоказания учтены</span></div>
-            </div>
-          </article>
-
-          <article class="mt-overview-card mt-overview-card--featured">
-            <h3>Табель смен и зарплаты преподавателей <span class="mt-overview-hook">в один клик</span></h3>
-            <p>Программа фиксирует проведенные групповые и индивидуальные классы каждого инструктора. В конце периода табель автоматически готов к расчету сдельной оплаты — без споров и ручного пересчёта бумажных журналов.</p>
-            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Учёт работы команды</span><span>Цифровой табель</span></div>
-              <div class="mt-overview-metrics"><span>Залы<b>3</b></span><span>Инструкторы<b>8 в смене</b></span><span>Учёт<b>100%</b></span></div>
-              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="mt-overview-action">
-          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
-        </div>
-      </section>
-
-      <!-- YOGA JOURNEY -->
-      <section class="mt-section mt-journey" data-screen-label="Путь ученика в студию">
+      <!-- SCENARIO CARDS -->
+      <section class="mt-section mt-section--flush-top" data-screen-label="Ключевые возможности">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
-          <h2 class="mt-section-title">Один визит на практику. <span class="mt-hero-accent">Полный порядок в студии.</span></h2>
-          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует запись в студию йоги и пилатеса: от выбора практики на странице бронирования до списания занятия с абонемента и отметки прихода в зал.</p>
+          <h2 class="mt-section-title">Всё для работы персонального тренера <span class="mt-hero-accent">в одной системе</span></h2>
+          <p class="mt-section-sub">Забудьте о хаотичных сообщениях в WhatsApp, потерянных оплатах и неловких спорах о сгоревших занятиях.</p>
         </div>
 
-        <div class="mt-journey-example" aria-label="Пример прохождения практики" data-mt-reveal data-mt-delay="80">
-          <span>Пример</span><strong>Пилатес на реформерах (мини-группа)</strong><span>Длительность 55 минут + 15 минут буфер на дезинфекцию и подготовку зала</span>
-        </div>
-
-        <div class="mt-journey-list">
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">01</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Ученик</span>
-              <h3>Выбор практики и удобного времени на странице записи 24/7</h3>
-              <p>Клиент переходит по вашей короткой ссылке в соцсетях или мессенджере, выбирает направление (хатха, аштанга, реформер, спина) и видит только реальные свободные места.</p>
-            </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования практики">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Бронирование практики</span>
-                <span class="mt-journey-proof-badge">Место забронировано</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Ученик</span><strong>Ольга С.</strong></div>
-              <div class="mt-journey-proof-row"><span>Практика</span><strong>Пилатес на реформерах (55 мин)</strong></div>
-              <div class="mt-journey-proof-row"><span>Зал и время</span><strong>Зал 2 «Реформер» · Среда, 10:15 – 11:10</strong></div>
-            </div>
+        <div class="mt-features-grid">
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="60">
+            <div class="mt-scenario-card-badge">Календарь</div>
+            <h3 class="mt-scenario-card-title">Персональный календарь без переписок в WhatsApp</h3>
+            <p class="mt-scenario-card-desc">Вместо того чтобы весь вечер отвечать на сообщения «На когда есть свободный час?», вы отправляете подопечным прямую ссылку на своё расписание. Клиент открывает ссылку и видит только те часы, которые вы выделили под тренировки. Система автоматически бронирует слот и исключает накладки.</p>
           </article>
 
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">02</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Форма приёма</span>
-              <h3>Выбор типа абонемента и фиксация ограничений по здоровью</h3>
-              <p>Ученик указывает контакты, выбирает абонемент или пробное занятие и отмечает ограничения (боли в спине, суставы). Слот автоматически фиксируется в расписании студии.</p>
-            </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Запись #6240</span>
-                <span class="mt-journey-proof-badge">Подтверждена</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Тип визита</span><strong>Абонемент на 12 практик</strong></div>
-              <div class="mt-journey-proof-row"><span>Опыт / Здоровье</span><strong>Продолжающий · Внимание на поясницу</strong></div>
-              <div class="mt-journey-proof-row"><span>Статус</span><strong>Реформер №3 закреплён</strong></div>
-            </div>
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="120">
+            <div class="mt-scenario-card-badge">Пакеты</div>
+            <h3 class="mt-scenario-card-title">Чёткий учёт пакетов занятий и правило отмен</h3>
+            <p class="mt-scenario-card-desc">Молния ведёт баланс тренировок за вас: сколько занятий из купленного блока (8, 10 или 12) уже проведено, сколько осталось и когда пора продлевать абонемент. Настройте регламент сгорания слотов: если подопечный отменяет тренировку позже, чем за 12 часов до начала, занятие автоматически списывается из пакета.</p>
           </article>
 
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">03</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Система</span>
-              <h3>Дружеские автонапоминания накануне практики</h3>
-              <p>Система заблаговременно отправляет ученику напоминание по E-mail, в мессенджер или по SMS с деталями визита (зал, форма одежды, код домофона студии).</p>
-            </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Напоминание</span>
-                <span class="mt-journey-proof-badge">Отправлено</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Канал</span><strong>Мессенджер / E-mail / SMS</strong></div>
-              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Зал «Реформер», инструктор Максим В.</strong></div>
-              <div class="mt-journey-proof-row"><span>Результат</span><strong>Ученик вовремя на практике</strong></div>
-            </div>
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="180">
+            <div class="mt-scenario-card-badge">Профиль</div>
+            <h3 class="mt-scenario-card-title">Карточка подопечного: замеры, травмы и динамика</h3>
+            <p class="mt-scenario-card-desc">Храните профиль каждого ученика в едином месте: замеры талии, бёдер, процент жира, динамику веса, фото формы и противопоказания по здоровью (протрузии, травмы коленей, давление). Перед началом тренировки вам достаточно открыть карточку, чтобы сразу увидеть план нагрузок и прошлые рабочие веса.</p>
           </article>
 
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">04</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Инструктор</span>
-              <h3>Отметка прихода в зале и автосписание занятия</h3>
-              <p>Преподаватель отмечает явку учеников в приложении. Занятие списывается с абонемента автоматически, а 15-минутный буфер позволяет подготовить зал к следующей группе.</p>
-            </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Итог практики</span>
-                <span class="mt-journey-proof-badge">Успешно</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Абонемент</span><strong>Осталось 7 из 12 практик</strong></div>
-              <div class="mt-journey-proof-row"><span>Табель инструктора</span><strong>Практика учтена в смене</strong></div>
-              <div class="mt-journey-proof-row"><span>Следующий шаг</span><strong>Запись на пятничный класс</strong></div>
-            </div>
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="240">
+            <div class="mt-scenario-card-badge">Напоминания</div>
+            <h3 class="mt-scenario-card-title">Автонапоминания подопечным за 24 и 2 часа</h3>
+            <p class="mt-scenario-card-desc">Сервисный Telegram-бот отправляет напоминание клиенту накануне тренировки и за 2 часа до встречи в зале. Ученик не забудет спортивную форму, не перепутает клуб и подтвердит визит в один клик. Количество неявок и внезапных срывов графика снижается до минимума.</p>
           </article>
         </div>
       </section>
 
-      <!-- REAL-WORLD CASE STUDY -->
-      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии йоги и пилатеса" data-mt-reveal>
-        <div class="mt-case-card">
-          <div class="mt-case-header">
-            <div class="mt-case-tag">⚡ Кейс студии йоги и пилатеса</div>
-            <h2 class="mt-case-title">Мария Соколова, сооснователь студии «Асана & Реформер»</h2>
-            <blockquote class="mt-case-quote">
-              «Раньше администраторы целый день сидели в переписках WhatsApp, вручную распределяя коврики и реформеры на пилатес. С Молнией ученики сами бронируют место за 1 минуту по ссылке в профиле, видя реальный остаток мест в группе. Мы полностью избавились от овербукинга, а учет абонементов и смен инструкторов теперь занимает секунды.»
-            </blockquote>
-            <div class="mt-case-author">
-              Мария Соколова <span>· Сооснователь студии йоги и пилатеса на реформерах, <span style="white-space:nowrap">Санкт-Петербург</span></span>
-            </div>
+      <!-- MIGRATION BLOCK -->
+      <section class="mt-section mt-migration" data-screen-label="Быстрый старт" data-mt-reveal>
+        <div class="mt-migration-grid">
+          <div class="mt-migration-copy">
+            <h2 class="mt-section-title">Перенесите контакты подопечных и остатки пакетов <span class="mt-hero-accent">за 15 минут</span></h2>
+            <p class="mt-migration-lead">Ведёте клиентов в заметках телефона, таблицах Excel или чатах? Служба заботы Молнии бесплатно поможет загрузить список ваших подопечных, баланс оплаченных тренировок и настроить график работы под аренду залов. Без потери контактов и без прерывания тренировочного процесса.</p>
+            <ul class="mt-migration-points">
+              <li>Импорт базы клиентов и номеров телефонов из любого источника</li>
+              <li>Перенос действующих блоков тренировок с точным остатком занятий</li>
+              <li>Настройка интервалов отдыха (15 мин) между подопечными</li>
+              <li>Персональная ссылка на онлайн-запись в день обращения</li>
+            </ul>
           </div>
-          <div class="mt-case-stats">
-            <div class="mt-case-stat">
-              <span class="mt-case-num">0</span>
-              <span class="mt-case-label">Овербукингов и накладок на реформерах благодаря строгому лимиту мест</span>
-            </div>
-            <div class="mt-case-stat">
-              <span class="mt-case-num">3.5 ч</span>
-              <span class="mt-case-label">В день сэкономлено администратором на ответах в чатах и ручной записи</span>
-            </div>
-            <div class="mt-case-stat">
-              <span class="mt-case-num">100%</span>
-              <span class="mt-case-label">Абонементов и проведенных практик учтены без бумажных журналов</span>
-            </div>
+          <div class="mt-migration-card">
+            <div class="mt-migration-badge">Бесплатный переход</div>
+            <div class="mt-migration-card-title">Поможем запустить онлайн-запись сегодня</div>
+            <p class="mt-migration-card-desc">Оставьте заявку — специалист покажет систему на реальных тренировках, перенесёт список клиентов и подключит автонапоминания.</p>
+            <a class="mt-btn mt-btn-hero" href="#contact">Подключить тренера бесплатно</a>
           </div>
         </div>
       </section>
 
-      <!-- YOGA FAQ -->
-      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
-        <div class="mt-section-head">
-          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для студий йоги и пилатеса</h2>
+      <!-- FAQ -->
+      <section class="mt-section mt-faq" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Частые вопросы <span class="mt-overview-hook">персональных тренеров</span></h2>
+          <p class="mt-section-sub">Ответы на ключевые вопросы об онлайн-записи, учёте пакетов занятий и контроле графика тренировок.</p>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей студии йоги и пилатеса</h3>
-            <p>Бесплатно поможем настроить расписание залов, лимиты ковриков и реформеров, форму онлайн-записи и перенести базу постоянных учеников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+
+        <div class="mt-faq-list">
 {faq_html}
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-final-cta" data-screen-label="Финальный призыв" data-mt-reveal>
+        <div class="mt-final-cta-card">
+          <div class="mt-final-cta-mark" aria-hidden="true">{BRAND_MARK_SVG}</div>
+          <h2 class="mt-final-cta-title">Наведите идеальный порядок в тренировках и записях</h2>
+          <p class="mt-final-cta-desc">Подключите персональную страницу записи, забудьте о бесконечных переписках в чатах и контролируйте оплату каждого занятия.</p>
+          <div class="mt-final-cta-actions">
+            <a class="mt-btn mt-btn-hero" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-accent" href="https://t.me/molniya_tex?start=sector_trainers" target="_blank" rel="noopener">Подключить тренера</a>
           </div>
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -10441,7 +10320,7 @@ def build_yoga_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
-        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -10454,101 +10333,12 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261022-flatstyle"></script>
 </body>
 </html>
 '''
     return page_html
 
-def build_thanks_page() -> str:
-    """Builds the branded Thank You page with direct presentation download."""
-    nav_html = render_nav_html(active_item="", asset_prefix="")
-    footer_html = render_footer_html(asset_prefix="")
-
-    return f"""<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Спасибо за заявку — Молния Тех</title>
-  <meta name="description" content="Спасибо за обращение в Молнию! Ваша заявка успешно принята. Скачайте подробную презентацию возможностей платформы.">
-  <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://molniya-tech.ru/thanks">
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
-
-  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
-  <script src="/metrika.js" defer></script>
-</head>
-<body>
-
-  <!-- shared SVG gradients used across icons -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
-  </defs></svg>
-
-  <div class="mt-page">
-
-    <!-- background atmosphere -->
-    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
-    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
-
-    <div class="mt-content">
-
-{nav_html}
-
-      <!-- THANKS MAIN -->
-      <main class="mt-404-main">
-        <div class="mt-404-container">
-          <div class="mt-404-spark" aria-hidden="true" style="margin-bottom: 20px;">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h1 class="mt-404-title">Спасибо! Ваша заявка принята</h1>
-          <p class="mt-404-desc">
-            Мы свяжемся с вами в ближайшее время по указанным контактам.
-            А пока изучите подробную презентацию: как устроена онлайн-запись 24/7, управление расписанием и единая база клиентов.
-          </p>
-
-          <div class="mt-404-actions" style="display:flex; flex-direction:column; gap:16px; align-items:center;">
-            <a class="mt-btn mt-btn-hero" href="/assets/docs/molniya-presentation.pdf" download="Презентация Молния Тех.pdf" style="display:inline-flex; align-items:center; gap:10px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Скачать презентацию Молнии (PDF, 1.3 МБ)
-            </a>
-            <a href="/" class="mt-link-subtle" style="font-size:14px; text-decoration:none;">Вернуться на главную страницу →</a>
-          </div>
-
-          <div class="mt-404-help" style="margin-top:36px;">
-            Срочный вопрос или хотите начать быстрее?
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener" class="mt-link-accent">Напишите нам в Telegram напрямую →</a>
-          </div>
-        </div>
-      </main>
-
-{footer_html}
-
-    </div>
-
-    <!-- sticky floating CTA -->
-    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
-      Обновления в ТГ-канале
-    </a>
-
-  </div>
-
-  <script src="/script.js?v=20261021-thanks"></script>
-</body>
-</html>
-"""
 
 
 def main():
@@ -10591,6 +10381,11 @@ def main():
     yoga_html = build_yoga_page()
     (ROOT_DIR / "yoga.html").write_text(yoga_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'yoga.html'}")
+
+    print("Building sector landing page: /trainers...")
+    trainers_html = build_trainers_page()
+    (ROOT_DIR / "trainers.html").write_text(trainers_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'trainers.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()

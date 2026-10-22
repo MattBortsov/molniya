@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Онлайн-запись для персонального тренера: CRM и расписание тренировок</title>
+  <meta name="description" content="Программа для персональных фитнес-тренеров и нутрициологов: онлайн-запись подопечных 24/7, учёт пакетов тренировок, замеры тела и расписание без хаоса в чатах.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/trainers">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Онлайн-запись для персонального тренера: CRM и расписание тренировок">
+  <meta property="og:description" content="Программа для персональных фитнес-тренеров и нутрициологов: онлайн-запись подопечных 24/7, учёт пакетов тренировок, замеры тела и расписание без хаоса в чатах.">
+  <meta property="og:url" content="https://molniya-tech.ru/trainers">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Онлайн-запись для персонального тренера: CRM и расписание тренировок">
+  <meta name="twitter:description" content="Программа для персональных фитнес-тренеров и нутрициологов: онлайн-запись подопечных 24/7, учёт пакетов тренировок, замеры тела и расписание без хаоса в чатах.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Здоровье и фитнес", "item": "https://molniya-tech.ru/health"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-запись для персонального тренера", "item": "https://molniya-tech.ru/trainers"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-запись и CRM для персональных тренеров", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/trainers", "description": "Программа для персональных фитнес-тренеров и нутрициологов: онлайн-запись подопечных 24/7, учёт пакетов тренировок, замеры тела и расписание без хаоса в чатах.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка расписания тренировок"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как подопечные записываются на персональные тренировки через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную ссылку на расписание с вашим фото, квалификацией и перечнем услуг (разовая тренировка, сплит на двоих, пакет занятий, ведение по питанию). Ссылку можно закрепить в шапке профиля соцсетей, отправить в Telegram или закрепить в переписке. Клиент видит только открытые свободные слоты и бронирует удобный час за 30 секунд без установки приложений."}}, {"@type": "Question", "name": "Как система ведёт учёт пакетов тренировок (блоков на 8, 10 или 12 занятий)?", "acceptedAnswer": {"@type": "Answer", "text": "При оформлении пакета вы указываете количество занятий и срок действия блока. После каждой проведённой тренировки система списывает 1 занятие из баланса. Подопечный и тренер всегда видят актуальный остаток (например, «Осталось 3 из 10»), а перед последней тренировкой программа предупреждает о необходимости продления."}}, {"@type": "Question", "name": "Что происходит, если подопечный отменяет занятие в последний момент?", "acceptedAnswer": {"@type": "Answer", "text": "Вы сами устанавливаете регламент отмены — например, не позднее чем за 12 или 24 часа до тренировки. Если клиент отменяет визит вовремя, слот мгновенно освобождается для других желающих. Если отмена происходит позже установленного срока, занятие автоматически отмечается как списанное из пакета, защищая ваше рабочее время и доход."}}, {"@type": "Question", "name": "Можно ли настроить буфер между тренировками на отдых и заполнение дневника?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Вы задаёте автоматический интервал (например, 15 минут) между записями. Система не позволит забронировать слоты впритык: у вас всегда будет время перевести дух, выпить воды, подготовить снаряды и зафиксировать в карточке подопечного рабочие веса и выполненные подходы."}}, {"@type": "Question", "name": "Подходит ли программа для нутрициологов и ведения клиентов онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Да. В списке услуг можно разделить очные тренировки в зале и онлайн-консультации по видеосвязи. Для нутрициологических сессий можно настроить анкету сбора данных: вес, объёмы, пищевые привычки, аллергии и цели клиента, чтобы вы получили вводные данные ещё до начала созвона."}}, {"@type": "Question", "name": "Что делать, если я тренирую в нескольких разных фитнес-клубах или на выезде?", "acceptedAnswer": {"@type": "Answer", "text": "В расписании Молнии можно создать несколько локаций — например, «Зал на Ленина», «Студия на Мира» или «Выездные тренировки». Для каждого дня вы указываете, в каком клубе работаете. Подопечный выбирает нужный зал и видит свободные часы только для этой локации."}}, {"@type": "Question", "name": "Сколько стоит использование Молнии для индивидуального тренера?", "acceptedAnswer": {"@type": "Answer", "text": "Для персональных фитнес-тренеров и нутрициологов действует бесплатный доступ со всеми возможностями: онлайн-расписание, карточки подопечных, учёт баланса пакетов и автоматические напоминания. Никаких скрытых платежей и комиссий с ваших клиентов."}}]}]</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться
+          </a>
+
+          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Онлайн-запись и расписание<br><span class="mt-hero-accent">для персональных тренеров</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Персональная страница записи 24/7, учёт пакетов тренировок, замеры прогресса и напоминания подопечным без хаоса в мессенджерах</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для персональных тренеров">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Пакеты занятий</span>
+                <span class="mt-facet-note">автоучёт остатка тренировок и продлений</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Доступно 24/7</span>
+                <span class="mt-facet-note">онлайн-запись подопечных без звонков</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Замеры и цели</span>
+                <span class="mt-facet-note">динамика веса, объёмов и рабочие веса</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Напоминания</span>
+                <span class="mt-facet-note">E-mail, мессенджер или SMS подопечным</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для персонального тренера: расписание тренировок и учет подопечных" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание персональных тренировок и учет подопечных в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание тренировок" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый подопечный, слот и пакет <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Вы видите занятость времени, статус тренировок и количество оставшихся занятий у каждого подопечного с любого устройства.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">08:00 · Силовая зона · Сплит грудь/трицепс</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В зале</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Михаил Р. · Пакет 8 из 10</div>
+                <div class="mt-auto-car-tier">Жим 95 кг 4х6 · Замеры объёмов в пятницу</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🏋️‍♂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Персональная тренировка (60 мин)</span>
+              <span class="mt-auto-price">По пакету</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">12:00 · Функционал & Кардио · Кор и баланс</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Екатерина Д. · Пакет 2 из 10</div>
+                <div class="mt-auto-car-tier">Круговой тренинг + МФР ролл · Пульс до 145</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Функциональный тренинг</span>
+              <span class="mt-auto-price">По пакету</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">17:00 · Силовая зона · Присед и жим ногами</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--hold">Продление</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Максим Т. · Пакет 10 из 10 (финал)</div>
+                <div class="mt-auto-car-tier">Присед 120 кг · Напомнить об оплате блока</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎯</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Силовая тренировка</span>
+              <span class="mt-auto-price">Оплата блока</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENARIO CARDS -->
+      <section class="mt-section mt-section--flush-top" data-screen-label="Ключевые возможности">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Всё для работы персонального тренера <span class="mt-hero-accent">в одной системе</span></h2>
+          <p class="mt-section-sub">Забудьте о хаотичных сообщениях в WhatsApp, потерянных оплатах и неловких спорах о сгоревших занятиях.</p>
+        </div>
+
+        <div class="mt-features-grid">
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="60">
+            <div class="mt-scenario-card-badge">Календарь</div>
+            <h3 class="mt-scenario-card-title">Персональный календарь без переписок в WhatsApp</h3>
+            <p class="mt-scenario-card-desc">Вместо того чтобы весь вечер отвечать на сообщения «На когда есть свободный час?», вы отправляете подопечным прямую ссылку на своё расписание. Клиент открывает ссылку и видит только те часы, которые вы выделили под тренировки. Система автоматически бронирует слот и исключает накладки.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="120">
+            <div class="mt-scenario-card-badge">Пакеты</div>
+            <h3 class="mt-scenario-card-title">Чёткий учёт пакетов занятий и правило отмен</h3>
+            <p class="mt-scenario-card-desc">Молния ведёт баланс тренировок за вас: сколько занятий из купленного блока (8, 10 или 12) уже проведено, сколько осталось и когда пора продлевать абонемент. Настройте регламент сгорания слотов: если подопечный отменяет тренировку позже, чем за 12 часов до начала, занятие автоматически списывается из пакета.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="180">
+            <div class="mt-scenario-card-badge">Профиль</div>
+            <h3 class="mt-scenario-card-title">Карточка подопечного: замеры, травмы и динамика</h3>
+            <p class="mt-scenario-card-desc">Храните профиль каждого ученика в едином месте: замеры талии, бёдер, процент жира, динамику веса, фото формы и противопоказания по здоровью (протрузии, травмы коленей, давление). Перед началом тренировки вам достаточно открыть карточку, чтобы сразу увидеть план нагрузок и прошлые рабочие веса.</p>
+          </article>
+
+          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="240">
+            <div class="mt-scenario-card-badge">Напоминания</div>
+            <h3 class="mt-scenario-card-title">Автонапоминания подопечным за 24 и 2 часа</h3>
+            <p class="mt-scenario-card-desc">Сервисный Telegram-бот отправляет напоминание клиенту накануне тренировки и за 2 часа до встречи в зале. Ученик не забудет спортивную форму, не перепутает клуб и подтвердит визит в один клик. Количество неявок и внезапных срывов графика снижается до минимума.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MIGRATION BLOCK -->
+      <section class="mt-section mt-migration" data-screen-label="Быстрый старт" data-mt-reveal>
+        <div class="mt-migration-grid">
+          <div class="mt-migration-copy">
+            <h2 class="mt-section-title">Перенесите контакты подопечных и остатки пакетов <span class="mt-hero-accent">за 15 минут</span></h2>
+            <p class="mt-migration-lead">Ведёте клиентов в заметках телефона, таблицах Excel или чатах? Служба заботы Молнии бесплатно поможет загрузить список ваших подопечных, баланс оплаченных тренировок и настроить график работы под аренду залов. Без потери контактов и без прерывания тренировочного процесса.</p>
+            <ul class="mt-migration-points">
+              <li>Импорт базы клиентов и номеров телефонов из любого источника</li>
+              <li>Перенос действующих блоков тренировок с точным остатком занятий</li>
+              <li>Настройка интервалов отдыха (15 мин) между подопечными</li>
+              <li>Персональная ссылка на онлайн-запись в день обращения</li>
+            </ul>
+          </div>
+          <div class="mt-migration-card">
+            <div class="mt-migration-badge">Бесплатный переход</div>
+            <div class="mt-migration-card-title">Поможем запустить онлайн-запись сегодня</div>
+            <p class="mt-migration-card-desc">Оставьте заявку — специалист покажет систему на реальных тренировках, перенесёт список клиентов и подключит автонапоминания.</p>
+            <a class="mt-btn mt-btn-hero" href="#contact">Подключить тренера бесплатно</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-section mt-faq" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Частые вопросы <span class="mt-overview-hook">персональных тренеров</span></h2>
+          <p class="mt-section-sub">Ответы на ключевые вопросы об онлайн-записи, учёте пакетов занятий и контроле графика тренировок.</p>
+        </div>
+
+        <div class="mt-faq-list">
+            <details><summary>Как подопечные записываются на персональные тренировки через Молнию?</summary><p>Вы получаете персональную ссылку на расписание с вашим фото, квалификацией и перечнем услуг (разовая тренировка, сплит на двоих, пакет занятий, ведение по питанию). Ссылку можно закрепить в шапке профиля соцсетей, отправить в Telegram или закрепить в переписке. Клиент видит только открытые свободные слоты и бронирует удобный час за 30 секунд без установки приложений.</p></details>
+            <details><summary>Как система ведёт учёт пакетов тренировок (блоков на 8, 10 или 12 занятий)?</summary><p>При оформлении пакета вы указываете количество занятий и срок действия блока. После каждой проведённой тренировки система списывает 1 занятие из баланса. Подопечный и тренер всегда видят актуальный остаток (например, «Осталось 3 из 10»), а перед последней тренировкой программа предупреждает о необходимости продления.</p></details>
+            <details><summary>Что происходит, если подопечный отменяет занятие в последний момент?</summary><p>Вы сами устанавливаете регламент отмены — например, не позднее чем за 12 или 24 часа до тренировки. Если клиент отменяет визит вовремя, слот мгновенно освобождается для других желающих. Если отмена происходит позже установленного срока, занятие автоматически отмечается как списанное из пакета, защищая ваше рабочее время и доход.</p></details>
+            <details><summary>Можно ли настроить буфер между тренировками на отдых и заполнение дневника?</summary><p>Да. Вы задаёте автоматический интервал (например, 15 минут) между записями. Система не позволит забронировать слоты впритык: у вас всегда будет время перевести дух, выпить воды, подготовить снаряды и зафиксировать в карточке подопечного рабочие веса и выполненные подходы.</p></details>
+            <details><summary>Подходит ли программа для нутрициологов и ведения клиентов онлайн?</summary><p>Да. В списке услуг можно разделить очные тренировки в зале и онлайн-консультации по видеосвязи. Для нутрициологических сессий можно настроить анкету сбора данных: вес, объёмы, пищевые привычки, аллергии и цели клиента, чтобы вы получили вводные данные ещё до начала созвона.</p></details>
+            <details><summary>Что делать, если я тренирую в нескольких разных фитнес-клубах или на выезде?</summary><p>В расписании Молнии можно создать несколько локаций — например, «Зал на Ленина», «Студия на Мира» или «Выездные тренировки». Для каждого дня вы указываете, в каком клубе работаете. Подопечный выбирает нужный зал и видит свободные часы только для этой локации.</p></details>
+            <details><summary>Сколько стоит использование Молнии для индивидуального тренера?</summary><p>Для персональных фитнес-тренеров и нутрициологов действует бесплатный доступ со всеми возможностями: онлайн-расписание, карточки подопечных, учёт баланса пакетов и автоматические напоминания. Никаких скрытых платежей и комиссий с ваших клиентов.</p></details>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="mt-section mt-final-cta" data-screen-label="Финальный призыв" data-mt-reveal>
+        <div class="mt-final-cta-card">
+          <div class="mt-final-cta-mark" aria-hidden="true"><svg width="56" height="56" viewBox="0 0 96 96" fill="none" aria-hidden="true"><circle cx="48" cy="48" r="11" fill="none" stroke="#131B2C" stroke-width="8"/><g transform="rotate(0 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(60 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#DF5F3C"/></g><g transform="rotate(120 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(180 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(240 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g><g transform="rotate(300 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g></svg></div>
+          <h2 class="mt-final-cta-title">Наведите идеальный порядок в тренировках и записях</h2>
+          <p class="mt-final-cta-desc">Подключите персональную страницу записи, забудьте о бесконечных переписках в чатах и контролируйте оплату каждого занятия.</p>
+          <div class="mt-final-cta-actions">
+            <a class="mt-btn mt-btn-hero" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-accent" href="https://t.me/molniya_tex?start=sector_trainers" target="_blank" rel="noopener">Подключить тренера</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для персонального тренера</h2>
+          <p class="mt-lead-sub">Оставьте контакты — покажем Молнию на примере вашей практики и поможем настроить страницу записи подопечных, баланс пакетов и расписание тренировок.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="trainers">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
