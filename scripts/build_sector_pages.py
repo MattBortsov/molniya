@@ -2543,6 +2543,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Сетка сеансов с буфером на сборку локации, доплата за участников, выбор уровня страха и бронь лаунж-зоны.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/vr-arena">
+            <div class="mt-subniche-icon">🥽</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">VR-арены и клубы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Сетка игр со свободным перемещением, учёт шлемов и контроллеров, буфер на дезинфекцию и пакеты праздников.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -8882,6 +8889,17 @@ def sync_sitemap():
         changed = True
         print("Added /quests to sitemap.xml")
 
+    if "https://molniya-tech.ru/vr-arena" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/vr-arena</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /vr-arena to sitemap.xml")
+
     if "https://molniya-tech.ru/cleaning" not in content:
         url_entry = """  <url>
     <loc>https://molniya-tech.ru/cleaning</loc>
@@ -11508,6 +11526,481 @@ def build_quests_page() -> str:
 
 
 
+def build_vr_arena_page() -> str:
+    """Builds the complete VR arena and virtual reality club micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "vr-arena",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для своей VR-арены',
+        "Оставьте контакты — поможем настроить расписание сеансов, учёт шлемов и контроллеров, виджет онлайн-записи и пакеты праздников.",
+    )
+
+    title = "Онлайн-запись на VR-арену и в клуб виртуальной реальности — CRM и расписание"
+    description = (
+        "Программа для VR-арен и клубов виртуальной реальности: онлайн-запись 24/7, "
+        "свободное перемещение Free-Roam, учёт шлемов, буфер на дезинфекцию и пакеты праздников."
+    )
+    canonical = "https://molniya-tech.ru/vr-arena"
+
+    faqs = [
+        (
+            "Как игроки и компании бронируют сеансы на VR-арене через Молнию?",
+            "Вы получаете персональную страницу записи с вашим логотипом, фото локаций, перечнем игровых сценариев (командные шутеры, зомби-выживание, квесты для детей) и описанием доступных зон (Free-Roam арена со свободным перемещением или стационарные боксы). Ссылка размещается на сайте, в Telegram, соцсетях или картах. Гости выбирают дату, формат игры, число участников и бронируют сеанс за 1 минуту.",
+        ),
+        (
+            "Учитывает ли программа количество свободных VR-шлемов и контроллеров?",
+            "Да. Для каждого слота задаётся строгий лимит оборудования (например, до 8–10 шлемов Oculus Quest 3, Pico 4 или HTC Vive Focus на арене свободного перемещения и до 4 индивидуальных боксов). Система блокирует овербукинг и не допустит записи большего числа игроков, чем у вас заряженных шлемов.",
+        ),
+        (
+            "Как настраивается обязательный буфер на дезинфекцию масок и замену аккумуляторов?",
+            "Между игровыми сессиями автоматически закладывается технический перерыв (10–15 минут). За это время инструкторы успевают обработать лицевые накладки антисептиком, сменить севшие аккумуляторы на заряженные из док-станции и провести инструктаж по технике безопасности для следующей группы без задержки расписания.",
+        ),
+        (
+            "Как работает пакетное бронирование праздников «День рождения под ключ»?",
+            "Клиент может забронировать комплексный пакет: например, 60 минут командной игры на арене + 1.5 часа лаунж-зоны для пиццы, торта и турнира в PS5. Система автоматически резервирует игровое поле и комнату отдыха единым заказом, предотвращая пересечения между разными компаниями гостей.",
+        ),
+        (
+            "Как настроить доплату за дополнительных игроков сверх базового тарифа?",
+            "Вы можете установить базовую стоимость сеанса (например, до 4 человек) и фиксированную цену за каждого следующего участника (например, +1 000 ₽ за 5-го, 6-го и 7-го игрока). При оформлении брони виджет мгновенно пересчитывает сумму чека, выводя точную прозрачную стоимость для команды.",
+        ),
+        (
+            "Как система напоминает гостям о сеансе и предотвращает опоздания?",
+            "После бронирования капитан получает подтверждение, а за 24 и 2 часа до игры — напоминание в Telegram или по SMS со схемой проезда, правилами сменной обуви (или игры в носках) и рекомендацией прийти за 10 минут до начала для выбора сценария и настройки шлемов.",
+        ),
+        (
+            "Как быстро перенести расписание и базу клиентов из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно переносит ваши игровые зоны, каталог VR-игр, сетку сеансов, прайс-лист праздников и контакты постоянных гостей. Перенос занимает 15 минут и не прерывает прием бронирований на сайте.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись на VR-арену", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для VR-арен и клубов",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания сеансов VR-арены",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- VR-ARENA HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для VR-арен и клубов: <span class="mt-hero-accent">онлайн-запись и управление сеансами</span></h1>
+          <p class="mt-hero-desc">Интерактивное расписание сеансов 24/7, свободное перемещение Free-Roam, автоматический буфер 15 минут на дезинфекцию шлемов, пакеты дней рождения и напоминания гостям.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_vr_arena" target="_blank" rel="noopener">Подключить VR-арену</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для VR-арен">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Free-Roam арена</span>
+                <span class="mt-facet-note">сетка игр со свободным перемещением</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Учёт шлемов</span>
+                <span class="mt-facet-note">Quest 3 и Pico 4 без овербукинга</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Буфер 15 минут</span>
+                <span class="mt-facet-note">дезинфекция масок и замена АКБ</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Пакеты праздников</span>
+                <span class="mt-facet-note">VR + лаунж-зона под торт и PS5</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для VR-арен и клубов: расписание сеансов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание сеансов VR-арены, бронь шлемов и комнат отдыха в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание сеансов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая арена, шлем и праздник <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Администраторы и инструкторы видят статус арены, уровень заряда шлемов и готовность площадки к следующей игре на любом устройстве.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">14:00 · Арена Free-Roam 250 м² · Шутер</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В игре</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Команда «КиберШтурм» (8 игроков)</div>
+                <div class="mt-auto-car-tier">Шлемы Quest 3 · Раунд 3 из 4 · Инструктор: Денис</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🥽</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Free-Roam VR (60 мин)</span>
+              <span class="mt-auto-price">6 400 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">15:00 · Арена Free-Roam · Подготовка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв (15 мин)</div>
+                <div class="mt-auto-car-tier">Дезинфекция масок, замена АКБ, инструктаж команды</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🔋</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Смена аккумуляторов</span>
+              <span class="mt-auto-price">До 15:15</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">15:15 · Пакет «День рождения» + Лаунж</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">День рождения Даниила (10 чел.)</div>
+                <div class="mt-auto-car-tier">Игра на арене 60 мин + комната отдыха с PS5 1.5ч</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎂</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>VR + Лаунж-зона</span>
+              <span class="mt-auto-price">12 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VR OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для VR-арен" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы VR-арены и клуба виртуальной реальности <span class="mt-overview-hook">в одной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, таблиц и путаницы в мессенджерах: онлайн-расписание сеансов 24/7, буфер на дезинфекцию шлемов, доплата за участников, бронь лаунж-зоны и прозрачный учёт смен.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Сетка сеансов Free-Roam <span class="mt-overview-hook">без накладок на арене</span></h3>
+            <p>Задайте точное расписание сеансов с автоматическим перерывом 15 минут. Инструкторы успевают обработать накладки антисептиком, поставить свежие аккумуляторы и провести инструктаж до выхода игроков на площадку.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка сеансов</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>14:00</span><div class="mt-overview-slot">Арена Free-Roam <small>8 игроков</small></div><span>15:00</span><div class="mt-overview-slot mt-overview-slot--light">Дезинфекция масок <small>15 мин</small></div><span>15:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Виджет онлайн-записи 24/7 <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
+            <p>Короткая ссылка для соцсетей, Telegram или встраиваемый виджет на сайт клуба. Гости сами выбирают сценарий (шутер, зомби, квест), формат арены, число игроков и бронируют сеанс за минуту без звонков.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выбор сеанса</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Арена со свободным перемещением</span><strong>60 мин · До 10 игроков</strong></div>
+              <div class="mt-overview-price-row"><span>Короткая ссылка для сайта и карт</span><strong>Мгновенная бронь</strong></div>
+              <div class="mt-overview-price-tag">Гости бронируют сеансы сами в любое время</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт шлемов и доплата за игроков <span class="mt-overview-hook">в автоматическом расчёте</span></h3>
+            <p>Система знает лимит оборудования и блокирует овербукинг. При записи базовый тариф автоматически пересчитывается с учетом каждого дополнительного шлема или наценки за вечерние часы.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расчёт тарифа</span><span>Калькулятор</span></div>
+              <div class="mt-overview-message">
+                Сеанс Free-Roam (6 чел.): 6 000 ₽ + 2 доп. шлема (+2 000 ₽) = 8 000 ₽. Предоплата 2 000 ₽ зафиксирована.
+                <span class="mt-overview-reaction">🥽</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Оборудование под контролем</span><strong>8 из 10 шлемов занято →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Пакеты праздников и лаунж-зона <span class="mt-overview-hook">в едином заказе</span></h3>
+            <p>Родители бронируют командную игру и комнату отдыха под торт и поздравления в один клик. Система защищает от пересечения двух компаний в гостевой зоне и контролирует тайминг праздника.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пакет «День рождения»</span><span>VR + Лаунж</span></div>
+              <div class="mt-overview-stages"><span>VR 60м</span><i></i><span>Лаунж 1.5ч</span><i></i><span>PS5 / Торт</span></div>
+              <div class="mt-overview-check">✓ <span>Комната праздника забронирована</span></div>
+              <div class="mt-overview-check">✓ <span>Турнир в PlayStation 5 включён</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Табель смен операторов и инструкторов <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Программа фиксирует количество проведенных сессий каждого инструктора и оператора. В конце периода табель автоматически готов к расчету сдельной оплаты по фиксированной ставке за сеанс или проценту от чека.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт смен команды</span><span>Цифровой табель</span></div>
+              <div class="mt-overview-metrics"><span>Сессии<b>32 в смене</b></span><span>Инструкторы<b>3 на арене</b></span><span>Учёт<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- VR JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь команды на VR-арену">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один сеанс на арене. <span class="mt-hero-accent">Полный порядок в клубе.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу VR-арены: от выбора свободного слота на сайте до авто-буфера на дезинфекцию шлемов и расчёта смены команды.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения бронирования" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Командная игра на арене Free-Roam 250 м²</strong><span>Длительность 60 минут + 15 минут буфер на дезинфекцию масок и замену АКБ</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Команда</span>
+              <h3>Выбор сценария, числа игроков и слота на сайте 24/7</h3>
+              <p>Организатор открывает страницу записи, выбирает формат арены со свободным перемещением, шутер и видит только реальные свободные сеансы.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование сеанса</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Команда</span><strong>Даниил С. (8 игроков)</strong></div>
+              <div class="mt-journey-proof-row"><span>Арена</span><strong>Free-Roam 250 м² · Шутер</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Воскресенье, 15:15 – 16:15</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Выбор пакета праздника, бронь лаунжа и предоплата</h3>
+              <p>Клиент указывает 8 участников и добавляет комнату отдыха на 1.5 часа для пиццы и торта. Система автоматически фиксирует сумму заказа и размер аванса.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь #4105</span>
+                <span class="mt-journey-proof-badge">Предоплата 3 000 ₽</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Пакет</span><strong>День рождения · Арена 60м + Лаунж 1.5ч</strong></div>
+              <div class="mt-journey-proof-row"><span>Оборудование</span><strong>8 шлемов Oculus Quest 3 зарезервировано</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Арена и комната отдыха забронированы</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматические напоминания и схема проезда в Telegram</h3>
+              <p>Сервисный бот отправляет капитану точную схему входа, видео-инструкцию, напоминание прийти за 10 минут и правила обуви для игры.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Инструкция</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS / E-mail</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>ТЦ «Арена», 3 этаж · Ждём в 15:05</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Команда вовремя без опозданий</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Инструктор</span>
+              <h3>Проведение игры, 15 минут буфера и расчет смены</h3>
+              <p>Игроки проходят раунды. Инструктор за 15 минут обрабатывает маски, ставит свежие АКБ, а программа начисляет сдельную выплату за сессию.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сеанса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог сеанса</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата</span><strong>9 500 ₽ доплаты принято в кассу</strong></div>
+              <div class="mt-journey-proof-row"><span>Табель смены</span><strong>Сессия учтена инструктору</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер на АКБ</span><strong>Арена готова к следующей игре в 16:30</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс VR-арены" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс VR-арены свободного перемещения</div>
+            <h2 class="mt-case-title">Денис Марков, основатель VR-арены «CyberSpace»</h2>
+            <blockquote class="mt-case-quote">
+              «По выходным у нас плотный поток детских праздников и корпоративных турниров. Раньше администраторы путались в чатах: забывали заложить время на дезинфекцию масок и замену батарей, из-за чего следующие гости нервничали в коридоре, а шлемы разряжались прямо во время финального раунда. В Молнии мы настроили авто-буфер 15 минут и пакетные брони „Арена + Лаунж“. Накладки исчезли полностью, а выручка выросла на 35%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Денис Марков <span>· Основатель VR-арены Free-Roam (250 м², 10 шлемов), <span style="white-space:nowrap">Екатеринбург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Задержек сеансов благодаря обязательному буферу на подготовку шлемов</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2 ч</span>
+              <span class="mt-case-label">В день сэкономлено администраторами на подтверждениях и ручных звонках</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+35%</span>
+              <span class="mt-case-label">Рост выручки за счёт круглосуточного онлайн-виджета и пакетов ДР</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VR FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для VR-арен и клубов</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своей VR-арены</h3>
+            <p>Бесплатно поможем настроить расписание сеансов, буфер на дезинфекцию шлемов, учет оборудования, форму онлайн-записи и пакеты праздников.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261022-flatstyle"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
 def main():
     print("Building sector landing page: /auto...")
     auto_html = build_auto_page()
@@ -11563,6 +12056,11 @@ def main():
     quests_html = build_quests_page()
     (ROOT_DIR / "quests.html").write_text(quests_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'quests.html'}")
+
+    print("Building sector landing page: /vr-arena...")
+    vr_arena_html = build_vr_arena_page()
+    (ROOT_DIR / "vr-arena.html").write_text(vr_arena_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'vr-arena.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
