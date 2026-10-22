@@ -211,11 +211,11 @@ a { color: inherit; }
 }
 .mt-atmosphere--grid {
   background-image:
-    linear-gradient(rgba(92, 70, 46, .015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 70, 46, .015) 1px, transparent 1px);
+    linear-gradient(rgba(92, 70, 46, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 70, 46, .04) 1px, transparent 1px);
   background-size: 66px 66px;
-  -webkit-mask-image: radial-gradient(circle at 50% 12%, #000, transparent 78%);
-  mask-image: radial-gradient(circle at 50% 12%, #000, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle at 50% 12%, #000 20%, transparent 80%);
+  mask-image: radial-gradient(circle at 50% 12%, #000 20%, transparent 80%);
 }
 .mt-content {
   position: relative;

@@ -715,7 +715,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1242,7 +1242,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1735,7 +1735,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2274,7 +2274,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2795,7 +2795,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3316,7 +3316,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3838,7 +3838,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4248,7 +4248,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4450,7 +4450,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4971,7 +4971,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5488,7 +5488,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6014,7 +6014,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6526,7 +6526,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7107,7 +7107,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7909,7 +7909,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8188,7 +8188,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8316,7 +8316,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8566,7 +8566,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8882,7 +8882,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-visfix">
+  <link rel="stylesheet" href="/styles.css?v=20261022-gridfix">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
