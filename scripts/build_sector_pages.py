@@ -1957,8 +1957,8 @@ def build_health_page() -> str:
       <!-- HEALTH SUB-NICHES & PRIVATE PRACTICE -->
       <section class="mt-section mt-reveal" data-screen-label="Частная практика" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Специализированные решения <span class="mt-overview-hook">для студий и специалистов</span></h2>
-          <p class="mt-section-sub">Если вы ведёте профильную студию или индивидуальный приём, используйте специализированные страницы записи Молнии с регламентом слотов, буфером на отдых и анкетами приёма.</p>
+          <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для студий и специалистов</span></h2>
+          <p class="mt-section-sub">Если вы ведёте профильную студию или индивидуальный приём, используйте готовые страницы записи Молнии с регламентом слотов, буфером на отдых и анкетами приёма.</p>
         </div>
 
         <div class="mt-subniche-grid">
