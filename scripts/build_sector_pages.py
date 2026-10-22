@@ -10246,58 +10246,182 @@ def build_trainers_page() -> str:
         </div>
       </section>
 
-      <!-- SCENARIO CARDS -->
-      <section class="mt-section mt-section--flush-top" data-screen-label="Ключевые возможности">
-        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
-          <h2 class="mt-section-title">Всё для работы персонального тренера <span class="mt-hero-accent">в одной системе</span></h2>
-          <p class="mt-section-sub">Забудьте о хаотичных сообщениях в WhatsApp, потерянных оплатах и неловких спорах о сгоревших занятиях.</p>
+      <!-- TRAINERS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для тренера" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для работы персонального тренера <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов, заметок в телефоне и бесконечных переписок: онлайн-расписание 24/7, учёт баланса пакетов тренировок, замеры прогресса и автоматические напоминания подопечным.</p>
         </div>
 
-        <div class="mt-features-grid">
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="60">
-            <div class="mt-scenario-card-badge">Календарь</div>
-            <h3 class="mt-scenario-card-title">Персональный календарь без переписок в WhatsApp</h3>
-            <p class="mt-scenario-card-desc">Вместо того чтобы весь вечер отвечать на сообщения «На когда есть свободный час?», вы отправляете подопечным прямую ссылку на своё расписание. Клиент открывает ссылку и видит только те часы, которые вы выделили под тренировки. Система автоматически бронирует слот и исключает накладки.</p>
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Персональный календарь и слоты <span class="mt-overview-hook">без переписок в WhatsApp</span></h3>
+            <p>Клиенты переходят по прямой ссылке на ваше расписание и бронируют свободные часы в один клик. Система автоматически добавляет 15 минут буфера между тренировками и исключает накладки.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Календарь слотов</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>08:00</span><div class="mt-overview-slot">Михаил Р.: Сплит <small>Пакет 8/10</small></div><span>10:30</span><div class="mt-overview-slot mt-overview-slot--light">Павел В.: Тяга <small>Пакет 4/12</small></div><span>12:00</span><div></div></div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="120">
-            <div class="mt-scenario-card-badge">Пакеты</div>
-            <h3 class="mt-scenario-card-title">Чёткий учёт пакетов занятий и правило отмен</h3>
-            <p class="mt-scenario-card-desc">Молния ведёт баланс тренировок за вас: сколько занятий из купленного блока (8, 10 или 12) уже проведено, сколько осталось и когда пора продлевать абонемент. Настройте регламент сгорания слотов: если подопечный отменяет тренировку позже, чем за 12 часов до начала, занятие автоматически списывается из пакета.</p>
+          <article class="mt-overview-card">
+            <h3>Персональная страница тренера <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
+            <p>Короткая ссылка для шапки профиля соцсетей и Telegram: фото, квалификация, описание услуг (разовое занятие, блоки тренировок, план питания) и прямой выбор удобного времени.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Страница бронирования</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Блок 10 персональных тренировок</span><strong>60 мин · Срок 35 дней</strong></div>
+              <div class="mt-overview-price-row"><span>Удобная короткая ссылка</span><strong>Для соцсетей и Telegram</strong></div>
+              <div class="mt-overview-price-tag">Подопечные бронируют слоты сами без звонков</div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="180">
-            <div class="mt-scenario-card-badge">Профиль</div>
-            <h3 class="mt-scenario-card-title">Карточка подопечного: замеры, травмы и динамика</h3>
-            <p class="mt-scenario-card-desc">Храните профиль каждого ученика в едином месте: замеры талии, бёдер, процент жира, динамику веса, фото формы и противопоказания по здоровью (протрузии, травмы коленей, давление). Перед началом тренировки вам достаточно открыть карточку, чтобы сразу увидеть план нагрузок и прошлые рабочие веса.</p>
+          <article class="mt-overview-card">
+            <h3>Автоматические напоминания <span class="mt-overview-hook">и защита от неявок в зал</span></h3>
+            <p>Подопечный получает мгновенное подтверждение после бронирования, а накануне и за 2 часа до тренировки — напоминание в Telegram или по SMS. Он успеет предупредить об отмене вовремя.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Telegram-напоминание</span><span>Без рутины</span></div>
+              <div class="mt-overview-message">
+                Артём, напоминаем о тренировке сегодня в 17:00 в Силовой зоне. Ждём в зале вовремя, не забудьте форму и воду!
+                <span class="mt-overview-reaction">🏋️‍♂️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram, E-mail или SMS</span><strong>На выбор подопечного →</strong></div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="240">
-            <div class="mt-scenario-card-badge">Напоминания</div>
-            <h3 class="mt-scenario-card-title">Автонапоминания подопечным за 24 и 2 часа</h3>
-            <p class="mt-scenario-card-desc">Сервисный Telegram-бот отправляет напоминание клиенту накануне тренировки и за 2 часа до встречи в зале. Ученик не забудет спортивную форму, не перепутает клуб и подтвердит визит в один клик. Количество неявок и внезапных срывов графика снижается до минимума.</p>
+          <article class="mt-overview-card">
+            <h3>Учёт пакетов тренировок и отмен <span class="mt-overview-hook">в профиле подопечного</span></h3>
+            <p>Молния сама списывает занятие из блока (8, 10 или 12) при отметке в зале. Если клиент отменяет тренировку позже регламента (за 12 часов), занятие автоматически списывается из баланса.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Карточка подопечного</span><span>Михаил Р. (Пакет 10)</span></div>
+              <div class="mt-overview-stages"><span>Блок 10</span><i></i><span>Проведено: 8</span><i></i><span>Остаток: 2</span></div>
+              <div class="mt-overview-check">✓ <span>Списание по факту тренировки</span></div>
+              <div class="mt-overview-check">✓ <span>Регламент отмены за 12 часов активен</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Замеры тела, цели и динамика весов <span class="mt-overview-hook">в одном месте</span></h3>
+            <p>Фиксируйте замеры талии, бёдер, процент жира, противопоказания (протрузии, колени) и историю рабочих весов в подходах. Профиль доступен со смартфона перед каждым подходом.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Динамика прогресса</span><span>Дневник подопечного</span></div>
+              <div class="mt-overview-metrics"><span>Вес<b>-4.2 кг</b></span><span>Талия<b>-5 см</b></span><span>Жим<b>95 кг</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- TRAINERS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь подопечного на тренировку">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит на тренировку. <span class="mt-hero-accent">Полный контроль в расписании.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует тренировочный процесс: от выбора слота на персональной странице до списания занятия из пакета и фиксации замеров.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример персональной тренировки" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Персональная тренировка (Силовой сплит)</strong><span>Длительность 60 минут + 15 минут буфер на отдых и фиксацию весов</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Подопечный</span>
+              <h3>Выбор удобного окна тренировки на странице записи 24/7</h3>
+              <p>Клиент открывает персональную ссылку тренера в Telegram или браузере, выбирает свободный слот и мгновенно закрепляет время за собой.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование слота</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Подопечный</span><strong>Артём Л.</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Персональная тренировка (60 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Вторник, 17:00 – 18:00 · Силовая зона</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Карточка</span>
+              <h3>Учёт пакета занятий и фиксация ограничений по здоровью</h3>
+              <p>Система проверяет баланс блока тренировок, напоминает о скором продлении и выводит тренеру заметки по противопоказаниям клиента.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Тренировка #8410</span>
+                <span class="mt-journey-proof-badge">Пакет 10/10</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Баланс</span><strong>10-е занятие (пора продлевать)</strong></div>
+              <div class="mt-journey-proof-row"><span>Здоровье</span><strong>Протрузия L5-S1 · Исключить осевую</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Запись в календаре зафиксирована</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматические напоминания накануне занятия</h3>
+              <p>Сервисный бот заблаговременно присылает сообщение в Telegram с напоминанием о времени тренировки, номере зала и форме одежды.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / E-mail / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Силовая зона, тренер Денис К.</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Подопечный вовремя на тренировке</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Тренер</span>
+              <h3>Отметка в зале, списание занятия и фиксация весов</h3>
+              <p>Тренер отмечает проведённую тренировку, вносит рабочие веса в дневник и видит автоматическое списание занятия из баланса пакета.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат тренировки">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог тренировки</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Пакет</span><strong>Блок закрыт · Заявка на продление</strong></div>
+              <div class="mt-journey-proof-row"><span>Рабочий вес</span><strong>Присед 120 кг 4х8 зафиксирован</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий слот</span><strong>Четверг, 17:00 забронирован</strong></div>
+            </div>
           </article>
         </div>
       </section>
 
-      <!-- MIGRATION BLOCK -->
-      <section class="mt-section mt-migration" data-screen-label="Быстрый старт" data-mt-reveal>
-        <div class="mt-migration-grid">
-          <div class="mt-migration-copy">
-            <h2 class="mt-section-title">Перенесите контакты подопечных и остатки пакетов <span class="mt-hero-accent">за 15 минут</span></h2>
-            <p class="mt-migration-lead">Ведёте клиентов в заметках телефона, таблицах Excel или чатах? Служба заботы Молнии бесплатно поможет загрузить список ваших подопечных, баланс оплаченных тренировок и настроить график работы под аренду залов. Без потери контактов и без прерывания тренировочного процесса.</p>
-            <ul class="mt-migration-points">
-              <li>Импорт базы клиентов и номеров телефонов из любого источника</li>
-              <li>Перенос действующих блоков тренировок с точным остатком занятий</li>
-              <li>Настройка интервалов отдыха (15 мин) между подопечными</li>
-              <li>Персональная ссылка на онлайн-запись в день обращения</li>
-            </ul>
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс персонального тренера" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс персонального тренера</div>
+            <h2 class="mt-case-title">Александр Волков, персональный тренер и нутрициолог</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше каждый вечер уходил на бесконечные переписки в WhatsApp: кто-то заболел, кто-то перенёс, кто-то спорит, сколько тренировок осталось в оплаченном блоке. С Молнией я просто закрепил ссылку на расписание в Telegram. Подопечные сами бронируют свободные слоты, система списывает тренировки и напоминает об оплате нового пакета. Я экономлю минимум два часа в день.»
+            </blockquote>
+            <div class="mt-case-author">
+              Александр Волков <span>· Персональный тренер высшей категории, <span style="white-space:nowrap">Москва</span></span>
+            </div>
           </div>
-          <div class="mt-migration-card">
-            <div class="mt-migration-badge">Бесплатный переход</div>
-            <div class="mt-migration-card-title">Поможем запустить онлайн-запись сегодня</div>
-            <p class="mt-migration-card-desc">Оставьте заявку — специалист покажет систему на реальных тренировках, перенесёт список клиентов и подключит автонапоминания.</p>
-            <a class="mt-btn mt-btn-hero" href="#contact">Подключить тренера бесплатно</a>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Споров об остатке оплаченных тренировок благодаря прозрачному балансу</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">2.5 ч</span>
+              <span class="mt-case-label">В день сэкономлено на рутинных ответах в чатах и согласовании времени</span>
+            </div>
           </div>
         </div>
       </section>
@@ -10630,58 +10754,182 @@ def build_martial_arts_page() -> str:
         </div>
       </section>
 
-      <!-- SCENARIO CARDS -->
-      <section class="mt-section mt-section--flush-top" data-screen-label="Ключевые возможности">
-        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
-          <h2 class="mt-section-title">Всё для управления клубом единоборств <span class="mt-hero-accent">в единой системе</span></h2>
-          <p class="mt-section-sub">Избавьтесь от рутины в тетрадях и WhatsApp: управляйте сеткой залов, учитывайте взносы и заморозки без ошибок.</p>
+      <!-- MARTIAL ARTS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для клуба единоборств" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте клубом единоборств и бокса <span class="mt-overview-hook">без бумажной рутины</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание татами и рингов 24/7, лимиты спортсменов в группах, учёт абонементов, заморозки на время сборов и напоминания в Telegram.</p>
         </div>
 
-        <div class="mt-features-grid">
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="60">
-            <div class="mt-scenario-card-badge">Залы и зоны</div>
-            <h3 class="mt-scenario-card-title">Расписание рингов, татами и снарядных зон</h3>
-            <p class="mt-scenario-card-desc">Настройте лимиты спортсменов для каждой зоны зала: ринга, борцовского ковра или мешков. Система контролирует количество записей, не допускает переполнения групп и сохраняет безопасную дистанцию для спаррингов и бросковой техники.</p>
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Сетка рингов, татами и снарядов <span class="mt-overview-hook">без давки в залах</span></h3>
+            <p>Задайте точное число мест для каждой зоны (ринг, ковёр, мешки). Система автоматически блокирует запись при заполнении слота, защищая от скученности и травм во время спаррингов.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетка залов</span><span>Вместимость</span></div>
+              <div class="mt-overview-calendar"><span>16:30</span><div class="mt-overview-slot">Татами 1: Самбо Дети <small>12 из 12 мест</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Ринг: Бокс Взрослые <small>14 из 16 мест</small></div><span>19:30</span><div></div></div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="120">
-            <div class="mt-scenario-card-badge">Абонементы</div>
-            <h3 class="mt-scenario-card-title">Учёт абонементов, безлимитов и заморозок</h3>
-            <p class="mt-scenario-card-desc">Автоматическое списание визитов при отметке входа спортсмена, учёт срока действия клубных карт и быстрая заморозка. Если боец уезжает на спортивные сборы или восстанавливается после травмы, администратор ставит заморозку в один клик.</p>
+          <article class="mt-overview-card">
+            <h3>Страница записи клуба <span class="mt-overview-hook">в вашем фирменном стиле</span></h3>
+            <p>Удобная ссылка для соцсетей, Telegram или сайта клуба. Спортсмены и родители сами выбирают направление (бокс, кикбоксинг, самбо, BJJ, ММА), тренера и группу без ожидания ответов в директ.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Страница бронирования</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Абонемент на 12 тренировок</span><strong>Бокс / ММА / BJJ · Месяц</strong></div>
+              <div class="mt-overview-price-row"><span>Удобная короткая ссылка</span><strong>Для соцсетей и родительских чатов</strong></div>
+              <div class="mt-overview-price-tag">Спортсмены записываются сами в любое время</div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="180">
-            <div class="mt-scenario-card-badge">Группы</div>
-            <h3 class="mt-scenario-card-title">Детские и взрослые группы: списки и допуски</h3>
-            <p class="mt-scenario-card-desc">Удобное разделение потоков: детские группы по возрастам (6–9 лет, 10–14 лет), новички, любители и выступающая сборная клуба. В карточке спортсмена сохраняются контакты родителей, допуски врача и согласия на спарринги.</p>
+          <article class="mt-overview-card">
+            <h3>Автоматические напоминания <span class="mt-overview-hook">и меньше пропусков тренировок</span></h3>
+            <p>Боец или родитель ребёнка получает мгновенное подтверждение после бронирования, а накануне тренировки — напоминание по Telegram или SMS с напоминанием взять бинты, капу и перчатки.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание бойцу</span><span>Без рутины</span></div>
+              <div class="mt-overview-message">
+                Артём, напоминаем о тренировке по боксу завтра в 18:00 в Ринговой зоне. Не забудьте капу, бинты и сменную обувь!
+                <span class="mt-overview-reaction">🥊</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram, E-mail или SMS</span><strong>На выбор спортсмена →</strong></div>
+            </div>
           </article>
 
-          <article class="mt-scenario-card" data-mt-reveal data-mt-delay="240">
-            <div class="mt-scenario-card-badge">Напоминания</div>
-            <h3 class="mt-scenario-card-title">Автонапоминания бойцам и родителям в Telegram</h3>
-            <p class="mt-scenario-card-desc">Сервисный Telegram-бот отправляет напоминание о тренировке за 24 и 2 часа до начала. Спортсмен не забудет форму, капу и бинты, а родители вовремя привезут ребёнка в зал. Число пропусков снижается до минимума.</p>
+          <article class="mt-overview-card">
+            <h3>Учёт абонементов, безлимитов и заморозок <span class="mt-overview-hook">в профиле бойца</span></h3>
+            <p>Фиксируйте разовые тренировки, блоки на 8/12 занятий и безлимитные карты. Если спортсмен уезжает на соревнования, сборы или заболел, администратор замораживает карту в один клик.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Профиль спортсмена</span><span>Артём В. (Абонемент)</span></div>
+              <div class="mt-overview-stages"><span>Абонемент 12</span><i></i><span>Проведено: 9</span><i></i><span>Остаток: 3</span></div>
+              <div class="mt-overview-check">✓ <span>Карта активна (списание при входе)</span></div>
+              <div class="mt-overview-check">✓ <span>Справка от врача и согласие проверены</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Детские группы, весовые и допуски <span class="mt-overview-hook">в едином реестре</span></h3>
+            <p>Раздельный учёт детских секций (6–9, 10–14 лет), любителей и сборной клуба. В карточке спортсмена сохраняются контакты родителей, медицинские допуски и весовая категория.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Статистика клуба</span><span>Сводный табель</span></div>
+              <div class="mt-overview-metrics"><span>Залы<b>3 зоны</b></span><span>Группы<b>12 в расписании</b></span><span>Учёт<b>100%</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- MARTIAL ARTS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь бойца в клуб">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит на татами. <span class="mt-hero-accent">Полный порядок в клубе.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу бойцовского клуба: от записи на тренировку до проверки допуска, списания занятия и учёта нагрузки тренера.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример тренировки" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Групповая тренировка: Классический бокс</strong><span>Длительность 90 минут (разминка, снаряды, работа в парах, заминка)</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Спортсмен</span>
+              <h3>Выбор направления и группы на странице записи 24/7</h3>
+              <p>Боец или родитель ребёнка переходит по ссылке клуба, выбирает вид спорта (бокс, кикбоксинг, самбо, BJJ) и видит свободные места в группе.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование тренировки</span>
+                <span class="mt-journey-proof-badge">Место забронировано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Спортсмен</span><strong>Артём В.</strong></div>
+              <div class="mt-journey-proof-row"><span>Направление</span><strong>Классический бокс (Взрослые, 90 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зал и время</span><strong>Ринг 1 · Вторник, 18:00 – 19:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Форма записи</span>
+              <h3>Выбор абонемента и отметка медицинской справки</h3>
+              <p>Спортсмен указывает контакты, выбирает клубный абонемент или разовый визит. Для детей фиксируются телефоны родителей и допуск врача.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Запись #7310</span>
+                <span class="mt-journey-proof-badge">Подтверждена</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Тип визита</span><strong>Абонемент на 12 занятий</strong></div>
+              <div class="mt-journey-proof-row"><span>Допуск / Врач</span><strong>Справка до 12.2026 активна</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Место на снарядах зафиксировано</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматические напоминания бойцу накануне спаррингов</h3>
+              <p>Сервисный Telegram-бот отправляет напоминание с деталями визита: зал, тренер, форма одежды и напоминание взять защитную экипировку.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram / E-mail / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Ринг 1, тренер Денис К.</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Спортсмен вовремя на разминке</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Тренер</span>
+              <h3>Отметка прихода на ковёр и автосписание занятия</h3>
+              <p>Тренер отмечает явку в приложении. Занятие списывается с абонемента автоматически, а система учитывает проведённую тренировку в табеле смены.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат тренировки">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог тренировки</span>
+                <span class="mt-journey-proof-badge">Успешно</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Абонемент</span><strong>Осталось 3 из 12 занятий</strong></div>
+              <div class="mt-journey-proof-row"><span>Табель тренера</span><strong>Группа учтена в смене</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий шаг</span><strong>Запись на спарринги в четверг</strong></div>
+            </div>
           </article>
         </div>
       </section>
 
-      <!-- MIGRATION BLOCK -->
-      <section class="mt-section mt-migration" data-screen-label="Быстрый старт" data-mt-reveal>
-        <div class="mt-migration-grid">
-          <div class="mt-migration-copy">
-            <h2 class="mt-section-title">Перенесите базу бойцов и абонементы <span class="mt-hero-accent">за 15 минут</span></h2>
-            <p class="mt-migration-lead">Служба заботы Молнии бесплатно перенесёт список спортсменов, действующие абонементы с остатком тренировок и график тренеров из Excel, Google Таблиц или другой CRM. Без остановки работы клуба и без потери клиентских контактов.</p>
-            <ul class="mt-migration-points">
-              <li>Импорт базы спортсменов и номеров родителей из любого источника</li>
-              <li>Перенос действующих абонементов и безлимитных карт клуба</li>
-              <li>Настройка зон (ринг, татами, октагон, мешки) и лимитов участников</li>
-              <li>Персональная ссылка на расписание клуба в день обращения</li>
-            </ul>
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс бойцовского клуба" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс бойцовского клуба</div>
+            <h2 class="mt-case-title">Руслан Багиров, главный тренер клуба единоборств «Спарта»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше учёт групп вели в бумажных журналах: кто пришёл, у кого закончился абонемент, кто на сборах. Из-за переполнения татами на вечерних тренировках было тесно и травмоопасно. С Молнией мы настроили лимит 16 человек на ковер — запись закрывается сама. Родители детей получают напоминания в Telegram, а учёт заморозок и оплат стал полностью прозрачным.»
+            </blockquote>
+            <div class="mt-case-author">
+              Руслан Багиров <span>· Мастер спорта, основатель бойцовского клуба, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
           </div>
-          <div class="mt-migration-card">
-            <div class="mt-migration-badge">Бесплатный переход</div>
-            <div class="mt-migration-card-title">Поможем запустить расписание клуба сегодня</div>
-            <p class="mt-migration-card-desc">Оставьте заявку — специалист покажет систему на реальных тренировках, перенесёт списки спортсменов и настроит сетку залов.</p>
-            <a class="mt-btn mt-btn-hero" href="#contact">Подключить клуб бесплатно</a>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Случаев переполнения татами благодаря автоматическому лимиту мест</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Прозрачный учёт заморозок абонементов на период спортивных сборов</span>
+            </div>
           </div>
         </div>
       </section>
