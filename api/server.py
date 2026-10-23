@@ -36,6 +36,12 @@ TELEGRAM_LEADS_CHAT_ID = "-1003993624474"
 RATE_WINDOW_SECONDS = 60
 RATE_REQUESTS = 8
 
+_calendar_cache: dict[int, str] = {
+    2025: "11111111001100000110000011000001100000110000011000001100000110000211000001100000110000011000001100000110000011000001100211110001111000001100000110000011000001100211110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000002111000110000011000001100000110000011000001100000110000011001",
+    2026: "11111111111000001100000110000011000001100000110000011100001100000111000011000001100000110000011000001100000110000011000211100002111000011000001100000110000011000211100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011021001100000110000011000001100000110000011000001100000110001",
+    2027: "11111111110000011000001100000110000011000001100000211100011000001110000110000011000001100000110000011000001100000110000211100001110000110000011000001100000110000211100001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110021111000001100000110000011000001100000110000011000001100001",
+}
+
 _requests_by_ip: dict[str, deque[float]] = defaultdict(deque)
 _rate_lock = threading.Lock()
 
@@ -255,6 +261,9 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
         if path == "/health":
             self._send_json(HTTPStatus.OK, {"status": "ok"})
             return
+        if path == "/api/calendar":
+            self._handle_calendar()
+            return
         if path in {"/blog", "/blog/", "/blog/index.html"}:
             self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "index.html").read_bytes(), "text/html; charset=utf-8")
             return
@@ -367,6 +376,38 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             return
         deliver_lead_notification(record)
         self._send_json(HTTPStatus.OK, {"ok": True})
+
+    def _handle_calendar(self) -> None:
+        from urllib.parse import parse_qs
+        query = parse_qs(urlsplit(self.path).query)
+        year_param = query.get("year", ["2026"])[0]
+        try:
+            year = int(year_param)
+            if not (2020 <= year <= 2035):
+                raise ValueError("Год вне допустимого диапазона")
+        except ValueError:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректный год"})
+            return
+
+        if year in _calendar_cache:
+            self._send_json(HTTPStatus.OK, {"year": year, "data": _calendar_cache[year]})
+            return
+
+        try:
+            resp = requests.get(
+                f"https://isdayoff.ru/api/getdata?year={year}&pre=1&cc=ru",
+                timeout=4,
+                headers={"User-Agent": "MolniyaCalendar/1.0"},
+            )
+            if resp.status_code == 200 and len(resp.text.strip()) in (365, 366):
+                data = resp.text.strip()
+                _calendar_cache[year] = data
+                self._send_json(HTTPStatus.OK, {"year": year, "data": data})
+                return
+        except Exception:
+            pass
+
+        self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Данные календаря временно недоступны"})
 
     def _handle_seosmith(self) -> None:
         secret = os.getenv("SEOSMITH_WEBHOOK_SECRET", "")

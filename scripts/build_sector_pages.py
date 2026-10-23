@@ -274,6 +274,7 @@ def render_footer_nav_html() -> str:
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
+              <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
             </div>
@@ -715,7 +716,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1092,7 +1093,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -1242,7 +1243,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1619,7 +1620,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -1735,7 +1736,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2158,7 +2159,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -2302,7 +2303,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2739,7 +2740,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -2883,7 +2884,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3260,7 +3261,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -3404,7 +3405,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3813,7 +3814,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -3958,7 +3959,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4335,7 +4336,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -4480,7 +4481,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4857,7 +4858,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -5004,7 +5005,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5381,7 +5382,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -5413,7 +5414,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5472,10 +5473,578 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 """
+
+
+def build_calendar_page() -> str:
+    """Builds the comprehensive production calendar and workday calculator page."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "calendar",
+        'Подключите автоматический расчёт зарплаты <span class="mt-hero-accent">и управление сменами в Молнии</span>',
+        "Оставьте контакты — поможем настроить расписание мастеров (5/2, 2/2, плавающие смены), привязать его к онлайн-записи и автоматизировать начисление зарплат без ручных таблиц.",
+    )
+
+    title = "Производственный календарь 2026 и 2027 — нормы рабочего времени и калькулятор рабочих дней | Молния"
+    description = (
+        "Официальный производственный календарь России на 2026 и 2027 год: нормы рабочего времени по ТК РФ (40, 36, 24 ч), "
+        "праздники, перенос выходных и онлайн-калькулятор рабочих дней, смен и заработной платы."
+    )
+    canonical = "https://molniya-tech.ru/calendar"
+
+    faqs = [
+        (
+            "Как рассчитывается норма рабочего времени по статье 91 Трудового кодекса РФ?",
+            "Порядок утверждён приказом Минздравсоцразвития РФ № 588н. Норма рассчитывается по расчетному графику пятидневной рабочей недели с двумя выходными днями (суббота и воскресенье). Продолжительность рабочей недели (40, 36 или 24 часа) делится на 5, затем умножается на количество рабочих дней в конкретном месяце или году по пятидневке, и из полученного значения вычитается количество часов, на которое сокращается рабочее время накануне нерабочих праздничных дней. Например, в 2026 году при 40-часовой неделе: 243 рабочих дня × 8 часов − 4 предпраздничных часа = 1 940 рабочих часов.",
+        ),
+        (
+            "Какие нерабочие праздничные дни установлены статьей 112 ТК РФ в России?",
+            "Официальными государственными нерабочими праздничными днями в РФ являются: 1, 2, 3, 4, 5, 6 и 8 января — Новогодние каникулы; 7 января — Рождество Христово; 23 февраля — День защитника Отечества; 8 марта — Международный женский день; 1 мая — Праздник Весны и Труда; 9 мая — День Победы; 12 июня — День России; 4 ноября — День народного единства. Если нерабочий праздничный день выпадает на выходной (субботу или воскресенье), выходной день переносится на другой день согласно постановлению Правительства РФ.",
+        ),
+        (
+            "Как по закону оплачивается работа сотрудников в выходные и праздничные дни?",
+            "Согласно статье 153 ТК РФ работа в выходной или нерабочий праздничный день оплачивается не менее чем в двойном размере: сдельщикам — не менее чем по двойным сдельным расценкам; работникам на дневных или часовых тарифных ставках — в размере двойной ставки; работникам на фиксированном окладе — не менее одинарной ставки сверх оклада, если работа производилась в пределах месячной нормы, и не менее двойной ставки сверх оклада, если работа производилась сверх месячной нормы. По желанию сотрудника вместо повышенной оплаты ему может быть предоставлен другой день отдыха (отгул).",
+        ),
+        (
+            "На сколько часов сокращаются смены в предпраздничные рабочие дни?",
+            "Статья 95 ТК РФ устанавливает, что продолжительность рабочего дня или смены, непосредственно предшествующих нерабочему праздничному дню, уменьшается на 1 час. Это правило обязательно для всех категорий работников независимо от установленной продолжительности рабочей недели (как для 40-часовой, так и для 36- или 24-часовой). Если в непрерывно действующих организациях или на сменных сервисах сокращение невозможно, переработка компенсируется предоставлением дополнительного времени отдыха либо оплачивается как сверхурочная работа.",
+        ),
+        (
+            "Как правильно рассчитать зарплату сотрудника, отработавшего неполный месяц по окладу?",
+            "Оклад делится на норму рабочих дней по производственному календарю именно в текущем расчетном месяце и умножается на фактически отработанные сотрудником дни. Из-за этого стоимость одного рабочего дня меняется от месяца к месяцу: например, в январе 2026 года (15 рабочих дней) каждый рабочий день стоит существенно дороже (оклад / 15), чем в июле 2026 года (23 рабочих дня, оклад / 23). Поэтому сотрудникам выгоднее брать ежегодный оплачиваемый отпуск в месяцах с максимальным количеством рабочих дней.",
+        ),
+        (
+            "Как рассчитывается заработная плата при сменных графиках (2/2, 3/3) и суммированном учете?",
+            "Для сменного персонала обычно вводится суммированный учет рабочего времени (согласно ст. 104 ТК РФ) с учетным периодом в месяц, квартал или год. За основу берется часовая тарифная ставка, умноженная на фактически отработанные часы по табелю. Общее количество часов за учетный период сравнивается с производственной нормой по календарю 40-часовой недели: часы, отработанные сверх нормы, признаются сверхурочными и оплачиваются по ст. 152 ТК РФ (первые 2 часа не менее чем в полуторном размере, последующие — не менее чем в двойном).",
+        ),
+        (
+            "Как CRM Молния автоматизирует учет смен и начисление заработной платы?",
+            "В платформе Молния вы настраиваете индивидуальные графики мастеров (5/2, 2/2, аренда кресел/боксов, гибкие смены). Мастера и администраторы работают в системе: каждый оформленный заказ-наряд и выполненная процедура автоматически фиксируются в табеле. Программа сама рассчитывает окладную часть, часы, процент от выручки за услуги, бонусы за выполнение плана и вычитает удержания, избавляя владельца бизнеса от ручного сведения Excel-таблиц в конце месяца.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Производственный календарь", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Производственный календарь и калькулятор рабочих дней Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный производственный календарь и онлайн-калькулятор рабочих дней",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Календарь и нормы" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Производственный календарь<br><span class="mt-hero-accent">и калькулятор рабочих дней 2026–2027</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Официальные нормы рабочего времени по ТК РФ, государственные праздники, перенос нерабочих дней и моментальный расчет рабочих дней, смен и зарплаты для любого графика.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Рассчитать рабочие дни и зарплату</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Параметры производственного календаря РФ">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Нормы ТК РФ</span>
+                <span class="mt-facet-note">40, 36 и 24 часа в неделю</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Праздники</span>
+                <span class="mt-facet-note">с учётом постановлений Правительства</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Калькулятор смен</span>
+                <span class="mt-facet-note">графики 5/2, 2/2, 3/3, 1/3</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Расчет в CRM</span>
+                <span class="mt-facet-note">автоматический табель и ФОТ в Молнии</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Производственный календарь и расписание смен сотрудников в Молнии" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронное расписание смен, баланс рабочего времени и учет выработки мастеров в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CALENDAR & CALCULATOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Календарь и калькулятор" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Календарная сетка и нормы рабочего времени <span class="mt-overview-hook">по месяцам и кварталам</span></h2>
+          <p class="mt-section-sub">Переключайте год, чтобы увидеть точное распределение рабочих и праздничных дней, сокращенные предпраздничные смены и нормативы для бухгалтерии, кадрового учета и расчета выплат.</p>
+        </div>
+
+        <div id="mt-calendar-app" class="mt-cal-wrap">
+
+          <div class="mt-cal-top-bar">
+            <div class="mt-cal-year-tabs" role="tablist" aria-label="Выбор года календаря">
+              <button class="mt-cal-year-btn" type="button" data-cal-year="2025" role="tab" aria-selected="false">2025 год</button>
+              <button class="mt-cal-year-btn is-active" type="button" data-cal-year="2026" role="tab" aria-selected="true">2026 год</button>
+              <button class="mt-cal-year-btn" type="button" data-cal-year="2027" role="tab" aria-selected="false">2027 год</button>
+            </div>
+
+            <div class="mt-cal-legend" aria-label="Обозначения календаря">
+              <span class="mt-cal-legend-item"><span class="mt-cal-legend-dot mt-cal-legend-dot--work"></span>Рабочий день</span>
+              <span class="mt-cal-legend-item"><span class="mt-cal-legend-dot mt-cal-legend-dot--holiday"></span>Выходной / праздник</span>
+              <span class="mt-cal-legend-item"><span class="mt-cal-legend-dot mt-cal-legend-dot--short"></span>Сокращенный (-1 ч)</span>
+            </div>
+          </div>
+
+          <div class="mt-cal-summary-grid">
+            <div class="mt-cal-summary-card">
+              <span class="mt-cal-summary-val" data-cal-total-days>365</span>
+              <span class="mt-cal-summary-label">Календарных дней</span>
+              <span class="mt-cal-summary-sub">Официальный календарь</span>
+            </div>
+            <div class="mt-cal-summary-card">
+              <span class="mt-cal-summary-val mt-cal-summary-val--accent" data-cal-work-days>243</span>
+              <span class="mt-cal-summary-label">Рабочих дня</span>
+              <span class="mt-cal-summary-sub">Включая <strong data-cal-short-days>4</strong> предпраздничных</span>
+            </div>
+            <div class="mt-cal-summary-card">
+              <span class="mt-cal-summary-val" data-cal-off-days>118</span>
+              <span class="mt-cal-summary-label">Выходных и праздников</span>
+              <span class="mt-cal-summary-sub">С учётом переносов ТК РФ</span>
+            </div>
+            <div class="mt-cal-summary-card">
+              <span class="mt-cal-summary-val mt-cal-summary-val--accent" data-cal-hours-40>1 940 ч</span>
+              <span class="mt-cal-summary-label">Норма при 40ч неделе</span>
+              <span class="mt-cal-summary-sub">36ч: <strong data-cal-hours-36>1 745.6 ч</strong> · 24ч: <strong data-cal-hours-24>1 162.4 ч</strong></span>
+            </div>
+          </div>
+
+          <div class="mt-cal-months-grid" data-cal-months></div>
+
+          <div class="mt-cal-calc-panel">
+            <div class="mt-cal-calc-head">
+              <h3 class="mt-cal-calc-title">Калькулятор рабочих дней и расчет зарплаты по сменам</h3>
+              <p class="mt-cal-calc-sub">Выберите период, график работы и оклад сотрудника. Калькулятор моментально определит количество рабочих дней, отработанных часов, стоимость рабочего дня и сумму к начислению.</p>
+            </div>
+
+            <div class="mt-cal-calc-layout">
+              <div class="mt-cal-calc-inputs">
+
+                <div class="mt-cal-field-group">
+                  <label class="mt-cal-label">Период расчета</label>
+                  <div class="mt-cal-presets" aria-label="Быстрый выбор периода">
+                    <button class="mt-cal-preset-btn is-active" type="button" data-cal-preset="current-month">Текущий месяц</button>
+                    <button class="mt-cal-preset-btn" type="button" data-cal-preset="q1">I квартал</button>
+                    <button class="mt-cal-preset-btn" type="button" data-cal-preset="q2">II квартал</button>
+                    <button class="mt-cal-preset-btn" type="button" data-cal-preset="q3">III квартал</button>
+                    <button class="mt-cal-preset-btn" type="button" data-cal-preset="q4">IV квартал</button>
+                    <button class="mt-cal-preset-btn" type="button" data-cal-preset="year">Весь год</button>
+                  </div>
+                  <div class="mt-cal-date-row">
+                    <div>
+                      <span style="font-size:12px; color:var(--mt-text-muted); display:block; margin-bottom:4px;">С даты:</span>
+                      <input class="mt-cal-input" data-cal-from type="date" value="2026-10-01">
+                    </div>
+                    <div>
+                      <span style="font-size:12px; color:var(--mt-text-muted); display:block; margin-bottom:4px;">По дату:</span>
+                      <input class="mt-cal-input" data-cal-to type="date" value="2026-10-31">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-cal-field-group">
+                  <label class="mt-cal-label" for="cal-schedule">График работы</label>
+                  <select id="cal-schedule" class="mt-cal-select" data-cal-schedule>
+                    <option value="5/2">Пятидневка 5/2 (40 часов в неделю, 8 ч/день)</option>
+                    <option value="2/2">Сменный график 2/2 (12 часов смена)</option>
+                    <option value="3/3">Сменный график 3/3 (12 часов смена)</option>
+                    <option value="1/3">Сутки через трое 1/3 (24 часа смена)</option>
+                  </select>
+                </div>
+
+                <div class="mt-cal-field-group">
+                  <label class="mt-cal-label" for="cal-salary">Месячный оклад сотрудника (₽)</label>
+                  <input id="cal-salary" class="mt-cal-input" data-cal-salary type="number" value="70000" min="0" step="1000" placeholder="70 000">
+                </div>
+
+              </div>
+
+              <div class="mt-cal-calc-results">
+                <div class="mt-cal-payout-box">
+                  <span class="mt-cal-payout-label">Расчетное начисление (Gross)</span>
+                  <div class="mt-cal-payout-num" data-cal-res-payout>70 000 ₽</div>
+                  <span class="mt-cal-payout-net" data-cal-res-net>~60 900 ₽ на руки (после НДФЛ 13%)</span>
+                </div>
+
+                <div class="mt-cal-breakdown-list">
+                  <div class="mt-cal-breakdown-row">
+                    <span>Календарных дней:</span>
+                    <strong data-cal-res-cal-days>31 дн.</strong>
+                  </div>
+                  <div class="mt-cal-breakdown-row">
+                    <span>Рабочих дней / смен:</span>
+                    <strong data-cal-res-work-days>22 дн.</strong>
+                  </div>
+                  <div class="mt-cal-breakdown-row">
+                    <span>Отработано часов:</span>
+                    <strong data-cal-res-hours>176 ч</strong>
+                  </div>
+                  <div class="mt-cal-breakdown-row">
+                    <span>Стоимость 1 рабочего дня:</span>
+                    <strong data-cal-res-day-rate>3 182 ₽</strong>
+                  </div>
+                  <div class="mt-cal-breakdown-row">
+                    <span>Стоимость 1 часа работы:</span>
+                    <strong data-cal-res-hour-rate>398 ₽</strong>
+                  </div>
+                </div>
+
+                <div class="mt-cal-tip-box">
+                  <strong>Как Молния автоматизирует расчет зарплаты:</strong> в системе Молния графики специалистов (5/2, 2/2, плавающие смены) связаны с онлайн-записью. При закрытии визита программа автоматически считает оклад, сдельную ставку, процент от услуг и формирует ведомость без ошибок.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Возможности для бизнеса" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте сменами и зарплатой мастеров <span class="mt-overview-hook">без Excel и ошибок в расчётах</span></h2>
+          <p class="mt-section-sub">Платформа Молния автоматизирует рутинные процессы учета рабочего времени сервисного бизнеса: от расписания смен до зарплатной ведомости.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Автоматический учет смен и табель <span class="mt-overview-hook">без ручного контроля</span></h3>
+            <p>Настройте расписание для каждого специалиста: фиксированные смены 2/2, пятидневка, плавающий график или почасовая аренда. Система фиксирует выходы и исключает накладки в записи.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>График мастеров</span><span>Смена 2/2</span></div>
+              <div class="mt-overview-calendar"><span>09:00</span><div class="mt-overview-slot">Мастер 1 <small>Смена открыта · 4 записи</small></div><span>10:30</span><div class="mt-overview-slot mt-overview-slot--light">Мастер 2 <small>Смена открыта · 3 записи</small></div><span>12:00</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Точный расчет оклада, процента и бонусов <span class="mt-overview-hook">по каждому мастеру</span></h3>
+            <p>Гибкая система мотивации: фиксированный выход за смену, процент от выполненных услуг, бонусы за продажу сопутствующих товаров и вычеты за опоздания считаются автоматически при закрытии каждого визита.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Мотивация</span><span>Авторасчет</span></div>
+              <div class="mt-overview-price-row"><span>Фиксированный оклад за смену</span><strong>2 500 ₽</strong></div>
+              <div class="mt-overview-price-row"><span>Процент от выполненных услуг</span><strong>35% от чека</strong></div>
+              <div class="mt-overview-price-tag">Зарплата начисляется в момент закрытия визита</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Прозрачная детализация <span class="mt-overview-hook">без споров в конце месяца</span></h3>
+            <p>Мастер видит в своем личном кабинете каждый заработанный рубль по каждому клиенту и услуге. Никаких недопониманий, потерянных записей и вопросов к управляющему.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Личный баланс</span><span>Мастер видит свой доход</span></div>
+              <div class="mt-overview-message">
+                Сегодня заработано: 6 450 ₽ (смена: 2 500 ₽ + услуги: 3 950 ₽). Отработано 4 визита.
+                <span class="mt-overview-reaction">⚡ 100% прозрачно</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учет отпусков, больничных и подмен <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Сотрудник заболел или попросил отгул? Замените мастера в расписании в один клик: записи клиентов автоматически перенесутся, а система корректно пересчитает отработанные часы и табель.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Подмена мастера</span><span>Мгновенно</span></div>
+              <div class="mt-overview-message">
+                Мастер Иванов заменен на мастера Смирнова. Расписание и онлайн-запись обновлены.
+                <span class="mt-overview-reaction">✓ Без сбоев</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Аналитика ФОТ и рентабельности <span class="mt-overview-hook">по каждому направлению</span></h3>
+            <p>Отслеживайте фонд оплаты труда в реальном времени. Молния покажет долю ФОТ в выручке, выработку на одного сотрудника и поможет оптимизировать затраты бизнеса.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>ФОТ / Выручка</span><span>34.2%</span></div>
+              <div class="mt-overview-price-row"><span>Общая выработка за месяц</span><strong>1 480 000 ₽</strong></div>
+              <div class="mt-overview-price-row"><span>Начислено сотрудникам</span><strong>506 160 ₽</strong></div>
+              <div class="mt-overview-price-tag">Здоровый баланс маржинальности бизнеса</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как это работает" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">От онлайн-записи клиента до начисления зарплаты <span class="mt-overview-hook">за 4 понятных шага</span></h2>
+          <p class="mt-section-sub">Каждая минута работы специалиста и каждый оказанный сервис фиксируются в едином прозрачном рабочем пространстве.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Управляющий</span>
+              <h3>Настройка индивидуальных графиков работы специалистов</h3>
+              <p>Укажите режим работы для каждого мастера: 5/2, смены 2/2, плавающий график или аренду рабочих мест. Система сформирует прозрачное электронное расписание.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример графика смен">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">График мастера</span>
+                <span class="mt-journey-proof-badge">Смена 2/2</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Михаил В.</strong></div>
+              <div class="mt-journey-proof-row"><span>Режим</span><strong>10:00 – 22:00 (12 ч)</strong></div>
+              <div class="mt-journey-proof-row"><span>Смены в месяце</span><strong>15 рабочих смен</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент и система</span>
+              <h3>Клиент записывается онлайн в реальные рабочие слоты</h3>
+              <p>Клиент выбирает мастера и свободное время в онлайн-записи 24/7. Запись появляется в расписании, а мастер видит предстоящую работу в своем телефоне.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Запись клиента">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Визит #8412</span>
+                <span class="mt-journey-proof-badge">Подтвержден</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Комплексный уход · 4 500 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Михаил В. · Рабочее место №2</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Среда, 14:00 – 15:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер</span>
+              <h3>Выполнение услуги и автоматическое начисление в табель</h3>
+              <p>После завершения работы визит закрывается. Программа мгновенно рассчитывает процент мастера и прибавляет его к текущему балансу смены.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Начисление за визит">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Начисление за услугу</span>
+                <span class="mt-journey-proof-badge">Учтено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Чек визита</span><strong>4 500 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Ставка мастера</span><strong>40% от чека</strong></div>
+              <div class="mt-journey-proof-row"><span>К начислению</span><strong>1 800 ₽</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Бухгалтерия</span>
+              <h3>Готовая зарплатная ведомость и выплата в один клик</h3>
+              <p>В конце расчетного периода система формирует подробную зарплатную ведомость со всеми отработанными сменами, часами, услугами и бонусами.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Итог расчетного месяца">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Ведомость за месяц</span>
+                <span class="mt-journey-proof-badge">Готова к выплате</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Отработано</span><strong>15 смен (180 ч)</strong></div>
+              <div class="mt-journey-proof-row"><span>Итого начислено</span><strong>96 400 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Время на расчет</span><strong>1 клик вместо 2 дней</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс сервисного бизнеса" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс сервисного бизнеса</div>
+            <h2 class="mt-case-title">Алексей Григорьев, управляющий сетью сервисных центров</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше конец месяца превращался в двухдневный кошмар: сводили табели смен 2/2, высчитывали процент за полировку и ремонт, сверяли отработанные часы по бумажным журналам. В Молнии всё считается автоматически в момент закрытия заказ-наряда. Мастера видят свой заработок в реальном времени, а управляющий тратит на расчёт зарплаты 10 минут вместо двух дней.»
+            </blockquote>
+            <div class="mt-case-author">
+              Алексей Григорьев <span>· Управляющий сетью сервисных центров, <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Ошибок и переплат при автоматическом расчете сдельной зарплаты мастеров</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">14 ч</span>
+              <span class="mt-case-label">В месяц сэкономлено управляющим на сведении табелей и Excel-таблиц</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Прозрачность начислений для мастеров: каждый визит виден в телефоне</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о нормах рабочего времени по ТК РФ и расчете зарплаты</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Автоматизируйте учет смен и зарплаты в Молнии</h3>
+            <p>Бесплатно поможем настроить индивидуальные графики мастеров, форму онлайн-записи и перенести базу клиентов из любой системы за 15 минут.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261023-calendar"></script>
+</body>
+</html>
+'''
+    return page_html
 
 
 def build_education_page() -> str:
@@ -5615,7 +6184,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5992,7 +6561,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -6136,7 +6705,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6515,7 +7084,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -6659,7 +7228,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7038,7 +7607,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -7191,7 +7760,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7703,7 +8272,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8144,7 +8713,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -8284,7 +8853,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8730,7 +9299,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 '''
@@ -9149,6 +9718,17 @@ def sync_sitemap():
         changed = True
         print("Added /privacy to sitemap.xml")
 
+    if "https://molniya-tech.ru/calendar" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/calendar</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /calendar to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -9229,7 +9809,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9471,7 +10051,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 """
@@ -9508,7 +10088,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9568,7 +10148,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 """
@@ -9636,7 +10216,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9827,7 +10407,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 """
@@ -9886,7 +10466,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10170,7 +10750,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261021-thanks"></script>
+  <script src="/script.js?v=20261023-calendar"></script>
 </body>
 </html>
 """
@@ -10316,7 +10896,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10821,7 +11401,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11309,7 +11889,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -11784,7 +12364,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -12259,7 +12839,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -12734,7 +13314,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13209,7 +13789,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13684,7 +14264,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14159,7 +14739,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14634,7 +15214,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15109,7 +15689,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261022-flatstyle">
+  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15618,6 +16198,11 @@ def main():
     thanks_html = build_thanks_page()
     (ROOT_DIR / "thanks.html").write_text(thanks_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'thanks.html'}")
+
+    print("Building production calendar page: /calendar.html...")
+    calendar_html = build_calendar_page()
+    (ROOT_DIR / "calendar.html").write_text(calendar_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'calendar.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()

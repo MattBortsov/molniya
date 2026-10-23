@@ -734,6 +734,377 @@ function initRequisitesCopy() {
   }
 }
 
+/* ============================================================
+   Production Calendar & Calculator (/calendar)
+   ============================================================ */
+
+function initCalendarTool() {
+  var app = document.getElementById('mt-calendar-app');
+  if (!app) return;
+
+  var CALENDAR_DATA = {
+    2025: "11111111001100000110000011000001100000110000011000001100000110000211000001100000110000011000001100000110000011000001100211110001111000001100000110000011000001100211110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000002111000110000011000001100000110000011000001100000110000011001",
+    2026: "11111111111000001100000110000011000001100000110000011100001100000111000011000001100000110000011000001100000110000011000211100002111000011000001100000110000011000211100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011021001100000110000011000001100000110000011000001100000110001",
+    2027: "11111111110000011000001100000110000011000001100000211100011000001110000110000011000001100000110000011000001100000110000211100001110000110000011000001100000110000211100001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110021111000001100000110000011000001100000110000011000001100001"
+  };
+
+  var MONTH_NAMES = [
+    'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+  ];
+
+  var currentYear = 2026;
+  var yearBtns = app.querySelectorAll('[data-cal-year]');
+  var monthsGrid = app.querySelector('[data-cal-months]');
+  var fromInput = app.querySelector('[data-cal-from]');
+  var toInput = app.querySelector('[data-cal-to]');
+  var scheduleSelect = app.querySelector('[data-cal-schedule]');
+  var salaryInput = app.querySelector('[data-cal-salary]');
+  var presetBtns = app.querySelectorAll('[data-cal-preset]');
+
+  var statTotal = app.querySelector('[data-cal-total-days]');
+  var statWork = app.querySelector('[data-cal-work-days]');
+  var statOff = app.querySelector('[data-cal-off-days]');
+  var statShort = app.querySelector('[data-cal-short-days]');
+  var statH40 = app.querySelector('[data-cal-hours-40]');
+  var statH36 = app.querySelector('[data-cal-hours-36]');
+  var statH24 = app.querySelector('[data-cal-hours-24]');
+
+  var resPayout = app.querySelector('[data-cal-res-payout]');
+  var resNet = app.querySelector('[data-cal-res-net]');
+  var resCalDays = app.querySelector('[data-cal-res-cal-days]');
+  var resWorkDays = app.querySelector('[data-cal-res-work-days]');
+  var resHours = app.querySelector('[data-cal-res-hours]');
+  var resDayRate = app.querySelector('[data-cal-res-day-rate]');
+  var resHourRate = app.querySelector('[data-cal-res-hour-rate]');
+
+  function isLeapYear(y) {
+    return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+  }
+
+  function getDaysInMonth(y, m) {
+    return [31, isLeapYear(y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m];
+  }
+
+  function getDayOfYear(y, m, d) {
+    var count = 0;
+    for (var i = 0; i < m; i++) {
+      count += getDaysInMonth(y, i);
+    }
+    return count + (d - 1);
+  }
+
+  function formatMoney(num) {
+    return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+  }
+
+  function renderCalendar(year) {
+    var dataStr = CALENDAR_DATA[year];
+    if (!dataStr) return;
+
+    var totalDays = isLeapYear(year) ? 366 : 365;
+    var workCount = 0;
+    var shortCount = 0;
+    var offCount = 0;
+
+    for (var i = 0; i < totalDays && i < dataStr.length; i++) {
+      var c = dataStr.charAt(i);
+      if (c === '0') workCount++;
+      else if (c === '2') { workCount++; shortCount++; }
+      else if (c === '1') offCount++;
+    }
+
+    var h40 = workCount * 8 - shortCount;
+    var h36 = Number((workCount * 7.2 - shortCount).toFixed(1));
+    var h24 = Number((workCount * 4.8 - shortCount).toFixed(1));
+
+    if (statTotal) statTotal.textContent = totalDays;
+    if (statWork) statWork.textContent = workCount;
+    if (statOff) statOff.textContent = offCount;
+    if (statShort) statShort.textContent = shortCount;
+    if (statH40) statH40.textContent = h40.toLocaleString('ru-RU') + ' ч';
+    if (statH36) statH36.textContent = h36.toLocaleString('ru-RU') + ' ч';
+    if (statH24) statH24.textContent = h24.toLocaleString('ru-RU') + ' ч';
+
+    if (!monthsGrid) return;
+    monthsGrid.innerHTML = '';
+
+    var today = new Date();
+    var isCurrentActualYear = (today.getFullYear() === year);
+    var todayMonth = today.getMonth();
+    var todayDate = today.getDate();
+
+    for (var m = 0; m < 12; m++) {
+      var daysInM = getDaysInMonth(year, m);
+      var firstDayWeekday = new Date(year, m, 1).getDay();
+      var startCol = (firstDayWeekday === 0) ? 6 : (firstDayWeekday - 1);
+
+      var mCard = document.createElement('article');
+      mCard.className = 'mt-cal-month-card';
+
+      var mHead = document.createElement('div');
+      mHead.className = 'mt-cal-month-head';
+
+      var mTitle = document.createElement('span');
+      mTitle.className = 'mt-cal-month-title';
+      mTitle.textContent = MONTH_NAMES[m];
+
+      var mBadge = document.createElement('span');
+      mBadge.className = 'mt-cal-month-badge';
+
+      mHead.appendChild(mTitle);
+      mHead.appendChild(mBadge);
+      mCard.appendChild(mHead);
+
+      var weekdaysRow = document.createElement('div');
+      weekdaysRow.className = 'mt-cal-weekdays';
+      var wdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+      for (var w = 0; w < 7; w++) {
+        var wsp = document.createElement('span');
+        wsp.textContent = wdays[w];
+        weekdaysRow.appendChild(wsp);
+      }
+      mCard.appendChild(weekdaysRow);
+
+      var daysGrid = document.createElement('div');
+      daysGrid.className = 'mt-cal-days-grid';
+
+      for (var e = 0; e < startCol; e++) {
+        var emptyCell = document.createElement('span');
+        emptyCell.className = 'mt-cal-day-cell mt-cal-day-cell--empty';
+        daysGrid.appendChild(emptyCell);
+      }
+
+      var mWork = 0;
+      var mShort = 0;
+      var mOff = 0;
+
+      for (var d = 1; d <= daysInM; d++) {
+        var dayIdx = getDayOfYear(year, m, d);
+        var dayCode = dataStr.charAt(dayIdx) || '0';
+        var dayCell = document.createElement('span');
+        dayCell.className = 'mt-cal-day-cell';
+        dayCell.textContent = d;
+
+        var weekday = (startCol + d - 1) % 7;
+        var isWeekend = (weekday === 5 || weekday === 6);
+
+        if (dayCode === '0') {
+          dayCell.classList.add(isWeekend ? 'mt-cal-day-cell--weekend' : 'mt-cal-day-cell--work');
+          mWork++;
+        } else if (dayCode === '2') {
+          dayCell.classList.add('mt-cal-day-cell--short');
+          dayCell.title = 'Сокращённый на 1 час рабочий день';
+          mWork++;
+          mShort++;
+        } else {
+          dayCell.classList.add(isWeekend ? 'mt-cal-day-cell--weekend' : 'mt-cal-day-cell--holiday');
+          if (!isWeekend) dayCell.title = 'Праздничный день';
+          mOff++;
+        }
+
+        if (isCurrentActualYear && m === todayMonth && d === todayDate) {
+          dayCell.classList.add('mt-cal-day-cell--today');
+          dayCell.title = (dayCell.title ? dayCell.title + ' • ' : '') + 'Сегодня';
+        }
+
+        daysGrid.appendChild(dayCell);
+      }
+
+      mCard.appendChild(daysGrid);
+
+      var mH40 = mWork * 8 - mShort;
+      mBadge.textContent = mWork + ' раб';
+
+      var mFoot = document.createElement('div');
+      mFoot.className = 'mt-cal-month-foot';
+      mFoot.innerHTML = '<span>Раб: <strong>' + mWork + '</strong> · Вых: <strong>' + mOff + '</strong></span><span>40ч: <strong>' + mH40 + ' ч</strong></span>';
+      mCard.appendChild(mFoot);
+
+      monthsGrid.appendChild(mCard);
+    }
+  }
+
+  function calculate() {
+    if (!fromInput || !toInput || !scheduleSelect || !salaryInput) return;
+
+    var fromStr = fromInput.value;
+    var toStr = toInput.value;
+    if (!fromStr || !toStr) return;
+
+    var fromDate = new Date(fromStr + 'T00:00:00');
+    var toDate = new Date(toStr + 'T00:00:00');
+    if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) return;
+
+    if (fromDate > toDate) {
+      var tmp = fromDate;
+      fromDate = toDate;
+      toDate = tmp;
+      fromInput.value = toStr;
+      toInput.value = fromStr;
+    }
+
+    var salary = parseFloat(salaryInput.value.replace(/\s+/g, '')) || 0;
+    var schedule = scheduleSelect.value;
+
+    var calDays = 0;
+    var workDays = 0;
+    var workHours = 0;
+
+    var cur = new Date(fromDate.getTime());
+    var dayCounter = 0;
+
+    while (cur <= toDate) {
+      calDays++;
+      var curY = cur.getFullYear();
+      var curM = cur.getMonth();
+      var curD = cur.getDate();
+      var dataStr = CALENDAR_DATA[curY] || CALENDAR_DATA[2026];
+      var dayIdx = getDayOfYear(curY, curM, curD);
+      var code = dataStr.charAt(dayIdx) || '0';
+
+      if (schedule === '5/2') {
+        if (code === '0') {
+          workDays++;
+          workHours += 8;
+        } else if (code === '2') {
+          workDays++;
+          workHours += 7;
+        }
+      } else if (schedule === '2/2') {
+        if (dayCounter % 4 < 2) {
+          workDays++;
+          workHours += 12;
+        }
+      } else if (schedule === '3/3') {
+        if (dayCounter % 6 < 3) {
+          workDays++;
+          workHours += 12;
+        }
+      } else if (schedule === '1/3') {
+        if (dayCounter % 4 === 0) {
+          workDays++;
+          workHours += 24;
+        }
+      }
+
+      cur.setDate(cur.getDate() + 1);
+      dayCounter++;
+    }
+
+    var baseM = fromDate.getMonth();
+    var baseY = fromDate.getFullYear();
+    var baseData = CALENDAR_DATA[baseY] || CALENDAR_DATA[2026];
+    var baseDaysInM = getDaysInMonth(baseY, baseM);
+    var baseWorkDays = 0;
+    var baseHours = 0;
+
+    for (var d = 1; d <= baseDaysInM; d++) {
+      var dIdx = getDayOfYear(baseY, baseM, d);
+      var c = baseData.charAt(dIdx) || '0';
+      if (c === '0') {
+        baseWorkDays++;
+        baseHours += 8;
+      } else if (c === '2') {
+        baseWorkDays++;
+        baseHours += 7;
+      }
+    }
+    if (baseWorkDays === 0) baseWorkDays = 21;
+    if (baseHours === 0) baseHours = 168;
+
+    var dayRate = salary / baseWorkDays;
+    var hourRate = salary / baseHours;
+
+    var gross = 0;
+    if (schedule === '5/2') {
+      gross = workDays * dayRate;
+    } else {
+      gross = workHours * hourRate;
+    }
+
+    var net = gross * 0.87;
+
+    if (resPayout) resPayout.textContent = formatMoney(gross);
+    if (resNet) resNet.textContent = '~' + formatMoney(net) + ' на руки (после НДФЛ 13%)';
+    if (resCalDays) resCalDays.textContent = calDays + ' дн.';
+    if (resWorkDays) resWorkDays.textContent = workDays + (schedule === '5/2' ? ' дн.' : ' смен');
+    if (resHours) resHours.textContent = workHours.toLocaleString('ru-RU') + ' ч';
+    if (resDayRate) resDayRate.textContent = formatMoney(dayRate);
+    if (resHourRate) resHourRate.textContent = formatMoney(hourRate);
+  }
+
+  function setPreset(presetKey) {
+    var nowY = currentYear;
+    var pad = function(n) { return (n < 10 ? '0' : '') + n; };
+
+    if (presetKey === 'current-month') {
+      var today = new Date();
+      var m = (today.getFullYear() === nowY) ? today.getMonth() : 0;
+      var lastD = getDaysInMonth(nowY, m);
+      fromInput.value = nowY + '-' + pad(m + 1) + '-01';
+      toInput.value = nowY + '-' + pad(m + 1) + '-' + pad(lastD);
+    } else if (presetKey === 'q1') {
+      fromInput.value = nowY + '-01-01';
+      toInput.value = nowY + '-03-31';
+    } else if (presetKey === 'q2') {
+      fromInput.value = nowY + '-04-01';
+      toInput.value = nowY + '-06-30';
+    } else if (presetKey === 'q3') {
+      fromInput.value = nowY + '-07-01';
+      toInput.value = nowY + '-09-30';
+    } else if (presetKey === 'q4') {
+      fromInput.value = nowY + '-10-01';
+      toInput.value = nowY + '-12-31';
+    } else if (presetKey === 'year') {
+      fromInput.value = nowY + '-01-01';
+      toInput.value = nowY + '-12-31';
+    }
+
+    for (var i = 0; i < presetBtns.length; i++) {
+      presetBtns[i].classList.toggle('is-active', presetBtns[i].getAttribute('data-cal-preset') === presetKey);
+    }
+
+    calculate();
+  }
+
+  for (var i = 0; i < yearBtns.length; i++) {
+    (function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var y = parseInt(btn.getAttribute('data-cal-year'), 10);
+        if (!y || y === currentYear) return;
+        currentYear = y;
+
+        for (var j = 0; j < yearBtns.length; j++) {
+          yearBtns[j].classList.toggle('is-active', yearBtns[j] === btn);
+        }
+
+        renderCalendar(currentYear);
+        setPreset('current-month');
+      });
+    })(yearBtns[i]);
+  }
+
+  for (var k = 0; k < presetBtns.length; k++) {
+    (function(pBtn) {
+      pBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var key = pBtn.getAttribute('data-cal-preset');
+        setPreset(key);
+      });
+    })(presetBtns[k]);
+  }
+
+  if (fromInput) fromInput.addEventListener('change', calculate);
+  if (toInput) toInput.addEventListener('change', calculate);
+  if (scheduleSelect) scheduleSelect.addEventListener('change', calculate);
+  if (salaryInput) salaryInput.addEventListener('input', calculate);
+
+  renderCalendar(currentYear);
+  setPreset('current-month');
+}
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -751,6 +1122,7 @@ function initApp() {
   initLeadForm();
   initVisibilityGallery();
   initRequisitesCopy();
+  initCalendarTool();
 }
 
 if (document.readyState === 'loading') {

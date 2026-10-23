@@ -4662,3 +4662,477 @@ a.mt-origin-model-row:focus-visible {
 
 
 
+
+
+/* ============================================================
+   Production Calendar & Workday Calculator Tool (/calendar)
+   ============================================================ */
+
+.mt-cal-wrap {
+  margin-top: 32px;
+}
+
+.mt-cal-top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mt-cal-year-tabs {
+  display: inline-flex;
+  background: var(--mt-surface-2);
+  padding: 4px;
+  border-radius: var(--mt-radius-pill);
+  border: 1px solid var(--mt-border);
+}
+
+.mt-cal-year-btn {
+  padding: 8px 20px;
+  border-radius: var(--mt-radius-pill);
+  border: 0;
+  background: transparent;
+  color: var(--mt-text-body);
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.mt-cal-year-btn:hover {
+  color: var(--mt-text-strong);
+}
+
+.mt-cal-year-btn.is-active {
+  background: var(--mt-accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(198, 84, 59, 0.25);
+}
+
+.mt-cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--mt-text-body);
+  align-items: center;
+}
+
+.mt-cal-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mt-cal-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.mt-cal-legend-dot--work {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+}
+
+.mt-cal-legend-dot--holiday {
+  background: #fde8e4;
+  border: 1px solid #f8b4a7;
+}
+
+.mt-cal-legend-dot--short {
+  background: #fef3d6;
+  border: 1px solid #f8d585;
+}
+
+/* Stats summary grid */
+.mt-cal-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.mt-cal-summary-card {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-xl);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mt-cal-summary-val {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 800;
+  color: var(--mt-text-strong);
+  line-height: 1.1;
+}
+
+.mt-cal-summary-val--accent {
+  color: var(--mt-accent);
+}
+
+.mt-cal-summary-label {
+  font-size: 13px;
+  color: var(--mt-text-muted);
+  line-height: 1.4;
+}
+
+.mt-cal-summary-sub {
+  font-size: 12px;
+  color: var(--mt-text-body);
+  margin-top: 4px;
+}
+
+/* Months grid */
+.mt-cal-months-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.mt-cal-month-card {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.mt-cal-month-card:hover {
+  border-color: var(--mt-border-accent);
+  box-shadow: 0 4px 16px rgba(70, 52, 36, 0.05);
+}
+
+.mt-cal-month-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--mt-border-soft);
+}
+
+.mt-cal-month-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+}
+
+.mt-cal-month-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mt-accent);
+  background: var(--mt-tint-accent-soft);
+  padding: 2px 8px;
+  border-radius: var(--mt-radius-pill);
+}
+
+.mt-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mt-text-muted);
+  margin-bottom: 6px;
+}
+
+.mt-cal-weekdays span:nth-child(n+6) {
+  color: var(--mt-accent);
+}
+
+.mt-cal-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.mt-cal-day-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: var(--mt-text-strong);
+  position: relative;
+  user-select: none;
+}
+
+.mt-cal-day-cell--empty {
+  visibility: hidden;
+}
+
+.mt-cal-day-cell--work {
+  background: var(--mt-surface-2);
+}
+
+.mt-cal-day-cell--weekend {
+  background: #fdf2ef;
+  color: #c6543b;
+  font-weight: 600;
+}
+
+.mt-cal-day-cell--holiday {
+  background: #fbd9d2;
+  color: #a83821;
+  font-weight: 700;
+}
+
+.mt-cal-day-cell--short {
+  background: #fef5dc;
+  color: #9c6708;
+  font-weight: 600;
+}
+
+.mt-cal-day-cell--short::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c58a3c;
+}
+
+.mt-cal-day-cell--today {
+  outline: 2px solid var(--mt-accent);
+  outline-offset: -1px;
+}
+
+.mt-cal-month-foot {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--mt-border-soft);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--mt-text-body);
+}
+
+.mt-cal-month-foot strong {
+  color: var(--mt-text-strong);
+}
+
+/* Calculator section */
+.mt-cal-calc-panel {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-3xl);
+  padding: clamp(24px, 3.5vw, 40px);
+  margin-bottom: 48px;
+}
+
+.mt-cal-calc-head {
+  margin-bottom: 28px;
+}
+
+.mt-cal-calc-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  color: var(--mt-text-strong);
+}
+
+.mt-cal-calc-sub {
+  color: var(--mt-text-body);
+  font-size: 15px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.mt-cal-calc-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+}
+
+.mt-cal-calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mt-cal-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mt-cal-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-text-strong);
+}
+
+.mt-cal-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.mt-cal-preset-btn {
+  padding: 5px 12px;
+  border-radius: var(--mt-radius-pill);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-body);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.mt-cal-preset-btn:hover,
+.mt-cal-preset-btn.is-active {
+  background: var(--mt-tint-accent);
+  color: var(--mt-accent);
+  border-color: var(--mt-border-accent);
+}
+
+.mt-cal-date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mt-cal-input,
+.mt-cal-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--mt-radius-md);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-strong);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.mt-cal-input:focus,
+.mt-cal-select:focus {
+  border-color: var(--mt-accent);
+  background: #fff;
+}
+
+.mt-cal-calc-results {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mt-cal-payout-box {
+  background: #fff;
+  border: 1px solid var(--mt-border-accent-soft);
+  border-radius: var(--mt-radius-xl);
+  padding: 20px;
+  text-align: center;
+}
+
+.mt-cal-payout-label {
+  font-size: 13px;
+  color: var(--mt-text-muted);
+}
+
+.mt-cal-payout-num {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  color: var(--mt-accent);
+  margin: 6px 0 2px;
+}
+
+.mt-cal-payout-net {
+  font-size: 13px;
+  color: var(--mt-text-body);
+}
+
+.mt-cal-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mt-cal-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--mt-border-soft);
+}
+
+.mt-cal-breakdown-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mt-cal-breakdown-row span {
+  color: var(--mt-text-body);
+}
+
+.mt-cal-breakdown-row strong {
+  color: var(--mt-text-strong);
+  font-weight: 700;
+}
+
+.mt-cal-tip-box {
+  background: rgba(198, 84, 59, 0.06);
+  border-left: 3px solid var(--mt-accent);
+  border-radius: var(--mt-radius-sm);
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mt-text-body);
+}
+
+.mt-cal-tip-box strong {
+  color: var(--mt-text-strong);
+}
+
+@media (max-width: 1024px) {
+  .mt-cal-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mt-cal-months-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mt-cal-calc-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mt-cal-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .mt-cal-months-grid {
+    grid-template-columns: 1fr;
+  }
+  .mt-cal-date-row {
+    grid-template-columns: 1fr;
+  }
+  .mt-cal-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
