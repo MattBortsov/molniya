@@ -288,7 +288,6 @@ def render_footer_nav_html() -> str:
               <h3>Информация</h3>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
-              <a class="mt-footer-link" href="/rss.xml" target="_blank" rel="noopener">RSS-лента</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Контакты</h3>
