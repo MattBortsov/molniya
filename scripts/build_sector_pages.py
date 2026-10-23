@@ -8442,25 +8442,30 @@ def build_qr_page() -> str:
     </section>
 
     <!-- Case Study Section -->
-    <section class="mt-section mt-reveal mt-case-section" data-screen-label="Кейс студии Lumière" data-mt-reveal>
+    <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии Lumière" data-mt-reveal>
       <div class="mt-case-card">
-        <h2>Кейс студии эстетики «Lumière»: как брендовые QR-коды разгрузили администратора и срезали расходы на эквайринг</h2>
-        <p class="mt-case-lead">
-          Студия красоты в Санкт-Петербурге на 6 мастеров (850 визитов в месяц) разместила брендированные тейбл-тенты с QR-кодами Молнии на каждом рабочем зеркале, на стойке ресепшена и в зоне ожидания.
-          Клиенты во время процедуры переходят на запись к мастеру на следующий визит и оплачивают услуги по СБП. Результат за 2 месяца работы:
-        </p>
+        <div class="mt-case-header">
+          <div class="mt-case-tag">⚡ Опыт внедрения брендовых QR-кодов</div>
+          <h2 class="mt-case-title">Студия эстетики «Lumière», 6 мастеров</h2>
+          <blockquote class="mt-case-quote">
+            «Мы разместили брендовые тейбл-тенты с QR-кодами Молнии на каждом рабочем зеркале и на стойке ресепшена. Клиенты во время процедуры переходят на запись на следующий визит и оплачивают услуги по СБП. Администратор перестал разрываться между звонками и кассой, а повторные записи выросли на 41%.»
+          </blockquote>
+          <div class="mt-case-author">
+            Елена Воронцова <span>· Управляющая студией эстетики, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+          </div>
+        </div>
         <div class="mt-case-stats">
           <div class="mt-case-stat">
-            <div class="mt-case-val">+41%</div>
-            <div class="mt-case-lbl">Повторных записей клиентов оформляется прямо в кресле мастера</div>
+            <span class="mt-case-num">+41%</span>
+            <span class="mt-case-label">Повторных записей клиентов прямо в кресле мастера</span>
           </div>
           <div class="mt-case-stat">
-            <div class="mt-case-val">0.4%</div>
-            <div class="mt-case-lbl">Комиссия по СБП вместо 2.2% по банковским эквайринговым терминалам</div>
+            <span class="mt-case-num">0.4%</span>
+            <span class="mt-case-label">Комиссия по СБП вместо 2.2% по банковским терминалам</span>
           </div>
           <div class="mt-case-stat">
-            <div class="mt-case-val">14 200 ₽</div>
-            <div class="mt-case-lbl">Ежемесячная чистая экономия студии на аренде терминалов и времени администратора</div>
+            <span class="mt-case-num">14 200 ₽</span>
+            <span class="mt-case-label">Чистая ежемесячная экономия на аренде терминалов и времени</span>
           </div>
         </div>
       </div>
