@@ -741,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1118,7 +1118,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -1269,7 +1269,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1646,7 +1646,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -1763,7 +1763,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2186,7 +2186,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -2331,7 +2331,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2768,7 +2768,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -2913,7 +2913,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3290,7 +3290,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -3435,7 +3435,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3844,7 +3844,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -3990,7 +3990,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4367,7 +4367,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -4513,7 +4513,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4890,7 +4890,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -5038,7 +5038,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5415,7 +5415,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -5448,7 +5448,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5507,7 +5507,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 """
@@ -5658,7 +5658,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6095,7 +6095,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -6247,7 +6247,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6679,7 +6679,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -6831,7 +6831,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7352,7 +7352,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -7504,7 +7504,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7913,7 +7913,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -8063,395 +8063,420 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr22">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
 </head>
-<body class="mt-tool-page">
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
   {nav_html}
 
   <main>
-    <div class="mt-container">
-      <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
-        <ol class="mt-breadcrumbs-list">
-          <li class="mt-breadcrumbs-item"><a href="/">Главная</a></li>
-          <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
-          <li class="mt-breadcrumbs-item"><a href="/#tools">Инструменты</a></li>
-          <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
-          <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" aria-current="page">Генератор QR-кодов</li>
-        </ol>
-      </nav>
-    </div>
+    <!-- HERO -->
+    <section class="mt-hero mt-hero--tool" data-screen-label="Генератор QR-кодов">
 
-    <!-- Hero Section -->
-    <section class="mt-section mt-hero mt-reveal">
-      <div class="mt-container">
-        <h1>Генератор брендовых QR-кодов <span class="mt-hero-accent">для вашего бизнеса</span></h1>
-        <p class="mt-hero-lead">
-          Создавайте стильные QR-коды с вашим логотипом, фирменными цветами и понятным призывом к действию.
-          Для онлайн-записи клиентов, безналичной оплаты по СБП, гостевого Wi-Fi и визиток.
-          Скачивайте в сверхвысоком разрешении PNG или векторном SVG для типографий и наружной рекламы.
-        </p>
+      <div class="mt-hero-lead mt-hero-lead--tool">
+        <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.96 из 5 на основе 1 840 отзывов">
+          <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+          <span><strong>4.96</strong> (1 840 отзывов и созданных QR-кодов для бизнеса)</span>
+        </div>
+
+        <h1 class="mt-hero-title">
+          Генератор брендовых QR-кодов<br><span class="mt-hero-accent">для вашего бизнеса</span>
+        </h1>
+
+        <div class="mt-hero-bottom mt-hero-bottom--tool">
+          <div class="mt-hero-intro">
+            <p class="mt-hero-sub">Создавайте стильные QR-коды с вашим логотипом, фирменными цветами и понятным призывом к действию. Для онлайн-записи клиентов, безналичной оплаты по СБП, гостевого Wi-Fi и визиток. Скачивайте в сверхвысоком разрешении PNG или векторном SVG для типографий и наружной рекламы.</p>
+            <a class="mt-btn mt-btn-hero" href="#qr-generator">Создать QR-код ↓</a>
+          </div>
+
+          <ul class="mt-facets mt-facets--full" aria-label="Возможности инструмента Генератор QR-кодов">
+            <li class="mt-facet">
+              <span class="mt-facet-name">6 форматов</span>
+              <span class="mt-facet-note">запись, СБП, Wi-Fi, Telegram, визитки</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name">Любые логотипы</span>
+              <span class="mt-facet-note">Молния, СБП, Telegram или свой файл</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name">Векторный SVG</span>
+              <span class="mt-facet-note">для типографий и наружки без пикселей</span>
+            </li>
+            <li class="mt-facet">
+              <span class="mt-facet-name">Печать тейбл-тентов</span>
+              <span class="mt-facet-note">настольный макет на ресепшн за 1 клик</span>
+            </li>
+          </ul>
+        </div>
       </div>
+
     </section>
 
-    <!-- Generator Interface Section -->
-    <section id="qr-generator" class="mt-section mt-reveal" style="padding-top: 0;">
-      <div class="mt-container">
-        <div class="mt-qr-wrap">
-          <div class="mt-qr-layout">
+    <!-- QR GENERATOR APP -->
+    <section class="mt-section mt-reveal" id="qr-generator" data-screen-label="Генератор QR-кодов" data-mt-reveal>
+      <div class="mt-section-head mt-section-head--center">
+        <h2 class="mt-section-title">Онлайн-конструктор QR-кода <span class="mt-overview-hook">с логотипом и рамкой</span></h2>
+        <p class="mt-section-sub">Выберите сценарий, укажите параметры и настройте оформление под фирменный стиль. Готовый макет можно скачать в PNG, векторе SVG или отправить на печать.</p>
+      </div>
 
-            <!-- Left Column: Controls Card -->
-            <div class="mt-qr-card">
-              <!-- Tabs Navigation -->
-              <div class="mt-qr-tabs-bar" role="tablist" aria-label="Типы данных для QR-кода">
-                <button type="button" class="mt-qr-tab-btn is-active" role="tab" aria-selected="true" data-qr-type="url">Онлайн-запись</button>
-                <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="sbp">Оплата СБП</button>
-                <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="wifi">Wi-Fi для гостей</button>
-                <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="tg">Telegram</button>
-                <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="wa">WhatsApp</button>
-                <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="vcard">Визитка vCard</button>
-              </div>
+      <div class="mt-qr-wrap">
+        <div class="mt-qr-layout">
 
-              <!-- Panels Content -->
-              <!-- 1. URL -->
-              <div class="mt-qr-panel is-active" id="mt-qr-panel-url" role="tabpanel">
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-url">Ссылка на онлайн-запись или страницу заведения</label>
-                  <input type="url" id="mt-qr-url" class="mt-qr-input" value="https://molniya-tech.ru/beauty" placeholder="https://molniya-tech.ru/beauty">
-                  <span class="mt-qr-hint">Клиенты открывают профиль, каталог услуг и свободные окна записи за 1 клик камерой смартфона.</span>
-                </div>
-              </div>
-
-              <!-- 2. SBP -->
-              <div class="mt-qr-panel" id="mt-qr-panel-sbp" role="tabpanel">
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-sbp-phone">Номер телефона для приема перевода СБП</label>
-                  <input type="tel" id="mt-qr-sbp-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
-                </div>
-                <div class="mt-qr-row-2">
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-sbp-bank">Банк получателя</label>
-                    <input type="text" id="mt-qr-sbp-bank" class="mt-qr-input" placeholder="Т-Банк, Сбербанк, ВТБ" value="Т-Банк">
-                  </div>
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-sbp-sum">Сумма в рублях (необязательно)</label>
-                    <input type="number" id="mt-qr-sbp-sum" class="mt-qr-input" placeholder="Например 1500">
-                  </div>
-                </div>
-                <span class="mt-qr-hint">При сканировании открывается мобильный банк клиента с уже заполненными реквизитами для перевода.</span>
-              </div>
-
-              <!-- 3. Wi-Fi -->
-              <div class="mt-qr-panel" id="mt-qr-panel-wifi" role="tabpanel">
-                <div class="mt-qr-row-2">
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-wifi-ssid">Имя сети Wi-Fi (SSID)</label>
-                    <input type="text" id="mt-qr-wifi-ssid" class="mt-qr-input" placeholder="Salon_Guest_WiFi" value="Molniya_Guest_WiFi">
-                  </div>
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-wifi-type">Тип шифрования</label>
-                    <select id="mt-qr-wifi-type" class="mt-qr-select">
-                      <option value="WPA" selected>WPA / WPA2 / WPA3</option>
-                      <option value="WEP">WEP</option>
-                      <option value="nopass">Без пароля (открытая)</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-wifi-pass">Пароль от гостевой сети</label>
-                  <input type="text" id="mt-qr-wifi-pass" class="mt-qr-input" placeholder="Пароль сети" value="salon2026">
-                  <span class="mt-qr-hint">Клиенты наводят камеру и мгновенно подключаются к Wi-Fi без ручного ввода пароля администратором.</span>
-                </div>
-              </div>
-
-              <!-- 4. Telegram -->
-              <div class="mt-qr-panel" id="mt-qr-panel-tg" role="tabpanel">
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-tg-username">Никнейм в Telegram или ссылка на канал / бота</label>
-                  <input type="text" id="mt-qr-tg-username" class="mt-qr-input" placeholder="@molniya_booking_bot или ссылка t.me/..." value="molniya_booking_bot">
-                </div>
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-tg-msg">Текст первого сообщения (необязательно)</label>
-                  <input type="text" id="mt-qr-tg-msg" class="mt-qr-input" placeholder="Здравствуйте! Хочу записаться к вам...">
-                  <span class="mt-qr-hint">Позволяет подписать клиента на канал со скидками или сразу открыть чат записи с ботом.</span>
-                </div>
-              </div>
-
-              <!-- 5. WhatsApp -->
-              <div class="mt-qr-panel" id="mt-qr-panel-wa" role="tabpanel">
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-wa-phone">Номер WhatsApp (только цифры с кодом страны)</label>
-                  <input type="tel" id="mt-qr-wa-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
-                </div>
-                <div class="mt-qr-field-group">
-                  <label class="mt-qr-label" for="mt-qr-wa-msg">Шаблон первого сообщения</label>
-                  <input type="text" id="mt-qr-wa-msg" class="mt-qr-input" placeholder="Здравствуйте! Хочу записаться на услугу..." value="Здравствуйте! Хочу записаться на консультацию.">
-                  <span class="mt-qr-hint">Клиент сканирует код и моментально начинает диалог в мессенджере с уже набранным текстом.</span>
-                </div>
-              </div>
-
-              <!-- 6. vCard -->
-              <div class="mt-qr-panel" id="mt-qr-panel-vcard" role="tabpanel">
-                <div class="mt-qr-row-2">
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-vcard-name">ФИО специалиста / мастера</label>
-                    <input type="text" id="mt-qr-vcard-name" class="mt-qr-input" placeholder="Анна Смирнова" value="Анна Смирнова">
-                  </div>
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-vcard-org">Студия / Компания</label>
-                    <input type="text" id="mt-qr-vcard-org" class="mt-qr-input" placeholder="Студия красоты «Молния»" value="Студия эстетики «Lumière»">
-                  </div>
-                </div>
-                <div class="mt-qr-row-2">
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-vcard-phone">Телефон</label>
-                    <input type="tel" id="mt-qr-vcard-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
-                  </div>
-                  <div class="mt-qr-field-group">
-                    <label class="mt-qr-label" for="mt-qr-vcard-email">Электронная почта</label>
-                    <input type="email" id="mt-qr-vcard-email" class="mt-qr-input" placeholder="anna@molniya-tech.ru" value="anna@lumiere.ru">
-                  </div>
-                </div>
-                <span class="mt-qr-hint">Смартфон сканирует код и моментально предлагает добавить контакт в телефонную книгу с телефоном и должностью.</span>
-              </div>
-
-              <div class="mt-qr-divider"></div>
-
-              <!-- Visual Styling Settings -->
-              <h3 class="mt-qr-section-title">Фирменный стиль и цвета</h3>
-              <div class="mt-qr-field-group">
-                <div class="mt-qr-swatches" role="radiogroup" aria-label="Выбор цвета QR-кода">
-                  <button type="button" class="mt-qr-swatch is-active" data-qr-color="#C6543B" style="background:#C6543B;" title="Терракот Молния"></button>
-                  <button type="button" class="mt-qr-swatch" data-qr-color="#1A1D20" style="background:#1A1D20;" title="Графитовый черный"></button>
-                  <button type="button" class="mt-qr-swatch" data-qr-color="#2563EB" style="background:#2563EB;" title="Королевский синий"></button>
-                  <button type="button" class="mt-qr-swatch" data-qr-color="#059669" style="background:#059669;" title="Изумрудный хвойный"></button>
-                  <button type="button" class="mt-qr-swatch" data-qr-color="#7C3AED" style="background:#7C3AED;" title="Глубокий фиолетовый"></button>
-                  <div class="mt-qr-color-custom" title="Выбрать произвольный цвет">
-                    <input type="color" id="mt-qr-color-custom" value="#C6543B" aria-label="Пользовательский цвет QR-кода">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Center Logo Choice -->
-              <h3 class="mt-qr-section-title" style="margin-top: 18px;">Логотип в центре кода</h3>
-              <div class="mt-qr-field-group">
-                <div class="mt-qr-logo-choices" role="radiogroup" aria-label="Выбор логотипа">
-                  <button type="button" class="mt-qr-logo-btn is-active" data-qr-logo="molniya">⚡ Молния</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-logo="sbp">💳 СБП</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-logo="tg">✈️ Telegram</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-logo="wifi">📶 Wi-Fi</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-logo="none">Без логотипа</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-logo="custom" id="mt-qr-logo-custom-btn">Загрузить свой файл</button>
-                  <input type="file" id="mt-qr-logo-file" accept="image/*" style="display:none;">
-                </div>
-                <span class="mt-qr-hint">Используется высший уровень коррекции H (30%), гарантирующий мгновенное считывание при любом логотипе.</span>
-              </div>
-
-              <!-- Frame / CTA Choice -->
-              <h3 class="mt-qr-section-title" style="margin-top: 18px;">Рамка и призыв к действию (CTA)</h3>
-              <div class="mt-qr-field-group">
-                <div class="mt-qr-logo-choices" role="radiogroup" aria-label="Выбор рамки со слоганом">
-                  <button type="button" class="mt-qr-logo-btn is-active" data-qr-frame="scan">«Запишитесь онлайн»</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-frame="pay">«Оплата по СБП»</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-frame="wifi">«Гостевой Wi-Fi»</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-frame="tg">«Наш Telegram-канал»</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-frame="none">Без рамки</button>
-                  <button type="button" class="mt-qr-logo-btn" data-qr-frame="custom">Свой текст</button>
-                </div>
-                <div id="mt-qr-frame-custom-wrap" style="display:none; margin-top: 10px;">
-                  <input type="text" id="mt-qr-frame-custom" class="mt-qr-input" placeholder="Например: Оцените наш сервис или Меню на сегодня">
-                </div>
-              </div>
-
+          <!-- Left Column: Controls Card -->
+          <div class="mt-qr-card">
+            <!-- Tabs Navigation -->
+            <div class="mt-qr-tabs-bar" role="tablist" aria-label="Типы данных для QR-кода">
+              <button type="button" class="mt-qr-tab-btn is-active" role="tab" aria-selected="true" data-qr-type="url">Онлайн-запись</button>
+              <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="sbp">Оплата СБП</button>
+              <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="wifi">Wi-Fi для гостей</button>
+              <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="tg">Telegram</button>
+              <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="wa">WhatsApp</button>
+              <button type="button" class="mt-qr-tab-btn" role="tab" aria-selected="false" data-qr-type="vcard">Визитка vCard</button>
             </div>
 
-            <!-- Right Column: Sticky Canvas Preview & Actions -->
-            <div class="mt-qr-preview-sticky">
-              <div class="mt-qr-preview-box">
-                <div class="mt-qr-canvas-holder">
-                  <canvas id="mt-qr-canvas" width="1024" height="1024" aria-label="Интерактивное превью QR-кода"></canvas>
-                </div>
+            <!-- Panels Content -->
+            <!-- 1. URL -->
+            <div class="mt-qr-panel is-active" id="mt-qr-panel-url" role="tabpanel">
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-url">Ссылка на онлайн-запись или страницу заведения</label>
+                <input type="url" id="mt-qr-url" class="mt-qr-input" value="https://molniya-tech.ru/beauty" placeholder="https://molniya-tech.ru/beauty">
+                <span class="mt-qr-hint">Клиенты открывают профиль, каталог услуг и свободные окна записи за 1 клик камерой смартфона.</span>
+              </div>
+            </div>
 
-                <div class="mt-qr-preview-meta">
-                  <span>● 1024 × 1024 px</span>
-                  <span>•</span>
-                  <span>Векторная четкость</span>
-                  <span>•</span>
-                  <span>Коррекция Level H</span>
+            <!-- 2. SBP -->
+            <div class="mt-qr-panel" id="mt-qr-panel-sbp" role="tabpanel">
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-sbp-phone">Номер телефона для приема перевода СБП</label>
+                <input type="tel" id="mt-qr-sbp-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
+              </div>
+              <div class="mt-qr-row-2">
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-sbp-bank">Банк получателя</label>
+                  <input type="text" id="mt-qr-sbp-bank" class="mt-qr-input" placeholder="Т-Банк, Сбербанк, ВТБ" value="Т-Банк">
                 </div>
-
-                <div class="mt-qr-actions-grid" style="margin-top: 18px;">
-                  <button type="button" class="mt-qr-btn-primary" id="mt-qr-download-png">
-                    <span>📥</span> Скачать изображение в высоком качестве (PNG)
-                  </button>
-                  <button type="button" class="mt-qr-btn-secondary" id="mt-qr-download-svg">
-                    <span>📐</span> Скачать векторный макет (SVG для типографии)
-                  </button>
-                  <div class="mt-qr-row-btns">
-                    <button type="button" class="mt-qr-btn-subtle" id="mt-qr-print-btn">
-                      <span>🖨️</span> Распечатать тейбл-тент
-                    </button>
-                    <button type="button" class="mt-qr-btn-subtle" id="mt-qr-copy-btn">
-                      <span>📋</span> Скопировать в буфер
-                    </button>
-                  </div>
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-sbp-sum">Сумма в рублях (необязательно)</label>
+                  <input type="number" id="mt-qr-sbp-sum" class="mt-qr-input" placeholder="Например 1500">
                 </div>
+              </div>
+              <span class="mt-qr-hint">При сканировании открывается мобильный банк клиента с уже заполненными реквизитами для перевода.</span>
+            </div>
 
-                <!-- Rating -->
-                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--mt-border);">
-                  <span class="mt-tool-rating-title" style="display:block; font-size:12px; font-weight:600; color:var(--mt-text-muted); margin-bottom:6px;">Оцените полезность генератора:</span>
-                  <div class="mt-tool-rating" data-tool-rating="qr">
-                    <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
-                      <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
-                      <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
-                      <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
-                      <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
-                      <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
-                    </div>
-                    <div class="mt-tool-rating-score">
-                      <strong class="mt-tool-rating-val" data-rating-val>5.0</strong>
-                      <span class="mt-tool-rating-sep">/</span>
-                      <span>5</span>
-                    </div>
-                    <span class="mt-tool-rating-count">(<span data-rating-count>1 840</span> оценок)</span>
-                    <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
-                  </div>
+            <!-- 3. Wi-Fi -->
+            <div class="mt-qr-panel" id="mt-qr-panel-wifi" role="tabpanel">
+              <div class="mt-qr-row-2">
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-wifi-ssid">Имя сети Wi-Fi (SSID)</label>
+                  <input type="text" id="mt-qr-wifi-ssid" class="mt-qr-input" placeholder="Salon_Guest_WiFi" value="Molniya_Guest_WiFi">
                 </div>
-
-                <!-- Platform Bridge Note -->
-                <div style="margin-top: 16px; padding: 12px 14px; background: var(--mt-surface-2); border-radius: 10px; font-size: 13px; color: var(--mt-text-body); line-height: 1.5; display: flex; align-items: flex-start; gap: 10px;">
-                  <span style="font-size: 18px; line-height: 1;">⚡</span>
-                  <div>
-                    Подключите к QR-коду <strong>онлайн-запись и СБП-эквайринг платформы Молния</strong> за 5 минут без абонентской платы.
-                  </div>
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-wifi-type">Тип шифрования</label>
+                  <select id="mt-qr-wifi-type" class="mt-qr-select">
+                    <option value="WPA" selected>WPA / WPA2 / WPA3</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">Без пароля (открытая)</option>
+                  </select>
                 </div>
+              </div>
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-wifi-pass">Пароль от гостевой сети</label>
+                <input type="text" id="mt-qr-wifi-pass" class="mt-qr-input" placeholder="Пароль сети" value="salon2026">
+                <span class="mt-qr-hint">Клиенты наводят камеру и мгновенно подключаются к Wi-Fi без ручного ввода пароля администратором.</span>
+              </div>
+            </div>
 
+            <!-- 4. Telegram -->
+            <div class="mt-qr-panel" id="mt-qr-panel-tg" role="tabpanel">
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-tg-username">Никнейм в Telegram или ссылка на канал / бота</label>
+                <input type="text" id="mt-qr-tg-username" class="mt-qr-input" placeholder="@molniya_booking_bot или ссылка t.me/..." value="molniya_booking_bot">
+              </div>
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-tg-msg">Текст первого сообщения (необязательно)</label>
+                <input type="text" id="mt-qr-tg-msg" class="mt-qr-input" placeholder="Здравствуйте! Хочу записаться к вам...">
+                <span class="mt-qr-hint">Позволяет подписать клиента на канал со скидками или сразу открыть чат записи с ботом.</span>
+              </div>
+            </div>
+
+            <!-- 5. WhatsApp -->
+            <div class="mt-qr-panel" id="mt-qr-panel-wa" role="tabpanel">
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-wa-phone">Номер WhatsApp (только цифры с кодом страны)</label>
+                <input type="tel" id="mt-qr-wa-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
+              </div>
+              <div class="mt-qr-field-group">
+                <label class="mt-qr-label" for="mt-qr-wa-msg">Шаблон первого сообщения</label>
+                <input type="text" id="mt-qr-wa-msg" class="mt-qr-input" placeholder="Здравствуйте! Хочу записаться на услугу..." value="Здравствуйте! Хочу записаться на консультацию.">
+                <span class="mt-qr-hint">Клиент сканирует код и моментально начинает диалог в мессенджере с уже набранным текстом.</span>
+              </div>
+            </div>
+
+            <!-- 6. vCard -->
+            <div class="mt-qr-panel" id="mt-qr-panel-vcard" role="tabpanel">
+              <div class="mt-qr-row-2">
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-vcard-name">ФИО специалиста / мастера</label>
+                  <input type="text" id="mt-qr-vcard-name" class="mt-qr-input" placeholder="Анна Смирнова" value="Анна Смирнова">
+                </div>
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-vcard-org">Студия / Компания</label>
+                  <input type="text" id="mt-qr-vcard-org" class="mt-qr-input" placeholder="Студия красоты «Молния»»" value="Студия эстетики «Lumière»">
+                </div>
+              </div>
+              <div class="mt-qr-row-2">
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-vcard-phone">Телефон</label>
+                  <input type="tel" id="mt-qr-vcard-phone" class="mt-qr-input" placeholder="+7 (999) 000-00-00" value="+7 (999) 123-45-67">
+                </div>
+                <div class="mt-qr-field-group">
+                  <label class="mt-qr-label" for="mt-qr-vcard-email">Электронная почта</label>
+                  <input type="email" id="mt-qr-vcard-email" class="mt-qr-input" placeholder="anna@molniya-tech.ru" value="anna@lumiere.ru">
+                </div>
+              </div>
+              <span class="mt-qr-hint">Смартфон сканирует код и моментально предлагает добавить контакт в телефонную книгу с телефоном и должностью.</span>
+            </div>
+
+            <div class="mt-qr-divider"></div>
+
+            <!-- Visual Styling Settings -->
+            <h3 class="mt-qr-section-title">Фирменный стиль и цвета</h3>
+            <div class="mt-qr-field-group">
+              <div class="mt-qr-swatches" role="radiogroup" aria-label="Выбор цвета QR-кода">
+                <button type="button" class="mt-qr-swatch is-active" data-qr-color="#C6543B" style="background:#C6543B;" title="Терракот Молния"></button>
+                <button type="button" class="mt-qr-swatch" data-qr-color="#1A1D20" style="background:#1A1D20;" title="Графитовый черный"></button>
+                <button type="button" class="mt-qr-swatch" data-qr-color="#2563EB" style="background:#2563EB;" title="Королевский синий"></button>
+                <button type="button" class="mt-qr-swatch" data-qr-color="#059669" style="background:#059669;" title="Изумрудный хвойный"></button>
+                <button type="button" class="mt-qr-swatch" data-qr-color="#7C3AED" style="background:#7C3AED;" title="Глубокий фиолетовый"></button>
+                <div class="mt-qr-color-custom" title="Выбрать произвольный цвет">
+                  <input type="color" id="mt-qr-color-custom" value="#C6543B" aria-label="Пользовательский цвет QR-кода">
+                </div>
+              </div>
+            </div>
+
+            <!-- Center Logo Choice -->
+            <h3 class="mt-qr-section-title" style="margin-top: 18px;">Логотип в центре кода</h3>
+            <div class="mt-qr-field-group">
+              <div class="mt-qr-logo-choices" role="radiogroup" aria-label="Выбор логотипа">
+                <button type="button" class="mt-qr-logo-btn is-active" data-qr-logo="molniya">⚡ Молния</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-logo="sbp">💳 СБП</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-logo="tg">✈️ Telegram</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-logo="wifi">📶 Wi-Fi</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-logo="none">Без логотипа</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-logo="custom" id="mt-qr-logo-custom-btn">Загрузить свой файл</button>
+                <input type="file" id="mt-qr-logo-file" accept="image/*" style="display:none;">
+              </div>
+              <span class="mt-qr-hint">Используется высший уровень коррекции H (30%), гарантирующий мгновенное считывание при любом логотипе.</span>
+            </div>
+
+            <!-- Frame / CTA Choice -->
+            <h3 class="mt-qr-section-title" style="margin-top: 18px;">Рамка и призыв к действию (CTA)</h3>
+            <div class="mt-qr-field-group">
+              <div class="mt-qr-logo-choices" role="radiogroup" aria-label="Выбор рамки со слоганом">
+                <button type="button" class="mt-qr-logo-btn is-active" data-qr-frame="scan">«Запишитесь онлайн»</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-frame="pay">«Оплата по СБП»</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-frame="wifi">«Гостевой Wi-Fi»</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-frame="tg">«Наш Telegram-канал»</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-frame="none">Без рамки</button>
+                <button type="button" class="mt-qr-logo-btn" data-qr-frame="custom">Свой текст</button>
+              </div>
+              <div id="mt-qr-frame-custom-wrap" style="display:none; margin-top: 10px;">
+                <input type="text" id="mt-qr-frame-custom" class="mt-qr-input" placeholder="Например: Оцените наш сервис или Меню на сегодня">
               </div>
             </div>
 
           </div>
+
+          <!-- Right Column: Sticky Canvas Preview & Actions -->
+          <div class="mt-qr-preview-sticky">
+            <div class="mt-qr-preview-box">
+              <div class="mt-qr-canvas-holder">
+                <canvas id="mt-qr-canvas" width="1024" height="1024" aria-label="Интерактивное превью QR-кода"></canvas>
+              </div>
+
+              <div class="mt-qr-preview-meta">
+                <span>● 1024 × 1024 px</span>
+                <span>•</span>
+                <span>Векторная четкость</span>
+                <span>•</span>
+                <span>Коррекция Level H</span>
+              </div>
+
+              <div class="mt-qr-actions-grid" style="margin-top: 18px;">
+                <button type="button" class="mt-qr-btn-primary" id="mt-qr-download-png">
+                  <span>📥</span> Скачать изображение в высоком качестве (PNG)
+                </button>
+                <button type="button" class="mt-qr-btn-secondary" id="mt-qr-download-svg">
+                  <span>📐</span> Скачать векторный макет (SVG для типографии)
+                </button>
+                <div class="mt-qr-row-btns">
+                  <button type="button" class="mt-qr-btn-subtle" id="mt-qr-print-btn">
+                    <span>🖨️</span> Распечатать тейбл-тент
+                  </button>
+                  <button type="button" class="mt-qr-btn-subtle" id="mt-qr-copy-btn">
+                    <span>📋</span> Скопировать в буфер
+                  </button>
+                </div>
+              </div>
+
+              <!-- Rating -->
+              <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--mt-border);">
+                <span class="mt-tool-rating-title" style="display:block; font-size:12px; font-weight:600; color:var(--mt-text-muted); margin-bottom:6px;">Оцените полезность генератора:</span>
+                <div class="mt-tool-rating" data-tool-rating="qr">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>5.0</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 840</span> оценок)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+              <!-- Platform Bridge Note -->
+              <div style="margin-top: 16px; padding: 12px 14px; background: var(--mt-surface-2); border-radius: 10px; font-size: 13px; color: var(--mt-text-body); line-height: 1.5; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="font-size: 18px; line-height: 1;">⚡</span>
+                <div>
+                  Подключите к QR-коду <strong>онлайн-запись и СБП-эквайринг платформы Молния</strong> за 5 минут без абонентской платы.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- Business Scenarios / Overview -->
-    <section class="mt-section mt-reveal">
-      <div class="mt-container">
-        <h2>3 главных сценария использования QR-кодов в сфере услуг</h2>
-        <div class="mt-overview-grid" style="margin-top: 32px;">
-          <div class="mt-overview-card">
-            <h3>Онлайн-запись и витрина услуг без очередей</h3>
-            <p>
-              Разместите брендовый QR-код на зеркалах мастеров, стойке администратора или визитке.
-              Клиент наводит камеру смартфона во время ожидания или процедуры, видит каталог услуг, свободные окна и записывается за 30 секунд.
-              Вы экономите до 2 часов рабочего времени администратора в день и устраняете шквал пропущенных телефонных звонков.
-            </p>
-          </div>
-          <div class="mt-overview-card">
-            <h3>Безналичные чаевые и прием оплат по СБП</h3>
-            <p>
-              Принимайте оплату за процедуры и товары по QR-коду СБП с минимальной комиссией от 0.4% до 0.7% вместо 2.2% по банковским POS-терминалам.
-              Деньги мгновенно зачисляются на расчетный счет юрлица или ИП без задержек на выходных, без риска поломки терминала и без ежемесячной платы за аренду банковского оборудования.
-            </p>
-          </div>
-          <div class="mt-overview-card">
-            <h3>Безупречный векторный SVG для типографии и наружки</h3>
-            <p>
-              Большинство онлайн-генераторов отдают растровый PNG низкого разрешения, который размывается при печати.
-              Молния формирует чистый масштабируемый SVG-вектор: передайте файл в полиграфию для изготовления тейбл-тентов, широкоформатной печати, световых коробов и брендирования витрин любого масштаба без пикселизации.
-            </p>
-          </div>
+    <section class="mt-section mt-reveal" data-screen-label="Сценарии использования" data-mt-reveal>
+      <div class="mt-section-head mt-section-head--center">
+        <h2 class="mt-section-title">3 главных сценария использования QR-кодов <span class="mt-overview-hook">в сфере услуг</span></h2>
+        <p class="mt-section-sub">Как салоны красоты, автосервисы, студии и клиники разгружают администраторов и привлекают повторные записи.</p>
+      </div>
+      <div class="mt-overview-grid" style="margin-top: 32px;">
+        <div class="mt-overview-card">
+          <h3>Онлайн-запись и витрина услуг без очередей</h3>
+          <p>
+            Разместите брендовый QR-код на зеркалах мастеров, стойке администратора или визитке.
+            Клиент наводит камеру смартфона во время ожидания или процедуры, видит каталог услуг, свободные окна и записывается за 30 секунд.
+            Вы экономите до 2 часов рабочего времени администратора в день и устраняете шквал пропущенных телефонных звонков.
+          </p>
+        </div>
+        <div class="mt-overview-card">
+          <h3>Безналичные чаевые и прием оплат по СБП</h3>
+          <p>
+            Принимайте оплату за процедуры и товары по QR-коду СБП с минимальной комиссией от 0.4% до 0.7% вместо 2.2% по банковским POS-терминалам.
+            Деньги мгновенно зачисляются на расчетный счет юрлица или ИП без задержек на выходных, без риска поломки терминала и без ежемесячной платы за аренду банковского оборудования.
+          </p>
+        </div>
+        <div class="mt-overview-card">
+          <h3>Безупречный векторный SVG для типографии и наружки</h3>
+          <p>
+            Большинство онлайн-генераторов отдают растровый PNG низкого разрешения, который размывается при печати.
+            Молния формирует чистый масштабируемый SVG-вектор: передайте файл в полиграфию для изготовления тейбл-тентов, широкоформатной печати, световых коробов и брендирования витрин любого масштаба без пикселизации.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Step-by-Step Journey -->
-    <section class="mt-section mt-reveal">
-      <div class="mt-container">
-        <h2>Как создать брендовый QR-код за 3 простых шага</h2>
-        <div class="mt-journey" style="margin-top: 32px;">
-          <div class="mt-journey-list">
+    <section class="mt-section mt-reveal" data-screen-label="Как создать QR-код" data-mt-reveal>
+      <div class="mt-section-head mt-section-head--center">
+        <h2 class="mt-section-title">Как создать брендовый QR-код <span class="mt-overview-hook">за 3 простых шага</span></h2>
+        <p class="mt-section-sub">Простой процесс от выбора бизнес-сценария до экспорта в вектор и печати настольного макета.</p>
+      </div>
+      <div class="mt-journey" style="margin-top: 32px;">
+        <div class="mt-journey-list">
 
-            <div class="mt-journey-step">
-              <div class="mt-journey-index">01</div>
-              <div class="mt-journey-copy">
-                <h3>Выберите назначение и введите данные</h3>
-                <p>
-                  Определите цель QR-кода: прямая ссылка на запись в Молнии, реквизиты СБП для оплаты, гостевой Wi-Fi без ручного ввода пароля клиентом или электронная визитка мастера. Все поля автоматически кодируются по стандартам UTF-8.
-                </p>
-              </div>
-              <div class="mt-journey-proof">6 готовых бизнес-форматов с моментальной валидацией полей</div>
+          <div class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <h3>Выберите назначение и введите данные</h3>
+              <p>
+                Определите цель QR-кода: прямая ссылка на запись в Молнии, реквизиты СБП для оплаты, гостевой Wi-Fi без ручного ввода пароля клиентом или электронная визитка мастера. Все поля автоматически кодируются по стандартам UTF-8.
+              </p>
             </div>
-
-            <div class="mt-journey-step">
-              <div class="mt-journey-index">02</div>
-              <div class="mt-journey-copy">
-                <h3>Настройте фирменный стиль и логотип</h3>
-                <p>
-                  Выберите фирменный оттенок вашего бренда или терракотовый цвет Молнии. Добавьте логотип в центр: генератор применяет максимальный уровень коррекции ошибок H (30%), гарантируя надежное считывание камерой любого смартфона даже при частичном перекрытии или загрязнении поверхности.
-                </p>
-              </div>
-              <div class="mt-journey-proof">Коррекция ошибок Level H (30%) для гарантированного сканирования</div>
-            </div>
-
-            <div class="mt-journey-step">
-              <div class="mt-journey-index">03</div>
-              <div class="mt-journey-copy">
-                <h3>Скачайте вектор SVG или распечатайте тейбл-тент</h3>
-                <p>
-                  Сохраните изображение в растровом PNG сверхвысокого разрешения (1024×1024 px) для публикации в соцсетях или векторном SVG для передачи дизайнерам и в типографию. Нажмите «Распечатать тейбл-тент», чтобы моментально отправить настольный макет с призывом к действию на ваш принтер.
-                </p>
-              </div>
-              <div class="mt-journey-proof">Мгновенный экспорт без водяных знаков, ограничений и скрытых платежей</div>
-            </div>
-
+            <div class="mt-journey-proof">6 готовых бизнес-форматов с моментальной валидацией полей</div>
           </div>
+
+          <div class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <h3>Настройте фирменный стиль и логотип</h3>
+              <p>
+                Выберите фирменный оттенок вашего бренда или терракотовый цвет Молнии. Добавьте логотип в центр: генератор применяет максимальный уровень коррекции ошибок H (30%), гарантируя надежное считывание камерой любого смартфона даже при частичном перекрытии или загрязнении поверхности.
+              </p>
+            </div>
+            <div class="mt-journey-proof">Коррекция ошибок Level H (30%) для гарантированного сканирования</div>
+          </div>
+
+          <div class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <h3>Скачайте вектор SVG или распечатайте тейбл-тент</h3>
+              <p>
+                Сохраните изображение в растровом PNG сверхвысокого разрешения (1024×1024 px) для публикации в соцсетях или векторном SVG для передачи дизайнерам и в типографию. Нажмите «Распечатать тейбл-тент», чтобы моментально отправить настольный макет с призывом к действию на ваш принтер.
+              </p>
+            </div>
+            <div class="mt-journey-proof">Мгновенный экспорт без водяных знаков, ограничений и скрытых платежей</div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- Case Study Section -->
-    <section class="mt-section mt-reveal mt-case-section">
-      <div class="mt-container">
-        <div class="mt-case-card">
-          <h2>Кейс студии эстетики «Lumière»: как брендовые QR-коды разгрузили администратора и срезали расходы на эквайринг</h2>
-          <p class="mt-case-lead">
-            Студия красоты в Санкт-Петербурге на 6 мастеров (850 визитов в месяц) разместила брендированные тейбл-тенты с QR-кодами Молнии на каждом рабочем зеркале, на стойке ресепшена и в зоне ожидания.
-            Клиенты во время процедуры переходят на запись к мастеру на следующий визит и оплачивают услуги по СБП. Результат за 2 месяца работы:
-          </p>
-          <div class="mt-case-stats">
-            <div class="mt-case-stat">
-              <div class="mt-case-val">+41%</div>
-              <div class="mt-case-lbl">Повторных записей клиентов оформляется прямо в кресле мастера</div>
-            </div>
-            <div class="mt-case-stat">
-              <div class="mt-case-val">0.4%</div>
-              <div class="mt-case-lbl">Комиссия по СБП вместо 2.2% по банковским эквайринговым терминалам</div>
-            </div>
-            <div class="mt-case-stat">
-              <div class="mt-case-val">14 200 ₽</div>
-              <div class="mt-case-lbl">Ежемесячная чистая экономия студии на аренде терминалов и времени администратора</div>
-            </div>
+    <section class="mt-section mt-reveal mt-case-section" data-screen-label="Кейс студии Lumière" data-mt-reveal>
+      <div class="mt-case-card">
+        <h2>Кейс студии эстетики «Lumière»: как брендовые QR-коды разгрузили администратора и срезали расходы на эквайринг</h2>
+        <p class="mt-case-lead">
+          Студия красоты в Санкт-Петербурге на 6 мастеров (850 визитов в месяц) разместила брендированные тейбл-тенты с QR-кодами Молнии на каждом рабочем зеркале, на стойке ресепшена и в зоне ожидания.
+          Клиенты во время процедуры переходят на запись к мастеру на следующий визит и оплачивают услуги по СБП. Результат за 2 месяца работы:
+        </p>
+        <div class="mt-case-stats">
+          <div class="mt-case-stat">
+            <div class="mt-case-val">+41%</div>
+            <div class="mt-case-lbl">Повторных записей клиентов оформляется прямо в кресле мастера</div>
+          </div>
+          <div class="mt-case-stat">
+            <div class="mt-case-val">0.4%</div>
+            <div class="mt-case-lbl">Комиссия по СБП вместо 2.2% по банковским эквайринговым терминалам</div>
+          </div>
+          <div class="mt-case-stat">
+            <div class="mt-case-val">14 200 ₽</div>
+            <div class="mt-case-lbl">Ежемесячная чистая экономия студии на аренде терминалов и времени администратора</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ Accordion -->
-    <section id="faq" class="mt-section mt-reveal">
-      <div class="mt-container">
-        <div class="mt-before-start-grid">
-          <div class="mt-before-start-highlight">
-            <h2>Частые вопросы о генераторе брендовых QR-кодов</h2>
-            <p>
-              Все, что нужно знать о считывании кодов с логотипом, векторном формате для типографий, настройке СБП и правилах размещения в офлайн-точках.
-            </p>
-          </div>
-          <div class="mt-before-start-questions">
+    <section id="faq" class="mt-section mt-reveal" data-screen-label="Частые вопросы" data-mt-reveal>
+      <div class="mt-before-start-grid">
+        <div class="mt-before-start-highlight">
+          <h2>Частые вопросы о генераторе брендовых QR-кодов</h2>
+          <p>
+            Все, что нужно знать о считывании кодов с логотипом, векторном формате для типографий, настройке СБП и правилах размещения в офлайн-точках.
+          </p>
+        </div>
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
         </div>
       </div>
     </section>
@@ -8478,11 +8503,12 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr22"></script>
 </body>
 </html>
 '''
     return page_html
+
 
 
 def build_education_page() -> str:
@@ -8623,7 +8649,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9000,7 +9026,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -9145,7 +9171,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9524,7 +9550,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -9669,7 +9695,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10048,7 +10074,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -10202,7 +10228,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10575,7 +10601,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -10715,7 +10741,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11156,7 +11182,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -11297,7 +11323,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11743,7 +11769,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -12637,7 +12663,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12879,7 +12905,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 """
@@ -12916,7 +12942,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12976,7 +13002,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 """
@@ -13045,7 +13071,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13236,7 +13262,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 """
@@ -13296,7 +13322,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13580,7 +13606,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 """
@@ -13727,7 +13753,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14086,7 +14112,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -14233,7 +14259,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14592,7 +14618,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -14722,7 +14748,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15068,7 +15094,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -15198,7 +15224,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15544,7 +15570,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -15674,7 +15700,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16020,7 +16046,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -16150,7 +16176,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16496,7 +16522,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -16626,7 +16652,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16972,7 +16998,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -17102,7 +17128,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17448,7 +17474,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -17578,7 +17604,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17924,7 +17950,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -18054,7 +18080,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18400,7 +18426,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''
@@ -18530,7 +18556,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr">
+  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18876,7 +18902,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr"></script>
+  <script src="/script.js?v=20261023-qr2"></script>
 </body>
 </html>
 '''

@@ -2329,73 +2329,48 @@ function initQrGenerator() {
     c.restore();
   }
 
+  // Official logos requested by user
+  var sbpImg = new Image();
+  sbpImg.src = '/assets/img/qr/sbp-mark.png';
+  sbpImg.onload = function() {
+    if (currentLogo === 'sbp') renderQr();
+  };
+
+  var tgImg = new Image();
+  tgImg.src = '/assets/img/qr/telegram-logo.svg';
+  tgImg.onload = function() {
+    if (currentLogo === 'tg') renderQr();
+  };
+
   function drawSbpLogo(c, cx, cy, size) {
-    c.save();
-    c.translate(cx, cy);
-    var scale = size / 100;
-    c.scale(scale, scale);
-
-    // Top right (Yellow)
-    c.fillStyle = '#F79E1B';
-    c.beginPath();
-    c.moveTo(8, -40);
-    c.lineTo(38, -40);
-    c.lineTo(16, 4);
-    c.lineTo(-4, -6);
-    c.closePath();
-    c.fill();
-
-    // Left middle (Blue)
-    c.fillStyle = '#0083CA';
-    c.beginPath();
-    c.moveTo(-38, -20);
-    c.lineTo(-12, -20);
-    c.lineTo(8, 22);
-    c.lineTo(-18, 22);
-    c.closePath();
-    c.fill();
-
-    // Bottom right (Magenta/Coral)
-    c.fillStyle = '#EB195A';
-    c.beginPath();
-    c.moveTo(-4, 14);
-    c.lineTo(36, 14);
-    c.lineTo(24, 40);
-    c.lineTo(-12, 40);
-    c.closePath();
-    c.fill();
-
-    c.restore();
+    if (sbpImg.complete && sbpImg.naturalWidth > 0) {
+      c.drawImage(sbpImg, cx - size / 2, cy - size / 2, size, size);
+      return;
+    }
   }
 
   function drawTelegramLogo(c, cx, cy, size) {
+    if (tgImg.complete && tgImg.naturalWidth > 0) {
+      c.drawImage(tgImg, cx - size / 2, cy - size / 2, size, size);
+      return;
+    }
     c.save();
     c.translate(cx, cy);
-    var scale = size / 100;
+    var scale = size / 240.1;
     c.scale(scale, scale);
+    c.translate(-120.05, -120.05);
 
-    c.fillStyle = '#2AABEE';
+    var grad = c.createLinearGradient(0, 0, 0, 240.1);
+    grad.addColorStop(0, '#2AABEE');
+    grad.addColorStop(1, '#229ED9');
+    c.fillStyle = grad;
     c.beginPath();
-    c.arc(0, 0, 48, 0, Math.PI * 2);
+    c.arc(120.05, 120.05, 120.05, 0, Math.PI * 2);
     c.fill();
 
+    var p = new Path2D('M54.3,118.8c35-15.2,58.3-25.3,70-30.2 c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3 c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3 c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8 c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z');
     c.fillStyle = '#FFFFFF';
-    c.beginPath();
-    c.moveTo(25, -23);
-    c.lineTo(-28, -2);
-    c.lineTo(-9, 8);
-    c.lineTo(15, -12);
-    c.closePath();
-    c.fill();
-
-    c.beginPath();
-    c.moveTo(-9, 8);
-    c.lineTo(-4, 25);
-    c.lineTo(3, 14);
-    c.lineTo(25, -23);
-    c.closePath();
-    c.fill();
-
+    c.fill(p);
     c.restore();
   }
 
@@ -2561,16 +2536,15 @@ function initQrGenerator() {
           '<g transform="rotate(300 48 48)"><rect x="41.5" y="6" width="13" height="22" rx="6.5" fill="#131B2C"/></g>' +
           '</g>';
       } else if (logo === 'sbp') {
-        svg += '<g transform="translate(' + cx + ',' + cy + ') scale(' + (iconSize / 100) + ')">' +
-          '<path d="M8,-40 L38,-40 L16,4 L-4,-6 Z" fill="#F79E1B"/>' +
-          '<path d="M-38,-20 L-12,-20 L8,22 L-18,22 Z" fill="#0083CA"/>' +
-          '<path d="M-4,14 L36,14 L24,40 L-12,40 Z" fill="#EB195A"/>' +
-          '</g>';
+        var sx = (cx - iconSize / 2).toFixed(1);
+        var sy = (cy - iconSize / 2).toFixed(1);
+        var ssz = iconSize.toFixed(1);
+        svg += '<image x="' + sx + '" y="' + sy + '" width="' + ssz + '" height="' + ssz + '" href="/assets/img/qr/sbp-mark.png"/>';
       } else if (logo === 'tg') {
-        svg += '<g transform="translate(' + cx + ',' + cy + ') scale(' + (iconSize / 100) + ')">' +
-          '<circle cx="0" cy="0" r="48" fill="#2AABEE"/>' +
-          '<path d="M25,-23 L-28,-2 L-9,8 L15,-12 Z" fill="#FFFFFF"/>' +
-          '<path d="M-9,8 L-4,25 L3,14 L25,-23 Z" fill="#FFFFFF"/>' +
+        svg += '<g transform="translate(' + (cx - iconSize / 2).toFixed(1) + ',' + (cy - iconSize / 2).toFixed(1) + ') scale(' + (iconSize / 240.1).toFixed(4) + ')">' +
+          '<defs><linearGradient id="tgGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2AABEE"/><stop offset="100%" stop-color="#229ED9"/></defs>' +
+          '<circle fill="url(#tgGrad)" cx="120.05" cy="120.05" r="120.05"/>' +
+          '<path fill="#FFFFFF" d="M54.3,118.8c35-15.2,58.3-25.3,70-30.2 c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3 c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3 c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8 c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z"/>' +
           '</g>';
       } else if (logo === 'wifi') {
         svg += '<g transform="translate(' + cx + ',' + cy + ') scale(' + (iconSize / 100) + ')" stroke="' + col + '" fill="' + col + '" stroke-width="9" stroke-linecap="round">' +
