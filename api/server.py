@@ -14,6 +14,7 @@ from collections import defaultdict, deque
 from html import escape
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
@@ -399,6 +400,19 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             return
         if path == "/sitemap.xml":
             self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "sitemap.xml").read_bytes(), "application/xml; charset=utf-8")
+            return
+        if path == "/rss.xml":
+            rss_candidates = [
+                Path("/usr/share/nginx/html/rss.xml"),
+                blog_store.DATA_DIR / "rss.xml",
+                Path(__file__).resolve().parent.parent / "rss.xml",
+                blog_store.TEMPLATE_DIR / "rss.xml",
+            ]
+            for candidate in rss_candidates:
+                if candidate.is_file():
+                    self._send(HTTPStatus.OK, candidate.read_bytes(), "application/rss+xml; charset=utf-8")
+                    return
+            self.send_error(HTTPStatus.NOT_FOUND, "RSS feed not found")
             return
         if path.startswith("/blog/"):
             slug = path.removeprefix("/blog/")

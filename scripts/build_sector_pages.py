@@ -7,15 +7,21 @@ Also synchronizes the navigation dropdown into index.html and blog/index.html.
 """
 
 from __future__ import annotations
+from datetime import datetime, timezone, timedelta
+from email.utils import format_datetime
 import html
 import json
 from pathlib import Path
+from typing import Any
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 INDEX_HTML = ROOT_DIR / "index.html"
 BLOG_INDEX_HTML = ROOT_DIR / "blog" / "index.html"
 SITEMAP_XML = ROOT_DIR / "sitemap.xml"
 BLOG_PY = ROOT_DIR / "api" / "blog.py"
+RSS_XML = ROOT_DIR / "rss.xml"
+
+MSK_TZ = timezone(timedelta(hours=3))
 
 SECTORS = [
     {
@@ -282,6 +288,7 @@ def render_footer_nav_html() -> str:
               <h3>Информация</h3>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+              <a class="mt-footer-link" href="/rss.xml" target="_blank" rel="noopener">RSS-лента</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Контакты</h3>
@@ -694,6 +701,7 @@ def build_auto_page() -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1221,6 +1229,7 @@ def build_beauty_page() -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1714,6 +1723,7 @@ def build_health_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -2281,6 +2291,7 @@ def build_spaces_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -2862,6 +2873,7 @@ def build_photostudios_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -3383,6 +3395,7 @@ def build_cleaning_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -3937,6 +3950,7 @@ def build_psychologist_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -4459,6 +4473,7 @@ def build_stretching_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -4983,6 +4998,7 @@ def build_yoga_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -5409,6 +5425,7 @@ def build_thanks_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://molniya-tech.ru/thanks">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -5601,6 +5618,7 @@ def build_calendar_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -6189,6 +6207,7 @@ def build_inn_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -6772,6 +6791,7 @@ def build_margin_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -7437,6 +7457,7 @@ def build_education_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -7958,6 +7979,7 @@ def build_pets_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -8481,6 +8503,7 @@ def build_repair_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -9013,6 +9036,7 @@ def build_pricing_page() -> str:
   <meta name="description" content="{html.escape(description)}">
   <meta name="keywords" content="тарифы crm молния, стоимость молния тех, цена crm для салона, сколько стоит онлайн запись, альтернатива yclients тарифы, dikidi цены, crm без доплат за мастеров">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -9525,6 +9549,7 @@ def build_dikidi_page() -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -10106,6 +10131,7 @@ def build_yclients_page() -> str:
   <meta name="description" content="{html.escape(description)}">
   <meta name="keywords" content="аналог yclients, альтернатива yclients, замена yclients, переход с yclients, чем заменить yclients, crm для салона красоты вместо yclients, онлайн запись аналог yclients">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -11035,6 +11061,331 @@ def sync_sitemap():
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
 
+
+# ============================================================================
+# РЕЕСТР СТРАНИЦ ДЛЯ RSS-ЛЕНТЫ (RSS 2.0)
+# ============================================================================
+# Чтобы добавить новую страницу в RSS-ленту, добавьте новую запись в начало списка RSS_ITEMS:
+# {
+#     "title": "Название инструмента, услуги или отраслевой страницы",
+#     "slug": "url-slug", # Например "margin" или "psychologist"
+#     "description": "Понятное описание сути страницы (1-3 предложения)",
+#     "pub_date": datetime(YYYY, MM, DD, HH, MM, tzinfo=MSK_TZ),
+#     "category": "Инструменты" | "Отрасли" | "Услуги" | "Компания" | "Статьи",
+# }
+
+RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Калькулятор маржинальности и юнит-экономики сервисного бизнеса",
+        "slug": "margin",
+        "description": "Бесплатный интерактивный калькулятор маржинальности, наценки, валовой прибыли, точки безубыточности и доли ФОТ для сервисного бизнеса с готовыми пресетами и копированием расчетов.",
+        "pub_date": datetime(2026, 10, 23, 18, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
+    {
+        "title": "Бесплатная проверка контрагентов по ИНН и ОГРН",
+        "slug": "inn",
+        "description": "Мгновенная проверка юридических лиц и ИП по официальным реестрам ФНС, ЕГРЮЛ/ЕГРИП, ЕФРСБ и реестрам проверок: статус, налоговый режим, руководитель и реквизиты.",
+        "pub_date": datetime(2026, 10, 23, 15, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
+    {
+        "title": "Производственный календарь 2026 года для бизнеса",
+        "slug": "calendar",
+        "description": "Интерактивный производственный календарь России на 2026 год: праздничные и предпраздничные дни, переносы выходных, нормы рабочего времени при 40, 36 и 24 часах и экспорт в CSV.",
+        "pub_date": datetime(2026, 10, 23, 11, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
+    {
+        "title": "CRM для служб дезинсекции, дератизации и санитарной обработки",
+        "slug": "pest-control",
+        "description": "Специализированная платформа для компаний дезинфекционного профиля: журнал обработок объектов, кратность санобработок, дозировки препаратов, акты выполненных работ и договоры.",
+        "pub_date": datetime(2026, 10, 22, 16, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для мойки окон, витрин и промышленного альпинизма",
+        "slug": "window-cleaning",
+        "description": "Управление выездными бригадами мойщиков и высотников: расчет стоимости по площади остекления, учет снаряжения, маршрутные листы и фотоотчеты до/после.",
+        "pub_date": datetime(2026, 10, 22, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для выездной химчистки мягкой мебели, матрасов и ковров",
+        "slug": "furniture-cleaning",
+        "description": "Автоматизация мобильной химчистки: онлайн-запись, калькуляция по числу посадочных мест и степени загрязнения, фотоконтроль результата и сдельная оплата мастеров.",
+        "pub_date": datetime(2026, 10, 21, 17, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "Система онлайн-бронирования и шахматка для глэмпингов и баз отдыха",
+        "slug": "glamping",
+        "description": "Удобная шахматка куполов, сафари-тентов и коттеджей: бронирование на карте, учет допуслуг (купели, прокат, питание), онлайн-оплата и мгновенные подтверждения в Telegram.",
+        "pub_date": datetime(2026, 10, 21, 14, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM и журнал почасового бронирования для бань, саун и терм",
+        "slug": "saunas",
+        "description": "Почасовое расписание банных номеров и залов: занятость пармейстеров и массажистов, продажа банных принадлежностей, учет предоплат и защита от овербукинга.",
+        "pub_date": datetime(2026, 10, 20, 18, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM и тарификатор времени для антикафе, тайм-кофейн и коворкингов",
+        "slug": "anticafe",
+        "description": "Поминутный биллинг пребывания гостей, стоп-чеки, бронирование переговорных комнат, учет консолей, настольных игр и снеков без очередей на стойке.",
+        "pub_date": datetime(2026, 10, 20, 13, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для картинг-центров и прокатных картодромов",
+        "slug": "karting",
+        "description": "Электронное расписание заездов на треке, учет парка картов и экипировки, продажа подарочных сертификатов и рассылка телеметрии круга в мессенджеры.",
+        "pub_date": datetime(2026, 10, 19, 16, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для VR-арен и клубов виртуальной реальности",
+        "slug": "vr-arena",
+        "description": "Посеансовая онлайн-запись на VR-шлемы и арены со свободным перемещением: проведение дней рождений, бронирование лаунжей и командные турниры.",
+        "pub_date": datetime(2026, 10, 19, 11, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM и онлайн-расписание для квест-комнат и перформансов",
+        "slug": "quests",
+        "description": "Интерактивная сетка локаций квестов: автоматическое назначение ведущих и актеров, онлайн-предоплаты и исключение накладок при бронировании.",
+        "pub_date": datetime(2026, 10, 18, 15, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для секций единоборств, бокса и школ боевых искусств",
+        "slug": "martial-arts",
+        "description": "Учет посещаемости по абонементам, электронное расписание групп по возрастам и весовым категориям, тренерский процент и аренда залов.",
+        "pub_date": datetime(2026, 10, 17, 14, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для персональных тренеров и фитнес-наставников",
+        "slug": "trainers",
+        "description": "Личный рабочий календарь тренера: контроль баланса персональных тренировок, онлайн-запись подопечных и мгновенный расчет личного дохода.",
+        "pub_date": datetime(2026, 10, 16, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для студий йоги, медитаций и телесных практик",
+        "slug": "yoga",
+        "description": "Расписание групповых занятий с лимитом ковриков в зале, онлайн-абонементы, автоматические подтверждения практик и учет загрузки инструкторов.",
+        "pub_date": datetime(2026, 10, 15, 15, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для студий растяжки и стретчинга",
+        "slug": "stretching",
+        "description": "Управление направлениями шпагата, аэройоги и здоровой спины: учет посещений по абонементам, сплит-тренировки и автоматический расчет зарплат тренеров.",
+        "pub_date": datetime(2026, 10, 14, 16, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для частных психологов, психотерапевтов и коучей",
+        "slug": "psychologist",
+        "description": "Приватный защищенный календарь консультаций, онлайн-запись клиентов без доступа третьих лиц, учет предоплат и правила отмены сессий.",
+        "pub_date": datetime(2026, 10, 13, 14, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для клининговых компаний и мобильных бригад",
+        "slug": "cleaning",
+        "description": "Управление выездными клинерами, электронные чек-листы уборки объектов, контроль расхода профессиональной химии и сдельная зарплата.",
+        "pub_date": datetime(2026, 10, 10, 11, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "Тарифы платформы «Молния»",
+        "slug": "pricing",
+        "description": "Прозрачные и понятные тарифы: полный доступ ко всем функциям и модулям сервиса без ограничений на сотрудников, клиентов и скрытых доплат.",
+        "pub_date": datetime(2026, 10, 1, 12, 0, tzinfo=MSK_TZ),
+        "category": "Компания",
+    },
+    {
+        "title": "Бесшовный переезд с DIKIDI на платформу «Молния»",
+        "slug": "dikidi",
+        "description": "Пошаговая инструкция и бесплатная помощь команды в переносе клиентской базы, истории визитов и каталога услуг с DIKIDI в платформу Молния.",
+        "pub_date": datetime(2026, 9, 25, 12, 0, tzinfo=MSK_TZ),
+        "category": "Миграция",
+    },
+    {
+        "title": "Бесшовный переезд с YCLIENTS на платформу «Молния»",
+        "slug": "yclients",
+        "description": "Быстрый перенос базы клиентов, журнала записей и финансовой истории из YCLIENTS в систему Молния без простоя сервиса и потери клиентов.",
+        "pub_date": datetime(2026, 9, 25, 10, 0, tzinfo=MSK_TZ),
+        "category": "Миграция",
+    },
+    {
+        "title": "CRM для автобизнеса, детейлинга и автосервисов",
+        "slug": "auto",
+        "description": "Специализированная система для автомоечных комплексов, детейлинг-центров, СТО и шиномонтажей: посты, подъемники, заказ-наряды и учет автозапчастей.",
+        "pub_date": datetime(2026, 9, 20, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для салонов красоты, барбершопов и спа",
+        "slug": "beauty",
+        "description": "Электронный журнал онлайн-записи для бьюти-сферы: кресла мастеров, расход материалов по технологическим картам, зарплаты и возвращаемость клиентов.",
+        "pub_date": datetime(2026, 9, 20, 11, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для медицинских центров, массажа и клиник",
+        "slug": "health",
+        "description": "Автоматизация частной медицины и оздоровительных практик: расписание кабинетов врачей, история посещений и синхронизация с мессенджерами.",
+        "pub_date": datetime(2026, 9, 20, 10, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для аренды пространств, залов и коворкингов",
+        "slug": "spaces",
+        "description": "Почасовое и посуточное бронирование залов, площадок для мероприятий, переговорных комнат и лофтов с онлайн-оплатой и контролем доступа.",
+        "pub_date": datetime(2026, 9, 18, 14, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для фотостудий, съемочных залов и циклорам",
+        "slug": "photostudios",
+        "description": "Шахматка аренды фотозалов, бронирование осветительного оборудования, гримерных мест и синхронизация предоплат фотографов.",
+        "pub_date": datetime(2026, 9, 18, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для школ, учебных центров и языковых студий",
+        "slug": "education",
+        "description": "Управление учебным расписанием, абонементы на курсы, учет посещаемости уроков и расчет заработной платы преподавателей.",
+        "pub_date": datetime(2026, 9, 15, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для груминг-салонов и зообизнеса",
+        "slug": "pets",
+        "description": "Онлайн-запись к грумерам с учетом пород и веса питомцев, электронные медицинские карты и учет косметических средств.",
+        "pub_date": datetime(2026, 9, 15, 10, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "CRM для сервисных центров и ремонта техники",
+        "slug": "repair",
+        "description": "Учет квитанций и заказов на ремонт электроники, бытовой техники и оборудования: статусы готовности, склад запчастей и СМС/Telegram-оповещения клиентов.",
+        "pub_date": datetime(2026, 9, 12, 12, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
+    {
+        "title": "О компании «Молния Тех»",
+        "slug": "about",
+        "description": "История создания, команда, миссия и технологические стандарты платформы «Молния» — операционной системы для сервисного бизнеса на космической скорости.",
+        "pub_date": datetime(2026, 9, 10, 12, 0, tzinfo=MSK_TZ),
+        "category": "Компания",
+    },
+]
+
+
+def build_rss_feed() -> str:
+    """
+    Генерирует валидный XML RSS 2.0 фид (https://molniya-tech.ru/rss.xml).
+    Объединяет зарегистрированные страницы RSS_ITEMS и статьи блога из blog/records,
+    сортируя их по дате публикации в порядке убывания (новые вверху).
+    """
+    all_items: list[dict[str, Any]] = list(RSS_ITEMS)
+    seen_urls = {
+        item["slug"] if item["slug"].startswith("http") else f"https://molniya-tech.ru/{item['slug'].lstrip('/')}"
+        for item in all_items
+    }
+
+    # Подгрузка статей блога из blog/records
+    records_dir = ROOT_DIR / "blog" / "records"
+    if records_dir.is_dir():
+        for record_path in sorted(records_dir.glob("*.json")):
+            try:
+                data = json.loads(record_path.read_text(encoding="utf-8"))
+                slug = data.get("slug")
+                if not slug:
+                    continue
+                item_url = f"https://molniya-tech.ru/blog/{slug}"
+                if item_url in seen_urls:
+                    continue
+
+                title = data.get("title") or "Статья блога Молния"
+                desc = data.get("short_answer") or data.get("meta", {}).get("description") or ""
+                pub_dt = None
+                for ld in data.get("json_ld", []):
+                    if isinstance(ld, dict) and "datePublished" in ld:
+                        try:
+                            pub_dt = datetime.fromisoformat(ld["datePublished"])
+                            break
+                        except Exception:
+                            pass
+                if not pub_dt:
+                    pub_dt = datetime(2026, 9, 28, 10, 0, tzinfo=MSK_TZ)
+
+                all_items.append({
+                    "title": title,
+                    "slug": f"blog/{slug}",
+                    "description": desc,
+                    "pub_date": pub_dt,
+                    "category": "Статьи",
+                })
+                seen_urls.add(item_url)
+            except Exception as e:
+                print(f"Warning loading blog record {record_path.name} for RSS: {e}")
+
+    # Сортировка по дате публикации (от самых свежих к более старым)
+    all_items.sort(key=lambda x: x["pub_date"], reverse=True)
+
+    now_rfc822 = format_datetime(datetime.now(MSK_TZ))
+
+    items_xml = []
+    for item in all_items:
+        slug = item["slug"]
+        if slug.startswith("http://") or slug.startswith("https://"):
+            link = slug
+        else:
+            link = f"https://molniya-tech.ru/{slug.lstrip('/')}"
+
+        title = html.escape(item["title"])
+        category = html.escape(item.get("category", "Обновления"))
+        pub_date = format_datetime(item["pub_date"])
+        safe_desc = str(item.get("description", "")).replace("]]>", "]]&gt;")
+
+        items_xml.append(f"""    <item>
+      <title>{title}</title>
+      <link>{link}</link>
+      <guid isPermaLink="true">{link}</guid>
+      <pubDate>{pub_date}</pubDate>
+      <category>{category}</category>
+      <description><![CDATA[{safe_desc}]]></description>
+    </item>""")
+
+    joined_items = "\n".join(items_xml)
+
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Молния Тех — Обновления, инструменты и статьи</title>
+    <link>https://molniya-tech.ru</link>
+    <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
+    <language>ru-RU</language>
+    <lastBuildDate>{now_rfc822}</lastBuildDate>
+    <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
+      <title>Молния Тех</title>
+      <link>https://molniya-tech.ru</link>
+    </image>
+{joined_items}
+  </channel>
+</rss>
+"""
+
+
 def build_about_page() -> str:
     """Builds the dedicated company about page: /about."""
     nav_html = render_nav_html(active_item="about", asset_prefix="", beta_cta=True)
@@ -11052,6 +11403,7 @@ def build_about_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -11497,6 +11849,7 @@ def build_requisites_page() -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -11747,6 +12100,7 @@ def build_privacy_page() -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta name="theme-color" content="#FFFEFD">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -12171,6 +12525,7 @@ def build_trainers_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -12676,6 +13031,7 @@ def build_martial_arts_page() -> str:
   <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -13179,6 +13535,7 @@ def build_quests_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -13654,6 +14011,7 @@ def build_vr_arena_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -14129,6 +14487,7 @@ def build_karting_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -14604,6 +14963,7 @@ def build_anticafe_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -15079,6 +15439,7 @@ def build_saunas_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -15554,6 +15915,7 @@ def build_glamping_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -16029,6 +16391,7 @@ def build_furniture_cleaning_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -16504,6 +16867,7 @@ def build_window_cleaning_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -16979,6 +17343,7 @@ def build_pest_control_page() -> str:
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
@@ -17519,6 +17884,22 @@ def main():
     sync_navigation_to_index()
     sync_navigation_to_blog()
     sync_sitemap()
+
+    print("Generating RSS 2.0 feed: /rss.xml...")
+    rss_content = build_rss_feed()
+    (ROOT_DIR / "rss.xml").write_text(rss_content, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'rss.xml'}")
+
+    blog_rss = ROOT_DIR / "blog" / "rss.xml"
+    if blog_rss.parent.is_dir():
+        blog_rss.write_text(rss_content, encoding="utf-8")
+        print(f"Synced {blog_rss}")
+
+    blog_data_rss = ROOT_DIR / ".blog-data" / "rss.xml"
+    if blog_data_rss.parent.is_dir():
+        blog_data_rss.write_text(rss_content, encoding="utf-8")
+        print(f"Synced {blog_data_rss}")
+
     print("DRY build complete!")
 
 

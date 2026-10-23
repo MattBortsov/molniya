@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Молния Тех — Обновления, инструменты и статьи</title>
+    <link>https://molniya-tech.ru</link>
+    <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
+    <language>ru-RU</language>
+    <lastBuildDate>Fri, 23 Oct 2026 16:10:00 +0300</lastBuildDate>
+    <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
+      <title>Молния Тех</title>
+      <link>https://molniya-tech.ru</link>
+    </image>
+    <item>
+      <title>Калькулятор маржинальности и юнит-экономики сервисного бизнеса</title>
+      <link>https://molniya-tech.ru/margin</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/margin</guid>
+      <pubDate>Fri, 23 Oct 2026 18:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Бесплатный интерактивный калькулятор маржинальности, наценки, валовой прибыли, точки безубыточности и доли ФОТ для сервисного бизнеса с готовыми пресетами и копированием расчетов.]]></description>
+    </item>
+    <item>
+      <title>Бесплатная проверка контрагентов по ИНН и ОГРН</title>
+      <link>https://molniya-tech.ru/inn</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/inn</guid>
+      <pubDate>Fri, 23 Oct 2026 15:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Мгновенная проверка юридических лиц и ИП по официальным реестрам ФНС, ЕГРЮЛ/ЕГРИП, ЕФРСБ и реестрам проверок: статус, налоговый режим, руководитель и реквизиты.]]></description>
+    </item>
+    <item>
+      <title>Производственный календарь 2026 года для бизнеса</title>
+      <link>https://molniya-tech.ru/calendar</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/calendar</guid>
+      <pubDate>Fri, 23 Oct 2026 11:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Интерактивный производственный календарь России на 2026 год: праздничные и предпраздничные дни, переносы выходных, нормы рабочего времени при 40, 36 и 24 часах и экспорт в CSV.]]></description>
+    </item>
+    <item>
+      <title>CRM для служб дезинсекции, дератизации и санитарной обработки</title>
+      <link>https://molniya-tech.ru/pest-control</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/pest-control</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Специализированная платформа для компаний дезинфекционного профиля: журнал обработок объектов, кратность санобработок, дозировки препаратов, акты выполненных работ и договоры.]]></description>
+    </item>
+    <item>
+      <title>CRM для мойки окон, витрин и промышленного альпинизма</title>
+      <link>https://molniya-tech.ru/window-cleaning</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/window-cleaning</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Управление выездными бригадами мойщиков и высотников: расчет стоимости по площади остекления, учет снаряжения, маршрутные листы и фотоотчеты до/после.]]></description>
+    </item>
+    <item>
+      <title>CRM для выездной химчистки мягкой мебели, матрасов и ковров</title>
+      <link>https://molniya-tech.ru/furniture-cleaning</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/furniture-cleaning</guid>
+      <pubDate>Wed, 21 Oct 2026 17:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Автоматизация мобильной химчистки: онлайн-запись, калькуляция по числу посадочных мест и степени загрязнения, фотоконтроль результата и сдельная оплата мастеров.]]></description>
+    </item>
+    <item>
+      <title>Система онлайн-бронирования и шахматка для глэмпингов и баз отдыха</title>
+      <link>https://molniya-tech.ru/glamping</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/glamping</guid>
+      <pubDate>Wed, 21 Oct 2026 14:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Удобная шахматка куполов, сафари-тентов и коттеджей: бронирование на карте, учет допуслуг (купели, прокат, питание), онлайн-оплата и мгновенные подтверждения в Telegram.]]></description>
+    </item>
+    <item>
+      <title>CRM и журнал почасового бронирования для бань, саун и терм</title>
+      <link>https://molniya-tech.ru/saunas</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/saunas</guid>
+      <pubDate>Tue, 20 Oct 2026 18:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Почасовое расписание банных номеров и залов: занятость пармейстеров и массажистов, продажа банных принадлежностей, учет предоплат и защита от овербукинга.]]></description>
+    </item>
+    <item>
+      <title>CRM и тарификатор времени для антикафе, тайм-кофейн и коворкингов</title>
+      <link>https://molniya-tech.ru/anticafe</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/anticafe</guid>
+      <pubDate>Tue, 20 Oct 2026 13:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Поминутный биллинг пребывания гостей, стоп-чеки, бронирование переговорных комнат, учет консолей, настольных игр и снеков без очередей на стойке.]]></description>
+    </item>
+    <item>
+      <title>CRM для картинг-центров и прокатных картодромов</title>
+      <link>https://molniya-tech.ru/karting</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/karting</guid>
+      <pubDate>Mon, 19 Oct 2026 16:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Электронное расписание заездов на треке, учет парка картов и экипировки, продажа подарочных сертификатов и рассылка телеметрии круга в мессенджеры.]]></description>
+    </item>
+    <item>
+      <title>CRM для VR-арен и клубов виртуальной реальности</title>
+      <link>https://molniya-tech.ru/vr-arena</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/vr-arena</guid>
+      <pubDate>Mon, 19 Oct 2026 11:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Посеансовая онлайн-запись на VR-шлемы и арены со свободным перемещением: проведение дней рождений, бронирование лаунжей и командные турниры.]]></description>
+    </item>
+    <item>
+      <title>CRM и онлайн-расписание для квест-комнат и перформансов</title>
+      <link>https://molniya-tech.ru/quests</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/quests</guid>
+      <pubDate>Sun, 18 Oct 2026 15:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Интерактивная сетка локаций квестов: автоматическое назначение ведущих и актеров, онлайн-предоплаты и исключение накладок при бронировании.]]></description>
+    </item>
+    <item>
+      <title>CRM для секций единоборств, бокса и школ боевых искусств</title>
+      <link>https://molniya-tech.ru/martial-arts</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/martial-arts</guid>
+      <pubDate>Sat, 17 Oct 2026 14:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Учет посещаемости по абонементам, электронное расписание групп по возрастам и весовым категориям, тренерский процент и аренда залов.]]></description>
+    </item>
+    <item>
+      <title>CRM для персональных тренеров и фитнес-наставников</title>
+      <link>https://molniya-tech.ru/trainers</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/trainers</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Личный рабочий календарь тренера: контроль баланса персональных тренировок, онлайн-запись подопечных и мгновенный расчет личного дохода.]]></description>
+    </item>
+    <item>
+      <title>CRM для студий йоги, медитаций и телесных практик</title>
+      <link>https://molniya-tech.ru/yoga</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/yoga</guid>
+      <pubDate>Thu, 15 Oct 2026 15:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Расписание групповых занятий с лимитом ковриков в зале, онлайн-абонементы, автоматические подтверждения практик и учет загрузки инструкторов.]]></description>
+    </item>
+    <item>
+      <title>CRM для студий растяжки и стретчинга</title>
+      <link>https://molniya-tech.ru/stretching</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/stretching</guid>
+      <pubDate>Wed, 14 Oct 2026 16:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Управление направлениями шпагата, аэройоги и здоровой спины: учет посещений по абонементам, сплит-тренировки и автоматический расчет зарплат тренеров.]]></description>
+    </item>
+    <item>
+      <title>CRM для частных психологов, психотерапевтов и коучей</title>
+      <link>https://molniya-tech.ru/psychologist</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/psychologist</guid>
+      <pubDate>Tue, 13 Oct 2026 14:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Приватный защищенный календарь консультаций, онлайн-запись клиентов без доступа третьих лиц, учет предоплат и правила отмены сессий.]]></description>
+    </item>
+    <item>
+      <title>CRM для клининговых компаний и мобильных бригад</title>
+      <link>https://molniya-tech.ru/cleaning</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/cleaning</guid>
+      <pubDate>Sat, 10 Oct 2026 11:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Управление выездными клинерами, электронные чек-листы уборки объектов, контроль расхода профессиональной химии и сдельная зарплата.]]></description>
+    </item>
+    <item>
+      <title>Тарифы платформы «Молния»</title>
+      <link>https://molniya-tech.ru/pricing</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/pricing</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 +0300</pubDate>
+      <category>Компания</category>
+      <description><![CDATA[Прозрачные и понятные тарифы: полный доступ ко всем функциям и модулям сервиса без ограничений на сотрудников, клиентов и скрытых доплат.]]></description>
+    </item>
+    <item>
+      <title>Как организовать запись клиентов без накладок в расписании сервисного бизнеса</title>
+      <link>https://molniya-tech.ru/blog/kak-organizovat-zapis-klientov-bez-nakladok-v-raspisanii</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/kak-organizovat-zapis-klientov-bez-nakladok-v-raspisanii</guid>
+      <pubDate>Tue, 29 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Чтобы организовать запись клиентов без накладок в расписании, разделите бронирование по физическим рабочим местам и персональным мастерам, привяжите длительность слотов к габаритам обслуживаемого объекта и введите автоматическое подтверждение визитов в Telegram за 2 часа до начала.]]></description>
+    </item>
+    <item>
+      <title>Как перенести клиентов и будущие записи из таблиц в CRM без сбоев и потери броней</title>
+      <link>https://molniya-tech.ru/blog/kak-perenesti-klientov-i-budushchie-zapisi-iz-tablits-v-crm</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/kak-perenesti-klientov-i-budushchie-zapisi-iz-tablits-v-crm</guid>
+      <pubDate>Tue, 29 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Чтобы безопасно перенести клиентов и будущие записи из таблиц в CRM, очистите базу от дублей и нормализуйте номера телефонов, импортируйте каталог услуг с длительностями, перенесите будущий календарный горизонт вручную за один вечер и зафиксируйте жесткую дату прекращения записей в таблицах.]]></description>
+    </item>
+    <item>
+      <title>Как рассчитывать зарплату мастеров по выполненным работам в сервисном бизнесе</title>
+      <link>https://molniya-tech.ru/blog/kak-rasschityvat-zarplatu-masterov-po-vypolnennym-rabotam</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/kak-rasschityvat-zarplatu-masterov-po-vypolnennym-rabotam</guid>
+      <pubDate>Tue, 29 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Чтобы рассчитывать зарплату мастеров по выполненным работам справедливо и без ошибок, начисляйте процент исключительно с трудоемкости без учета стоимости материалов, фиксируйте доли участия каждого специалиста прямо в наряде и выводите баланс смены в режиме реального времени.]]></description>
+    </item>
+    <item>
+      <title>Что показывает аналитика уже сейчас и куда движется ИИ-прогноз спроса</title>
+      <link>https://molniya-tech.ru/blog/analitika-i-prognozy-sprosa-ii-dlya-servisnogo-biznesa</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/analitika-i-prognozy-sprosa-ii-dlya-servisnogo-biznesa</guid>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Базовая аналитика CRM дает ответ на вопрос «что произошло» (выручка, средний чек, загрузка по часам), а предиктивные алгоритмы ИИ отвечают на вопрос «что произойдет завтра». Анализируя исторические ряды, дни недели, погоду и сезонные тренды, ИИ заранее предупреждает о спаде загрузки и подсказывает, когда поднять цены на пиковый спрос или запустить спецпредложение.]]></description>
+    </item>
+    <item>
+      <title>Что нового появилось в Молнии и почему — короткие апдейты по релизам</title>
+      <link>https://molniya-tech.ru/blog/obnovleniya-molnii-dinamicheskie-tseny-telegram-i-novye-roli</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/obnovleniya-molnii-dinamicheskie-tseny-telegram-i-novye-roli</guid>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[В последних обновлениях «Молнии» появились: расширенная матрица цен с надбавками на часы пик и классы автомобилей, автоматические подтверждения и напоминания клиентам через Telegram, конструктор этапов работ с чек-листами контроля качества, а также отдельный мобильный интерфейс мастера с прозрачным учетом выработки. В активной разработке — предиктивный ИИ-модуль прогнозирования загрузки.]]></description>
+    </item>
+    <item>
+      <title>Пошаговые гайды по настройке модулей платформы под ваш бизнес</title>
+      <link>https://molniya-tech.ru/blog/poshagovyj-gajd-po-nastrojke-molnii-pod-vash-biznes</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/poshagovyj-gajd-po-nastrojke-molnii-pod-vash-biznes</guid>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Полная настройка «Молнии» под сервисный бизнес занимает около 30 минут и состоит из 5 понятных шагов: указание филиалов и логики рабочих мест, создание каталога услуг с градацией по категориям (например, седан/кроссовер), добавление команды с формулами оплаты, настройка этапов работ с чек-листами и публикация формы онлайн-записи.]]></description>
+    </item>
+    <item>
+      <title>Бесшовный переезд с DIKIDI на платформу «Молния»</title>
+      <link>https://molniya-tech.ru/dikidi</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/dikidi</guid>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Миграция</category>
+      <description><![CDATA[Пошаговая инструкция и бесплатная помощь команды в переносе клиентской базы, истории визитов и каталога услуг с DIKIDI в платформу Молния.]]></description>
+    </item>
+    <item>
+      <title>Бесшовный переезд с YCLIENTS на платформу «Молния»</title>
+      <link>https://molniya-tech.ru/yclients</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/yclients</guid>
+      <pubDate>Fri, 25 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Миграция</category>
+      <description><![CDATA[Быстрый перенос базы клиентов, журнала записей и финансовой истории из YCLIENTS в систему Молния без простоя сервиса и потери клиентов.]]></description>
+    </item>
+    <item>
+      <title>CRM для автобизнеса, детейлинга и автосервисов</title>
+      <link>https://molniya-tech.ru/auto</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/auto</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Специализированная система для автомоечных комплексов, детейлинг-центров, СТО и шиномонтажей: посты, подъемники, заказ-наряды и учет автозапчастей.]]></description>
+    </item>
+    <item>
+      <title>CRM для салонов красоты, барбершопов и спа</title>
+      <link>https://molniya-tech.ru/beauty</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/beauty</guid>
+      <pubDate>Sun, 20 Sep 2026 11:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Электронный журнал онлайн-записи для бьюти-сферы: кресла мастеров, расход материалов по технологическим картам, зарплаты и возвращаемость клиентов.]]></description>
+    </item>
+    <item>
+      <title>CRM для медицинских центров, массажа и клиник</title>
+      <link>https://molniya-tech.ru/health</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/health</guid>
+      <pubDate>Sun, 20 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Автоматизация частной медицины и оздоровительных практик: расписание кабинетов врачей, история посещений и синхронизация с мессенджерами.]]></description>
+    </item>
+    <item>
+      <title>CRM для аренды пространств, залов и коворкингов</title>
+      <link>https://molniya-tech.ru/spaces</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/spaces</guid>
+      <pubDate>Fri, 18 Sep 2026 14:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Почасовое и посуточное бронирование залов, площадок для мероприятий, переговорных комнат и лофтов с онлайн-оплатой и контролем доступа.]]></description>
+    </item>
+    <item>
+      <title>CRM для фотостудий, съемочных залов и циклорам</title>
+      <link>https://molniya-tech.ru/photostudios</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/photostudios</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Шахматка аренды фотозалов, бронирование осветительного оборудования, гримерных мест и синхронизация предоплат фотографов.]]></description>
+    </item>
+    <item>
+      <title>CRM для школ, учебных центров и языковых студий</title>
+      <link>https://molniya-tech.ru/education</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/education</guid>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Управление учебным расписанием, абонементы на курсы, учет посещаемости уроков и расчет заработной платы преподавателей.]]></description>
+    </item>
+    <item>
+      <title>CRM для груминг-салонов и зообизнеса</title>
+      <link>https://molniya-tech.ru/pets</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/pets</guid>
+      <pubDate>Tue, 15 Sep 2026 10:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Онлайн-запись к грумерам с учетом пород и веса питомцев, электронные медицинские карты и учет косметических средств.]]></description>
+    </item>
+    <item>
+      <title>CRM для сервисных центров и ремонта техники</title>
+      <link>https://molniya-tech.ru/repair</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/repair</guid>
+      <pubDate>Sat, 12 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Учет квитанций и заказов на ремонт электроники, бытовой техники и оборудования: статусы готовности, склад запчастей и СМС/Telegram-оповещения клиентов.]]></description>
+    </item>
+    <item>
+      <title>О компании «Молния Тех»</title>
+      <link>https://molniya-tech.ru/about</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/about</guid>
+      <pubDate>Thu, 10 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Компания</category>
+      <description><![CDATA[История создания, команда, миссия и технологические стандарты платформы «Молния» — операционной системы для сервисного бизнеса на космической скорости.]]></description>
+    </item>
+  </channel>
+</rss>

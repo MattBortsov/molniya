@@ -156,6 +156,9 @@ def upsert_article(article: dict[str, Any]) -> None:
         _write_atomic(DATA_DIR / f"{article['slug']}.html", render_article(article))
         _write_atomic(DATA_DIR / "index.html", render_blog(rows))
         _write_atomic(DATA_DIR / "sitemap.xml", render_sitemap(rows))
+        template_rss = TEMPLATE_DIR / "rss.xml"
+        if template_rss.is_file():
+            _write_atomic(DATA_DIR / "rss.xml", template_rss.read_text(encoding="utf-8"))
         _write_atomic(REDIRECTS_PATH, json.dumps(redirects, ensure_ascii=False))
         _write_atomic(target, json.dumps(article, ensure_ascii=False))
         if old and old["slug"] != article["slug"]:
@@ -172,6 +175,9 @@ def rebuild_public() -> None:
             _write_atomic(DATA_DIR / f"{article['slug']}.html", render_article(article))
         _write_atomic(DATA_DIR / "index.html", render_blog(rows))
         _write_atomic(DATA_DIR / "sitemap.xml", render_sitemap(rows))
+        template_rss = TEMPLATE_DIR / "rss.xml"
+        if template_rss.is_file():
+            _write_atomic(DATA_DIR / "rss.xml", template_rss.read_text(encoding="utf-8"))
         current = {"index.html", *(f"{row['slug']}.html" for row in rows)}
         for stale in DATA_DIR.glob("*.html"):
             if stale.name not in current:
@@ -268,6 +274,7 @@ def render_article(article: dict[str, Any]) -> str:
         f'  <meta name="description" content="{_escape(description)}">\n'
         f'  <meta name="keywords" content="{_escape(keywords)}">\n'
         f'  <link rel="canonical" href="{_escape(canonical)}">\n'
+        f'  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">\n'
         f'  <meta property="og:type" content="article">\n'
         f'  <meta property="og:site_name" content="Молния Тех">\n'
         f'  <meta property="og:locale" content="ru_RU">\n'
@@ -326,7 +333,7 @@ def render_article(article: dict[str, Any]) -> str:
 
 def render_sitemap(articles: list[dict[str, Any]] | None = None) -> str:
     rows = articles if articles is not None else (row for _, row in _articles())
-    urls = ["/", "/auto", "/beauty", "/health", "/psychologist", "/stretching", "/yoga", "/trainers", "/martial-arts", "/spaces", "/photostudios", "/quests", "/vr-arena", "/karting", "/anticafe", "/saunas", "/glamping", "/cleaning", "/furniture-cleaning", "/window-cleaning", "/pest-control", "/education", "/pets", "/repair", "/pricing", "/dikidi", "/yclients", "/about", "/requisites", "/privacy", "/blog"] + [f"/blog/{quote(row['slug'])}" for row in rows]
+    urls = ["/", "/auto", "/beauty", "/health", "/psychologist", "/stretching", "/yoga", "/trainers", "/martial-arts", "/spaces", "/photostudios", "/quests", "/vr-arena", "/karting", "/anticafe", "/saunas", "/glamping", "/cleaning", "/furniture-cleaning", "/window-cleaning", "/pest-control", "/education", "/pets", "/repair", "/pricing", "/dikidi", "/yclients", "/about", "/requisites", "/privacy", "/calendar", "/inn", "/margin", "/blog"] + [f"/blog/{quote(row['slug'])}" for row in rows]
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{xml_escape(SITE_URL + path)}</loc></url>\n' for path in urls
     ) + '</urlset>\n'

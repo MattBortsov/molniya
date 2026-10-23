@@ -83,7 +83,14 @@ class SeoSmithWebhookTests(unittest.TestCase):
         self.assertIn("Главное из статьи", page)
         self.assertIn("SEO заголовок", page)
         self.assertIn("/blog/first-post", self.get("/blog"))
-        self.assertIn("/blog/first-post", self.get("/sitemap.xml"))
+        sitemap = self.get("/sitemap.xml")
+        self.assertIn("/blog/first-post", sitemap)
+        self.assertIn("/calendar", sitemap)
+        self.assertIn("/inn", sitemap)
+        self.assertIn("/margin", sitemap)
+        rss = self.get("/rss.xml")
+        self.assertIn('<rss version="2.0"', rss)
+        self.assertIn("/margin", rss)
         self.assertIn("Исходный текст", (blog.DATA_DIR / "first-post.html").read_text(encoding="utf-8"))
 
         payload["article"]["slug"] = "updated-post"
