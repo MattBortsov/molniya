@@ -47,6 +47,7 @@ FORM_NAMES = {
     "calendar": "Производственный календарь — бесплатный доступ",
     "inn": "Проверка контрагента — бесплатный доступ",
     "margin": "Калькулятор доходности — бесплатный доступ",
+    "carwash_weather": "Индекс мойки авто — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -81,6 +82,7 @@ SOURCE_PATHS = {
     "calendar": "/calendar",
     "inn": "/inn",
     "margin": "/margin",
+    "carwash_weather": "/carwash-weather",
 }
 
 

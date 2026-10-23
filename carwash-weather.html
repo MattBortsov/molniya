@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Индекс мойки авто онлайн — прогноз погоды и чистоты кузова на 5 дней | Молния</title>
+  <meta name="description" content="Узнайте, стоит ли мыть машину сегодня: интерактивный расчет индекса чистоты автомобиля на 5 дней по данным метеорадаров, осадков и слякоти на дорогах в 20 городах РФ.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/carwash-weather">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Индекс мойки авто онлайн — прогноз погоды и чистоты кузова на 5 дней | Молния">
+  <meta property="og:description" content="Узнайте, стоит ли мыть машину сегодня: интерактивный расчет индекса чистоты автомобиля на 5 дней по данным метеорадаров, осадков и слякоти на дорогах в 20 городах РФ.">
+  <meta property="og:url" content="https://molniya-tech.ru/carwash-weather">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/carwash/wash-perfect.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Индекс мойки авто онлайн — прогноз погоды и чистоты кузова на 5 дней | Молния">
+  <meta name="twitter:description" content="Узнайте, стоит ли мыть машину сегодня: интерактивный расчет индекса чистоты автомобиля на 5 дней по данным метеорадаров, осадков и слякоти на дорогах в 20 городах РФ.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/carwash/wash-perfect.webp">
+
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/#tools"}, {"@type": "ListItem", "position": 3, "name": "Индекс мойки авто", "item": "https://molniya-tech.ru/carwash-weather"}]}, {"@context": "https://schema.org", "@type": "WebApplication", "name": "Индекс мойки авто Молния — метеорологический прогноз чистоты кузова", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/carwash-weather", "description": "Узнайте, стоит ли мыть машину сегодня: интерактивный расчет индекса чистоты автомобиля на 5 дней по данным метеорадаров, осадков и слякоти на дорогах в 20 городах РФ.", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.95", "bestRating": "5", "worstRating": "1", "ratingCount": "2140"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный расчет индекса чистоты автомобиля на 5 дней"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитывается «Индекс мойки авто» и откуда берутся погодные данные?", "acceptedAnswer": {"@type": "Answer", "text": "Алгоритм анализирует точный почасовой прогноз метеорологических моделей Open-Meteo и радаров осадков. Оценивается не только вероятность дождя или снега, но и суммарный объем осадков в миллиметрах, прогноз на следующие 48 часов, влажность воздуха, скорость ветра и переход температуры через 0°C. На основе этих факторов вычисляется процент чистоты кузова от 0 до 100% и формируется однозначная рекомендация для водителя."}}, {"@type": "Question", "name": "Что такое переход температуры через 0°C и почему это главный враг чистоты кузова?", "acceptedAnswer": {"@type": "Answer", "text": "Переход температуры через нулевую отметку (например, ночью -3°C, а днем +2°C) — самый грязный период для автомобилей в российских городах. На дорогах образуется соляная каша из талого снега, песка и противогололедных реагентов. Взвесь из-под колес попутных и встречных машин моментально покрывает кузов жирной коркой, которую невозможно сбить холодной водой без агрессивного щелочного шампуня."}}, {"@type": "Question", "name": "Стоит ли мыть автомобиль зимой в стабильный мороз (-10°C … -20°C)?", "acceptedAnswer": {"@type": "Answer", "text": "В стабильный сухой мороз дороги сухие, и кузов сохраняет чистоту значительно дольше, чем в оттепель. Мыть автомобиль зимой можно и нужно (чтобы смыть въевшиеся реагенты), но с обязательной процедурой: тщательная продувка сжатым воздухом дверных замков, зеркал, ручек, лючка бензобака и уплотнителей, а также смазка силиконом. Без качественной сушки замки и резиновые уплотнители могут примерзнуть."}}, {"@type": "Question", "name": "Защищают ли жидкий воск, кварцевое покрытие или антидождь перед сырой погодой?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Твердый воск, кварцевый состав (ceramic/quartz) и качественный гидрофобный антидождь на стеклах создают высокий угол смачивания: грязевая взвесь и капли воды скатываются под действием набегающего потока воздуха, не удерживаясь на лаке. Автомобиль всё равно запылится, но смыть этот слой на следующей экспресс-мойке удастся за 3 минуты без трения губкой."}}, {"@type": "Question", "name": "Чем отличается техническая мойка от экспресс-мойки и комплексной мойки?", "acceptedAnswer": {"@type": "Answer", "text": "Техническая мойка — это бесконтактный сбив крупной дорожной грязи и песка с кузова и арок струей высокого давления без нанесения пены и сушки (5–7 минут). Экспресс-мойка включает нанесение активной пены, смыв и экспресс-сушку кузова. Комплекс включает кузов, резиновые коврики, пороги, влажную уборку салона и пылесос. При индексе мойки ниже 40% рекомендуется ограничиться именно быстрой технической мойкой."}}, {"@type": "Question", "name": "Зачем промывать днище и колесные арки автомобиля после окончания зимы?", "acceptedAnswer": {"@type": "Answer", "text": "За 4–5 месяцев зимней эксплуатации в скрытых полостях, на рычагах подвески и тормозных трубках накапливаются десятки килограммов песка, пропитанного хлоридами и реагентами. Весной при потеплении химическая активность солей резко возрастает, запуская ускоренную коррозию. Промывка днища на подъемнике весной удаляет эти очаги до наступления жары."}}, {"@type": "Question", "name": "Как автомойкам и детейлинг-центрам использовать этот инструмент и платформу Молния?", "acceptedAnswer": {"@type": "Answer", "text": "Для автомоек погодные колебания — главная причина хаоса: гигантские очереди в ясные дни и резкие простои во время дождей. Платформа Молния дает автомойкам круглосуточную онлайн-запись в конкретные боксы, автоматические скидки на непопулярные дождливые часы, Telegram-уведомления постоянным клиентам о наступлении идеальной погоды и полный учет расходных материалов и зарплаты мойщиков."}}]}]</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261023-weather">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
+
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Индекс мойки авто">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.95 из 5 на основе 2 140 отзывов водителей">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.95</strong> (2 140 проверок чистоты и отзывов автовладельцев)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Индекс мойки авто:<br><span class="mt-hero-accent">мыть ли машину сегодня?</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Точный расчет дорожной грязи, осадков и слякоти на 5 дней по данным метеорологических радаров. Узнайте, сколько продержится кузов чистым и не потратите ли вы деньги впустую.</p>
+              <a class="mt-btn mt-btn-hero" href="#weather-app">Проверить свой город ↓</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Возможности инструмента Индекс мойки авто">
+              <li class="mt-facet">
+                <span class="mt-facet-name">20 городов РФ</span>
+                <span class="mt-facet-note">погодные радары и геопозиция</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Дорожные реагенты</span>
+                <span class="mt-facet-note">учет перехода через 0°C и слякоти</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 дней чистоты</span>
+                <span class="mt-facet-note">посуточный расчет индекса и погоды</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Шеринг прогноза</span>
+                <span class="mt-facet-note">карточка в Telegram, VK и WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- WEATHER APP -->
+      <section class="mt-section mt-reveal" id="weather-app" data-screen-label="Индекс мойки онлайн" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Прогноз чистоты кузова <span class="mt-overview-hook">и дорожной обстановки</span></h2>
+          <p class="mt-section-sub">Выберите город или определите геопозицию в один клик. Алгоритм оценит вероятность осадков, влажность асфальта, слякоть и перепады температуры.</p>
+        </div>
+
+        <div id="mt-weather-app" class="mt-weather-wrap">
+
+          <!-- TOOLBAR -->
+          <div class="mt-weather-toolbar">
+            <div class="mt-weather-chips" role="tablist" aria-label="Быстрый выбор города">
+              <span class="mt-weather-chip-label">Популярные города:</span>
+              <button class="mt-weather-chip-btn is-active" type="button" data-weather-city="msk">Москва</button>
+              <button class="mt-weather-chip-btn" type="button" data-weather-city="spb">Санкт-Петербург</button>
+              <button class="mt-weather-chip-btn" type="button" data-weather-city="kazan">Казань</button>
+              <button class="mt-weather-chip-btn" type="button" data-weather-city="ekb">Екатеринбург</button>
+              <button class="mt-weather-chip-btn" type="button" data-weather-city="nsk">Новосибирск</button>
+              <button class="mt-weather-chip-btn" type="button" data-weather-city="krr">Краснодар</button>
+            </div>
+
+            <div class="mt-weather-controls">
+              <select class="mt-weather-select" id="mt-weather-city-select" aria-label="Выбрать другой город из списка">
+                <option value="msk">Москва</option>
+                <option value="spb">Санкт-Петербург</option>
+                <option value="kazan">Казань</option>
+                <option value="ekb">Екатеринбург</option>
+                <option value="nsk">Новосибирск</option>
+                <option value="nn">Нижний Новгород</option>
+                <option value="krr">Краснодар</option>
+                <option value="samara">Самара</option>
+                <option value="ufa">Уфа</option>
+                <option value="rostov">Ростов-на-Дону</option>
+                <option value="chelyabinsk">Челябинск</option>
+                <option value="krasnoyarsk">Красноярск</option>
+                <option value="voronezh">Воронеж</option>
+                <option value="perm">Пермь</option>
+                <option value="volgograd">Волгоград</option>
+                <option value="saratov">Саратов</option>
+                <option value="tyumen">Тюмень</option>
+                <option value="tula">Тула</option>
+                <option value="sochi">Сочи</option>
+                <option value="vladivostok">Владивосток</option>
+              </select>
+
+              <button class="mt-weather-geo-btn" id="mt-weather-geo-btn" type="button" title="Определить по GPS">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>
+                <span>Моя локация</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- MAIN RESULT CARD -->
+          <div class="mt-weather-card">
+
+            <div class="mt-weather-main-info">
+              <div>
+                <div class="mt-weather-score-row">
+                  <div class="mt-weather-score-badge" id="mt-weather-score-badge">
+                    <span class="mt-weather-score-value" id="mt-weather-score">88%</span>
+                    <span class="mt-weather-score-caption">Индекс</span>
+                  </div>
+
+                  <div class="mt-weather-score-meta">
+                    <h3 class="mt-weather-verdict-title" id="mt-weather-verdict">Идеально! Мой на все деньги</h3>
+                    <p class="mt-weather-tagline" id="mt-weather-tagline">Впереди сухие чистые дни. Машина будет сиять и радовать глаз.</p>
+                  </div>
+                </div>
+
+                <div class="mt-weather-factors-grid">
+                  <div class="mt-weather-factor-item">
+                    <div class="mt-weather-factor-label">Покрытие дороги</div>
+                    <div class="mt-weather-factor-val" id="mt-weather-road">Сухой чистый асфальт</div>
+                  </div>
+                  <div class="mt-weather-factor-item">
+                    <div class="mt-weather-factor-label">Риск осадков</div>
+                    <div class="mt-weather-factor-val" id="mt-weather-precip">5% (Минимальный)</div>
+                  </div>
+                  <div class="mt-weather-factor-item">
+                    <div class="mt-weather-factor-label">Температура</div>
+                    <div class="mt-weather-factor-val" id="mt-weather-temp">+8° … +14°C</div>
+                  </div>
+                </div>
+
+                <div class="mt-weather-advice-box">
+                  <div class="mt-weather-advice-head">Рекомендация эксперта Молнии</div>
+                  <p class="mt-weather-advice-text" id="mt-weather-advice">Отличное время для комплексной мойки, воска или детейлинга — результат продержится долго!</p>
+                </div>
+              </div>
+
+              <!-- VIRAL SHARE BAR -->
+              <div class="mt-weather-share-wrap">
+                <div class="mt-weather-share-title">Поделиться вердиктом с друзьями и в чатах:</div>
+                <div class="mt-weather-share-buttons">
+                  <a id="mt-weather-share-tg" class="mt-weather-share-link mt-weather-share-link--tg" href="#" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                    <span>Telegram</span>
+                  </a>
+                  <a id="mt-weather-share-wa" class="mt-weather-share-link mt-weather-share-link--wa" href="#" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                    <span>WhatsApp</span>
+                  </a>
+                  <a id="mt-weather-share-vk" class="mt-weather-share-link mt-weather-share-link--vk" href="#" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.68 0H8.32C3.72 0 0 3.72 0 8.32v7.36C0 20.28 3.72 24 8.32 24h7.36c4.6 0 8.32-3.72 8.32-8.32V8.32C24 3.72 20.28 0 15.68 0zm4.56 17.52h-2.12c-.8 0-1.04-.64-2.48-2.08-1.28-1.24-1.84-1.4-2.16-1.4-.44 0-.56.12-.56.72v1.96c0 .52-.16.8-1.52.8-2.24 0-4.72-1.36-6.48-3.88-2.64-3.72-3.36-6.52-3.36-7.08 0-.32.12-.6.72-.6h2.12c.56 0 .76.24.96.8.96 2.76 2.56 5.16 3.24 5.16.24 0 .36-.12.36-.76v-2.8c-.08-1.4-.8-1.52-.8-2.04 0-.24.2-.48.52-.48h3.32c.44 0 .6.24.6.76v3.8c0 .4.16.56.28.56.24 0 .44-.16.88-.6 1.36-1.52 2.32-3.88 2.32-3.88.16-.36.36-.6.92-.6h2.12c.64 0 .8.32.64.8-.32 1.48-3.44 5.84-3.44 5.84-.28.44-.4.64 0 1.16.28.4 1.2 1.16 1.8 1.88 1.12 1.28 1.96 2.36 2.2 3.08.2.72-.12.8-.64.8z"/></svg>
+                    <span>VK</span>
+                  </a>
+                  <button id="mt-weather-copy-btn" class="mt-weather-copy-card-btn" type="button">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span>Скопировать карточку</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- VIRAL IMAGE CONTAINER -->
+            <div class="mt-weather-image-wrap">
+              <img id="mt-weather-img" src="/assets/img/carwash/wash-perfect.webp" alt="Индекс мойки авто" width="700" height="500" loading="eager" class="mt-weather-hero-img">
+              <span id="mt-weather-badge" class="mt-weather-status-badge">Зеленый свет</span>
+            </div>
+
+          </div>
+
+          <!-- 5-DAY FORECAST -->
+          <div class="mt-weather-forecast-section">
+            <h3 class="mt-weather-forecast-title">Прогноз дорожной чистоты на 5 дней</h3>
+            <div class="mt-weather-days-grid" id="mt-weather-days-grid">
+              <!-- Dynamically rendered by script.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ALGORITHM EXPLANATION -->
+      <section class="mt-section mt-reveal" data-screen-label="Как работает алгоритм" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как алгоритм рассчитывает <span class="mt-overview-hook">дорожную грязь и слякоть</span></h2>
+          <p class="mt-section-sub">Мы не просто смотрим на значок солнца или тучки в прогнозе. Модель оценивает физику образования грязи на дорогах и поведение лакокрасочного покрытия.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <div class="mt-overview-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="17" x2="12" y2="23"/><line x1="16" y1="19" x2="16" y2="21"/></svg>
+            </div>
+            <h3 class="mt-overview-title">Миллиметры осадков и радары</h3>
+            <p class="mt-overview-desc">Кратковременная морось в 0.2 мм при теплом ветре высыхает за 20 минут. Ливень в 15 мм оставляет лужи на сутки. Алгоритм разделяет легкую сырость и плотную грязевую взвесь.</p>
+          </article>
+
+          <article class="mt-overview-card">
+            <div class="mt-overview-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="M14.83 9.17l4.24-4.24"/><path d="M4.93 19.07l4.24-4.24"/></svg>
+            </div>
+            <h3 class="mt-overview-title">Переход через 0°C и реагенты</h3>
+            <p class="mt-overview-desc">При колебаниях между плюсом и минусом снег на обочинах тает, смешиваясь с дорожной солью и песком. Дороги становятся липкими даже без осадков — индекс мгновенно снижается.</p>
+          </article>
+
+          <article class="mt-overview-card">
+            <div class="mt-overview-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D2634A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+            </div>
+            <h3 class="mt-overview-title">Влажность и высыхание полотна</h3>
+            <p class="mt-overview-desc">Высокая влажность воздуха (90%+) и слабый ветер не дают асфальту просохнуть часами. В сухой летний зной машина остается чистой в 4 раза дольше даже при переменной облачности.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY: PROTOCOL -->
+      <section class="mt-section mt-reveal" data-screen-label="Регламент ухода за авто" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Какую мойку выбрать <span class="mt-overview-hook">в зависимости от индекса</span></h2>
+          <p class="mt-section-sub">Простые правила для разумной экономии бюджета и защиты лакокрасочного покрытия.</p>
+        </div>
+
+        <div class="mt-journey">
+          <div class="mt-journey-step">
+            <div class="mt-journey-num">80–100%</div>
+            <div class="mt-journey-body">
+              <h3 class="mt-journey-title">Идеальное окно: комплекс и защита</h3>
+              <p class="mt-journey-desc">Смело заказывайте полную двухфазную мойку кузова, уборку салона, полироль пластика и гидрофобный воск. Кузов будет оставаться зеркально чистым от 4 до 7 дней.</p>
+              <div class="mt-journey-proof">Рекомендация: нанесите антидождь на лобовое стекло для долговечного эффекта</div>
+            </div>
+          </div>
+
+          <div class="mt-journey-step">
+            <div class="mt-journey-num">50–79%</div>
+            <div class="mt-journey-body">
+              <h3 class="mt-journey-title">Благоприятно: экспресс или самообслуживание</h3>
+              <p class="mt-journey-desc">Сбить дорожный налет, ополоснуть коврики и протереть стекла. Тратить 2 500 ₽ на детейлинг пока не стоит, но 250 ₽ на мойке самообслуживания освежат машину на 2–3 дня.</p>
+              <div class="mt-journey-proof">Рекомендация: быстрая мойка кузова с активной пеной и сушкой</div>
+            </div>
+          </div>
+
+          <div class="mt-journey-step">
+            <div class="mt-journey-num">&lt; 50%</div>
+            <div class="mt-journey-body">
+              <h3 class="mt-journey-title">Стоп: деньги на ветер</h3>
+              <p class="mt-journey-desc">Ливни, снегопад или реагентная каша. Помытая машина запачкается за 15 минут в потоке. Протрите влажной салфеткой оптику, боковые зеркала, номера и камеры кругового обзора.</p>
+              <div class="mt-journey-proof">Рекомендация: ограничьтесь технической сбивкой грязи за 150 ₽ без сушки</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-section mt-reveal mt-case-section" data-screen-label="Кейс автомоечного бизнеса" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как автобизнес побеждает непогоду <span class="mt-overview-hook">вместе с Молнией</span></h2>
+          <p class="mt-section-sub">Опыт сети детейлинга и автомоек «Aquacity»: сглаживание погодных пиков, заполнение пустых боксов в дождь и рост выручки.</p>
+        </div>
+
+        <div class="mt-case-card">
+          <div class="mt-case-body">
+            <h3 class="mt-case-title">Автоматическое управление спросом в дождливые дни</h3>
+            <p class="mt-case-desc">До подключения Молнии автомойка теряла до 65% выручки в сырые будни, а в первые ясные выходные выстраивались часовые очереди. Интеграция онлайн-записи с прогнозом погоды позволила автоматически предлагать клиентам спеццены на химчистку салона и полировку в сырые дни и распределять поток по предварительной записи без очередей у ворот.</p>
+          </div>
+
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-stat-val">+28%</span>
+              <span class="mt-case-stat-label">загрузка боксов в дождливые будни</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-stat-val">3,4 раза</span>
+              <span class="mt-case-stat-label">сокращение очередей перед ясными днями</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-stat-val">42 000+</span>
+              <span class="mt-case-stat-label">просмотров виджета погоды в Telegram-боте</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Частые вопросы" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Вопросы и ответы <span class="mt-overview-hook">об уходе за авто в непогоду</span></h2>
+          <p class="mt-section-sub">Практические советы детейлеров и автоэкспертов о правильной мойке в разные сезоны.</p>
+        </div>
+
+        <div class="mt-before-start-grid">
+          <div class="mt-before-start-highlight">
+            <div class="mt-hero-rating-badge" style="margin-bottom:14px;">
+              <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+              <span>Экспертиза Молния Авто</span>
+            </div>
+            <p>Хотите подключить онлайн-запись на автомойку, шиномонтаж или детейлинг? Молния связывает расписание постов, учет химии и онлайн-запись водителей за 1 день.</p>
+            <a href="/auto" class="mt-link-accent" style="font-weight:600; text-decoration:none; display:inline-block; margin-top:10px;">Подробнее о CRM для автобизнеса →</a>
+          </div>
+
+          <div class="mt-before-start-questions">
+            <details><summary>Как рассчитывается «Индекс мойки авто» и откуда берутся погодные данные?</summary><p>Алгоритм анализирует точный почасовой прогноз метеорологических моделей Open-Meteo и радаров осадков. Оценивается не только вероятность дождя или снега, но и суммарный объем осадков в миллиметрах, прогноз на следующие 48 часов, влажность воздуха, скорость ветра и переход температуры через 0°C. На основе этих факторов вычисляется процент чистоты кузова от 0 до 100% и формируется однозначная рекомендация для водителя.</p></details>
+            <details><summary>Что такое переход температуры через 0°C и почему это главный враг чистоты кузова?</summary><p>Переход температуры через нулевую отметку (например, ночью -3°C, а днем +2°C) — самый грязный период для автомобилей в российских городах. На дорогах образуется соляная каша из талого снега, песка и противогололедных реагентов. Взвесь из-под колес попутных и встречных машин моментально покрывает кузов жирной коркой, которую невозможно сбить холодной водой без агрессивного щелочного шампуня.</p></details>
+            <details><summary>Стоит ли мыть автомобиль зимой в стабильный мороз (-10°C … -20°C)?</summary><p>В стабильный сухой мороз дороги сухие, и кузов сохраняет чистоту значительно дольше, чем в оттепель. Мыть автомобиль зимой можно и нужно (чтобы смыть въевшиеся реагенты), но с обязательной процедурой: тщательная продувка сжатым воздухом дверных замков, зеркал, ручек, лючка бензобака и уплотнителей, а также смазка силиконом. Без качественной сушки замки и резиновые уплотнители могут примерзнуть.</p></details>
+            <details><summary>Защищают ли жидкий воск, кварцевое покрытие или антидождь перед сырой погодой?</summary><p>Да. Твердый воск, кварцевый состав (ceramic/quartz) и качественный гидрофобный антидождь на стеклах создают высокий угол смачивания: грязевая взвесь и капли воды скатываются под действием набегающего потока воздуха, не удерживаясь на лаке. Автомобиль всё равно запылится, но смыть этот слой на следующей экспресс-мойке удастся за 3 минуты без трения губкой.</p></details>
+            <details><summary>Чем отличается техническая мойка от экспресс-мойки и комплексной мойки?</summary><p>Техническая мойка — это бесконтактный сбив крупной дорожной грязи и песка с кузова и арок струей высокого давления без нанесения пены и сушки (5–7 минут). Экспресс-мойка включает нанесение активной пены, смыв и экспресс-сушку кузова. Комплекс включает кузов, резиновые коврики, пороги, влажную уборку салона и пылесос. При индексе мойки ниже 40% рекомендуется ограничиться именно быстрой технической мойкой.</p></details>
+            <details><summary>Зачем промывать днище и колесные арки автомобиля после окончания зимы?</summary><p>За 4–5 месяцев зимней эксплуатации в скрытых полостях, на рычагах подвески и тормозных трубках накапливаются десятки килограммов песка, пропитанного хлоридами и реагентами. Весной при потеплении химическая активность солей резко возрастает, запуская ускоренную коррозию. Промывка днища на подъемнике весной удаляет эти очаги до наступления жары.</p></details>
+            <details><summary>Как автомойкам и детейлинг-центрам использовать этот инструмент и платформу Молния?</summary><p>Для автомоек погодные колебания — главная причина хаоса: гигантские очереди в ясные дни и резкие простои во время дождей. Платформа Молния дает автомойкам круглосуточную онлайн-запись в конкретные боксы, автоматические скидки на непопулярные дождливые часы, Telegram-уведомления постоянным клиентам о наступлении идеальной погоды и полный учет расходных материалов и зарплаты мойщиков.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Управляйте автомойкой и детейлингом <span class="mt-hero-accent">с платформой Молния</span></h2>
+          <p class="mt-lead-sub">Оставьте контакты — покажем, как автоматизировать онлайн-запись в боксы 24/7, сгладить сезонные и погодные спады и удерживать автовладельцев в единой базе.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="carwash_weather">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Инструменты</h3>
+              <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
+              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
+              <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
+              <a class="mt-footer-link" href="/carwash-weather">Индекс мойки авто</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie banner -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-label="Уведомление об использовании cookie">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+    </div>
+
+    <!-- sticky mobile telegram CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261023-weather"></script>
+</body>
+</html>

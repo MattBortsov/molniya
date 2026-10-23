@@ -445,5 +445,90 @@ class LeadDatabaseMigrationTests(unittest.TestCase):
             self.assertEqual(source, ("home", "Главная — бесплатный доступ"))
 
 
+class WeatherEndpointTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.server = ThreadingHTTPServer(("127.0.0.1", 0), MolniyaApiHandler)
+        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+        self.thread.start()
+
+    def tearDown(self) -> None:
+        self.server.shutdown()
+        self.server.server_close()
+        self.thread.join(timeout=2)
+
+    def test_weather_cities_list(self) -> None:
+        connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=2)
+        connection.request("GET", "/api/weather/cities")
+        response = connection.getresponse()
+        self.assertEqual(response.status, 200)
+        data = json.loads(response.read().decode("utf-8"))
+        connection.close()
+        self.assertIn("cities", data)
+        self.assertGreaterEqual(len(data["cities"]), 20)
+        slugs = [c["slug"] for c in data["cities"]]
+        self.assertIn("msk", slugs)
+        self.assertIn("spb", slugs)
+
+    def test_compute_wash_index_sunny_vs_rainy(self) -> None:
+        from server import compute_wash_index
+
+        sunny_forecast = {
+            "daily": {
+                "time": ["2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28"],
+                "weathercode": [0, 1, 0, 0, 1],
+                "temperature_2m_max": [18.0, 19.0, 17.0, 18.0, 19.0],
+                "temperature_2m_min": [9.0, 10.0, 8.0, 9.0, 10.0],
+                "precipitation_sum": [0.0, 0.0, 0.0, 0.0, 0.0],
+                "precipitation_probability_max": [0, 5, 0, 0, 10],
+                "windspeed_10m_max": [8.0, 10.0, 9.0, 7.0, 8.0],
+            },
+            "current_weather": {"temperature": 18.0, "weathercode": 0},
+        }
+        res_sunny = compute_wash_index(sunny_forecast, "Москва", "msk")
+        self.assertGreaterEqual(res_sunny["score"], 80)
+        self.assertEqual(res_sunny["status"], "perfect")
+        self.assertIn("wash-perfect.webp", res_sunny["image"])
+
+        rainy_forecast = {
+            "daily": {
+                "time": ["2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28"],
+                "weathercode": [65, 81, 63, 61, 80],
+                "temperature_2m_max": [11.0, 9.0, 8.0, 10.0, 11.0],
+                "temperature_2m_min": [6.0, 5.0, 4.0, 5.0, 6.0],
+                "precipitation_sum": [15.0, 20.0, 8.0, 5.0, 3.0],
+                "precipitation_probability_max": [95, 90, 85, 70, 60],
+                "windspeed_10m_max": [25.0, 30.0, 20.0, 15.0, 12.0],
+            },
+            "current_weather": {"temperature": 10.0, "weathercode": 65},
+        }
+        res_rainy = compute_wash_index(rainy_forecast, "Санкт-Петербург", "spb")
+        self.assertLess(res_rainy["score"], 35)
+        self.assertEqual(res_rainy["status"], "disaster")
+        self.assertIn("wash-disaster.webp", res_rainy["image"])
+
+    def test_weather_endpoint_with_mocked_fetch(self) -> None:
+        mock_data = {
+            "city_slug": "msk",
+            "city_name": "Москва",
+            "score": 88,
+            "status": "perfect",
+            "verdict": "Идеально! Мой на все деньги",
+            "tagline": "Впереди сухие чистые дни.",
+            "image": "/assets/img/carwash/wash-perfect.webp",
+            "badge_text": "Зеленый свет",
+            "badge_color": "#2E7D32",
+            "days": [],
+        }
+        with patch("server.fetch_weather_data", return_value=mock_data):
+            connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=2)
+            connection.request("GET", "/api/weather?city=msk")
+            response = connection.getresponse()
+            self.assertEqual(response.status, 200)
+            data = json.loads(response.read().decode("utf-8"))
+            connection.close()
+            self.assertEqual(data["score"], 88)
+            self.assertEqual(data["status"], "perfect")
+
+
 if __name__ == "__main__":
     unittest.main()

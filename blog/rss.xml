@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:29:15 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 17:12:51 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Индекс мойки авто — прогноз погоды и чистоты кузова</title>
+      <link>https://molniya-tech.ru/carwash-weather</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/carwash-weather</guid>
+      <pubDate>Fri, 23 Oct 2026 21:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Интерактивный расчет индекса чистоты автомобиля на 5 дней по данным Open-Meteo: оценка осадков, дорожной слякоти, реагентов и вердикт, стоит ли мыть машину сегодня.]]></description>
+    </item>
     <item>
       <title>Калькулятор маржинальности и юнит-экономики сервисного бизнеса</title>
       <link>https://molniya-tech.ru/margin</link>

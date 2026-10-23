@@ -1759,6 +1759,261 @@ function initToolRating() {
   }
 }
 
+function initCarwashWeather() {
+  var app = document.getElementById('mt-weather-app');
+  if (!app) return;
+
+  var chips = app.querySelectorAll('[data-weather-city]');
+  var select = document.getElementById('mt-weather-city-select');
+  var geoBtn = document.getElementById('mt-weather-geo-btn');
+
+  var scoreEl = document.getElementById('mt-weather-score');
+  var scoreBadge = document.getElementById('mt-weather-score-badge');
+  var verdictEl = document.getElementById('mt-weather-verdict');
+  var taglineEl = document.getElementById('mt-weather-tagline');
+  var adviceEl = document.getElementById('mt-weather-advice');
+  var roadEl = document.getElementById('mt-weather-road');
+  var precipEl = document.getElementById('mt-weather-precip');
+  var tempEl = document.getElementById('mt-weather-temp');
+  var heroImg = document.getElementById('mt-weather-img');
+  var statusBadge = document.getElementById('mt-weather-badge');
+  var daysGrid = document.getElementById('mt-weather-days-grid');
+
+  var shareTg = document.getElementById('mt-weather-share-tg');
+  var shareWa = document.getElementById('mt-weather-share-wa');
+  var shareVk = document.getElementById('mt-weather-share-vk');
+  var copyBtn = document.getElementById('mt-weather-copy-btn');
+
+  var currentCity = 'msk';
+  var currentData = null;
+
+  var urlParams = new URLSearchParams(window.location.search);
+  var cityParam = urlParams.get('city');
+  if (cityParam) {
+    currentCity = cityParam.toLowerCase();
+  }
+
+  function getWeatherEmoji(icon) {
+    switch (icon) {
+      case 'sun': return '☀️';
+      case 'sun-cloud': return '🌤️';
+      case 'cloud-sun': return '⛅';
+      case 'cloud': return '☁️';
+      case 'fog': return '🌫️';
+      case 'drizzle': return '🌦️';
+      case 'rain': return '🌧️';
+      case 'heavy-rain': return '⛈️';
+      case 'snow': return '🌨️';
+      case 'heavy-snow': return '❄️';
+      case 'thunder': return '⚡';
+      default: return '🌤️';
+    }
+  }
+
+  function renderData(data) {
+    currentData = data;
+    if (scoreEl) scoreEl.textContent = data.score + '%';
+    if (verdictEl) verdictEl.textContent = data.verdict;
+    if (taglineEl) taglineEl.textContent = data.tagline;
+    if (adviceEl) adviceEl.textContent = data.advice;
+    if (roadEl) roadEl.textContent = data.road_condition;
+    if (precipEl) precipEl.textContent = data.precip_prob_today + '% (' + data.precip_risk + ')';
+    if (tempEl) {
+      var minSign = data.temp_min > 0 ? '+' : '';
+      var maxSign = data.temp_max > 0 ? '+' : '';
+      tempEl.textContent = minSign + data.temp_min + '° … ' + maxSign + data.temp_max + '°C';
+    }
+
+    if (scoreBadge) {
+      scoreBadge.style.borderColor = data.badge_color || 'var(--mt-accent)';
+    }
+
+    if (statusBadge) {
+      statusBadge.textContent = data.badge_text || 'Прогноз';
+      statusBadge.style.background = data.badge_color || '#2E7D32';
+    }
+
+    if (heroImg && data.image) {
+      heroImg.style.opacity = '0.5';
+      var tempImg = new Image();
+      tempImg.onload = function() {
+        heroImg.src = data.image;
+        heroImg.style.opacity = '1';
+      };
+      tempImg.src = data.image;
+    }
+
+    if (daysGrid && Array.isArray(data.days)) {
+      daysGrid.innerHTML = '';
+      data.days.forEach(function(day, idx) {
+        var card = document.createElement('div');
+        card.className = 'mt-weather-day-card' + (idx === 0 ? ' is-today' : '');
+
+        var emoji = getWeatherEmoji(day.weather_icon);
+        var tHi = (day.temp_max > 0 ? '+' : '') + day.temp_max + '°';
+        var tLo = (day.temp_min > 0 ? '+' : '') + day.temp_min + '°';
+
+        var badgeColor = '#C62828';
+        var badgeText = 'Слякоть';
+        if (day.day_score >= 80) {
+          badgeColor = '#2E7D32';
+          badgeText = 'Чисто';
+        } else if (day.day_score >= 60) {
+          badgeColor = '#1565C0';
+          badgeText = 'Хорошо';
+        } else if (day.day_score >= 35) {
+          badgeColor = '#E65100';
+          badgeText = 'Риск 50%';
+        }
+
+        card.innerHTML =
+          '<div class="mt-weather-day-name">' + day.day_name + '</div>' +
+          '<div class="mt-weather-day-date">' + day.date_label + '</div>' +
+          '<div class="mt-weather-day-icon">' + emoji + '</div>' +
+          '<div class="mt-weather-day-desc">' + day.weather_desc + '</div>' +
+          '<div class="mt-weather-day-temps">' + tHi + '<span class="mt-temp-lo">' + tLo + '</span></div>' +
+          '<div class="mt-weather-day-wash-badge" style="color:' + badgeColor + '; background:' + (badgeColor + '18') + '">' +
+            day.day_score + '% · ' + badgeText +
+          '</div>';
+
+        daysGrid.appendChild(card);
+      });
+    }
+
+    var pageUrl = 'https://molniya-tech.ru/carwash-weather' + (data.city_slug !== 'custom' ? '?city=' + data.city_slug : '');
+    var shareMsg = data.verdict + ' — Индекс чистоты кузова ' + data.score + '% в г. ' + data.city_name + '!\n' +
+      data.tagline + '\n\n' +
+      'Смотреть прогноз дорожной грязи: ' + pageUrl;
+
+    if (shareTg) {
+      shareTg.href = 'https://t.me/share/url?url=' + encodeURIComponent(pageUrl) + '&text=' + encodeURIComponent(data.verdict + ' — Индекс чистоты ' + data.score + '% (' + data.city_name + ')! ' + data.tagline);
+    }
+    if (shareWa) {
+      shareWa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(shareMsg);
+    }
+    if (shareVk) {
+      shareVk.href = 'https://vk.com/share.php?url=' + encodeURIComponent(pageUrl) + '&title=' + encodeURIComponent(data.verdict + ' — Индекс чистоты кузова');
+    }
+  }
+
+  function fetchWeather(citySlug, lat, lon, customName) {
+    var url = '/api/weather?';
+    if (lat !== undefined && lon !== undefined) {
+      url += 'lat=' + encodeURIComponent(lat) + '&lon=' + encodeURIComponent(lon) + (customName ? '&name=' + encodeURIComponent(customName) : '');
+    } else {
+      url += 'city=' + encodeURIComponent(citySlug);
+    }
+
+    fetch(url)
+      .then(function(res) {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(function(data) {
+        renderData(data);
+      })
+      .catch(function(err) {
+        console.error('Weather load error:', err);
+      });
+  }
+
+  function selectCity(citySlug) {
+    currentCity = citySlug;
+    chips.forEach(function(btn) {
+      if (btn.getAttribute('data-weather-city') === citySlug) {
+        btn.classList.add('is-active');
+      } else {
+        btn.classList.remove('is-active');
+      }
+    });
+    if (select) {
+      select.value = citySlug;
+    }
+    if (window.history && window.history.replaceState) {
+      var newUrl = window.location.pathname + (citySlug !== 'msk' ? '?city=' + citySlug : '');
+      window.history.replaceState(null, '', newUrl);
+    }
+    fetchWeather(citySlug);
+  }
+
+  chips.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var slug = btn.getAttribute('data-weather-city');
+      if (slug) selectCity(slug);
+    });
+  });
+
+  if (select) {
+    select.addEventListener('change', function() {
+      selectCity(select.value);
+    });
+  }
+
+  if (geoBtn) {
+    geoBtn.addEventListener('click', function() {
+      if (!navigator.geolocation) {
+        alert('Геолокация не поддерживается вашим браузером');
+        return;
+      }
+      var origText = geoBtn.innerHTML;
+      geoBtn.innerHTML = '<span>Определяем...</span>';
+      geoBtn.disabled = true;
+
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          geoBtn.innerHTML = origText;
+          geoBtn.disabled = false;
+          chips.forEach(function(b) { b.classList.remove('is-active'); });
+          fetchWeather(null, pos.coords.latitude, pos.coords.longitude, 'Моя локация');
+        },
+        function(err) {
+          geoBtn.innerHTML = origText;
+          geoBtn.disabled = false;
+          alert('Не удалось определить координаты. Выберите город из списка.');
+        },
+        { timeout: 8000 }
+      );
+    });
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!currentData) return;
+
+      var pageUrl = 'https://molniya-tech.ru/carwash-weather' + (currentData.city_slug !== 'custom' ? '?city=' + currentData.city_slug : '');
+      var copyText = [
+        '🧼 ' + currentData.verdict + ' — Индекс чистоты кузова: ' + currentData.score + '%',
+        '📍 Город: ' + currentData.city_name,
+        '💡 ' + currentData.tagline,
+        '🌡️ Температура: ' + (currentData.temp_min > 0 ? '+' : '') + currentData.temp_min + '° … ' + (currentData.temp_max > 0 ? '+' : '') + currentData.temp_max + '°C',
+        '🛣️ Состояние дорог: ' + currentData.road_condition,
+        '⏱️ Стойкость чистоты: ' + currentData.days_clean_estimate,
+        '👉 Проверить свой город: ' + pageUrl
+      ].join('\n');
+
+      copyTextToClipboard(copyText).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        var orig = copyBtn.getAttribute('data-orig');
+        copyBtn.textContent = '✅ Карточка скопирована!';
+        copyBtn.classList.add('copied');
+
+        clearTimeout(copyBtn._copyTimeout);
+        copyBtn._copyTimeout = setTimeout(function() {
+          copyBtn.textContent = orig;
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy card: ', err);
+      });
+    });
+  }
+
+  selectCity(currentCity);
+}
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -1779,6 +2034,7 @@ function initApp() {
   initCalendarTool();
   initInnChecker();
   initMarginCalculator();
+  initCarwashWeather();
   initToolRating();
 }
 

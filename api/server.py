@@ -167,6 +167,269 @@ def fetch_counterparty_data(query: str) -> dict[str, Any]:
 
     return result
 
+
+RUSSIAN_CITIES: list[dict[str, Any]] = [
+    {"slug": "msk", "name": "Москва", "lat": 55.7558, "lon": 37.6176, "region": "Центральный ФО"},
+    {"slug": "spb", "name": "Санкт-Петербург", "lat": 59.9343, "lon": 30.3351, "region": "Северо-Западный ФО"},
+    {"slug": "kazan", "name": "Казань", "lat": 55.7961, "lon": 49.1064, "region": "Татарстан"},
+    {"slug": "ekb", "name": "Екатеринбург", "lat": 56.8389, "lon": 60.6057, "region": "Урал"},
+    {"slug": "nsk", "name": "Новосибирск", "lat": 55.0084, "lon": 82.9357, "region": "Сибирь"},
+    {"slug": "nn", "name": "Нижний Новгород", "lat": 56.3269, "lon": 44.0059, "region": "Приволжский ФО"},
+    {"slug": "krr", "name": "Краснодар", "lat": 45.0355, "lon": 38.9754, "region": "Южный ФО"},
+    {"slug": "samara", "name": "Самара", "lat": 53.1959, "lon": 50.1002, "region": "Поволжье"},
+    {"slug": "ufa", "name": "Уфа", "lat": 54.7388, "lon": 55.9721, "region": "Башкортостан"},
+    {"slug": "rostov", "name": "Ростов-на-Дону", "lat": 47.2225, "lon": 39.7187, "region": "Южный ФО"},
+    {"slug": "chelyabinsk", "name": "Челябинск", "lat": 55.1644, "lon": 61.4368, "region": "Южный Урал"},
+    {"slug": "krasnoyarsk", "name": "Красноярск", "lat": 56.0153, "lon": 92.8932, "region": "Восточная Сибирь"},
+    {"slug": "voronezh", "name": "Воронеж", "lat": 51.6720, "lon": 39.1843, "region": "Черноземье"},
+    {"slug": "perm", "name": "Пермь", "lat": 58.0105, "lon": 56.2502, "region": "Предуралье"},
+    {"slug": "volgograd", "name": "Волгоград", "lat": 48.7080, "lon": 44.5133, "region": "Нижнее Поволжье"},
+    {"slug": "saratov", "name": "Саратов", "lat": 51.5336, "lon": 46.0343, "region": "Поволжье"},
+    {"slug": "tyumen", "name": "Тюмень", "lat": 57.1530, "lon": 65.5343, "region": "Западная Сибирь"},
+    {"slug": "tula", "name": "Тула", "lat": 54.1931, "lon": 37.6173, "region": "Центральный ФО"},
+    {"slug": "sochi", "name": "Сочи", "lat": 43.5855, "lon": 39.7231, "region": "Черноморское побережье"},
+    {"slug": "vladivostok", "name": "Владивосток", "lat": 43.1198, "lon": 131.8869, "region": "Дальний Восток"},
+]
+
+CITIES_BY_SLUG: dict[str, dict[str, Any]] = {c["slug"]: c for c in RUSSIAN_CITIES}
+
+WMO_DESCRIPTIONS: dict[int, tuple[str, str]] = {
+    0: ("Ясно", "sun"),
+    1: ("Преимущественно ясно", "sun-cloud"),
+    2: ("Переменная облачность", "cloud-sun"),
+    3: ("Пасмурно", "cloud"),
+    45: ("Туман", "fog"),
+    48: ("Изморозь", "fog"),
+    51: ("Небольшая морось", "drizzle"),
+    53: ("Морось", "drizzle"),
+    55: ("Плотная морось", "drizzle"),
+    56: ("Ледяная морось", "drizzle"),
+    57: ("Сильная ледяная морось", "drizzle"),
+    61: ("Небольшой дождь", "rain"),
+    63: ("Умеренный дождь", "rain"),
+    65: ("Сильный дождь", "heavy-rain"),
+    66: ("Ледяной дождь", "heavy-rain"),
+    67: ("Сильный ледяной дождь", "heavy-rain"),
+    71: ("Небольшой снегопад", "snow"),
+    73: ("Снегопад", "snow"),
+    75: ("Сильный снегопад", "heavy-snow"),
+    77: ("Снежные зерна", "snow"),
+    80: ("Кратковременный дождь", "rain"),
+    81: ("Ливень", "heavy-rain"),
+    82: ("Шквальный ливень", "heavy-rain"),
+    85: ("Снегопад", "snow"),
+    86: ("Сильный снегопад", "heavy-snow"),
+    95: ("Гроза", "thunder"),
+    96: ("Гроза с градом", "thunder"),
+    99: ("Сильная гроза с градом", "thunder"),
+}
+
+_weather_cache: dict[str, tuple[float, dict[str, Any]]] = {}
+_weather_cache_lock = threading.Lock()
+WEATHER_CACHE_TTL = 900  # 15 minutes
+
+
+def compute_wash_index(forecast: dict[str, Any], city_name: str, city_slug: str) -> dict[str, Any]:
+    daily = forecast.get("daily", {})
+    times = daily.get("time", [])
+    if not times:
+        raise ValueError("Нет данных прогноза")
+
+    probs = daily.get("precipitation_probability_max", [0] * len(times))
+    sums = daily.get("precipitation_sum", [0.0] * len(times))
+    codes = daily.get("weathercode", [0] * len(times))
+    t_max = daily.get("temperature_2m_max", [15.0] * len(times))
+    t_min = daily.get("temperature_2m_min", [5.0] * len(times))
+    current_weather = forecast.get("current_weather", {})
+    curr_temp = round(current_weather.get("temperature", t_max[0] if t_max else 15.0))
+
+    p0 = probs[0] if len(probs) > 0 else 0
+    s0 = sums[0] if len(sums) > 0 else 0.0
+    p1 = probs[1] if len(probs) > 1 else p0
+    s1 = sums[1] if len(sums) > 1 else s0
+    p2 = probs[2] if len(probs) > 2 else p1
+    s2 = sums[2] if len(sums) > 2 else s1
+
+    precip_penalty = (p0 * 0.45) + (p1 * 0.35) + (p2 * 0.15)
+    precip_penalty += min(s0 * 6.0, 25.0) + min(s1 * 4.0, 15.0) + min(s2 * 2.0, 10.0)
+
+    temp_penalty = 0.0
+    is_slush = False
+    if (t_min[0] < 0 and t_max[0] > 0) or (len(t_min) > 1 and t_min[1] < 0 and t_max[1] > 0):
+        temp_penalty += 14.0
+        is_slush = True
+
+    if t_max[0] < -15:
+        temp_penalty += 6.0
+
+    raw_score = 100.0 - precip_penalty - temp_penalty
+    score = int(round(max(5.0, min(100.0, raw_score))))
+
+    if score >= 80:
+        status = "perfect"
+        verdict = "Идеально! Мой на все деньги"
+        tagline = "Впереди сухие чистые дни. Машина будет сиять и радовать глаз."
+        image = "/assets/img/carwash/wash-perfect.webp"
+        badge_text = "Зеленый свет"
+        badge_color = "#2E7D32"
+        badge_bg = "rgba(46, 125, 50, 0.12)"
+        days_clean_estimate = "4–6 дней чистоты"
+        advice = "Отличное время для комплексной мойки, воска или детейлинга — результат продержится долго!"
+    elif score >= 60:
+        status = "good"
+        verdict = "Смело на мойку"
+        tagline = "Погода стабильная, легкая пыль не помеха. Отличный момент сбить дорожный налет."
+        image = "/assets/img/carwash/wash-good.webp"
+        badge_text = "Благоприятно"
+        badge_color = "#1565C0"
+        badge_bg = "rgba(21, 101, 192, 0.12)"
+        days_clean_estimate = "2–3 дня чистоты"
+        advice = "Кузов быстро сохнет, риск осадков низкий. Экспресс или кузов + коврики окупятся с лихвой."
+    elif score >= 35:
+        status = "risky"
+        verdict = "Рискованно: спонсор чистых луж"
+        tagline = "Высокая влажность или скорый дождь/снег. Чистым авто пробудет считанные часы."
+        image = "/assets/img/carwash/wash-risky.webp"
+        badge_text = "50 / 50"
+        badge_color = "#E65100"
+        badge_bg = "rgba(230, 81, 0, 0.12)"
+        days_clean_estimate = "Меньше 24 часов"
+        advice = "Если авто сильно загрязнено — сделайте быструю техническую сбивку грязи за 150 ₽. Дорогие полировки отложите."
+    else:
+        status = "disaster"
+        verdict = "Остановись! Танки грязи не боятся"
+        tagline = "Ливни, снегопад или слякоть с реагентами. Деньги на ветер — лучше переждать непогоду."
+        image = "/assets/img/carwash/wash-disaster.webp"
+        badge_text = "Не рекомендуем"
+        badge_color = "#C62828"
+        badge_bg = "rgba(198, 40, 40, 0.12)"
+        days_clean_estimate = "До первой лужи (20 минут)"
+        advice = "Протрите только стекла, зеркала, оптику и номерные знаки для безопасности. Полноценную мойку отложите до ясных дней."
+
+    if is_slush:
+        road_condition = "Слякоть и дорожные реагенты"
+    elif s0 > 3.0 or p0 > 70:
+        road_condition = "Мокрый асфальт, лужи и взвесь"
+    elif s0 > 0.5 or p0 > 40:
+        road_condition = "Влажное дорожное полотно"
+    else:
+        road_condition = "Сухой чистый асфальт"
+
+    if p0 < 20 and s0 < 0.2:
+        precip_risk = "Минимальный"
+    elif p0 < 50 and s0 < 2.0:
+        precip_risk = "Умеренный"
+    elif p0 < 75:
+        precip_risk = "Высокий"
+    else:
+        precip_risk = "Штормовой / Непрерывный"
+
+    weekdays_ru = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+    days_forecast = []
+    from datetime import date
+    for i in range(min(5, len(times))):
+        d_str = times[i]
+        d_parts = d_str.split("-")
+        try:
+            d_obj = date(int(d_parts[0]), int(d_parts[1]), int(d_parts[2]))
+            w_idx = d_obj.weekday()
+            day_name = "Сегодня" if i == 0 else ("Завтра" if i == 1 else weekdays_ru[w_idx])
+            date_label = f"{d_obj.day:02d}.{d_obj.month:02d}"
+        except Exception:
+            day_name = f"День {i+1}"
+            date_label = d_str
+
+        code = codes[i] if i < len(codes) else 0
+        desc, icon = WMO_DESCRIPTIONS.get(code, ("Облачно", "cloud"))
+        prob = probs[i] if i < len(probs) else 0
+        p_sum = sums[i] if i < len(sums) else 0.0
+        t_hi = round(t_max[i]) if i < len(t_max) else 0
+        t_lo = round(t_min[i]) if i < len(t_min) else 0
+
+        day_raw = 100.0 - (prob * 0.7) - min(p_sum * 10.0, 30.0)
+        if t_lo < 0 and t_hi > 0:
+            day_raw -= 15.0
+        day_score = int(round(max(5.0, min(100.0, day_raw))))
+
+        days_forecast.append({
+            "date": d_str,
+            "date_label": date_label,
+            "day_name": day_name,
+            "temp_max": t_hi,
+            "temp_min": t_lo,
+            "precip_prob": prob,
+            "precip_sum": round(p_sum, 1),
+            "weather_code": code,
+            "weather_desc": desc,
+            "weather_icon": icon,
+            "day_score": day_score,
+        })
+
+    return {
+        "city_slug": city_slug,
+        "city_name": city_name,
+        "score": score,
+        "status": status,
+        "verdict": verdict,
+        "tagline": tagline,
+        "image": image,
+        "badge_text": badge_text,
+        "badge_color": badge_color,
+        "badge_bg": badge_bg,
+        "days_clean_estimate": days_clean_estimate,
+        "advice": advice,
+        "road_condition": road_condition,
+        "precip_risk": precip_risk,
+        "current_temp": curr_temp,
+        "temp_min": round(t_min[0]) if t_min else curr_temp,
+        "temp_max": round(t_max[0]) if t_max else curr_temp,
+        "precip_prob_today": p0,
+        "precip_sum_today": round(s0, 1),
+        "days": days_forecast,
+        "updated_at": int(time.time()),
+    }
+
+
+def fetch_weather_data(lat: float, lon: float, city_name: str, city_slug: str) -> dict[str, Any]:
+    cache_key = f"{round(lat, 2)}:{round(lon, 2)}"
+    now = time.time()
+    with _weather_cache_lock:
+        if cache_key in _weather_cache:
+            ts, cached_result = _weather_cache[cache_key]
+            if now - ts < WEATHER_CACHE_TTL:
+                res = dict(cached_result)
+                res["city_name"] = city_name
+                res["city_slug"] = city_slug
+                return res
+
+    url = (
+        f"https://api.open-meteo.com/v1/forecast?"
+        f"latitude={lat:.4f}&longitude={lon:.4f}&"
+        f"daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,windspeed_10m_max&"
+        f"current_weather=true&timezone=auto"
+    )
+
+    try:
+        resp = requests.get(url, timeout=5, headers={"User-Agent": "MolniyaCarwashWeather/1.0"})
+        if resp.status_code != 200:
+            raise RuntimeError(f"Open-Meteo returned status {resp.status_code}")
+        raw_json = resp.json()
+    except Exception as exc:
+        with _weather_cache_lock:
+            if cache_key in _weather_cache:
+                _, cached_result = _weather_cache[cache_key]
+                res = dict(cached_result)
+                res["city_name"] = city_name
+                res["city_slug"] = city_slug
+                return res
+        raise RuntimeError(f"Не удалось получить прогноз погоды: {exc}")
+
+    result = compute_wash_index(raw_json, city_name, city_slug)
+    with _weather_cache_lock:
+        _weather_cache[cache_key] = (now, result)
+    return result
+
+
 _requests_by_ip: dict[str, deque[float]] = defaultdict(deque)
 _rate_lock = threading.Lock()
 
@@ -395,6 +658,12 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
         if path == "/api/inn/pdf":
             self._handle_inn_pdf()
             return
+        if path == "/api/weather":
+            self._handle_weather()
+            return
+        if path == "/api/weather/cities":
+            self._handle_weather_cities()
+            return
         if path in {"/blog", "/blog/", "/blog/index.html"}:
             self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "index.html").read_bytes(), "text/html; charset=utf-8")
             return
@@ -608,6 +877,40 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             pass
 
         self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Не удалось скачать выписку из ФНС"})
+
+    def _handle_weather_cities(self) -> None:
+        self._send_json(HTTPStatus.OK, {"cities": RUSSIAN_CITIES})
+
+    def _handle_weather(self) -> None:
+        from urllib.parse import parse_qs
+        query = parse_qs(urlsplit(self.path).query)
+        city_param = query.get("city", ["msk"])[0].strip().lower()
+        lat_param = query.get("lat", [None])[0]
+        lon_param = query.get("lon", [None])[0]
+
+        if lat_param and lon_param:
+            try:
+                lat = float(lat_param)
+                lon = float(lon_param)
+                if not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0):
+                    raise ValueError
+                city_name = query.get("name", ["Моя геопозиция"])[0].strip() or "Моя геопозиция"
+                city_slug = "custom"
+            except (ValueError, TypeError):
+                self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Некорректные координаты"})
+                return
+        else:
+            city_entry = CITIES_BY_SLUG.get(city_param, CITIES_BY_SLUG["msk"])
+            lat = float(city_entry["lat"])
+            lon = float(city_entry["lon"])
+            city_name = city_entry["name"]
+            city_slug = city_entry["slug"]
+
+        try:
+            data = fetch_weather_data(lat, lon, city_name, city_slug)
+            self._send_json(HTTPStatus.OK, data)
+        except Exception as exc:
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": str(exc)})
 
     def _handle_seosmith(self) -> None:
         secret = os.getenv("SEOSMITH_WEBHOOK_SECRET", "")
