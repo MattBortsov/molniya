@@ -216,14 +216,21 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
             <li><a class="mt-nav-link" href="/blog"{blog_active}>Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="{cta_href}"{cta_attrs}>
-            {cta_nav_icon}
-            {cta_label}
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="{cta_href}"{cta_attrs}>
+              {cta_nav_icon}
+              {cta_label}
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -241,6 +248,10 @@ def render_nav_html(active_item: str = "", asset_prefix: str = "", beta_cta: boo
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="{cta_href}"{cta_attrs}>
             {cta_mobile_icon}
             {cta_mobile_label}
@@ -728,7 +739,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1256,7 +1267,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1750,7 +1761,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2318,7 +2329,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2900,7 +2911,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3422,7 +3433,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3977,7 +3988,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4500,7 +4511,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5025,7 +5036,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5435,7 +5446,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5645,7 +5656,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6234,7 +6245,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6818,7 +6829,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7484,7 +7495,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8006,7 +8017,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8530,7 +8541,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9063,7 +9074,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9576,7 +9587,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10158,7 +10169,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11462,7 +11473,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11741,7 +11752,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11870,7 +11881,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12121,7 +12132,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12552,7 +12563,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13058,7 +13069,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13547,7 +13558,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14023,7 +14034,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14499,7 +14510,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14975,7 +14986,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15451,7 +15462,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15927,7 +15938,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16403,7 +16414,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16879,7 +16890,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17355,7 +17366,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 {json_ld_str}
   </script>

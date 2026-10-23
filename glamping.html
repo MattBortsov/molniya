@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование глэмпингов и беседок", "item": "https://molniya-tech.ru/glamping"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-бронирование и система учета для глэмпингов и беседок", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/glamping", "description": "Программа для глэмпингов, баз отдыха и гриль-беседок: онлайн-бронирование домиков и шатров 24/7, залоги за чистоту, допуслуги и шахматка без накладок.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка шахматки глэмпинг-парка"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как гости бронируют домики, шатры и беседки через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональный модуль онлайн-бронирования для сайта, соцсетей (VK, Telegram) и карт (Яндекс Карты, 2ГИС). В виджете отображаются все категории объектов: сафари-тенты, геокупола, A-frame домики с террасой, а также открытые и закрытые гриль-беседки. Гости выбирают даты заезда или часы аренды и бронируют отдых за 1 минуту."}}, {"@type": "Question", "name": "Как система совмещает посуточную аренду жилья и почасовую бронь беседок?", "acceptedAnswer": {"@type": "Answer", "text": "Программа поддерживает гибридный график. Для жилых шатров и домиков действует посуточная тарификация со стандартным временем заезда (14:00) и выезда (12:00). Для гриль-беседок и мангальных зон настраивается почасовая сетка с минимальным порогом аренды (например, от 3–4 часов) и шагом продления."}}, {"@type": "Question", "name": "Как работает учет обеспечительного залога за чистоту и имущество?", "acceptedAnswer": {"@type": "Answer", "text": "В форме бронирования можно включить обязательный обеспечительный депозит (залог, например 5 000 ₽). Программа фиксирует внесение залога, а при выезде администратор или горничная проверяет сохранность имущества по цифровому чек-листу и возвращает депозит гостю в один клик."}}, {"@type": "Question", "name": "Как гости добавляют к заказу растопку банного чана фурако, дрова и инвентарь?", "acceptedAnswer": {"@type": "Answer", "text": "При оформлении брони клиент может выбрать дополнительные платные опции: растопка горячего кедрового чана с травами, аренда мангала и казана, охапки березовых дров, уголь, решетки, сапборды или велосипеды. Сумма допуслуг автоматически прибавляется к общему чеку."}}, {"@type": "Question", "name": "Как настраивается буферное время на уборку домиков и дезинфекцию беседок?", "acceptedAnswer": {"@type": "Answer", "text": "Система автоматически удерживает техническое окно (2 часа для посуточных домиков с 12:00 до 14:00 и 45–60 минут для беседок). Горничные и клинеры успевают сменить постельное белье, провести влажную уборку, вывезти мусор и подготовить мангал до приезда следующих гостей."}}, {"@type": "Question", "name": "Как система напоминает гостям о заезде и отправляет схему проезда?", "acceptedAnswer": {"@type": "Answer", "text": "Сразу после внесения предоплаты гость получает ваучер бронирования, а за 24 и 2 часа до заезда — сообщение в Telegram или по SMS с геолокацией глэмпинга, схемой проезда по грунтовым дорогам, памяткой по теплым вещам и кодом от въездных ворот."}}, {"@type": "Question", "name": "Как бесплатно перенести базу броней и домиков из Bnovo, Travelline или Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно настроит схему вашего глэмпинг-парка, прайс-лист в будни и выходные, правила залогов и перенесет текущую шахматку броней из таблиц или PMS. Перенос занимает 15 минут без риска потери броней."}}]}]
   </script>
@@ -121,14 +121,21 @@
             <li><a class="mt-nav-link" href="/blog">Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -208,6 +215,10 @@
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
             Подписаться в мессенджере

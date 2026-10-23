@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-запись на VR-арену", "item": "https://molniya-tech.ru/vr-arena"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-запись и CRM для VR-арен и клубов", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/vr-arena", "description": "Программа для VR-арен и клубов виртуальной реальности: онлайн-запись 24/7, свободное перемещение Free-Roam, учёт шлемов, буфер на дезинфекцию и пакеты праздников.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка расписания сеансов VR-арены"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как игроки и компании бронируют сеансы на VR-арене через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную страницу записи с вашим логотипом, фото локаций, перечнем игровых сценариев (командные шутеры, зомби-выживание, квесты для детей) и описанием доступных зон (Free-Roam арена со свободным перемещением или стационарные боксы). Ссылка размещается на сайте, в Telegram, соцсетях или картах. Гости выбирают дату, формат игры, число участников и бронируют сеанс за 1 минуту."}}, {"@type": "Question", "name": "Учитывает ли программа количество свободных VR-шлемов и контроллеров?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Для каждого слота задаётся строгий лимит оборудования (например, до 8–10 шлемов Oculus Quest 3, Pico 4 или HTC Vive Focus на арене свободного перемещения и до 4 индивидуальных боксов). Система блокирует овербукинг и не допустит записи большего числа игроков, чем у вас заряженных шлемов."}}, {"@type": "Question", "name": "Как настраивается обязательный буфер на дезинфекцию масок и замену аккумуляторов?", "acceptedAnswer": {"@type": "Answer", "text": "Между игровыми сессиями автоматически закладывается технический перерыв (10–15 минут). За это время инструкторы успевают обработать лицевые накладки антисептиком, сменить севшие аккумуляторы на заряженные из док-станции и провести инструктаж по технике безопасности для следующей группы без задержки расписания."}}, {"@type": "Question", "name": "Как работает пакетное бронирование праздников «День рождения под ключ»?", "acceptedAnswer": {"@type": "Answer", "text": "Клиент может забронировать комплексный пакет: например, 60 минут командной игры на арене + 1.5 часа лаунж-зоны для пиццы, торта и турнира в PS5. Система автоматически резервирует игровое поле и комнату отдыха единым заказом, предотвращая пересечения между разными компаниями гостей."}}, {"@type": "Question", "name": "Как настроить доплату за дополнительных игроков сверх базового тарифа?", "acceptedAnswer": {"@type": "Answer", "text": "Вы можете установить базовую стоимость сеанса (например, до 4 человек) и фиксированную цену за каждого следующего участника (например, +1 000 ₽ за 5-го, 6-го и 7-го игрока). При оформлении брони виджет мгновенно пересчитывает сумму чека, выводя точную прозрачную стоимость для команды."}}, {"@type": "Question", "name": "Как система напоминает гостям о сеансе и предотвращает опоздания?", "acceptedAnswer": {"@type": "Answer", "text": "После бронирования капитан получает подтверждение, а за 24 и 2 часа до игры — напоминание в Telegram или по SMS со схемой проезда, правилами сменной обуви (или игры в носках) и рекомендацией прийти за 10 минут до начала для выбора сценария и настройки шлемов."}}, {"@type": "Question", "name": "Как быстро перенести расписание и базу клиентов из другой CRM или Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно переносит ваши игровые зоны, каталог VR-игр, сетку сеансов, прайс-лист праздников и контакты постоянных гостей. Перенос занимает 15 минут и не прерывает прием бронирований на сайте."}}]}]
   </script>
@@ -121,14 +121,21 @@
             <li><a class="mt-nav-link" href="/blog">Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -208,6 +215,10 @@
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
             Подписаться в мессенджере

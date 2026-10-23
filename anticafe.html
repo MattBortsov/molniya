@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-бронирование комнат в антикафе", "item": "https://molniya-tech.ru/anticafe"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-бронирование и система учета для антикафе", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/anticafe", "description": "Программа для антикафе и тайм-клубов: онлайн-бронирование комнат с PS5 24/7, поминутный таймер со стоп-чеком, учёт праздников, буфер на уборку и напоминания.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка бронирования комнат и столов антикафе"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как гости и компании бронируют тематические комнаты в антикафе через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную страницу онлайн-бронирования залов (VIP-комнаты с PlayStation 5 / Xbox, кинозал с проектором для лекций и кинопоказов, комната для Мафии и настольных ролевых игр D&D) или столов в общем зале. Ссылку можно разместить на сайте, в Telegram, группе VK или на картах (Яндекс Карты, 2ГИС). Гости выбирают дату, время, количество человек и сразу видят только свободные окна."}}, {"@type": "Question", "name": "Как работает поминутный учет времени гостей и автоматический стоп-чек?", "acceptedAnswer": {"@type": "Answer", "text": "При входе администратор открывает визит гостя или компании по номеру выданной карты или бейджа. Программа ведет поминутный биллинг по установленному тарифу (например, 3.5 ₽/мин). При достижении порога стоп-чека (например, 800 ₽ за день) начисление минут автоматически останавливается. При расчете на кассе гость платит справедливую сумму без споров и ручных расчетов на калькуляторе."}}, {"@type": "Question", "name": "Как настраивается автоматический буфер между бронями комнат на уборку и проветривание?", "acceptedAnswer": {"@type": "Answer", "text": "Система автоматически закладывает технический перерыв (10–15 минут) после каждого сеанса в комнате. За это время хостес успевает собрать чашки, проветрить помещение, протереть джойстики антисептиком и разложить карточки настольных игр перед приходом следующих гостей."}}, {"@type": "Question", "name": "Можно ли бронировать всё антикафе или отдельный зал под день рождения или корпоратив?", "acceptedAnswer": {"@type": "Answer", "text": "Да. В виджете настраиваются пакетные тарифы аренды локации под ключ: праздник с караоке, турнир по Mortal Kombat / FIFA, настольные ролевые игры или закрытая вечеринка. Вы можете включить обязательную предоплату (например, 30% или 50%) и зафиксировать правила пробкового сбора за свой торт, пиццу и напитки."}}, {"@type": "Question", "name": "Как система ведет учет настольных игр, игровых консолей и оборудования?", "acceptedAnswer": {"@type": "Answer", "text": "В программе можно вести каталог доступных настолок (от простых пати-геймов до сложных стратегий) и игровых манипуляторов. Администратор видит, в какой комнате находятся геймпады PS5, микрофоны для караоке или редкие коробки игр, что исключает потерю компонентов и путаницу между залами."}}, {"@type": "Question", "name": "Как Молния снижает процент неявок и напоминает гостям о бронировании?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисный бот отправляет гостям подтверждение брони сразу после оформления, а за 24 и 2 часа до визита — напоминание в Telegram или по SMS. В сообщении указываются адрес, код домофона, напоминание о сменной обуви или носочках и правила отмены. Неявки на праздники и в VIP-комнаты сокращаются на 80%."}}, {"@type": "Question", "name": "Как быстро перенести расписание залов и базу постоянных гостей из Excel или другой системы?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно настроит список комнат, сетку тарифов (минуты, часы, стоп-чеки), правила буфера и перенесет базу резидентов и историю визитов из таблиц или старой CRM. Перенос выполняется за 15 минут без остановки работы антикафе."}}]}]
   </script>
@@ -121,14 +121,21 @@
             <li><a class="mt-nav-link" href="/blog">Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -208,6 +215,10 @@
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
             Подписаться в мессенджере

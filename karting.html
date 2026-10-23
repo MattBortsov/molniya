@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Аренда пространств", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Онлайн-запись на картинг", "item": "https://molniya-tech.ru/karting"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-запись и CRM для картинг-центров", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/karting", "description": "Программа для картинг-центров и автодромов: онлайн-запись на заезды 24/7, учёт детских и взрослых картов, буфер на пит-лейне, бронь турниров и напоминания.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка расписания заездов картинг-центра"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как пилоты и компании бронируют заезды на картинг через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную страницу онлайн-записи с описанием конфигурации трассы, парка картов (детские, взрослые Honda GX, двухместные Twin-карты) и форматов (прокатные сессии по 10 минут, пакеты заездов, аренда трассы под турнир). Ссылка размещается на сайте, в Telegram, соцсетях или картах. Гости видят только открытые свободные слоты и бронируют заезд за 1 минуту."}}, {"@type": "Question", "name": "Как система распределяет детские и взрослые карты в заездах в целях безопасности?", "acceptedAnswer": {"@type": "Answer", "text": "В расписании можно настроить правила совместимости: запретить одновременный выезд детских картов со взрослыми мощными машинами или выделить отдельные детские сессии. Программа контролирует лимит машин на трассе (например, строго до 8–10 картов) и исключает опасный перегруз трека."}}, {"@type": "Question", "name": "Как настраивается обязательный буфер между заездами на пит-лейне?", "acceptedAnswer": {"@type": "Answer", "text": "Система автоматически закладывает технический перерыв (5–10 минут) между заездами. За это время маршалы и инструкторы успевают провести посадку и высадку пилотов, отрегулировать сиденья и педальные узлы, выдать шлемы и провести инструктаж по технике безопасности и флагам."}}, {"@type": "Question", "name": "Как работает бронирование корпоративных турниров и пакетов «Мини Гран-при»?", "acceptedAnswer": {"@type": "Answer", "text": "Организаторы могут забронировать аренду всей трассы на 1–2 часа с проведением полноценного гоночного турнира: разминка, квалификация на лучшее время круга, финальный заезд с общего старта по светофору и награждение на подиуме. Система блокирует трассу на всё время мероприятия единым заказом."}}, {"@type": "Question", "name": "Можно ли бронировать лаунж-зону или банкетную комнату вместе с заездами?", "acceptedAnswer": {"@type": "Answer", "text": "Да. При оформлении праздника (например, детского дня рождения или корпоратива) клиенты могут добавить аренду лаунж-зоны с видом на трек для пиццы и торта. Программа резервирует комнату отдыха до или после гоночной сессии, защищая от накладок между разными праздничными компаниями."}}, {"@type": "Question", "name": "Как система напоминает гостям о заезде и предотвращает опоздания на инструктаж?", "acceptedAnswer": {"@type": "Answer", "text": "Сразу после бронирования гость получает подтверждение, а за 24 и 2 часа до старта — напоминание в Telegram или по SMS с требованием приехать за 15 минут до заезда для прохождения инструктажа и подбора экипировки (шлем, подшлемник, защита шеи). Опоздания на пит-лейн сокращаются на 85%."}}, {"@type": "Question", "name": "Как быстро перенести расписание и базу пилотов из другой CRM или Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно переносит конфигурацию вашей трассы, парк картов, сетку прокатных заездов, прайс-лист турниров и базу постоянных пилотов с клубными правами. Перенос занимает 15 минут и проходит без прерывания приема броней на сайте."}}]}]
   </script>
@@ -121,14 +121,21 @@
             <li><a class="mt-nav-link" href="/blog">Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -208,6 +215,10 @@
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
             Подписаться в мессенджере

@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <link rel="stylesheet" href="/styles.css?v=20261023-navphone">
   <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Клининг", "item": "https://molniya-tech.ru/cleaning"}, {"@type": "ListItem", "position": 3, "name": "Химчистка мебели и ковров", "item": "https://molniya-tech.ru/furniture-cleaning"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — программа и CRM для выездной химчистки мебели", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/furniture-cleaning", "description": "Программа для химчистки мягкой мебели и ковров: калькулятор посадочных мест диванов 24/7, маршруты выездных мастеров, фото «до/после» и сдельная зарплата.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и калькулятор посадочных мест для химчистки"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как клиенты рассчитывают стоимость и вызывают мастера по химчистке через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете интерактивный виджет-калькулятор для сайта, группы VK, Telegram и карт. Клиент выбирает тип мебели (прямой или угловой диван, кресло, матрас, стулья, ковер), указывает количество посадочных мест, ткань (жаккард, флок, велюр, кожа) и характер загрязнений. Система мгновенно показывает точную цену и предлагает свободные окна в графике мастеров."}}, {"@type": "Question", "name": "Как устроен расчет стоимости от посадочных мест, подушек и спального места?", "acceptedAnswer": {"@type": "Answer", "text": "В калькуляторе настраиваются прозрачные базовые тарифы: стандартное посадочное место (например, 700–900 ₽), угловая секция, раскладное спальное место и диванные подушки. Программа также учитывает дополнительные опции: выведение сложных пятен (урина, кровь, маркеры, кофе), нейтрализация запахов энзимами и экспресс-сушка мебели феном."}}, {"@type": "Question", "name": "Как система составляет маршруты выездных мастеров с экстракторами по районам?", "acceptedAnswer": {"@type": "Answer", "text": "Программа распределяет заявки с учетом геолокации и районов города, автоматически закладывая буферное время (30–45 минут) на дорогу между адресами и погрузку экстракторов (Santoemma, Karcher Puzzi). Это исключает опоздания мастеров и лишний холостой пробег по пробкам."}}, {"@type": "Question", "name": "Как работает фотофиксация состояния обивки «до» и «после» чистки?", "acceptedAnswer": {"@type": "Answer", "text": "Мастер прикрепляет фотографии мебели со своего смартфона прямо в цифровой заказ-наряд перед началом работы (фиксируя застарелые пятна, потертости и повреждения ткани) и после завершения экстракции. Фотографии защищают компанию от необоснованных претензий и автоматически попадают в архив заказа."}}, {"@type": "Question", "name": "Как рассчитывается сдельная зарплата мастеров химчистки?", "acceptedAnswer": {"@type": "Answer", "text": "Для каждого специалиста можно задать процент от чека (например, 35–45% в зависимости от квалификации и использования собственной или корпоративной химии) либо фиксированную ставку за посадочное место. Сразу после подписания акта и закрытия заказа наряд отправляется в зарплатную ведомость."}}, {"@type": "Question", "name": "Как система отправляет напоминания клиентам накануне выезда?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисный бот отправляет клиенту подтверждение сразу после оформления, а накануне и за 1 час до визита — уведомление в Telegram или SMS с именем мастера, временем прибытия, напоминанием освободить диван от вещей и ссылкой на карточку заказа."}}, {"@type": "Question", "name": "Как бесплатно перенести клиентскую базу и прайс-лист из Excel или старой CRM?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно настроит каталог вашей мебели, формулы расчета по посадочным местам, перенесет базу постоянных клиентов с историей чисток и адресами из Excel или любой CRM за 15 минут."}}]}]
   </script>
@@ -121,14 +121,21 @@
             <li><a class="mt-nav-link" href="/blog">Блог</a></li>
           </ul>
 
-          <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
-            Подписаться
-          </a>
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
 
-          <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
-            <span></span><span></span><span></span>
-          </button>
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div id="mt-mobile-menu" class="mt-mobile-menu">
@@ -208,6 +215,10 @@
           <a class="mt-mobile-link" href="/pricing">Тарифы</a>
           <a class="mt-mobile-link" href="/about">О компании</a>
           <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
           <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
             Подписаться в мессенджере
