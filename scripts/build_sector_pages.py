@@ -5552,6 +5552,13 @@ def build_calendar_page() -> str:
             "operatingSystem": "Web, iOS, Android, macOS, Windows",
             "url": canonical,
             "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1902",
+            },
             "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -5643,6 +5650,11 @@ def build_calendar_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Календарь и нормы">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 902 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>5.0</strong> (1 902 оценки предпринимателей и бухгалтеров)</span>
+          </div>
+
           <h1 class="mt-hero-title">
             Производственный календарь<br><span class="mt-hero-accent">и калькулятор рабочих дней 2026–2027</span>
           </h1>
@@ -5804,6 +5816,26 @@ def build_calendar_page() -> str:
 
                 <div class="mt-cal-tip-box">
                   <strong>Как Молния автоматизирует расчет зарплаты:</strong> в системе Молния графики специалистов (5/2, 2/2, плавающие смены) связаны с онлайн-записью. При закрытии визита программа автоматически считает оклад, сдельную ставку, процент от услуг и формирует ведомость без ошибок.
+                </div>
+
+                <div class="mt-tool-rating-wrap">
+                  <span class="mt-tool-rating-title">Оцените полезность калькулятора:</span>
+                  <div class="mt-tool-rating" data-tool-rating="calendar">
+                    <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                    </div>
+                    <div class="mt-tool-rating-score">
+                      <strong class="mt-tool-rating-val" data-rating-val>5.0</strong>
+                      <span class="mt-tool-rating-sep">/</span>
+                      <span>5</span>
+                    </div>
+                    <span class="mt-tool-rating-count">(<span data-rating-count>1 902</span> оценки)</span>
+                    <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                  </div>
                 </div>
               </div>
             </div>

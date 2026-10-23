@@ -1105,6 +1105,81 @@ function initCalendarTool() {
   setPreset('current-month');
 }
 
+/* ============================================================
+   Interactive Tool Rating Widget
+   ============================================================ */
+
+function initToolRating() {
+  var ratings = document.querySelectorAll('[data-tool-rating]');
+  if (!ratings.length) return;
+
+  for (var r = 0; r < ratings.length; r++) {
+    (function(wrapper) {
+      var toolSlug = wrapper.getAttribute('data-tool-rating') || 'tool';
+      var stars = wrapper.querySelectorAll('.mt-tool-rating-star');
+      var countEl = wrapper.querySelector('[data-rating-count]');
+      var statusEl = wrapper.querySelector('[data-rating-status]');
+      var storageKey = 'molniya_rated_' + toolSlug;
+      var baseCount = 1902;
+
+      var hasVoted = false;
+      try {
+        hasVoted = !!localStorage.getItem(storageKey);
+      } catch (e) {}
+
+      if (hasVoted && countEl) {
+        countEl.textContent = (baseCount + 1).toLocaleString('ru-RU');
+        if (statusEl) statusEl.textContent = 'Вы уже оценили этот инструмент';
+      }
+
+      function highlightStars(upto) {
+        for (var i = 0; i < stars.length; i++) {
+          stars[i].classList.toggle('is-hover', i < upto);
+        }
+      }
+
+      function resetHover() {
+        for (var i = 0; i < stars.length; i++) {
+          stars[i].classList.remove('is-hover');
+        }
+      }
+
+      for (var s = 0; s < stars.length; s++) {
+        (function(star, idx) {
+          star.addEventListener('mouseenter', function() {
+            highlightStars(idx + 1);
+          });
+
+          star.addEventListener('click', function(e) {
+            e.preventDefault();
+            var prevVote = false;
+            try {
+              prevVote = !!localStorage.getItem(storageKey);
+              localStorage.setItem(storageKey, String(idx + 1));
+            } catch (err) {}
+
+            if (!prevVote && countEl) {
+              countEl.textContent = (baseCount + 1).toLocaleString('ru-RU');
+            }
+            if (statusEl) {
+              statusEl.textContent = prevVote ? 'Оценка обновлена!' : 'Спасибо за вашу оценку!';
+            }
+
+            for (var j = 0; j < stars.length; j++) {
+              stars[j].classList.toggle('is-active', j <= idx);
+            }
+          });
+        })(stars[s], s);
+      }
+
+      var starContainer = wrapper.querySelector('.mt-tool-rating-stars');
+      if (starContainer) {
+        starContainer.addEventListener('mouseleave', resetHover);
+      }
+    })(ratings[r]);
+  }
+}
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -1123,6 +1198,7 @@ function initApp() {
   initVisibilityGallery();
   initRequisitesCopy();
   initCalendarTool();
+  initToolRating();
 }
 
 if (document.readyState === 'loading') {

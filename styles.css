@@ -5154,3 +5154,107 @@ a.mt-origin-model-row:focus-visible {
 .mt-hero-bottom--tool {
   padding-top: clamp(28px, 4vh, 44px);
 }
+
+
+/* Tool Rating Widget */
+.mt-hero-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  border-radius: var(--mt-radius-pill);
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  font-size: 13px;
+  color: var(--mt-text-body);
+}
+
+.mt-rating-stars-mini {
+  color: #f59e0b;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.mt-tool-rating-wrap {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--mt-border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mt-tool-rating-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-text-strong);
+}
+
+.mt-tool-rating {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: var(--mt-radius-xl);
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  width: fit-content;
+}
+
+.mt-tool-rating-stars {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.mt-tool-rating-star {
+  background: transparent;
+  border: 0;
+  padding: 0 2px;
+  font-size: 22px;
+  line-height: 1;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: transform .15s ease, color .15s ease;
+}
+
+.mt-tool-rating-star:hover {
+  transform: scale(1.22);
+}
+
+.mt-tool-rating-star.is-active,
+.mt-tool-rating-star.is-hover {
+  color: #f59e0b;
+}
+
+.mt-tool-rating-score {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 15px;
+  color: var(--mt-text-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.mt-tool-rating-val {
+  font-weight: 800;
+  color: var(--mt-text-strong);
+}
+
+.mt-tool-rating-sep {
+  color: var(--mt-text-muted);
+}
+
+.mt-tool-rating-count {
+  font-size: 13px;
+  color: var(--mt-text-muted);
+}
+
+.mt-tool-rating-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #15803d;
+  margin-left: 4px;
+  transition: opacity .3s ease;
+}
