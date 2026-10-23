@@ -5258,3 +5258,441 @@ a.mt-origin-model-row:focus-visible {
   margin-left: 4px;
   transition: opacity .3s ease;
 }
+
+/* ============================================================
+   Counterparty INN Verification Tool (/inn)
+   ============================================================ */
+
+.mt-inn-wrap {
+  margin-top: 32px;
+}
+
+.mt-inn-search-box {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: clamp(20px, 3vw, 32px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.mt-inn-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mt-inn-input-wrap {
+  flex: 1 1 320px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mt-inn-input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--mt-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.mt-inn-input {
+  width: 100%;
+  padding: 14px 44px 14px 48px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--mt-text-strong);
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-lg);
+  outline: none;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.mt-inn-input:focus {
+  border-color: var(--mt-accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--mt-border-accent-soft);
+}
+
+.mt-inn-clear-btn {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--mt-text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  display: none;
+  line-height: 1;
+}
+
+.mt-inn-clear-btn.is-visible {
+  display: block;
+}
+
+.mt-inn-submit-btn {
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--mt-accent);
+  border: none;
+  border-radius: var(--mt-radius-lg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+
+.mt-inn-submit-btn:hover {
+  background: var(--mt-accent-hover, #b8442e);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(210, 99, 74, 0.28);
+}
+
+.mt-inn-submit-btn:active {
+  transform: translateY(0);
+}
+
+.mt-inn-samples {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--mt-text-muted);
+}
+
+.mt-inn-samples-label {
+  font-weight: 500;
+}
+
+.mt-inn-chip {
+  padding: 4px 10px;
+  border-radius: var(--mt-radius-pill);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-body);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.mt-inn-chip:hover {
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+  background: var(--mt-tint-accent);
+}
+
+/* Loading & Error */
+.mt-inn-loading {
+  display: none;
+  padding: 36px 20px;
+  text-align: center;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  margin-top: 20px;
+}
+
+.mt-inn-loading.is-active {
+  display: block;
+}
+
+.mt-inn-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--mt-border-soft);
+  border-top-color: var(--mt-accent);
+  border-radius: 50%;
+  animation: mt-spin .8s linear infinite;
+  margin: 0 auto 14px;
+}
+
+@keyframes mt-spin {
+  to { transform: rotate(360deg); }
+}
+
+.mt-inn-loading-text {
+  font-size: 14px;
+  color: var(--mt-text-body);
+}
+
+.mt-inn-error {
+  display: none;
+  padding: 16px 20px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--mt-radius-xl);
+  color: #991b1b;
+  font-size: 14px;
+  margin-top: 20px;
+  align-items: center;
+  gap: 12px;
+}
+
+.mt-inn-error.is-active {
+  display: flex;
+}
+
+/* Result Card */
+.mt-inn-card {
+  display: none;
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-3xl);
+  padding: clamp(24px, 3.5vw, 40px);
+  margin-top: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.mt-inn-card.is-active {
+  display: block;
+  animation: mt-fade-in .3s ease;
+}
+
+@keyframes mt-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mt-inn-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--mt-border-soft);
+  flex-wrap: wrap;
+}
+
+.mt-inn-title-box {
+  flex: 1 1 300px;
+}
+
+.mt-inn-card-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 800;
+  color: var(--mt-text-strong);
+  line-height: 1.25;
+}
+
+.mt-inn-card-fullname {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--mt-text-body);
+  line-height: 1.45;
+}
+
+.mt-inn-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mt-inn-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--mt-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mt-inn-status--active {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.mt-inn-status--liquidated {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.mt-inn-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--mt-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  color: var(--mt-text-strong);
+}
+
+.mt-inn-score-pill strong {
+  color: var(--mt-accent);
+}
+
+/* Action bar */
+.mt-inn-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.mt-inn-action-btn {
+  padding: 10px 18px;
+  border-radius: var(--mt-radius-lg);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .15s ease;
+  text-decoration: none;
+}
+
+.mt-inn-copy-btn {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  color: var(--mt-text-strong);
+}
+
+.mt-inn-copy-btn:hover {
+  background: var(--mt-tint-accent);
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+}
+
+.mt-inn-copy-btn.copied {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.mt-inn-pdf-btn {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  color: var(--mt-text-body);
+}
+
+.mt-inn-pdf-btn:hover {
+  background: var(--mt-surface);
+  border-color: var(--mt-text-muted);
+  color: var(--mt-text-strong);
+}
+
+/* Details Grid */
+.mt-inn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.mt-inn-cell {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border-soft);
+  border-radius: var(--mt-radius-lg);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mt-inn-cell--full {
+  grid-column: 1 / -1;
+}
+
+.mt-inn-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mt-text-muted);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.mt-inn-val {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--mt-text-strong);
+  word-break: break-word;
+}
+
+/* Risks Box */
+.mt-inn-risks-box {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-xl);
+}
+
+.mt-inn-risks-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mt-inn-risks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.mt-inn-risk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--mt-text-body);
+}
+
+.mt-inn-risk-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.mt-inn-risk-icon--ok {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.mt-inn-risk-icon--warn {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.mt-inn-card-foot {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--mt-border-soft);
+  font-size: 12px;
+  color: var(--mt-text-muted);
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}

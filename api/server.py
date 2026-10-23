@@ -42,6 +42,134 @@ _calendar_cache: dict[int, str] = {
     2027: "11111111110000011000001100000110000011000001100000211100011000001110000110000011000001100000110000011000001100000110000211100001110000110000011000001100000110000211100001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110000011000001100000110021111000001100000110000011000001100000110000011000001100001",
 }
 
+_inn_cache: dict[str, dict[str, Any]] = {}
+_inn_cache_lock = threading.Lock()
+
+
+def fetch_counterparty_data(query: str) -> dict[str, Any]:
+    """Queries official FNS Russia (EGRUL/EGRIP) and KontragentPro to retrieve company details."""
+    cleaned = re.sub(r"\s+", "", query.strip())
+    if not cleaned.isdigit() or len(cleaned) not in (10, 12, 13, 15):
+        raise ValueError("Введите корректный ИНН (10 или 12 цифр) или ОГРН (13 или 15 цифр)")
+
+    with _inn_cache_lock:
+        if cleaned in _inn_cache:
+            return _inn_cache[cleaned]
+
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+    })
+
+    try:
+        p = session.post("https://egrul.nalog.ru/", data={"query": cleaned}, timeout=7)
+        if p.status_code != 200:
+            raise RuntimeError("Сервис ФНС временно недоступен")
+        t = p.json().get("t")
+        if not t:
+            raise RuntimeError("ФНС не вернула токен поиска")
+
+        r_search = session.get(f"https://egrul.nalog.ru/search-result/{t}", timeout=7)
+        if r_search.status_code != 200:
+            raise RuntimeError("Ошибка получения ответа из ФНС")
+
+        rows = r_search.json().get("rows", [])
+        if not rows:
+            raise LookupError("Контрагент с указанным ИНН или ОГРН не найден в реестре ФНС")
+    except (requests.RequestException, ValueError, KeyError) as exc:
+        if isinstance(exc, (LookupError, ValueError)):
+            raise
+        raise RuntimeError(f"Ошибка соединения с ФНС: {exc}")
+
+    row = rows[0]
+    entity_type = row.get("k", "ul")
+    inn = row.get("i", cleaned)
+    ogrn = row.get("o", "")
+    kpp = row.get("p", "")
+    reg_date = row.get("r", "")
+    term_date = row.get("e", None)
+    region = row.get("rn", "")
+    director = row.get("g", "")
+    pdf_token = row.get("t", "")
+
+    if entity_type == "fl":
+        name_short = f"ИП {row.get('n', '')}"
+        name_full = f"Индивидуальный предприниматель {row.get('n', '')}"
+        status_text = "Деятельность прекращена" if term_date else "Действующий предприниматель"
+    else:
+        name_short = row.get("c") or row.get("n", "")
+        name_full = row.get("n", "")
+        status_text = "Ликвидирована" if term_date else "Действующая организация"
+
+    status = "liquidated" if term_date else "active"
+    address = ""
+    okved = ""
+    okved_name = ""
+    risk = {
+        "is_bankrupt": False,
+        "is_sanctioned": False,
+        "is_foreign_agent": False,
+        "inspections_count": 0,
+    }
+    ai_score = 90 if status == "active" else 15
+
+    if entity_type == "ul" and len(inn) == 10:
+        try:
+            kp_resp = session.get(f"https://kontragentpro.ru/api/v2/companies/{inn}", timeout=6)
+            if kp_resp.status_code == 200:
+                kp_data = kp_resp.json()
+                address = kp_data.get("address") or address
+                okved = kp_data.get("okved") or okved
+                okved_name = kp_data.get("okved_name") or okved_name
+                if kp_data.get("director") and isinstance(kp_data["director"], dict):
+                    director = kp_data["director"].get("fio") or director
+                if kp_data.get("risk") and isinstance(kp_data["risk"], dict):
+                    risk = kp_data["risk"]
+                if kp_data.get("ai_score"):
+                    ai_score = kp_data["ai_score"]
+                if kp_data.get("status") == "liquidated":
+                    status = "liquidated"
+                    status_text = "Ликвидирована"
+        except Exception:
+            pass
+
+    if pdf_token:
+        try:
+            session.get(f"https://egrul.nalog.ru/vyp-request/{pdf_token}", timeout=3)
+        except Exception:
+            pass
+
+    result = {
+        "type": entity_type,
+        "inn": inn,
+        "kpp": kpp,
+        "ogrn": ogrn,
+        "name_short": name_short,
+        "name_full": name_full,
+        "status": status,
+        "status_text": status_text,
+        "reg_date": reg_date,
+        "term_date": term_date,
+        "region": region,
+        "address": address,
+        "director": director,
+        "okved": okved,
+        "okved_name": okved_name,
+        "risk": risk,
+        "ai_score": ai_score,
+        "pdf_token": pdf_token,
+    }
+
+    with _inn_cache_lock:
+        _inn_cache[cleaned] = result
+        if inn:
+            _inn_cache[inn] = result
+        if ogrn:
+            _inn_cache[ogrn] = result
+
+    return result
+
 _requests_by_ip: dict[str, deque[float]] = defaultdict(deque)
 _rate_lock = threading.Lock()
 
@@ -264,6 +392,12 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
         if path == "/api/calendar":
             self._handle_calendar()
             return
+        if path == "/api/inn":
+            self._handle_inn()
+            return
+        if path == "/api/inn/pdf":
+            self._handle_inn_pdf()
+            return
         if path in {"/blog", "/blog/", "/blog/index.html"}:
             self._send(HTTPStatus.OK, (blog_store.DATA_DIR / "index.html").read_bytes(), "text/html; charset=utf-8")
             return
@@ -408,6 +542,62 @@ class MolniyaApiHandler(BaseHTTPRequestHandler):
             pass
 
         self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Данные календаря временно недоступны"})
+
+    def _handle_inn(self) -> None:
+        from urllib.parse import parse_qs
+        query_params = parse_qs(urlsplit(self.path).query)
+        query = query_params.get("query", [""])[0].strip()
+        if not query:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Параметр query обязателен"})
+            return
+
+        try:
+            data = fetch_counterparty_data(query)
+            self._send_json(HTTPStatus.OK, data)
+        except ValueError as err:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(err)})
+        except LookupError as err:
+            self._send_json(HTTPStatus.NOT_FOUND, {"error": str(err)})
+        except RuntimeError as err:
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": str(err)})
+        except Exception:
+            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "Не удалось проверить контрагента"})
+
+    def _handle_inn_pdf(self) -> None:
+        from urllib.parse import parse_qs
+        query_params = parse_qs(urlsplit(self.path).query)
+        token = query_params.get("token", [""])[0].strip()
+        inn = query_params.get("inn", ["fns"])[0].strip()
+        if not token:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"error": "Токен выписки не указан"})
+            return
+
+        session = requests.Session()
+        session.headers.update({"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
+
+        for _ in range(4):
+            try:
+                st = session.get(f"https://egrul.nalog.ru/vyp-status/{token}", timeout=3).json()
+                if st.get("status") == "ready":
+                    break
+            except Exception:
+                pass
+            time.sleep(1)
+
+        try:
+            dl = session.get(f"https://egrul.nalog.ru/vyp-download/{token}", timeout=8)
+            if dl.status_code == 200 and len(dl.content) > 1000:
+                self.send_response(HTTPStatus.OK)
+                self.send_header("Content-Type", "application/pdf")
+                self.send_header("Content-Disposition", f'attachment; filename="vypiska_{inn}.pdf"')
+                self.send_header("Content-Length", str(len(dl.content)))
+                self.end_headers()
+                self.wfile.write(dl.content)
+                return
+        except Exception:
+            pass
+
+        self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Не удалось скачать выписку из ФНС"})
 
     def _handle_seosmith(self) -> None:
         secret = os.getenv("SEOSMITH_WEBHOOK_SECRET", "")

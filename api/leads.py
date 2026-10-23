@@ -45,6 +45,7 @@ FORM_NAMES = {
     "yclients": "Переход с YCLIENTS — 3 месяца бесплатно",
     "about": "О компании — заявка на подключение",
     "calendar": "Производственный календарь — бесплатный доступ",
+    "inn": "Проверка контрагента — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -77,6 +78,7 @@ SOURCE_PATHS = {
     "yclients": "/yclients",
     "about": "/about",
     "calendar": "/calendar",
+    "inn": "/inn",
 }
 
 

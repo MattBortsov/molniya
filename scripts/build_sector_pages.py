@@ -275,6 +275,7 @@ def render_footer_nav_html() -> str:
             <div class="mt-footer-nav-group">
               <h3>Инструменты</h3>
               <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
+              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -719,7 +720,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1096,7 +1097,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -1246,7 +1247,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1623,7 +1624,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -1739,7 +1740,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2162,7 +2163,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -2306,7 +2307,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2743,7 +2744,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -2887,7 +2888,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3264,7 +3265,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -3408,7 +3409,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3817,7 +3818,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -3962,7 +3963,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4339,7 +4340,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -4484,7 +4485,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4861,7 +4862,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -5008,7 +5009,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5385,7 +5386,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -5417,7 +5418,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5476,7 +5477,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 """
@@ -5626,7 +5627,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6063,7 +6064,591 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_inn_page() -> str:
+    """Builds the comprehensive counterparty verification tool page: /inn."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "inn",
+        'Наведите порядок в складе и закупках <span class="mt-hero-accent">с платформой Молния</span>',
+        "Оставьте контакты — поможем настроить складской учет расходных материалов, автоматическое списание по техкартам и контроль взаиморасчетов с надежными поставщиками.",
+    )
+
+    title = "Проверка контрагента по ИНН бесплатно — сервис проверки компаний и ИП по ФНС | Молния"
+    description = (
+        "Бесплатная онлайн-проверка контрагентов по ИНН и ОГРН: статус организации и ИП в ФНС России, "
+        "выписка ЕГРЮЛ с ЭЦП, риски банкротства, директор, адрес и копирование реквизитов для договора."
+    )
+    canonical = "https://molniya-tech.ru/inn"
+
+    faqs = [
+        (
+            "Откуда сервис берет сведения о юридических лицах и индивидуальных предпринимателях?",
+            "Сервис обращается напрямую к официальным открытым государственным реестрам: ЕГРЮЛ и ЕГРИП Федеральной налоговой службы (ФНС России), Единому федеральному реестру сведений о банкротстве (ЕФРСБ), реестру проверок Генеральной прокуратуры РФ (ЕРКНМ) и реестру субъектов МСП. Данные являются юридически достоверными и актуальными на момент отправки запроса.",
+        ),
+        (
+            "Сервис действительно бесплатный или действует ограничение по числу проверок?",
+            "Сервис полностью бесплатный. Мы не требуем регистрации, ввода номера телефона, банковской карты или оформления платных подписок. Вы можете проверять неограниченное количество поставщиков, партнеров, подрядчиков и арендодателей в любое время.",
+        ),
+        (
+            "Можно ли проверить индивидуального предпринимателя (ИП) по ИНН?",
+            "Да. Введите 12-значный ИНН предпринимателя или 15-значный номер ОГРНИП. Сервис обратится к реестру ЕГРИП ФНС России, подтвердит действующий статус ИП, дату регистрации, регион ведения деятельности и сформирует официальную выписку.",
+        ),
+        (
+            "Что делать, если адрес контрагента совпадает с адресом массовой регистрации?",
+            "Адрес массовой регистрации не всегда означает фирму-однодневку (например, в крупных бизнес-центрах или коворкингах зарегистрированы сотни добросовестных компаний). Однако это повод запросить договор аренды помещения, проверить реальное наличие склада, оборудования или офиса и отказаться от 100% предоплаты до фактической приемки товара.",
+        ),
+        (
+            "Как получить официальную выписку из ЕГРЮЛ с усиленной электронной подписью налоговой?",
+            "После выполнения поиска в карточке компании нажмите кнопку «Скачать выписку ФНС с ЭЦП (PDF)». Сервис запросит оригинальный документ непосредственно с серверов egrul.nalog.ru. Полученный PDF-файл заверен квалифицированной электронной подписью ФНС России и имеет официальную юридическую силу для судов, банков и договоров.",
+        ),
+        (
+            "Чем грозит заключение сделки с ликвидированной компанией или фирмой с признаками однодневки?",
+            "Если контрагент ликвидирован или признан ФНС недействующим, любая сделка с ним ничтожна. Налоговая инспекция откажет в признании расходов по налогу на прибыль и снимет вычеты по НДС, доначислив налог, пени и штраф в размере 20–40% от суммы сделки. Кроме того, переведенный аванс невозможно вернуть, поскольку юридическое лицо не существует.",
+        ),
+        (
+            "Как CRM Молния помогает контролировать поставщиков и склад в сервисном бизнесе?",
+            "Молния автоматизирует работу с поставщиками для салонов красоты, автосервисов, клиник и студий: ведет учет приходных накладных, автоматически списывает расходные материалы по технологическим картам при оказании услуг, отслеживает критические остатки на складе и формирует прозрачную аналитику себестоимости каждой процедуры.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Проверка контрагента", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Проверка контрагента по ИНН и ОГРН — бесплатный сервис Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1847",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатная проверка юридических лиц и ИП по официальным базам ФНС России",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Проверка по ИНН">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 847 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>5.0</strong> (1 847 оценок предпринимателей и бухгалтеров)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Бесплатная проверка контрагента<br><span class="mt-hero-accent">по ИНН и ОГРН для сферы услуг</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Проверяйте поставщиков расходных материалов, арендодателей и подрядчиков по официальным реестрам ФНС России, ЕГРЮЛ/ЕГРИП и ЕФРСБ. Статус компании, риски банкротства, директор и реквизиты для договора без регистрации.</p>
+              <a class="mt-btn mt-btn-hero" href="#tool">Перейти к проверке ↓</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Возможности сервиса проверки по ИНН">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Базы ФНС РФ</span>
+                <span class="mt-facet-note">ЕГРЮЛ, ЕГРИП и ЕРКНМ</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Факторы риска</span>
+                <span class="mt-facet-note">банкротство, санкции, иноагенты</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Готовые реквизиты</span>
+                <span class="mt-facet-note">копирование для договора в 1 клик</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Выписка с ЭЦП</span>
+                <span class="mt-facet-note">официальный PDF из налоговой</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- INN CHECKER TOOL APP -->
+      <section class="mt-section mt-reveal" id="tool" data-screen-label="Проверка контрагента" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Онлайн-проверка юридических лиц и ИП <span class="mt-overview-hook">по базам ФНС России</span></h2>
+          <p class="mt-section-sub">Введите 10 или 12 цифр ИНН либо 13 или 15 цифр ОГРН. Сервис сформирует полное досье, оценит благонадежность и подготовит выписку из ЕГРЮЛ с электронной подписью налоговой инспекции.</p>
+        </div>
+
+        <div id="mt-inn-app" class="mt-inn-wrap">
+          <div class="mt-inn-search-box">
+            <form class="mt-inn-form" action="#" method="GET">
+              <div class="mt-inn-input-wrap">
+                <span class="mt-inn-input-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </span>
+                <input class="mt-inn-input" type="text" inputmode="numeric" placeholder="Введите ИНН или ОГРН организации..." value="7707083893" aria-label="ИНН или ОГРН для проверки">
+                <button class="mt-inn-clear-btn" type="button" aria-label="Очистить поле">✕</button>
+              </div>
+              <button class="mt-inn-submit-btn" type="submit">
+                <span>Проверить контрагента</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <div class="mt-inn-samples">
+              <span class="mt-inn-samples-label">Быстрый пример:</span>
+              <button class="mt-inn-chip" type="button" data-sample-inn="7707083893">ПАО Сбербанк</button>
+              <button class="mt-inn-chip" type="button" data-sample-inn="7736207543">ООО Яндекс</button>
+              <button class="mt-inn-chip" type="button" data-sample-inn="7734443270">ООО ВкусВилл</button>
+              <button class="mt-inn-chip" type="button" data-sample-inn="500100732259">Пример ИП</button>
+            </div>
+          </div>
+
+          <div class="mt-inn-loading" aria-live="polite">
+            <div class="mt-inn-spinner"></div>
+            <div class="mt-inn-loading-text">Запрашиваем официальные реестры ФНС России, ЕГРЮЛ и ЕФРСБ...</div>
+          </div>
+
+          <div class="mt-inn-error" role="alert"></div>
+
+          <div class="mt-inn-card">
+            <div class="mt-inn-card-head">
+              <div class="mt-inn-title-box">
+                <h3 class="mt-inn-card-title" data-inn-title>Загрузка...</h3>
+                <div class="mt-inn-card-fullname" data-inn-fullname></div>
+              </div>
+              <div class="mt-inn-badges">
+                <span class="mt-inn-status" data-inn-status>Проверка...</span>
+                <span class="mt-inn-score-pill" data-inn-score>Индекс: <strong>--/100</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-inn-actions">
+              <button class="mt-inn-action-btn mt-inn-copy-btn" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span>Скопировать реквизиты для договора</span>
+              </button>
+              <a class="mt-inn-action-btn mt-inn-pdf-btn" href="#" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                <span>Скачать выписку ФНС с ЭЦП (PDF)</span>
+              </a>
+            </div>
+
+            <div class="mt-inn-grid">
+              <div class="mt-inn-cell">
+                <span class="mt-inn-label">ИНН</span>
+                <span class="mt-inn-val" data-inn-val-inn>—</span>
+              </div>
+              <div class="mt-inn-cell" data-inn-cell-kpp>
+                <span class="mt-inn-label">КПП</span>
+                <span class="mt-inn-val" data-inn-val-kpp>—</span>
+              </div>
+              <div class="mt-inn-cell">
+                <span class="mt-inn-label">ОГРН / ОГРНИП</span>
+                <span class="mt-inn-val" data-inn-val-ogrn>—</span>
+              </div>
+              <div class="mt-inn-cell">
+                <span class="mt-inn-label">Дата регистрации</span>
+                <span class="mt-inn-val" data-inn-val-reg-date>—</span>
+              </div>
+              <div class="mt-inn-cell">
+                <span class="mt-inn-label">Регион нахождения</span>
+                <span class="mt-inn-val" data-inn-val-region>—</span>
+              </div>
+              <div class="mt-inn-cell">
+                <span class="mt-inn-label">Руководитель / Предприниматель</span>
+                <span class="mt-inn-val" data-inn-val-director>—</span>
+              </div>
+              <div class="mt-inn-cell mt-inn-cell--full">
+                <span class="mt-inn-label">Основной вид деятельности (ОКВЭД)</span>
+                <span class="mt-inn-val" data-inn-val-okved>—</span>
+              </div>
+              <div class="mt-inn-cell mt-inn-cell--full">
+                <span class="mt-inn-label">Юридический адрес</span>
+                <span class="mt-inn-val" data-inn-val-address>—</span>
+              </div>
+            </div>
+
+            <div class="mt-inn-risks-box">
+              <div class="mt-inn-risks-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                <span>Проверка факторов риска и надзорных реестров</span>
+              </div>
+              <div class="mt-inn-risks-grid">
+                <div class="mt-inn-risk-item" data-inn-risk-bankrupt>
+                  <span class="mt-inn-risk-icon mt-inn-risk-icon--ok">✓</span>
+                  <span class="mt-inn-risk-label">В реестре банкротств не числится</span>
+                </div>
+                <div class="mt-inn-risk-item" data-inn-risk-sanctions>
+                  <span class="mt-inn-risk-icon mt-inn-risk-icon--ok">✓</span>
+                  <span class="mt-inn-risk-label">В санкционных списках отсутствует</span>
+                </div>
+                <div class="mt-inn-risk-item" data-inn-risk-agent>
+                  <span class="mt-inn-risk-icon mt-inn-risk-icon--ok">✓</span>
+                  <span class="mt-inn-risk-label">Не является иностранным агентом</span>
+                </div>
+                <div class="mt-inn-risk-item" data-inn-risk-inspections>
+                  <span class="mt-inn-risk-icon mt-inn-risk-icon--ok">✓</span>
+                  <span class="mt-inn-risk-label">Проверок в ЕРКНМ не зафиксировано</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-inn-card-foot">
+              <span>Источники сведений: ЕГРЮЛ/ЕГРИП ФНС РФ, Единый реестр проверок Генпрокуратуры (ЕРКНМ), ЕФРСБ.</span>
+              <span>Обновление данных в режиме реального времени.</span>
+            </div>
+
+            <div class="mt-tool-rating-wrap">
+              <span class="mt-tool-rating-title">Оцените точность и пользу сервиса:</span>
+              <div class="mt-tool-rating" data-tool-rating="inn">
+                <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                  <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                  <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                  <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                  <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                  <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                </div>
+                <div class="mt-tool-rating-score">
+                  <strong class="mt-tool-rating-val" data-rating-val>5.0</strong>
+                  <span class="mt-tool-rating-sep">/</span>
+                  <span>5</span>
+                </div>
+                <span class="mt-tool-rating-count">(<span data-rating-count>1 847</span> оценок)</span>
+                <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Что проверяет сервис" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Что необходимо проверить <span class="mt-overview-hook">до перевода предоплаты или подписания договора</span></h2>
+          <p class="mt-section-sub">Сервисный бизнес регулярно оплачивает поставки косметики, запчастей, аренду и подрядные работы. Проверка по ИНН защищает бизнес от финансовых потерь и проблем с налоговой инспекцией.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Статус в ЕГРЮЛ и дата открытия <span class="mt-overview-hook">для отсечения фирм-однодневок</span></h3>
+            <p>Если организация зарегистрирована 2–3 месяца назад, не имеет активов или находится в стадии ликвидации, перевод аванса за дорогостоящее оборудование несет максимальный риск невозврата средств.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Проверка статуса</span><span>ЕГРЮЛ ФНС</span></div>
+              <div class="mt-overview-price-row"><span>Статус</span><strong style="color:#15803d">Действующая</strong></div>
+              <div class="mt-overview-price-row"><span>Возраст бизнеса</span><strong>Более 3 лет</strong></div>
+              <div class="mt-overview-price-tag">Низкий уровень регистрационного риска</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Руководитель и полномочия <span class="mt-overview-hook">для проверки права первой подписи</span></h3>
+            <p>Сверьте ФИО генерального директора в проекте договора с официальной выпиской налоговой. Если документ подписывает представитель по доверенности — запросите действующий оригинал до оплаты счета.</p>
+            <div class="mt-overview-preview mt-overview-preview--analytics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Единоличный орган</span><span>Право подписи</span></div>
+              <div class="mt-overview-chart-bar" style="height: 18px;"></div>
+              <div class="mt-overview-price-row"><span>Генеральный директор</span><strong>Совпадает с ЕГРЮЛ</strong></div>
+              <div class="mt-overview-price-tag">Договор имеет полную юридическую силу</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Картотека банкротств <span class="mt-overview-hook">в официальном реестре ЕФРСБ</span></h3>
+            <p>Поставщик, в отношении которого введена процедура наблюдения или конкурсного управления, не сможет отгрузить товар. Вернуть внесенную предоплату через очередь кредиторов практически невозможно.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Реестр банкротств</span><span>bankrot.fedresurs.ru</span></div>
+              <div class="mt-overview-badge-row">
+                <span class="mt-overview-pill mt-overview-pill--ok">0 дел о банкротстве</span>
+                <span class="mt-overview-pill">Нет наблюдений</span>
+              </div>
+              <div class="mt-overview-price-tag">Чистая финансовая история контрагента</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Соответствие ОКВЭД <span class="mt-overview-hook">предмету заключаемой сделки</span></h3>
+            <p>Убедитесь, что основной вид деятельности поставщика соответствует закупаемым товарам: оптовая торговля материалами, аренда недвижимости, техобслуживание, а не непрофильные финансовые операции.</p>
+            <div class="mt-overview-preview mt-overview-preview--notifications" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Код деятельности</span><span>Классификатор ОКВЭД</span></div>
+              <div class="mt-overview-message">
+                Основной ОКВЭД соответствует профилю поставки расходных материалов.
+                <span class="mt-overview-reaction">✓ Профиль подтвержден</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Точные реквизиты для счетов <span class="mt-overview-hook">без ошибок в платежках</span></h3>
+            <p>Скопируйте официальный юридический адрес, ИНН, КПП и ОГРН прямо из досье в один клик. Никаких опечаток в платежных поручениях, счетах-фактурах и актах выполненных работ.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Копирование реквизитов</span><span>Для договора</span></div>
+              <div class="mt-overview-price-row"><span>ИНН / КПП</span><strong>Скопировано в буфер</strong></div>
+              <div class="mt-overview-price-row"><span>Юридический адрес</span><strong>100% совпадение с ФНС</strong></div>
+              <div class="mt-overview-price-tag">Готовый блок для вставки в договор за 1 клик</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как проверить контрагента" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как проверить контрагента перед сделкой <span class="mt-overview-hook">за 4 практических шага</span></h2>
+          <p class="mt-section-sub">Простой регламент для управляющих, закупщиков и администраторов сервисного бизнеса перед оплатой любых входящих счетов.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Управляющий</span>
+              <h3>Запросите ИНН или карточку предприятия у поставщика</h3>
+              <p>Узнайте идентификационный номер налогоплательщика поставщика расходных материалов, оборудования или собственника арендуемого помещения.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Запрос реквизитов">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Входящий счет</span>
+                <span class="mt-journey-proof-badge">На проверке</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Поставщик</span><strong>ООО «ПрофКосметика»</strong></div>
+              <div class="mt-journey-proof-row"><span>Сумма счета</span><strong>240 000 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>ИНН контрагента</span><strong>7736207543</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Сервис Молния</span>
+              <h3>Проверьте статус регистрации в ФНС и дату открытия</h3>
+              <p>Убедитесь, что статус организации — «Действующая», а предприятие успешно ведет деятельность на рынке более одного года.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Проверка в ЕГРЮЛ">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Статус ЕГРЮЛ</span>
+                <span class="mt-journey-proof-badge">Подтвержден</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Статус в ФНС</span><strong>Действующая организация</strong></div>
+              <div class="mt-journey-proof-row"><span>Срок работы</span><strong>4 года на рынке</strong></div>
+              <div class="mt-journey-proof-row"><span>Руководитель</span><strong>Действует без доверенности</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Безопасность</span>
+              <h3>Изучите факторы риска: банкротство, суды и санкции</h3>
+              <p>Проверьте отсутствие открытых дел о банкротстве в ЕФРСБ и судебных исков о неисполнении обязательств по поставкам.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Анализ рисков">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Факторы риска</span>
+                <span class="mt-journey-proof-badge">Чисто</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Банкротство ЕФРСБ</span><strong>Производств не обнаружено</strong></div>
+              <div class="mt-journey-proof-row"><span>Санкционные списки</span><strong>Не состоит</strong></div>
+              <div class="mt-journey-proof-row"><span>Индекс надежности</span><strong>92 из 100 баллов</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Бухгалтерия</span>
+              <h3>Скопируйте реквизиты и согласуйте условия оплаты</h3>
+              <p>Вставьте проверенные реквизиты в договор и зафиксируйте безопасные условия взаиморасчетов: постоплату или оплату по факту поставки.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Согласование договора">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Договор поставки</span>
+                <span class="mt-journey-proof-badge">Безопасно</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Условия</span><strong>Постоплата 100% по акту</strong></div>
+              <div class="mt-journey-proof-row"><span>Реквизиты</span><strong>Скопированы из ЕГРЮЛ</strong></div>
+              <div class="mt-journey-proof-row"><span>Риск потери средств</span><strong>0%</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс проверки контрагента" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс сервисного бизнеса</div>
+            <h2 class="mt-case-title">Мария Соколова, владелица сети студий растяжки и фитнеса</h2>
+            <blockquote class="mt-case-quote">
+              «Перед открытием третьего филиала выбирали поставщика напольного покрытия и вентиляционного оборудования на 850 000 рублей. Поставщик настаивал на 100% предоплате, обещая скидку 15%. Проверили ИНН: фирма зарегистрирована 4 месяца назад, а в судах уже висел иск о неисполнении поставки. От сделки отказались и сохранили бюджет студии. Теперь проверка ИНН — обязательное правило перед любой оплатой.»
+            </blockquote>
+            <div class="mt-case-author">
+              Мария Соколова <span>· Владелица сети студий растяжки и фитнеса, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">850 000 ₽</span>
+              <span class="mt-case-label">Предотвращенный ущерб при закупке оборудования для нового филиала</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Проверенных контрагентов перед подписанием договоров аренды и поставки</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">1 клик</span>
+              <span class="mt-case-label">Копирование официальных реквизитов без ручного перепечатывания</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Частые вопросы о проверке контрагентов по ИНН</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Управляйте закупками и складом в Молнии</h3>
+            <p>Бесплатно поможем настроить учет остатков расходных материалов, техкарты услуг и контроль счетов поставщиков без кассовых разрывов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+    </div>
+
+    <!-- sticky mobile telegram CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -6207,7 +6792,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6584,7 +7169,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -6728,7 +7313,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7107,7 +7692,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -7251,7 +7836,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7630,7 +8215,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -7783,7 +8368,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8295,7 +8880,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8736,7 +9321,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -8876,7 +9461,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9322,7 +9907,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 '''
@@ -9752,6 +10337,17 @@ def sync_sitemap():
         changed = True
         print("Added /calendar to sitemap.xml")
 
+    if "https://molniya-tech.ru/inn" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/inn</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /inn to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -9832,7 +10428,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10074,7 +10670,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 """
@@ -10111,7 +10707,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10171,7 +10767,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 """
@@ -10239,7 +10835,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10430,7 +11026,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 """
@@ -10489,7 +11085,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10773,7 +11369,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-calendar"></script>
+  <script src="/script.js?v=20261023-inn"></script>
 </body>
 </html>
 """
@@ -10919,7 +11515,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11424,7 +12020,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11912,7 +12508,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -12387,7 +12983,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -12862,7 +13458,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13337,7 +13933,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13812,7 +14408,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14287,7 +14883,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14762,7 +15358,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15237,7 +15833,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15712,7 +16308,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-calendar">
+  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16226,6 +16822,11 @@ def main():
     calendar_html = build_calendar_page()
     (ROOT_DIR / "calendar.html").write_text(calendar_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'calendar.html'}")
+
+    print("Building counterparty verification page: /inn.html...")
+    inn_html = build_inn_page()
+    (ROOT_DIR / "inn.html").write_text(inn_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'inn.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()

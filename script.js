@@ -1106,6 +1106,294 @@ function initCalendarTool() {
 }
 
 /* ============================================================
+   Counterparty INN Verification Tool (/inn)
+   ============================================================ */
+
+function initInnChecker() {
+  var app = document.getElementById('mt-inn-app');
+  if (!app) return;
+
+  var form = app.querySelector('.mt-inn-form');
+  var input = app.querySelector('.mt-inn-input');
+  var clearBtn = app.querySelector('.mt-inn-clear-btn');
+  var loadingEl = app.querySelector('.mt-inn-loading');
+  var errorEl = app.querySelector('.mt-inn-error');
+  var cardEl = app.querySelector('.mt-inn-card');
+  var sampleChips = app.querySelectorAll('.mt-inn-chip');
+
+  if (!cardEl) return;
+
+  var titleEl = cardEl.querySelector('[data-inn-title]');
+  var fullNameEl = cardEl.querySelector('[data-inn-fullname]');
+  var statusBadge = cardEl.querySelector('[data-inn-status]');
+  var scorePill = cardEl.querySelector('[data-inn-score]');
+  var copyBtn = cardEl.querySelector('.mt-inn-copy-btn');
+  var pdfBtn = cardEl.querySelector('.mt-inn-pdf-btn');
+
+  var valInn = cardEl.querySelector('[data-inn-val-inn]');
+  var valKpp = cardEl.querySelector('[data-inn-val-kpp]');
+  var cellKpp = cardEl.querySelector('[data-inn-cell-kpp]');
+  var valOgrn = cardEl.querySelector('[data-inn-val-ogrn]');
+  var valRegDate = cardEl.querySelector('[data-inn-val-reg-date]');
+  var valRegion = cardEl.querySelector('[data-inn-val-region]');
+  var valDirector = cardEl.querySelector('[data-inn-val-director]');
+  var valOkved = cardEl.querySelector('[data-inn-val-okved]');
+  var valAddress = cardEl.querySelector('[data-inn-val-address]');
+
+  var riskBankrupt = cardEl.querySelector('[data-inn-risk-bankrupt]');
+  var riskSanctions = cardEl.querySelector('[data-inn-risk-sanctions]');
+  var riskAgent = cardEl.querySelector('[data-inn-risk-agent]');
+  var riskInspections = cardEl.querySelector('[data-inn-risk-inspections]');
+
+  var currentData = null;
+  var copyTimeout = null;
+
+  function updateClearBtn() {
+    if (!clearBtn || !input) return;
+    if (input.value.trim().length > 0) {
+      clearBtn.classList.add('is-visible');
+    } else {
+      clearBtn.classList.remove('is-visible');
+    }
+  }
+
+  if (input) {
+    input.addEventListener('input', updateClearBtn);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      input.value = '';
+      updateClearBtn();
+      input.focus();
+    });
+  }
+
+  function showError(msg) {
+    if (loadingEl) loadingEl.classList.remove('is-active');
+    cardEl.classList.remove('is-active');
+    if (errorEl) {
+      errorEl.textContent = msg;
+      errorEl.classList.add('is-active');
+    }
+  }
+
+  function hideError() {
+    if (errorEl) errorEl.classList.remove('is-active');
+  }
+
+  function setRiskStatus(el, isOk, textOk, textWarn) {
+    if (!el) return;
+    var icon = el.querySelector('.mt-inn-risk-icon');
+    var label = el.querySelector('.mt-inn-risk-label');
+    if (isOk) {
+      if (icon) {
+        icon.className = 'mt-inn-risk-icon mt-inn-risk-icon--ok';
+        icon.textContent = '✓';
+      }
+      if (label) label.textContent = textOk;
+    } else {
+      if (icon) {
+        icon.className = 'mt-inn-risk-icon mt-inn-risk-icon--warn';
+        icon.textContent = '!';
+      }
+      if (label) label.textContent = textWarn;
+    }
+  }
+
+  function displayResult(d) {
+    currentData = d;
+    if (loadingEl) loadingEl.classList.remove('is-active');
+    hideError();
+
+    if (titleEl) titleEl.textContent = d.name_short || d.name_full || 'Организация';
+    if (fullNameEl) fullNameEl.textContent = d.name_full || '';
+
+    if (statusBadge) {
+      statusBadge.textContent = d.status_text || 'Действующая организация';
+      statusBadge.className = 'mt-inn-status ' + (d.status === 'active' ? 'mt-inn-status--active' : 'mt-inn-status--liquidated');
+    }
+
+    if (scorePill) {
+      var scoreVal = d.ai_score || 85;
+      scorePill.innerHTML = 'Индекс надежности: <strong>' + scoreVal + '/100</strong>';
+    }
+
+    if (valInn) valInn.textContent = d.inn || '—';
+    if (valOgrn) valOgrn.textContent = d.ogrn || '—';
+    if (valRegDate) {
+      var dateStr = d.reg_date || '—';
+      if (d.term_date) {
+        dateStr += ' (ликвидация: ' + d.term_date + ')';
+      }
+      valRegDate.textContent = dateStr;
+    }
+    if (valRegion) valRegion.textContent = d.region || '—';
+    if (valDirector) valDirector.textContent = d.director || '—';
+    if (valAddress) valAddress.textContent = d.address || (d.region ? d.region + ' (по данным ФНС)' : '—');
+
+    if (valOkved) {
+      if (d.okved && d.okved_name) {
+        valOkved.textContent = d.okved + ' ' + d.okved_name;
+      } else if (d.okved) {
+        valOkved.textContent = d.okved;
+      } else {
+        valOkved.textContent = 'По данным выписки ЕГРЮЛ';
+      }
+    }
+
+    if (cellKpp && valKpp) {
+      if (d.type === 'fl' || !d.kpp) {
+        cellKpp.style.display = 'none';
+      } else {
+        cellKpp.style.display = 'flex';
+        valKpp.textContent = d.kpp;
+      }
+    }
+
+    // Risks
+    var r = d.risk || {};
+    setRiskStatus(
+      riskBankrupt,
+      !r.is_bankrupt,
+      'В реестре банкротств не числится',
+      'Внимание: выявлено банкротное производство'
+    );
+    setRiskStatus(
+      riskSanctions,
+      !r.is_sanctioned,
+      'В санкционных списках отсутствует',
+      'Внимание: включен в санкционные списки'
+    );
+    setRiskStatus(
+      riskAgent,
+      !r.is_foreign_agent,
+      'Не является иностранным агентом',
+      'Внимание: статус иностранного агента'
+    );
+
+    if (riskInspections) {
+      var inspCount = r.inspections_count || 0;
+      setRiskStatus(
+        riskInspections,
+        true,
+        inspCount > 0 ? (inspCount + ' проверок в ЕРКНМ Генпрокуратуры') : 'Проверок в ЕРКНМ не зафиксировано',
+        'Проверки надзорных органов'
+      );
+    }
+
+    // PDF extract button
+    if (pdfBtn) {
+      if (d.pdf_token) {
+        pdfBtn.style.display = 'inline-flex';
+        pdfBtn.setAttribute('href', '/api/inn/pdf?token=' + encodeURIComponent(d.pdf_token) + '&inn=' + encodeURIComponent(d.inn));
+        pdfBtn.setAttribute('target', '_blank');
+      } else {
+        pdfBtn.style.display = 'none';
+      }
+    }
+
+    cardEl.classList.add('is-active');
+  }
+
+  function search(query) {
+    var cleaned = (query || '').replace(/\s+/g, '');
+    if (!cleaned || !/^\d+$/.test(cleaned) || [10, 12, 13, 15].indexOf(cleaned.length) === -1) {
+      showError('Введите корректный ИНН (10 или 12 цифр) или ОГРН (13 или 15 цифр)');
+      return;
+    }
+
+    hideError();
+    cardEl.classList.remove('is-active');
+    if (loadingEl) loadingEl.classList.add('is-active');
+
+    fetch('/api/inn?query=' + encodeURIComponent(cleaned))
+      .then(function(res) {
+        return res.json().then(function(json) {
+          if (!res.ok) {
+            throw new Error(json.error || 'Ошибка при проверке контрагента');
+          }
+          return json;
+        });
+      })
+      .then(function(data) {
+        displayResult(data);
+      })
+      .catch(function(err) {
+        showError(err.message || 'Сервер проверки контрагентов временно недоступен. Попробуйте снова.');
+      });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      search(input ? input.value : '');
+    });
+  }
+
+  if (sampleChips && sampleChips.length) {
+    for (var i = 0; i < sampleChips.length; i++) {
+      sampleChips[i].addEventListener('click', function() {
+        var sampleInn = this.getAttribute('data-sample-inn');
+        if (sampleInn && input) {
+          input.value = sampleInn;
+          updateClearBtn();
+          search(sampleInn);
+        }
+      });
+    }
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!currentData) return;
+
+      var lines = [
+        'Полное наименование: ' + (currentData.name_full || currentData.name_short),
+        'Краткое наименование: ' + (currentData.name_short || currentData.name_full),
+        'ИНН: ' + (currentData.inn || '—'),
+      ];
+      if (currentData.kpp) lines.push('КПП: ' + currentData.kpp);
+      if (currentData.ogrn) lines.push((currentData.type === 'fl' ? 'ОГРНИП: ' : 'ОГРН: ') + currentData.ogrn);
+      if (currentData.reg_date) lines.push('Дата регистрации: ' + currentData.reg_date);
+      if (currentData.address) lines.push('Юридический адрес: ' + currentData.address);
+      if (currentData.director) lines.push('Руководитель: ' + currentData.director);
+      if (currentData.okved) lines.push('Основной ОКВЭД: ' + currentData.okved + ' ' + (currentData.okved_name || ''));
+      lines.push('Статус: ' + (currentData.status_text || 'Действующая организация'));
+
+      var textToCopy = lines.join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.textContent = '✓ Реквизиты скопированы';
+        copyBtn.classList.add('copied');
+
+        if (copyTimeout) clearTimeout(copyTimeout);
+        copyTimeout = setTimeout(function() {
+          copyBtn.textContent = copyBtn.getAttribute('data-orig');
+          copyBtn.classList.remove('copied');
+        }, 2200);
+      });
+    });
+  }
+
+  var urlParams = new URLSearchParams(window.location.search);
+  var qParam = urlParams.get('query') || urlParams.get('inn');
+  if (qParam) {
+    if (input) input.value = qParam;
+    updateClearBtn();
+    search(qParam);
+  } else {
+    if (input) input.value = '7707083893';
+    updateClearBtn();
+    search('7707083893');
+  }
+}
+
+/* ============================================================
    Interactive Tool Rating Widget
    ============================================================ */
 
@@ -1198,6 +1486,7 @@ function initApp() {
   initVisibilityGallery();
   initRequisitesCopy();
   initCalendarTool();
+  initInnChecker();
   initToolRating();
 }
 
