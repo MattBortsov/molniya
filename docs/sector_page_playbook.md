@@ -166,6 +166,19 @@ flowchart TD
      ```
 4. **Обновление списка статических страниц в `api/blog.py`:**
    - Включить `/<slug>` в список постоянных маршрутов генератора sitemap и webhook.
+5. **Регистрация в RSS-ленте (`scripts/build_sector_pages.py`):**
+   - Добавить запись о новой странице в начало списка `RSS_ITEMS`:
+     ```python
+     {
+         "title": "Название страницы или инструмента",
+         "slug": "<slug>",
+         "description": "Понятное живое описание сути страницы (1-3 предложения)",
+         "pub_date": datetime(YYYY, MM, DD, HH, MM, tzinfo=MSK_TZ),
+         "category": "Отрасли",  # "Инструменты" | "Отрасли" | "Услуги" | "Компания"
+     }
+     ```
+   - Убедиться, что в `<head>` страницы присутствует тег автообнаружения фида:
+     `<link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">`
 
 ---
 
