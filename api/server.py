@@ -112,7 +112,6 @@ def fetch_counterparty_data(query: str) -> dict[str, Any]:
         "is_foreign_agent": False,
         "inspections_count": 0,
     }
-    ai_score = 90 if status == "active" else 15
 
     if entity_type == "ul" and len(inn) == 10:
         try:
@@ -126,8 +125,6 @@ def fetch_counterparty_data(query: str) -> dict[str, Any]:
                     director = kp_data["director"].get("fio") or director
                 if kp_data.get("risk") and isinstance(kp_data["risk"], dict):
                     risk = kp_data["risk"]
-                if kp_data.get("ai_score"):
-                    ai_score = kp_data["ai_score"]
                 if kp_data.get("status") == "liquidated":
                     status = "liquidated"
                     status_text = "Ликвидирована"
@@ -157,7 +154,6 @@ def fetch_counterparty_data(query: str) -> dict[str, Any]:
         "okved": okved,
         "okved_name": okved_name,
         "risk": risk,
-        "ai_score": ai_score,
         "pdf_token": pdf_token,
     }
 

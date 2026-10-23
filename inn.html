@@ -35,7 +35,7 @@
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -331,7 +331,6 @@
               </div>
               <div class="mt-inn-badges">
                 <span class="mt-inn-status" data-inn-status>Проверка...</span>
-                <span class="mt-inn-score-pill" data-inn-score>Индекс: <strong>--/100</strong></span>
               </div>
             </div>
 
@@ -347,7 +346,7 @@
             </div>
 
             <div class="mt-inn-grid">
-              <div class="mt-inn-cell">
+              <div class="mt-inn-cell" data-inn-cell-inn>
                 <span class="mt-inn-label">ИНН</span>
                 <span class="mt-inn-val" data-inn-val-inn>—</span>
               </div>
@@ -367,7 +366,7 @@
                 <span class="mt-inn-label">Регион нахождения</span>
                 <span class="mt-inn-val" data-inn-val-region>—</span>
               </div>
-              <div class="mt-inn-cell">
+              <div class="mt-inn-cell mt-inn-cell--director">
                 <span class="mt-inn-label">Руководитель / Предприниматель</span>
                 <span class="mt-inn-val" data-inn-val-director>—</span>
               </div>
@@ -375,7 +374,7 @@
                 <span class="mt-inn-label">Основной вид деятельности (ОКВЭД)</span>
                 <span class="mt-inn-val" data-inn-val-okved>—</span>
               </div>
-              <div class="mt-inn-cell mt-inn-cell--full">
+              <div class="mt-inn-cell mt-inn-cell--full" data-inn-cell-address>
                 <span class="mt-inn-label">Юридический адрес</span>
                 <span class="mt-inn-val" data-inn-val-address>—</span>
               </div>
@@ -561,7 +560,7 @@
               </div>
               <div class="mt-journey-proof-row"><span>Банкротство ЕФРСБ</span><strong>Производств не обнаружено</strong></div>
               <div class="mt-journey-proof-row"><span>Санкционные списки</span><strong>Не состоит</strong></div>
-              <div class="mt-journey-proof-row"><span>Индекс надежности</span><strong>92 из 100 баллов</strong></div>
+              <div class="mt-journey-proof-row"><span>Реестры ФНС</span><strong>Официально подтверждено</strong></div>
             </div>
           </article>
 
@@ -694,6 +693,7 @@
               <h3>Инструменты</h3>
               <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
               <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
+              <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -744,6 +744,6 @@
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>

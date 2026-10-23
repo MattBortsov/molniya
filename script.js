@@ -1126,10 +1126,10 @@ function initInnChecker() {
   var titleEl = cardEl.querySelector('[data-inn-title]');
   var fullNameEl = cardEl.querySelector('[data-inn-fullname]');
   var statusBadge = cardEl.querySelector('[data-inn-status]');
-  var scorePill = cardEl.querySelector('[data-inn-score]');
   var copyBtn = cardEl.querySelector('.mt-inn-copy-btn');
   var pdfBtn = cardEl.querySelector('.mt-inn-pdf-btn');
 
+  var cellInn = cardEl.querySelector('[data-inn-cell-inn]');
   var valInn = cardEl.querySelector('[data-inn-val-inn]');
   var valKpp = cardEl.querySelector('[data-inn-val-kpp]');
   var cellKpp = cardEl.querySelector('[data-inn-cell-kpp]');
@@ -1138,6 +1138,7 @@ function initInnChecker() {
   var valRegion = cardEl.querySelector('[data-inn-val-region]');
   var valDirector = cardEl.querySelector('[data-inn-val-director]');
   var valOkved = cardEl.querySelector('[data-inn-val-okved]');
+  var cellAddress = cardEl.querySelector('[data-inn-cell-address]');
   var valAddress = cardEl.querySelector('[data-inn-val-address]');
 
   var riskBankrupt = cardEl.querySelector('[data-inn-risk-bankrupt]');
@@ -1214,11 +1215,6 @@ function initInnChecker() {
       statusBadge.className = 'mt-inn-status ' + (d.status === 'active' ? 'mt-inn-status--active' : 'mt-inn-status--liquidated');
     }
 
-    if (scorePill) {
-      var scoreVal = d.ai_score || 85;
-      scorePill.innerHTML = 'Индекс надежности: <strong>' + scoreVal + '/100</strong>';
-    }
-
     if (valInn) valInn.textContent = d.inn || '—';
     if (valOgrn) valOgrn.textContent = d.ogrn || '—';
     if (valRegDate) {
@@ -1230,7 +1226,21 @@ function initInnChecker() {
     }
     if (valRegion) valRegion.textContent = d.region || '—';
     if (valDirector) valDirector.textContent = d.director || '—';
-    if (valAddress) valAddress.textContent = d.address || (d.region ? d.region + ' (по данным ФНС)' : '—');
+
+    if (cellAddress && valAddress) {
+      if (!d.address && d.type === 'fl') {
+        cellAddress.style.display = 'none';
+      } else {
+        cellAddress.style.display = '';
+        valAddress.textContent = d.address || (d.region ? d.region + ' (по данным ФНС)' : '—');
+      }
+    } else if (valAddress) {
+      valAddress.textContent = d.address || (d.region ? d.region + ' (по данным ФНС)' : '—');
+    }
+
+    if (cellInn) {
+      cellInn.style.gridColumn = (d.type === 'fl' ? 'span 2' : '');
+    }
 
     if (valOkved) {
       if (d.okved && d.okved_name) {
@@ -1394,6 +1404,287 @@ function initInnChecker() {
 }
 
 /* ============================================================
+   Margin & Business Profitability Calculator Tool (/margin)
+   ============================================================ */
+
+function initMarginCalculator() {
+  var app = document.getElementById('mt-margin-app');
+  if (!app) return;
+
+  var PRESETS = {
+    beauty: { places: 4, check: 2200, duration: 60, hours: 12, days: 30, util: 55, fixed: 130000, labor: 40, mat: 10 },
+    auto: { places: 3, check: 6500, duration: 120, hours: 11, days: 30, util: 60, fixed: 180000, labor: 35, mat: 15 },
+    fitness: { places: 2, check: 9000, duration: 60, hours: 12, days: 30, util: 65, fixed: 140000, labor: 30, mat: 5 },
+    massage: { places: 3, check: 3800, duration: 75, hours: 11, days: 30, util: 50, fixed: 110000, labor: 40, mat: 12 },
+    carwash: { places: 4, check: 1200, duration: 35, hours: 14, days: 30, util: 60, fixed: 160000, labor: 30, mat: 10 }
+  };
+
+  var placesSlider = app.querySelector('[data-margin-slider="places"]');
+  var placesNum = app.querySelector('[data-margin-num="places"]');
+  var placesVal = app.querySelector('[data-margin-val="places"]');
+
+  var checkSlider = app.querySelector('[data-margin-slider="check"]');
+  var checkNum = app.querySelector('[data-margin-num="check"]');
+  var checkVal = app.querySelector('[data-margin-val="check"]');
+
+  var durationSlider = app.querySelector('[data-margin-slider="duration"]');
+  var durationNum = app.querySelector('[data-margin-num="duration"]');
+  var durationVal = app.querySelector('[data-margin-val="duration"]');
+
+  var hoursSlider = app.querySelector('[data-margin-slider="hours"]');
+  var hoursNum = app.querySelector('[data-margin-num="hours"]');
+  var hoursVal = app.querySelector('[data-margin-val="hours"]');
+
+  var utilSlider = app.querySelector('[data-margin-slider="util"]');
+  var utilNum = app.querySelector('[data-margin-num="util"]');
+  var utilVal = app.querySelector('[data-margin-val="util"]');
+
+  var fixedSlider = app.querySelector('[data-margin-slider="fixed"]');
+  var fixedNum = app.querySelector('[data-margin-num="fixed"]');
+  var fixedVal = app.querySelector('[data-margin-val="fixed"]');
+
+  var laborSlider = app.querySelector('[data-margin-slider="labor"]');
+  var laborNum = app.querySelector('[data-margin-num="labor"]');
+  var laborVal = app.querySelector('[data-margin-val="labor"]');
+
+  var matSlider = app.querySelector('[data-margin-slider="mat"]');
+  var matNum = app.querySelector('[data-margin-num="mat"]');
+  var matVal = app.querySelector('[data-margin-val="mat"]');
+
+  var outRevenue = app.querySelector('[data-margin-res="revenue"]');
+  var outRevenueSub = app.querySelector('[data-margin-res="revenue-sub"]');
+  var outProfit = app.querySelector('[data-margin-res="profit"]');
+  var outProfitSub = app.querySelector('[data-margin-res="profit-sub"]');
+  var outMargin = app.querySelector('[data-margin-res="margin"]');
+  var outMarginSub = app.querySelector('[data-margin-res="margin-sub"]');
+  var outBreakEven = app.querySelector('[data-margin-res="breakeven"]');
+  var outBreakEvenSub = app.querySelector('[data-margin-res="breakeven-sub"]');
+
+  var barProfit = app.querySelector('[data-margin-bar="profit"]');
+  var barLabor = app.querySelector('[data-margin-bar="labor"]');
+  var barMat = app.querySelector('[data-margin-bar="materials"]');
+  var barFixed = app.querySelector('[data-margin-bar="fixed"]');
+
+  var legProfit = app.querySelector('[data-margin-leg="profit"]');
+  var legLabor = app.querySelector('[data-margin-leg="labor"]');
+  var legMat = app.querySelector('[data-margin-leg="materials"]');
+  var legFixed = app.querySelector('[data-margin-leg="fixed"]');
+
+  var outGrowthSum = app.querySelector('[data-margin-growth-sum]');
+
+  var copyBtn = app.querySelector('.mt-margin-copy-btn');
+  var copyTimeout = null;
+
+  var presetBtns = app.querySelectorAll('.mt-margin-preset-btn');
+
+  function fmtMoney(num) {
+    return Math.round(num).toLocaleString('ru-RU') + ' ₽';
+  }
+
+  function bindTwoWay(slider, num, valDisplay, suffix) {
+    if (!slider || !num) return;
+    function sync(fromSlider) {
+      var val = fromSlider ? slider.value : num.value;
+      if (fromSlider) {
+        num.value = val;
+      } else {
+        slider.value = val;
+      }
+      if (valDisplay) {
+        valDisplay.textContent = Number(val).toLocaleString('ru-RU') + (suffix || '');
+      }
+      calculate();
+    }
+    slider.addEventListener('input', function() { sync(true); });
+    num.addEventListener('input', function() { sync(false); });
+  }
+
+  bindTwoWay(placesSlider, placesNum, placesVal, '');
+  bindTwoWay(checkSlider, checkNum, checkVal, ' ₽');
+  bindTwoWay(durationSlider, durationNum, durationVal, ' мин');
+  bindTwoWay(hoursSlider, hoursNum, hoursVal, ' ч');
+  bindTwoWay(utilSlider, utilNum, utilVal, '%');
+  bindTwoWay(fixedSlider, fixedNum, fixedVal, ' ₽');
+  bindTwoWay(laborSlider, laborNum, laborVal, '%');
+  bindTwoWay(matSlider, matNum, matVal, '%');
+
+  function applyPreset(p) {
+    if (placesSlider) { placesSlider.value = p.places; placesNum.value = p.places; if (placesVal) placesVal.textContent = p.places; }
+    if (checkSlider) { checkSlider.value = p.check; checkNum.value = p.check; if (checkVal) checkVal.textContent = p.check.toLocaleString('ru-RU') + ' ₽'; }
+    if (durationSlider) { durationSlider.value = p.duration; durationNum.value = p.duration; if (durationVal) durationVal.textContent = p.duration + ' мин'; }
+    if (hoursSlider) { hoursSlider.value = p.hours; hoursNum.value = p.hours; if (hoursVal) hoursVal.textContent = p.hours + ' ч'; }
+    if (utilSlider) { utilSlider.value = p.util; utilNum.value = p.util; if (utilVal) utilVal.textContent = p.util + '%'; }
+    if (fixedSlider) { fixedSlider.value = p.fixed; fixedNum.value = p.fixed; if (fixedVal) fixedVal.textContent = p.fixed.toLocaleString('ru-RU') + ' ₽'; }
+    if (laborSlider) { laborSlider.value = p.labor; laborNum.value = p.labor; if (laborVal) laborVal.textContent = p.labor + '%'; }
+    if (matSlider) { matSlider.value = p.mat; matNum.value = p.mat; if (matVal) matVal.textContent = p.mat + '%'; }
+    calculate();
+  }
+
+  for (var i = 0; i < presetBtns.length; i++) {
+    presetBtns[i].addEventListener('click', function() {
+      for (var j = 0; j < presetBtns.length; j++) presetBtns[j].classList.remove('is-active');
+      this.classList.add('is-active');
+      var key = this.getAttribute('data-margin-preset');
+      if (PRESETS[key]) {
+        applyPreset(PRESETS[key]);
+      }
+    });
+  }
+
+  var lastCalc = {};
+
+  function calculate() {
+    var places = Math.max(1, parseInt(placesSlider ? placesSlider.value : 4, 10));
+    var check = Math.max(1, parseFloat(checkSlider ? checkSlider.value : 2200));
+    var duration = Math.max(10, parseInt(durationSlider ? durationSlider.value : 60, 10));
+    var hours = Math.max(4, parseInt(hoursSlider ? hoursSlider.value : 12, 10));
+    var util = Math.max(5, Math.min(100, parseInt(utilSlider ? utilSlider.value : 55, 10)));
+    var fixed = Math.max(0, parseFloat(fixedSlider ? fixedSlider.value : 130000));
+    var laborPct = Math.max(0, Math.min(90, parseInt(laborSlider ? laborSlider.value : 40, 10)));
+    var matPct = Math.max(0, Math.min(50, parseInt(matSlider ? matSlider.value : 10, 10)));
+    var days = 30;
+
+    var capacityPerDay = Math.floor((hours * 60) / duration);
+    var maxClients = places * capacityPerDay * days;
+    var maxRevenue = maxClients * check;
+
+    var actualClients = Math.round(maxClients * (util / 100));
+    var actualRevenue = actualClients * check;
+    var lostRevenue = Math.max(0, maxRevenue - actualRevenue);
+
+    var laborCost = Math.round(actualRevenue * (laborPct / 100));
+    var materialsCost = Math.round(actualRevenue * (matPct / 100));
+    var totalExpenses = fixed + laborCost + materialsCost;
+    var netProfit = actualRevenue - totalExpenses;
+
+    var profitMargin = actualRevenue > 0 ? ((netProfit / actualRevenue) * 100).toFixed(1) : '0';
+
+    var varPct = (laborPct + matPct) / 100;
+    var marginPerClient = check * (1 - varPct);
+    var breakEvenClients = marginPerClient > 0 ? Math.ceil(fixed / marginPerClient) : 0;
+    var breakEvenRevenue = breakEvenClients * check;
+
+    var boostedUtil = Math.min(100, util + 20);
+    var boostedClients = Math.round(maxClients * (boostedUtil / 100));
+    var boostedRev = boostedClients * check;
+    var boostedLabor = Math.round(boostedRev * (laborPct / 100));
+    var boostedMat = Math.round(boostedRev * (matPct / 100));
+    var boostedProfit = boostedRev - (fixed + boostedLabor + boostedMat);
+    var addedProfit = Math.max(0, boostedProfit - netProfit);
+
+    lastCalc = {
+      places: places,
+      check: check,
+      duration: duration,
+      hours: hours,
+      util: util,
+      fixed: fixed,
+      laborPct: laborPct,
+      matPct: matPct,
+      actualClients: actualClients,
+      maxClients: maxClients,
+      actualRevenue: actualRevenue,
+      maxRevenue: maxRevenue,
+      lostRevenue: lostRevenue,
+      netProfit: netProfit,
+      profitMargin: profitMargin,
+      breakEvenRevenue: breakEvenRevenue,
+      breakEvenClients: breakEvenClients,
+      addedProfit: addedProfit
+    };
+
+    if (outRevenue) outRevenue.textContent = fmtMoney(actualRevenue);
+    if (outRevenueSub) outRevenueSub.textContent = 'Потенциал при 100%: ' + fmtMoney(maxRevenue);
+
+    if (outProfit) {
+      outProfit.textContent = (netProfit >= 0 ? '+' : '') + fmtMoney(netProfit);
+      outProfit.className = 'mt-margin-kpi-num ' + (netProfit >= 0 ? 'mt-margin-kpi-num--accent' : 'mt-margin-kpi-num--warn');
+    }
+    if (outProfitSub) {
+      outProfitSub.textContent = netProfit >= 0 ? (Math.round(netProfit / days).toLocaleString('ru-RU') + ' ₽/день чистыми') : 'Бизнес работает в убыток';
+    }
+
+    if (outMargin) outMargin.textContent = profitMargin + '%';
+    if (outMarginSub) outMarginSub.textContent = 'Упущенная выгода: ' + fmtMoney(lostRevenue);
+
+    if (outBreakEven) outBreakEven.textContent = fmtMoney(breakEvenRevenue);
+    if (outBreakEvenSub) outBreakEvenSub.textContent = breakEvenClients + ' клиентов в месяц для окупаемости';
+
+    if (actualRevenue > 0) {
+      var profitShare = Math.max(0, netProfit / actualRevenue);
+      var laborShare = laborCost / actualRevenue;
+      var matShare = materialsCost / actualRevenue;
+      var fixedShare = Math.min(1, fixed / actualRevenue);
+
+      var totalShare = profitShare + laborShare + matShare + fixedShare;
+      var pPct = Math.round((profitShare / totalShare) * 100);
+      var lPct = Math.round((laborShare / totalShare) * 100);
+      var mPct = Math.round((matShare / totalShare) * 100);
+      var fPct = Math.max(0, 100 - (pPct + lPct + mPct));
+
+      if (barProfit) barProfit.style.width = pPct + '%';
+      if (barLabor) barLabor.style.width = lPct + '%';
+      if (barMat) barMat.style.width = mPct + '%';
+      if (barFixed) barFixed.style.width = fPct + '%';
+
+      if (legProfit) legProfit.textContent = fmtMoney(Math.max(0, netProfit)) + ' (' + pPct + '%)';
+      if (legLabor) legLabor.textContent = fmtMoney(laborCost) + ' (' + lPct + '%)';
+      if (legMat) legMat.textContent = fmtMoney(materialsCost) + ' (' + mPct + '%)';
+      if (legFixed) legFixed.textContent = fmtMoney(fixed) + ' (' + fPct + '%)';
+    }
+
+    if (outGrowthSum) {
+      outGrowthSum.textContent = '+' + fmtMoney(addedProfit) + ' в месяц';
+    }
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!lastCalc.places) return;
+
+      var textToCopy = [
+        '=== РАСЧЕТ ДОХОДНОСТИ И ЮНИТ-ЭКОНОМИКИ (МОЛНИЯ) ===',
+        'Параметры бизнеса:',
+        '• Рабочих мест / постов: ' + lastCalc.places,
+        '• Средний чек: ' + lastCalc.check.toLocaleString('ru-RU') + ' ₽',
+        '• Длительность услуги: ' + lastCalc.duration + ' мин',
+        '• Режим работы: ' + lastCalc.hours + ' ч/день (30 дней/мес)',
+        '• Текущая загрузка: ' + lastCalc.util + '%',
+        '• Постоянные расходы: ' + lastCalc.fixed.toLocaleString('ru-RU') + ' ₽/мес',
+        '• ФОТ мастеров: ' + lastCalc.laborPct + '% | Расходники: ' + lastCalc.matPct + '%',
+        '',
+        'Финансовые результаты:',
+        '• Выручка: ' + lastCalc.actualRevenue.toLocaleString('ru-RU') + ' ₽/мес (' + lastCalc.actualClients + ' клиентов)',
+        '• Потенциал при 100% загрузке: ' + lastCalc.maxRevenue.toLocaleString('ru-RU') + ' ₽/мес',
+        '• Упущенная выгода от простоя: ' + lastCalc.lostRevenue.toLocaleString('ru-RU') + ' ₽/мес',
+        '• Чистая прибыль владельца: ' + lastCalc.netProfit.toLocaleString('ru-RU') + ' ₽/мес',
+        '• Рентабельность бизнеса: ' + lastCalc.profitMargin + '%',
+        '• Точка безубыточности: ' + lastCalc.breakEvenRevenue.toLocaleString('ru-RU') + ' ₽/мес (' + lastCalc.breakEvenClients + ' клиентов)',
+        '• Потенциал роста чистой прибыли с онлайн-записью Молнии (+20% загрузки): +' + lastCalc.addedProfit.toLocaleString('ru-RU') + ' ₽/мес',
+        'Рассчитано на https://molniya-tech.ru/margin'
+      ].join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.textContent = '✓ Расчет скопирован в буфер';
+        copyBtn.classList.add('copied');
+
+        if (copyTimeout) clearTimeout(copyTimeout);
+        copyTimeout = setTimeout(function() {
+          copyBtn.textContent = copyBtn.getAttribute('data-orig');
+          copyBtn.classList.remove('copied');
+        }, 2200);
+      });
+    });
+  }
+
+  calculate();
+}
+
+/* ============================================================
    Interactive Tool Rating Widget
    ============================================================ */
 
@@ -1487,6 +1778,7 @@ function initApp() {
   initRequisitesCopy();
   initCalendarTool();
   initInnChecker();
+  initMarginCalculator();
   initToolRating();
 }
 

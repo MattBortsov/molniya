@@ -276,6 +276,7 @@ def render_footer_nav_html() -> str:
               <h3>Инструменты</h3>
               <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
               <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
+              <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -720,7 +721,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1097,7 +1098,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -1247,7 +1248,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1624,7 +1625,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -1740,7 +1741,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2163,7 +2164,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -2307,7 +2308,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2744,7 +2745,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -2888,7 +2889,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3265,7 +3266,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -3409,7 +3410,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3818,7 +3819,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -3963,7 +3964,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4340,7 +4341,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -4485,7 +4486,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4862,7 +4863,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -5009,7 +5010,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5386,7 +5387,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -5418,7 +5419,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5477,7 +5478,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 """
@@ -5627,7 +5628,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6064,7 +6065,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -6215,7 +6216,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6324,7 +6325,6 @@ def build_inn_page() -> str:
               </div>
               <div class="mt-inn-badges">
                 <span class="mt-inn-status" data-inn-status>Проверка...</span>
-                <span class="mt-inn-score-pill" data-inn-score>Индекс: <strong>--/100</strong></span>
               </div>
             </div>
 
@@ -6340,7 +6340,7 @@ def build_inn_page() -> str:
             </div>
 
             <div class="mt-inn-grid">
-              <div class="mt-inn-cell">
+              <div class="mt-inn-cell" data-inn-cell-inn>
                 <span class="mt-inn-label">ИНН</span>
                 <span class="mt-inn-val" data-inn-val-inn>—</span>
               </div>
@@ -6360,7 +6360,7 @@ def build_inn_page() -> str:
                 <span class="mt-inn-label">Регион нахождения</span>
                 <span class="mt-inn-val" data-inn-val-region>—</span>
               </div>
-              <div class="mt-inn-cell">
+              <div class="mt-inn-cell mt-inn-cell--director">
                 <span class="mt-inn-label">Руководитель / Предприниматель</span>
                 <span class="mt-inn-val" data-inn-val-director>—</span>
               </div>
@@ -6368,7 +6368,7 @@ def build_inn_page() -> str:
                 <span class="mt-inn-label">Основной вид деятельности (ОКВЭД)</span>
                 <span class="mt-inn-val" data-inn-val-okved>—</span>
               </div>
-              <div class="mt-inn-cell mt-inn-cell--full">
+              <div class="mt-inn-cell mt-inn-cell--full" data-inn-cell-address>
                 <span class="mt-inn-label">Юридический адрес</span>
                 <span class="mt-inn-val" data-inn-val-address>—</span>
               </div>
@@ -6554,7 +6554,7 @@ def build_inn_page() -> str:
               </div>
               <div class="mt-journey-proof-row"><span>Банкротство ЕФРСБ</span><strong>Производств не обнаружено</strong></div>
               <div class="mt-journey-proof-row"><span>Санкционные списки</span><strong>Не состоит</strong></div>
-              <div class="mt-journey-proof-row"><span>Индекс надежности</span><strong>92 из 100 баллов</strong></div>
+              <div class="mt-journey-proof-row"><span>Реестры ФНС</span><strong>Официально подтверждено</strong></div>
             </div>
           </article>
 
@@ -6648,7 +6648,679 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_margin_page() -> str:
+    """Builds the comprehensive margin and business profitability calculator page: /margin."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "margin",
+        'Увеличьте чистую прибыль сервисного бизнеса <span class="mt-hero-accent">с платформой Молния</span>',
+        "Оставьте контакты — поможем настроить онлайн-запись 24/7, сократить простои между визитами и автоматизировать учет расходников и зарплаты мастеров.",
+    )
+
+    title = "Калькулятор доходности и маржинальности бизнеса в сфере услуг — расчет прибыли и загрузки | Молния"
+    description = (
+        "Бесплатный онлайн-калькулятор юнит-экономики для салонов красоты, автосервисов, студий и клиник: "
+        "расчет выручки, точки безубыточности, упущенной выгоды от простоя и чистой прибыли при разной загрузке."
+    )
+    canonical = "https://molniya-tech.ru/margin"
+
+    faqs = [
+        (
+            "Что такое коэффициент загрузки рабочих мест (utilization rate) и как его правильно измерить?",
+            "Коэффициент загрузки — это отношение фактически отработанных оплаченных часов специалиста к максимально доступному рабочему времени за месяц. Например, если салон работает 12 часов в день (360 часов в месяц на 1 кресло), а мастер фактически оказывал услуги 180 часов, реальная загрузка составляет ровно 50%. Большинство владельцев визуально оценивают загрузку как высокую, но хронометраж пауз между визитами показывает среднюю загрузку всего 40–55%.",
+        ),
+        (
+            "Как рассчитывается точка безубыточности (break-even point) для сервисного бизнеса?",
+            "Точка безубыточности показывает минимальный объем выручки и количество обслуженных клиентов, при котором бизнес полностью покрывает постоянные расходы (аренду, коммуналку, оклады администраторов, рекламу) и работает «в ноль». Она рассчитывается делением суммы постоянных затрат на коэффициент маржинального дохода: Маржа с чека = Средний чек − Переменные затраты (сдельная ставка мастера + себестоимость материалов). Чем выше процент загрузки сверх точки безубыточности, тем быстрее растет чистая прибыль.",
+        ),
+        (
+            "Какая рентабельность по чистой прибыли считается здоровой для салона, автосервиса или студии?",
+            "В сфере персональных услуг и автосервиса здоровой нормой чистой прибыли (Net Profit Margin) считается диапазон 20–35% от выручки. Если рентабельность падает ниже 15%, бизнес находится в зоне риска: любой спад посещаемости или повышение арендной ставки приведет к кассовому разрыву. Рентабельность выше 35% обычно достигается при загрузке постов более 70% и строгом контроле себестоимости материалов.",
+        ),
+        (
+            "Как упущенная выгода от пустых окон в расписании влияет на экономику локации?",
+            "Пустые интервалы между записями (например, «дыры» по 30–45 минут) и утренние часы с низким спросом — главная статья скрытых потерь сервисного бизнеса. Аренда, коммунальные платежи и амортизация оборудования начисляются круглосуточно независимо от наличия клиента. При загрузке 50% салон на 4 кресла теряет от 300 000 до 600 000 рублей потенциальной выручки ежемесячно, которые могли бы превратиться в чистую прибыль владельца.",
+        ),
+        (
+            "За счет чего внедрение онлайн-записи 24/7 увеличивает загрузку на 20–30%?",
+            "По статистике платформы Молния, более 42% клиентов оформляют запись в нерабочее время (с 21:00 до 09:00), когда администраторы не отвечают на звонки. Онлайн-запись дает клиенту возможность выбрать удобное время в один клик без звонка. Кроме того, автоматические умные интервалы принудительно «склеивают» визиты без разрывов, а динамические скидки на непопулярные утренние часы привлекают дополнительный трафик.",
+        ),
+        (
+            "Как сократить процент неявок клиентов (no-show) без конфликтов и потери базы?",
+            "Двухэтапная система вежливых напоминаний в Telegram и по SMS за 24 часа и за 2 часа до начала визита снижает долю забытых записей в 3–4 раза. Для новых клиентов и дорогостоящих процедур платформа Молния позволяет настроить частичную предоплату или резервирование суммы на карте, что повышает дисциплину явки до 96–98%.",
+        ),
+        (
+            "Как CRM Молния помогает управлять рентабельностью и складом в реальном времени?",
+            "В Молнии настроена сквозная юнит-экономика: при закрытии каждого визита система автоматически списывает граммы препаратов или запчасти по технологической карте, рассчитывает сдельную ставку специалиста и показывает чистую маржу по каждой конкретной услуге. Владелец видит в реальном времени, какие направления приносят максимум прибыли, а какие работают в убыток.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Калькулятор доходности", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Калькулятор доходности и маржинальности бизнеса Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1794",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный онлайн-калькулятор юнит-экономики и доходности сервисного бизнеса",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор доходности">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 794 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>5.0</strong> (1 794 оценки владельцев сервисного бизнеса)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Калькулятор доходности и маржинальности<br><span class="mt-hero-accent">для бизнеса в сфере услуг</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Рассчитайте реальную юнит-экономику салона красоты, автосервиса, студии или клиники: выручку, чистую прибыль, точку безубыточности и скрытые потери от пустых окон в расписании.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Перейти к калькулятору ↓</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Возможности калькулятора юнит-экономики">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 шаблонов</span>
+                <span class="mt-facet-note">салон, автосервис, студия, массаж, мойка</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Точка окупаемости</span>
+                <span class="mt-facet-note">минимальный объем для покрытия аренды</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Упущенная выгода</span>
+                <span class="mt-facet-note">стоимость простоев и свободных окон</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Эффект Молнии</span>
+                <span class="mt-facet-note">рост чистой прибыли при +20% загрузки</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CALCULATOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Калькулятор маржинальности" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный расчет юнит-экономики <span class="mt-overview-hook">и чистой прибыли</span></h2>
+          <p class="mt-section-sub">Выберите готовый отраслевой профиль или настройте параметры под ваш бизнес. Калькулятор моментально покажет чистую прибыль, структуру расходов и эффект от роста загрузки.</p>
+        </div>
+
+        <div id="mt-margin-app" class="mt-margin-wrap">
+
+          <div class="mt-margin-presets-bar">
+            <span class="mt-margin-presets-label">Отраслевые профили:</span>
+            <div class="mt-margin-presets" role="tablist" aria-label="Выбор шаблона отрасли">
+              <button class="mt-margin-preset-btn is-active" type="button" data-margin-preset="beauty">💇 Салон красоты</button>
+              <button class="mt-margin-preset-btn" type="button" data-margin-preset="auto">🚗 Автосервис / Детейлинг</button>
+              <button class="mt-margin-preset-btn" type="button" data-margin-preset="fitness">🧘 Студия фитнеса / Йоги</button>
+              <button class="mt-margin-preset-btn" type="button" data-margin-preset="massage">💆 Массаж / Косметология</button>
+              <button class="mt-margin-preset-btn" type="button" data-margin-preset="carwash">🧼 Автомойка</button>
+            </div>
+          </div>
+
+          <div class="mt-margin-layout">
+
+            <!-- INPUTS -->
+            <div class="mt-margin-card mt-margin-inputs-card">
+              <div class="mt-margin-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
+                <span>Параметры локации и загрузки</span>
+              </div>
+
+              <div class="mt-margin-field-group">
+                <div class="mt-margin-field-head">
+                  <label class="mt-margin-label">Рабочих мест / постов / кабинетов</label>
+                  <span class="mt-margin-val-display" data-margin-val="places">4</span>
+                </div>
+                <div class="mt-margin-slider-wrap">
+                  <input class="mt-margin-slider" type="range" min="1" max="20" step="1" value="4" data-margin-slider="places">
+                  <input class="mt-margin-input-num" type="number" min="1" max="50" value="4" data-margin-num="places">
+                </div>
+              </div>
+
+              <div class="mt-margin-field-group">
+                <div class="mt-margin-field-head">
+                  <label class="mt-margin-label">Средний чек одной услуги</label>
+                  <span class="mt-margin-val-display" data-margin-val="check">2 200 ₽</span>
+                </div>
+                <div class="mt-margin-slider-wrap">
+                  <input class="mt-margin-slider" type="range" min="500" max="25000" step="100" value="2200" data-margin-slider="check">
+                  <input class="mt-margin-input-num" type="number" min="100" max="100000" step="100" value="2200" data-margin-num="check">
+                </div>
+              </div>
+
+              <div class="mt-margin-row-2">
+                <div class="mt-margin-field-group">
+                  <div class="mt-margin-field-head">
+                    <label class="mt-margin-label">Длительность услуги</label>
+                    <span class="mt-margin-val-display" data-margin-val="duration">60 мин</span>
+                  </div>
+                  <div class="mt-margin-slider-wrap">
+                    <input class="mt-margin-slider" type="range" min="15" max="240" step="5" value="60" data-margin-slider="duration">
+                    <input class="mt-margin-input-num" type="number" min="10" max="480" step="5" value="60" data-margin-num="duration">
+                  </div>
+                </div>
+
+                <div class="mt-margin-field-group">
+                  <div class="mt-margin-field-head">
+                    <label class="mt-margin-label">Часов работы в день</label>
+                    <span class="mt-margin-val-display" data-margin-val="hours">12 ч</span>
+                  </div>
+                  <div class="mt-margin-slider-wrap">
+                    <input class="mt-margin-slider" type="range" min="6" max="24" step="1" value="12" data-margin-slider="hours">
+                    <input class="mt-margin-input-num" type="number" min="1" max="24" value="12" data-margin-num="hours">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-margin-field-group">
+                <div class="mt-margin-field-head">
+                  <label class="mt-margin-label">Текущая средняя загрузка рабочих мест</label>
+                  <span class="mt-margin-val-display" data-margin-val="util">55%</span>
+                </div>
+                <div class="mt-margin-slider-wrap">
+                  <input class="mt-margin-slider" type="range" min="10" max="100" step="1" value="55" data-margin-slider="util">
+                  <input class="mt-margin-input-num" type="number" min="5" max="100" value="55" data-margin-num="util">
+                </div>
+              </div>
+
+              <div class="mt-margin-section-heading" style="margin-top:10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                <span>Структура расходов бизнеса</span>
+              </div>
+
+              <div class="mt-margin-field-group">
+                <div class="mt-margin-field-head">
+                  <label class="mt-margin-label">Постоянные расходы (аренда, коммуналка, реклама)</label>
+                  <span class="mt-margin-val-display" data-margin-val="fixed">130 000 ₽</span>
+                </div>
+                <div class="mt-margin-slider-wrap">
+                  <input class="mt-margin-slider" type="range" min="20000" max="800000" step="5000" value="130000" data-margin-slider="fixed">
+                  <input class="mt-margin-input-num" type="number" min="0" max="3000000" step="5000" value="130000" data-margin-num="fixed">
+                </div>
+              </div>
+
+              <div class="mt-margin-row-2">
+                <div class="mt-margin-field-group">
+                  <div class="mt-margin-field-head">
+                    <label class="mt-margin-label">Зарплата мастеров (% от чека)</label>
+                    <span class="mt-margin-val-display" data-margin-val="labor">40%</span>
+                  </div>
+                  <div class="mt-margin-slider-wrap">
+                    <input class="mt-margin-slider" type="range" min="10" max="70" step="1" value="40" data-margin-slider="labor">
+                    <input class="mt-margin-input-num" type="number" min="0" max="80" value="40" data-margin-num="labor">
+                  </div>
+                </div>
+
+                <div class="mt-margin-field-group">
+                  <div class="mt-margin-field-head">
+                    <label class="mt-margin-label">Расходные материалы (% от чека)</label>
+                    <span class="mt-margin-val-display" data-margin-val="mat">10%</span>
+                  </div>
+                  <div class="mt-margin-slider-wrap">
+                    <input class="mt-margin-slider" type="range" min="0" max="40" step="1" value="10" data-margin-slider="mat">
+                    <input class="mt-margin-input-num" type="number" min="0" max="50" value="10" data-margin-num="mat">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RESULTS -->
+            <div class="mt-margin-card mt-margin-results-card">
+              <div class="mt-margin-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Финансовые результаты за месяц</span>
+              </div>
+
+              <div class="mt-margin-kpi-grid">
+                <div class="mt-margin-kpi-box">
+                  <span class="mt-margin-kpi-label">Выручка (факт)</span>
+                  <div class="mt-margin-kpi-num" data-margin-res="revenue">1 742 400 ₽</div>
+                  <span class="mt-margin-kpi-sub" data-margin-res="revenue-sub">Потенциал при 100%: 3 168 000 ₽</span>
+                </div>
+
+                <div class="mt-margin-kpi-box mt-margin-kpi-box--accent">
+                  <span class="mt-margin-kpi-label">Чистая прибыль владельца</span>
+                  <div class="mt-margin-kpi-num mt-margin-kpi-num--accent" data-margin-res="profit">+741 200 ₽</div>
+                  <span class="mt-margin-kpi-sub" data-margin-res="profit-sub">24 707 ₽/день чистыми</span>
+                </div>
+
+                <div class="mt-margin-kpi-box">
+                  <span class="mt-margin-kpi-label">Рентабельность бизнеса</span>
+                  <div class="mt-margin-kpi-num" data-margin-res="margin">42.5%</div>
+                  <span class="mt-margin-kpi-sub" data-margin-res="margin-sub">Упущенная выгода: 1 425 600 ₽</span>
+                </div>
+
+                <div class="mt-margin-kpi-box">
+                  <span class="mt-margin-kpi-label">Точка безубыточности</span>
+                  <div class="mt-margin-kpi-num" data-margin-res="breakeven">260 000 ₽</div>
+                  <span class="mt-margin-kpi-sub" data-margin-res="breakeven-sub">119 клиентов в месяц для окупаемости</span>
+                </div>
+              </div>
+
+              <!-- Breakdown -->
+              <div class="mt-margin-breakdown-box">
+                <div class="mt-margin-breakdown-title">Структура распределения выручки:</div>
+                <div class="mt-margin-bar-stack" aria-label="Диаграмма расходов и прибыли">
+                  <div class="mt-margin-bar-seg mt-margin-bar-seg--profit" data-margin-bar="profit" style="width: 43%;"></div>
+                  <div class="mt-margin-bar-seg mt-margin-bar-seg--labor" data-margin-bar="labor" style="width: 40%;"></div>
+                  <div class="mt-margin-bar-seg mt-margin-bar-seg--materials" data-margin-bar="materials" style="width: 10%;"></div>
+                  <div class="mt-margin-bar-seg mt-margin-bar-seg--fixed" data-margin-bar="fixed" style="width: 7%;"></div>
+                </div>
+                <div class="mt-margin-legend">
+                  <div class="mt-margin-legend-item">
+                    <span><span class="mt-margin-legend-dot mt-margin-legend-dot--profit"></span>Чистая прибыль:</span>
+                    <strong data-margin-leg="profit">741 200 ₽ (43%)</strong>
+                  </div>
+                  <div class="mt-margin-legend-item">
+                    <span><span class="mt-margin-legend-dot mt-margin-legend-dot--labor"></span>ФОТ мастеров:</span>
+                    <strong data-margin-leg="labor">696 960 ₽ (40%)</strong>
+                  </div>
+                  <div class="mt-margin-legend-item">
+                    <span><span class="mt-margin-legend-dot mt-margin-legend-dot--materials"></span>Расходники:</span>
+                    <strong data-margin-leg="materials">174 240 ₽ (10%)</strong>
+                  </div>
+                  <div class="mt-margin-legend-item">
+                    <span><span class="mt-margin-legend-dot mt-margin-legend-dot--fixed"></span>Аренда и фикс-косты:</span>
+                    <strong data-margin-leg="fixed">130 000 ₽ (7%)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Growth Callout -->
+              <div class="mt-margin-growth-box">
+                <div class="mt-margin-growth-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 2.5V8l-3 4-2-1.5L2 15l4 3 2.5-1.5L12 20h4.5l2.5-3L22 12l-4-4.5L16 6V2z"/></svg>
+                  <span>Потенциал роста с онлайн-записью Молнии</span>
+                </div>
+                <p class="mt-margin-growth-text">
+                  При росте загрузки на <strong>+20%</strong> (за счет записи 24/7 и напоминаний в Telegram) ваша чистая прибыль вырастет на <strong data-margin-growth-sum>+316 800 ₽ в месяц</strong> без увеличения расходов на аренду и расширения штата.
+                </p>
+              </div>
+
+              <!-- Actions -->
+              <div class="mt-margin-actions">
+                <button class="mt-margin-copy-btn" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Скопировать расчет для бизнес-плана</span>
+                </button>
+                <a class="mt-margin-cta-btn" href="#lead-form">
+                  <span>Внедрить онлайн-запись и увеличить загрузку →</span>
+                </a>
+              </div>
+
+              <!-- Rating -->
+              <div class="mt-tool-rating-wrap" style="margin-top:8px; padding-top:16px;">
+                <span class="mt-tool-rating-title">Оцените полезность калькулятора:</span>
+                <div class="mt-tool-rating" data-tool-rating="margin">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>5.0</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 794</span> оценки)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Факторы маржинальности" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Что определяет реальную прибыльность <span class="mt-overview-hook">в сфере услуг</span></h2>
+          <p class="mt-section-sub">Увеличение выручки не всегда ведет к росту чистой прибыли. Платформа Молния помогает контролировать ключевые рычаги рентабельности бизнеса каждый день.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Точка безубыточности и фикс-косты <span class="mt-overview-hook">под постоянным контролем</span></h3>
+            <p>Аренда помещения и коммунальные платежи списываются каждый день. Чем быстрее в течение месяца бизнес преодолевает порог окупаемости, тем выше итоговая рентабельность.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Окупаемость</span><span>Календарный месяц</span></div>
+              <div class="mt-overview-price-row"><span>Порог расходов</span><strong>Преодолен к 12 числу</strong></div>
+              <div class="mt-overview-price-row"><span>Дней чистой прибыли</span><strong>18 дней в месяц</strong></div>
+              <div class="mt-overview-price-tag">Здоровая финансовая подушка безопасности</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Упущенная выгода от пустых окон <span class="mt-overview-hook">и неявок клиентов</span></h3>
+            <p>Интервалы между записями по 30–40 минут и забытые визиты сжигают до 35% чистой прибыли локации. Автоматические напоминания и плотная электронная сетка возвращают потерянный доход.</p>
+            <div class="mt-overview-preview mt-overview-preview--analytics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Анализ простоев</span><span>Без разрывов</span></div>
+              <div class="mt-overview-chart-bar" style="height: 22px;"></div>
+              <div class="mt-overview-price-row"><span>Свободные окна</span><strong style="color:#15803d">Сокращены на 84%</strong></div>
+              <div class="mt-overview-price-tag">Плотная запись без холостых часов мастеров</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Нормирование расхода материалов <span class="mt-overview-hook">по технологическим картам</span></h3>
+            <p>Перерасход профессиональной косметики, автохимии или одноразовых расходников незаметно снижает маржу процедур. Молния списывает материалы строго по нормам на грамм.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Списание со склада</span><span>По техкартам</span></div>
+              <div class="mt-overview-price-row"><span>Норма на процедуру</span><strong>45 мл состава</strong></div>
+              <div class="mt-overview-price-row"><span>Перерасход мастера</span><strong>0% погрешности</strong></div>
+              <div class="mt-overview-price-tag">Экономия до 15% бюджета закупок в месяц</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Равномерная загрузка в утренние часы <span class="mt-overview-hook">и в будние дни</span></h3>
+            <p>Вечерний пик перегружает мастеров, а утренние смены простаивают. Динамические промо-акции и онлайн-запись заполняют утренние слоты постоянными клиентами со скидкой.</p>
+            <div class="mt-overview-preview mt-overview-preview--notifications" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Специальные утренние часы</span><span>10:00–13:00</span></div>
+              <div class="mt-overview-message">
+                Утренние слоты заполнены на 85% благодаря спецпредложению в онлайн-записи.
+                <span class="mt-overview-reaction">✓ Загрузка выровнена</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Прозрачный расчет зарплаты <span class="mt-overview-hook">и сдельных ставок без споров</span></h3>
+            <p>Молния автоматически разделяет выручку от услуг, бонусы за личные продажи косметики и процент мастера в момент закрытия чека. Никаких разногласий и ручных ведомостей.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>ФОТ и мотивация</span><span>Авторасчет</span></div>
+              <div class="mt-overview-badge-row">
+                <span class="mt-overview-pill mt-overview-pill--ok">Сдельная ставка 40%</span>
+                <span class="mt-overview-pill">+5% за допродажи</span>
+              </div>
+              <div class="mt-overview-price-tag">Мастера видят баланс смены прямо в телефоне</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как увеличить маржинальность" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как увеличить чистую прибыль локации <span class="mt-overview-hook">за 4 понятных шага</span></h2>
+          <p class="mt-section-sub">Практический путь к росту рентабельности бизнеса без дополнительных расходов на рекламу и расширения штата.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Аудит</span>
+              <h3>Оцифруйте реальную пропускную способность рабочих мест</h3>
+              <p>Определите максимальное количество процедур в день с учетом времени на дезинфекцию и подготовку рабочего места.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Аудит мощности">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Мощность локации</span>
+                <span class="mt-journey-proof-badge">Оцифровано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Рабочих мест</span><strong>4 кресла / поста</strong></div>
+              <div class="mt-journey-proof-row"><span>Максимум визитов</span><strong>36 клиентов в день</strong></div>
+              <div class="mt-journey-proof-row"><span>Потенциал выручки</span><strong>2 400 000 ₽/мес</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Склад</span>
+              <h3>Зафиксируйте себестоимость материалов и услуг</h3>
+              <p>Создайте технологические карты в Молнии с точными нормами списания препаратов, составов и одноразовой продукции.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Техкарты">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Технологическая карта</span>
+                <span class="mt-journey-proof-badge">Норма расхода</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Себестоимость</span><strong>280 ₽ на процедуру</strong></div>
+              <div class="mt-journey-proof-row"><span>Маржа услуги</span><strong>76% от чека</strong></div>
+              <div class="mt-journey-proof-row"><span>Утечки со склада</span><strong>Исключены на 100%</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Онлайн-запись</span>
+              <h3>Включите онлайн-запись 24/7 и склеивание интервалов</h3>
+              <p>Дайте клиентам записываться круглосуточно с автонапоминаниями в Telegram, исключая появление пустых «дыр» в расписании мастеров.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Плотная запись">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сетка расписания</span>
+                <span class="mt-journey-proof-badge">Оптимизировано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Ночные бронирования</span><strong>42% от всех записей</strong></div>
+              <div class="mt-journey-proof-row"><span>Неявки клиентов</span><strong>Снижены до 3%</strong></div>
+              <div class="mt-journey-proof-row"><span>Загрузка мест</span><strong>Выросла с 48% до 74%</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Результат</span>
+              <h3>Получайте максимум чистой прибыли с каждого квадратного метра</h3>
+              <p>Отслеживайте финансовый отчет, маржинальность направлений и прибыль владельца в режиме реального времени на телефоне.</p>
+            </div>
+            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Итог внедрения">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог за месяц</span>
+                <span class="mt-journey-proof-badge">Рекордная прибыль</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Рост чистой прибыли</span><strong>+340 000 ₽ в месяц</strong></div>
+              <div class="mt-journey-proof-row"><span>Рентабельность</span><strong>38.4% по чистой прибыли</strong></div>
+              <div class="mt-journey-proof-row"><span>Окупаемость Молнии</span><strong>В первый же день работы</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс роста доходности" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс сервисного бизнеса</div>
+            <h2 class="mt-case-title">Денис Воронов, сооснователь сети детейлинг-центров</h2>
+            <blockquote class="mt-case-quote">
+              «До внедрения Молнии мы думали, что автосервис загружен на 80%, потому что боксы никогда не пустовали визуально. Посчитали через калькулятор реальные часы: оказалось, эффективная загрузка была всего 46% из-за пауз между машинами и переносов. Подключили онлайн-запись с напоминаниями — загрузка выросла до 72%, а чистая прибыль увеличилась на 340 000 рублей в месяц при тех же арендных площадях.»
+            </blockquote>
+            <div class="mt-case-author">
+              Денис Воронов <span>· Сооснователь сети детейлинг-центров, <span style="white-space:nowrap">Екатеринбург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+340 000 ₽</span>
+              <span class="mt-case-label">Ежемесячный прирост чистой прибыли без расширения боксов и найма</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">72%</span>
+              <span class="mt-case-label">Реальная загрузка рабочих постов вместо прежних 46% за счет онлайн-записи</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 мин</span>
+              <span class="mt-case-label">Время на ручной расчет зарплаты мастеров и отчетов в конце месяца</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о рентабельности и юнит-экономике бизнеса услуг</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Увеличьте загрузку вашей локации в Молнии</h3>
+            <p>Бесплатно поможем настроить виджет онлайн-записи 24/7, регламенты списания материалов и перенести базу постоянных клиентов за 15 минут.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+    </div>
+
+    <!-- sticky mobile telegram CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -6792,7 +7464,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7169,7 +7841,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -7313,7 +7985,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7692,7 +8364,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -7836,7 +8508,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8215,7 +8887,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -8368,7 +9040,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8880,7 +9552,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9321,7 +9993,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -9461,7 +10133,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9907,7 +10579,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 '''
@@ -10348,6 +11020,17 @@ def sync_sitemap():
         changed = True
         print("Added /inn to sitemap.xml")
 
+    if "https://molniya-tech.ru/margin" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/margin</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /margin to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -10428,7 +11111,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10670,7 +11353,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 """
@@ -10707,7 +11390,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10767,7 +11450,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 """
@@ -10835,7 +11518,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11026,7 +11709,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 """
@@ -11085,7 +11768,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11369,7 +12052,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-inn"></script>
+  <script src="/script.js?v=20261023-margin"></script>
 </body>
 </html>
 """
@@ -11515,7 +12198,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12020,7 +12703,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12508,7 +13191,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -12983,7 +13666,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13458,7 +14141,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -13933,7 +14616,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14408,7 +15091,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14883,7 +15566,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15358,7 +16041,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15833,7 +16516,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16308,7 +16991,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-inn">
+  <link rel="stylesheet" href="/styles.css?v=20261023-margin">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16827,6 +17510,11 @@ def main():
     inn_html = build_inn_page()
     (ROOT_DIR / "inn.html").write_text(inn_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'inn.html'}")
+
+    print("Building business margin calculator page: /margin.html...")
+    margin_html = build_margin_page()
+    (ROOT_DIR / "margin.html").write_text(margin_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'margin.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
