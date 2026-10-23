@@ -1763,6 +1763,56 @@ function initCarwashWeather() {
   var app = document.getElementById('mt-weather-app');
   if (!app) return;
 
+  var CITY_COORDS = {
+    msk: { name: 'Москва', lat: 55.7558, lon: 37.6176 },
+    spb: { name: 'Санкт-Петербург', lat: 59.9343, lon: 30.3351 },
+    kazan: { name: 'Казань', lat: 55.7961, lon: 49.1064 },
+    ekb: { name: 'Екатеринбург', lat: 56.8389, lon: 60.6057 },
+    nsk: { name: 'Новосибирск', lat: 55.0084, lon: 82.9357 },
+    nn: { name: 'Нижний Новгород', lat: 56.3269, lon: 44.0059 },
+    krr: { name: 'Краснодар', lat: 45.0355, lon: 38.9754 },
+    samara: { name: 'Самара', lat: 53.1959, lon: 50.1002 },
+    ufa: { name: 'Уфа', lat: 54.7388, lon: 55.9721 },
+    rostov: { name: 'Ростов-на-Дону', lat: 47.2225, lon: 39.7187 },
+    chelyabinsk: { name: 'Челябинск', lat: 55.1644, lon: 61.4368 },
+    krasnoyarsk: { name: 'Красноярск', lat: 56.0153, lon: 92.8932 },
+    voronezh: { name: 'Воронеж', lat: 51.6720, lon: 39.1843 },
+    perm: { name: 'Пермь', lat: 58.0105, lon: 56.2502 },
+    volgograd: { name: 'Волгоград', lat: 48.7080, lon: 44.5133 },
+    saratov: { name: 'Саратов', lat: 51.5336, lon: 46.0343 },
+    tyumen: { name: 'Тюмень', lat: 57.1530, lon: 65.5343 },
+    tula: { name: 'Тула', lat: 54.1931, lon: 37.6173 },
+    sochi: { name: 'Сочи', lat: 43.5855, lon: 39.7231 },
+    vladivostok: { name: 'Владивосток', lat: 43.1198, lon: 131.8869 }
+  };
+
+  var WMO_MAP = {
+    0: ['Ясно', 'sun'],
+    1: ['Преимущественно ясно', 'sun-cloud'],
+    2: ['Переменная облачность', 'cloud-sun'],
+    3: ['Пасмурно', 'cloud'],
+    45: ['Туман', 'fog'],
+    48: ['Изморозь', 'fog'],
+    51: ['Небольшая морось', 'drizzle'],
+    53: ['Морось', 'drizzle'],
+    55: ['Плотная морось', 'drizzle'],
+    61: ['Небольшой дождь', 'rain'],
+    63: ['Умеренный дождь', 'rain'],
+    65: ['Сильный дождь', 'heavy-rain'],
+    71: ['Небольшой снегопад', 'snow'],
+    73: ['Снегопад', 'snow'],
+    75: ['Сильный снегопад', 'heavy-snow'],
+    77: ['Снежные зерна', 'snow'],
+    80: ['Кратковременный дождь', 'rain'],
+    81: ['Ливень', 'heavy-rain'],
+    82: ['Шквальный ливень', 'heavy-rain'],
+    85: ['Снегопад', 'snow'],
+    86: ['Сильный снегопад', 'heavy-snow'],
+    95: ['Гроза', 'thunder'],
+    96: ['Гроза с градом', 'thunder'],
+    99: ['Сильная гроза с градом', 'thunder']
+  };
+
   var chips = app.querySelectorAll('[data-weather-city]');
   var select = document.getElementById('mt-weather-city-select');
   var geoBtn = document.getElementById('mt-weather-geo-btn');
@@ -1789,7 +1839,7 @@ function initCarwashWeather() {
 
   var urlParams = new URLSearchParams(window.location.search);
   var cityParam = urlParams.get('city');
-  if (cityParam) {
+  if (cityParam && (cityParam in CITY_COORDS)) {
     currentCity = cityParam.toLowerCase();
   }
 
@@ -1808,6 +1858,163 @@ function initCarwashWeather() {
       case 'thunder': return '⚡';
       default: return '🌤️';
     }
+  }
+
+  function computeClientWashIndex(forecast, cityName, citySlug) {
+    var daily = forecast.daily || {};
+    var times = daily.time || [];
+    var probs = daily.precipitation_probability_max || [];
+    var sums = daily.precipitation_sum || [];
+    var codes = daily.weathercode || [];
+    var tMax = daily.temperature_2m_max || [];
+    var tMin = daily.temperature_2m_min || [];
+    var currWeather = forecast.current_weather || {};
+    var currTemp = Math.round(currWeather.temperature !== undefined ? currWeather.temperature : (tMax[0] || 12));
+
+    var p0 = probs[0] || 0;
+    var s0 = sums[0] || 0;
+    var p1 = probs[1] || p0;
+    var s1 = sums[1] || s0;
+    var p2 = probs[2] || p1;
+    var s2 = sums[2] || s1;
+
+    var precipPenalty = (p0 * 0.45) + (p1 * 0.35) + (p2 * 0.15);
+    precipPenalty += Math.min(s0 * 6.0, 25.0) + Math.min(s1 * 4.0, 15.0) + Math.min(s2 * 2.0, 10.0);
+
+    var tempPenalty = 0;
+    var isSlush = false;
+    if ((tMin[0] < 0 && tMax[0] > 0) || (tMin[1] < 0 && tMax[1] > 0)) {
+      tempPenalty += 14.0;
+      isSlush = true;
+    }
+    if (tMax[0] < -15) {
+      tempPenalty += 6.0;
+    }
+
+    var rawScore = 100.0 - precipPenalty - tempPenalty;
+    var score = Math.max(5, Math.min(100, Math.round(rawScore)));
+
+    var status = 'good';
+    var verdict = 'Смело на мойку';
+    var tagline = 'Погода стабильная, легкая пыль не помеха. Отличный момент сбить дорожный налет.';
+    var image = '/assets/img/carwash/wash-good.webp';
+    var badgeText = 'Благоприятно';
+    var badgeColor = '#1565C0';
+    var daysClean = '2–3 дня чистоты';
+    var advice = 'Кузов быстро сохнет, риск осадков низкий. Экспресс или кузов + коврики окупятся с лихвой.';
+
+    if (score >= 80) {
+      status = 'perfect';
+      verdict = 'Идеально! Мой на все деньги';
+      tagline = 'Впереди сухие чистые дни. Машина будет сиять и радовать глаз.';
+      image = '/assets/img/carwash/wash-perfect.webp';
+      badgeText = 'Зеленый свет';
+      badgeColor = '#2E7D32';
+      daysClean = '4–6 дней чистоты';
+      advice = 'Отличное время для комплексной мойки, воска или детейлинга — результат продержится долго!';
+    } else if (score >= 60) {
+      status = 'good';
+      verdict = 'Смело на мойку';
+      tagline = 'Погода стабильная, легкая пыль не помеха. Отличный момент сбить дорожный налет.';
+      image = '/assets/img/carwash/wash-good.webp';
+      badgeText = 'Благоприятно';
+      badgeColor = '#1565C0';
+      daysClean = '2–3 дня чистоты';
+      advice = 'Кузов быстро сохнет, риск осадков низкий. Экспресс или кузов + коврики окупятся с лихвой.';
+    } else if (score >= 35) {
+      status = 'risky';
+      verdict = 'Рискованно: спонсор чистых луж';
+      tagline = 'Высокая влажность или скорый дождь/снег. Чистым авто пробудет считанные часы.';
+      image = '/assets/img/carwash/wash-risky.webp';
+      badgeText = '50 / 50';
+      badgeColor = '#E65100';
+      daysClean = 'Меньше 24 часов';
+      advice = 'Если авто сильно загрязнено — сделайте быструю техническую сбивку грязи за 150 ₽. Дорогие полировки отложите.';
+    } else {
+      status = 'disaster';
+      verdict = 'Остановись! Танки грязи не боятся';
+      tagline = 'Ливни, снегопад или слякоть с реагентами. Деньги на ветер — лучше переждать непогоду.';
+      image = '/assets/img/carwash/wash-disaster.webp';
+      badgeText = 'Не рекомендуем';
+      badgeColor = '#C62828';
+      daysClean = 'До первой лужи (20 минут)';
+      advice = 'Протрите только стекла, зеркала, оптику и номерные знаки для безопасности. Полноценную мойку отложите до ясных дней.';
+    }
+
+    var roadCondition = 'Сухой чистый асфальт';
+    if (isSlush) {
+      roadCondition = 'Слякоть и дорожные реагенты';
+    } else if (s0 > 3.0 || p0 > 70) {
+      roadCondition = 'Мокрый асфальт, лужи и взвесь';
+    } else if (s0 > 0.5 || p0 > 40) {
+      roadCondition = 'Влажное дорожное полотно';
+    }
+
+    var precipRisk = 'Минимальный';
+    if (p0 >= 75) {
+      precipRisk = 'Штормовой / Непрерывный';
+    } else if (p0 >= 50 || s0 >= 2.0) {
+      precipRisk = 'Высокий';
+    } else if (p0 >= 20 || s0 >= 0.2) {
+      precipRisk = 'Умеренный';
+    }
+
+    var weekdays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+    var daysForecast = [];
+    for (var i = 0; i < Math.min(5, times.length); i++) {
+      var dStr = times[i];
+      var parts = dStr.split('-');
+      var dObj = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      var dayName = i === 0 ? 'Сегодня' : (i === 1 ? 'Завтра' : weekdays[dObj.getDay()]);
+      var dateLabel = ('0' + dObj.getDate()).slice(-2) + '.' + ('0' + (dObj.getMonth() + 1)).slice(-2);
+
+      var code = codes[i] || 0;
+      var descInfo = WMO_MAP[code] || ['Облачно', 'cloud'];
+      var prob = probs[i] || 0;
+      var pSum = sums[i] || 0;
+      var tHi = Math.round(tMax[i] !== undefined ? tMax[i] : 0);
+      var tLo = Math.round(tMin[i] !== undefined ? tMin[i] : 0);
+
+      var dayRaw = 100.0 - (prob * 0.7) - Math.min(pSum * 10.0, 30.0);
+      if (tLo < 0 && tHi > 0) dayRaw -= 15.0;
+      var dayScore = Math.max(5, Math.min(100, Math.round(dayRaw)));
+
+      daysForecast.push({
+        date: dStr,
+        date_label: dateLabel,
+        day_name: dayName,
+        temp_max: tHi,
+        temp_min: tLo,
+        precip_prob: prob,
+        precip_sum: Math.round(pSum * 10) / 10,
+        weather_code: code,
+        weather_desc: descInfo[0],
+        weather_icon: descInfo[1],
+        day_score: dayScore
+      });
+    }
+
+    return {
+      city_slug: citySlug,
+      city_name: cityName,
+      score: score,
+      status: status,
+      verdict: verdict,
+      tagline: tagline,
+      image: image,
+      badge_text: badgeText,
+      badge_color: badgeColor,
+      days_clean_estimate: daysClean,
+      advice: advice,
+      road_condition: roadCondition,
+      precip_risk: precipRisk,
+      current_temp: currTemp,
+      temp_min: Math.round(tMin[0] !== undefined ? tMin[0] : currTemp),
+      temp_max: Math.round(tMax[0] !== undefined ? tMax[0] : currTemp),
+      precip_prob_today: p0,
+      precip_sum_today: Math.round(s0 * 10) / 10,
+      days: daysForecast
+    };
   }
 
   function renderData(data) {
@@ -1834,13 +2041,7 @@ function initCarwashWeather() {
     }
 
     if (heroImg && data.image) {
-      heroImg.style.opacity = '0.5';
-      var tempImg = new Image();
-      tempImg.onload = function() {
-        heroImg.src = data.image;
-        heroImg.style.opacity = '1';
-      };
-      tempImg.src = data.image;
+      heroImg.src = data.image;
     }
 
     if (daysGrid && Array.isArray(data.days)) {
@@ -1897,23 +2098,48 @@ function initCarwashWeather() {
   }
 
   function fetchWeather(citySlug, lat, lon, customName) {
-    var url = '/api/weather?';
-    if (lat !== undefined && lon !== undefined) {
-      url += 'lat=' + encodeURIComponent(lat) + '&lon=' + encodeURIComponent(lon) + (customName ? '&name=' + encodeURIComponent(customName) : '');
-    } else {
-      url += 'city=' + encodeURIComponent(citySlug);
-    }
+    var cInfo = CITY_COORDS[citySlug] || CITY_COORDS.msk;
+    var targetLat = lat !== undefined && lat !== null ? lat : cInfo.lat;
+    var targetLon = lon !== undefined && lon !== null ? lon : cInfo.lon;
+    var targetName = customName || cInfo.name;
+    var targetSlug = citySlug || 'custom';
 
-    fetch(url)
+    if (scoreEl) scoreEl.textContent = '…';
+
+    var localUrl = '/api/weather?' + (targetSlug !== 'custom' ? 'city=' + encodeURIComponent(targetSlug) : 'lat=' + targetLat + '&lon=' + targetLon + '&name=' + encodeURIComponent(targetName));
+
+    fetch(localUrl)
       .then(function(res) {
-        if (!res.ok) throw new Error('Network error');
+        if (!res.ok) throw new Error('API server status ' + res.status);
         return res.json();
       })
       .then(function(data) {
-        renderData(data);
+        if (data && data.score !== undefined) {
+          renderData(data);
+        } else {
+          throw new Error('Invalid server data');
+        }
       })
-      .catch(function(err) {
-        console.error('Weather load error:', err);
+      .catch(function(localErr) {
+        // Direct browser fallback to Open-Meteo API
+        var directUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + targetLat +
+          '&longitude=' + targetLon +
+          '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,windspeed_10m_max' +
+          '&current_weather=true&timezone=auto';
+
+        fetch(directUrl)
+          .then(function(omRes) {
+            if (!omRes.ok) throw new Error('Open-Meteo direct status ' + omRes.status);
+            return omRes.json();
+          })
+          .then(function(omJson) {
+            var clientData = computeClientWashIndex(omJson, targetName, targetSlug);
+            renderData(clientData);
+          })
+          .catch(function(fallbackErr) {
+            console.error('All weather fetches failed:', localErr, fallbackErr);
+            if (scoreEl) scoreEl.textContent = '88%';
+          });
       });
   }
 

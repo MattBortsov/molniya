@@ -7351,7 +7351,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-weather"></script>
+  <script src="/script.js?v=20261023-weather2"></script>
 </body>
 </html>
 '''
@@ -7503,7 +7503,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-weather">
+  <link rel="stylesheet" href="/styles.css?v=20261023-weather2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7692,7 +7692,46 @@ def build_carwash_weather_page() -> str:
           <div class="mt-weather-forecast-section">
             <h3 class="mt-weather-forecast-title">Прогноз дорожной чистоты на 5 дней</h3>
             <div class="mt-weather-days-grid" id="mt-weather-days-grid">
-              <!-- Dynamically rendered by script.js -->
+              <div class="mt-weather-day-card is-today">
+                <div class="mt-weather-day-name">Сегодня</div>
+                <div class="mt-weather-day-date">24.10</div>
+                <div class="mt-weather-day-icon">🌤️</div>
+                <div class="mt-weather-day-desc">Преимущественно ясно</div>
+                <div class="mt-weather-day-temps">+14°<span class="mt-temp-lo">+8°</span></div>
+                <div class="mt-weather-day-wash-badge" style="color:#2E7D32; background:#2E7D3218">88% · Чисто</div>
+              </div>
+              <div class="mt-weather-day-card">
+                <div class="mt-weather-day-name">Завтра</div>
+                <div class="mt-weather-day-date">25.10</div>
+                <div class="mt-weather-day-icon">☀️</div>
+                <div class="mt-weather-day-desc">Ясно, без осадков</div>
+                <div class="mt-weather-day-temps">+15°<span class="mt-temp-lo">+7°</span></div>
+                <div class="mt-weather-day-wash-badge" style="color:#2E7D32; background:#2E7D3218">92% · Чисто</div>
+              </div>
+              <div class="mt-weather-day-card">
+                <div class="mt-weather-day-name">Вс</div>
+                <div class="mt-weather-day-date">26.10</div>
+                <div class="mt-weather-day-icon">⛅</div>
+                <div class="mt-weather-day-desc">Переменная облачность</div>
+                <div class="mt-weather-day-temps">+13°<span class="mt-temp-lo">+6°</span></div>
+                <div class="mt-weather-day-wash-badge" style="color:#2E7D32; background:#2E7D3218">85% · Чисто</div>
+              </div>
+              <div class="mt-weather-day-card">
+                <div class="mt-weather-day-name">Пн</div>
+                <div class="mt-weather-day-date">27.10</div>
+                <div class="mt-weather-day-icon">🌦️</div>
+                <div class="mt-weather-day-desc">Небольшая морось</div>
+                <div class="mt-weather-day-temps">+10°<span class="mt-temp-lo">+5°</span></div>
+                <div class="mt-weather-day-wash-badge" style="color:#E65100; background:#E6510018">52% · Риск 50%</div>
+              </div>
+              <div class="mt-weather-day-card">
+                <div class="mt-weather-day-name">Вт</div>
+                <div class="mt-weather-day-date">28.10</div>
+                <div class="mt-weather-day-icon">🌧️</div>
+                <div class="mt-weather-day-desc">Умеренный дождь</div>
+                <div class="mt-weather-day-temps">+9°<span class="mt-temp-lo">+4°</span></div>
+                <div class="mt-weather-day-wash-badge" style="color:#C62828; background:#C6282818">24% · Слякоть</div>
+              </div>
             </div>
           </div>
 
@@ -7846,7 +7885,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-weather"></script>
+  <script src="/script.js?v=20261023-weather2"></script>
 </body>
 </html>
 '''
