@@ -273,8 +273,11 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/blog">Блог</a>
             </div>
             <div class="mt-footer-nav-group">
-              <h3>Информация</h3>
+              <h3>Инструменты</h3>
               <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
               <a class="mt-footer-link" href="/requisites">Реквизиты</a>
               <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
             </div>
@@ -5637,17 +5640,17 @@ def build_calendar_page() -> str:
 {nav_html}
 
       <!-- HERO -->
-      <section class="mt-hero" data-screen-label="Календарь и нормы" data-mt-hero-scene>
+      <section class="mt-hero mt-hero--tool" data-screen-label="Календарь и нормы">
 
-        <div class="mt-hero-lead">
+        <div class="mt-hero-lead mt-hero-lead--tool">
           <h1 class="mt-hero-title">
             Производственный календарь<br><span class="mt-hero-accent">и калькулятор рабочих дней 2026–2027</span>
           </h1>
 
-          <div class="mt-hero-bottom">
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
             <div class="mt-hero-intro">
               <p class="mt-hero-sub">Официальные нормы рабочего времени по ТК РФ, государственные праздники, перенос нерабочих дней и моментальный расчет рабочих дней, смен и зарплаты для любого графика.</p>
-              <a class="mt-btn mt-btn-hero" href="#calculator">Рассчитать рабочие дни и зарплату</a>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Перейти к калькулятору ↓</a>
             </div>
 
             <ul class="mt-facets mt-facets--full" aria-label="Параметры производственного календаря РФ">
@@ -5668,18 +5671,6 @@ def build_calendar_page() -> str:
                 <span class="mt-facet-note">автоматический табель и ФОТ в Молнии</span>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
-          <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
-              <span class="mt-tablet-screen">
-                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Производственный календарь и расписание смен сотрудников в Молнии" width="1710" height="983" fetchpriority="high">
-              </span>
-              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
-            <p class="mt-hero-media-caption">Электронное расписание смен, баланс рабочего времени и учет выработки мастеров в реальном времени</p>
           </div>
         </div>
 
