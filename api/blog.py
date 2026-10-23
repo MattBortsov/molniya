@@ -333,7 +333,7 @@ def render_article(article: dict[str, Any]) -> str:
 
 def render_sitemap(articles: list[dict[str, Any]] | None = None) -> str:
     rows = articles if articles is not None else (row for _, row in _articles())
-    urls = ["/", "/auto", "/beauty", "/health", "/psychologist", "/stretching", "/yoga", "/trainers", "/martial-arts", "/spaces", "/photostudios", "/quests", "/vr-arena", "/karting", "/anticafe", "/saunas", "/glamping", "/cleaning", "/furniture-cleaning", "/window-cleaning", "/pest-control", "/education", "/pets", "/repair", "/pricing", "/dikidi", "/yclients", "/about", "/requisites", "/privacy", "/calendar", "/inn", "/margin", "/carwash-weather", "/blog"] + [f"/blog/{quote(row['slug'])}" for row in rows]
+    urls = ["/", "/auto", "/beauty", "/health", "/psychologist", "/stretching", "/yoga", "/trainers", "/martial-arts", "/spaces", "/photostudios", "/quests", "/vr-arena", "/karting", "/anticafe", "/saunas", "/glamping", "/cleaning", "/furniture-cleaning", "/window-cleaning", "/pest-control", "/education", "/pets", "/repair", "/pricing", "/dikidi", "/yclients", "/about", "/requisites", "/privacy", "/calendar", "/inn", "/margin", "/carwash-weather", "/qr", "/blog"] + [f"/blog/{quote(row['slug'])}" for row in rows]
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'  <url><loc>{xml_escape(SITE_URL + path)}</loc></url>\n' for path in urls
     ) + '</urlset>\n'
