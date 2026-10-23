@@ -296,6 +296,7 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
               <a class="mt-footer-link" href="/carwash-weather">Индекс мойки авто</a>
               <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
+              <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -741,7 +742,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -979,7 +980,7 @@ def build_auto_page() -> str:
               <h3>Онлайн-запись с автоматическим учетом класса авто</h3>
               <p>Клиент выбирает марку, тип кузова и комплекс услуг на сайте или через мессенджер. Программа сразу резервирует окно нужной длительности (55 минут вместо 40) с учетом габаритов кроссовера.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -997,7 +998,7 @@ def build_auto_page() -> str:
               <h3>Заезд в бокс и электронный заказ-наряд с фото</h3>
               <p>Мастер открывает электронный заказ-наряд со смартфона и за 60 секунд фотографирует сколы на капоте и дисках. Акт осмотра прикрепляется к заказу до начала работ.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Чек-лист приёмки">
+            <div class="mt-journey-proof" aria-label="Чек-лист приёмки">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ-наряд #1428</span>
                 <span class="mt-journey-proof-badge">Осмотр пройден</span>
@@ -1015,7 +1016,7 @@ def build_auto_page() -> str:
               <h3>Выполнение работ и допродажа услуг в 1 тап</h3>
               <p>Мастер заметил битумные пятна на порогах и добавил удаление битума (900 ₽) прямо в электронный заказ-наряд со смартфона. Сумма автоматически пересчиталась.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
+            <div class="mt-journey-proof" aria-label="Состав заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Выполненные работы</span>
                 <span class="mt-journey-proof-badge">Готово к выдаче</span>
@@ -1033,7 +1034,7 @@ def build_auto_page() -> str:
               <h3>Выдача авто, чек в мессенджер и расчет зарплаты мастеров</h3>
               <p>Клиент получает оповещение о готовности и ссылку на чек в мессенджере. Программа моментально начисляет мастеру 35% (1 365 ₽) на баланс смены — без ручных записей и споров.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
+            <div class="mt-journey-proof" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Расчёт мастера</span>
                 <span class="mt-journey-proof-badge">Начислено</span>
@@ -1118,7 +1119,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -1269,7 +1270,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1507,7 +1508,7 @@ def build_beauty_page() -> str:
               <h3>Онлайн-запись к любимому мастеру в удобное время</h3>
               <p>Клиент выбирает услугу, мастера и время за 30 секунд в виджете онлайн-записи. Программа сразу бронирует окно в расписании, не допуская накладок, и присылает подтверждение в мессенджер.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -1525,7 +1526,7 @@ def build_beauty_page() -> str:
               <h3>Встреча клиента и фиксация формулы окрашивания</h3>
               <p>Мастер открывает карточку визита в телефоне, смотрит историю прошлых процедур и записывает формулу красителя и примечания прямо во время консультации.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка визита">
+            <div class="mt-journey-proof" aria-label="Карточка визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Визит #2841</span>
                 <span class="mt-journey-proof-badge">В процессе</span>
@@ -1543,7 +1544,7 @@ def build_beauty_page() -> str:
               <h3>Оказание услуги и допродажа домашнего ухода</h3>
               <p>Мастер порекомендовал бессульфатный шампунь и маску для сохранения холодного блонда. Администратор добавил средства в чек в 1 клик — они сразу списались со склада.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
+            <div class="mt-journey-proof" aria-label="Состав заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Состав чека</span>
                 <span class="mt-journey-proof-badge">К оплате</span>
@@ -1561,7 +1562,7 @@ def build_beauty_page() -> str:
               <h3>Оплата, расчёт зарплаты и напоминание на следующий визит</h3>
               <p>Клиент получает электронный чек в мессенджере. Программа начисляет мастеру 40% за услугу (3 400 ₽) и 10% за уход (240 ₽). Через 4 недели клиент получит автоприглашение на обновление цвета.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
+            <div class="mt-journey-proof" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Расчёт мастера</span>
                 <span class="mt-journey-proof-badge">Начислено</span>
@@ -1646,7 +1647,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -1763,7 +1764,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2047,7 +2048,7 @@ def build_health_page() -> str:
               <h3>Онлайн-запись на прием без звонков администратору</h3>
               <p>Пациент выбирает специальность, врача и удобный интервал за 30 секунд через мессенджер или на сайте. Программа бронирует кабинет и временной слот нужной длительности с учетом регламента приема.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -2065,7 +2066,7 @@ def build_health_page() -> str:
               <h3>Электронная карта и протокол осмотра за 2 минуты</h3>
               <p>Врач открывает электронную карту пациента со смартфона или планшета, изучает анамнез и вносит протокол осмотра и назначения в единую защищенную систему без бумажной рутины.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка визита">
+            <div class="mt-journey-proof" aria-label="Карточка визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Прием #3124</span>
                 <span class="mt-journey-proof-badge">Протокол заполнен</span>
@@ -2083,7 +2084,7 @@ def build_health_page() -> str:
               <h3>Оказание услуг и автоматическое списание материалов</h3>
               <p>Во время приема проведены забор анализов и снятие ЭКГ. Программа автоматически списывает электроды, одноразовые простыни и антисептик со склада отделения по стандарту услуги.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Состав заказа">
+            <div class="mt-journey-proof" aria-label="Состав заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Состав приема</span>
                 <span class="mt-journey-proof-badge">К оплате</span>
@@ -2101,7 +2102,7 @@ def build_health_page() -> str:
               <h3>Оплата, памятка в мессенджер и начисление зарплаты врача</h3>
               <p>Пациент получает электронный чек и рекомендации врача в мессенджере. Программа моментально начисляет терапевту 40% (1 400 ₽) за прием — выработка рассчитывается без ручных таблиц и споров.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчёт">
+            <div class="mt-journey-proof" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Расчёт врача</span>
                 <span class="mt-journey-proof-badge">Начислено</span>
@@ -2186,7 +2187,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -2331,7 +2332,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2629,7 +2630,7 @@ def build_spaces_page() -> str:
               <h3>Онлайн-бронирование слота за 60 секунд</h3>
               <p>Клиент выбирает нужный зал, дату, время и дополнительный комплект света через онлайн-виджет. Слот мгновенно блокируется в расписании, исключая накладки.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-бронирования">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-бронирование</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -2647,7 +2648,7 @@ def build_spaces_page() -> str:
               <h3>Внесение предоплаты и подготовка помещения</h3>
               <p>Арендатор вносит предоплату, а администратор видит бронь в шахматке и автоматически получает список необходимого оборудования к назначенному времени.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка бронирования">
+            <div class="mt-journey-proof" aria-label="Карточка бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь #1842</span>
                 <span class="mt-journey-proof-badge">Предоплата 50%</span>
@@ -2665,7 +2666,7 @@ def build_spaces_page() -> str:
               <h3>Встреча гостей, доплата и залог за сохранность</h3>
               <p>Гость прибывает на площадку. Администратор отмечает приход в один тап на планшете, принимает доплату и фиксирует залог за сохранность интерьера.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Фиксация расчёта">
+            <div class="mt-journey-proof" aria-label="Фиксация расчёта">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Оплата на входе</span>
                 <span class="mt-journey-proof-badge">Оплачено</span>
@@ -2683,7 +2684,7 @@ def build_spaces_page() -> str:
               <h3>Освобождение зала, возврат залога и финансовый отчёт</h3>
               <p>Администратор проверяет зал, закрывает бронь и возвращает депозит. Система автоматически закладывает 20 минут буфера на клининг и начисляет смену администратору.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Завершение заказа">
+            <div class="mt-journey-proof" aria-label="Завершение заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Завершение брони</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -2768,7 +2769,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -2913,7 +2914,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3151,7 +3152,7 @@ def build_photostudios_page() -> str:
               <h3>Онлайн-бронирование зала и света за 60 секунд</h3>
               <p>Клиент выбирает нужный зал, дату, время и необходимый комплект источников света через онлайн-виджет. Слот мгновенно блокируется в расписании, исключая накладки.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-бронирования">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-бронирование</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -3169,7 +3170,7 @@ def build_photostudios_page() -> str:
               <h3>Подтверждение предоплаты и подготовка зала</h3>
               <p>Фотограф вносит предоплату, а администратор видит бронь в шахматке и заранее готовит зал: выкатывает моноблоки, насадки, стойки и проверяет чистоту циклорамы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка бронирования">
+            <div class="mt-journey-proof" aria-label="Карточка бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь #2419</span>
                 <span class="mt-journey-proof-badge">Предоплата 50%</span>
@@ -3187,7 +3188,7 @@ def build_photostudios_page() -> str:
               <h3>Встреча команды, доплата и запуск таймера съемки</h3>
               <p>Команда прибывает на площадку. Администратор отмечает приход в один тап на планшете, принимает доплату и фиксирует стартовое состояние зала и циклорамы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Фиксация расчёта">
+            <div class="mt-journey-proof" aria-label="Фиксация расчёта">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Оплата на ресепшн</span>
                 <span class="mt-journey-proof-badge">Оплачено</span>
@@ -3205,7 +3206,7 @@ def build_photostudios_page() -> str:
               <h3>Сдача оборудования, буфер на клининг и финансовый отчёт</h3>
               <p>Администратор проверяет технику, закрывает бронь и система закладывает обязательный буфер 15 минут на уборку и проветривание перед следующей съемкой.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Завершение заказа">
+            <div class="mt-journey-proof" aria-label="Завершение заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Завершение съемки</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -3290,7 +3291,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -3435,7 +3436,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3705,7 +3706,7 @@ def build_cleaning_page() -> str:
               <h3>Онлайн-расчет стоимости и вызов бригады за 60 секунд</h3>
               <p>Клиент указывает 3 комнаты, площадь 85 м² и мытье окон. Виджет показывает точную цену 8 900 ₽ и предлагает свободные окна. Заказ мгновенно появляется в системе.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-заказа">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-заказ</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -3723,7 +3724,7 @@ def build_cleaning_page() -> str:
               <h3>Назначение бригады и комплектация инвентаря</h3>
               <p>Система предлагает свободную бригаду в Приморском районе. Диспетчер подтверждает назначение, а клинеры получают маршрутный лист и список химии на смартфон.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка назначения бригады">
+            <div class="mt-journey-proof" aria-label="Карточка назначения бригады">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ #3108</span>
                 <span class="mt-journey-proof-badge">Бригада назначена</span>
@@ -3741,7 +3742,7 @@ def build_cleaning_page() -> str:
               <h3>Выезд на объект, чек-лист комнат и выполнение уборки</h3>
               <p>Клиент получает уведомление «Бригада выехала». На объекте клинеры отмечают этапы уборки по чек-листу (обеспыливание, санузлы, мытье окон) прямо в мобильном интерфейсе.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Выполнение уборки">
+            <div class="mt-journey-proof" aria-label="Выполнение уборки">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Чек-лист уборки</span>
                 <span class="mt-journey-proof-badge">В процессе (80%)</span>
@@ -3759,7 +3760,7 @@ def build_cleaning_page() -> str:
               <h3>Приемка, электронная оплата и сдельная выплата</h3>
               <p>Клиент подписывает акт на экране смартфона, вносит оплату, а система мгновенно начисляет 3 560 ₽ в ведомость клинеров и списывает расходную химию со склада.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Завершение заказа">
+            <div class="mt-journey-proof" aria-label="Завершение заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ закрыт</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -3844,7 +3845,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -3990,7 +3991,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4228,7 +4229,7 @@ def build_psychologist_page() -> str:
               <h3>Выбор услуги и удобного слота на странице записи 24/7</h3>
               <p>Клиент переходит по вашей короткой ссылке в соцсетях или мессенджере, выбирает онлайн-консультацию или очный приём и видит только актуальные свободные слоты.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования консультации">
+            <div class="mt-journey-proof" aria-label="Пример бронирования консультации">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование сессии</span>
                 <span class="mt-journey-proof-badge">Слот выбран</span>
@@ -4246,7 +4247,7 @@ def build_psychologist_page() -> str:
               <h3>Ответы на вводные вопросы и мгновенное подтверждение</h3>
               <p>Клиент указывает контактные данные, кратко описывает свой запрос и сразу получает подтверждение записи. Слот автоматически блокируется в вашем календаре.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+            <div class="mt-journey-proof" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Запись #4912</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -4264,7 +4265,7 @@ def build_psychologist_page() -> str:
               <h3>Дружеские автонапоминания накануне консультации</h3>
               <p>Система заблаговременно отправляет клиенту напоминание по E-mail, в мессенджер или по SMS с деталями встречи (ссылка на видеозвонок или схема прохода в кабинет).</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -4282,7 +4283,7 @@ def build_psychologist_page() -> str:
               <h3>Сессия, личные заметки в буфер и история встреч</h3>
               <p>Вы спокойно проводите сессию, фиксируете важные тезисы в карточке клиента во время 10-минутного буфера. Вся история обращений доступна в едином окне в любой момент.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сессии">
+            <div class="mt-journey-proof" aria-label="Результат сессии">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Завершение встречи</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -4367,7 +4368,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -4513,7 +4514,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4751,7 +4752,7 @@ def build_stretching_page() -> str:
               <h3>Выбор направления и удобного времени на странице записи 24/7</h3>
               <p>Клиент переходит по вашей короткой ссылке в соцсетях или мессенджере, выбирает тренировку (шпагат, аэройога, здоровая спина) и видит только реальные свободные места.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования тренировки">
+            <div class="mt-journey-proof" aria-label="Пример бронирования тренировки">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование тренировки</span>
                 <span class="mt-journey-proof-badge">Место забронировано</span>
@@ -4769,7 +4770,7 @@ def build_stretching_page() -> str:
               <h3>Выбор типа занятия и фиксация ограничений по здоровью</h3>
               <p>Ученик указывает контакты, выбирает абонемент или пробный урок и отмечает противопоказания. Слот автоматически фиксируется в расписании студии.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+            <div class="mt-journey-proof" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Запись #5120</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -4787,7 +4788,7 @@ def build_stretching_page() -> str:
               <h3>Дружеские автонапоминания накануне тренировки</h3>
               <p>Система заблаговременно отправляет ученику напоминание по E-mail, в мессенджер или по SMS с деталями урока (зал, форма одежды, адрес студии).</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -4805,7 +4806,7 @@ def build_stretching_page() -> str:
               <h3>Отметка прихода в зале и автосписание занятия</h3>
               <p>Тренер отмечает явку учеников в приложении. Занятие списывается с абонемента автоматически, а 15-минутный буфер позволяет подготовить зал к следующей группе.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+            <div class="mt-journey-proof" aria-label="Результат визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог тренировки</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -4890,7 +4891,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -5038,7 +5039,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5276,7 +5277,7 @@ def build_yoga_page() -> str:
               <h3>Выбор практики и удобного времени на странице записи 24/7</h3>
               <p>Клиент переходит по вашей короткой ссылке в соцсетях или мессенджере, выбирает направление (хатха, аштанга, реформер, спина) и видит только реальные свободные места.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования практики">
+            <div class="mt-journey-proof" aria-label="Пример бронирования практики">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование практики</span>
                 <span class="mt-journey-proof-badge">Место забронировано</span>
@@ -5294,7 +5295,7 @@ def build_yoga_page() -> str:
               <h3>Выбор типа абонемента и фиксация ограничений по здоровью</h3>
               <p>Ученик указывает контакты, выбирает абонемент или пробное занятие и отмечает ограничения (боли в спине, суставы). Слот автоматически фиксируется в расписании студии.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+            <div class="mt-journey-proof" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Запись #6240</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -5312,7 +5313,7 @@ def build_yoga_page() -> str:
               <h3>Дружеские автонапоминания накануне практики</h3>
               <p>Система заблаговременно отправляет ученику напоминание по E-mail, в мессенджер или по SMS с деталями визита (зал, форма одежды, код домофона студии).</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -5330,7 +5331,7 @@ def build_yoga_page() -> str:
               <h3>Отметка прихода в зале и автосписание занятия</h3>
               <p>Преподаватель отмечает явку учеников в приложении. Занятие списывается с абонемента автоматически, а 15-минутный буфер позволяет подготовить зал к следующей группе.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+            <div class="mt-journey-proof" aria-label="Результат визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог практики</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -5415,7 +5416,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -5448,7 +5449,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5507,7 +5508,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 """
@@ -5658,7 +5659,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5956,7 +5957,7 @@ def build_calendar_page() -> str:
               <h3>Настройка индивидуальных графиков работы специалистов</h3>
               <p>Укажите режим работы для каждого мастера: 5/2, смены 2/2, плавающий график или аренду рабочих мест. Система сформирует прозрачное электронное расписание.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример графика смен">
+            <div class="mt-journey-proof" aria-label="Пример графика смен">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">График мастера</span>
                 <span class="mt-journey-proof-badge">Смена 2/2</span>
@@ -5974,7 +5975,7 @@ def build_calendar_page() -> str:
               <h3>Клиент записывается онлайн в реальные рабочие слоты</h3>
               <p>Клиент выбирает мастера и свободное время в онлайн-записи 24/7. Запись появляется в расписании, а мастер видит предстоящую работу в своем телефоне.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Запись клиента">
+            <div class="mt-journey-proof" aria-label="Запись клиента">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Визит #8412</span>
                 <span class="mt-journey-proof-badge">Подтвержден</span>
@@ -5992,7 +5993,7 @@ def build_calendar_page() -> str:
               <h3>Выполнение услуги и автоматическое начисление в табель</h3>
               <p>После завершения работы визит закрывается. Программа мгновенно рассчитывает процент мастера и прибавляет его к текущему балансу смены.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Начисление за визит">
+            <div class="mt-journey-proof" aria-label="Начисление за визит">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Начисление за услугу</span>
                 <span class="mt-journey-proof-badge">Учтено</span>
@@ -6010,7 +6011,7 @@ def build_calendar_page() -> str:
               <h3>Готовая зарплатная ведомость и выплата в один клик</h3>
               <p>В конце расчетного периода система формирует подробную зарплатную ведомость со всеми отработанными сменами, часами, услугами и бонусами.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Итог расчетного месяца">
+            <div class="mt-journey-proof" aria-label="Итог расчетного месяца">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Ведомость за месяц</span>
                 <span class="mt-journey-proof-badge">Готова к выплате</span>
@@ -6095,7 +6096,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -6247,7 +6248,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6542,7 +6543,7 @@ def build_inn_page() -> str:
               <h3>Запросите ИНН или карточку предприятия у поставщика</h3>
               <p>Узнайте идентификационный номер налогоплательщика поставщика расходных материалов, оборудования или собственника арендуемого помещения.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Запрос реквизитов">
+            <div class="mt-journey-proof" aria-label="Запрос реквизитов">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Входящий счет</span>
                 <span class="mt-journey-proof-badge">На проверке</span>
@@ -6560,7 +6561,7 @@ def build_inn_page() -> str:
               <h3>Проверьте статус регистрации в ФНС и дату открытия</h3>
               <p>Убедитесь, что статус организации — «Действующая», а предприятие успешно ведет деятельность на рынке более одного года.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Проверка в ЕГРЮЛ">
+            <div class="mt-journey-proof" aria-label="Проверка в ЕГРЮЛ">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Статус ЕГРЮЛ</span>
                 <span class="mt-journey-proof-badge">Подтвержден</span>
@@ -6578,7 +6579,7 @@ def build_inn_page() -> str:
               <h3>Изучите факторы риска: банкротство, суды и санкции</h3>
               <p>Проверьте отсутствие открытых дел о банкротстве в ЕФРСБ и судебных исков о неисполнении обязательств по поставкам.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Анализ рисков">
+            <div class="mt-journey-proof" aria-label="Анализ рисков">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Факторы риска</span>
                 <span class="mt-journey-proof-badge">Чисто</span>
@@ -6596,7 +6597,7 @@ def build_inn_page() -> str:
               <h3>Скопируйте реквизиты и согласуйте условия оплаты</h3>
               <p>Вставьте проверенные реквизиты в договор и зафиксируйте безопасные условия взаиморасчетов: постоплату или оплату по факту поставки.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Согласование договора">
+            <div class="mt-journey-proof" aria-label="Согласование договора">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Договор поставки</span>
                 <span class="mt-journey-proof-badge">Безопасно</span>
@@ -6668,7 +6669,7 @@ def build_inn_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
       </p>
-      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+      <button class="mt-btn mt-cookie-accept" id="mt-cookie-accept" type="button">Понятно</button>
     </div>
 
     <!-- sticky mobile telegram CTA -->
@@ -6679,7 +6680,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -6831,7 +6832,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7215,7 +7216,7 @@ def build_margin_page() -> str:
               <h3>Оцифруйте реальную пропускную способность рабочих мест</h3>
               <p>Определите максимальное количество процедур в день с учетом времени на дезинфекцию и подготовку рабочего места.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Аудит мощности">
+            <div class="mt-journey-proof" aria-label="Аудит мощности">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Мощность локации</span>
                 <span class="mt-journey-proof-badge">Оцифровано</span>
@@ -7233,7 +7234,7 @@ def build_margin_page() -> str:
               <h3>Зафиксируйте себестоимость материалов и услуг</h3>
               <p>Создайте технологические карты в Молнии с точными нормами списания препаратов, составов и одноразовой продукции.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Техкарты">
+            <div class="mt-journey-proof" aria-label="Техкарты">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Технологическая карта</span>
                 <span class="mt-journey-proof-badge">Норма расхода</span>
@@ -7251,7 +7252,7 @@ def build_margin_page() -> str:
               <h3>Включите онлайн-запись 24/7 и склеивание интервалов</h3>
               <p>Дайте клиентам записываться круглосуточно с автонапоминаниями в Telegram, исключая появление пустых «дыр» в расписании мастеров.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Плотная запись">
+            <div class="mt-journey-proof" aria-label="Плотная запись">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Сетка расписания</span>
                 <span class="mt-journey-proof-badge">Оптимизировано</span>
@@ -7269,7 +7270,7 @@ def build_margin_page() -> str:
               <h3>Получайте максимум чистой прибыли с каждого квадратного метра</h3>
               <p>Отслеживайте финансовый отчет, маржинальность направлений и прибыль владельца в режиме реального времени на телефоне.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Итог внедрения">
+            <div class="mt-journey-proof" aria-label="Итог внедрения">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог за месяц</span>
                 <span class="mt-journey-proof-badge">Рекордная прибыль</span>
@@ -7341,7 +7342,7 @@ def build_margin_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
       </p>
-      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+      <button class="mt-btn mt-cookie-accept" id="mt-cookie-accept" type="button">Понятно</button>
     </div>
 
     <!-- sticky mobile telegram CTA -->
@@ -7352,7 +7353,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -7504,7 +7505,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7789,7 +7790,7 @@ def build_carwash_weather_page() -> str:
               <h3>Идеальное окно: полный комплекс и защита</h3>
               <p>Смело заказывайте полную двухфазную мойку кузова, уборку салона, полироль пластика и гидрофобный воск. Кузов будет оставаться зеркально чистым от 4 до 7 дней.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Рекомендация при высоком индексе">
+            <div class="mt-journey-proof" aria-label="Рекомендация при высоком индексе">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Рекомендация эксперта</span>
                 <span class="mt-journey-proof-badge">Зеленый свет</span>
@@ -7807,7 +7808,7 @@ def build_carwash_weather_page() -> str:
               <h3>Благоприятно: экспресс или самообслуживание</h3>
               <p>Сбить дорожный налет, ополоснуть коврики и протереть стекла. Тратить 2 500 ₽ на дорогой детейлинг пока не стоит, но экспресс-мойка за 250–400 ₽ освежит машину на 2–3 дня.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Рекомендация при среднем индексе">
+            <div class="mt-journey-proof" aria-label="Рекомендация при среднем индексе">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Рекомендация эксперта</span>
                 <span class="mt-journey-proof-badge" style="color:#1565C0; background:rgba(21,101,192,0.1)">Благоприятно</span>
@@ -7902,7 +7903,7 @@ def build_carwash_weather_page() -> str:
       <p class="mt-cookie-text">
         Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
       </p>
-      <button class="mt-btn mt-btn-cookie" id="mt-cookie-accept" type="button">Понятно</button>
+      <button class="mt-btn mt-cookie-accept" id="mt-cookie-accept" type="button">Понятно</button>
     </div>
 
     <!-- sticky mobile telegram CTA -->
@@ -7913,7 +7914,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -8063,7 +8064,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr22">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal12">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8508,7 +8509,699 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261023-qr22"></script>
+  <script src="/script.js?v=20261023-sal12"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
+
+def build_salary_page() -> str:
+    """Builds the master salary and piece-rate motivation calculator page: /salary."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "salary",
+        'Автоматизируйте учет сдельщины и выплат мастерам <span class="mt-hero-accent">с платформой Молния</span>',
+        "Оставьте контакты — поможем настроить прозрачные технологические карты, расчет процентов в реальном времени и удобные отчеты для сотрудников.",
+    )
+
+    title = "Калькулятор зарплаты мастеров и сдельного процента — расчет мотивации и ФОТ | Молния"
+    description = (
+        "Бесплатный онлайн-калькулятор сдельной оплаты труда для сферы услуг: расчет зарплаты мастера за смену и месяц, "
+        "процент от услуг и витрины, вычет расходников по техкартам, контроль доли ФОТ в выручке и сравнение 3 моделей мотивации."
+    )
+    canonical = "https://molniya-tech.ru/salary"
+
+    faqs = [
+        (
+            "Какая доля фонда оплаты труда (ФОТ) мастеров считается безопасной для бизнеса в сфере услуг?",
+            "Для устойчивой рентабельности бизнеса доля выплат мастерам от выручки за вычетом материалов должна составлять 35–42%. Если совокупный ФОТ мастеров превышает 48–50%, локация попадает в зону риска: после оплаты аренды, коммунальных услуг, эквайринга, маркетинга и налогов чистая прибыль владельца стремится к нулю. Калькулятор позволяет моментально проверить, насколько здоровая финансовая модель действует в вашей компании.",
+        ),
+        (
+            "В чем разница между моделями «гарант за выход или процент» и «оклад плюс процент»?",
+            "Модель «гарант за выход или процент (что больше)» — стандарт индустрии красоты и сервиса. Мастеру гарантируется минимальная выплата за смену (например, 2 500 ₽), защищающая его от пустых дней на старте. Если же сдельный процент от закрытых услуг превышает гарант, мастер получает заработанную сумму по сделке. Модель «оклад плюс процент» чаще применяется при дежурствах и административных функциях, но в чистых услугах она часто приводит к раздуванию ФОТ при высокой загрузке.",
+        ),
+        (
+            "Как правильно вычитать стоимость расходных материалов из зарплаты специалиста?",
+            "В грамотной экономике процент мастера начисляется на чистую выручку за вычетом себестоимости препаратов: База начисления = Выручка услуги − Себестоимость материалов по техкарте. Это исключает ситуации, когда мастер щедро расходует дорогостоящую косметику или автохимию за счет заведения. В CRM Молния точные нормы списания в граммах и миллилитрах привязаны к каждой услуге, поэтому расчет происходит без ручных взвешиваний и споров.",
+        ),
+        (
+            "Зачем устанавливать отдельный повышенный процент за продажу товаров с витрины?",
+            "Продажа домашнего ухода, автокосметики или мерча приносит бизнесу чистую маржинальность без дополнительной амортизации оборудования и нагрузки на расписание. Бонус мастера в 10–15% от чека витрины превращает специалистов в активных консультантов: выручка точки увеличивается на 15–25%, а средний доход мастера возрастает на 15 000 – 30 000 рублей в месяц.",
+        ),
+        (
+            "Как устроена ступенчатая (прогрессивная) мотивация и почему она удерживает сильных мастеров?",
+            "При прогрессивной шкале процентная ставка мастера растет при достижении целевых планок выручки (например: до 150 000 ₽ — 35%, от 150 000 до 250 000 ₽ — 40%, свыше 250 000 ₽ — 45%). Это решает главную проблему сферы услуг — «выгорание» и уход сильных мастеров с клиентской базой на аренду или на дом. Мастер видит прямую выгоду в плотной записи и среднем чеке, а салон масштабирует валовую прибыль.",
+        ),
+        (
+            "Как платформа Молния автоматизирует расчет зарплаты и отчетов в конце месяца?",
+            "В Молнии начисление зарплаты полностью оцифровано: в момент завершения визита система автоматически списывает материалы по технологической карте, рассчитывает сдельную ставку согласно индивидуальному грейду мастера и начисляет бонус за сопутствующие продажи. В конце месяца ведомость формируется в один клик без ошибок в Excel, а каждый сотрудник видит свои начисления в мобильном приложении в реальном времени.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Калькулятор зарплаты мастеров", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Калькулятор зарплаты мастеров и сдельного процента Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.97",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1420",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный интерактивный калькулятор оплаты труда и мотивации сотрудников сферы услуг",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор зарплаты мастеров">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.97 из 5 на основе 1 420 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.97</strong> (1 420 оценок владельцев сервисного бизнеса)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Калькулятор зарплаты мастеров и сдельного процента<br><span class="mt-hero-accent">для бизнеса в сфере услуг</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Рассчитайте справедливую оплату труда специалистов: оклад за выход, процент от услуг, бонус с витрины, вычет расходников по техкартам и безопасную долю ФОТ для стабильной прибыли компании.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Перейти к калькулятору ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Возможности калькулятора зарплаты мастеров">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 отраслевых схем</span>
+                <span class="mt-facet-note">бьюти, СТО, детейлинг, клининг, фитнес</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">2 модели мотивации</span>
+                <span class="mt-facet-note">гарант или %, оклад + сдельщина</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Контроль доли ФОТ</span>
+                <span class="mt-facet-note">индикатор нормы (до 42% от выручки)</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Расчетный листок</span>
+                <span class="mt-facet-note">готовый отчет в WhatsApp или Telegram</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CALCULATOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Интерактивный калькулятор" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный расчет зарплаты мастеров <span class="mt-overview-hook">и безопасного ФОТ</span></h2>
+          <p class="mt-section-sub">Выберите готовый отраслевой профиль или задайте свои условия: фиксированный выход, проценты с услуг и витрины, вычет стоимости препаратов.</p>
+        </div>
+
+        <div id="mt-salary-app" class="mt-salary-wrap">
+
+          <div class="mt-salary-presets-bar">
+            <span class="mt-salary-presets-label">Отраслевые профили:</span>
+            <div class="mt-salary-presets" role="tablist" aria-label="Выбор шаблона отрасли">
+              <button class="mt-salary-preset-btn is-active" type="button" data-salary-preset="beauty">💇 Салон красоты / Барбершоп</button>
+              <button class="mt-salary-preset-btn" type="button" data-salary-preset="auto">🚗 Автосервис / СТО</button>
+              <button class="mt-salary-preset-btn" type="button" data-salary-preset="detailing">🧼 Автомойка / Детейлинг</button>
+              <button class="mt-salary-preset-btn" type="button" data-salary-preset="cleaning">🧹 Клининг / Химчистка</button>
+              <button class="mt-salary-preset-btn" type="button" data-salary-preset="fitness">🧘 Фитнес-тренеры / Инструкторы</button>
+            </div>
+          </div>
+
+          <div class="mt-salary-layout">
+
+            <!-- INPUTS -->
+            <div class="mt-salary-card mt-salary-inputs-card">
+              <div class="mt-salary-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                <span>Модель мотивации и базовые ставки</span>
+              </div>
+
+              <div class="mt-salary-field-group">
+                <label class="mt-salary-label">Схема начисления выплат мастеру</label>
+                <div class="mt-salary-toggle-group" role="tablist">
+                  <button class="mt-salary-toggle-btn is-active" type="button" data-salary-mode="guarantee_vs_pct">Гарант или % (что больше)</button>
+                  <button class="mt-salary-toggle-btn" type="button" data-salary-mode="base_plus_pct">Оклад за смену + %</button>
+                </div>
+              </div>
+
+              <div class="mt-salary-row-2">
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Отработано смен в месяц</label>
+                    <span class="mt-salary-val-display" data-salary-val="shifts">15</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="1" max="31" step="1" value="15" data-salary-slider="shifts">
+                    <input class="mt-salary-input-num" type="number" min="1" max="31" value="15" data-salary-num="shifts">
+                  </div>
+                </div>
+
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Ставка / гарант за смену</label>
+                    <span class="mt-salary-val-display" data-salary-val="wage">2 500 ₽</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="0" max="10000" step="250" value="2500" data-salary-slider="wage">
+                    <input class="mt-salary-input-num" type="number" min="0" max="25000" step="250" value="2500" data-salary-num="wage">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-salary-section-heading" style="margin-top:10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
+                <span>Выручка от услуг и сдельный процент</span>
+              </div>
+
+              <div class="mt-salary-field-group">
+                <div class="mt-salary-field-head">
+                  <label class="mt-salary-label">Выручка мастера по оказанным услугам</label>
+                  <span class="mt-salary-val-display" data-salary-val="serv-rev">220 000 ₽</span>
+                </div>
+                <div class="mt-salary-slider-wrap">
+                  <input class="mt-salary-slider" type="range" min="20000" max="1000000" step="5000" value="220000" data-salary-slider="serv-rev">
+                  <input class="mt-salary-input-num" type="number" min="0" max="3000000" step="5000" value="220000" data-salary-num="serv-rev">
+                </div>
+              </div>
+
+              <div class="mt-salary-row-2">
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Сдельный процент от услуг</label>
+                    <span class="mt-salary-val-display" data-salary-val="serv-pct">40%</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="10" max="80" step="1" value="40" data-salary-slider="serv-pct">
+                    <input class="mt-salary-input-num" type="number" min="0" max="100" value="40" data-salary-num="serv-pct">
+                  </div>
+                </div>
+
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Вычет материалов по техкарте</label>
+                    <span class="mt-salary-val-display" data-salary-val="mat-pct">10%</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="0" max="35" step="1" value="10" data-salary-slider="mat-pct">
+                    <input class="mt-salary-input-num" type="number" min="0" max="50" value="10" data-salary-num="mat-pct">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-salary-section-heading" style="margin-top:10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span>Продажи сопутствующих товаров (витрина)</span>
+              </div>
+
+              <div class="mt-salary-row-2">
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Продажи товаров с витрины</label>
+                    <span class="mt-salary-val-display" data-salary-val="ret-rev">30 000 ₽</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="0" max="300000" step="2500" value="30000" data-salary-slider="ret-rev">
+                    <input class="mt-salary-input-num" type="number" min="0" max="1000000" step="2500" value="30000" data-salary-num="ret-rev">
+                  </div>
+                </div>
+
+                <div class="mt-salary-field-group">
+                  <div class="mt-salary-field-head">
+                    <label class="mt-salary-label">Бонус мастера с витрины</label>
+                    <span class="mt-salary-val-display" data-salary-val="ret-pct">10%</span>
+                  </div>
+                  <div class="mt-salary-slider-wrap">
+                    <input class="mt-salary-slider" type="range" min="0" max="30" step="1" value="10" data-salary-slider="ret-pct">
+                    <input class="mt-salary-input-num" type="number" min="0" max="50" value="10" data-salary-num="ret-pct">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RESULTS -->
+            <div class="mt-salary-card mt-salary-results-card">
+              <div class="mt-salary-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Итоговый расчет выплат за месяц</span>
+              </div>
+
+              <div class="mt-salary-kpi-grid">
+                <div class="mt-salary-kpi-box mt-salary-kpi-box--accent">
+                  <span class="mt-salary-kpi-label">На руки мастеру за месяц</span>
+                  <div class="mt-salary-kpi-num mt-salary-kpi-num--accent" data-salary-res="payout">82 200 ₽</div>
+                  <span class="mt-salary-kpi-sub" data-salary-res="payout-sub">Сделка превысила гарантированный оклад</span>
+                </div>
+
+                <div class="mt-salary-kpi-box">
+                  <span class="mt-salary-kpi-label">Средний доход за смену</span>
+                  <div class="mt-salary-kpi-num" data-salary-res="shift-rate">5 480 ₽</div>
+                  <span class="mt-salary-kpi-sub" data-salary-res="shift-rate-sub">548 ₽/час при 10-часовой смене</span>
+                </div>
+
+                <div class="mt-salary-kpi-box">
+                  <span class="mt-salary-kpi-label">Доля выплат в выручке (% ФОТ)</span>
+                  <div class="mt-salary-kpi-num" data-salary-res="fot-share">32.9%</div>
+                  <span class="mt-salary-kpi-sub" data-salary-res="fot-share-sub">🟢 Здоровая норма для сферы услуг</span>
+                </div>
+
+                <div class="mt-salary-kpi-box">
+                  <span class="mt-salary-kpi-label">Валовая прибыль локации</span>
+                  <div class="mt-salary-kpi-num" data-salary-res="biz-margin">130 800 ₽</div>
+                  <span class="mt-salary-kpi-sub" data-salary-res="biz-margin-sub">52.3% от общей выручки мастера</span>
+                </div>
+              </div>
+
+              <!-- Breakdown -->
+              <div class="mt-salary-breakdown-box">
+                <div class="mt-salary-breakdown-title">Структура распределения выручки мастера:</div>
+                <div class="mt-salary-bar-stack" aria-label="Диаграмма распределения выручки">
+                  <div class="mt-salary-bar-seg mt-salary-bar-seg--payout" data-salary-bar="payout" style="width: 33%;"></div>
+                  <div class="mt-salary-bar-seg mt-salary-bar-seg--materials" data-salary-bar="materials" style="width: 15%;"></div>
+                  <div class="mt-salary-bar-seg mt-salary-bar-seg--margin" data-salary-bar="margin" style="width: 52%;"></div>
+                </div>
+                <div class="mt-salary-legend">
+                  <div class="mt-salary-legend-item">
+                    <span><span class="mt-salary-legend-dot mt-salary-legend-dot--payout"></span>Зарплата мастера на руки:</span>
+                    <strong data-salary-leg="payout">82 200 ₽ (33%)</strong>
+                  </div>
+                  <div class="mt-salary-legend-item">
+                    <span><span class="mt-salary-legend-dot mt-salary-legend-dot--materials"></span>Расходные материалы и товар:</span>
+                    <strong data-salary-leg="materials">37 000 ₽ (15%)</strong>
+                  </div>
+                  <div class="mt-salary-legend-item">
+                    <span><span class="mt-salary-legend-dot mt-salary-legend-dot--margin"></span>Доход компании (на аренду и прибыль):</span>
+                    <strong data-salary-leg="margin">130 800 ₽ (52%)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Model Comparison -->
+              <div class="mt-salary-comparison-box">
+                <div class="mt-salary-comparison-title">Сравнение 3 систем мотивации при этой выручке:</div>
+                <div class="mt-salary-comparison-grid">
+                  <div class="mt-salary-comparison-item">
+                    <span class="mt-salary-comparison-name">Чистая сдельщина</span>
+                    <span class="mt-salary-comparison-val" data-salary-comp="model1">82 200 ₽</span>
+                    <span class="mt-salary-comparison-note">Без оклада за выход</span>
+                  </div>
+                  <div class="mt-salary-comparison-item is-selected">
+                    <span class="mt-salary-comparison-name">Гарант или % (текущая)</span>
+                    <span class="mt-salary-comparison-val" data-salary-comp="model2">82 200 ₽</span>
+                    <span class="mt-salary-comparison-note">Страховка пустых смен</span>
+                  </div>
+                  <div class="mt-salary-comparison-item">
+                    <span class="mt-salary-comparison-name">Прогрессивная шкала</span>
+                    <span class="mt-salary-comparison-val" data-salary-comp="model3">77 100 ₽</span>
+                    <span class="mt-salary-comparison-note">35% базовая / 45% бонус</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight Box -->
+              <div class="mt-salary-growth-box">
+                <div class="mt-salary-growth-title" data-salary-growth-title>
+                  <span>⚡ Сбалансированная модель мотивации</span>
+                </div>
+                <p class="mt-salary-growth-text" data-salary-growth-text>
+                  Доля ФОТ мастера находится в здоровом диапазоне <strong>32.9%</strong>. В CRM Молния начисление сдельщины, списание расходников по нормам и мотивация витрины происходят автоматически в момент закрытия каждого чека.
+                </p>
+              </div>
+
+              <!-- Actions -->
+              <div class="mt-salary-actions">
+                <button class="mt-salary-copy-btn" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Скопировать расчетный листок для мастера</span>
+                </button>
+                <a class="mt-salary-cta-btn" href="#lead-form">
+                  <span>Автоматизировать расчет зарплаты в Молнии →</span>
+                </a>
+              </div>
+
+              <!-- Rating -->
+              <div class="mt-tool-rating-wrap" style="margin-top:8px; padding-top:16px;">
+                <span class="mt-tool-rating-title">Оцените полезность калькулятора:</span>
+                <div class="mt-tool-rating" data-tool-rating="salary">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>4.97</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 420</span> оценок)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Факторы мотивации" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как построить здоровую систему оплаты <span class="mt-overview-hook">в сфере услуг</span></h2>
+          <p class="mt-section-sub">Справедливая мотивация защищает бизнес от кассовых разрывов и исключает конфликты и уход мастеров с клиентами.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Прозрачный вычет себестоимости <span class="mt-overview-hook">по технологическим картам</span></h3>
+            <p>Когда процент мастера считается от «грязного» чека, перерасход материалов ложится на плечи бизнеса. Молния вычитает препараты строго по нормам с точностью до грамма.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Списание по техкарте</span><span>Норма расхода</span></div>
+              <div class="mt-overview-price-row"><span>Состав и препараты</span><strong>60 мл по регламенту</strong></div>
+              <div class="mt-overview-price-row"><span>База для процента</span><strong>Чистая выручка</strong></div>
+              <div class="mt-overview-price-tag">Исключен скрытый перерасход препаратов</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Гарантированный оклад за смену <span class="mt-overview-hook">без риска переплаты</span></h3>
+            <p>Фиксированный выход защищает специалистов в дни низкого трафика, а механизм «гарант или процент» гарантирует, что при высокой загрузке бизнес не платит двойной оклад.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Страховка смены</span><span>Авторасчет</span></div>
+              <div class="mt-overview-price-row"><span>Гарант за выход</span><strong>2 500 ₽/смена</strong></div>
+              <div class="mt-overview-price-row"><span>Сдельная часть</span><strong>Выше гаранта на 64%</strong></div>
+              <div class="mt-overview-price-tag">Мастер спокоен за доход в пустые дни</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Мотивация за допродажи витрины <span class="mt-overview-hook">и сопутствующих товаров</span></h3>
+            <p>Отдельный процент (10–15%) от продажи косметики и автотоваров стимулирует сотрудников активно консультировать клиентов, увеличивая чек витрины на 25–40%.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Бонус с витрины</span><span>+10% мастеру</span></div>
+              <div class="mt-overview-price-row"><span>Продажи ухода</span><strong>+48 000 ₽ в месяц</strong></div>
+              <div class="mt-overview-price-row"><span>Премия мастера</span><strong>+4 800 ₽ на руки</strong></div>
+              <div class="mt-overview-price-tag">Высокомаржинальный доход без затрат времени</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Прогрессивная шкала и грейды <span class="mt-overview-hook">для удержания топов</span></h3>
+            <p>Ступенчатые проценты мотивируют лучших специалистов брать больше записей и поднимать средний чек, исключая соблазн уйти в соседний салон или арендовать рабочее место.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Грейд: Топ-мастер</span><span>План выполнен</span></div>
+              <div class="mt-overview-metrics">
+                <span>Базовая ставка<b>35%</b></span>
+                <span>Сверх плана<b>45%</b></span>
+                <span>Выручка<b>280к</b></span>
+              </div>
+              <div class="mt-overview-price-tag">Топовые мастера остаются в команде годами</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Личный баланс смены в телефоне <span class="mt-overview-hook">в реальном времени</span></h3>
+            <p>Специалисты видят свои начисления, процент за услуги и продажи сразу после проведения оплаты клиентом. Никаких разногласий и сомнений в правильности выплат.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Уведомление в Telegram</span><span>Только что</span></div>
+              <div class="mt-overview-message">
+                Чек №1482 закрыт. Начислено: +1 440 ₽ за услугу и +350 ₽ за уход.
+                <span class="mt-overview-reaction">✓ Баланс</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как внедрить мотивацию" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как настроить прозрачную зарплату мастеров <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">Пошаговый переход от хаотичных тетрадей и Excel-таблиц к автоматическому расчету выплат без кассовых разрывов.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Аудит</span>
+              <h3>Определите безопасную планку ФОТ для вашей локации</h3>
+              <p>Рассчитайте постоянные расходы на аренду и коммунальные платежи. Убедитесь, что суммарные выплаты мастерам не превышают 42% от оборота за вычетом материалов.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Аудит ФОТ">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Аудит расходов</span>
+                <span class="mt-journey-proof-badge">Оцифровано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Постоянные затраты</span><strong>140 000 ₽/мес</strong></div>
+              <div class="mt-journey-proof-row"><span>Целевой ФОТ</span><strong>38% от чистой базы</strong></div>
+              <div class="mt-journey-proof-row"><span>Подушка прибыли</span><strong>Защищена от просадок</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Техкарты</span>
+              <h3>Оцифруйте нормы списания препаратов и расходников</h3>
+              <p>Занесите нормы расхода профессиональных составов в CRM Молния. Система автоматически вычитает их себестоимость из чека перед начислением процента мастеру.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Техкарты">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Технологические карты</span>
+                <span class="mt-journey-proof-badge">Точный учет</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Списание со склада</span><strong>По факту чека</strong></div>
+              <div class="mt-journey-proof-row"><span>Погрешность веса</span><strong>0 граммов</strong></div>
+              <div class="mt-journey-proof-row"><span>Экономия закупки</span><strong>До 14% в месяц</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мотивация</span>
+              <h3>Подключите отдельные бонусы за витрину и план выручки</h3>
+              <p>Дайте мастерам возможность зарабатывать больше за счет личных продаж косметики и достижения целевых порогов выработки без увеличения рабочего времени.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Мотивация витрины">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бонусы сотрудников</span>
+                <span class="mt-journey-proof-badge">Включено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Витринный бонус</span><strong>10% с каждой банки</strong></div>
+              <div class="mt-journey-proof-row"><span>Рост чека витрины</span><strong>В 2.8 раза за 2 месяца</strong></div>
+              <div class="mt-journey-proof-row"><span>Вовлеченность команды</span><strong>100% мастеров</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Автоматизация</span>
+              <h3>Формируйте расчетные ведомости в один клик</h3>
+              <p>Забудьте о ночных расчетах в Excel и спорах с коллективом в конце месяца. Молния формирует детальный расчетный листок для каждого мастера моментально.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Авторасчет">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Расчетная ведомость</span>
+                <span class="mt-journey-proof-badge">1 клик</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Время на расчет</span><strong>0 минут в месяц</strong></div>
+              <div class="mt-journey-proof-row"><span>Ошибки в ведомостях</span><strong>Исключены на 100%</strong></div>
+              <div class="mt-journey-proof-row"><span>Доверие мастеров</span><strong>Прозрачные начисления</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс прозрачной мотивации" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс внедрения мотивации</div>
+            <h2 class="mt-case-title">Ольга Решетникова, владелица сети студий колористики</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше расчет зарплаты 14 мастеров в конце месяца превращался в двухдневный ад с калькулятором и Excel-таблицами: кто сколько краски перерасходовал, у кого сгорел выход, кому начислить 10% с шампуней. Постоянно возникали обиды и споры. Внедрили прозрачную модель с автоматическим расчетом в Молнии: каждый мастер видит свои начисления прямо в телефоне сразу после закрытия визита. Доля ФОТ снизилась с 52% до 39%, а продажи витрины выросли в 3 раза.»
+            </blockquote>
+            <div class="mt-case-author">
+              Ольга Решетникова <span>· Основательница сети студий колористики, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">39%</span>
+              <span class="mt-case-label">Здоровая доля выплат мастерам в выручке вместо прежних убыточных 52%</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 часов</span>
+              <span class="mt-case-label">Время управляющего на сведение зарплатных ведомостей и споры в конце месяца</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+185 000 ₽</span>
+              <span class="mt-case-label">Ежемесячный прирост продаж домашнего ухода с витрины благодаря прозрачной мотивации</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об оплате труда и мотивации мастеров сферы услуг</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Настройте прозрачный расчет зарплаты в Молнии</h3>
+            <p>Бесплатно поможем настроить индивидуальные грейды мастеров, списание материалов по техкартам и мотивацию витрины за 15 минут.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" id="mt-cookie-accept" type="button">Понятно</button>
+    </div>
+
+    <!-- sticky mobile telegram CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -8654,7 +9347,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8892,7 +9585,7 @@ def build_education_page() -> str:
               <h3>Онлайн-запись на пробный урок за 1 минуту</h3>
               <p>Родитель выбирает направление, удобный филиал и время пробного занятия через виджет на сайте или в мессенджере. Слот в группе резервируется автоматически.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -8910,7 +9603,7 @@ def build_education_page() -> str:
               <h3>Встреча в центре и отметка в электронном журнале</h3>
               <p>Администратор встречает ученика, открывает карточку в планшете и отмечает приход в 1 тап. Преподаватель сразу видит нового студента в составе группы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка занятия">
+            <div class="mt-journey-proof" aria-label="Карточка занятия">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Визит #2940</span>
                 <span class="mt-journey-proof-badge">Присутствует</span>
@@ -8928,7 +9621,7 @@ def build_education_page() -> str:
               <h3>Проведение занятия и комментарий по уровню знаний</h3>
               <p>После занятия педагог оставляет короткую заметку в карточке ученика со смартфона: уровень знаний, рекомендации по учебным материалам и подходящая группа.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Итоги урока">
+            <div class="mt-journey-proof" aria-label="Итоги урока">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог урока</span>
                 <span class="mt-journey-proof-badge">Рекомендовано</span>
@@ -8946,7 +9639,7 @@ def build_education_page() -> str:
               <h3>Оплата абонемента, расчет педагога и автонапоминания</h3>
               <p>Родитель оплачивает абонемент на 8 занятий. Программа автоматически начисляет ставку преподавателю, формирует график уроков и отправляет памятку в мессенджере.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Финансовый расчет">
+            <div class="mt-journey-proof" aria-label="Финансовый расчет">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Абонемент активирован</span>
                 <span class="mt-journey-proof-badge">Оплачено</span>
@@ -9031,7 +9724,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -9176,7 +9869,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9414,7 +10107,7 @@ def build_pets_page() -> str:
               <h3>Онлайн-запись с выбором породы за 1 минуту</h3>
               <p>Хозяйка выбирает породу собаки, комплекс «Полный уход + экспресс-линька» и удобное время в виджете онлайн-записи. Слот на столе груминга бронируется автоматически.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример онлайн-записи">
+            <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -9432,7 +10125,7 @@ def build_pets_page() -> str:
               <h3>Прием питомца, осмотр шерсти и фиксация пожеланий</h3>
               <p>Администратор встречает владельца с собакой, открывает карточку питомца в планшете, отмечает наличие колтунов и индивидуальные пожелания по длине шерсти.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка приема питомца">
+            <div class="mt-journey-proof" aria-label="Карточка приема питомца">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Визит #1842</span>
                 <span class="mt-journey-proof-badge">В работе</span>
@@ -9450,7 +10143,7 @@ def build_pets_page() -> str:
               <h3>Проведение процедур и фото результата «до/после»</h3>
               <p>Мастер выполняет вычес, гигиенический уход, купание и породную стрижку. В завершение делает фото питомца для карточки и нажимает кнопку «Готово».</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Итоги ухода">
+            <div class="mt-journey-proof" aria-label="Итоги ухода">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Уход завершен</span>
                 <span class="mt-journey-proof-badge">Готово к выдаче</span>
@@ -9555,7 +10248,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -9700,7 +10393,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9938,7 +10631,7 @@ def build_repair_page() -> str:
               <h3>Оформление заказ-наряда и квитанция с QR-кодом</h3>
               <p>Администратор принимает устройство, отмечает пароль разблокировки, сколы на корпусе и причину обращения. Клиент получает квитанцию с QR-кодом, а на телефон наклеивается штрихкод.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример оформления заказ-наряда">
+            <div class="mt-journey-proof" aria-label="Пример оформления заказ-наряда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ-наряд #3105</span>
                 <span class="mt-journey-proof-badge">Принят</span>
@@ -9956,7 +10649,7 @@ def build_repair_page() -> str:
               <h3>Диагностика и согласование сметы в мессенджере</h3>
               <p>Мастер проводит первичный осмотр, проверяет Face ID и системную плату, формирует смету в программе. Клиент мгновенно получает смету в мессенджер и подтверждает ремонт в один клик.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Диагностика и согласование">
+            <div class="mt-journey-proof" aria-label="Диагностика и согласование">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Диагностика #3105</span>
                 <span class="mt-journey-proof-badge">Согласовано</span>
@@ -9974,7 +10667,7 @@ def build_repair_page() -> str:
               <h3>Модульный ремонт и списание детали со склада</h3>
               <p>Инженер устанавливает новый дисплейный модуль, переносит True Tone и восстанавливает влагозащитную проклейку. Деталь автоматически списывается с остатков склада сервиса.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Выполнение ремонта">
+            <div class="mt-journey-proof" aria-label="Выполнение ремонта">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Ремонт завершен</span>
                 <span class="mt-journey-proof-badge">Тестирование</span>
@@ -10079,7 +10772,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -10233,7 +10926,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10606,7 +11299,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -10746,7 +11439,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11187,7 +11880,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -11328,7 +12021,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11774,7 +12467,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -12248,6 +12941,17 @@ def sync_sitemap():
         changed = True
         print("Added /qr to sitemap.xml")
 
+    if "https://molniya-tech.ru/salary" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/salary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /salary to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -12266,6 +12970,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Калькулятор зарплаты мастеров и сдельного процента",
+        "slug": "salary",
+        "description": "Бесплатный онлайн-калькулятор сдельной оплаты труда для сферы услуг: расчет зарплаты мастера за смену и месяц, процент от услуг и витрины, вычет расходников, контроль доли ФОТ в выручке и сравнение 3 моделей мотивации.",
+        "pub_date": datetime(2026, 10, 23, 23, 30, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
     {
         "title": "Генератор брендовых QR-кодов для бизнеса с логотипом",
         "slug": "qr",
@@ -12668,7 +13379,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12910,7 +13621,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 """
@@ -12947,7 +13658,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13007,7 +13718,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 """
@@ -13076,7 +13787,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13267,7 +13978,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 """
@@ -13327,7 +14038,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13611,7 +14322,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 """
@@ -13758,7 +14469,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13978,7 +14689,7 @@ def build_trainers_page() -> str:
               <h3>Выбор удобного окна тренировки на странице записи 24/7</h3>
               <p>Клиент открывает персональную ссылку тренера в Telegram или браузере, выбирает свободный слот и мгновенно закрепляет время за собой.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование слота</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -13996,7 +14707,7 @@ def build_trainers_page() -> str:
               <h3>Учёт пакета занятий и фиксация ограничений по здоровью</h3>
               <p>Система проверяет баланс блока тренировок, напоминает о скором продлении и выводит тренеру заметки по противопоказаниям клиента.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+            <div class="mt-journey-proof" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Тренировка #8410</span>
                 <span class="mt-journey-proof-badge">Пакет 10/10</span>
@@ -14014,7 +14725,7 @@ def build_trainers_page() -> str:
               <h3>Автоматические напоминания накануне занятия</h3>
               <p>Сервисный бот заблаговременно присылает сообщение в Telegram с напоминанием о времени тренировки, номере зала и форме одежды.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -14032,7 +14743,7 @@ def build_trainers_page() -> str:
               <h3>Отметка в зале, списание занятия и фиксация весов</h3>
               <p>Тренер отмечает проведённую тренировку, вносит рабочие веса в дневник и видит автоматическое списание занятия из баланса пакета.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат тренировки">
+            <div class="mt-journey-proof" aria-label="Результат тренировки">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог тренировки</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -14117,7 +14828,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -14264,7 +14975,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14484,7 +15195,7 @@ def build_martial_arts_page() -> str:
               <h3>Выбор направления и группы на странице записи 24/7</h3>
               <p>Боец или родитель ребёнка переходит по ссылке клуба, выбирает вид спорта (бокс, кикбоксинг, самбо, BJJ) и видит свободные места в группе.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование тренировки</span>
                 <span class="mt-journey-proof-badge">Место забронировано</span>
@@ -14502,7 +15213,7 @@ def build_martial_arts_page() -> str:
               <h3>Выбор абонемента и отметка медицинской справки</h3>
               <p>Спортсмен указывает контакты, выбирает клубный абонемент или разовый визит. Для детей фиксируются телефоны родителей и допуск врача.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Анкета записи">
+            <div class="mt-journey-proof" aria-label="Анкета записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Запись #7310</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
@@ -14520,7 +15231,7 @@ def build_martial_arts_page() -> str:
               <h3>Автоматические напоминания бойцу накануне спаррингов</h3>
               <p>Сервисный Telegram-бот отправляет напоминание с деталями визита: зал, тренер, форма одежды и напоминание взять защитную экипировку.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Напоминание</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -14538,7 +15249,7 @@ def build_martial_arts_page() -> str:
               <h3>Отметка прихода на ковёр и автосписание занятия</h3>
               <p>Тренер отмечает явку в приложении. Занятие списывается с абонемента автоматически, а система учитывает проведённую тренировку в табеле смены.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат тренировки">
+            <div class="mt-journey-proof" aria-label="Результат тренировки">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог тренировки</span>
                 <span class="mt-journey-proof-badge">Успешно</span>
@@ -14623,7 +15334,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -14753,7 +15464,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -14960,7 +15671,7 @@ def build_quests_page() -> str:
               <h3>Выбор квеста, уровня контакта и времени на сайте 24/7</h3>
               <p>Капитан команды открывает страницу бронирования, выбирает квест, уровень контакта (Хард с актерами) и видит только реальные свободные сеансы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование сеанса</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -14978,7 +15689,7 @@ def build_quests_page() -> str:
               <h3>Указание числа игроков, доплата и бронь лаунжа</h3>
               <p>Капитан указывает 6 игроков (база на 4 + 2 доплаты) и добавляет 1 час лаунж-зоны. Система автоматически фиксирует сумму заказа и предоплату.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь #3890</span>
                 <span class="mt-journey-proof-badge">Предоплата 1 500 ₽</span>
@@ -14996,7 +15707,7 @@ def build_quests_page() -> str:
               <h3>Автоматические напоминания и схема проезда в Telegram</h3>
               <p>Бот отправляет капитану точную схему входа во двор, видео-подсказку ориентиров и правила: приехать за 10 минут, удобная обувь без каблуков.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Инструкция</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -15014,7 +15725,7 @@ def build_quests_page() -> str:
               <h3>Проведение игры, 15 минут буфера и расчет смены</h3>
               <p>Команда успешно проходит квест. Оператор за 15 минут перезапускает локацию и замки, а система начисляет выплату за сеанс оператору и актеру.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сеанса">
+            <div class="mt-journey-proof" aria-label="Результат сеанса">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог сеанса</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -15099,7 +15810,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -15229,7 +15940,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15436,7 +16147,7 @@ def build_vr_arena_page() -> str:
               <h3>Выбор сценария, числа игроков и слота на сайте 24/7</h3>
               <p>Организатор открывает страницу записи, выбирает формат арены со свободным перемещением, шутер и видит только реальные свободные сеансы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование сеанса</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -15454,7 +16165,7 @@ def build_vr_arena_page() -> str:
               <h3>Выбор пакета праздника, бронь лаунжа и предоплата</h3>
               <p>Клиент указывает 8 участников и добавляет комнату отдыха на 1.5 часа для пиццы и торта. Система автоматически фиксирует сумму заказа и размер аванса.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь #4105</span>
                 <span class="mt-journey-proof-badge">Предоплата 3 000 ₽</span>
@@ -15472,7 +16183,7 @@ def build_vr_arena_page() -> str:
               <h3>Автоматические напоминания и схема проезда в Telegram</h3>
               <p>Сервисный бот отправляет капитану точную схему входа, видео-инструкцию, напоминание прийти за 10 минут и правила обуви для игры.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Инструкция</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -15490,7 +16201,7 @@ def build_vr_arena_page() -> str:
               <h3>Проведение игры, 15 минут буфера и расчет смены</h3>
               <p>Игроки проходят раунды. Инструктор за 15 минут обрабатывает маски, ставит свежие АКБ, а программа начисляет сдельную выплату за сессию.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат сеанса">
+            <div class="mt-journey-proof" aria-label="Результат сеанса">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог сеанса</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -15575,7 +16286,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -15705,7 +16416,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15912,7 +16623,7 @@ def build_karting_page() -> str:
               <h3>Выбор формата заезда, числа картов и слота на сайте 24/7</h3>
               <p>Гость открывает страницу бронирования автодрома, выбирает взрослый прокат на 4 пилота и видит только реальные свободные заезды.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронирование заезда</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -15930,7 +16641,7 @@ def build_karting_page() -> str:
               <h3>Аренда экипировки, доплата и фиксация предоплаты</h3>
               <p>Пилоты выбирают подшлемники и комбинезоны, вносят предоплату онлайн, а система блокирует 4 карта в заезде без риска перегруза трассы.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ #5120</span>
                 <span class="mt-journey-proof-badge">Оплачено онлайн</span>
@@ -15948,7 +16659,7 @@ def build_karting_page() -> str:
               <h3>Автоматические напоминания и тайминг прибытия в Telegram</h3>
               <p>Сервисный бот отправляет пилоту точный маршрут к автодрому, напоминание приехать за 15 минут для инструктажа и требования к закрытой обуви.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Инструкция пилоту</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -15966,7 +16677,7 @@ def build_karting_page() -> str:
               <h3>Проведение заезда, телеметрия круга и подготовка смены</h3>
               <p>Заезд успешно финиширует по клетчатому флагу. 10-минутный буфер позволяет безопасно высадить пилотов и посадить следующую группу.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат заезда">
+            <div class="mt-journey-proof" aria-label="Результат заезда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог сессии</span>
                 <span class="mt-journey-proof-badge">Финиш</span>
@@ -16051,7 +16762,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -16181,7 +16892,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16388,7 +17099,7 @@ def build_anticafe_page() -> str:
               <h3>Выбор VIP-комнаты, времени и бронирование на сайте 24/7</h3>
               <p>Организатор компании открывает страницу бронирования тайм-клуба, выбирает комнату с PS5 на 2 часа и видит свободные слоты без звонков.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь VIP-комнаты</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -16406,7 +17117,7 @@ def build_anticafe_page() -> str:
               <h3>Дополнительные услуги, пробковый сбор и предоплата</h3>
               <p>Гость добавляет опцию пробкового сбора за свой торт и пиццу, вносит предоплату онлайн, а комната фиксируется в расписании клуба.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ #3490</span>
                 <span class="mt-journey-proof-badge">Предоплата 50%</span>
@@ -16424,7 +17135,7 @@ def build_anticafe_page() -> str:
               <h3>Напоминание о сменке, правилах клуба и маршруте в Telegram</h3>
               <p>Сервисный бот отправляет гостю точный маршрут к антикафе, код домофона, напоминание о сменной обуви или носочках и подтверждение времени.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Памятка гостю</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -16442,7 +17153,7 @@ def build_anticafe_page() -> str:
               <h3>Встреча компании, отдых и 15-минутный буфер на проветривание</h3>
               <p>Гости отлично проводят время за играми. По окончании сеанса включается 15-минутный буфер: хостес убирает посуду и протирает джойстики.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+            <div class="mt-journey-proof" aria-label="Результат визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог визита</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -16527,7 +17238,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -16657,7 +17368,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16864,7 +17575,7 @@ def build_saunas_page() -> str:
               <h3>Выбор парной, времени от 2 часов и банных услуг на сайте 24/7</h3>
               <p>Гость выбирает сруб на дровах, указывает длительность 3 часа, добавляет 2 дубовых веника и чан на свежем воздухе без звонков.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь сруба</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -16882,7 +17593,7 @@ def build_saunas_page() -> str:
               <h3>Выбор пармейстера, веников и фиксация предоплаты онлайн</h3>
               <p>Клиент вносит 50% предоплату через СБП, система блокирует слот в расписании и ставит задачу истопнику растопить парную к 15:00.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ #7280</span>
                 <span class="mt-journey-proof-badge">Аванс 50%</span>
@@ -16900,7 +17611,7 @@ def build_saunas_page() -> str:
               <h3>Памятка гостям, правила парной и схема проезда в Telegram</h3>
               <p>Сервисный бот отправляет гостю геолокацию комплекса, правила бани, памятку о купальных принадлежностях и код ворот.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Памятка гостю</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -16918,7 +17629,7 @@ def build_saunas_page() -> str:
               <h3>Парение гостей, расчет и 45-минутный санитарный час</h3>
               <p>После парения включается санитарный регламент: клинеры моют полки антисептиком, заменяют текстиль и проветривают сруб до 19:45.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+            <div class="mt-journey-proof" aria-label="Результат визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог визита</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -17003,7 +17714,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -17133,7 +17844,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17340,7 +18051,7 @@ def build_glamping_page() -> str:
               <h3>Выбор домика или беседки, дат отдыха и допуслуг на сайте 24/7</h3>
               <p>Гость выбирает сафари-тент с видом на озеро, указывает 2 суток, добавляет горячий чан фурако и охапку дров без переписок в мессенджерах.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример бронирования">
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Бронь тент #3</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -17358,7 +18069,7 @@ def build_glamping_page() -> str:
               <h3>Фиксация слота, заказ чана и внесение предоплаты онлайн</h3>
               <p>Клиент вносит 50% предоплату и залог за чистоту через СБП, система блокирует даты в шахматке и ставит задачу на растопку чана к 18:00.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка брони">
+            <div class="mt-journey-proof" aria-label="Карточка брони">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ #8930</span>
                 <span class="mt-journey-proof-badge">Аванс 50%</span>
@@ -17376,7 +18087,7 @@ def build_glamping_page() -> str:
               <h3>Маршрут, правила заезда и инструкция по заселению в Telegram</h3>
               <p>Сервисный бот отправляет гостю геолокацию парка, схему проезда, код от въездного шлагбаума и памятку по правилам тихого часа.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Памятка гостю</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -17394,7 +18105,7 @@ def build_glamping_page() -> str:
               <h3>Заселение гостей, отдых и регламентный клининг территории</h3>
               <p>Гости наслаждаются уикендом на природе. При выезде администратор быстро осматривает шатер, возвращает залог, а клининг готовит тент к 14:00.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат визита">
+            <div class="mt-journey-proof" aria-label="Результат визита">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог заезда</span>
                 <span class="mt-journey-proof-badge">Завершено</span>
@@ -17479,7 +18190,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -17609,7 +18320,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17816,7 +18527,7 @@ def build_furniture_cleaning_page() -> str:
               <h3>Расчёт стоимости дивана по числу мест и выбор времени выезда 24/7</h3>
               <p>Клиент указывает угловой диван на 4 посадочных места, добавляет сушку мебели феном и видит точную стоимость без сюрпризов на месте.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+            <div class="mt-journey-proof" aria-label="Пример заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ наряда</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -17834,7 +18545,7 @@ def build_furniture_cleaning_page() -> str:
               <h3>Фиксация наряда, выбор опций сушки и назначение мастера</h3>
               <p>Система проверяет геолокацию, назначает мастера Антона К., работающего в Приморском районе, и бронирует слот в его мобильном календаре.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+            <div class="mt-journey-proof" aria-label="Карточка наряда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Наряд #5420</span>
                 <span class="mt-journey-proof-badge">В графике</span>
@@ -17852,7 +18563,7 @@ def build_furniture_cleaning_page() -> str:
               <h3>Маршрутный лист мастера, напоминание клиенту и чек-лист химии</h3>
               <p>Сервисный бот отправляет клиенту статус «Мастер выехал к вам», а мастеру — точный адрес, код домофона и состав пятен для подбора энзимов.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Маршрут мастера</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -17870,7 +18581,7 @@ def build_furniture_cleaning_page() -> str:
               <h3>Фото «до», глубокая экстракция, сушка и сдача работы</h3>
               <p>Мастер делает фото «до», выводит пятна, сушит мебель феном и закрывает наряд. Программа начисляет мастеру 40% (1 920 ₽) на баланс смены.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+            <div class="mt-journey-proof" aria-label="Результат выезда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог заказа</span>
                 <span class="mt-journey-proof-badge">Выполнено</span>
@@ -17955,7 +18666,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -18085,7 +18796,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18292,7 +19003,7 @@ def build_window_cleaning_page() -> str:
               <h3>Расчёт стоимости окон по числу створок и выбор времени на сайте 24/7</h3>
               <p>Клиент указывает 8 створок, лоджию и мытьё москитных сеток. Виджет показывает точную цену 5 400 ₽ и предлагает свободные слоты без звонков.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+            <div class="mt-journey-proof" aria-label="Пример заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ наряда</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -18310,7 +19021,7 @@ def build_window_cleaning_page() -> str:
               <h3>Фиксация наряда, выбор опций москиток и назначение мастера</h3>
               <p>Программа проверяет территориальный сектор, назначает мастера Дениса Л. и бронирует заказ в его мобильном расписании с буфером на переезд.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+            <div class="mt-journey-proof" aria-label="Карточка наряда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Наряд #7120</span>
                 <span class="mt-journey-proof-badge">В графике</span>
@@ -18328,7 +19039,7 @@ def build_window_cleaning_page() -> str:
               <h3>Маршрутный лист мастера, напоминание клиенту и чек-лист инвентаря</h3>
               <p>Сервисный бот отправляет клиенту статус «Мастер в пути», а мастеру — этаж, адрес, код домофона и напоминание взять штангу для лоджии.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Маршрут мастера</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -18346,7 +19057,7 @@ def build_window_cleaning_page() -> str:
               <h3>Мойка рам и стекол, сушка сгоном, подпись акта и сдача без разводов</h3>
               <p>Мастер моет рамы и стекла, сушит створки сгоном, отмечает чек-лист и закрывает наряд. Программа начисляет мастеру 40% (2 160 ₽) за смену.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+            <div class="mt-journey-proof" aria-label="Результат выезда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог заказа</span>
                 <span class="mt-journey-proof-badge">Выполнено</span>
@@ -18431,7 +19142,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -18561,7 +19272,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261023-qr2">
+  <link rel="stylesheet" href="/styles.css?v=20261023-sal1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18768,7 +19479,7 @@ def build_pest_control_page() -> str:
               <h3>Анонимный выбор паразитов, метража и даты выезда на сайте 24/7</h3>
               <p>Клиент указывает 2 комнаты, выбирает обработку от постельных клопов холодным туманом с барьером и видит точную цену 4 200 ₽ без звонков.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--booking" aria-label="Пример заказа">
+            <div class="mt-journey-proof" aria-label="Пример заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Заказ обработки</span>
                 <span class="mt-journey-proof-badge">Подтверждено</span>
@@ -18786,7 +19497,7 @@ def build_pest_control_page() -> str:
               <h3>Фиксация наряда, подбор препарата и назначение мастера</h3>
               <p>Система закрепляет заказ за мастером Романом В., работающим в Невском районе, резервирует слот и списывает технологическую норму концентрата.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--process" aria-label="Карточка наряда">
+            <div class="mt-journey-proof" aria-label="Карточка наряда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Наряд #9120</span>
                 <span class="mt-journey-proof-badge">В графике</span>
@@ -18804,7 +19515,7 @@ def build_pest_control_page() -> str:
               <h3>Памятка по подготовке квартиры и маршрутный лист дезинфектора</h3>
               <p>Сервисный бот отправляет клиенту чек-лист подготовки (убрать посуду, продукты, животных), а мастеру — адрес, код домофона и дозировку химии.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--order" aria-label="Сообщение с напоминанием">
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Памятка жильцам</span>
                 <span class="mt-journey-proof-badge">Отправлено</span>
@@ -18822,7 +19533,7 @@ def build_pest_control_page() -> str:
               <h3>Осмотр очагов, обработка холодным туманом и гарантийный акт</h3>
               <p>Мастер распыляет холодный туман, наносит барьер по периметру плинтусов и выписывает гарантийный талон на 12 месяцев. Начислено 40% за выезд.</p>
             </div>
-            <div class="mt-journey-proof mt-journey-proof--payout" aria-label="Результат выезда">
+            <div class="mt-journey-proof" aria-label="Результат выезда">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог заказа</span>
                 <span class="mt-journey-proof-badge">Выполнено</span>
@@ -18907,7 +19618,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261023-qr2"></script>
+  <script src="/script.js?v=20261023-sal1"></script>
 </body>
 </html>
 '''
@@ -19095,6 +19806,11 @@ def main():
     qr_html = build_qr_page()
     (ROOT_DIR / "qr.html").write_text(qr_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'qr.html'}")
+
+    print("Building salary and motivation calculator page: /salary.html...")
+    salary_html = build_salary_page()
+    (ROOT_DIR / "salary.html").write_text(salary_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'salary.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()

@@ -2916,6 +2916,316 @@ function initQrGenerator() {
   renderQr();
 }
 
+function initSalaryCalculator() {
+  var app = document.getElementById('mt-salary-app');
+  if (!app) return;
+
+  var PRESETS = {
+    beauty: { shifts: 15, wage: 2500, servRev: 220000, servPct: 40, retRev: 30000, retPct: 10, matPct: 10, mode: 'guarantee_vs_pct' },
+    auto: { shifts: 20, wage: 2000, servRev: 350000, servPct: 40, retRev: 200000, retPct: 5, matPct: 5, mode: 'guarantee_vs_pct' },
+    detailing: { shifts: 18, wage: 0, servRev: 240000, servPct: 35, retRev: 40000, retPct: 15, matPct: 8, mode: 'base_plus_pct' },
+    cleaning: { shifts: 20, wage: 3000, servRev: 180000, servPct: 20, retRev: 10000, retPct: 10, matPct: 7, mode: 'base_plus_pct' },
+    fitness: { shifts: 16, wage: 1500, servRev: 175000, servPct: 50, retRev: 25000, retPct: 10, matPct: 0, mode: 'base_plus_pct' }
+  };
+
+  var shiftsSlider = app.querySelector('[data-salary-slider="shifts"]');
+  var shiftsNum = app.querySelector('[data-salary-num="shifts"]');
+  var shiftsVal = app.querySelector('[data-salary-val="shifts"]');
+
+  var wageSlider = app.querySelector('[data-salary-slider="wage"]');
+  var wageNum = app.querySelector('[data-salary-num="wage"]');
+  var wageVal = app.querySelector('[data-salary-val="wage"]');
+
+  var servRevSlider = app.querySelector('[data-salary-slider="serv-rev"]');
+  var servRevNum = app.querySelector('[data-salary-num="serv-rev"]');
+  var servRevVal = app.querySelector('[data-salary-val="serv-rev"]');
+
+  var servPctSlider = app.querySelector('[data-salary-slider="serv-pct"]');
+  var servPctNum = app.querySelector('[data-salary-num="serv-pct"]');
+  var servPctVal = app.querySelector('[data-salary-val="serv-pct"]');
+
+  var retRevSlider = app.querySelector('[data-salary-slider="ret-rev"]');
+  var retRevNum = app.querySelector('[data-salary-num="ret-rev"]');
+  var retRevVal = app.querySelector('[data-salary-val="ret-rev"]');
+
+  var retPctSlider = app.querySelector('[data-salary-slider="ret-pct"]');
+  var retPctNum = app.querySelector('[data-salary-num="ret-pct"]');
+  var retPctVal = app.querySelector('[data-salary-val="ret-pct"]');
+
+  var matPctSlider = app.querySelector('[data-salary-slider="mat-pct"]');
+  var matPctNum = app.querySelector('[data-salary-num="mat-pct"]');
+  var matPctVal = app.querySelector('[data-salary-val="mat-pct"]');
+
+  var modeBtns = app.querySelectorAll('.mt-salary-toggle-btn');
+  var currentMode = 'guarantee_vs_pct';
+
+  var outPayout = app.querySelector('[data-salary-res="payout"]');
+  var outPayoutSub = app.querySelector('[data-salary-res="payout-sub"]');
+  var outShiftRate = app.querySelector('[data-salary-res="shift-rate"]');
+  var outShiftRateSub = app.querySelector('[data-salary-res="shift-rate-sub"]');
+  var outFotShare = app.querySelector('[data-salary-res="fot-share"]');
+  var outFotShareSub = app.querySelector('[data-salary-res="fot-share-sub"]');
+  var outBizMargin = app.querySelector('[data-salary-res="biz-margin"]');
+  var outBizMarginSub = app.querySelector('[data-salary-res="biz-margin-sub"]');
+
+  var barPayout = app.querySelector('[data-salary-bar="payout"]');
+  var barMat = app.querySelector('[data-salary-bar="materials"]');
+  var barMargin = app.querySelector('[data-salary-bar="margin"]');
+
+  var legPayout = app.querySelector('[data-salary-leg="payout"]');
+  var legMat = app.querySelector('[data-salary-leg="materials"]');
+  var legMargin = app.querySelector('[data-salary-leg="margin"]');
+
+  var compModel1 = app.querySelector('[data-salary-comp="model1"]');
+  var compModel2 = app.querySelector('[data-salary-comp="model2"]');
+  var compModel3 = app.querySelector('[data-salary-comp="model3"]');
+
+  var growthBox = app.querySelector('.mt-salary-growth-box');
+  var growthTitle = app.querySelector('[data-salary-growth-title]');
+  var growthText = app.querySelector('[data-salary-growth-text]');
+
+  var copyBtn = app.querySelector('.mt-salary-copy-btn');
+  var presetBtns = app.querySelectorAll('.mt-salary-preset-btn');
+
+  function fmtMoney(num) {
+    return Math.round(num).toLocaleString('ru-RU') + ' ₽';
+  }
+
+  function bindTwoWay(slider, num, valDisplay, suffix) {
+    if (!slider || !num) return;
+    function sync(fromSlider) {
+      var val = fromSlider ? slider.value : num.value;
+      if (fromSlider) {
+        num.value = val;
+      } else {
+        slider.value = val;
+      }
+      if (valDisplay) {
+        valDisplay.textContent = Number(val).toLocaleString('ru-RU') + (suffix || '');
+      }
+      calculate();
+    }
+    slider.addEventListener('input', function() { sync(true); });
+    num.addEventListener('input', function() { sync(false); });
+  }
+
+  bindTwoWay(shiftsSlider, shiftsNum, shiftsVal, '');
+  bindTwoWay(wageSlider, wageNum, wageVal, ' ₽');
+  bindTwoWay(servRevSlider, servRevNum, servRevVal, ' ₽');
+  bindTwoWay(servPctSlider, servPctNum, servPctVal, '%');
+  bindTwoWay(retRevSlider, retRevNum, retRevVal, ' ₽');
+  bindTwoWay(retPctSlider, retPctNum, retPctVal, '%');
+  bindTwoWay(matPctSlider, matPctNum, matPctVal, '%');
+
+  for (var m = 0; m < modeBtns.length; m++) {
+    modeBtns[m].addEventListener('click', function() {
+      for (var k = 0; k < modeBtns.length; k++) modeBtns[k].classList.remove('is-active');
+      this.classList.add('is-active');
+      currentMode = this.getAttribute('data-salary-mode');
+      calculate();
+    });
+  }
+
+  function applyPreset(p) {
+    if (shiftsSlider) { shiftsSlider.value = p.shifts; shiftsNum.value = p.shifts; if (shiftsVal) shiftsVal.textContent = p.shifts; }
+    if (wageSlider) { wageSlider.value = p.wage; wageNum.value = p.wage; if (wageVal) wageVal.textContent = p.wage.toLocaleString('ru-RU') + ' ₽'; }
+    if (servRevSlider) { servRevSlider.value = p.servRev; servRevNum.value = p.servRev; if (servRevVal) servRevVal.textContent = p.servRev.toLocaleString('ru-RU') + ' ₽'; }
+    if (servPctSlider) { servPctSlider.value = p.servPct; servPctNum.value = p.servPct; if (servPctVal) servPctVal.textContent = p.servPct + '%'; }
+    if (retRevSlider) { retRevSlider.value = p.retRev; retRevNum.value = p.retRev; if (retRevVal) retRevVal.textContent = p.retRev.toLocaleString('ru-RU') + ' ₽'; }
+    if (retPctSlider) { retPctSlider.value = p.retPct; retPctNum.value = p.retPct; if (retPctVal) retPctVal.textContent = p.retPct + '%'; }
+    if (matPctSlider) { matPctSlider.value = p.matPct; matPctNum.value = p.matPct; if (matPctVal) matPctVal.textContent = p.matPct + '%'; }
+    currentMode = p.mode || 'guarantee_vs_pct';
+    for (var k = 0; k < modeBtns.length; k++) {
+      if (modeBtns[k].getAttribute('data-salary-mode') === currentMode) {
+        modeBtns[k].classList.add('is-active');
+      } else {
+        modeBtns[k].classList.remove('is-active');
+      }
+    }
+    calculate();
+  }
+
+  for (var i = 0; i < presetBtns.length; i++) {
+    presetBtns[i].addEventListener('click', function() {
+      for (var j = 0; j < presetBtns.length; j++) presetBtns[j].classList.remove('is-active');
+      this.classList.add('is-active');
+      var key = this.getAttribute('data-salary-preset');
+      if (PRESETS[key]) {
+        applyPreset(PRESETS[key]);
+      }
+    });
+  }
+
+  var lastCalc = {};
+
+  function calculate() {
+    var shifts = Math.max(1, parseInt(shiftsSlider ? shiftsSlider.value : 15, 10));
+    var wage = Math.max(0, parseFloat(wageSlider ? wageSlider.value : 2500));
+    var servRev = Math.max(0, parseFloat(servRevSlider ? servRevSlider.value : 220000));
+    var servPct = Math.max(0, Math.min(100, parseInt(servPctSlider ? servPctSlider.value : 40, 10)));
+    var retRev = Math.max(0, parseFloat(retRevSlider ? retRevSlider.value : 30000));
+    var retPct = Math.max(0, Math.min(50, parseInt(retPctSlider ? retPctSlider.value : 10, 10)));
+    var matPct = Math.max(0, Math.min(50, parseInt(matPctSlider ? matPctSlider.value : 10, 10)));
+
+    var guaranteedPay = shifts * wage;
+    var matCost = Math.round(servRev * (matPct / 100));
+    var netServRev = Math.max(0, servRev - matCost);
+    var pieceWorkServ = Math.round(netServRev * (servPct / 100));
+    var retailBonus = Math.round(retRev * (retPct / 100));
+
+    var totalPayout = 0;
+    if (currentMode === 'base_plus_pct') {
+      totalPayout = guaranteedPay + pieceWorkServ + retailBonus;
+    } else {
+      totalPayout = Math.max(guaranteedPay, pieceWorkServ) + retailBonus;
+    }
+
+    var totalRevenue = servRev + retRev;
+    var fotShare = totalRevenue > 0 ? (totalPayout / totalRevenue) * 100 : 0;
+    var shiftRate = shifts > 0 ? Math.round(totalPayout / shifts) : 0;
+
+    var retailCost = Math.round(retRev * 0.5);
+    var bizMargin = Math.max(0, totalRevenue - totalPayout - matCost - retailCost);
+    var bizMarginPct = totalRevenue > 0 ? (bizMargin / totalRevenue) * 100 : 0;
+
+    var m1Payout = pieceWorkServ + retailBonus;
+    var m2Payout = Math.max(guaranteedPay, pieceWorkServ) + retailBonus;
+    var tierBase = Math.min(netServRev, 150000) * 0.35;
+    var tierOver = Math.max(0, netServRev - 150000) * 0.45;
+    var m3Payout = Math.round(tierBase + tierOver) + retailBonus;
+
+    lastCalc = {
+      shifts: shifts,
+      wage: wage,
+      servRev: servRev,
+      servPct: servPct,
+      retRev: retRev,
+      retPct: retPct,
+      matPct: matPct,
+      guaranteedPay: guaranteedPay,
+      matCost: matCost,
+      pieceWorkServ: pieceWorkServ,
+      retailBonus: retailBonus,
+      totalPayout: totalPayout,
+      totalRevenue: totalRevenue,
+      fotShare: fotShare,
+      shiftRate: shiftRate,
+      bizMargin: bizMargin,
+      bizMarginPct: bizMarginPct,
+      currentMode: currentMode,
+      m1Payout: m1Payout,
+      m2Payout: m2Payout,
+      m3Payout: m3Payout
+    };
+
+    if (outPayout) outPayout.textContent = fmtMoney(totalPayout);
+    if (outPayoutSub) {
+      if (currentMode === 'base_plus_pct') {
+        outPayoutSub.textContent = 'Оклад: ' + fmtMoney(guaranteedPay) + ' + Сделка: ' + fmtMoney(pieceWorkServ + retailBonus);
+      } else {
+        outPayoutSub.textContent = pieceWorkServ >= guaranteedPay ? ('Сделка (' + fmtMoney(pieceWorkServ) + ') превысила гарант') : ('Гарант (' + fmtMoney(guaranteedPay) + ') выше сделки');
+      }
+    }
+
+    if (outShiftRate) outShiftRate.textContent = fmtMoney(shiftRate);
+    if (outShiftRateSub) outShiftRateSub.textContent = Math.round(shiftRate / 10).toLocaleString('ru-RU') + ' ₽/час при 10-часовой смене';
+
+    if (outFotShare) {
+      outFotShare.textContent = fotShare.toFixed(1) + '%';
+      var fotClass = 'mt-salary-kpi-num ';
+      if (fotShare <= 42) fotClass += 'mt-salary-kpi-num--ok';
+      else if (fotShare <= 48) fotClass += 'mt-salary-kpi-num--warn';
+      else fotClass += 'mt-salary-kpi-num--danger';
+      outFotShare.className = fotClass;
+    }
+    if (outFotShareSub) {
+      if (fotShare <= 42) {
+        outFotShareSub.textContent = '🟢 Здоровая норма для сферы услуг (до 42%)';
+      } else if (fotShare <= 48) {
+        outFotShareSub.textContent = '🟡 Повышенная нагрузка на рентабельность (43–48%)';
+      } else {
+        outFotShareSub.textContent = '🔴 Критическая нагрузка (риск работы в убыток)';
+      }
+    }
+
+    if (outBizMargin) outBizMargin.textContent = fmtMoney(bizMargin);
+    if (outBizMarginSub) outBizMarginSub.textContent = bizMarginPct.toFixed(1) + '% от общей выручки мастера';
+
+    if (totalRevenue > 0) {
+      var pShare = Math.min(100, Math.round((totalPayout / totalRevenue) * 100));
+      var mShare = Math.min(100 - pShare, Math.round(((matCost + retailCost) / totalRevenue) * 100));
+      var bShare = Math.max(0, 100 - pShare - mShare);
+
+      if (barPayout) barPayout.style.width = pShare + '%';
+      if (barMat) barMat.style.width = mShare + '%';
+      if (barMargin) barMargin.style.width = bShare + '%';
+
+      if (legPayout) legPayout.textContent = fmtMoney(totalPayout) + ' (' + pShare + '%)';
+      if (legMat) legMat.textContent = fmtMoney(matCost + retailCost) + ' (' + mShare + '%)';
+      if (legMargin) legMargin.textContent = fmtMoney(bizMargin) + ' (' + bShare + '%)';
+    }
+
+    if (compModel1) compModel1.textContent = fmtMoney(m1Payout);
+    if (compModel2) compModel2.textContent = fmtMoney(m2Payout);
+    if (compModel3) compModel3.textContent = fmtMoney(m3Payout);
+
+    if (growthBox && growthTitle && growthText) {
+      growthBox.classList.remove('is-warning', 'is-danger');
+      if (fotShare > 48) {
+        growthBox.classList.add('is-danger');
+        growthTitle.innerHTML = '<span>⚠️ Высокая доля ФОТ (' + fotShare.toFixed(1) + '%)</span>';
+        growthText.innerHTML = 'При такой доле выплат мастеру локация рискует уйти в минус после вычета аренды и рекламы. Рекомендуется установить базовую ставку 35% и подключить прогрессивный бонус за перевыполнение плана в CRM Молния.';
+      } else if (retRev === 0) {
+        growthBox.classList.add('is-warning');
+        growthTitle.innerHTML = '<span>💡 Упущенная выгода: 0 ₽ с витрины</span>';
+        growthText.innerHTML = 'Мастер не продает домашний уход или сопутствующие товары. В салонах и автоцентрах с подключенной витриной Молнии 10% бонус мастерам приносит дополнительные <strong>+35 000 – 60 000 ₽ выручки</strong> в месяц на мастера.';
+      } else {
+        growthTitle.innerHTML = '<span>⚡ Сбалансированная модель мотивации</span>';
+        growthText.innerHTML = 'Доля ФОТ мастера находится в здоровом диапазоне <strong>' + fotShare.toFixed(1) + '%</strong>. В CRM Молния начисление сдельщины, списание расходников по нормам и мотивация витрины происходят автоматически в момент закрытия чека.';
+      }
+    }
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!lastCalc.shifts) return;
+
+      var textToCopy = [
+        '=== РАСЧЕТНЫЙ ЛИСТОК МАСТЕРА (МОЛНИЯ ТЕХ) ===',
+        'Период: Календарный месяц',
+        '• Отработано смен: ' + lastCalc.shifts + ' смен (ставка ' + lastCalc.wage.toLocaleString('ru-RU') + ' ₽/смена)',
+        '• Выручка по услугам: ' + lastCalc.servRev.toLocaleString('ru-RU') + ' ₽ (сдельный процент: ' + lastCalc.servPct + '%)',
+        '• Вычет себестоимости материалов: ' + lastCalc.matPct + '% (' + lastCalc.matCost.toLocaleString('ru-RU') + ' ₽)',
+        '• Продажи витрины/товаров: ' + lastCalc.retRev.toLocaleString('ru-RU') + ' ₽ (бонус: ' + lastCalc.retPct + '% = ' + lastCalc.retailBonus.toLocaleString('ru-RU') + ' ₽)',
+        '• Модель расчета: ' + (lastCalc.currentMode === 'base_plus_pct' ? 'Оклад за выход + Процент' : 'Гарант за выход или Процент (что больше)'),
+        '--------------------------------------------',
+        'ИТОГО К ВЫПЛАТЕ НА РУКИ: ' + lastCalc.totalPayout.toLocaleString('ru-RU') + ' ₽',
+        '• Средняя ставка за смену: ' + lastCalc.shiftRate.toLocaleString('ru-RU') + ' ₽/смена',
+        '• Доля ФОТ в выручке бизнеса: ' + lastCalc.fotShare.toFixed(1) + '%',
+        '• Валовая прибыль локации: ' + lastCalc.bizMargin.toLocaleString('ru-RU') + ' ₽',
+        '--------------------------------------------',
+        'Рассчитано онлайн на https://molniya-tech.ru/salary'
+      ].join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.classList.add('copied');
+        var btnSpan = copyBtn.querySelector('span');
+        if (btnSpan) btnSpan.textContent = 'Расчет скопирован в буфер!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          if (btnSpan) btnSpan.textContent = copyBtn.getAttribute('data-orig') || 'Скопировать расчетный листок';
+        }, 2500);
+      });
+    });
+  }
+
+  calculate();
+}
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -2939,6 +3249,7 @@ function initApp() {
   initCarwashWeather();
   initToolRating();
   initQrGenerator();
+  initSalaryCalculator();
 }
 
 if (document.readyState === 'loading') {

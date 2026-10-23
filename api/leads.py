@@ -49,6 +49,7 @@ FORM_NAMES = {
     "margin": "Калькулятор доходности — бесплатный доступ",
     "carwash_weather": "Индекс мойки авто — бесплатный доступ",
     "qr": "Генератор QR-кодов — бесплатный доступ",
+    "salary": "Калькулятор зарплат — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -85,6 +86,7 @@ SOURCE_PATHS = {
     "margin": "/margin",
     "carwash_weather": "/carwash-weather",
     "qr": "/qr",
+    "salary": "/salary",
 }
 
 
