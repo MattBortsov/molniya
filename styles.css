@@ -3137,8 +3137,8 @@ a.mt-origin-model-row:focus-visible {
   border: none;
   box-shadow: none;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-  gap: clamp(24px, 3.5vw, 48px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: clamp(20px, 3vw, 44px);
   align-items: center;
   overflow: hidden;
 }
@@ -3193,7 +3193,7 @@ a.mt-origin-model-row:focus-visible {
   width: 100%;
 }
 .mt-case-stat {
-  padding: clamp(16px, 1.8vw, 22px) clamp(10px, 1.2vw, 16px);
+  padding: clamp(16px, 1.8vw, 22px) clamp(8px, 1.2vw, 14px);
   border-radius: var(--mt-radius-lg);
   background: var(--mt-surface);
   border: none;
@@ -3203,10 +3203,11 @@ a.mt-origin-model-row:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 .mt-case-num {
   font-family: 'Onest', 'Manrope', sans-serif;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-size: clamp(19px, 2vw, 28px);
   font-weight: 700;
   color: var(--mt-accent);
   line-height: 1.15;
@@ -3215,10 +3216,11 @@ a.mt-origin-model-row:focus-visible {
   letter-spacing: -0.02em;
 }
 .mt-case-num small {
-  font-size: 0.6em;
+  font-size: 0.55em;
   font-weight: 600;
   margin-left: 2px;
   vertical-align: baseline;
+  letter-spacing: normal;
 }
 .mt-case-label {
   font-size: 12px;
