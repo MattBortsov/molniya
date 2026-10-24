@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 24 Oct 2026 06:42:12 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 08:31:52 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Онлайн-конструктор прайс-листов услуг с печатью и экспортом в PDF</title>
+      <link>https://molniya-tech.ru/pricelist</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/pricelist</guid>
+      <pubDate>Sat, 24 Oct 2026 12:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Бесплатный онлайн-конструктор печатных прайс-листов для салонов красоты, барбершопов, автосервисов, массажа и клининга: готовые шаблоны, 3 темы оформления, экспорт в PDF и моментальная печать A4.]]></description>
+    </item>
     <item>
       <title>Калькулятор зарплаты мастеров и сдельного процента</title>
       <link>https://molniya-tech.ru/salary</link>

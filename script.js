@@ -3226,6 +3226,462 @@ function initSalaryCalculator() {
   calculate();
 }
 
+
+function initPricelistConstructor() {
+  var app = document.getElementById('mt-pricelist-app');
+  if (!app) return;
+
+  var PRESETS = {
+    beauty: {
+      brand: 'Студия красоты «Аура»',
+      tagline: 'Эстетика волос, ногтевой сервис и визаж',
+      phone: '+7 (812) 724-21-24',
+      address: 'Невский проспект, 42',
+      bookingUrl: 'molniya-tech.ru/aura',
+      theme: 'molniya',
+      categories: [
+        {
+          title: 'Стрижки и укладки',
+          items: [
+            { name: 'Женская авторская стрижка', dur: '60 мин', price: '2 500 ₽' },
+            { name: 'Мужская модельная стрижка', dur: '45 мин', price: '2 000 ₽' },
+            { name: 'Дневная укладка / Брашинг', dur: '40 мин', price: '1 800 ₽' },
+            { name: 'Вечерний образ и макияж', dur: '90 мин', price: '4 500 ₽' }
+          ]
+        },
+        {
+          title: 'Окрашивание и спа-уход',
+          items: [
+            { name: 'Сложное окрашивание (Airtouch)', dur: '3.5 ч', price: 'от 9 500 ₽' },
+            { name: 'Тонирование и уход за блондом', dur: '90 мин', price: '4 200 ₽' },
+            { name: 'Глубокое спа-восстановление волос', dur: '60 мин', price: '3 200 ₽' }
+          ]
+        },
+        {
+          title: 'Ногтевой сервис',
+          items: [
+            { name: 'Маникюр с покрытием гель-лак', dur: '90 мин', price: '2 400 ₽' },
+            { name: 'Смарт-педикюр комплексный', dur: '90 мин', price: '3 200 ₽' },
+            { name: 'Японский эко-маникюр Masura', dur: '60 мин', price: '2 100 ₽' }
+          ]
+        }
+      ]
+    },
+    barber: {
+      brand: 'Барбершоп «Норд»',
+      tagline: 'Мужские стрижки, бритье опасной бритвой и уход за бородой',
+      phone: '+7 (812) 724-21-24',
+      address: 'Литейный проспект, 18',
+      bookingUrl: 'molniya-tech.ru/nord',
+      theme: 'noir',
+      categories: [
+        {
+          title: 'Стрижки',
+          items: [
+            { name: 'Мужская стрижка Fade / Crop', dur: '45 мин', price: '2 200 ₽' },
+            { name: 'Стрижка ножницами (удлиненная)', dur: '60 мин', price: '2 500 ₽' },
+            { name: 'Стрижка машинкой (1-2 насадки)', dur: '30 мин', price: '1 400 ₽' }
+          ]
+        },
+        {
+          title: 'Борода и бритье',
+          items: [
+            { name: 'Моделирование и стрижка бороды', dur: '35 мин', price: '1 500 ₽' },
+            { name: 'Королевское бритье опасной бритвой', dur: '45 мин', price: '2 000 ₽' },
+            { name: 'Камуфляж седины и бороды', dur: '25 мин', price: '1 200 ₽' }
+          ]
+        },
+        {
+          title: 'Комбо-комплексы',
+          items: [
+            { name: 'Стрижка + Моделирование бороды', dur: '75 мин', price: '3 300 ₽' },
+            { name: 'Отец + Сын (2 стрижки)', dur: '80 мин', price: '3 900 ₽' }
+          ]
+        }
+      ]
+    },
+    auto: {
+      brand: 'Детейлинг-центр «Формула»',
+      tagline: 'Профессиональный уход, полировка и керамическая защита кузова',
+      phone: '+7 (812) 724-21-24',
+      address: 'Московский проспект, 115',
+      bookingUrl: 'molniya-tech.ru/formula',
+      theme: 'noir',
+      categories: [
+        {
+          title: 'Мойка и уход',
+          items: [
+            { name: 'Трехфазная детейлинг-мойка кузова', dur: '60 мин', price: 'от 1 800 ₽' },
+            { name: 'Глубокая химчистка салона с сушкой', dur: '5 ч', price: 'от 12 000 ₽' },
+            { name: 'Консервация подкапотного пространства', dur: '90 мин', price: '3 500 ₽' }
+          ]
+        },
+        {
+          title: 'Полировка и керамика',
+          items: [
+            { name: 'Восстановительная полировка кузова', dur: '8 ч', price: 'от 18 000 ₽' },
+            { name: 'Керамическое покрытие (2 слоя)', dur: '10 ч', price: 'от 25 000 ₽' },
+            { name: 'Антидождь на все стекла Aquapel', dur: '45 мин', price: '4 000 ₽' }
+          ]
+        }
+      ]
+    },
+    massage: {
+      brand: 'Студия массажа «Гармония»',
+      tagline: 'Массаж тела, остеопатия и восстановительные ритуалы',
+      phone: '+7 (812) 724-21-24',
+      address: 'Каменноостровский проспект, 26',
+      bookingUrl: 'molniya-tech.ru/harmony',
+      theme: 'nordic',
+      categories: [
+        {
+          title: 'Массаж тела',
+          items: [
+            { name: 'Классический общий массаж тела', dur: '60 мин', price: '3 200 ₽' },
+            { name: 'Глубокий спортивный массаж', dur: '75 мин', price: '3 800 ₽' },
+            { name: 'Лимфодренажный детокс-массаж', dur: '60 мин', price: '3 400 ₽' },
+            { name: 'Аромамассаж горячими маслами', dur: '90 мин', price: '4 500 ₽' }
+          ]
+        },
+        {
+          title: 'Эстетика лица',
+          items: [
+            { name: 'Скульптурно-буккальный массаж лица', dur: '60 мин', price: '3 500 ₽' },
+            { name: 'Миофасциальный лифтинг-массаж', dur: '60 мин', price: '3 600 ₽' }
+          ]
+        }
+      ]
+    },
+    cleaning: {
+      brand: 'Клининг «Чистый Дом»',
+      tagline: 'Генеральная уборка, мойка окон и химчистка мебели',
+      phone: '+7 (812) 724-21-24',
+      address: 'Санкт-Петербург и ЛО',
+      bookingUrl: 'molniya-tech.ru/clean',
+      theme: 'nordic',
+      categories: [
+        {
+          title: 'Уборка помещений',
+          items: [
+            { name: 'Поддерживающая уборка (до 50 м²)', dur: '2.5 ч', price: 'от 3 500 ₽' },
+            { name: 'Генеральная уборка квартиры', dur: '5 ч', price: 'от 7 500 ₽' },
+            { name: 'Уборка после ремонта под ключ', dur: '7 ч', price: 'от 11 000 ₽' }
+          ]
+        },
+        {
+          title: 'Химчистка на дому',
+          items: [
+            { name: 'Химчистка прямого дивана (3 места)', dur: '90 мин', price: '3 600 ₽' },
+            { name: 'Химчистка углового дивана', dur: '2 ч', price: '4 800 ₽' },
+            { name: 'Сезонная мойка стандартного окна', dur: '30 мин', price: '900 ₽' }
+          ]
+        }
+      ]
+    }
+  };
+
+  // Clone initial state from beauty preset
+  var state = JSON.parse(JSON.stringify(PRESETS.beauty));
+
+  // DOM Elements
+  var brandInput = app.querySelector('#mt-pl-brand');
+  var taglineInput = app.querySelector('#mt-pl-tagline');
+  var phoneInput = app.querySelector('#mt-pl-phone');
+  var addressInput = app.querySelector('#mt-pl-address');
+  var bookingInput = app.querySelector('#mt-pl-booking');
+
+  var themeBtns = app.querySelectorAll('.mt-pricelist-theme-btn');
+  var presetBtns = app.querySelectorAll('.mt-pricelist-preset-btn');
+  var categoriesContainer = app.querySelector('#mt-pl-categories-editor');
+  var addCategoryBtn = app.querySelector('#mt-pl-add-category-btn');
+
+  var sheet = app.querySelector('#mt-pricelist-sheet');
+  var printBtn = app.querySelector('#mt-pl-print-btn');
+  var copyBtn = app.querySelector('#mt-pl-copy-btn');
+
+  function syncInputsFromState() {
+    if (brandInput) brandInput.value = state.brand;
+    if (taglineInput) taglineInput.value = state.tagline;
+    if (phoneInput) phoneInput.value = state.phone;
+    if (addressInput) addressInput.value = state.address;
+    if (bookingInput) bookingInput.value = state.bookingUrl;
+
+    for (var i = 0; i < themeBtns.length; i++) {
+      if (themeBtns[i].getAttribute('data-theme') === state.theme) {
+        themeBtns[i].classList.add('is-active');
+      } else {
+        themeBtns[i].classList.remove('is-active');
+      }
+    }
+  }
+
+  function renderCategoriesEditor() {
+    if (!categoriesContainer) return;
+    categoriesContainer.innerHTML = '';
+
+    state.categories.forEach(function(cat, catIdx) {
+      var catCard = document.createElement('div');
+      catCard.className = 'mt-pricelist-cat-block';
+
+      var catHeader = document.createElement('div');
+      catHeader.className = 'mt-pricelist-cat-header';
+
+      var catInput = document.createElement('input');
+      catInput.type = 'text';
+      catInput.className = 'mt-pricelist-input mt-pricelist-cat-title-input';
+      catInput.value = cat.title;
+      catInput.placeholder = 'Название категории (например, Стрижки)';
+      catInput.addEventListener('input', function() {
+        cat.title = this.value;
+        renderSheet();
+      });
+
+      var delCatBtn = document.createElement('button');
+      delCatBtn.type = 'button';
+      delCatBtn.className = 'mt-pricelist-del-btn';
+      delCatBtn.title = 'Удалить категорию';
+      delCatBtn.innerHTML = '✕';
+      delCatBtn.addEventListener('click', function() {
+        state.categories.splice(catIdx, 1);
+        renderCategoriesEditor();
+        renderSheet();
+      });
+
+      catHeader.appendChild(catInput);
+      catHeader.appendChild(delCatBtn);
+      catCard.appendChild(catHeader);
+
+      var itemsWrap = document.createElement('div');
+      itemsWrap.className = 'mt-pricelist-items-editor';
+
+      cat.items.forEach(function(item, itemIdx) {
+        var row = document.createElement('div');
+        row.className = 'mt-pricelist-item-row';
+
+        var nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.className = 'mt-pricelist-input';
+        nameInput.value = item.name;
+        nameInput.placeholder = 'Название услуги';
+        nameInput.addEventListener('input', function() {
+          item.name = this.value;
+          renderSheet();
+        });
+
+        var durInput = document.createElement('input');
+        durInput.type = 'text';
+        durInput.className = 'mt-pricelist-input';
+        durInput.value = item.dur;
+        durInput.placeholder = 'Время (60 мин)';
+        durInput.addEventListener('input', function() {
+          item.dur = this.value;
+          renderSheet();
+        });
+
+        var priceInput = document.createElement('input');
+        priceInput.type = 'text';
+        priceInput.className = 'mt-pricelist-input';
+        priceInput.value = item.price;
+        priceInput.placeholder = 'Цена (2 500 ₽)';
+        priceInput.addEventListener('input', function() {
+          item.price = this.value;
+          renderSheet();
+        });
+
+        var delItemBtn = document.createElement('button');
+        delItemBtn.type = 'button';
+        delItemBtn.className = 'mt-pricelist-del-btn';
+        delItemBtn.title = 'Удалить услугу';
+        delItemBtn.innerHTML = '✕';
+        delItemBtn.addEventListener('click', function() {
+          cat.items.splice(itemIdx, 1);
+          renderCategoriesEditor();
+          renderSheet();
+        });
+
+        row.appendChild(nameInput);
+        row.appendChild(durInput);
+        row.appendChild(priceInput);
+        row.appendChild(delItemBtn);
+        itemsWrap.appendChild(row);
+      });
+
+      var addItemBtn = document.createElement('button');
+      addItemBtn.type = 'button';
+      addItemBtn.className = 'mt-pricelist-add-item-btn';
+      addItemBtn.innerHTML = '+ Добавить услугу';
+      addItemBtn.addEventListener('click', function() {
+        cat.items.push({ name: 'Новая услуга', dur: '45 мин', price: '1 500 ₽' });
+        renderCategoriesEditor();
+        renderSheet();
+      });
+
+      catCard.appendChild(itemsWrap);
+      catCard.appendChild(addItemBtn);
+      categoriesContainer.appendChild(catCard);
+    });
+  }
+
+  function renderSheet() {
+    if (!sheet) return;
+
+    // Apply theme class
+    sheet.className = 'mt-pricelist-sheet theme-' + state.theme;
+
+    var categoriesHtml = state.categories.map(function(cat) {
+      var itemsHtml = cat.items.map(function(item) {
+        var durHtml = item.dur ? '<span class="mt-sheet-item-dur mt-sheet-muted">(' + escapeHtml(item.dur) + ')</span>' : '';
+        return [
+          '<div class="mt-sheet-item">',
+          '  <span class="mt-sheet-item-name">' + escapeHtml(item.name) + '</span>',
+          durHtml,
+          '  <span class="mt-sheet-dots mt-sheet-dots"></span>',
+          '  <span class="mt-sheet-item-price mt-sheet-accent">' + escapeHtml(item.price) + '</span>',
+          '</div>'
+        ].join('');
+      }).join('');
+
+      return [
+        '<div class="mt-sheet-cat">',
+        '  <div class="mt-sheet-cat-title mt-sheet-border mt-sheet-accent">',
+        '    <span>' + escapeHtml(cat.title) + '</span>',
+        '  </div>',
+        '  <div class="mt-sheet-items">',
+        itemsHtml,
+        '  </div>',
+        '</div>'
+      ].join('');
+    }).join('');
+
+    sheet.innerHTML = [
+      '<div class="mt-sheet-header mt-sheet-border">',
+      '  <div class="mt-sheet-brand mt-sheet-accent">' + escapeHtml(state.brand) + '</div>',
+      '  <div class="mt-sheet-tagline mt-sheet-muted">' + escapeHtml(state.tagline) + '</div>',
+      '  <div class="mt-sheet-contacts mt-sheet-muted">',
+      state.phone ? '<span>📞 ' + escapeHtml(state.phone) + '</span>' : '',
+      state.address ? '<span>📍 ' + escapeHtml(state.address) + '</span>' : '',
+      state.bookingUrl ? '<span>⚡ ' + escapeHtml(state.bookingUrl) + '</span>' : '',
+      '  </div>',
+      '</div>',
+      '<div class="mt-sheet-content">',
+      categoriesHtml,
+      '</div>',
+      '<div class="mt-sheet-footer mt-sheet-border mt-sheet-muted">',
+      '  <span>Прейскурант цен 2026. Предварительная запись обязательна.</span>',
+      '  <div class="mt-sheet-qr-box">',
+      '    <span class="mt-sheet-accent">⚡ Онлайн-запись 24/7</span>',
+      '  </div>',
+      '</div>'
+    ].join('');
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Header input listeners
+  if (brandInput) brandInput.addEventListener('input', function() { state.brand = this.value; renderSheet(); });
+  if (taglineInput) taglineInput.addEventListener('input', function() { state.tagline = this.value; renderSheet(); });
+  if (phoneInput) phoneInput.addEventListener('input', function() { state.phone = this.value; renderSheet(); });
+  if (addressInput) addressInput.addEventListener('input', function() { state.address = this.value; renderSheet(); });
+  if (bookingInput) bookingInput.addEventListener('input', function() { state.bookingUrl = this.value; renderSheet(); });
+
+  // Add Category button
+  if (addCategoryBtn) {
+    addCategoryBtn.addEventListener('click', function() {
+      state.categories.push({
+        title: 'Новая категория услуг',
+        items: [{ name: 'Наименование процедуры', dur: '60 мин', price: '2 000 ₽' }]
+      });
+      renderCategoriesEditor();
+      renderSheet();
+    });
+  }
+
+  // Theme selection
+  for (var t = 0; t < themeBtns.length; t++) {
+    themeBtns[t].addEventListener('click', function() {
+      for (var k = 0; k < themeBtns.length; k++) themeBtns[k].classList.remove('is-active');
+      this.classList.add('is-active');
+      state.theme = this.getAttribute('data-theme');
+      renderSheet();
+    });
+  }
+
+  // Presets selection
+  for (var p = 0; p < presetBtns.length; p++) {
+    presetBtns[p].addEventListener('click', function() {
+      for (var j = 0; j < presetBtns.length; j++) presetBtns[j].classList.remove('is-active');
+      this.classList.add('is-active');
+      var key = this.getAttribute('data-pricelist-preset');
+      if (PRESETS[key]) {
+        state = JSON.parse(JSON.stringify(PRESETS[key]));
+        syncInputsFromState();
+        renderCategoriesEditor();
+        renderSheet();
+      }
+    });
+  }
+
+  // Print button
+  if (printBtn) {
+    printBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.print();
+    });
+  }
+
+  // Copy text representation
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      var lines = [
+        '=== ' + state.brand.toUpperCase() + ' ===',
+        state.tagline,
+        '📞 ' + state.phone + (state.address ? ' | 📍 ' + state.address : ''),
+        state.bookingUrl ? '⚡ Онлайн-запись: https://' + state.bookingUrl : '',
+        '--------------------------------------------'
+      ];
+
+      state.categories.forEach(function(cat) {
+        lines.push('');
+        lines.push('【 ' + cat.title.toUpperCase() + ' 】');
+        cat.items.forEach(function(item) {
+          var durStr = item.dur ? ' (' + item.dur + ')' : '';
+          lines.push('• ' + item.name + durStr + ' — ' + item.price);
+        });
+      });
+
+      lines.push('');
+      lines.push('--------------------------------------------');
+      lines.push('Сформировано в конструкторе прайс-листов: https://molniya-tech.ru/pricelist');
+
+      var textToCopy = lines.filter(Boolean).join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.classList.add('copied');
+        var btnSpan = copyBtn.querySelector('span');
+        if (btnSpan) btnSpan.textContent = 'Прайс скопирован в буфер!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          if (btnSpan) btnSpan.textContent = copyBtn.getAttribute('data-orig') || 'Скопировать прайс текстом';
+        }, 2500);
+      });
+    });
+  }
+
+  // Initial render
+  syncInputsFromState();
+  renderCategoriesEditor();
+  renderSheet();
+}
+
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -3250,6 +3706,7 @@ function initApp() {
   initToolRating();
   initQrGenerator();
   initSalaryCalculator();
+  initPricelistConstructor();
 }
 
 if (document.readyState === 'loading') {

@@ -7664,3 +7664,652 @@ a.mt-origin-model-row:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(210, 99, 74, 0.28);
 }
+
+/* ============================================================
+   Pricelist Constructor & PDF Tool (/pricelist)
+   ============================================================ */
+
+.mt-pricelist-wrap {
+  margin-top: 32px;
+}
+
+.mt-pricelist-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.mt-pricelist-presets-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-text-muted);
+}
+
+.mt-pricelist-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mt-pricelist-preset-btn {
+  padding: 8px 16px;
+  border-radius: var(--mt-radius-pill);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+}
+
+.mt-pricelist-preset-btn:hover {
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+}
+
+.mt-pricelist-preset-btn.is-active {
+  background: var(--mt-tint-accent);
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+  font-weight: 600;
+}
+
+.mt-pricelist-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .mt-pricelist-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mt-pricelist-card {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-3xl);
+  padding: clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.mt-pricelist-editor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mt-pricelist-section-heading {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mt-pricelist-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mt-pricelist-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-text-strong);
+}
+
+.mt-pricelist-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--mt-radius-md);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-strong);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s ease, background-color .2s ease;
+  box-sizing: border-box;
+}
+
+.mt-pricelist-input:focus {
+  border-color: var(--mt-accent);
+  background: #fff;
+}
+
+.mt-pricelist-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 520px) {
+  .mt-pricelist-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Theme Selector */
+.mt-pricelist-themes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mt-pricelist-theme-btn {
+  padding: 10px 12px;
+  border-radius: var(--mt-radius-lg);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+  text-align: center;
+}
+
+.mt-pricelist-theme-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.mt-pricelist-theme-swatch--molniya {
+  background: linear-gradient(135deg, #FAF7F2 50%, #C6543B 50%);
+}
+
+.mt-pricelist-theme-swatch--noir {
+  background: linear-gradient(135deg, #18181B 50%, #D4AF37 50%);
+}
+
+.mt-pricelist-theme-swatch--nordic {
+  background: linear-gradient(135deg, #FFFFFF 50%, #3D6952 50%);
+}
+
+.mt-pricelist-theme-btn:hover {
+  border-color: var(--mt-border-accent);
+}
+
+.mt-pricelist-theme-btn.is-active {
+  border-color: var(--mt-accent);
+  background: var(--mt-tint-accent);
+  color: var(--mt-accent);
+}
+
+/* Category & Items Editor */
+.mt-pricelist-categories-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mt-pricelist-cat-block {
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-xl);
+  background: var(--mt-surface-2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mt-pricelist-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mt-pricelist-cat-title-input {
+  flex: 1;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mt-pricelist-del-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--mt-radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--mt-text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  transition: all .15s ease;
+  flex-shrink: 0;
+}
+
+.mt-pricelist-del-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.mt-pricelist-items-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mt-pricelist-item-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 540px) {
+  .mt-pricelist-item-row {
+    grid-template-columns: 1fr 1fr auto;
+  }
+  .mt-pricelist-item-row .mt-pricelist-input:first-child {
+    grid-column: span 3;
+  }
+}
+
+.mt-pricelist-add-item-btn {
+  padding: 8px 12px;
+  border-radius: var(--mt-radius-md);
+  border: 1px dashed var(--mt-border);
+  background: transparent;
+  color: var(--mt-accent);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all .15s ease;
+  margin-top: 4px;
+}
+
+.mt-pricelist-add-item-btn:hover {
+  background: var(--mt-tint-accent);
+  border-color: var(--mt-accent);
+}
+
+.mt-pricelist-add-cat-btn {
+  padding: 12px 18px;
+  border-radius: var(--mt-radius-lg);
+  border: 1px dashed var(--mt-border-accent);
+  background: var(--mt-tint-accent);
+  color: var(--mt-accent);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all .15s ease;
+}
+
+.mt-pricelist-add-cat-btn:hover {
+  background: var(--mt-surface);
+  border-color: var(--mt-accent);
+}
+
+/* Preview Column */
+.mt-pricelist-preview-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mt-pricelist-preview-sticky {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mt-pricelist-actions-bar {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 500px) {
+  .mt-pricelist-actions-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mt-pricelist-print-btn {
+  padding: 12px 18px;
+  border-radius: var(--mt-radius-lg);
+  background: var(--mt-accent);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all .15s ease;
+}
+
+.mt-pricelist-print-btn:hover {
+  background: var(--mt-accent-hover, #b8442e);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(210, 99, 74, 0.28);
+}
+
+.mt-pricelist-copy-btn {
+  padding: 12px 18px;
+  border-radius: var(--mt-radius-lg);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface);
+  color: var(--mt-text-strong);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all .15s ease;
+}
+
+.mt-pricelist-copy-btn:hover {
+  background: var(--mt-tint-accent);
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+}
+
+.mt-pricelist-copy-btn.copied {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+/* ============================================================
+   A4 Printable Price List Sheet
+   ============================================================ */
+
+.mt-pricelist-sheet-wrapper {
+  background: #e5e5e5;
+  border-radius: var(--mt-radius-2xl);
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mt-pricelist-sheet {
+  width: 100%;
+  max-width: 580px;
+  min-height: 780px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: all .3s ease;
+}
+
+/* Sheet Themes */
+.mt-pricelist-sheet.theme-molniya {
+  background: #FAF7F2;
+  color: #1A1614;
+  border: 1px solid #EBE5DC;
+}
+.mt-pricelist-sheet.theme-molniya .mt-sheet-accent {
+  color: #C6543B;
+}
+.mt-pricelist-sheet.theme-molniya .mt-sheet-border {
+  border-color: #E2DBD0;
+}
+.mt-pricelist-sheet.theme-molniya .mt-sheet-dots {
+  border-bottom-color: #D6CEC2;
+}
+
+.mt-pricelist-sheet.theme-noir {
+  background: #18181B;
+  color: #F4F4F5;
+  border: 1px solid #27272A;
+}
+.mt-pricelist-sheet.theme-noir .mt-sheet-accent {
+  color: #EAB308;
+}
+.mt-pricelist-sheet.theme-noir .mt-sheet-border {
+  border-color: #3F3F46;
+}
+.mt-pricelist-sheet.theme-noir .mt-sheet-dots {
+  border-bottom-color: #3F3F46;
+}
+.mt-pricelist-sheet.theme-noir .mt-sheet-muted {
+  color: #A1A1AA;
+}
+
+.mt-pricelist-sheet.theme-nordic {
+  background: #FFFFFF;
+  color: #1C2420;
+  border: 1px solid #E2E8E4;
+}
+.mt-pricelist-sheet.theme-nordic .mt-sheet-accent {
+  color: #2D6A4F;
+}
+.mt-pricelist-sheet.theme-nordic .mt-sheet-border {
+  border-color: #E2E8E4;
+}
+.mt-pricelist-sheet.theme-nordic .mt-sheet-dots {
+  border-bottom-color: #D1DDD5;
+}
+
+/* Sheet Typography & Layout */
+.mt-sheet-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid;
+  margin-bottom: 24px;
+}
+
+.mt-sheet-brand {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: clamp(22px, 3.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.mt-sheet-tagline {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.mt-sheet-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.mt-sheet-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mt-sheet-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mt-sheet-cat-title {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-sheet-items {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.mt-sheet-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.mt-sheet-item-name {
+  font-weight: 600;
+}
+
+.mt-sheet-item-dur {
+  font-size: 11px;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+.mt-sheet-dots {
+  flex: 1;
+  border-bottom: 1.5px dotted;
+  min-width: 20px;
+  margin-bottom: 4px;
+}
+
+.mt-sheet-item-price {
+  font-family: 'Onest', 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.mt-sheet-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.mt-sheet-qr-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mt-sheet-qr-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: currentColor;
+  opacity: 0.15;
+}
+
+/* ============================================================
+   PRINT MEDIA STYLES
+   ============================================================ */
+@media print {
+  body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .mt-page > *:not(.mt-content),
+  .mt-header,
+  .mt-nav-burger,
+  .mt-mobile-menu,
+  .mt-hero,
+  .mt-section:not(#calculator),
+  .mt-pricelist-presets-bar,
+  .mt-pricelist-editor-card,
+  .mt-pricelist-actions-bar,
+  .mt-tool-rating-wrap,
+  .mt-cookie-banner,
+  .mt-btn-sticky,
+  .mt-footer,
+  .mt-atmosphere {
+    display: none !important;
+  }
+  .mt-section#calculator {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .mt-section-head {
+    display: none !important;
+  }
+  .mt-pricelist-wrap {
+    margin: 0 !important;
+  }
+  .mt-pricelist-layout {
+    display: block !important;
+  }
+  .mt-pricelist-sheet-wrapper {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  .mt-pricelist-sheet {
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 10mm 15mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+}

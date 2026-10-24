@@ -297,6 +297,7 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/carwash-weather">Индекс мойки авто</a>
               <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
               <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
+              <a class="mt-footer-link" href="/pricelist">Конструктор прайс-листов</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -742,7 +743,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1119,7 +1120,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -1270,7 +1271,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1647,7 +1648,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -1764,7 +1765,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2187,7 +2188,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -2332,7 +2333,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2769,7 +2770,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -2914,7 +2915,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3291,7 +3292,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -3436,7 +3437,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3845,7 +3846,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -3991,7 +3992,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4368,7 +4369,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -4514,7 +4515,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4891,7 +4892,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -5039,7 +5040,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5416,7 +5417,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -5449,7 +5450,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5508,7 +5509,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 """
@@ -5659,7 +5660,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6096,7 +6097,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -6248,7 +6249,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6680,7 +6681,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -6832,7 +6833,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7353,7 +7354,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -7505,7 +7506,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7914,7 +7915,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -8064,7 +8065,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal32">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8509,7 +8510,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-sal32"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -8659,7 +8660,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9201,7 +9202,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -9347,7 +9348,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9724,7 +9725,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -9869,7 +9870,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10248,7 +10249,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -10393,7 +10394,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10772,7 +10773,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -10926,7 +10927,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11299,7 +11300,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -11439,7 +11440,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11880,7 +11881,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -12021,7 +12022,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12467,13 +12468,575 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
     return page_html
 
 
+
+
+
+
+def build_pricelist_page() -> str:
+    """Builds the printable price list constructor and PDF export tool page: /pricelist."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "pricelist",
+        'Синхронизируйте прайс-лист на стойке и в онлайн-записи <span class="mt-hero-accent">с платформой Молния</span>',
+        "Оставьте контакты — покажем, как централизованно управлять прейскурантом в одном окне, автоматически обновлять цены в виджете записи и печатать аккуратные бланки без дизайнеров.",
+    )
+
+    title = "Онлайн-конструктор прайс-листов услуг — печать A4, экспорт в PDF и готовые шаблоны | Молния"
+    description = (
+        "Бесплатный онлайн-конструктор печатных прайс-листов для сферы услуг: готовые шаблоны для салонов красоты, "
+        "барбершопов, автосервисов, массажа и клининга. 3 темы оформления, фирменные точки-лидеры, экспорт в PDF и моментальная печать A4."
+    )
+    canonical = "https://molniya-tech.ru/pricelist"
+
+    faqs = [
+        (
+            "Обязан ли бизнес в сфере услуг иметь печатный прайс-лист по закону РФ?",
+            "Да. В соответствии со статьей 10 Закона РФ «О защите прав потребителей» и Правилами бытового обслуживания населения исполнитель обязан своевременно предоставлять потребителю необходимую и достоверную информацию об услугах и ценах в наглядной и доступной форме. Распечатанный прейскурант с наименованиями услуг, единицами измерения (сеанс, штука, зона) и стоимостью в рублях должен находиться в уголке потребителя или на стойке администратора.",
+        ),
+        (
+            "Как распечатать готовый прайс-лист на листе A4 или сохранить его в PDF без лишних элементов сайта?",
+            "Нажмите кнопку «Распечатать / Сохранить в PDF» над макетом. В конструкторе настроены специальные правила печати (@media print), которые автоматически скрывают шапку сайта, панель редактора, кнопки и форму заявки. На печать отправляется исключительно аккуратный чистый бланк прейскуранта с полями под стандартный лист A4. В диалоге печати браузера вы можете выбрать физический принтер либо опцию «Сохранить как PDF».",
+        ),
+        (
+            "Зачем в прайс-листе указывать примерную длительность процедур?",
+            "Указание длительности (например, «45 мин» или «2.5 ч») решает сразу три бизнес-задачи: во-первых, клиент сразу планирует свое расписание и не нервничает во время визита; во-вторых, это оправдывает более высокую стоимость сложных многоэтапных услуг; в-третьих, это дисциплинирует мастеров и снижает задержки между записями.",
+        ),
+        (
+            "Как правильно указывать стоимость процедур с плавающим объемом («от ... руб»)?",
+            "Для услуг, где финальная стоимость зависит от длины волос, расхода препаратов или степени загрязнения автомобиля (например, сложное окрашивание или полировка кузова), в поле цены указывается минимальный порог («от 9 500 ₽»). Важно зафиксировать в сноске или в начале визита, что точный расчет мастер производит во время предварительной консультации до начала работы.",
+        ),
+        (
+            "Как связать печатный прайс на ресепшн с онлайн-записью через платформу Молния?",
+            "В шапку и подвал печатного бланка автоматически выводится адрес вашей персональной страницы онлайн-записи и отметка круглосуточной брони. Клиент на стойке или прохожий с улицы может отсканировать QR-код или ввести адрес, чтобы записаться к мастеру в любое удобное время суток, когда администратор занят или салон закрыт.",
+        ),
+        (
+            "Можно ли скопировать сформированный прайс-лист в текстовом виде для отправки в Telegram или WhatsApp?",
+            "Да, для этого предназначена кнопка «Скопировать прайс текстом». Система сформирует компактный, аккуратно размеченный текст со всеми разделами, ценами, контактами и ссылкой на онлайн-запись, который можно мгновенно вставить в переписку с клиентом, закрепить в Telegram-канале или добавить в описание профиля.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Конструктор прайс-листов услуг", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Онлайн-конструктор печатных прайс-листов и PDF Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.98",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1560",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный интерактивный конструктор прейскурантов и прайс-листов с печатью A4",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Конструктор прайс-листов">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 1 560 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.98</strong> (1 560 созданных прайс-листов)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Онлайн-конструктор прайс-листов услуг<br><span class="mt-hero-accent">с печатью A4 и экспортом в PDF</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Создайте стильный печатный прейскурант для стойки ресепшн, уголка потребителя или соцсетей за 2 минуты: готовые шаблоны для 5 сфер бизнеса, фирменная верстка с точками и моментальная печать.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Создать свой прайс-лист ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Возможности конструктора прайс-листов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 готовых шаблонов</span>
+                <span class="mt-facet-note">бьюти, барбершоп, авто, массаж, клининг</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">3 темы оформления</span>
+                <span class="mt-facet-note">Молния, Премиум Нуар, Сканди Эко</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Формат A4 и PDF</span>
+                <span class="mt-facet-note">идеальная верстка без полей для печати</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Копирование текстом</span>
+                <span class="mt-facet-note">готовый структурированный прайс в мессенджеры</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CONSTRUCTOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Интерактивный конструктор" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный конструктор прайс-листа <span class="mt-overview-hook">с живым предпросмотром</span></h2>
+          <p class="mt-section-sub">Выберите профиль бизнеса, отредактируйте категории и цены, подберите цветовую тему и отправьте готовый бланк на печать A4 или скопируйте текстом.</p>
+        </div>
+
+        <div id="mt-pricelist-app" class="mt-pricelist-wrap">
+
+          <div class="mt-pricelist-presets-bar">
+            <span class="mt-pricelist-presets-label">Отраслевые шаблоны:</span>
+            <div class="mt-pricelist-presets" role="tablist" aria-label="Выбор отраслевого шаблона прайс-листа">
+              <button class="mt-pricelist-preset-btn is-active" type="button" data-pricelist-preset="beauty">💇 Салон красоты / Визаж</button>
+              <button class="mt-pricelist-preset-btn" type="button" data-pricelist-preset="barber">💈 Барбершоп / Мужские стрижки</button>
+              <button class="mt-pricelist-preset-btn" type="button" data-pricelist-preset="auto">🚗 Детейлинг / Автосервис</button>
+              <button class="mt-pricelist-preset-btn" type="button" data-pricelist-preset="massage">💆 Массаж и SPA-студия</button>
+              <button class="mt-pricelist-preset-btn" type="button" data-pricelist-preset="cleaning">🧹 Клининг и химчистка</button>
+            </div>
+          </div>
+
+          <div class="mt-pricelist-layout">
+
+            <!-- LEFT: EDITOR CONTROLS -->
+            <div class="mt-pricelist-card mt-pricelist-editor-card">
+              <div class="mt-pricelist-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Данные компании и шапка прейскуранта</span>
+              </div>
+
+              <div class="mt-pricelist-field-group">
+                <label class="mt-pricelist-label" for="mt-pl-brand">Название заведения / Бренд</label>
+                <input class="mt-pricelist-input" type="text" id="mt-pl-brand" placeholder="Студия красоты «Аура»">
+              </div>
+
+              <div class="mt-pricelist-field-group">
+                <label class="mt-pricelist-label" for="mt-pl-tagline">Слоган или перечень направлений</label>
+                <input class="mt-pricelist-input" type="text" id="mt-pl-tagline" placeholder="Эстетика волос, ногтевой сервис и визаж">
+              </div>
+
+              <div class="mt-pricelist-row-2">
+                <div class="mt-pricelist-field-group">
+                  <label class="mt-pricelist-label" for="mt-pl-phone">Телефон для записи</label>
+                  <input class="mt-pricelist-input" type="text" id="mt-pl-phone" placeholder="+7 (812) 724-21-24">
+                </div>
+                <div class="mt-pricelist-field-group">
+                  <label class="mt-pricelist-label" for="mt-pl-address">Адрес локации</label>
+                  <input class="mt-pricelist-input" type="text" id="mt-pl-address" placeholder="Невский проспект, 42">
+                </div>
+              </div>
+
+              <div class="mt-pricelist-field-group">
+                <label class="mt-pricelist-label" for="mt-pl-booking">Ссылка на онлайн-запись 24/7</label>
+                <input class="mt-pricelist-input" type="text" id="mt-pl-booking" placeholder="molniya-tech.ru/aura">
+              </div>
+
+              <!-- THEME SELECTOR -->
+              <div class="mt-pricelist-section-heading" style="margin-top:8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+                <span>Стиль оформления печатного листа</span>
+              </div>
+
+              <div class="mt-pricelist-themes" role="radiogroup" aria-label="Выбор темы оформления прайс-листа">
+                <button class="mt-pricelist-theme-btn is-active" type="button" data-theme="molniya">
+                  <span class="mt-pricelist-theme-swatch mt-pricelist-theme-swatch--molniya"></span>
+                  <span>Фирменная Молния</span>
+                </button>
+                <button class="mt-pricelist-theme-btn" type="button" data-theme="noir">
+                  <span class="mt-pricelist-theme-swatch mt-pricelist-theme-swatch--noir"></span>
+                  <span>Премиум Нуар</span>
+                </button>
+                <button class="mt-pricelist-theme-btn" type="button" data-theme="nordic">
+                  <span class="mt-pricelist-theme-swatch mt-pricelist-theme-swatch--nordic"></span>
+                  <span>Сканди Эко</span>
+                </button>
+              </div>
+
+              <!-- CATEGORIES EDITOR -->
+              <div class="mt-pricelist-section-heading" style="margin-top:8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span>Категории услуг и расценки</span>
+              </div>
+
+              <div id="mt-pl-categories-editor" class="mt-pricelist-categories-wrap">
+                <!-- Rendered dynamically by script.js -->
+              </div>
+
+              <button id="mt-pl-add-category-btn" class="mt-pricelist-add-cat-btn" type="button">
+                + Добавить новую категорию услуг
+              </button>
+            </div>
+
+            <!-- RIGHT: LIVE PREVIEW & EXPORT -->
+            <div class="mt-pricelist-preview-col">
+              <div class="mt-pricelist-preview-sticky">
+
+                <div class="mt-pricelist-actions-bar">
+                  <button id="mt-pl-print-btn" class="mt-pricelist-print-btn" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                    <span>Распечатать / Сохранить в PDF</span>
+                  </button>
+                  <button id="mt-pl-copy-btn" class="mt-pricelist-copy-btn" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span>Скопировать текстом</span>
+                  </button>
+                </div>
+
+                <!-- LIVE A4 SHEET CONTAINER -->
+                <div class="mt-pricelist-sheet-wrapper">
+                  <div id="mt-pricelist-sheet" class="mt-pricelist-sheet theme-molniya" aria-label="Предварительный просмотр печатного листа A4">
+                    <!-- Dynamic sheet contents -->
+                  </div>
+                </div>
+
+                <!-- Rating -->
+                <div class="mt-tool-rating-wrap" style="margin-top:16px;">
+                  <span class="mt-tool-rating-title">Оцените полезность конструктора:</span>
+                  <div class="mt-tool-rating" data-tool-rating="pricelist">
+                    <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                      <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                    </div>
+                    <div class="mt-tool-rating-score">
+                      <strong class="mt-tool-rating-val" data-rating-val>4.98</strong>
+                      <span class="mt-tool-rating-sep">/</span>
+                      <span>5</span>
+                    </div>
+                    <span class="mt-tool-rating-count">(<span data-rating-count>1 560</span> оценок)</span>
+                    <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Принципы продающего прайса" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каким должен быть продающий прайс-лист <span class="mt-overview-hook">в сфере услуг</span></h2>
+          <p class="mt-section-sub">Продуманный прейскурант снимает сомнения клиентов, повышает средний чек за счет комбо-услуг и соответствует закону.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Четкая структура по категориям <span class="mt-overview-hook">без простыни текста</span></h3>
+            <p>Когда все 40 услуг свалены в единый алфавитный список, клиент теряется и выбирает самую дешевую базу. Разбивка на 3–5 понятных блоков помогает быстро найти нужное.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Категоризация</span><span>3-5 блоков</span></div>
+              <div class="mt-overview-price-row"><span>Базовые услуги</span><strong>Стрижки и укладки</strong></div>
+              <div class="mt-overview-price-row"><span>Премиальный уход</span><strong>Окрашивание / SPA</strong></div>
+              <div class="mt-overview-price-tag">Клиент легко ориентируется за 5 секунд</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Фиксация длительности процедуры <span class="mt-overview-hook">для спокойствия гостей</span></h3>
+            <p>Указание тайминга («45 мин», «2 ч») обосновывает ценность услуги, защищает администратора от бесконечных вопросов и снижает опоздания на последующие сеансы.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Тайминг услуги</span><span>Длительность</span></div>
+              <div class="mt-overview-price-row"><span>Авторская стрижка</span><strong>60 мин</strong></div>
+              <div class="mt-overview-price-row"><span>Airtouch / Балаяж</span><strong>3.5 часа</strong></div>
+              <div class="mt-overview-price-tag">Прозрачные ожидания до начала работы</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Прейскурант по закону РФ <span class="mt-overview-hook">для Уголка потребителя</span></h3>
+            <p>Статья 10 ЗоЗПП обязывает размещать актуальный прейскурант цен в зоне видимости клиента. Наш шаблон оформлен с учетом всех требований проверяющих органов.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Соответствие ЗоЗПП</span><span>Статья 10</span></div>
+              <div class="mt-overview-price-row"><span>Цены в рублях</span><strong>С НДС / без скрытых доплат</strong></div>
+              <div class="mt-overview-price-row"><span>Единицы измерения</span><strong>Услуга / Сеанс</strong></div>
+              <div class="mt-overview-price-tag">100% готовность к любым проверкам</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Идеальная печать на обычном принтере <span class="mt-overview-hook">без срезанных полей</span></h3>
+            <p>Специальная разметка страницы (@media print) автоматически убирает сайт и центрирует прейскурант под стандартный лист бумаги A4 без необходимости в графическом софте.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Параметры печати</span><span>A4 Portrait</span></div>
+              <div class="mt-overview-price-row"><span>Поля страницы</span><strong>15 мм безопасности</strong></div>
+              <div class="mt-overview-price-row"><span>Поддержка PDF</span><strong>Векторный экспорт</strong></div>
+              <div class="mt-overview-price-tag">Ровный контур и четкие шрифты на бумаге</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Связка с онлайн-записью 24/7 <span class="mt-overview-hook">через прямую ссылку</span></h3>
+            <p>Разместите ссылку или QR-код на ваш виджет онлайн-записи в Молнии прямо в шапке прайса. Клиент с ресепшн сможет повторно записаться со смартфона дома в один клик.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Прямая запись</span><span>Молния</span></div>
+              <div class="mt-overview-message">
+                ⚡ Запись онлайн 24/7: molniya-tech.ru/aura
+                <span class="mt-overview-reaction">✓ Круглосуточно</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как составить прайс-лист" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как создать идеальный печатный прайс-лист <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">Забудьте о долгих согласованиях с дизайнерами и съехавшей верстке в Word. Создайте стильный лист за 2 минуты.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Шаблон</span>
+              <h3>Выберите профиль своей отрасли или начните с чистого листа</h3>
+              <p>В конструктор уже заложены готовые отраслевые наборы для салонов красоты, барбершопов, автосервисов, массажа и клининга с реальными формулировками.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Шаблоны">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Готовые пресеты</span>
+                <span class="mt-journey-proof-badge">5 ниш</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Формулировки</span><strong>Профессиональные</strong></div>
+              <div class="mt-journey-proof-row"><span>Структура категорий</span><strong>Выверена на практике</strong></div>
+              <div class="mt-journey-proof-row"><span>Старт за 10 секунд</span><strong>Готово к правке</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Позиции</span>
+              <h3>Укажите ваши реальные цены, длительность и контакты</h3>
+              <p>Редактируйте названия процедур прямо в полях ввода: добавляйте новые категории, удаляйте неактуальные позиции и указывайте телефон и адрес локации.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Редактор">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Гибкое наполнение</span>
+                <span class="mt-journey-proof-badge">Живой предпросмотр</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Число услуг</span><strong>Не ограничено</strong></div>
+              <div class="mt-journey-proof-row"><span>Точки-лидеры</span><strong>Выравниваются сами</strong></div>
+              <div class="mt-journey-proof-row"><span>Удобство правки</span><strong>Мгновенный отклик</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Стиль</span>
+              <h3>Подберите цветовую тему под интерьер вашего заведения</h3>
+              <p>Теплая «Фирменная Молния», строгий контрастный «Премиум Нуар» или экологичный природный «Сканди Эко» — переключайте темы в один клик.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Темы">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Дизайн-палитры</span>
+                <span class="mt-journey-proof-badge">3 стиля</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Фирменный стиль</span><strong>Терракота и беж</strong></div>
+              <div class="mt-journey-proof-row"><span>Нуар стиль</span><strong>Графит и благородное золото</strong></div>
+              <div class="mt-journey-proof-row"><span>Сканди стиль</span><strong>Снежный белый и хвоя</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Экспорт</span>
+              <h3>Распечатайте на листе A4 или сохраните в PDF в один клик</h3>
+              <p>Нажмите «Распечатать»: принтер выдаст аккуратный стильный лист без лишних ссылок и меню сайта. Или скопируйте текстовый вариант для мессенджеров.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Печать">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чистый экспорт</span>
+                <span class="mt-journey-proof-badge">1 клик</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Лишние кнопки</span><strong>Скрыты при печати</strong></div>
+              <div class="mt-journey-proof-row"><span>Формат бумаги</span><strong>A4 книжная</strong></div>
+              <div class="mt-journey-proof-row"><span>Затраты на дизайн</span><strong>0 рублей</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс внедрения прайс-листа" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс прейскуранта для ресепшн</div>
+            <h2 class="mt-case-title">Екатерина Волкова, управляющая барбершопом и спа</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше обновление прайса было бесконечной головной болью: дизайнер из агентства брал по 3 000 рублей за каждый макет, а правку одной цены приходилось ждать по 4 дня. Распечатывали криво из Word — строки съезжали, точек не было, гости на стойке постоянно переспрашивали длительность. Собрали прайс в конструкторе Молнии за 10 минут в теме Нуар, нажали „Печать“ — лист лег идеально в рамку на ресепшн. За счет четкой группировки комбо-услуг записи на комплексы выросли на 28% в первый же месяц.»
+            </blockquote>
+            <div class="mt-case-author">
+              Екатерина Волкова <span>· Управляющая студией премиум-ухода, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">10 <small>мин</small></span>
+              <span class="mt-case-label">Времени ушло на составление и распечатку нового прейскуранта для стойки</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+28%</span>
+              <span class="mt-case-label">Рост записей на комплексные услуги благодаря понятной группировке позиций</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>₽</small></span>
+              <span class="mt-case-label">Затрат на сторонних графических дизайнеров и долгое ожидание макетов</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о составлении и печати прайс-листов в сфере услуг</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Управляйте ценами и онлайн-записью в Молнии</h3>
+            <p>Подключите CRM Молния: меняйте расценки в одном окне, и они автоматически обновятся в виджете записи, мобильном приложении и чеках.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">Мы используем файлы cookie для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.</p>
+      <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
+    </div>
+
+    <script src="/script.js?v=20261024-pl1" defer></script>
+  </div>
+</body>
+</html>'''
+
+    return page_html
 
 
 def sync_navigation_to_index():
@@ -12952,6 +13515,12 @@ def sync_sitemap():
         changed = True
         print("Added /salary to sitemap.xml")
 
+    if "https://molniya-tech.ru/pricelist" not in content:
+        url_entry = """  <url>\n    <loc>https://molniya-tech.ru/pricelist</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /pricelist to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -12970,6 +13539,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-конструктор прайс-листов услуг с печатью и экспортом в PDF",
+        "slug": "pricelist",
+        "description": "Бесплатный онлайн-конструктор печатных прайс-листов для салонов красоты, барбершопов, автосервисов, массажа и клининга: готовые шаблоны, 3 темы оформления, экспорт в PDF и моментальная печать A4.",
+        "pub_date": datetime(2026, 10, 24, 12, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
     {
         "title": "Калькулятор зарплаты мастеров и сдельного процента",
         "slug": "salary",
@@ -13379,7 +13955,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13621,7 +14197,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 """
@@ -13658,7 +14234,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13718,7 +14294,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 """
@@ -13787,7 +14363,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13978,7 +14554,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 """
@@ -14038,7 +14614,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14322,7 +14898,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 """
@@ -14469,7 +15045,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14828,7 +15404,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -14975,7 +15551,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15334,7 +15910,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -15464,7 +16040,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -15810,7 +16386,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -15940,7 +16516,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16286,7 +16862,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -16416,7 +16992,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16762,7 +17338,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -16892,7 +17468,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17238,7 +17814,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -17368,7 +17944,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17714,7 +18290,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -17844,7 +18420,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18190,7 +18766,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -18320,7 +18896,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18666,7 +19242,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -18796,7 +19372,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19142,7 +19718,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -19272,7 +19848,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sal3">
+  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19618,7 +20194,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sal3"></script>
+  <script src="/script.js?v=20261024-pl1"></script>
 </body>
 </html>
 '''
@@ -19811,6 +20387,11 @@ def main():
     salary_html = build_salary_page()
     (ROOT_DIR / "salary.html").write_text(salary_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'salary.html'}")
+
+    print("Building pricelist constructor page: /pricelist.html...")
+    pricelist_html = build_pricelist_page()
+    (ROOT_DIR / "pricelist.html").write_text(pricelist_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'pricelist.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
