@@ -3682,6 +3682,256 @@ function initPricelistConstructor() {
 }
 
 
+
+function initAcquiringCalculator() {
+  var app = document.getElementById('mt-acquiring-app');
+  if (!app) return;
+
+  var PRESETS = {
+    beauty: { rev: 750000, acqPct: 2.2, posRent: 1500, sbpShare: 65, sbpRate: 0.7 },
+    auto: { rev: 1800000, acqPct: 1.9, posRent: 2500, sbpShare: 60, sbpRate: 0.7 },
+    detailing: { rev: 900000, acqPct: 2.1, posRent: 1500, sbpShare: 65, sbpRate: 0.7 },
+    medical: { rev: 1500000, acqPct: 1.8, posRent: 2000, sbpShare: 70, sbpRate: 0.4 },
+    cleaning: { rev: 450000, acqPct: 2.3, posRent: 1000, sbpShare: 75, sbpRate: 0.4 }
+  };
+
+  var revSlider = app.querySelector('[data-acq-slider="rev"]');
+  var revNum = app.querySelector('[data-acq-num="rev"]');
+  var revVal = app.querySelector('[data-acq-val="rev"]');
+
+  var acqPctSlider = app.querySelector('[data-acq-slider="acq-pct"]');
+  var acqPctNum = app.querySelector('[data-acq-num="acq-pct"]');
+  var acqPctVal = app.querySelector('[data-acq-val="acq-pct"]');
+
+  var posRentSlider = app.querySelector('[data-acq-slider="pos-rent"]');
+  var posRentNum = app.querySelector('[data-acq-num="pos-rent"]');
+  var posRentVal = app.querySelector('[data-acq-val="pos-rent"]');
+
+  var sbpShareSlider = app.querySelector('[data-acq-slider="sbp-share"]');
+  var sbpShareNum = app.querySelector('[data-acq-num="sbp-share"]');
+  var sbpShareVal = app.querySelector('[data-acq-val="sbp-share"]');
+
+  var sbpRateBtns = app.querySelectorAll('.mt-acquiring-toggle-btn');
+  var currentSbpRate = 0.7;
+
+  var outYearlySavings = app.querySelector('[data-acq-res="yearly-savings"]');
+  var outYearlySavingsSub = app.querySelector('[data-acq-res="yearly-savings-sub"]');
+  var outMonthlyCost = app.querySelector('[data-acq-res="monthly-cost"]');
+  var outMonthlyCostSub = app.querySelector('[data-acq-res="monthly-cost-sub"]');
+  var outEffRate = app.querySelector('[data-acq-res="eff-rate"]');
+  var outEffRateSub = app.querySelector('[data-acq-res="eff-rate-sub"]');
+  var outSpeed = app.querySelector('[data-acq-res="speed"]');
+  var outSpeedSub = app.querySelector('[data-acq-res="speed-sub"]');
+
+  var barSavings = app.querySelector('[data-acq-bar="savings"]');
+  var barBank = app.querySelector('[data-acq-bar="bank"]');
+  var barPos = app.querySelector('[data-acq-bar="pos"]');
+
+  var legSavings = app.querySelector('[data-acq-leg="savings"]');
+  var legBank = app.querySelector('[data-acq-leg="bank"]');
+  var legPos = app.querySelector('[data-acq-leg="pos"]');
+
+  var compModel1 = app.querySelector('[data-acq-comp="model1"]');
+  var compModel2 = app.querySelector('[data-acq-comp="model2"]');
+  var compModel3 = app.querySelector('[data-acq-comp="model3"]');
+
+  var growthText = app.querySelector('[data-acq-growth-text]');
+  var copyBtn = app.querySelector('.mt-acquiring-copy-btn');
+  var presetBtns = app.querySelectorAll('.mt-acquiring-preset-btn');
+
+  function fmtMoney(num) {
+    return Math.round(num).toLocaleString('ru-RU') + ' ₽';
+  }
+
+  function bindTwoWay(slider, num, valDisplay, suffix) {
+    if (!slider || !num) return;
+    function sync(fromSlider) {
+      var val = fromSlider ? slider.value : num.value;
+      if (fromSlider) {
+        num.value = val;
+      } else {
+        slider.value = val;
+      }
+      if (valDisplay) {
+        valDisplay.textContent = Number(val).toLocaleString('ru-RU') + (suffix || '');
+      }
+      calculate();
+    }
+    slider.addEventListener('input', function() { sync(true); });
+    num.addEventListener('input', function() { sync(false); });
+  }
+
+  bindTwoWay(revSlider, revNum, revVal, ' ₽');
+  bindTwoWay(acqPctSlider, acqPctNum, acqPctVal, '%');
+  bindTwoWay(posRentSlider, posRentNum, posRentVal, ' ₽');
+  bindTwoWay(sbpShareSlider, sbpShareNum, sbpShareVal, '%');
+
+  for (var m = 0; m < sbpRateBtns.length; m++) {
+    sbpRateBtns[m].addEventListener('click', function() {
+      for (var k = 0; k < sbpRateBtns.length; k++) sbpRateBtns[k].classList.remove('is-active');
+      this.classList.add('is-active');
+      currentSbpRate = parseFloat(this.getAttribute('data-sbp-rate')) || 0.7;
+      calculate();
+    });
+  }
+
+  function applyPreset(p) {
+    if (revSlider) { revSlider.value = p.rev; revNum.value = p.rev; if (revVal) revVal.textContent = p.rev.toLocaleString('ru-RU') + ' ₽'; }
+    if (acqPctSlider) { acqPctSlider.value = p.acqPct; acqPctNum.value = p.acqPct; if (acqPctVal) acqPctVal.textContent = p.acqPct + '%'; }
+    if (posRentSlider) { posRentSlider.value = p.posRent; posRentNum.value = p.posRent; if (posRentVal) posRentVal.textContent = p.posRent.toLocaleString('ru-RU') + ' ₽'; }
+    if (sbpShareSlider) { sbpShareSlider.value = p.sbpShare; sbpShareNum.value = p.sbpShare; if (sbpShareVal) sbpShareVal.textContent = p.sbpShare + '%'; }
+    currentSbpRate = p.sbpRate || 0.7;
+    for (var k = 0; k < sbpRateBtns.length; k++) {
+      var btnRate = parseFloat(sbpRateBtns[k].getAttribute('data-sbp-rate'));
+      if (Math.abs(btnRate - currentSbpRate) < 0.05) {
+        sbpRateBtns[k].classList.add('is-active');
+      } else {
+        sbpRateBtns[k].classList.remove('is-active');
+      }
+    }
+    calculate();
+  }
+
+  for (var i = 0; i < presetBtns.length; i++) {
+    presetBtns[i].addEventListener('click', function() {
+      for (var j = 0; j < presetBtns.length; j++) presetBtns[j].classList.remove('is-active');
+      this.classList.add('is-active');
+      var key = this.getAttribute('data-acq-preset');
+      if (PRESETS[key]) applyPreset(PRESETS[key]);
+    });
+  }
+
+  function calculate() {
+    var rev = parseFloat(revSlider ? revSlider.value : 750000) || 750000;
+    var acqPct = parseFloat(acqPctSlider ? acqPctSlider.value : 2.2) || 2.2;
+    var posRent = parseFloat(posRentSlider ? posRentSlider.value : 1500) || 0;
+    var sbpShare = parseFloat(sbpShareSlider ? sbpShareSlider.value : 65) || 65;
+    var sbpRate = currentSbpRate;
+
+    // Current cost (100% card acquiring + pos rent)
+    var curAcqFee = rev * (acqPct / 100);
+    var curTotalMonthly = curAcqFee + posRent;
+    var curTotalYearly = curTotalMonthly * 12;
+    var curEffRate = rev > 0 ? (curTotalMonthly / rev) * 100 : acqPct;
+
+    // New cost with SBP
+    var sbpVol = rev * (sbpShare / 100);
+    var cardVol = rev - sbpVol;
+    var newSbpFee = sbpVol * (sbpRate / 100);
+    var newAcqFee = cardVol * (acqPct / 100);
+    var newPosRent = sbpShare >= 100 ? 0 : posRent;
+    var newTotalMonthly = newSbpFee + newAcqFee + newPosRent;
+    var newTotalYearly = newTotalMonthly * 12;
+    var newEffRate = rev > 0 ? (newTotalMonthly / rev) * 100 : sbpRate;
+
+    var monthlySavings = Math.max(0, curTotalMonthly - newTotalMonthly);
+    var yearlySavings = monthlySavings * 12;
+    var savingsPct = curTotalMonthly > 0 ? ((curTotalMonthly - newTotalMonthly) / curTotalMonthly) * 100 : 0;
+
+    // Model 1: Only Classic Acquiring
+    var m1Cost = curTotalMonthly;
+    // Model 2: Hybrid (current settings)
+    var m2Cost = newTotalMonthly;
+    // Model 3: 100% SBP / Online via Molniya (0 pos rent)
+    var m3Cost = rev * (sbpRate / 100);
+
+    // Update KPIs
+    if (outYearlySavings) outYearlySavings.textContent = fmtMoney(yearlySavings);
+    if (outYearlySavingsSub) outYearlySavingsSub.textContent = 'Экономия ' + fmtMoney(monthlySavings) + ' каждый месяц';
+
+    if (outMonthlyCost) outMonthlyCost.textContent = fmtMoney(newTotalMonthly) + '/мес';
+    if (outMonthlyCostSub) outMonthlyCostSub.textContent = 'Было ' + fmtMoney(curTotalMonthly) + ' (−' + savingsPct.toFixed(1) + '%)';
+
+    if (outEffRate) outEffRate.textContent = newEffRate.toFixed(2) + '%';
+    if (outEffRateSub) outEffRateSub.textContent = 'Вместо прежних ' + curEffRate.toFixed(2) + '% с терминалом';
+
+    if (outSpeed) outSpeed.textContent = '15 секунд';
+    if (outSpeedSub) outSpeedSub.textContent = 'Мгновенно на р/с 24/7 (вместо 1–3 дней)';
+
+    // Update progress bar
+    var baseDenom = Math.max(curTotalMonthly, 1);
+    var pctSavings = Math.min(100, Math.max(0, (monthlySavings / baseDenom) * 100));
+    var pctBank = Math.min(100, Math.max(0, ((newSbpFee + newAcqFee) / baseDenom) * 100));
+    var pctPos = Math.min(100, Math.max(0, 100 - pctSavings - pctBank));
+
+    if (barSavings) barSavings.style.width = pctSavings.toFixed(1) + '%';
+    if (barBank) barBank.style.width = pctBank.toFixed(1) + '%';
+    if (barPos) barPos.style.width = pctPos.toFixed(1) + '%';
+
+    if (legSavings) legSavings.textContent = fmtMoney(monthlySavings) + ' (' + pctSavings.toFixed(0) + '%)';
+    if (legBank) legBank.textContent = fmtMoney(newSbpFee + newAcqFee) + ' (' + pctBank.toFixed(0) + '%)';
+    if (legPos) legPos.textContent = fmtMoney(newPosRent) + ' (' + pctPos.toFixed(0) + '%)';
+
+    // Model comparisons
+    if (compModel1) compModel1.textContent = fmtMoney(m1Cost) + '/мес';
+    if (compModel2) compModel2.textContent = fmtMoney(m2Cost) + '/мес';
+    if (compModel3) compModel3.textContent = fmtMoney(m3Cost) + '/мес';
+
+    // Insight text
+    if (growthText) {
+      growthText.innerHTML = 'При безналичном обороте <strong>' + fmtMoney(rev) + '</strong> перевод части оплат на СБП сберегает <strong>' + fmtMoney(yearlySavings) + ' в год</strong>. В платформе Молния динамический QR-код формируется на экране кассы или прямо в форме онлайн-записи: клиент подтверждает перевод в банковском приложении за 3 секунды, а деньги поступают на ваш расчетный счет без задержек на выходных.';
+    }
+  }
+
+  // Copy summary button
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var rev = parseFloat(revSlider ? revSlider.value : 750000) || 750000;
+      var acqPct = parseFloat(acqPctSlider ? acqPctSlider.value : 2.2) || 2.2;
+      var posRent = parseFloat(posRentSlider ? posRentSlider.value : 1500) || 0;
+      var sbpShare = parseFloat(sbpShareSlider ? sbpShareSlider.value : 65) || 65;
+      var sbpRate = currentSbpRate;
+
+      var curAcqFee = rev * (acqPct / 100);
+      var curTotalMonthly = curAcqFee + posRent;
+      var curTotalYearly = curTotalMonthly * 12;
+
+      var sbpVol = rev * (sbpShare / 100);
+      var cardVol = rev - sbpVol;
+      var newSbpFee = sbpVol * (sbpRate / 100);
+      var newAcqFee = cardVol * (acqPct / 100);
+      var newPosRent = sbpShare >= 100 ? 0 : posRent;
+      var newTotalMonthly = newSbpFee + newAcqFee + newPosRent;
+      var newTotalYearly = newTotalMonthly * 12;
+      var yearlySavings = (curTotalMonthly - newTotalMonthly) * 12;
+
+      var lines = [
+        '=== РАСЧЕТ ЭКОНОМИИ НА ЭКВАЙРИНГЕ И СБП ===',
+        'Безналичный оборот: ' + fmtMoney(rev) + ' в месяц',
+        'Текущая комиссия эквайринга: ' + acqPct + '% (+ аренда терминала ' + fmtMoney(posRent) + '/мес)',
+        'Расходы на эквайринг сейчас: ' + fmtMoney(curTotalMonthly) + '/мес (' + fmtMoney(curTotalYearly) + '/год)',
+        '--------------------------------------------',
+        'При подключении СБП (доля ' + sbpShare + '%, ставка ' + sbpRate + '%):',
+        'Новые расходы: ' + fmtMoney(newTotalMonthly) + '/мес (' + fmtMoney(newTotalYearly) + '/год)',
+        'ЧИСТАЯ ЭКОНОМИЯ: ' + fmtMoney(curTotalMonthly - newTotalMonthly) + '/мес (+' + fmtMoney(yearlySavings) + '/год)',
+        'Эффективная ставка комиссии снижается до ' + ((newTotalMonthly / rev) * 100).toFixed(2) + '%',
+        'Зачисление средств: мгновенно за 15 секунд 24/7/365',
+        '--------------------------------------------',
+        'Рассчитано в калькуляторе эквайринга: https://molniya-tech.ru/acquiring'
+      ];
+
+      var textToCopy = lines.join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.classList.add('copied');
+        var btnSpan = copyBtn.querySelector('span');
+        if (btnSpan) btnSpan.textContent = 'Расчет скопирован в буфер!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          if (btnSpan) btnSpan.textContent = copyBtn.getAttribute('data-orig') || 'Скопировать расчет экономии';
+        }, 2500);
+      });
+    });
+  }
+
+  calculate();
+}
+
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -3707,6 +3957,7 @@ function initApp() {
   initQrGenerator();
   initSalaryCalculator();
   initPricelistConstructor();
+  initAcquiringCalculator();
 }
 
 if (document.readyState === 'loading') {

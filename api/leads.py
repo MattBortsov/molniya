@@ -51,6 +51,7 @@ FORM_NAMES = {
     "qr": "Генератор QR-кодов — бесплатный доступ",
     "salary": "Калькулятор зарплат — бесплатный доступ",
     "pricelist": "Конструктор прайс-листов — бесплатный доступ",
+    "acquiring": "Калькулятор эквайринга — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -89,6 +90,7 @@ SOURCE_PATHS = {
     "qr": "/qr",
     "salary": "/salary",
     "pricelist": "/pricelist",
+    "acquiring": "/acquiring",
 }
 
 

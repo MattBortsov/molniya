@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Калькулятор эквайринга и экономии на СБП — расчет комиссий и выгоды онлайн | Молния</title>
+  <meta name="description" content="Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/acquiring">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Калькулятор эквайринга и экономии на СБП — расчет комиссий и выгоды онлайн | Молния">
+  <meta property="og:description" content="Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки.">
+  <meta property="og:url" content="https://molniya-tech.ru/acquiring">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Калькулятор эквайринга и экономии на СБП — расчет комиссий и выгоды онлайн | Молния">
+  <meta name="twitter:description" content="Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Калькулятор эквайринга и СБП", "item": "https://molniya-tech.ru/acquiring"}]}, {"@context": "https://schema.org", "@type": "WebApplication", "name": "Калькулятор эквайринга и экономии на СБП Молния", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/acquiring", "description": "Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки.", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.98", "bestRating": "5", "worstRating": "1", "ratingCount": "1680"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный интерактивный калькулятор расчета комиссий торгового эквайринга и выгоды СБП"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем динамический QR-код СБП отличается от обычной статической наклейки на стойке?", "acceptedAnswer": {"@type": "Answer", "text": "Статический QR-код на наклейке требует от клиента вручную вбивать сумму платежа в банковском приложении, а кассиру — сверять чек на экране чужого телефона, что замедляет очередь и приводит к ошибкам. Динамический QR-код генерируется индивидуально под каждый чек на экране кассового терминала, планшета или в форме онлайн-записи. Сумма и назначение платежа уже зашиты внутри: клиент наводит камеру смартфона, нажимает «Оплатить», и в кассовую программу Молнии моментально поступает подтверждение фискализации."}}, {"@type": "Question", "name": "Какая комиссия по СБП будет действовать для моего бизнеса: 0.4% или 0.7%?", "acceptedAnswer": {"@type": "Answer", "text": "Банком России установлена льготная ставка 0.4% (но не более 1 500 ₽ за операцию) для социально значимых и базовых услуг: медицинские центры и стоматологии, аптеки, образовательные студии и детские центры, пассажирские перевозки, ЖКХ и бытовые услуги (клининг, ремонт обуви/одежды). Для большинства предприятий индустрии красоты, барбершопов, автосервисов, фитнес-клубов и розничной торговли действует стандартная ставка 0.7%, что все равно в 3–4 раза выгоднее классического эквайринга (1.8%–2.5%)."}}, {"@type": "Question", "name": "Нужно ли менять расчетный счет или обслуживающий банк для подключения оплат по СБП?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, менять ваш основной расчетный счет не требуется. Платежный модуль Молнии работает через надежных банковских партнеров и подключается к вашему действующему расчетному счету в любом банке РФ. Деньги зачисляются напрямую на ваш р/с в течение 15 секунд в любое время суток."}}, {"@type": "Question", "name": "Что делать, если клиент хочет расплатиться кредитной картой или классическим пластиком?", "acceptedAnswer": {"@type": "Answer", "text": "Мы рекомендуем гибридную модель: динамический QR-код СБП на стойке ресепшн предлагается клиенту как основной и самый быстрый способ оплаты, а физический POS-терминал остается для держателей кредитных карт (где за переводы по СБП банками может взиматься комиссия). Даже при конверсии 60–70% оплат в СБП бизнес сохраняет сотни тысяч рублей на эквайринге ежегодно."}}, {"@type": "Question", "name": "Как устроен прием платежей по СБП в виджете онлайн-записи платформы Молния?", "acceptedAnswer": {"@type": "Answer", "text": "При бронировании визита или покупке абонемента на сайте/в соцсетях клиент видит кнопку «Оплатить через СБП». На смартфоне в один клик открывается приложение его основного банка (Сбербанк, Т-Банк, ВТБ, Альфа и др.), где уже указана сумма предоплаты. Бронь мгновенно подтверждается в расписании мастера без ожидания ручных чеков и звонков администратора."}}, {"@type": "Question", "name": "Как клиент и кассир понимают, что оплата по СБП прошла успешно?", "acceptedAnswer": {"@type": "Answer", "text": "После подтверждения транзакции в банковском приложении клиента платежный шлюз за доли секунды отправляет сигнал в платформу Молния. На экране администратора статус чека автоматически меняется на «Оплачено», касса печатает фискальный чек (или отправляет электронный по SMS), а клиент видит зеленый экран успешной оплаты."}}]}]</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
+
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор эквайринга">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 1 680 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.98</strong> (1 680 расчетов владельцев бизнеса)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Калькулятор торгового эквайринга<br><span class="mt-hero-accent">и чистой экономии на СБП</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Рассчитайте переплату банку по классическому эквайрингу (1.8%–2.6%) и узнайте, сколько сотен тысяч рублей сбережет вашему бизнесу прием платежей по динамическому QR-коду СБП со ставкой от 0.4%.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Рассчитать экономию ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Возможности калькулятора эквайринга">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 отраслевых профилей</span>
+                <span class="mt-facet-note">салоны, автосервисы, детейлинг, клиники, клининг</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Ставка СБП от 0.4%</span>
+                <span class="mt-facet-note">в 3–5 раз ниже банковского эквайринга</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зачисление за 15 секунд</span>
+                <span class="mt-facet-note">без кассовых разрывов на выходных и праздниках</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">0 ₽ за аренду терминала</span>
+                <span class="mt-facet-note">динамический QR прямо на экране кассы и в онлайн-записи</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CALCULATOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Интерактивный расчет эквайринга" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный расчет комиссий эквайринга <span class="mt-overview-hook">и выгоды перехода на СБП</span></h2>
+          <p class="mt-section-sub">Укажите ваш безналичный оборот и действующую ставку банка — калькулятор моментально покажет чистую годовую экономию при подключении оплат по QR-кодам.</p>
+        </div>
+
+        <div id="mt-acquiring-app" class="mt-acquiring-wrap">
+
+          <div class="mt-acquiring-presets-bar">
+            <span class="mt-acquiring-presets-label">Отраслевые профили:</span>
+            <div class="mt-acquiring-presets" role="tablist" aria-label="Выбор отраслевого профиля">
+              <button class="mt-acquiring-preset-btn is-active" type="button" data-acq-preset="beauty">💇 Салон красоты / SPA</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="auto">🚗 Автосервис / СТО</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="detailing">🧼 Детейлинг / Автомойка</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="medical">🩺 Медицина / Стоматология</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="cleaning">🧹 Клининг / Бытовые услуги</button>
+            </div>
+          </div>
+
+          <div class="mt-acquiring-layout">
+
+            <!-- INPUTS -->
+            <div class="mt-acquiring-card mt-acquiring-inputs-card">
+              <div class="mt-acquiring-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                <span>Текущие условия эквайринга в вашем банке</span>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <div class="mt-acquiring-field-head">
+                  <label class="mt-acquiring-label">Безналичный оборот в месяц (карты и переводы)</label>
+                  <span class="mt-acquiring-val-display" data-acq-val="rev">750 000 ₽</span>
+                </div>
+                <div class="mt-acquiring-slider-wrap">
+                  <input class="mt-acquiring-slider" type="range" min="100000" max="5000000" step="25000" value="750000" data-acq-slider="rev">
+                  <input class="mt-acquiring-input-num" type="number" min="50000" max="20000000" step="25000" value="750000" data-acq-num="rev">
+                </div>
+              </div>
+
+              <div class="mt-acquiring-row-2">
+                <div class="mt-acquiring-field-group">
+                  <div class="mt-acquiring-field-head">
+                    <label class="mt-acquiring-label">Ставка эквайринга банка</label>
+                    <span class="mt-acquiring-val-display" data-acq-val="acq-pct">2.2%</span>
+                  </div>
+                  <div class="mt-acquiring-slider-wrap">
+                    <input class="mt-acquiring-slider" type="range" min="1.0" max="3.5" step="0.1" value="2.2" data-acq-slider="acq-pct">
+                    <input class="mt-acquiring-input-num" type="number" min="0.5" max="5.0" step="0.1" value="2.2" data-acq-num="acq-pct">
+                  </div>
+                </div>
+
+                <div class="mt-acquiring-field-group">
+                  <div class="mt-acquiring-field-head">
+                    <label class="mt-acquiring-label">Аренда POS-терминалов</label>
+                    <span class="mt-acquiring-val-display" data-acq-val="pos-rent">1 500 ₽</span>
+                  </div>
+                  <div class="mt-acquiring-slider-wrap">
+                    <input class="mt-acquiring-slider" type="range" min="0" max="6000" step="250" value="1500" data-acq-slider="pos-rent">
+                    <input class="mt-acquiring-input-num" type="number" min="0" max="15000" step="250" value="1500" data-acq-num="pos-rent">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-acquiring-section-heading" style="margin-top:10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
+                <span>Параметры Системы быстрых платежей (СБП)</span>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <div class="mt-acquiring-field-head">
+                  <label class="mt-acquiring-label">Целевая доля оплат по QR-коду СБП</label>
+                  <span class="mt-acquiring-val-display" data-acq-val="sbp-share">65%</span>
+                </div>
+                <div class="mt-acquiring-slider-wrap">
+                  <input class="mt-acquiring-slider" type="range" min="10" max="100" step="5" value="65" data-acq-slider="sbp-share">
+                  <input class="mt-acquiring-input-num" type="number" min="0" max="100" step="5" value="65" data-acq-num="sbp-share">
+                </div>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <label class="mt-acquiring-label">Тариф СБП по типу деятельности</label>
+                <div class="mt-acquiring-toggle-group" role="tablist">
+                  <button class="mt-acquiring-toggle-btn is-active" type="button" data-sbp-rate="0.7">0.7% — Стандарт (салоны, СТО, сервис)</button>
+                  <button class="mt-acquiring-toggle-btn" type="button" data-sbp-rate="0.4">0.4% — Льготный (медицина, бытовые)</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RESULTS -->
+            <div class="mt-acquiring-card mt-acquiring-results-card">
+              <div class="mt-acquiring-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Расчет экономии и новая комиссия</span>
+              </div>
+
+              <div class="mt-acquiring-kpi-grid">
+                <div class="mt-acquiring-kpi-box mt-acquiring-kpi-box--accent">
+                  <span class="mt-acquiring-kpi-label">Чистая экономия в год</span>
+                  <div class="mt-acquiring-kpi-num mt-acquiring-kpi-num--accent" data-acq-res="yearly-savings">111 780 ₽</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="yearly-savings-sub">Экономия 9 315 ₽ каждый месяц</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Новые расходы на комиссии</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="monthly-cost">8 685 ₽/мес</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="monthly-cost-sub">Было 18 000 ₽ (−51.8%)</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Эффективная ставка комиссии</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="eff-rate">1.16%</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="eff-rate-sub">Вместо прежних 2.40% с терминалом</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Зачисление выручки на счет</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="speed">15 секунд</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="speed-sub">Мгновенно 24/7 (вместо 1–3 дней)</span>
+                </div>
+              </div>
+
+              <!-- Breakdown -->
+              <div class="mt-acquiring-breakdown-box">
+                <div class="mt-acquiring-breakdown-title">Распределение средств при оплате услуг:</div>
+                <div class="mt-acquiring-bar-stack" aria-label="Диаграмма распределения комиссий">
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--savings" data-acq-bar="savings" style="width: 52%;"></div>
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--bank" data-acq-bar="bank" style="width: 40%;"></div>
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--pos" data-acq-bar="pos" style="width: 8%;"></div>
+                </div>
+                <div class="mt-acquiring-legend">
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--savings"></span>Сэкономлено в карман бизнеса:</span>
+                    <strong data-acq-leg="savings">9 315 ₽ (52%)</strong>
+                  </div>
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--bank"></span>Комиссии банка и СБП:</span>
+                    <strong data-acq-leg="bank">7 185 ₽ (40%)</strong>
+                  </div>
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--pos"></span>Аренда терминала:</span>
+                    <strong data-acq-leg="pos">1 500 ₽ (8%)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Model Comparison -->
+              <div class="mt-acquiring-comparison-box">
+                <div class="mt-acquiring-comparison-title">Сравнение 3 моделей приема оплаты:</div>
+                <div class="mt-acquiring-comparison-grid">
+                  <div class="mt-acquiring-comparison-item">
+                    <span class="mt-acquiring-comparison-name">Только эквайринг</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model1">18 000 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">100% карты + аренда POS</span>
+                  </div>
+                  <div class="mt-acquiring-comparison-item is-selected">
+                    <span class="mt-acquiring-comparison-name">Гибрид (СБП + карты)</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model2">8 685 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">Текущий расчет (65% СБП)</span>
+                  </div>
+                  <div class="mt-acquiring-comparison-item">
+                    <span class="mt-acquiring-comparison-name">100% СБП в Молнии</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model3">5 250 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">Максимальная выгода, 0 ₽ POS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight Box -->
+              <div class="mt-acquiring-growth-box">
+                <div class="mt-acquiring-growth-title">
+                  <span>⚡ Умный расчет эффективности</span>
+                </div>
+                <p class="mt-acquiring-growth-text" data-acq-growth-text>
+                  При безналичном обороте <strong>750 000 ₽</strong> перевод части оплат на СБП сберегает <strong>111 780 ₽ в год</strong>. В платформе Молния динамический QR-код формируется на экране кассы или прямо в форме онлайн-записи: клиент подтверждает перевод в банковском приложении за 3 секунды, а деньги поступают на ваш расчетный счет без задержек на выходных.
+                </p>
+              </div>
+
+              <!-- Actions -->
+              <div class="mt-acquiring-actions">
+                <button class="mt-acquiring-copy-btn" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Скопировать расчет экономии</span>
+                </button>
+                <a class="mt-acquiring-cta-btn" href="#lead-form">
+                  <span>Подключить СБП и онлайн-оплату в Молнии →</span>
+                </a>
+              </div>
+
+              <!-- Rating -->
+              <div class="mt-tool-rating-wrap" style="margin-top:8px; padding-top:16px;">
+                <span class="mt-tool-rating-title">Оцените полезность калькулятора:</span>
+                <div class="mt-tool-rating" data-tool-rating="acquiring">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>4.98</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 680</span> оценок)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Преимущества СБП" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Почему бизнес переходит с классического эквайринга <span class="mt-overview-hook">на платежи по СБП</span></h2>
+          <p class="mt-section-sub">Снижение комиссии в 3–5 раз, мгновенное поступление денег и нулевая зависимость от импортных платежных терминалов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Ставка комиссии от 0.4% <span class="mt-overview-hook">вместо 2–2.5% у банков</span></h3>
+            <p>Банковский эквайринг забирает до 25 000 ₽ с каждого миллиона рублей оборота. При оплате по СБП комиссия составляет всего 4 000 – 7 000 ₽ с потолком не более 1 500 ₽ за чек.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сравнение ставок</span><span>Выгода</span></div>
+              <div class="mt-overview-price-row"><span>Банковский эквайринг</span><strong>2.2% (22 000 ₽)</strong></div>
+              <div class="mt-overview-price-row"><span>Оплата по СБП</span><strong>0.7% (7 000 ₽)</strong></div>
+              <div class="mt-overview-price-tag">+180 000 ₽ чистой экономии в год</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Деньги на счете за 15 секунд <span class="mt-overview-hook">без кассовых разрывов</span></h3>
+            <p>При обычном эквайринге выручка за пятницу и выходные поступает на расчетный счет только во вторник. По СБП средства приходят мгновенно в любое время суток 365 дней в году.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Скорость расчетов</span><span>24/7/365</span></div>
+              <div class="mt-overview-price-row"><span>Классический банк</span><strong>1–3 рабочих дня</strong></div>
+              <div class="mt-overview-price-row"><span>Система СБП</span><strong>15 секунд на р/с</strong></div>
+              <div class="mt-overview-price-tag">Выручка сразу доступна для закупок и зарплат</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Динамический QR на кассе <span class="mt-overview-hook">без ручного ввода сумм</span></h3>
+            <p>Клиенту не нужно вбивать сумму руками или ждать ответа терминала. QR-код формируется на экране кассы Молнии с точной суммой заказа и считывается за секунду.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Динамический QR</span><span>Автофискализация</span></div>
+              <div class="mt-overview-price-row"><span>Ошибки в суммах</span><strong>0% исключено</strong></div>
+              <div class="mt-overview-price-row"><span>Скорость оплаты</span><strong>3 секунды со смартфона</strong></div>
+              <div class="mt-overview-price-tag">Быстрое обслуживание без задержек в очереди</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Экономия на аренде POS-терминалов <span class="mt-overview-hook">до 36 000 ₽ в год</span></h3>
+            <p>Банки взимают от 1 000 до 3 000 ₽ в месяц за каждый терминал или штрафуют при обороте ниже порога. Для оплат по СБП достаточно экрана вашего смартфона, планшета или монитора.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Оборудование</span><span>Без аренды</span></div>
+              <div class="mt-overview-price-row"><span>Аренда 2 терминалов</span><strong>0 ₽ вместо 3 000 ₽/мес</strong></div>
+              <div class="mt-overview-price-row"><span>Замена чековой ленты</span><strong>Электронный чек</strong></div>
+              <div class="mt-overview-price-tag">Полная независимость от банковского «железа»</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Предоплата в онлайн-записи <span class="mt-overview-hook">в один клик со смартфона</span></h3>
+            <p>Снизьте неявки клиентов до нуля: при бронировании в виджете Молнии клиент оплачивает аванс через приложение своего банка без утомительного ввода данных пластиковой карты.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись</span><span>Молния</span></div>
+              <div class="mt-overview-message">
+                ⚡ Предоплата брони через СБП подтверждена: +1 500 ₽.
+                <span class="mt-overview-reaction">✓ Зачислено</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как подключить СБП" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как начать экономить на эквайринге <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">Простой переход на выгодные комиссии без волокиты, визитов в банк и смены расчетного счета.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Аудит</span>
+              <h3>Рассчитайте потери на действующих ставках эквайринга</h3>
+              <p>Определите ежемесячный объем безналичных платежей и фактическую комиссию банка с учетом скрытых платежей за обслуживание и аренду оборудования.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Аудит комиссий">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Аудит выплат</span>
+                <span class="mt-journey-proof-badge">Оцифровано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Текущий эквайринг</span><strong>2.2% + аренда</strong></div>
+              <div class="mt-journey-proof-row"><span>Потери на комиссии</span><strong>18 000 ₽/мес</strong></div>
+              <div class="mt-journey-proof-row"><span>Потенциал экономии</span><strong>До 120 000 ₽/год</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Подключение</span>
+              <h3>Активируйте прием СБП без смены расчетного счета</h3>
+              <p>Служба заботы Молнии дистанционно подключает модуль приема оплат. Менять действующий расчетный счет и переоформлять договоры в банке не требуется.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Подключение">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Активация шлюза</span>
+                <span class="mt-journey-proof-badge">15 минут</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Визиты в отделения</span><strong>0 визитов</strong></div>
+              <div class="mt-journey-proof-row"><span>Смена р/с</span><strong>Не требуется</strong></div>
+              <div class="mt-journey-proof-row"><span>Ставка комиссии</span><strong>От 0.4% за операцию</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Интеграция</span>
+              <h3>Выводите динамический QR на экран кассы и в онлайн-запись</h3>
+              <p>В момент расчета экран администратора мгновенно показывает персональный QR с точной суммой чека. Клиенту достаточно открыть камеру своего смартфона.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Интеграция">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Вывод QR-кода</span>
+                <span class="mt-journey-proof-badge">Автоматически</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата телефоном</span><strong>Сбер, Т-Банк, ВТБ</strong></div>
+              <div class="mt-journey-proof-row"><span>Ручной ввод суммы</span><strong>Исключен</strong></div>
+              <div class="mt-journey-proof-row"><span>Фискализация</span><strong>Мгновенный чек</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Прибыль</span>
+              <h3>Получайте деньги за 15 секунд и сохраняйте прибыль</h3>
+              <p>Выручка поступает на расчетный счет прямо во время визита гостя. Никаких задержек на выходных, комиссия списывается по прозрачному фиксированному тарифу.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Прибыль">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Мгновенный баланс</span>
+                <span class="mt-journey-proof-badge">24/7</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Время зачисления</span><strong>15 секунд</strong></div>
+              <div class="mt-journey-proof-row"><span>Кассовые разрывы</span><strong>0 рублей</strong></div>
+              <div class="mt-journey-proof-row"><span>Дополнительный доход</span><strong>В кармане бизнеса</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс экономии на эквайринге" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс оптимизации эквайринга</div>
+            <h2 class="mt-case-title">Алексей Мельников, сооснователь сети детейлинг-центров</h2>
+            <blockquote class="mt-case-quote">
+              «У нас средний чек на оклейку бронепленкой и восстановительную полировку кузова — 45 000 – 90 000 ₽. Банк брал 2.1% торгового эквайринга, а деньги за машины, сданные в пятницу и субботу, падали на счет только во вторник после обеда. Поставили динамический QR от Молнии на экран администратора и настроили прием предоплат по СБП в онлайн-записи: 68% клиентов с удовольствием платят телефоном через Сбербанк или Т-Банк. Экономия на банковских комиссиях составила 142 000 рублей за первый же год, а кассовые разрывы на выходных исчезли навсегда.»
+            </blockquote>
+            <div class="mt-case-author">
+              Алексей Мельников <span>· Сооснователь сети детейлинг-центров, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+142 <small>тыс. ₽</small></span>
+              <span class="mt-case-label">Чистая годовая экономия на банковских комиссиях после подключения СБП</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">15 <small>сек</small></span>
+              <span class="mt-case-label">Время фактического зачисления выручки на расчетный счет даже в праздники</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>₽</small></span>
+              <span class="mt-case-label">Расходов на покупку и ежемесячную аренду банковских POS-терминалов</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об эквайринге, тарифах СБП и приеме платежей</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Подключите выгодные платежи в Молнии</h3>
+            <p>Поможем подключить прием оплат по СБП (0.4%–0.7%) и онлайн-эквайринг к вашей кассе за 15 минут без смены банка.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+            <details><summary>Чем динамический QR-код СБП отличается от обычной статической наклейки на стойке?</summary><p>Статический QR-код на наклейке требует от клиента вручную вбивать сумму платежа в банковском приложении, а кассиру — сверять чек на экране чужого телефона, что замедляет очередь и приводит к ошибкам. Динамический QR-код генерируется индивидуально под каждый чек на экране кассового терминала, планшета или в форме онлайн-записи. Сумма и назначение платежа уже зашиты внутри: клиент наводит камеру смартфона, нажимает «Оплатить», и в кассовую программу Молнии моментально поступает подтверждение фискализации.</p></details>
+            <details><summary>Какая комиссия по СБП будет действовать для моего бизнеса: 0.4% или 0.7%?</summary><p>Банком России установлена льготная ставка 0.4% (но не более 1 500 ₽ за операцию) для социально значимых и базовых услуг: медицинские центры и стоматологии, аптеки, образовательные студии и детские центры, пассажирские перевозки, ЖКХ и бытовые услуги (клининг, ремонт обуви/одежды). Для большинства предприятий индустрии красоты, барбершопов, автосервисов, фитнес-клубов и розничной торговли действует стандартная ставка 0.7%, что все равно в 3–4 раза выгоднее классического эквайринга (1.8%–2.5%).</p></details>
+            <details><summary>Нужно ли менять расчетный счет или обслуживающий банк для подключения оплат по СБП?</summary><p>Нет, менять ваш основной расчетный счет не требуется. Платежный модуль Молнии работает через надежных банковских партнеров и подключается к вашему действующему расчетному счету в любом банке РФ. Деньги зачисляются напрямую на ваш р/с в течение 15 секунд в любое время суток.</p></details>
+            <details><summary>Что делать, если клиент хочет расплатиться кредитной картой или классическим пластиком?</summary><p>Мы рекомендуем гибридную модель: динамический QR-код СБП на стойке ресепшн предлагается клиенту как основной и самый быстрый способ оплаты, а физический POS-терминал остается для держателей кредитных карт (где за переводы по СБП банками может взиматься комиссия). Даже при конверсии 60–70% оплат в СБП бизнес сохраняет сотни тысяч рублей на эквайринге ежегодно.</p></details>
+            <details><summary>Как устроен прием платежей по СБП в виджете онлайн-записи платформы Молния?</summary><p>При бронировании визита или покупке абонемента на сайте/в соцсетях клиент видит кнопку «Оплатить через СБП». На смартфоне в один клик открывается приложение его основного банка (Сбербанк, Т-Банк, ВТБ, Альфа и др.), где уже указана сумма предоплаты. Бронь мгновенно подтверждается в расписании мастера без ожидания ручных чеков и звонков администратора.</p></details>
+            <details><summary>Как клиент и кассир понимают, что оплата по СБП прошла успешно?</summary><p>После подтверждения транзакции в банковском приложении клиента платежный шлюз за доли секунды отправляет сигнал в платформу Молния. На экране администратора статус чека автоматически меняется на «Оплачено», касса печатает фискальный чек (или отправляет электронный по SMS), а клиент видит зеленый экран успешной оплаты.</p></details>
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Подключите выгодный прием оплат по СБП и картам <span class="mt-hero-accent">с платформой Молния</span></h2>
+          <p class="mt-lead-sub">Оставьте контакты — поможем подключить платежный модуль Молнии: ставка от 0.4%, динамические QR-коды на кассе и в онлайн-записи, зачисление выручки за 15 секунд без абонентской платы.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="acquiring">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Инструменты</h3>
+              <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
+              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
+              <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
+              <a class="mt-footer-link" href="/carwash-weather">Индекс мойки авто</a>
+              <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
+              <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
+              <a class="mt-footer-link" href="/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/acquiring">Калькулятор эквайринга</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">Мы используем файлы cookie для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.</p>
+      <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
+    </div>
+
+    <script src="/script.js?v=20261024-acq1" defer></script>
+  </div>
+</body>
+</html>

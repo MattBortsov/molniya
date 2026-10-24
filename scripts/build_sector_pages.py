@@ -298,6 +298,7 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
               <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
               <a class="mt-footer-link" href="/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/acquiring">Калькулятор эквайринга</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -743,7 +744,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1120,7 +1121,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -1271,7 +1272,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1648,7 +1649,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -1765,7 +1766,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2188,7 +2189,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -2333,7 +2334,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2770,7 +2771,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -2915,7 +2916,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3292,7 +3293,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -3437,7 +3438,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3846,7 +3847,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -3992,7 +3993,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4369,7 +4370,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -4515,7 +4516,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4892,7 +4893,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -5040,7 +5041,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5417,7 +5418,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -5450,7 +5451,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5509,7 +5510,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 """
@@ -5660,7 +5661,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6097,7 +6098,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -6249,7 +6250,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6681,7 +6682,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -6833,7 +6834,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7354,7 +7355,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -7506,7 +7507,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7915,7 +7916,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -8065,7 +8066,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8510,7 +8511,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -8660,7 +8661,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9202,7 +9203,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -9348,7 +9349,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9725,7 +9726,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -9870,7 +9871,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10249,7 +10250,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -10394,7 +10395,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10773,7 +10774,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -10927,7 +10928,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11300,7 +11301,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -11440,7 +11441,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11881,7 +11882,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -12022,7 +12023,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12468,7 +12469,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -12620,7 +12621,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13031,7 +13032,645 @@ def build_pricelist_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-pl1" defer></script>
+    <script src="/script.js?v=20261024-acq1" defer></script>
+  </div>
+</body>
+</html>'''
+
+    return page_html
+
+
+
+
+def build_acquiring_page() -> str:
+    """Builds the acquiring commission and SBP savings calculator page: /acquiring."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "acquiring",
+        'Подключите выгодный прием оплат по СБП и картам <span class="mt-hero-accent">с платформой Молния</span>',
+        "Оставьте контакты — поможем подключить платежный модуль Молнии: ставка от 0.4%, динамические QR-коды на кассе и в онлайн-записи, зачисление выручки за 15 секунд без абонентской платы.",
+    )
+
+    title = "Калькулятор эквайринга и экономии на СБП — расчет комиссий и выгоды онлайн | Молния"
+    description = (
+        "Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), "
+        "расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки."
+    )
+    canonical = "https://molniya-tech.ru/acquiring"
+
+    faqs = [
+        (
+            "Чем динамический QR-код СБП отличается от обычной статической наклейки на стойке?",
+            "Статический QR-код на наклейке требует от клиента вручную вбивать сумму платежа в банковском приложении, а кассиру — сверять чек на экране чужого телефона, что замедляет очередь и приводит к ошибкам. Динамический QR-код генерируется индивидуально под каждый чек на экране кассового терминала, планшета или в форме онлайн-записи. Сумма и назначение платежа уже зашиты внутри: клиент наводит камеру смартфона, нажимает «Оплатить», и в кассовую программу Молнии моментально поступает подтверждение фискализации.",
+        ),
+        (
+            "Какая комиссия по СБП будет действовать для моего бизнеса: 0.4% или 0.7%?",
+            "Банком России установлена льготная ставка 0.4% (но не более 1 500 ₽ за операцию) для социально значимых и базовых услуг: медицинские центры и стоматологии, аптеки, образовательные студии и детские центры, пассажирские перевозки, ЖКХ и бытовые услуги (клининг, ремонт обуви/одежды). Для большинства предприятий индустрии красоты, барбершопов, автосервисов, фитнес-клубов и розничной торговли действует стандартная ставка 0.7%, что все равно в 3–4 раза выгоднее классического эквайринга (1.8%–2.5%).",
+        ),
+        (
+            "Нужно ли менять расчетный счет или обслуживающий банк для подключения оплат по СБП?",
+            "Нет, менять ваш основной расчетный счет не требуется. Платежный модуль Молнии работает через надежных банковских партнеров и подключается к вашему действующему расчетному счету в любом банке РФ. Деньги зачисляются напрямую на ваш р/с в течение 15 секунд в любое время суток.",
+        ),
+        (
+            "Что делать, если клиент хочет расплатиться кредитной картой или классическим пластиком?",
+            "Мы рекомендуем гибридную модель: динамический QR-код СБП на стойке ресепшн предлагается клиенту как основной и самый быстрый способ оплаты, а физический POS-терминал остается для держателей кредитных карт (где за переводы по СБП банками может взиматься комиссия). Даже при конверсии 60–70% оплат в СБП бизнес сохраняет сотни тысяч рублей на эквайринге ежегодно.",
+        ),
+        (
+            "Как устроен прием платежей по СБП в виджете онлайн-записи платформы Молния?",
+            "При бронировании визита или покупке абонемента на сайте/в соцсетях клиент видит кнопку «Оплатить через СБП». На смартфоне в один клик открывается приложение его основного банка (Сбербанк, Т-Банк, ВТБ, Альфа и др.), где уже указана сумма предоплаты. Бронь мгновенно подтверждается в расписании мастера без ожидания ручных чеков и звонков администратора.",
+        ),
+        (
+            "Как клиент и кассир понимают, что оплата по СБП прошла успешно?",
+            "После подтверждения транзакции в банковском приложении клиента платежный шлюз за доли секунды отправляет сигнал в платформу Молния. На экране администратора статус чека автоматически меняется на «Оплачено», касса печатает фискальный чек (или отправляет электронный по SMS), а клиент видит зеленый экран успешной оплаты.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Калькулятор эквайринга и СБП", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Калькулятор эквайринга и экономии на СБП Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.98",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1680",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный интерактивный калькулятор расчета комиссий торгового эквайринга и выгоды СБП",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор эквайринга">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 1 680 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.98</strong> (1 680 расчетов владельцев бизнеса)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Калькулятор торгового эквайринга<br><span class="mt-hero-accent">и чистой экономии на СБП</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Рассчитайте переплату банку по классическому эквайрингу (1.8%–2.6%) и узнайте, сколько сотен тысяч рублей сбережет вашему бизнесу прием платежей по динамическому QR-коду СБП со ставкой от 0.4%.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Рассчитать экономию ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Возможности калькулятора эквайринга">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 отраслевых профилей</span>
+                <span class="mt-facet-note">салоны, автосервисы, детейлинг, клиники, клининг</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Ставка СБП от 0.4%</span>
+                <span class="mt-facet-note">в 3–5 раз ниже банковского эквайринга</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Зачисление за 15 секунд</span>
+                <span class="mt-facet-note">без кассовых разрывов на выходных и праздниках</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">0 ₽ за аренду терминала</span>
+                <span class="mt-facet-note">динамический QR прямо на экране кассы и в онлайн-записи</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- CALCULATOR APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Интерактивный расчет эквайринга" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный расчет комиссий эквайринга <span class="mt-overview-hook">и выгоды перехода на СБП</span></h2>
+          <p class="mt-section-sub">Укажите ваш безналичный оборот и действующую ставку банка — калькулятор моментально покажет чистую годовую экономию при подключении оплат по QR-кодам.</p>
+        </div>
+
+        <div id="mt-acquiring-app" class="mt-acquiring-wrap">
+
+          <div class="mt-acquiring-presets-bar">
+            <span class="mt-acquiring-presets-label">Отраслевые профили:</span>
+            <div class="mt-acquiring-presets" role="tablist" aria-label="Выбор отраслевого профиля">
+              <button class="mt-acquiring-preset-btn is-active" type="button" data-acq-preset="beauty">💇 Салон красоты / SPA</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="auto">🚗 Автосервис / СТО</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="detailing">🧼 Детейлинг / Автомойка</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="medical">🩺 Медицина / Стоматология</button>
+              <button class="mt-acquiring-preset-btn" type="button" data-acq-preset="cleaning">🧹 Клининг / Бытовые услуги</button>
+            </div>
+          </div>
+
+          <div class="mt-acquiring-layout">
+
+            <!-- INPUTS -->
+            <div class="mt-acquiring-card mt-acquiring-inputs-card">
+              <div class="mt-acquiring-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                <span>Текущие условия эквайринга в вашем банке</span>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <div class="mt-acquiring-field-head">
+                  <label class="mt-acquiring-label">Безналичный оборот в месяц (карты и переводы)</label>
+                  <span class="mt-acquiring-val-display" data-acq-val="rev">750 000 ₽</span>
+                </div>
+                <div class="mt-acquiring-slider-wrap">
+                  <input class="mt-acquiring-slider" type="range" min="100000" max="5000000" step="25000" value="750000" data-acq-slider="rev">
+                  <input class="mt-acquiring-input-num" type="number" min="50000" max="20000000" step="25000" value="750000" data-acq-num="rev">
+                </div>
+              </div>
+
+              <div class="mt-acquiring-row-2">
+                <div class="mt-acquiring-field-group">
+                  <div class="mt-acquiring-field-head">
+                    <label class="mt-acquiring-label">Ставка эквайринга банка</label>
+                    <span class="mt-acquiring-val-display" data-acq-val="acq-pct">2.2%</span>
+                  </div>
+                  <div class="mt-acquiring-slider-wrap">
+                    <input class="mt-acquiring-slider" type="range" min="1.0" max="3.5" step="0.1" value="2.2" data-acq-slider="acq-pct">
+                    <input class="mt-acquiring-input-num" type="number" min="0.5" max="5.0" step="0.1" value="2.2" data-acq-num="acq-pct">
+                  </div>
+                </div>
+
+                <div class="mt-acquiring-field-group">
+                  <div class="mt-acquiring-field-head">
+                    <label class="mt-acquiring-label">Аренда POS-терминалов</label>
+                    <span class="mt-acquiring-val-display" data-acq-val="pos-rent">1 500 ₽</span>
+                  </div>
+                  <div class="mt-acquiring-slider-wrap">
+                    <input class="mt-acquiring-slider" type="range" min="0" max="6000" step="250" value="1500" data-acq-slider="pos-rent">
+                    <input class="mt-acquiring-input-num" type="number" min="0" max="15000" step="250" value="1500" data-acq-num="pos-rent">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-acquiring-section-heading" style="margin-top:10px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
+                <span>Параметры Системы быстрых платежей (СБП)</span>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <div class="mt-acquiring-field-head">
+                  <label class="mt-acquiring-label">Целевая доля оплат по QR-коду СБП</label>
+                  <span class="mt-acquiring-val-display" data-acq-val="sbp-share">65%</span>
+                </div>
+                <div class="mt-acquiring-slider-wrap">
+                  <input class="mt-acquiring-slider" type="range" min="10" max="100" step="5" value="65" data-acq-slider="sbp-share">
+                  <input class="mt-acquiring-input-num" type="number" min="0" max="100" step="5" value="65" data-acq-num="sbp-share">
+                </div>
+              </div>
+
+              <div class="mt-acquiring-field-group">
+                <label class="mt-acquiring-label">Тариф СБП по типу деятельности</label>
+                <div class="mt-acquiring-toggle-group" role="tablist">
+                  <button class="mt-acquiring-toggle-btn is-active" type="button" data-sbp-rate="0.7">0.7% — Стандарт (салоны, СТО, сервис)</button>
+                  <button class="mt-acquiring-toggle-btn" type="button" data-sbp-rate="0.4">0.4% — Льготный (медицина, бытовые)</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RESULTS -->
+            <div class="mt-acquiring-card mt-acquiring-results-card">
+              <div class="mt-acquiring-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Расчет экономии и новая комиссия</span>
+              </div>
+
+              <div class="mt-acquiring-kpi-grid">
+                <div class="mt-acquiring-kpi-box mt-acquiring-kpi-box--accent">
+                  <span class="mt-acquiring-kpi-label">Чистая экономия в год</span>
+                  <div class="mt-acquiring-kpi-num mt-acquiring-kpi-num--accent" data-acq-res="yearly-savings">111 780 ₽</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="yearly-savings-sub">Экономия 9 315 ₽ каждый месяц</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Новые расходы на комиссии</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="monthly-cost">8 685 ₽/мес</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="monthly-cost-sub">Было 18 000 ₽ (−51.8%)</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Эффективная ставка комиссии</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="eff-rate">1.16%</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="eff-rate-sub">Вместо прежних 2.40% с терминалом</span>
+                </div>
+
+                <div class="mt-acquiring-kpi-box">
+                  <span class="mt-acquiring-kpi-label">Зачисление выручки на счет</span>
+                  <div class="mt-acquiring-kpi-num" data-acq-res="speed">15 секунд</div>
+                  <span class="mt-acquiring-kpi-sub" data-acq-res="speed-sub">Мгновенно 24/7 (вместо 1–3 дней)</span>
+                </div>
+              </div>
+
+              <!-- Breakdown -->
+              <div class="mt-acquiring-breakdown-box">
+                <div class="mt-acquiring-breakdown-title">Распределение средств при оплате услуг:</div>
+                <div class="mt-acquiring-bar-stack" aria-label="Диаграмма распределения комиссий">
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--savings" data-acq-bar="savings" style="width: 52%;"></div>
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--bank" data-acq-bar="bank" style="width: 40%;"></div>
+                  <div class="mt-acquiring-bar-seg mt-acquiring-bar-seg--pos" data-acq-bar="pos" style="width: 8%;"></div>
+                </div>
+                <div class="mt-acquiring-legend">
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--savings"></span>Сэкономлено в карман бизнеса:</span>
+                    <strong data-acq-leg="savings">9 315 ₽ (52%)</strong>
+                  </div>
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--bank"></span>Комиссии банка и СБП:</span>
+                    <strong data-acq-leg="bank">7 185 ₽ (40%)</strong>
+                  </div>
+                  <div class="mt-acquiring-legend-item">
+                    <span><span class="mt-acquiring-legend-dot mt-acquiring-legend-dot--pos"></span>Аренда терминала:</span>
+                    <strong data-acq-leg="pos">1 500 ₽ (8%)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Model Comparison -->
+              <div class="mt-acquiring-comparison-box">
+                <div class="mt-acquiring-comparison-title">Сравнение 3 моделей приема оплаты:</div>
+                <div class="mt-acquiring-comparison-grid">
+                  <div class="mt-acquiring-comparison-item">
+                    <span class="mt-acquiring-comparison-name">Только эквайринг</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model1">18 000 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">100% карты + аренда POS</span>
+                  </div>
+                  <div class="mt-acquiring-comparison-item is-selected">
+                    <span class="mt-acquiring-comparison-name">Гибрид (СБП + карты)</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model2">8 685 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">Текущий расчет (65% СБП)</span>
+                  </div>
+                  <div class="mt-acquiring-comparison-item">
+                    <span class="mt-acquiring-comparison-name">100% СБП в Молнии</span>
+                    <span class="mt-acquiring-comparison-val" data-acq-comp="model3">5 250 ₽/мес</span>
+                    <span class="mt-acquiring-comparison-note">Максимальная выгода, 0 ₽ POS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight Box -->
+              <div class="mt-acquiring-growth-box">
+                <div class="mt-acquiring-growth-title">
+                  <span>⚡ Умный расчет эффективности</span>
+                </div>
+                <p class="mt-acquiring-growth-text" data-acq-growth-text>
+                  При безналичном обороте <strong>750 000 ₽</strong> перевод части оплат на СБП сберегает <strong>111 780 ₽ в год</strong>. В платформе Молния динамический QR-код формируется на экране кассы или прямо в форме онлайн-записи: клиент подтверждает перевод в банковском приложении за 3 секунды, а деньги поступают на ваш расчетный счет без задержек на выходных.
+                </p>
+              </div>
+
+              <!-- Actions -->
+              <div class="mt-acquiring-actions">
+                <button class="mt-acquiring-copy-btn" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Скопировать расчет экономии</span>
+                </button>
+                <a class="mt-acquiring-cta-btn" href="#lead-form">
+                  <span>Подключить СБП и онлайн-оплату в Молнии →</span>
+                </a>
+              </div>
+
+              <!-- Rating -->
+              <div class="mt-tool-rating-wrap" style="margin-top:8px; padding-top:16px;">
+                <span class="mt-tool-rating-title">Оцените полезность калькулятора:</span>
+                <div class="mt-tool-rating" data-tool-rating="acquiring">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>4.98</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 680</span> оценок)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Преимущества СБП" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Почему бизнес переходит с классического эквайринга <span class="mt-overview-hook">на платежи по СБП</span></h2>
+          <p class="mt-section-sub">Снижение комиссии в 3–5 раз, мгновенное поступление денег и нулевая зависимость от импортных платежных терминалов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Ставка комиссии от 0.4% <span class="mt-overview-hook">вместо 2–2.5% у банков</span></h3>
+            <p>Банковский эквайринг забирает до 25 000 ₽ с каждого миллиона рублей оборота. При оплате по СБП комиссия составляет всего 4 000 – 7 000 ₽ с потолком не более 1 500 ₽ за чек.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сравнение ставок</span><span>Выгода</span></div>
+              <div class="mt-overview-price-row"><span>Банковский эквайринг</span><strong>2.2% (22 000 ₽)</strong></div>
+              <div class="mt-overview-price-row"><span>Оплата по СБП</span><strong>0.7% (7 000 ₽)</strong></div>
+              <div class="mt-overview-price-tag">+180 000 ₽ чистой экономии в год</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Деньги на счете за 15 секунд <span class="mt-overview-hook">без кассовых разрывов</span></h3>
+            <p>При обычном эквайринге выручка за пятницу и выходные поступает на расчетный счет только во вторник. По СБП средства приходят мгновенно в любое время суток 365 дней в году.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Скорость расчетов</span><span>24/7/365</span></div>
+              <div class="mt-overview-price-row"><span>Классический банк</span><strong>1–3 рабочих дня</strong></div>
+              <div class="mt-overview-price-row"><span>Система СБП</span><strong>15 секунд на р/с</strong></div>
+              <div class="mt-overview-price-tag">Выручка сразу доступна для закупок и зарплат</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Динамический QR на кассе <span class="mt-overview-hook">без ручного ввода сумм</span></h3>
+            <p>Клиенту не нужно вбивать сумму руками или ждать ответа терминала. QR-код формируется на экране кассы Молнии с точной суммой заказа и считывается за секунду.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Динамический QR</span><span>Автофискализация</span></div>
+              <div class="mt-overview-price-row"><span>Ошибки в суммах</span><strong>0% исключено</strong></div>
+              <div class="mt-overview-price-row"><span>Скорость оплаты</span><strong>3 секунды со смартфона</strong></div>
+              <div class="mt-overview-price-tag">Быстрое обслуживание без задержек в очереди</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Экономия на аренде POS-терминалов <span class="mt-overview-hook">до 36 000 ₽ в год</span></h3>
+            <p>Банки взимают от 1 000 до 3 000 ₽ в месяц за каждый терминал или штрафуют при обороте ниже порога. Для оплат по СБП достаточно экрана вашего смартфона, планшета или монитора.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Оборудование</span><span>Без аренды</span></div>
+              <div class="mt-overview-price-row"><span>Аренда 2 терминалов</span><strong>0 ₽ вместо 3 000 ₽/мес</strong></div>
+              <div class="mt-overview-price-row"><span>Замена чековой ленты</span><strong>Электронный чек</strong></div>
+              <div class="mt-overview-price-tag">Полная независимость от банковского «железа»</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Предоплата в онлайн-записи <span class="mt-overview-hook">в один клик со смартфона</span></h3>
+            <p>Снизьте неявки клиентов до нуля: при бронировании в виджете Молнии клиент оплачивает аванс через приложение своего банка без утомительного ввода данных пластиковой карты.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись</span><span>Молния</span></div>
+              <div class="mt-overview-message">
+                ⚡ Предоплата брони через СБП подтверждена: +1 500 ₽.
+                <span class="mt-overview-reaction">✓ Зачислено</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как подключить СБП" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как начать экономить на эквайринге <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">Простой переход на выгодные комиссии без волокиты, визитов в банк и смены расчетного счета.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Аудит</span>
+              <h3>Рассчитайте потери на действующих ставках эквайринга</h3>
+              <p>Определите ежемесячный объем безналичных платежей и фактическую комиссию банка с учетом скрытых платежей за обслуживание и аренду оборудования.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Аудит комиссий">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Аудит выплат</span>
+                <span class="mt-journey-proof-badge">Оцифровано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Текущий эквайринг</span><strong>2.2% + аренда</strong></div>
+              <div class="mt-journey-proof-row"><span>Потери на комиссии</span><strong>18 000 ₽/мес</strong></div>
+              <div class="mt-journey-proof-row"><span>Потенциал экономии</span><strong>До 120 000 ₽/год</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Подключение</span>
+              <h3>Активируйте прием СБП без смены расчетного счета</h3>
+              <p>Служба заботы Молнии дистанционно подключает модуль приема оплат. Менять действующий расчетный счет и переоформлять договоры в банке не требуется.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Подключение">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Активация шлюза</span>
+                <span class="mt-journey-proof-badge">15 минут</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Визиты в отделения</span><strong>0 визитов</strong></div>
+              <div class="mt-journey-proof-row"><span>Смена р/с</span><strong>Не требуется</strong></div>
+              <div class="mt-journey-proof-row"><span>Ставка комиссии</span><strong>От 0.4% за операцию</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Интеграция</span>
+              <h3>Выводите динамический QR на экран кассы и в онлайн-запись</h3>
+              <p>В момент расчета экран администратора мгновенно показывает персональный QR с точной суммой чека. Клиенту достаточно открыть камеру своего смартфона.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Интеграция">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Вывод QR-кода</span>
+                <span class="mt-journey-proof-badge">Автоматически</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Оплата телефоном</span><strong>Сбер, Т-Банк, ВТБ</strong></div>
+              <div class="mt-journey-proof-row"><span>Ручной ввод суммы</span><strong>Исключен</strong></div>
+              <div class="mt-journey-proof-row"><span>Фискализация</span><strong>Мгновенный чек</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Прибыль</span>
+              <h3>Получайте деньги за 15 секунд и сохраняйте прибыль</h3>
+              <p>Выручка поступает на расчетный счет прямо во время визита гостя. Никаких задержек на выходных, комиссия списывается по прозрачному фиксированному тарифу.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Прибыль">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Мгновенный баланс</span>
+                <span class="mt-journey-proof-badge">24/7</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Время зачисления</span><strong>15 секунд</strong></div>
+              <div class="mt-journey-proof-row"><span>Кассовые разрывы</span><strong>0 рублей</strong></div>
+              <div class="mt-journey-proof-row"><span>Дополнительный доход</span><strong>В кармане бизнеса</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс экономии на эквайринге" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс оптимизации эквайринга</div>
+            <h2 class="mt-case-title">Алексей Мельников, сооснователь сети детейлинг-центров</h2>
+            <blockquote class="mt-case-quote">
+              «У нас средний чек на оклейку бронепленкой и восстановительную полировку кузова — 45 000 – 90 000 ₽. Банк брал 2.1% торгового эквайринга, а деньги за машины, сданные в пятницу и субботу, падали на счет только во вторник после обеда. Поставили динамический QR от Молнии на экран администратора и настроили прием предоплат по СБП в онлайн-записи: 68% клиентов с удовольствием платят телефоном через Сбербанк или Т-Банк. Экономия на банковских комиссиях составила 142 000 рублей за первый же год, а кассовые разрывы на выходных исчезли навсегда.»
+            </blockquote>
+            <div class="mt-case-author">
+              Алексей Мельников <span>· Сооснователь сети детейлинг-центров, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+142 <small>тыс. ₽</small></span>
+              <span class="mt-case-label">Чистая годовая экономия на банковских комиссиях после подключения СБП</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">15 <small>сек</small></span>
+              <span class="mt-case-label">Время фактического зачисления выручки на расчетный счет даже в праздники</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>₽</small></span>
+              <span class="mt-case-label">Расходов на покупку и ежемесячную аренду банковских POS-терминалов</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об эквайринге, тарифах СБП и приеме платежей</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Подключите выгодные платежи в Молнии</h3>
+            <p>Поможем подключить прием оплат по СБП (0.4%–0.7%) и онлайн-эквайринг к вашей кассе за 15 минут без смены банка.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">Мы используем файлы cookie для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.</p>
+      <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
+    </div>
+
+    <script src="/script.js?v=20261024-acq1" defer></script>
   </div>
 </body>
 </html>'''
@@ -13521,6 +14160,12 @@ def sync_sitemap():
         changed = True
         print("Added /pricelist to sitemap.xml")
 
+    if "https://molniya-tech.ru/acquiring" not in content:
+        url_entry = """  <url>\n    <loc>https://molniya-tech.ru/acquiring</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /acquiring to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -13539,6 +14184,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Калькулятор эквайринга и экономии на СБП для малого бизнеса",
+        "slug": "acquiring",
+        "description": "Бесплатный интерактивный калькулятор комиссий торгового и интернет-эквайринга: расчет переплат банку, экономии при переходе на оплату по QR-кодам СБП (0.4%–0.7%) и мгновенного зачисления средств за 15 секунд.",
+        "pub_date": datetime(2026, 10, 24, 13, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
     {
         "title": "Онлайн-конструктор прайс-листов услуг с печатью и экспортом в PDF",
         "slug": "pricelist",
@@ -13955,7 +14607,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14197,7 +14849,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 """
@@ -14234,7 +14886,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14294,7 +14946,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 """
@@ -14363,7 +15015,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14554,7 +15206,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 """
@@ -14614,7 +15266,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14898,7 +15550,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 """
@@ -15045,7 +15697,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15404,7 +16056,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -15551,7 +16203,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15910,7 +16562,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -16040,7 +16692,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16386,7 +17038,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -16516,7 +17168,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -16862,7 +17514,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -16992,7 +17644,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17338,7 +17990,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -17468,7 +18120,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17814,7 +18466,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -17944,7 +18596,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18290,7 +18942,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -18420,7 +19072,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18766,7 +19418,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -18896,7 +19548,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19242,7 +19894,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -19372,7 +20024,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19718,7 +20370,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -19848,7 +20500,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-pl1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20194,7 +20846,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-pl1"></script>
+  <script src="/script.js?v=20261024-acq1"></script>
 </body>
 </html>
 '''
@@ -20392,6 +21044,11 @@ def main():
     pricelist_html = build_pricelist_page()
     (ROOT_DIR / "pricelist.html").write_text(pricelist_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'pricelist.html'}")
+
+    print("Building acquiring calculator page: /acquiring.html...")
+    acquiring_html = build_acquiring_page()
+    (ROOT_DIR / "acquiring.html").write_text(acquiring_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'acquiring.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
