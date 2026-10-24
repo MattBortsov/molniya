@@ -741,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1118,7 +1118,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -1269,7 +1269,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1646,7 +1646,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -1763,7 +1763,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2186,7 +2186,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -2331,7 +2331,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2768,7 +2768,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -2913,7 +2913,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3290,7 +3290,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -3435,7 +3435,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3844,7 +3844,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -3990,7 +3990,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4367,7 +4367,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -4513,7 +4513,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4890,7 +4890,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -5038,7 +5038,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5415,7 +5415,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -5448,7 +5448,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5507,7 +5507,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 """
@@ -5658,7 +5658,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6095,7 +6095,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -6247,7 +6247,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6679,7 +6679,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -6831,7 +6831,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7352,7 +7352,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -7504,7 +7504,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7913,7 +7913,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -8063,7 +8063,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8508,7 +8508,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -8658,7 +8658,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9200,7 +9200,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -9346,7 +9346,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9723,7 +9723,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -9868,7 +9868,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10247,7 +10247,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -10392,7 +10392,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10771,7 +10771,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -10925,7 +10925,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11298,7 +11298,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -11438,7 +11438,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11879,7 +11879,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -12020,7 +12020,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12466,7 +12466,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -12618,7 +12618,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13029,7 +13029,7 @@ def build_pricelist_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-tools1" defer></script>
+    <script src="/script.js?v=20261024-sh1" defer></script>
   </div>
 </body>
 </html>'''
@@ -13180,7 +13180,7 @@ def build_acquiring_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13667,7 +13667,7 @@ def build_acquiring_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-tools1" defer></script>
+    <script src="/script.js?v=20261024-sh1" defer></script>
   </div>
 </body>
 </html>'''
@@ -13689,7 +13689,7 @@ def build_tools_page() -> str:
 
     title = "Бесплатные онлайн-инструменты для сервисного бизнеса — калькуляторы и генераторы | Молния"
     description = (
-        "8 бесплатных онлайн-инструментов для малого бизнеса в сфере услуг: генератор QR-кодов, конструктор прайс-листов с печатью A4, "
+        "9 бесплатных онлайн-инструментов для малого бизнеса в сфере услуг: генератор QR-кодов, конструктор прайс-листов с печатью A4, генератор графиков смен мастеров 2/2 и 3/3, "
         "калькуляторы сдельной зарплаты, эквайринга, маржинальности, проверка контрагентов по ИНН и производственный календарь 2026."
     )
     canonical = "https://molniya-tech.ru/tools"
@@ -13758,6 +13758,14 @@ def build_tools_page() -> str:
             "desc": "Рабочие, праздничные и сокращенные дни 2026 года, квартальные нормы рабочего времени при 40, 36 и 24-часовой неделе для кадрового учета.",
             "img": "/assets/img/tools/calendar.jpg",
             "btn_text": "Открыть календарь",
+        },
+        {
+            "slug": "shifts",
+            "title": "Генератор графиков смен 2/2 и 3/3",
+            "badges": ["2/2, 3/3, 5/2", "Печать А4", "Бесплатно"],
+            "desc": "Составление расписания работы сотрудников на месяц: чередование смен, автоподсчет отработанных часов, подсветка недоукомплектованности и экспорт в Telegram.",
+            "img": "/assets/img/tools/shifts.jpg",
+            "btn_text": "Составить график",
         },
     ]
 
@@ -13898,7 +13906,7 @@ def build_tools_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14180,7 +14188,7 @@ def build_tools_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-tools1" defer></script>
+    <script src="/script.js?v=20261024-sh1" defer></script>
   </div>
 </body>
 </html>'''
@@ -14254,6 +14262,556 @@ def sync_navigation_to_blog():
 
     BLOG_INDEX_HTML.write_text(content, encoding="utf-8")
     print("Updated navigation, footer, and banner in blog/index.html")
+
+
+def build_shifts_page() -> str:
+    """Builds the shift schedule maker tool page: /shifts."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "shifts",
+        'Управляйте расписанием мастеров и онлайн-записью <span class="mt-hero-accent">в единой платформе Молния</span>',
+        "Оставьте контакты — покажем, как автоматизировать журнал записи, исключить накладки в расписании мастеров и подключить виджет онлайн-бронирования за 15 минут.",
+    )
+
+    title = "Генератор графиков смен 2/2 и 3/3 онлайн — расписание сотрудников с печатью А4 | Молния"
+    description = (
+        "Бесплатный онлайн-генератор графиков смен 2/2, 3/3 и 5/2 для салонов красоты, барбершопов, автосервисов и клиник: "
+        "чередование смен, автоподсчет отработанных часов, подсветка недоукомплектованности, чистая печать на А4 и экспорт в Telegram."
+    )
+    canonical = "https://molniya-tech.ru/shifts"
+
+    faqs = [
+        (
+            "Как составить график смен 2/2 для двух или четырех мастеров?",
+            "Для двух специалистов один мастер работает по шаблону «Смена А» (1-й и 2-й день месяца — рабочие, затем 2 выходных), а второй — по шаблону «Смена Б» (начинает с выходных, а работает в 3-й и 4-й дни). Если в смене должно быть одновременно двое сотрудников, к каждой группе добавляется по второму мастеру. В генераторе Молнии вы просто выбираете шаблон «2/2 (Смена А)» или «2/2 (Смена Б)», и график на весь месяц заполняется за одну секунду.",
+        ),
+        (
+            "Сколько часов в месяц должен отрабатывать мастер по нормам ТК РФ?",
+            "По Трудовому кодексу РФ нормальная продолжительность рабочей недели составляет 40 часов (в среднем 160–168 рабочих часов в месяц при пятидневке). При сменном графике (например, 2/2 по 11 или 12 часов) применяется суммированный учет рабочего времени: за месяц у мастера выходит около 15 смен, то есть 165–180 часов. Все часы сверх производственной нормы за учетный период оплачиваются как сверхурочные.",
+        ),
+        (
+            "В чем разница между графиками смен 2/2 и 3/3 для сферы услуг?",
+            "График 2/2 — самый популярный и физиологически комфортный для мастеров маникюра, парикмахеров и барберов: два напряженных рабочих дня чередуются с двумя днями отдыха, что предотвращает профессиональное выгорание. График 3/3 чаще выбирают автосервисы, детейлинг-центры и круглосуточные студии с длинным циклом обслуживания: смена длится дольше, но мастер получает полноценный 3-дневный непрерывный блок выходных.",
+        ),
+        (
+            "Как распечатать готовое расписание на одном листе А4 в альбомной ориентации?",
+            "Нажмите кнопку «Распечатать A4 (Альбомная)». Мы заранее прописали специальные CSS-стили печати: все управляющие кнопки, формы и меню автоматически скроются, а календарная сетка со всеми мастерами и днями месяца аккуратно поместится на одном печатном листе для размещения на доске объявлений или стойке администратора.",
+        ),
+        (
+            "Можно ли отправить готовый график в рабочий чат сотрудников в Telegram?",
+            "Да, нажмите «Скопировать в Telegram». Инструмент мгновенно сформирует структурированный текстовый список с разбивкой по каждому мастеру: даты рабочих дней, суммарное количество смен и итоговые часы за выбранный месяц. Текст копируется в буфер обмена — вам остается только вставить его в рабочий чат студии или автосервиса.",
+        ),
+        (
+            "Как настроить график работы мастеров в платформе онлайн-записи Молния?",
+            "В платформе Молния график настраивается в визуальном журнале: вы задаете интервалы работы каждого мастера, перерывы на обед и кабинеты/кресла. Клиенты в онлайн-записи видят только свободные слоты выбранного специалиста, а при отпусках или заменах расписание мгновенно обновляется для всех каналов бронирования.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Генератор графиков смен", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Генератор графиков смен 2/2 и 3/3 Молния",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.97",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "1420",
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный онлайн-генератор графиков смен сотрудников",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Генератор графиков смен">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.97 из 5 на основе 1 420 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.97</strong> (1 420 составленных графиков управляющих)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Генератор графиков смен мастеров<br><span class="mt-hero-accent">2/2, 3/3 и 5/2 с печатью А4</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Составьте сбалансированное расписание сотрудников на любой месяц: готовые шаблоны чередования смен, автоподсчет отработанных часов, ручная корректировка в один клик и экспорт в Telegram или на печать.</p>
+              <a class="mt-btn mt-btn-hero" href="#calculator">Составить график смен ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Возможности генератора смен">
+              <li class="mt-facet">
+                <span class="mt-facet-name">5 отраслевых шаблонов</span>
+                <span class="mt-facet-note">салоны, барбершопы, автосервисы, детейлинг, клининг</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Схемы 2/2, 3/3 и 5/2</span>
+                <span class="mt-facet-note">автоматическое чередование смен А и Б</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Учет баланса часов</span>
+                <span class="mt-facet-note">автоподсчет смен и рабочего времени по ТК РФ</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Печать A4 & Telegram</span>
+                <span class="mt-facet-note">аккуратная альбомная печать и быстрый экспорт в чат</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SHIFTS MAKER APP -->
+      <section class="mt-section mt-reveal" id="calculator" data-screen-label="Интерактивный конструктор смен" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Интерактивный конструктор расписания <span class="mt-overview-hook">и баланса рабочего времени</span></h2>
+          <p class="mt-section-sub">Выберите отраслевой профиль или добавьте сотрудников вручную — кликайте по ячейкам для быстрой замены смен на выходные.</p>
+        </div>
+
+        <div id="mt-shifts-app" class="mt-shifts-wrap">
+
+          <div class="mt-shifts-presets-bar">
+            <span class="mt-shifts-presets-label">Отраслевые шаблоны:</span>
+            <div class="mt-shifts-presets" role="tablist" aria-label="Выбор отраслевого шаблона">
+              <button class="mt-shifts-preset-btn is-active" type="button" data-shifts-preset="beauty">💇 Салон красоты (2/2)</button>
+              <button class="mt-shifts-preset-btn" type="button" data-shifts-preset="barber">💈 Барбершоп (2/2)</button>
+              <button class="mt-shifts-preset-btn" type="button" data-shifts-preset="auto">🚗 Автосервис / СТО</button>
+              <button class="mt-shifts-preset-btn" type="button" data-shifts-preset="detailing">🧼 Детейлинг / Мойка</button>
+              <button class="mt-shifts-preset-btn" type="button" data-shifts-preset="cleaning">🧹 Клининг</button>
+            </div>
+          </div>
+
+          <div class="mt-shifts-layout">
+            <div class="mt-shifts-card">
+
+              <div class="mt-shifts-controls-bar">
+                <div class="mt-shifts-month-selects">
+                  <label for="mt-sh-month" style="font-size:12.5px; font-weight:600; color:var(--mt-text-muted);">Месяц:</label>
+                  <select id="mt-sh-month" class="mt-shifts-select" aria-label="Выбор месяца">
+                    <option value="0">Январь</option>
+                    <option value="1">Февраль</option>
+                    <option value="2">Март</option>
+                    <option value="3">Апрель</option>
+                    <option value="4">Май</option>
+                    <option value="5">Июнь</option>
+                    <option value="6">Июль</option>
+                    <option value="7">Август</option>
+                    <option value="8">Сентябрь</option>
+                    <option value="9">Октябрь</option>
+                    <option value="10" selected>Ноябрь</option>
+                    <option value="11">Декабрь</option>
+                  </select>
+
+                  <label for="mt-sh-year" style="font-size:12.5px; font-weight:600; color:var(--mt-text-muted);">Год:</label>
+                  <select id="mt-sh-year" class="mt-shifts-select" aria-label="Выбор года">
+                    <option value="2025">2025</option>
+                    <option value="2026" selected>2026</option>
+                    <option value="2027">2027</option>
+                  </select>
+
+                  <label for="mt-sh-hours" style="font-size:12.5px; font-weight:600; color:var(--mt-text-muted);">Смена (ч):</label>
+                  <input id="mt-sh-hours" class="mt-shifts-input" type="number" min="4" max="24" value="11" style="width: 70px;" aria-label="Длительность смены в часах">
+                </div>
+
+                <div class="mt-shifts-actions-bar">
+                  <button id="mt-sh-print-btn" class="mt-shifts-print-btn" type="button" aria-label="Распечатать график смен на А4">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                    <span>Распечатать A4 (Альбомная)</span>
+                  </button>
+                  <button id="mt-sh-copy-btn" class="mt-shifts-copy-btn" type="button" aria-label="Скопировать график для Telegram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span>Скопировать в Telegram</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Add Master Form -->
+              <div class="mt-shifts-add-form">
+                <label for="mt-sh-new-name" class="visually-hidden">ФИО или должность сотрудника</label>
+                <input id="mt-sh-new-name" class="mt-shifts-input" type="text" placeholder="Имя мастера (напр. Дарья — Бровист)" style="flex:1; min-width:220px;">
+                <label for="mt-sh-new-pattern" class="visually-hidden">Шаблон чередования смен</label>
+                <select id="mt-sh-new-pattern" class="mt-shifts-select" style="min-width:180px;">
+                  <option value="2_2_a">График 2/2 (Смена А: дни 1,2)</option>
+                  <option value="2_2_b">График 2/2 (Смена Б: дни 3,4)</option>
+                  <option value="3_3_a">График 3/3 (Смена А: дни 1-3)</option>
+                  <option value="3_3_b">График 3/3 (Смена Б: дни 4-6)</option>
+                  <option value="5_2">Пятидневка 5/2 (Пн–Пт)</option>
+                </select>
+                <button id="mt-sh-add-btn" class="mt-shifts-add-btn" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Добавить мастера</span>
+                </button>
+              </div>
+
+              <!-- Table Container -->
+              <div id="mt-shifts-table-container" class="mt-shifts-table-container"></div>
+
+              <!-- Legend -->
+              <div class="mt-shifts-legend-bar">
+                <div class="mt-shifts-legend-items">
+                  <span class="mt-shifts-legend-chip">
+                    <span class="mt-shifts-chip-box mt-shifts-chip-work">В</span>
+                    <span>Рабочая смена (кликните на ячейку, чтобы изменить)</span>
+                  </span>
+                  <span class="mt-shifts-legend-chip">
+                    <span class="mt-shifts-chip-box mt-shifts-chip-rest">·</span>
+                    <span>Выходной день</span>
+                  </span>
+                </div>
+                <div class="mt-shifts-legend-note">
+                  <span>💡 Подсчет нормы часов ведется автоматически с учетом длительности смены.</span>
+                </div>
+              </div>
+
+              <!-- Rating -->
+              <div class="mt-tool-rating-wrap" style="margin-top:24px; padding-top:16px;">
+                <span class="mt-tool-rating-title">Оцените удобство генератора графиков:</span>
+                <div class="mt-tool-rating" data-tool-rating="shifts">
+                  <div class="mt-tool-rating-stars" role="radiogroup" aria-label="Оцените инструмент от 1 до 5 звезд">
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="1" aria-label="1 звезда">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="2" aria-label="2 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="3" aria-label="3 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="4" aria-label="4 звезды">★</button>
+                    <button class="mt-tool-rating-star is-active" type="button" data-star="5" aria-label="5 звезд">★</button>
+                  </div>
+                  <div class="mt-tool-rating-score">
+                    <strong class="mt-tool-rating-val" data-rating-val>4.97</strong>
+                    <span class="mt-tool-rating-sep">/</span>
+                    <span>5</span>
+                  </div>
+                  <span class="mt-tool-rating-count">(<span data-rating-count>1 420</span> оценок)</span>
+                  <span class="mt-tool-rating-status" data-rating-status aria-live="polite"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Преимущества генератора смен" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Сбалансированное расписание без накладок <span class="mt-overview-hook">и споров в коллективе</span></h2>
+          <p class="mt-section-sub">Прозрачное чередование рабочих смен, справедливое распределение выходных и соблюдение норм трудового законодательства.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Чередование 2/2, 3/3 и 5/2 <span class="mt-overview-hook">в один клик</span></h3>
+            <p>Забудьте о ручном заполнении ячеек в Excel. Выберите готовый шаблон смены А или смены Б — система автоматически расставит рабочие дни на весь месяц вперед с учетом длины месяца.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена А / Смена Б</span><span>Автоцикл</span></div>
+              <div class="mt-overview-price-row"><span>График мастера 1</span><strong>2 через 2 (А)</strong></div>
+              <div class="mt-overview-price-row"><span>График мастера 2</span><strong>2 через 2 (Б)</strong></div>
+              <div class="mt-overview-price-tag">Полное перекрытие смен без пробелов</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Интерактивная замена дней <span class="mt-overview-hook">по клику</span></h3>
+            <p>Мастер попросил поменяться днями или уходит на сессию? Просто кликните по нужной дате в таблице: статус мгновенно переключится между рабочим днем и выходным с пересчетом часов.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Гибкость</span><span>Редактирование</span></div>
+              <div class="mt-overview-price-row"><span>Переключение дня</span><strong>1 клик по ячейке</strong></div>
+              <div class="mt-overview-price-row"><span>Пересчет часов</span><strong>Мгновенно</strong></div>
+              <div class="mt-overview-price-tag">Быстрый учет подмен и больничных</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Контроль баланса часов <span class="mt-overview-hook">и норм ТК РФ</span></h3>
+            <p>Генератор суммирует фактически отработанные смены и часы каждого сотрудника за месяц. Вы сразу видите переработки и недоработки до начисления зарплаты и аванса.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Баланс часов</span><span>Норма ТК</span></div>
+              <div class="mt-overview-price-row"><span>Смен в месяце</span><strong>15 смен</strong></div>
+              <div class="mt-overview-price-row"><span>Отработано часов</span><strong>165 часов (норма)</strong></div>
+              <div class="mt-overview-price-tag">Прозрачная база для сдельного расчета</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Печать на листе A4 <span class="mt-overview-hook">в альбомном формате</span></h3>
+            <p>Специальная верстка адаптирует расписание ровно под ширину листа A4. Никаких обрезанных последних колонок месяца, лишних веб-кнопок или съехавших шрифтов на распечатке.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Печать A4</span><span>Готовый бланк</span></div>
+              <div class="mt-overview-price-row"><span>Формат страницы</span><strong>A4 Landscape</strong></div>
+              <div class="mt-overview-price-row"><span>Интерфейс в печати</span><strong>Скрыт автоматически</strong></div>
+              <div class="mt-overview-price-tag">Идеальный лист на доску объявлений</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Мгновенный экспорт в Telegram <span class="mt-overview-hook">для команды</span></h3>
+            <p>Нажмите одну кнопку — структурированное расписание всех специалистов с датами рабочих смен и часами скопируется в буфер обмена для отправки в групповой чат мастеров.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Рабочий чат</span><span>Telegram</span></div>
+              <div class="mt-overview-message">
+                📅 График смен: Ноябрь 2026. Анна (15 смен): 1, 2, 5, 6, 9...
+                <span class="mt-overview-reaction">✓ Скопировано</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как составить график" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как составить график смен на месяц <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">От выбора периода до готового печатного бланка на стойку администратора за пару минут.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Период</span>
+              <h3>Выберите месяц, год и длину рабочей смены</h3>
+              <p>Укажите расчетный месяц (количество дней определится автоматически) и стандартную продолжительность смены — например, 10, 11 или 12 часов.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Параметры">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Календарь смены</span>
+                <span class="mt-journey-proof-badge">Шаг 1</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Длина смены</span><strong>11 часов</strong></div>
+              <div class="mt-journey-proof-row"><span>Дней в месяце</span><strong>30 / 31 день</strong></div>
+              <div class="mt-journey-proof-row"><span>Выходные дни</span><strong>Подсвечены</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Команда</span>
+              <h3>Добавьте сотрудников и назначьте чередование</h3>
+              <p>Распределите мастеров по сменам А и Б: пока первая смена работает два дня подряд, вторая смена отдыхает. Для постоянного персонала используйте пятидневку 5/2.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Смены">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Распределение смен</span>
+                <span class="mt-journey-proof-badge">Шаг 2</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Смена А</span><strong>Дни 1, 2, 5, 6...</strong></div>
+              <div class="mt-journey-proof-row"><span>Смена Б</span><strong>Дни 3, 4, 7, 8...</strong></div>
+              <div class="mt-journey-proof-row"><span>Пятидневка</span><strong>Пн – Пт (5/2)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Коррекция</span>
+              <h3>Учтите персональные пожелания и подмены</h3>
+              <p>Кликайте по нужным числам, чтобы быстро поменять мастера сменами, зафиксировать отгул или добавить дополнительный рабочий день в пиковую пятницу.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Коррекция">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Персональные дни</span>
+                <span class="mt-journey-proof-badge">Шаг 3</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Переключение дня</span><strong>1 клик мышью</strong></div>
+              <div class="mt-journey-proof-row"><span>Строка укомплектованности</span><strong>Контроль смены</strong></div>
+              <div class="mt-journey-proof-row"><span>Дефицит сотрудников</span><strong>Подсветка красным</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Экспорт</span>
+              <h3>Распечатайте расписание или отправьте в чат</h3>
+              <p>Выведите аккуратный бланк на принтер в один клик или отправьте сводку в групповой чат Telegram: каждый мастер видит свои даты и количество часов.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Экспорт">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Готовый результат</span>
+                <span class="mt-journey-proof-badge">Шаг 4</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Печать А4</span><strong>Без полей и кнопок</strong></div>
+              <div class="mt-journey-proof-row"><span>Текст в Telegram</span><strong>1 клик копирования</strong></div>
+              <div class="mt-journey-proof-row"><span>Онлайн-запись</span><strong>Синхронизация в Молнии</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс оптимизации расписания" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс управления персоналом</div>
+            <h2 class="mt-case-title">Ольга Захарова, управляющая сетью студий красоты</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше каждый конец месяца превращался в хаос: мастера спорили о выходных, в блокноте администратора появлялись исправления корректором, а в пиковые пятницы мы оставались с половиной команды. С генератором графиков Молнии формируем расписание 2/2 за 5 минут: сразу видны смены А и Б, баланс часов каждого стилиста и колориста. Печатаем аккуратный лист на стойку ресепшн и скидываем текст в рабочий чат Telegram — никаких накладок и пустых кресел уже полгода.»
+            </blockquote>
+            <div class="mt-case-author">
+              Ольга Захарова <span>· Управляющая сетью студий красоты, <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">15 <small>смен</small></span>
+              <span class="mt-case-label">Сбалансированная и справедливая нагрузка на каждого мастера в течение месяца</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>накладок</small></span>
+              <span class="mt-case-label">Полное исключение пустых окон и дефицита специалистов в пиковые дни записи</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">5 <small>мин</small></span>
+              <span class="mt-case-label">Время составления, проверки и согласования расписания команды на месяц вперед</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы о составлении графиков смен и расписания</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Управляйте мастерами и записями в Молнии</h3>
+            <p>Поможем настроить электронный журнал записи, индивидуальные графики мастеров, онлайн-бронирование и автоматический расчет сдельной зарплаты за 15 минут.</p>
+            <div class="mt-before-start-contacts">
+              <div class="mt-before-start-contact-item">
+                <span class="mt-before-start-contact-label">Консультация</span>
+                <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+              </div>
+              <div class="mt-before-start-contact-item">
+                <span class="mt-before-start-contact-label">Поддержка в Telegram</span>
+                <a href="https://t.me/molniya_support" target="_blank" rel="noopener">@molniya_support</a>
+              </div>
+            </div>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+  </div>
+
+  <script src="/script.js?v=20261024-sh1"></script>
+</body>
+</html>'''
+
+    return page_html
 
 
 def sync_sitemap():
@@ -14676,6 +15234,17 @@ def sync_sitemap():
         changed = True
         print("Added /acquiring to sitemap.xml")
 
+    if "https://molniya-tech.ru/shifts" not in content:
+        url_entry = """  <url>
+    <loc>https://molniya-tech.ru/shifts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /shifts to sitemap.xml")
+
     if "https://molniya-tech.ru/tools" not in content:
         url_entry = """  <url>\n    <loc>https://molniya-tech.ru/tools</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
         content = content.replace("</urlset>", url_entry + "</urlset>")
@@ -14700,6 +15269,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4",
+        "slug": "shifts",
+        "description": "Бесплатный онлайн-инструмент для составления расписания сотрудников: чередование смен 2/2, 3/3 и 5/2, учет рабочих часов, интерактивное редактирование и экспорт для печати.",
+        "pub_date": datetime(2026, 10, 24, 15, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
     {
         "title": "Каталог бесплатных инструментов и калькуляторов для сервисного бизнеса",
         "slug": "tools",
@@ -15130,7 +15706,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15372,7 +15948,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 """
@@ -15409,7 +15985,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15469,7 +16045,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 """
@@ -15538,7 +16114,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15729,7 +16305,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 """
@@ -15789,7 +16365,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16073,7 +16649,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 """
@@ -16220,7 +16796,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16579,7 +17155,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -16726,7 +17302,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -17085,7 +17661,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -17215,7 +17791,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17561,7 +18137,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -17691,7 +18267,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18037,7 +18613,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -18167,7 +18743,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18513,7 +19089,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -18643,7 +19219,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18989,7 +19565,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -19119,7 +19695,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19465,7 +20041,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -19595,7 +20171,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19941,7 +20517,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -20071,7 +20647,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20417,7 +20993,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -20547,7 +21123,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20893,7 +21469,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -21023,7 +21599,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21369,7 +21945,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools1"></script>
+  <script src="/script.js?v=20261024-sh1"></script>
 </body>
 </html>
 '''
@@ -21572,6 +22148,11 @@ def main():
     acquiring_html = build_acquiring_page()
     (ROOT_DIR / "acquiring.html").write_text(acquiring_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'acquiring.html'}")
+
+    print("Building shifts schedule maker page: /shifts.html...")
+    shifts_html = build_shifts_page()
+    (ROOT_DIR / "shifts.html").write_text(shifts_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'shifts.html'}")
 
     print("Building tools hub catalog page: /tools.html...")
     tools_html = build_tools_page()

@@ -8927,6 +8927,390 @@ a.mt-origin-model-row:focus-visible {
   transform: translateX(3px);
 }
 
+
+/* ============================================================
+   Shifts & Schedule Maker Tool (/shifts)
+   ============================================================ */
+
+.mt-shifts-wrap {
+  margin-top: 32px;
+}
+
+.mt-shifts-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.mt-shifts-presets-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mt-text-muted);
+}
+
+.mt-shifts-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mt-shifts-preset-btn {
+  padding: 8px 16px;
+  border-radius: var(--mt-radius-pill);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+}
+
+.mt-shifts-preset-btn:hover {
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+}
+
+.mt-shifts-preset-btn.is-active {
+  background: var(--mt-tint-accent);
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+  font-weight: 600;
+}
+
+.mt-shifts-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mt-shifts-card {
+  background: var(--mt-surface);
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-2xl);
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.mt-shifts-controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--mt-border);
+  margin-bottom: 20px;
+}
+
+.mt-shifts-month-selects {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mt-shifts-select,
+.mt-shifts-input {
+  padding: 8px 14px;
+  border-radius: var(--mt-radius-lg);
+  border: 1px solid var(--mt-border);
+  background: var(--mt-surface-2);
+  color: var(--mt-text-strong);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color .15s ease;
+}
+
+.mt-shifts-select:focus,
+.mt-shifts-input:focus {
+  border-color: var(--mt-accent);
+  background: #fff;
+}
+
+.mt-shifts-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mt-shifts-print-btn,
+.mt-shifts-copy-btn {
+  padding: 9px 18px;
+  border-radius: var(--mt-radius-xl);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .15s ease;
+  box-sizing: border-box;
+}
+
+.mt-shifts-print-btn {
+  background: var(--mt-accent);
+  border: 1px solid var(--mt-accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(210, 99, 74, 0.25);
+}
+
+.mt-shifts-print-btn:hover {
+  background: #B8442E;
+  border-color: #B8442E;
+  transform: translateY(-1px);
+}
+
+.mt-shifts-copy-btn {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  color: var(--mt-text-strong);
+}
+
+.mt-shifts-copy-btn:hover {
+  border-color: var(--mt-border-accent);
+  color: var(--mt-accent);
+}
+
+.mt-shifts-copy-btn.copied {
+  background: #2D6A4F;
+  border-color: #2D6A4F;
+  color: #fff;
+}
+
+/* Master Add Form */
+.mt-shifts-add-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.mt-shifts-add-btn {
+  padding: 8px 16px;
+  border-radius: var(--mt-radius-lg);
+  border: 1px solid var(--mt-border-accent);
+  background: var(--mt-tint-accent);
+  color: var(--mt-accent);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+}
+
+.mt-shifts-add-btn:hover {
+  background: var(--mt-accent);
+  color: #fff;
+}
+
+/* Schedule Table */
+.mt-shifts-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--mt-border);
+  border-radius: var(--mt-radius-xl);
+  background: var(--mt-surface);
+}
+
+.mt-shifts-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mt-shifts-table th,
+.mt-shifts-table td {
+  padding: 8px 4px;
+  border-right: 1px solid var(--mt-border);
+  border-bottom: 1px solid var(--mt-border);
+  vertical-align: middle;
+}
+
+.mt-shifts-table th {
+  background: var(--mt-surface-2);
+  color: var(--mt-text-strong);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.mt-shifts-col-master {
+  width: 180px;
+  min-width: 180px;
+  text-align: left !important;
+  padding-left: 12px !important;
+  font-weight: 700;
+  color: var(--mt-text-heading);
+}
+
+.mt-shifts-col-stat {
+  width: 65px;
+  min-width: 65px;
+  font-weight: 700;
+  color: var(--mt-text-strong);
+}
+
+.mt-shifts-day-cell {
+  width: 26px;
+  min-width: 26px;
+  height: 32px;
+  cursor: pointer;
+  transition: background-color .15s ease;
+  user-select: none;
+}
+
+.mt-shifts-day-cell:hover {
+  filter: brightness(0.95);
+}
+
+.mt-shifts-cell-work {
+  background: #D2634A;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.mt-shifts-cell-rest {
+  background: transparent;
+  color: var(--mt-text-faint);
+  font-weight: 500;
+}
+
+.mt-shifts-cell-weekend-col {
+  background: rgba(210, 99, 74, 0.04);
+}
+
+.mt-shifts-table th.is-weekend {
+  color: var(--mt-accent);
+}
+
+.mt-shifts-del-btn {
+  background: none;
+  border: none;
+  color: var(--mt-text-faint);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all .15s ease;
+  margin-right: 4px;
+}
+
+.mt-shifts-del-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.mt-shifts-coverage-row {
+  background: var(--mt-surface-2);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.mt-shifts-coverage-low {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* Legend & Summary */
+.mt-shifts-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--mt-text-muted);
+}
+
+.mt-shifts-legend-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mt-shifts-legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mt-shifts-chip-box {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 18px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.mt-shifts-chip-work {
+  background: #D2634A;
+  color: #fff;
+}
+
+.mt-shifts-chip-rest {
+  background: var(--mt-surface-2);
+  border: 1px solid var(--mt-border);
+  color: var(--mt-text-muted);
+}
+
+/* Print Overrides for Shifts */
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .mt-shifts-presets-bar,
+  .mt-shifts-controls-bar,
+  .mt-shifts-add-form,
+  .mt-shifts-actions-bar,
+  .mt-shifts-del-btn {
+    display: none !important;
+  }
+  .mt-shifts-card {
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  .mt-shifts-table-container {
+    border: 1px solid #333 !important;
+    border-radius: 0 !important;
+  }
+  .mt-shifts-table th,
+  .mt-shifts-table td {
+    border-color: #555 !important;
+    padding: 4px 2px !important;
+    font-size: 9pt !important;
+  }
+  .mt-shifts-cell-work {
+    background: #444 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+}
+
 /* ============================================================
    PRINT MEDIA STYLES
    ============================================================ */

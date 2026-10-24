@@ -53,6 +53,7 @@ FORM_NAMES = {
     "pricelist": "Конструктор прайс-листов — бесплатный доступ",
     "acquiring": "Калькулятор эквайринга — бесплатный доступ",
     "tools": "Инструменты для бизнеса — бесплатный доступ",
+    "shifts": "Генератор графиков смен — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -93,6 +94,7 @@ SOURCE_PATHS = {
     "pricelist": "/pricelist",
     "acquiring": "/acquiring",
     "tools": "/tools",
+    "shifts": "/shifts",
 }
 
 

@@ -3932,6 +3932,349 @@ function initAcquiringCalculator() {
 }
 
 
+
+function initShiftsMaker() {
+  var app = document.getElementById('mt-shifts-app');
+  if (!app) return;
+
+  var WEEKDAY_NAMES = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+  var MONTH_NAMES = [
+    'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+  ];
+
+  var PRESETS = {
+    beauty: {
+      year: 2026,
+      month: 10, // November (0-based: 10 = Nov)
+      hoursPerShift: 11,
+      masters: [
+        { id: 1, name: 'Анна (Стилист)', pattern: '2_2_a' },
+        { id: 2, name: 'Елена (Колорист)', pattern: '2_2_a' },
+        { id: 3, name: 'Мария (Стилист)', pattern: '2_2_b' },
+        { id: 4, name: 'Ольга (Визажист)', pattern: '2_2_b' }
+      ]
+    },
+    barber: {
+      year: 2026,
+      month: 10,
+      hoursPerShift: 10,
+      masters: [
+        { id: 1, name: 'Тимур (Шеф-барбер)', pattern: '2_2_a' },
+        { id: 2, name: 'Даниил (Топ-барбер)', pattern: '2_2_a' },
+        { id: 3, name: 'Руслан (Барбер)', pattern: '2_2_b' },
+        { id: 4, name: 'Артем (Барбер)', pattern: '2_2_b' }
+      ]
+    },
+    auto: {
+      year: 2026,
+      month: 10,
+      hoursPerShift: 11,
+      masters: [
+        { id: 1, name: 'Иван (Мастер-приемщик)', pattern: '2_2_a' },
+        { id: 2, name: 'Сергей (Моторист)', pattern: '2_2_a' },
+        { id: 3, name: 'Алексей (Диагност)', pattern: '5_2' },
+        { id: 4, name: 'Денис (Слесарь СТО)', pattern: '2_2_b' },
+        { id: 5, name: 'Михаил (Электрик)', pattern: '2_2_b' }
+      ]
+    },
+    detailing: {
+      year: 2026,
+      month: 10,
+      hoursPerShift: 12,
+      masters: [
+        { id: 1, name: 'Смена 1: Детейлер А', pattern: '2_2_a' },
+        { id: 2, name: 'Смена 1: Мойщик', pattern: '2_2_a' },
+        { id: 3, name: 'Смена 2: Детейлер Б', pattern: '2_2_b' },
+        { id: 4, name: 'Смена 2: Полировщик', pattern: '2_2_b' }
+      ]
+    },
+    cleaning: {
+      year: 2026,
+      month: 10,
+      hoursPerShift: 8,
+      masters: [
+        { id: 1, name: 'Бригада 1 (Жилые объекты)', pattern: '2_2_a' },
+        { id: 2, name: 'Бригада 2 (Коммерческие)', pattern: '2_2_b' },
+        { id: 3, name: 'Мастер выездной химчистки', pattern: '5_2' }
+      ]
+    }
+  };
+
+  // State
+  var state = JSON.parse(JSON.stringify(PRESETS.beauty));
+  // masterDays: { [masterId]: [boolean (true=work, false=rest)] }
+  var masterDays = {};
+
+  var monthSelect = app.querySelector('#mt-sh-month');
+  var yearSelect = app.querySelector('#mt-sh-year');
+  var hoursInput = app.querySelector('#mt-sh-hours');
+  var newNameInput = app.querySelector('#mt-sh-new-name');
+  var newPatternSelect = app.querySelector('#mt-sh-new-pattern');
+  var addBtn = app.querySelector('#mt-sh-add-btn');
+  var printBtn = app.querySelector('#mt-sh-print-btn');
+  var copyBtn = app.querySelector('#mt-sh-copy-btn');
+  var presetBtns = app.querySelectorAll('.mt-shifts-preset-btn');
+  var tableContainer = app.querySelector('#mt-shifts-table-container');
+
+  function getDaysInMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  function initDaysForMaster(master) {
+    var totalDays = getDaysInMonth(state.year, state.month);
+    var arr = [];
+    for (var d = 1; d <= totalDays; d++) {
+      var date = new Date(state.year, state.month, d);
+      var dayOfWeek = date.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+      var isWork = false;
+
+      if (master.pattern === '2_2_a') {
+        isWork = (d % 4 === 1 || d % 4 === 2);
+      } else if (master.pattern === '2_2_b') {
+        isWork = (d % 4 === 3 || d % 4 === 0);
+      } else if (master.pattern === '3_3_a') {
+        isWork = ((d - 1) % 6 < 3);
+      } else if (master.pattern === '3_3_b') {
+        isWork = ((d - 1) % 6 >= 3);
+      } else if (master.pattern === '5_2') {
+        isWork = (dayOfWeek !== 0 && dayOfWeek !== 6);
+      }
+      arr.push(isWork);
+    }
+    masterDays[master.id] = arr;
+  }
+
+  function recomputeAllMasterDays() {
+    masterDays = {};
+    state.masters.forEach(function(m) {
+      initDaysForMaster(m);
+    });
+  }
+
+  function renderTable() {
+    if (!tableContainer) return;
+
+    var totalDays = getDaysInMonth(state.year, state.month);
+    var hours = parseInt(hoursInput ? hoursInput.value : state.hoursPerShift, 10) || 10;
+    state.hoursPerShift = hours;
+
+    var html = ['<table class="mt-shifts-table"><thead><tr>'];
+    html.push('<th class="mt-shifts-col-master">Сотрудник</th>');
+
+    // Day numbers header
+    for (var d = 1; d <= totalDays; d++) {
+      var date = new Date(state.year, state.month, d);
+      var dow = date.getDay();
+      var isWknd = (dow === 0 || dow === 6);
+      var wkndCls = isWknd ? ' is-weekend' : '';
+      html.push('<th class="' + wkndCls + '">' + d + '<br><small>' + WEEKDAY_NAMES[dow] + '</small></th>');
+    }
+
+    html.push('<th class="mt-shifts-col-stat">Смен</th>');
+    html.push('<th class="mt-shifts-col-stat">Часов</th>');
+    html.push('</tr></thead><tbody>');
+
+    // Daily coverage counter
+    var coverage = new Array(totalDays).fill(0);
+
+    // Rows
+    state.masters.forEach(function(m) {
+      var days = masterDays[m.id];
+      if (!days || days.length !== totalDays) {
+        initDaysForMaster(m);
+        days = masterDays[m.id];
+      }
+
+      var workCount = 0;
+      html.push('<tr>');
+      html.push('<td class="mt-shifts-col-master">');
+      html.push('<button type="button" class="mt-shifts-del-btn" data-del-id="' + m.id + '" title="Удалить сотрудника">✕</button>');
+      html.push('<span>' + escapeHtml(m.name) + '</span>');
+      html.push('</td>');
+
+      for (var d = 0; d < totalDays; d++) {
+        var isWork = days[d];
+        var dateObj = new Date(state.year, state.month, d + 1);
+        var isWkndCol = (dateObj.getDay() === 0 || dateObj.getDay() === 6);
+        var colCls = isWkndCol ? ' mt-shifts-cell-weekend-col' : '';
+
+        if (isWork) {
+          workCount++;
+          coverage[d]++;
+          html.push('<td class="mt-shifts-day-cell mt-shifts-cell-work' + colCls + '" data-mid="' + m.id + '" data-day="' + d + '">Р</td>');
+        } else {
+          html.push('<td class="mt-shifts-day-cell mt-shifts-cell-rest' + colCls + '" data-mid="' + m.id + '" data-day="' + d + '">·</td>');
+        }
+      }
+
+      var totalHours = workCount * hours;
+      html.push('<td class="mt-shifts-col-stat"><strong>' + workCount + '</strong></td>');
+      html.push('<td class="mt-shifts-col-stat"><strong>' + totalHours + ' ч</strong></td>');
+      html.push('</tr>');
+    });
+
+    // Summary Coverage Row
+    html.push('<tr class="mt-shifts-coverage-row">');
+    html.push('<td class="mt-shifts-col-master">Мастеров на смене:</td>');
+    for (var c = 0; c < totalDays; c++) {
+      var count = coverage[c];
+      var lowCls = count === 0 ? ' mt-shifts-coverage-low' : '';
+      html.push('<td class="' + lowCls + '">' + count + '</td>');
+    }
+    html.push('<td class="mt-shifts-col-stat">—</td>');
+    html.push('<td class="mt-shifts-col-stat">—</td>');
+    html.push('</tr>');
+
+    html.push('</tbody></table>');
+    tableContainer.innerHTML = html.join('');
+
+    // Attach cell click events (toggle shift)
+    var cells = tableContainer.querySelectorAll('.mt-shifts-day-cell');
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].addEventListener('click', function() {
+        var mid = parseInt(this.getAttribute('data-mid'), 10);
+        var dayIdx = parseInt(this.getAttribute('data-day'), 10);
+        if (masterDays[mid]) {
+          masterDays[mid][dayIdx] = !masterDays[mid][dayIdx];
+          renderTable();
+        }
+      });
+    }
+
+    // Attach delete master events
+    var delBtns = tableContainer.querySelectorAll('[data-del-id]');
+    for (var j = 0; j < delBtns.length; j++) {
+      delBtns[j].addEventListener('click', function(e) {
+        e.stopPropagation();
+        var delId = parseInt(this.getAttribute('data-del-id'), 10);
+        state.masters = state.masters.filter(function(m) { return m.id !== delId; });
+        delete masterDays[delId];
+        renderTable();
+      });
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Month / Year change
+  if (monthSelect) {
+    monthSelect.addEventListener('change', function() {
+      state.month = parseInt(this.value, 10);
+      recomputeAllMasterDays();
+      renderTable();
+    });
+  }
+
+  if (yearSelect) {
+    yearSelect.addEventListener('change', function() {
+      state.year = parseInt(this.value, 10);
+      recomputeAllMasterDays();
+      renderTable();
+    });
+  }
+
+  if (hoursInput) {
+    hoursInput.addEventListener('input', function() {
+      renderTable();
+    });
+  }
+
+  // Add Master
+  if (addBtn && newNameInput && newPatternSelect) {
+    addBtn.addEventListener('click', function() {
+      var name = newNameInput.value.trim();
+      if (!name) return;
+      var newId = Date.now();
+      var master = {
+        id: newId,
+        name: name,
+        pattern: newPatternSelect.value
+      };
+      state.masters.push(master);
+      initDaysForMaster(master);
+      newNameInput.value = '';
+      renderTable();
+    });
+  }
+
+  // Presets
+  for (var p = 0; p < presetBtns.length; p++) {
+    presetBtns[p].addEventListener('click', function() {
+      for (var k = 0; k < presetBtns.length; k++) presetBtns[k].classList.remove('is-active');
+      this.classList.add('is-active');
+      var key = this.getAttribute('data-shifts-preset');
+      if (PRESETS[key]) {
+        state = JSON.parse(JSON.stringify(PRESETS[key]));
+        if (monthSelect) monthSelect.value = state.month;
+        if (yearSelect) yearSelect.value = state.year;
+        if (hoursInput) hoursInput.value = state.hoursPerShift;
+        recomputeAllMasterDays();
+        renderTable();
+      }
+    });
+  }
+
+  // Print
+  if (printBtn) {
+    printBtn.addEventListener('click', function() {
+      window.print();
+    });
+  }
+
+  // Copy to Telegram
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var totalDays = getDaysInMonth(state.year, state.month);
+      var hours = parseInt(hoursInput ? hoursInput.value : state.hoursPerShift, 10) || 10;
+      var monthLabel = MONTH_NAMES[state.month] + ' ' + state.year;
+
+      var lines = [
+        '📅 ГРАФИК СМЕН: ' + monthLabel.toUpperCase(),
+        'Длительность смены: ' + hours + ' ч',
+        '--------------------------------------------'
+      ];
+
+      state.masters.forEach(function(m) {
+        var days = masterDays[m.id] || [];
+        var workDays = [];
+        for (var d = 0; d < days.length; d++) {
+          if (days[d]) workDays.push(d + 1);
+        }
+        var totalHours = workDays.length * hours;
+        lines.push('👤 ' + m.name + ':');
+        lines.push('   Смены (' + workDays.length + ' смен / ' + totalHours + ' ч): ' + workDays.join(', '));
+      });
+
+      lines.push('--------------------------------------------');
+      lines.push('Сформировано в генераторе графиков Молния: https://molniya-tech.ru/shifts');
+
+      var textToCopy = lines.join('\n');
+
+      copyTextToClipboard(textToCopy).then(function() {
+        if (!copyBtn.getAttribute('data-orig')) {
+          copyBtn.setAttribute('data-orig', copyBtn.textContent.trim());
+        }
+        copyBtn.classList.add('copied');
+        var btnSpan = copyBtn.querySelector('span');
+        if (btnSpan) btnSpan.textContent = 'График скопирован!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          if (btnSpan) btnSpan.textContent = copyBtn.getAttribute('data-orig') || 'Скопировать в Telegram';
+        }, 2500);
+      });
+    });
+  }
+
+  // Initial render
+  recomputeAllMasterDays();
+  renderTable();
+}
+
+
 var _domInitialized = false;
 function initApp() {
   if (_domInitialized) return;
@@ -3958,6 +4301,7 @@ function initApp() {
   initSalaryCalculator();
   initPricelistConstructor();
   initAcquiringCalculator();
+  initShiftsMaker();
 }
 
 if (document.readyState === 'loading') {

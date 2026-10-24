@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 24 Oct 2026 08:49:35 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 09:04:15 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4</title>
+      <link>https://molniya-tech.ru/shifts</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/shifts</guid>
+      <pubDate>Sat, 24 Oct 2026 15:00:00 +0300</pubDate>
+      <category>Инструменты</category>
+      <description><![CDATA[Бесплатный онлайн-инструмент для составления расписания сотрудников: чередование смен 2/2, 3/3 и 5/2, учет рабочих часов, интерактивное редактирование и экспорт для печати.]]></description>
+    </item>
     <item>
       <title>Каталог бесплатных инструментов и калькуляторов для сервисного бизнеса</title>
       <link>https://molniya-tech.ru/tools</link>
