@@ -291,11 +291,11 @@ def render_footer_nav_html() -> str:
             </div>
             <div class="mt-footer-nav-group">
               <h3><a class="mt-footer-heading-link" href="/tools">Инструменты</a></h3>
-              <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
-              <a class="mt-footer-link" href="/pricelist">Конструктор прайс-листов</a>
-              <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
-              <a class="mt-footer-link" href="/acquiring">Калькулятор эквайринга</a>
-              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
+              <a class="mt-footer-link" href="/tools/qr">Генератор QR-кодов</a>
+              <a class="mt-footer-link" href="/tools/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/tools/salary">Калькулятор зарплат</a>
+              <a class="mt-footer-link" href="/tools/acquiring">Калькулятор эквайринга</a>
+              <a class="mt-footer-link" href="/tools/inn">Проверка по ИНН</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -741,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1118,7 +1118,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -1269,7 +1269,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1646,7 +1646,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -1763,7 +1763,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2186,7 +2186,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -2331,7 +2331,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2768,7 +2768,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -2913,7 +2913,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3290,7 +3290,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -3435,7 +3435,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3844,7 +3844,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -3990,7 +3990,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4367,7 +4367,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -4513,7 +4513,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4890,7 +4890,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -5038,7 +5038,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5415,7 +5415,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -5448,7 +5448,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5507,7 +5507,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 """
@@ -5528,7 +5528,7 @@ def build_calendar_page() -> str:
         "Официальный производственный календарь России на 2026 и 2027 год: нормы рабочего времени по ТК РФ (40, 36, 24 ч), "
         "праздники, перенос выходных и онлайн-калькулятор рабочих дней, смен и заработной платы."
     )
-    canonical = "https://molniya-tech.ru/calendar"
+    canonical = "https://molniya-tech.ru/tools/calendar"
 
     faqs = [
         (
@@ -5572,7 +5572,8 @@ def build_calendar_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Производственный календарь", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Производственный календарь", "item": canonical},
             ],
         },
         {
@@ -5658,7 +5659,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5682,6 +5683,24 @@ def build_calendar_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Календарь и нормы">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Производственный календарь</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 902 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>5.0</strong> (1 902 оценки предпринимателей и бухгалтеров)</span>
@@ -6095,7 +6114,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -6117,7 +6136,7 @@ def build_inn_page() -> str:
         "Бесплатная онлайн-проверка контрагентов по ИНН и ОГРН: статус организации и ИП в ФНС России, "
         "выписка ЕГРЮЛ с ЭЦП, риски банкротства, директор, адрес и копирование реквизитов для договора."
     )
-    canonical = "https://molniya-tech.ru/inn"
+    canonical = "https://molniya-tech.ru/tools/inn"
 
     faqs = [
         (
@@ -6161,7 +6180,8 @@ def build_inn_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Проверка контрагента", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Проверка по ИНН", "item": canonical},
             ],
         },
         {
@@ -6247,7 +6267,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6271,6 +6291,24 @@ def build_inn_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Проверка по ИНН">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Проверка по ИНН</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 847 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>5.0</strong> (1 847 оценок предпринимателей и бухгалтеров)</span>
@@ -6679,7 +6717,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -6701,7 +6739,7 @@ def build_margin_page() -> str:
         "Бесплатный онлайн-калькулятор юнит-экономики для салонов красоты, автосервисов, студий и клиник: "
         "расчет выручки, точки безубыточности, упущенной выгоды от простоя и чистой прибыли при разной загрузке."
     )
-    canonical = "https://molniya-tech.ru/margin"
+    canonical = "https://molniya-tech.ru/tools/margin"
 
     faqs = [
         (
@@ -6745,7 +6783,8 @@ def build_margin_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Калькулятор доходности", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Калькулятор маржинальности", "item": canonical},
             ],
         },
         {
@@ -6831,7 +6870,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6855,6 +6894,24 @@ def build_margin_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор доходности">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Калькулятор маржинальности</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 5 из 5 на основе 1 794 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>5.0</strong> (1 794 оценки владельцев сервисного бизнеса)</span>
@@ -7352,7 +7409,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -7373,7 +7430,7 @@ def build_carwash_weather_page() -> str:
     description = (
         "Узнайте, стоит ли мыть машину сегодня: интерактивный расчет индекса чистоты автомобиля на 5 дней по данным метеорадаров, осадков и слякоти на дорогах в 20 городах РФ."
     )
-    canonical = "https://molniya-tech.ru/carwash-weather"
+    canonical = "https://molniya-tech.ru/tools/carwash-weather"
 
     faqs = [
         (
@@ -7417,7 +7474,7 @@ def build_carwash_weather_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/#tools"},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
                 {"@type": "ListItem", "position": 3, "name": "Индекс мойки авто", "item": canonical},
             ],
         },
@@ -7504,7 +7561,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7528,6 +7585,24 @@ def build_carwash_weather_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Индекс мойки авто">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Индекс мойки авто</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.95 из 5 на основе 2 140 отзывов водителей">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>4.95</strong> (2 140 проверок чистоты и отзывов автовладельцев)</span>
@@ -7913,7 +7988,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -7936,7 +8011,7 @@ def build_qr_page() -> str:
         "Бесплатный онлайн-генератор QR-кодов для бизнеса: онлайн-запись, оплата по СБП, гостевой Wi-Fi, Telegram и визитки vCard. "
         "Фирменные цвета, логотип в центре, векторный экспорт в SVG и печать тейбл-тентов без потери качества."
     )
-    canonical = "https://molniya-tech.ru/qr"
+    canonical = "https://molniya-tech.ru/tools/qr"
 
     faqs = [
         (
@@ -7980,7 +8055,7 @@ def build_qr_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/#tools"},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
                 {"@type": "ListItem", "position": 3, "name": "Генератор QR-кодов", "item": canonical},
             ],
         },
@@ -8063,7 +8138,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8082,6 +8157,24 @@ def build_qr_page() -> str:
     <section class="mt-hero mt-hero--tool" data-screen-label="Генератор QR-кодов">
 
       <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Генератор QR-кодов</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
         <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.96 из 5 на основе 1 840 отзывов">
           <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
           <span><strong>4.96</strong> (1 840 отзывов и созданных QR-кодов для бизнеса)</span>
@@ -8508,7 +8601,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -8532,7 +8625,7 @@ def build_salary_page() -> str:
         "Бесплатный онлайн-калькулятор сдельной оплаты труда для сферы услуг: расчет зарплаты мастера за смену и месяц, "
         "процент от услуг и витрины, вычет расходников по техкартам, контроль доли ФОТ в выручке и сравнение 3 моделей мотивации."
     )
-    canonical = "https://molniya-tech.ru/salary"
+    canonical = "https://molniya-tech.ru/tools/salary"
 
     faqs = [
         (
@@ -8572,7 +8665,8 @@ def build_salary_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Калькулятор зарплаты мастеров", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Калькулятор зарплаты", "item": canonical},
             ],
         },
         {
@@ -8658,7 +8752,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -8682,6 +8776,24 @@ def build_salary_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор зарплаты мастеров">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Калькулятор зарплаты</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.97 из 5 на основе 1 420 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>4.97</strong> (1 420 оценок владельцев сервисного бизнеса)</span>
@@ -9200,7 +9312,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -9346,7 +9458,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9723,7 +9835,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -9868,7 +9980,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10247,7 +10359,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -10392,7 +10504,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10771,7 +10883,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -10925,7 +11037,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11298,7 +11410,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -11438,7 +11550,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11879,7 +11991,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -12020,7 +12132,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12466,7 +12578,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -12492,7 +12604,7 @@ def build_pricelist_page() -> str:
         "Бесплатный онлайн-конструктор печатных прайс-листов для сферы услуг: готовые шаблоны для салонов красоты, "
         "барбершопов, автосервисов, массажа и клининга. 3 темы оформления, фирменные точки-лидеры, экспорт в PDF и моментальная печать A4."
     )
-    canonical = "https://molniya-tech.ru/pricelist"
+    canonical = "https://molniya-tech.ru/tools/pricelist"
 
     faqs = [
         (
@@ -12532,7 +12644,8 @@ def build_pricelist_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Конструктор прайс-листов услуг", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Конструктор прайс-листов", "item": canonical},
             ],
         },
         {
@@ -12618,7 +12731,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12642,6 +12755,24 @@ def build_pricelist_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Конструктор прайс-листов">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Конструктор прайс-листов</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 1 560 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>4.98</strong> (1 560 созданных прайс-листов)</span>
@@ -13029,7 +13160,7 @@ def build_pricelist_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-sh1" defer></script>
+    <script src="/script.js?v=20261024-tools2" defer></script>
   </div>
 </body>
 </html>'''
@@ -13054,7 +13185,7 @@ def build_acquiring_page() -> str:
         "Бесплатный онлайн-калькулятор торгового эквайринга для сферы услуг: расчет комиссии банков, сравнение с Системой быстрых платежей (0.4%–0.7%), "
         "расчет чистой годовой экономии на комиссиях, окупаемости POS-терминалов и скорости зачисления выручки."
     )
-    canonical = "https://molniya-tech.ru/acquiring"
+    canonical = "https://molniya-tech.ru/tools/acquiring"
 
     faqs = [
         (
@@ -13094,7 +13225,8 @@ def build_acquiring_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Калькулятор эквайринга и СБП", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": "https://molniya-tech.ru/tools"},
+                {"@type": "ListItem", "position": 3, "name": "Калькулятор эквайринга", "item": canonical},
             ],
         },
         {
@@ -13180,7 +13312,7 @@ def build_acquiring_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13204,6 +13336,24 @@ def build_acquiring_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Калькулятор эквайринга">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Калькулятор эквайринга</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 1 680 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>4.98</strong> (1 680 расчетов владельцев бизнеса)</span>
@@ -13667,7 +13817,7 @@ def build_acquiring_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-sh1" defer></script>
+    <script src="/script.js?v=20261024-tools2" defer></script>
   </div>
 </body>
 </html>'''
@@ -13687,7 +13837,7 @@ def build_tools_page() -> str:
         "Оставьте контакты — поможем автоматизировать онлайн-запись клиентов, журнал визитов, расчет сдельной зарплаты и учет оплат в едином окне за 15 минут.",
     )
 
-    title = "Бесплатные онлайн-инструменты для сервисного бизнеса — калькуляторы и генераторы | Молния"
+    title = "Каталог бесплатных инструментов для предпринимателей — калькуляторы и сервисы | Молния"
     description = (
         "9 бесплатных онлайн-инструментов для малого бизнеса в сфере услуг: генератор QR-кодов, конструктор прайс-листов с печатью A4, генератор графиков смен мастеров 2/2 и 3/3, "
         "калькуляторы сдельной зарплаты, эквайринга, маржинальности, проверка контрагентов по ИНН и производственный календарь 2026."
@@ -13775,7 +13925,8 @@ def build_tools_page() -> str:
             f'<span class="mt-tool-badge{" mt-tool-badge--free" if b == "Бесплатно" else ""}">{html.escape(b)}</span>'
             for b in t["badges"]
         )
-        card = f'''          <article class="mt-tool-card">
+        tool_url = f"/tools/{t['slug'].replace('tools/', '').strip('/')}"
+        card = f'''          <a class="mt-tool-card" href="{tool_url}">
             <div class="mt-tool-card-thumb">
               <img class="mt-tool-card-img" src="{t["img"]}" alt="{html.escape(t["title"])}" width="600" height="338" loading="lazy">
               <div class="mt-tool-card-badges">
@@ -13783,16 +13934,16 @@ def build_tools_page() -> str:
               </div>
             </div>
             <div class="mt-tool-card-body">
-              <h3 class="mt-tool-card-title"><a href="/{t["slug"]}">{html.escape(t["title"])}</a></h3>
+              <h2 class="mt-tool-card-title">{html.escape(t["title"])}</h2>
               <p class="mt-tool-card-desc">{html.escape(t["desc"])}</p>
               <div class="mt-tool-card-footer">
-                <a class="mt-tool-card-btn" href="/{t["slug"]}">
+                <span class="mt-tool-card-btn">
                   <span>{html.escape(t["btn_text"])}</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
+                </span>
               </div>
             </div>
-          </article>'''
+          </a>'''
         cards_html.append(card)
 
     cards_markup = "\n".join(cards_html)
@@ -13800,27 +13951,27 @@ def build_tools_page() -> str:
     faqs = [
         (
             "Все ли инструменты на этой странице бесплатны или есть скрытые платные ограничения?",
-            "Все 8 инструментов полностью бесплатны и доступны без регистрации, ввода номера телефона или привязки банковской карты. Вы можете использовать калькуляторы, проверку контрагентов, генератор QR-кодов и конструктор прайсов сколько угодно раз без лимитов на количество скачиваний и расчетов.",
+            "Все 9 инструментов полностью бесплатны и доступны без регистрации, ввода номера телефона или привязки банковской карты. Вы можете использовать калькуляторы, проверку контрагентов, генератор QR-кодов, конструктор прайсов и генератор смен сколько угодно раз без лимитов на количество скачиваний и расчетов.",
         ),
         (
             "Сохраняются ли где-то коммерческие данные компании, выручка и финансовые расчеты?",
-            "Нет. Все расчеты зарплат, маржинальности, эквайринга и генерация QR-кодов происходят исключительно локально в вашем браузере (на стороне клиента). Никакие конфиденциальные финансовые показатели вашей организации не передаются и не сохраняются на серверах.",
+            "Нет. Все расчеты зарплат, маржинальности, эквайринга, графиков смен и генерация QR-кодов происходят исключительно локально в вашем браузере (на стороне клиента). Никакие конфиденциальные финансовые показатели вашей организации не передаются и не сохраняются на серверах.",
         ),
         (
             "Можно ли пользоваться инструментами со смартфона или планшета?",
-            "Да, все инструменты и калькуляторы адаптированы под экраны любых мобильных устройств. Вы можете сгенерировать QR-код, рассчитать зарплату мастера за смену прямо в телефоне и скопировать готовый текстовый отчет для отправки в Telegram или WhatsApp.",
+            "Да, все инструменты и калькуляторы адаптированы под экраны любых мобильных устройств. Вы можете сгенерировать QR-код, составить график смен или рассчитать зарплату мастера за смену прямо в телефоне и скопировать готовый текстовый отчет для отправки в Telegram или WhatsApp.",
         ),
         (
-            "Как распечатать готовый прайс-лист или сохранить расчет в PDF без лишних элементов сайта?",
-            "В конструкторе прайс-листов и других печатных сервисах настроены специальные правила (@media print). Нажав кнопку «Распечатать», браузер автоматически сформирует чистый бланк документа под формат A4 без шапки сайта, панели редактора и лишних кнопок.",
+            "Как распечатать готовый прайс-лист или график смен без лишних элементов сайта?",
+            "В конструкторе прайс-листов, генераторе графиков смен и других печатных сервисах настроены специальные правила (@media print). Нажав кнопку «Распечатать», браузер автоматически сформирует чистый бланк документа под формат A4 без шапки сайта, панели редактора и лишних веб-кнопок.",
         ),
         (
             "Чем платформа Молния отличается от этих бесплатных калькуляторов?",
-            "Бесплатные инструменты решают точечные операционные задачи: рассчитать мотивацию, сделать QR-код, проверить компанию. Платформа Молния — это полноценная комплексная экосистема для ежедневной работы: круглосуточная онлайн-запись клиентов 24/7, электронный журнал визитов, автоматическое начисление зарплаты по закрытым чекам, списание материалов со склада по техкартам и клиентская база без доплат за сотрудников.",
+            "Бесплатные инструменты решают точечные операционные задачи: рассчитать мотивацию, составить график смен, сделать QR-код, проверить компанию. Платформа Молния — это комплексная экосистема для ежедневной работы: круглосуточная онлайн-запись клиентов 24/7, электронный журнал визитов, автоматическое начисление зарплаты по закрытым чекам, списание материалов со склада по техкартам и клиентская база без доплат за сотрудников.",
         ),
         (
             "Будут ли появляться новые полезные инструменты в этом каталоге?",
-            "Да, мы регулярно расширяем экосистему полезных сервисов для малого бизнеса на основе запросов предпринимателей: в ближайших обновлениях появятся интерактивный генератор графиков смен мастеров (2/2, 3/3), калькулятор окупаемости онлайн-записи и шаблоны регламентов обслуживания.",
+            "Да, мы регулярно расширяем экосистему полезных сервисов для малого бизнеса на основе запросов предпринимателей: в ближайших обновлениях появятся калькулятор окупаемости онлайн-записи и готовые шаблоны должностных регламентов обслуживания.",
         ),
     ]
 
@@ -13835,13 +13986,13 @@ def build_tools_page() -> str:
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
-                {"@type": "ListItem", "position": 2, "name": "Инструменты для бизнеса", "item": canonical},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты", "item": canonical},
             ],
         },
         {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Каталог бесплатных инструментов и калькуляторов Молния",
+            "name": "Каталог бесплатных инструментов для предпринимателей Молния",
             "url": canonical,
             "description": description,
             "publisher": {
@@ -13906,7 +14057,7 @@ def build_tools_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13926,254 +14077,105 @@ def build_tools_page() -> str:
 
 {nav_html}
 
-      <!-- HERO -->
-      <section class="mt-hero mt-hero--tool" data-screen-label="Инструменты для бизнеса">
+      <!-- TOOLS CATALOG HEADER (Clean like /blog) -->
+      <section class="mt-section" data-screen-label="Каталог инструментов" style="padding-top: clamp(28px, 4vw, 44px); padding-bottom: 8px;">
 
-        <div class="mt-hero-lead mt-hero-lead--tool">
-          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 2 140 оценок">
-            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
-            <span><strong>4.98</strong> (2 140 оценок предпринимателей и руководителей)</span>
-          </div>
+        <!-- BREADCRUMBS -->
+        <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+          <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+              <meta itemprop="position" content="1">
+            </li>
+            <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+            <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="mt-breadcrumbs-current" itemprop="name">Инструменты</span>
+              <meta itemprop="position" content="2">
+            </li>
+          </ol>
+        </nav>
 
-          <h1 class="mt-hero-title">
-            Бесплатные онлайн-инструменты<br><span class="mt-hero-accent">для сервисного бизнеса</span>
-          </h1>
-
-          <div class="mt-hero-bottom mt-hero-bottom--tool">
-            <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Практичные калькуляторы, конструкторы и сервисы проверки без регистрации: рассчитывайте зарплаты и экономию на эквайринге, создавайте печатные прайс-листы и брендовые QR-коды для роста прибыли.</p>
-              <a class="mt-btn mt-btn-hero" href="#catalog">Выбрать инструмент ↓</a>
-            </div>
-
-            <ul class="mt-facets" aria-label="Преимущества каталога инструментов">
-              <li class="mt-facet">
-                <span class="mt-facet-name">8 бесплатных инструментов</span>
-                <span class="mt-facet-note">калькуляторы, печать прейскурантов, проверка ИНН</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">Без регистрации и SMS</span>
-                <span class="mt-facet-note">мгновенный запуск прямо в браузере за 0 секунд</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">Готовый экспорт и печать</span>
-                <span class="mt-facet-note">бланки A4, PDF, векторный SVG и текст в мессенджеры</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">Актуально на 2026 год</span>
-                <span class="mt-facet-note">с учетом тарифов ЦБ РФ, ФНС и норм Минтруда</span>
-              </li>
-            </ul>
-          </div>
+        <div class="mt-tools-header">
+          <h1 class="mt-section-title" style="font-size:clamp(30px,4.5vw,48px)">Каталог бесплатных инструментов для предпринимателей</h1>
+          <p class="mt-section-sub">Практичные онлайн-калькуляторы, конструкторы прейскурантов и генераторы расписаний для малого бизнеса в сфере услуг без регистрации и ограничений.</p>
         </div>
 
       </section>
 
-      <!-- TOOLS 3-COLUMN CATALOG -->
-      <section class="mt-section mt-reveal mt-tools-section" id="catalog" data-screen-label="Каталог инструментов" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Каталог интерактивных инструментов <span class="mt-overview-hook">для предпринимателей</span></h2>
-          <p class="mt-section-sub">Выберите нужный сервис для автоматизации рутины, точных расчетов себестоимости и привлечения гостей.</p>
-        </div>
-
+      <!-- CATALOG GRID (All cards fully clickable) -->
+      <section class="mt-section" id="catalog" data-screen-label="Сетка инструментов" style="padding-top: 12px;">
         <div class="mt-tools-grid">
 {cards_markup}
         </div>
       </section>
 
       <!-- OVERVIEW GRID -->
-      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Зачем эти инструменты" data-mt-reveal>
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Преимущества инструментов" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Зачем мы создали эти инструменты <span class="mt-overview-hook">и как они помогают бизнесу</span></h2>
-          <p class="mt-section-sub">Решение ежедневных прикладных задач управляющих, администраторов и владельцев компаний в сфере услуг.</p>
+          <h2 class="mt-section-title">Все ключевые расчеты бизнеса <span class="mt-overview-hook">в одном месте и без ограничений</span></h2>
+          <p class="mt-section-sub">Без регистрации, рекламы, платных подписок и передачи конфиденциальных данных на сторонние серверы.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3>Экономия десятков часов <span class="mt-overview-hook">на расчетах в Excel и таблицах</span></h3>
-            <p>Расчет сдельной зарплаты, вычет себестоимости материалов по техкартам и сведение прейскурантов больше не требуют бессонных ночей с калькулятором.</p>
+            <h3>Мгновенный старт <span class="mt-overview-hook">прямо в браузере</span></h3>
+            <p>Никаких подтверждений по SMS, регистрации аккаунтов и бесконечных демо-доступов. Открывайте страницу любого сервиса и сразу получайте точный расчет за 0 секунд.</p>
             <div class="mt-overview-preview" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Время на расчеты</span><span>Экономия</span></div>
-              <div class="mt-overview-price-row"><span>Ручные таблицы</span><strong>2–3 дня в месяц</strong></div>
-              <div class="mt-overview-price-row"><span>Инструменты Молнии</span><strong>1 клик за 1 минуту</strong></div>
-              <div class="mt-overview-price-tag">До 30 часов высвобожденного времени ежемесячно</div>
+              <div class="mt-overview-ui-head"><span>Доступ</span><span>Без регистрации</span></div>
+              <div class="mt-overview-price-row"><span>Ввод телефона</span><strong>Не требуется</strong></div>
+              <div class="mt-overview-price-row"><span>Время до результата</span><strong>0 секунд</strong></div>
+              <div class="mt-overview-price-tag">Полная свобода использования</div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Защита от кассовых разрывов <span class="mt-overview-hook">и переплат по эквайрингу</span></h3>
-            <p>Калькуляторы эквайринга и маржинальности показывают реальную стоимость банковских комиссий и помогают сберегать до 150 000 ₽ в год при переходе на СБП.</p>
+            <h3>Печать на листе A4 <span class="mt-overview-hook">и экспорт в мессенджеры</span></h3>
+            <p>Готовые прейскуранты и табели печатаются с идеальными полями без браузерного мусора. Любой финансовый расчет копируется в один клик для отправки команде в Telegram.</p>
             <div class="mt-overview-preview" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Оптимизация расходов</span><span>СБП vs Эквайринг</span></div>
-              <div class="mt-overview-price-row"><span>Эквайринг 2.2%</span><strong>18 000 ₽/мес потерь</strong></div>
-              <div class="mt-overview-price-row"><span>Ставка СБП 0.7%</span><strong>8 600 ₽/мес расходов</strong></div>
-              <div class="mt-overview-price-tag">Более 110 000 ₽ чистой экономии в карман бизнеса</div>
+              <div class="mt-overview-ui-head"><span>Экспорт</span><span>A4 & Telegram</span></div>
+              <div class="mt-overview-price-row"><span>Верстка для принтера</span><strong>A4 без обрезки</strong></div>
+              <div class="mt-overview-price-row"><span>Копирование данных</span><strong>1 клик в буфер</strong></div>
+              <div class="mt-overview-price-tag">Готовый документ на стойку или стену</div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Соответствие закону РФ <span class="mt-overview-hook">для Уголка потребителя и ФНС</span></h3>
-            <p>Печатный прайс-лист оформлен по требованиям ст. 10 ЗоЗПП, а проверка контрагента подтягивает официальные регистрационные сведения напрямую из баз ФНС.</p>
+            <h3>Актуальность 2026 года <span class="mt-overview-hook">по законам и тарифам РФ</span></h3>
+            <p>Учитываем актуальные нормы ТК РФ, перенос выходных дней Минтруда, тарифы СБП Центрального Банка (0.4%–0.7%) и официальные базы данных ФНС России.</p>
             <div class="mt-overview-preview" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Юридическая чистота</span><span>ЗоЗПП & ФНС</span></div>
-              <div class="mt-overview-price-row"><span>Печатный прейскурант</span><strong>Формат A4 без полей</strong></div>
-              <div class="mt-overview-price-row"><span>Выписка контрагента</span><strong>ЕГРЮЛ / ЕГРИП</strong></div>
-              <div class="mt-overview-price-tag">100% готовность к проверкам надзорных органов</div>
+              <div class="mt-overview-ui-head"><span>Нормативная база</span><span>2026 год</span></div>
+              <div class="mt-overview-price-row"><span>Ставки ЦБ и СБП</span><strong>0.4% / 0.7%</strong></div>
+              <div class="mt-overview-price-row"><span>Календарь Минтруда</span><strong>243 рабочих дня</strong></div>
+              <div class="mt-overview-price-tag">100% юридическая достоверность</div>
             </div>
           </article>
-
-          <article class="mt-overview-card">
-            <h3>Рост среднего чека <span class="mt-overview-hook">и стимулирование допродаж</span></h3>
-            <p>Понятная категоризация услуг в прайс-листе поднимает спрос на комбо-комплексы, а прозрачный процент витрины превращает мастеров в активных продавцов.</p>
-            <div class="mt-overview-preview" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Эффективность витрины</span><span>Рост продаж</span></div>
-              <div class="mt-overview-price-row"><span>Допродажи косметики</span><strong>+25% к чеку</strong></div>
-              <div class="mt-overview-price-row"><span>Комплексные услуги</span><strong>+28% записей</strong></div>
-              <div class="mt-overview-price-tag">Клиенты охотно пробуют более маржинальные услуги</div>
-            </div>
-          </article>
-
-          <article class="mt-overview-card">
-            <h3>Естественный шаг к автоматизации <span class="mt-overview-hook">на платформе Молния</span></h3>
-            <p>Когда вы готовы объединить расписание, онлайн-запись 24/7, склад и расчет выплат в единую цифровую систему — Молния подключается за 15 минут.</p>
-            <div class="mt-overview-preview" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>CRM Молния</span><span>Все в одном</span></div>
-              <div class="mt-overview-message">
-                ⚡ Единая платформа: запись 24/7, мастера, склад и учет оплат.
-                <span class="mt-overview-reaction">✓ 0 ₽ за доплаты</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- JOURNEY -->
-      <section class="mt-section mt-reveal" data-screen-label="Как использовать инструменты" data-mt-reveal>
-        <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Как навести порядок в процессах <span class="mt-overview-hook">за 4 простых шага</span></h2>
-          <p class="mt-section-sub">Пошаговый алгоритм наведения финансового порядка и привлечения клиентов в вашем заведении.</p>
-        </div>
-
-        <div class="mt-journey">
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">01</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Расчет</span>
-              <h3>Проверьте экономику: маржинальность, ФОТ и эквайринг</h3>
-              <p>Убедитесь, что доля выплат мастерам не превышает безопасные 42% от выручки, а банк не забирает лишние проценты за торговый эквайринг и терминалы.</p>
-            </div>
-            <div class="mt-journey-proof" aria-label="Аудит экономики">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Финансовый срез</span>
-                <span class="mt-journey-proof-badge">Оцифровано</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Доля ФОТ</span><strong>35–40% нормы</strong></div>
-              <div class="mt-journey-proof-row"><span>Экономия на СБП</span><strong>До 120 000 ₽/год</strong></div>
-              <div class="mt-journey-proof-row"><span>Точка безубыточности</span><strong>Под контролем</strong></div>
-            </div>
-          </article>
-
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">02</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Оформление</span>
-              <h3>Подготовьте аккуратный прайс-лист и брендовый QR-код</h3>
-              <p>Соберите меню услуг в стильной теме, распечатайте бланк A4 для ресепшн и разместите QR-код со ссылкой на онлайн-запись и оплату по СБП.</p>
-            </div>
-            <div class="mt-journey-proof" aria-label="Оформление стойки">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Стойка ресепшн</span>
-                <span class="mt-journey-proof-badge">Готово к печати</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Печатный прайс</span><strong>A4 без полей</strong></div>
-              <div class="mt-journey-proof-row"><span>Брендовый QR</span><strong>С логотипом</strong></div>
-              <div class="mt-journey-proof-row"><span>Затраты на дизайнеров</span><strong>0 рублей</strong></div>
-            </div>
-          </article>
-
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">03</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Контроль</span>
-              <h3>Проверяйте надежность поставщиков и нормы времени</h3>
-              <p>Используйте сервис проверки контрагентов по ИНН перед заключением договоров и сверяйтесь с официальным производственным календарем 2026 года.</p>
-            </div>
-            <div class="mt-journey-proof" aria-label="Контроль рисков">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Безопасность</span>
-                <span class="mt-journey-proof-badge">Данные ФНС</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Проверка юрлиц</span><strong>По 5 базам</strong></div>
-              <div class="mt-journey-proof-row"><span>Нормы Минтруда</span><strong>Календарь 2026</strong></div>
-              <div class="mt-journey-proof-row"><span>Кадровые риски</span><strong>Исключены</strong></div>
-            </div>
-          </article>
-
-          <article class="mt-journey-step">
-            <div class="mt-journey-index">04</div>
-            <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Автоматизация</span>
-              <h3>Объедините все процессы в платформе Молния</h3>
-              <p>Переходите от ручных расчетов к единой CRM-системе: круглосуточная онлайн-запись, журнал визитов, учет оплат и автосписание материалов со склада.</p>
-            </div>
-            <div class="mt-journey-proof" aria-label="Автоматизация бизнеса">
-              <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Экосистема Молния</span>
-                <span class="mt-journey-proof-badge">15 минут</span>
-              </div>
-              <div class="mt-journey-proof-row"><span>Запись клиентов</span><strong>24/7 без звонков</strong></div>
-              <div class="mt-journey-proof-row"><span>Зарплата мастеров</span><strong>Авторасчет</strong></div>
-              <div class="mt-journey-proof-row"><span>Доплаты за команду</span><strong>0 ₽ без ограничений</strong></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CASE STUDY -->
-      <section class="mt-case-section mt-reveal" data-screen-label="Кейс применения инструментов" data-mt-reveal>
-        <div class="mt-case-card">
-          <div class="mt-case-header">
-            <div class="mt-case-tag">⚡ Кейс владельца бизнеса</div>
-            <h2 class="mt-case-title">Наталья Григорьева, владелица салона красоты и барбершопа</h2>
-            <blockquote class="mt-case-quote">
-              «Пользуемся сразу четырьмя инструментами Молнии: на калькуляторе зарплат настроили справедливые 40% мастерам с вычетом препаратов по техкартам, через конструктор прайсов распечатали стильные бланки на стойку в теме Нуар, а генератором QR сделали брендированные таблички для оплаты по СБП. Экономия на эквайринге и времени управляющего составила больше 160 000 рублей за полгода, а главное — в коллективе навсегда прекратились споры о правильности начисления зарплаты.»
-            </blockquote>
-            <div class="mt-case-author">
-              Наталья Григорьева <span>· Основательница салона красоты и барбершопа, <span style="white-space:nowrap">Санкт-Петербург</span></span>
-            </div>
-          </div>
-          <div class="mt-case-stats">
-            <div class="mt-case-stat">
-              <span class="mt-case-num">8 <small>инструментов</small></span>
-              <span class="mt-case-label">Бесплатный стек практичных сервисов для ежедневной работы бизнеса</span>
-            </div>
-            <div class="mt-case-stat">
-              <span class="mt-case-num">100%</span>
-              <span class="mt-case-label">Бесплатный доступ без обязательной регистрации и навязчивых подписок</span>
-            </div>
-            <div class="mt-case-stat">
-              <span class="mt-case-num">0 <small>₽</small></span>
-              <span class="mt-case-label">Затрат на покупку сторонних калькуляторов и услуги графических дизайнеров</span>
-            </div>
-          </div>
         </div>
       </section>
 
       <!-- FAQ -->
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
-          <h2 class="mt-section-title">Вопросы об онлайн-инструментах для бизнеса</h2>
+          <h2 class="mt-section-title">Часто задаваемые вопросы об онлайн-инструментах</h2>
         </div>
         <div class="mt-before-start-grid">
           <article class="mt-before-start-highlight">
-            <h3>Автоматизируйте весь бизнес в Молнии</h3>
-            <p>Подключите CRM Молния: объедините онлайн-запись, расписание мастеров, учет оплат и аналитику без доплат за сотрудников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+            <h3>Автоматизируйте бизнес с платформой Молния</h3>
+            <p>Бесплатные сервисы решают точечные задачи. Платформа Молния объединяет онлайн-запись, расписание мастеров, склад и учет финансов в единое удобное окно.</p>
+            <div class="mt-before-start-contacts">
+              <div class="mt-before-start-contact-item">
+                <span class="mt-before-start-contact-label">Консультация</span>
+                <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+              </div>
+              <div class="mt-before-start-contact-item">
+                <span class="mt-before-start-contact-label">Поддержка в Telegram</span>
+                <a href="https://t.me/molniya_support" target="_blank" rel="noopener">@molniya_support</a>
+              </div>
+            </div>
           </article>
           <div class="mt-before-start-questions">
 {faq_html}
           </div>
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -14181,87 +14183,13 @@ def build_tools_page() -> str:
 {footer_html}
 
     </div>
-
-    <!-- cookie notice -->
-    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
-      <p class="mt-cookie-text">Мы используем файлы cookie для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.</p>
-      <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
-    </div>
-
-    <script src="/script.js?v=20261024-sh1" defer></script>
   </div>
+
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>'''
 
     return page_html
-
-
-def sync_navigation_to_index():
-    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
-    content = INDEX_HTML.read_text(encoding="utf-8")
-    nav_html = render_nav_html(active_item="", asset_prefix="", beta_cta=True)
-
-    start_marker = "<!-- NAV -->"
-    end_marker = "</nav>"
-    if start_marker in content and end_marker in content:
-        before = content.split(start_marker, 1)[0].rstrip(" \t")
-        after = content.split(end_marker, 1)[1]
-        content = before + nav_html + after
-
-    footer_html = render_footer_html(asset_prefix="", home_variant=True)
-    f_start = "<!-- FOOTER -->"
-    f_end = "</footer>"
-    if f_start in content and f_end in content:
-        before = content.split(f_start, 1)[0].rstrip(" \t")
-        after = content.split(f_end, 1)[1]
-        content = before + footer_html + after
-
-    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
-    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
-    content = content.replace(old_cookie_link, new_cookie_link)
-
-    sticky_start = "<!-- sticky floating CTA -->"
-    if sticky_start in content:
-        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
-        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
-        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
-
-    INDEX_HTML.write_text(content, encoding="utf-8")
-    print("Updated navigation, footer, and banner in index.html")
-
-
-def sync_navigation_to_blog():
-    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into blog/index.html."""
-    content = BLOG_INDEX_HTML.read_text(encoding="utf-8")
-    nav_html = render_nav_html(active_item="blog", asset_prefix="../")
-
-    start_marker = "<!-- NAV -->"
-    end_marker = "</nav>"
-    if start_marker in content and end_marker in content:
-        before = content.split(start_marker, 1)[0].rstrip(" \t")
-        after = content.split(end_marker, 1)[1]
-        content = before + nav_html + after
-
-    footer_html = render_footer_html(asset_prefix="../")
-    f_start = "<!-- FOOTER -->"
-    f_end = "</footer>"
-    if f_start in content and f_end in content:
-        before = content.split(f_start, 1)[0].rstrip(" \t")
-        after = content.split(f_end, 1)[1]
-        content = before + footer_html + after
-
-    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
-    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
-    content = content.replace(old_cookie_link, new_cookie_link)
-
-    sticky_start = "<!-- sticky floating CTA -->"
-    if sticky_start in content:
-        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
-        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
-        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
-
-    BLOG_INDEX_HTML.write_text(content, encoding="utf-8")
-    print("Updated navigation, footer, and banner in blog/index.html")
 
 
 def build_shifts_page() -> str:
@@ -14279,7 +14207,7 @@ def build_shifts_page() -> str:
         "Бесплатный онлайн-генератор графиков смен 2/2, 3/3 и 5/2 для салонов красоты, барбершопов, автосервисов и клиник: "
         "чередование смен, автоподсчет отработанных часов, подсветка недоукомплектованности, чистая печать на А4 и экспорт в Telegram."
     )
-    canonical = "https://molniya-tech.ru/shifts"
+    canonical = "https://molniya-tech.ru/tools/shifts"
 
     faqs = [
         (
@@ -14406,7 +14334,7 @@ def build_shifts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14430,6 +14358,24 @@ def build_shifts_page() -> str:
       <section class="mt-hero mt-hero--tool" data-screen-label="Генератор графиков смен">
 
         <div class="mt-hero-lead mt-hero-lead--tool">
+          <nav class="mt-breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="mt-breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/" itemprop="item"><span itemprop="name">Главная</span></a>
+                <meta itemprop="position" content="1">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="mt-breadcrumbs-link" href="/tools" itemprop="item"><span itemprop="name">Инструменты</span></a>
+                <meta itemprop="position" content="2">
+              </li>
+              <li class="mt-breadcrumbs-sep" aria-hidden="true">/</li>
+              <li class="mt-breadcrumbs-item mt-breadcrumbs-item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="mt-breadcrumbs-current" itemprop="name">Генератор графиков смен</span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
           <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.97 из 5 на основе 1 420 оценок">
             <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
             <span><strong>4.97</strong> (1 420 составленных графиков управляющих)</span>
@@ -14807,7 +14753,7 @@ def build_shifts_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>'''
 
@@ -14815,445 +14761,44 @@ def build_shifts_page() -> str:
 
 
 def sync_sitemap():
-    """Ensures /auto and /requisites are in sitemap.xml."""
+    """Ensures clean URLs for all sectors, pages and tools are in sitemap.xml."""
     content = SITEMAP_XML.read_text(encoding="utf-8")
     changed = False
 
-    # Clean up old .html variant if present
-    if "https://molniya-tech.ru/requisites.html" in content:
-        content = content.replace("https://molniya-tech.ru/requisites.html", "https://molniya-tech.ru/requisites")
-        changed = True
+    # Clean up old single-slug tool URLs if present
+    old_tool_slugs = ["calendar", "inn", "margin", "carwash-weather", "qr", "salary", "pricelist", "acquiring", "shifts"]
+    for slug in old_tool_slugs:
+        old_loc = f"https://molniya-tech.ru/{slug}"
+        new_loc = f"https://molniya-tech.ru/tools/{slug}"
+        if f"<loc>{old_loc}</loc>" in content:
+            content = content.replace(f"<loc>{old_loc}</loc>", f"<loc>{new_loc}</loc>")
+            changed = True
+            print(f"Updated {old_loc} -> {new_loc} in sitemap.xml")
 
-    if "https://molniya-tech.ru/auto" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/auto</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /auto to sitemap.xml")
+    # Clean up old .html variants
+    for slug in ["requisites", "auto", "beauty", "health", "tools"] + [f"tools/{s}" for s in old_tool_slugs]:
+        if f"https://molniya-tech.ru/{slug}.html" in content:
+            content = content.replace(f"https://molniya-tech.ru/{slug}.html", f"https://molniya-tech.ru/{slug}")
+            changed = True
 
-    if "https://molniya-tech.ru/requisites" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/requisites</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /requisites to sitemap.xml")
-
-    if "https://molniya-tech.ru/beauty" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/beauty</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /beauty to sitemap.xml")
-
-    if "https://molniya-tech.ru/health" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/health</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /health to sitemap.xml")
-
-    if "https://molniya-tech.ru/psychologist" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/psychologist</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /psychologist to sitemap.xml")
-
-    if "https://molniya-tech.ru/stretching" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/stretching</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /stretching to sitemap.xml")
-
-    if "https://molniya-tech.ru/yoga" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/yoga</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /yoga to sitemap.xml")
-
-    if "https://molniya-tech.ru/trainers" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/trainers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /trainers to sitemap.xml")
-
-    if "https://molniya-tech.ru/martial-arts" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/martial-arts</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /martial-arts to sitemap.xml")
-
-    if "https://molniya-tech.ru/spaces" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/spaces</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /spaces to sitemap.xml")
-
-    if "https://molniya-tech.ru/photostudios" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/photostudios</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /photostudios to sitemap.xml")
-
-    if "https://molniya-tech.ru/quests" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/quests</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /quests to sitemap.xml")
-
-    if "https://molniya-tech.ru/vr-arena" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/vr-arena</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /vr-arena to sitemap.xml")
-
-    if "https://molniya-tech.ru/karting" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/karting</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /karting to sitemap.xml")
-
-    if "https://molniya-tech.ru/anticafe" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/anticafe</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /anticafe to sitemap.xml")
-
-    if "https://molniya-tech.ru/saunas" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/saunas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /saunas to sitemap.xml")
-
-    if "https://molniya-tech.ru/glamping" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/glamping</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /glamping to sitemap.xml")
-
-    if "https://molniya-tech.ru/furniture-cleaning" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/furniture-cleaning</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /furniture-cleaning to sitemap.xml")
-
-    if "https://molniya-tech.ru/window-cleaning" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/window-cleaning</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /window-cleaning to sitemap.xml")
-
-    if "https://molniya-tech.ru/pest-control" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/pest-control</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /pest-control to sitemap.xml")
-
-    if "https://molniya-tech.ru/cleaning" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/cleaning</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /cleaning to sitemap.xml")
-
-    if "https://molniya-tech.ru/education" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/education</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /education to sitemap.xml")
-
-    if "https://molniya-tech.ru/pets" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/pets</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /pets to sitemap.xml")
-
-    if "https://molniya-tech.ru/repair" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/repair</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /repair to sitemap.xml")
-
-    if "https://molniya-tech.ru/dikidi" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/dikidi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /dikidi to sitemap.xml")
-
-    if "https://molniya-tech.ru/yclients" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/yclients</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /yclients to sitemap.xml")
-
-    if "https://molniya-tech.ru/pricing.html" in content:
-        content = content.replace("https://molniya-tech.ru/pricing.html", "https://molniya-tech.ru/pricing")
-        changed = True
-
-    if "https://molniya-tech.ru/pricing" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/pricing</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /pricing to sitemap.xml")
-
-    if "https://molniya-tech.ru/about.html" in content:
-        content = content.replace("https://molniya-tech.ru/about.html", "https://molniya-tech.ru/about")
-        changed = True
-
-    if "https://molniya-tech.ru/about" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /about to sitemap.xml")
-
-    # Clean up old .html variant if present
-    if "https://molniya-tech.ru/privacy.html" in content:
-        content = content.replace("https://molniya-tech.ru/privacy.html", "https://molniya-tech.ru/privacy")
-        changed = True
-
-    if "https://molniya-tech.ru/privacy" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/privacy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /privacy to sitemap.xml")
-
-    if "https://molniya-tech.ru/calendar" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/calendar</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /calendar to sitemap.xml")
-
-    if "https://molniya-tech.ru/inn" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/inn</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /inn to sitemap.xml")
-
-    if "https://molniya-tech.ru/margin" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/margin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /margin to sitemap.xml")
-
-    if "https://molniya-tech.ru/carwash-weather" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/carwash-weather</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /carwash-weather to sitemap.xml")
-
-    if "https://molniya-tech.ru/qr" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/qr</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /qr to sitemap.xml")
-
-    if "https://molniya-tech.ru/salary" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/salary</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /salary to sitemap.xml")
-
-    if "https://molniya-tech.ru/pricelist" not in content:
-        url_entry = """  <url>\n    <loc>https://molniya-tech.ru/pricelist</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /pricelist to sitemap.xml")
-
-    if "https://molniya-tech.ru/acquiring" not in content:
-        url_entry = """  <url>\n    <loc>https://molniya-tech.ru/acquiring</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /acquiring to sitemap.xml")
-
-    if "https://molniya-tech.ru/shifts" not in content:
-        url_entry = """  <url>
-    <loc>https://molniya-tech.ru/shifts</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-"""
-        content = content.replace("</urlset>", url_entry + "</urlset>")
-        changed = True
-        print("Added /shifts to sitemap.xml")
-
+    # Ensure /tools is present
     if "https://molniya-tech.ru/tools" not in content:
         url_entry = """  <url>\n    <loc>https://molniya-tech.ru/tools</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
         content = content.replace("</urlset>", url_entry + "</urlset>")
         changed = True
         print("Added /tools to sitemap.xml")
 
+    # Ensure all 9 tools are present under /tools/<slug>
+    for slug in old_tool_slugs:
+        loc = f"https://molniya-tech.ru/tools/{slug}"
+        if loc not in content:
+            url_entry = f"""  <url>\n    <loc>{loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
+            content = content.replace("</urlset>", url_entry + "</urlset>")
+            changed = True
+            print(f"Added {loc} to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
-
 
 
 # ============================================================================
@@ -15271,7 +14816,7 @@ def sync_sitemap():
 RSS_ITEMS: list[dict[str, Any]] = [
     {
         "title": "Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4",
-        "slug": "shifts",
+        "slug": "tools/shifts",
         "description": "Бесплатный онлайн-инструмент для составления расписания сотрудников: чередование смен 2/2, 3/3 и 5/2, учет рабочих часов, интерактивное редактирование и экспорт для печати.",
         "pub_date": datetime(2026, 10, 24, 15, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
@@ -15285,56 +14830,56 @@ RSS_ITEMS: list[dict[str, Any]] = [
     },
     {
         "title": "Калькулятор эквайринга и экономии на СБП для малого бизнеса",
-        "slug": "acquiring",
+        "slug": "tools/acquiring",
         "description": "Бесплатный интерактивный калькулятор комиссий торгового и интернет-эквайринга: расчет переплат банку, экономии при переходе на оплату по QR-кодам СБП (0.4%–0.7%) и мгновенного зачисления средств за 15 секунд.",
         "pub_date": datetime(2026, 10, 24, 13, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Онлайн-конструктор прайс-листов услуг с печатью и экспортом в PDF",
-        "slug": "pricelist",
+        "slug": "tools/pricelist",
         "description": "Бесплатный онлайн-конструктор печатных прайс-листов для салонов красоты, барбершопов, автосервисов, массажа и клининга: готовые шаблоны, 3 темы оформления, экспорт в PDF и моментальная печать A4.",
         "pub_date": datetime(2026, 10, 24, 12, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Калькулятор зарплаты мастеров и сдельного процента",
-        "slug": "salary",
+        "slug": "tools/salary",
         "description": "Бесплатный онлайн-калькулятор сдельной оплаты труда для сферы услуг: расчет зарплаты мастера за смену и месяц, процент от услуг и витрины, вычет расходников, контроль доли ФОТ в выручке и сравнение 3 моделей мотивации.",
         "pub_date": datetime(2026, 10, 23, 23, 30, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Генератор брендовых QR-кодов для бизнеса с логотипом",
-        "slug": "qr",
+        "slug": "tools/qr",
         "description": "Бесплатный онлайн-генератор QR-кодов для онлайн-записи, оплаты по СБП, гостевого Wi-Fi, Telegram и визиток: выбор фирменных цветов, логотип в центр, рамки со слоганом и экспорт в PNG и векторный SVG.",
         "pub_date": datetime(2026, 10, 23, 22, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Индекс мойки авто — прогноз погоды и чистоты кузова",
-        "slug": "carwash-weather",
+        "slug": "tools/carwash-weather",
         "description": "Интерактивный расчет индекса чистоты автомобиля на 5 дней по данным Open-Meteo: оценка осадков, дорожной слякоти, реагентов и вердикт, стоит ли мыть машину сегодня.",
         "pub_date": datetime(2026, 10, 23, 21, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Калькулятор маржинальности и юнит-экономики сервисного бизнеса",
-        "slug": "margin",
+        "slug": "tools/margin",
         "description": "Бесплатный интерактивный калькулятор маржинальности, наценки, валовой прибыли, точки безубыточности и доли ФОТ для сервисного бизнеса с готовыми пресетами и копированием расчетов.",
         "pub_date": datetime(2026, 10, 23, 18, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Бесплатная проверка контрагентов по ИНН и ОГРН",
-        "slug": "inn",
+        "slug": "tools/inn",
         "description": "Мгновенная проверка юридических лиц и ИП по официальным реестрам ФНС, ЕГРЮЛ/ЕГРИП, ЕФРСБ и реестрам проверок: статус, налоговый режим, руководитель и реквизиты.",
         "pub_date": datetime(2026, 10, 23, 15, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
     },
     {
         "title": "Производственный календарь 2026 года для бизнеса",
-        "slug": "calendar",
+        "slug": "tools/calendar",
         "description": "Интерактивный производственный календарь России на 2026 год: праздничные и предпраздничные дни, переносы выходных, нормы рабочего времени при 40, 36 и 24 часах и экспорт в CSV.",
         "pub_date": datetime(2026, 10, 23, 11, 0, tzinfo=MSK_TZ),
         "category": "Инструменты",
@@ -15706,7 +15251,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15948,7 +15493,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 """
@@ -15985,7 +15530,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16045,7 +15590,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 """
@@ -16114,7 +15659,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16305,7 +15850,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 """
@@ -16365,7 +15910,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16649,7 +16194,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 """
@@ -16796,7 +16341,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -17155,7 +16700,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -17302,7 +16847,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -17661,7 +17206,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -17791,7 +17336,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18137,7 +17682,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -18267,7 +17812,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18613,7 +18158,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -18743,7 +18288,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19089,7 +18634,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -19219,7 +18764,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19565,7 +19110,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -19695,7 +19240,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20041,7 +19586,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -20171,7 +19716,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20517,7 +20062,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -20647,7 +20192,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20993,7 +20538,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -21123,7 +20668,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21469,7 +21014,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
@@ -21599,7 +21144,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-sh1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21945,12 +21490,81 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-sh1"></script>
+  <script src="/script.js?v=20261024-tools2"></script>
 </body>
 </html>
 '''
     return page_html
 
+
+
+
+def sync_navigation_to_index():
+    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
+    content = INDEX_HTML.read_text(encoding="utf-8")
+    nav_html = render_nav_html(active_item="", asset_prefix="", beta_cta=True)
+
+    start_marker = "<!-- NAV -->"
+    end_marker = "</nav>"
+    if start_marker in content and end_marker in content:
+        before = content.split(start_marker, 1)[0].rstrip(" \t")
+        after = content.split(end_marker, 1)[1]
+        content = before + nav_html + after
+
+    footer_html = render_footer_html(asset_prefix="", home_variant=True)
+    f_start = "<!-- FOOTER -->"
+    f_end = "</footer>"
+    if f_start in content and f_end in content:
+        before = content.split(f_start, 1)[0].rstrip(" \t")
+        after = content.split(f_end, 1)[1]
+        content = before + footer_html + after
+
+    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
+    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
+    content = content.replace(old_cookie_link, new_cookie_link)
+
+    sticky_start = "<!-- sticky floating CTA -->"
+    if sticky_start in content:
+        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
+        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
+        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
+
+    INDEX_HTML.write_text(content, encoding="utf-8")
+    print("Updated navigation, footer, and banner in index.html")
+
+
+def sync_navigation_to_blog():
+    """Syncs the DRY nav, footer, cookie banner, and sticky CTA into blog/index.html."""
+    content = BLOG_INDEX_HTML.read_text(encoding="utf-8")
+    nav_html = render_nav_html(active_item="blog", asset_prefix="../")
+
+    start_marker = "<!-- NAV -->"
+    end_marker = "</nav>"
+    if start_marker in content and end_marker in content:
+        before = content.split(start_marker, 1)[0].rstrip(" \t")
+        after = content.split(end_marker, 1)[1]
+        content = before + nav_html + after
+
+    footer_html = render_footer_html(asset_prefix="../")
+    f_start = "<!-- FOOTER -->"
+    f_end = "</footer>"
+    if f_start in content and f_end in content:
+        before = content.split(f_start, 1)[0].rstrip(" \t")
+        after = content.split(f_end, 1)[1]
+        content = before + footer_html + after
+
+    old_cookie_link = '<a href="/cookies" class="mt-link-accent">политике cookie</a>'
+    new_cookie_link = '<a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>'
+    content = content.replace(old_cookie_link, new_cookie_link)
+
+    sticky_start = "<!-- sticky floating CTA -->"
+    if sticky_start in content:
+        before_s = content.split(sticky_start, 1)[0].rstrip(" \t\n")
+        after_s = content.split(sticky_start, 1)[1].split("</a>", 1)[1]
+        content = before_s + "\n\n" + render_sticky_cta_html().strip() + after_s
+
+    BLOG_INDEX_HTML.write_text(content, encoding="utf-8")
+    print("Updated navigation, footer, and banner in blog/index.html")
 
 
 def main():
@@ -22109,55 +21723,66 @@ def main():
     (ROOT_DIR / "thanks.html").write_text(thanks_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'thanks.html'}")
 
-    print("Building production calendar page: /calendar.html...")
-    calendar_html = build_calendar_page()
-    (ROOT_DIR / "calendar.html").write_text(calendar_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'calendar.html'}")
+    TOOLS_DIR = ROOT_DIR / "tools"
+    TOOLS_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("Building counterparty verification page: /inn.html...")
-    inn_html = build_inn_page()
-    (ROOT_DIR / "inn.html").write_text(inn_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'inn.html'}")
-
-    print("Building business margin calculator page: /margin.html...")
-    margin_html = build_margin_page()
-    (ROOT_DIR / "margin.html").write_text(margin_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'margin.html'}")
-
-    print("Building carwash weather index page: /carwash-weather.html...")
-    carwash_weather_html = build_carwash_weather_page()
-    (ROOT_DIR / "carwash-weather.html").write_text(carwash_weather_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'carwash-weather.html'}")
-
-    print("Building brand QR code generator page: /qr.html...")
-    qr_html = build_qr_page()
-    (ROOT_DIR / "qr.html").write_text(qr_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'qr.html'}")
-
-    print("Building salary and motivation calculator page: /salary.html...")
-    salary_html = build_salary_page()
-    (ROOT_DIR / "salary.html").write_text(salary_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'salary.html'}")
-
-    print("Building pricelist constructor page: /pricelist.html...")
-    pricelist_html = build_pricelist_page()
-    (ROOT_DIR / "pricelist.html").write_text(pricelist_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'pricelist.html'}")
-
-    print("Building acquiring calculator page: /acquiring.html...")
-    acquiring_html = build_acquiring_page()
-    (ROOT_DIR / "acquiring.html").write_text(acquiring_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'acquiring.html'}")
-
-    print("Building shifts schedule maker page: /shifts.html...")
-    shifts_html = build_shifts_page()
-    (ROOT_DIR / "shifts.html").write_text(shifts_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'shifts.html'}")
-
-    print("Building tools hub catalog page: /tools.html...")
+    print("Building tools hub catalog page: /tools.html & /tools/index.html...")
     tools_html = build_tools_page()
     (ROOT_DIR / "tools.html").write_text(tools_html, encoding="utf-8")
-    print(f"Generated {ROOT_DIR / 'tools.html'}")
+    (TOOLS_DIR / "index.html").write_text(tools_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'tools.html'} and {TOOLS_DIR / 'index.html'}")
+
+    print("Building production calendar page: /tools/calendar.html...")
+    calendar_html = build_calendar_page()
+    (TOOLS_DIR / "calendar.html").write_text(calendar_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'calendar.html'}")
+
+    print("Building counterparty verification page: /tools/inn.html...")
+    inn_html = build_inn_page()
+    (TOOLS_DIR / "inn.html").write_text(inn_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'inn.html'}")
+
+    print("Building business margin calculator page: /tools/margin.html...")
+    margin_html = build_margin_page()
+    (TOOLS_DIR / "margin.html").write_text(margin_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'margin.html'}")
+
+    print("Building carwash weather index page: /tools/carwash-weather.html...")
+    carwash_weather_html = build_carwash_weather_page()
+    (TOOLS_DIR / "carwash-weather.html").write_text(carwash_weather_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'carwash-weather.html'}")
+
+    print("Building brand QR code generator page: /tools/qr.html...")
+    qr_html = build_qr_page()
+    (TOOLS_DIR / "qr.html").write_text(qr_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'qr.html'}")
+
+    print("Building salary and motivation calculator page: /tools/salary.html...")
+    salary_html = build_salary_page()
+    (TOOLS_DIR / "salary.html").write_text(salary_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'salary.html'}")
+
+    print("Building pricelist constructor page: /tools/pricelist.html...")
+    pricelist_html = build_pricelist_page()
+    (TOOLS_DIR / "pricelist.html").write_text(pricelist_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'pricelist.html'}")
+
+    print("Building acquiring calculator page: /tools/acquiring.html...")
+    acquiring_html = build_acquiring_page()
+    (TOOLS_DIR / "acquiring.html").write_text(acquiring_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'acquiring.html'}")
+
+    print("Building shifts schedule maker page: /tools/shifts.html...")
+    shifts_html = build_shifts_page()
+    (TOOLS_DIR / "shifts.html").write_text(shifts_html, encoding="utf-8")
+    print(f"Generated {TOOLS_DIR / 'shifts.html'}")
+
+    # Remove obsolete top-level tool html files so Nginx 301 redirects work cleanly
+    for old_file in ["calendar.html", "inn.html", "margin.html", "carwash-weather.html", "qr.html", "salary.html", "pricelist.html", "acquiring.html", "shifts.html"]:
+        p = ROOT_DIR / old_file
+        if p.exists():
+            p.unlink()
+            print(f"Removed legacy top-level file: {old_file}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()

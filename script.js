@@ -1662,7 +1662,7 @@ function initMarginCalculator() {
         '• Рентабельность бизнеса: ' + lastCalc.profitMargin + '%',
         '• Точка безубыточности: ' + lastCalc.breakEvenRevenue.toLocaleString('ru-RU') + ' ₽/мес (' + lastCalc.breakEvenClients + ' клиентов)',
         '• Потенциал роста чистой прибыли с онлайн-записью Молнии (+20% загрузки): +' + lastCalc.addedProfit.toLocaleString('ru-RU') + ' ₽/мес',
-        'Рассчитано на https://molniya-tech.ru/margin'
+        'Рассчитано на https://molniya-tech.ru/tools/margin'
       ].join('\n');
 
       copyTextToClipboard(textToCopy).then(function() {
@@ -2081,7 +2081,7 @@ function initCarwashWeather() {
       });
     }
 
-    var pageUrl = 'https://molniya-tech.ru/carwash-weather' + (data.city_slug !== 'custom' ? '?city=' + data.city_slug : '');
+    var pageUrl = 'https://molniya-tech.ru/tools/carwash-weather' + (data.city_slug !== 'custom' ? '?city=' + data.city_slug : '');
     var shareMsg = data.verdict + ' — Индекс чистоты кузова ' + data.score + '% в г. ' + data.city_name + '!\n' +
       data.tagline + '\n\n' +
       'Смотреть прогноз дорожной грязи: ' + pageUrl;
@@ -2207,7 +2207,7 @@ function initCarwashWeather() {
       e.preventDefault();
       if (!currentData) return;
 
-      var pageUrl = 'https://molniya-tech.ru/carwash-weather' + (currentData.city_slug !== 'custom' ? '?city=' + currentData.city_slug : '');
+      var pageUrl = 'https://molniya-tech.ru/tools/carwash-weather' + (currentData.city_slug !== 'custom' ? '?city=' + currentData.city_slug : '');
       var copyText = [
         '🧼 ' + currentData.verdict + ' — Индекс чистоты кузова: ' + currentData.score + '%',
         '📍 Город: ' + currentData.city_name,
@@ -2452,7 +2452,7 @@ function initQrGenerator() {
       var em = (vEmailEl && vEmailEl.value.trim()) || 'anna@molniya-tech.ru';
       return 'BEGIN:VCARD\nVERSION:3.0\nFN:' + fn + '\nORG:' + org + '\nTEL;TYPE=CELL:' + ph + '\nEMAIL:' + em + '\nEND:VCARD';
     }
-    return 'https://molniya-tech.ru/qr';
+    return 'https://molniya-tech.ru/tools/qr';
   }
 
   function getFrameText() {
@@ -3205,7 +3205,7 @@ function initSalaryCalculator() {
         '• Доля ФОТ в выручке бизнеса: ' + lastCalc.fotShare.toFixed(1) + '%',
         '• Валовая прибыль локации: ' + lastCalc.bizMargin.toLocaleString('ru-RU') + ' ₽',
         '--------------------------------------------',
-        'Рассчитано онлайн на https://molniya-tech.ru/salary'
+        'Рассчитано онлайн на https://molniya-tech.ru/tools/salary'
       ].join('\n');
 
       copyTextToClipboard(textToCopy).then(function() {
@@ -3656,7 +3656,7 @@ function initPricelistConstructor() {
 
       lines.push('');
       lines.push('--------------------------------------------');
-      lines.push('Сформировано в конструкторе прайс-листов: https://molniya-tech.ru/pricelist');
+      lines.push('Сформировано в конструкторе прайс-листов: https://molniya-tech.ru/tools/pricelist');
 
       var textToCopy = lines.filter(Boolean).join('\n');
 
@@ -3908,7 +3908,7 @@ function initAcquiringCalculator() {
         'Эффективная ставка комиссии снижается до ' + ((newTotalMonthly / rev) * 100).toFixed(2) + '%',
         'Зачисление средств: мгновенно за 15 секунд 24/7/365',
         '--------------------------------------------',
-        'Рассчитано в калькуляторе эквайринга: https://molniya-tech.ru/acquiring'
+        'Рассчитано в калькуляторе эквайринга: https://molniya-tech.ru/tools/acquiring'
       ];
 
       var textToCopy = lines.join('\n');
@@ -4250,7 +4250,7 @@ function initShiftsMaker() {
       });
 
       lines.push('--------------------------------------------');
-      lines.push('Сформировано в генераторе графиков Молния: https://molniya-tech.ru/shifts');
+      lines.push('Сформировано в генераторе графиков Молния: https://molniya-tech.ru/tools/shifts');
 
       var textToCopy = lines.join('\n');
 

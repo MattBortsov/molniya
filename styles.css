@@ -6544,15 +6544,19 @@ a.mt-origin-model-row:focus-visible {
   border-radius: var(--mt-radius-xl, 18px);
   overflow: hidden;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-  min-height: 320px;
-  background: #111;
+  background: #0d0f14;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .mt-weather-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: opacity .3s ease;
 }
@@ -8802,12 +8806,31 @@ a.mt-origin-model-row:focus-visible {
   flex-direction: column;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .mt-tool-card:hover {
   transform: translateY(-4px);
   border-color: var(--mt-border-accent);
-  box-shadow: 0 12px 32px rgba(210, 99, 74, 0.08);
+  box-shadow: 0 16px 36px rgba(210, 99, 74, 0.12);
+}
+
+.mt-tool-card:hover .mt-tool-card-title {
+  color: var(--mt-accent);
+}
+
+.mt-tool-card:hover .mt-tool-card-btn {
+  background: var(--mt-accent);
+  border-color: var(--mt-accent);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(210, 99, 74, 0.25);
+}
+
+.mt-tool-card:hover .mt-tool-card-btn svg {
+  transform: translateX(3px);
 }
 
 .mt-tool-card-thumb {
@@ -9369,4 +9392,71 @@ a.mt-origin-model-row:focus-visible {
     size: A4 portrait;
     margin: 8mm;
   }
+}
+
+
+/* ============================================================
+   BREADCRUMBS DESIGN SYSTEM
+   ============================================================ */
+.mt-breadcrumbs {
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.mt-breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mt-breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mt-text-muted);
+}
+
+.mt-breadcrumbs-link {
+  color: var(--mt-text-muted);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.mt-breadcrumbs-link:hover {
+  color: var(--mt-accent);
+}
+
+.mt-breadcrumbs-sep {
+  color: var(--mt-border-accent, rgba(210, 99, 74, 0.4));
+  font-size: 11px;
+  user-select: none;
+}
+
+.mt-breadcrumbs-current {
+  color: var(--mt-text-strong);
+  font-weight: 600;
+}
+
+.mt-tools-header {
+  margin-bottom: 32px;
+}
+
+.mt-tools-header .mt-section-title {
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.mt-tools-header .mt-section-sub {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--mt-text-muted);
+  max-width: 680px;
+  margin: 0;
 }

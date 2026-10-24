@@ -156,42 +156,42 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/calendar</loc>
+    <loc>https://molniya-tech.ru/tools/calendar</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/inn</loc>
+    <loc>https://molniya-tech.ru/tools/inn</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/margin</loc>
+    <loc>https://molniya-tech.ru/tools/margin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/carwash-weather</loc>
+    <loc>https://molniya-tech.ru/tools/carwash-weather</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/qr</loc>
+    <loc>https://molniya-tech.ru/tools/qr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/salary</loc>
+    <loc>https://molniya-tech.ru/tools/salary</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/pricelist</loc>
+    <loc>https://molniya-tech.ru/tools/pricelist</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/acquiring</loc>
+    <loc>https://molniya-tech.ru/tools/acquiring</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -201,7 +201,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://molniya-tech.ru/shifts</loc>
+    <loc>https://molniya-tech.ru/tools/shifts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -5,7 +5,7 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 24 Oct 2026 09:04:15 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 09:26:10 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
@@ -14,8 +14,8 @@
     </image>
     <item>
       <title>Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4</title>
-      <link>https://molniya-tech.ru/shifts</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/shifts</guid>
+      <link>https://molniya-tech.ru/tools/shifts</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/shifts</guid>
       <pubDate>Sat, 24 Oct 2026 15:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный онлайн-инструмент для составления расписания сотрудников: чередование смен 2/2, 3/3 и 5/2, учет рабочих часов, интерактивное редактирование и экспорт для печати.]]></description>
@@ -30,64 +30,64 @@
     </item>
     <item>
       <title>Калькулятор эквайринга и экономии на СБП для малого бизнеса</title>
-      <link>https://molniya-tech.ru/acquiring</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/acquiring</guid>
+      <link>https://molniya-tech.ru/tools/acquiring</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/acquiring</guid>
       <pubDate>Sat, 24 Oct 2026 13:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный интерактивный калькулятор комиссий торгового и интернет-эквайринга: расчет переплат банку, экономии при переходе на оплату по QR-кодам СБП (0.4%–0.7%) и мгновенного зачисления средств за 15 секунд.]]></description>
     </item>
     <item>
       <title>Онлайн-конструктор прайс-листов услуг с печатью и экспортом в PDF</title>
-      <link>https://molniya-tech.ru/pricelist</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/pricelist</guid>
+      <link>https://molniya-tech.ru/tools/pricelist</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/pricelist</guid>
       <pubDate>Sat, 24 Oct 2026 12:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный онлайн-конструктор печатных прайс-листов для салонов красоты, барбершопов, автосервисов, массажа и клининга: готовые шаблоны, 3 темы оформления, экспорт в PDF и моментальная печать A4.]]></description>
     </item>
     <item>
       <title>Калькулятор зарплаты мастеров и сдельного процента</title>
-      <link>https://molniya-tech.ru/salary</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/salary</guid>
+      <link>https://molniya-tech.ru/tools/salary</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/salary</guid>
       <pubDate>Fri, 23 Oct 2026 23:30:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный онлайн-калькулятор сдельной оплаты труда для сферы услуг: расчет зарплаты мастера за смену и месяц, процент от услуг и витрины, вычет расходников, контроль доли ФОТ в выручке и сравнение 3 моделей мотивации.]]></description>
     </item>
     <item>
       <title>Генератор брендовых QR-кодов для бизнеса с логотипом</title>
-      <link>https://molniya-tech.ru/qr</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/qr</guid>
+      <link>https://molniya-tech.ru/tools/qr</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/qr</guid>
       <pubDate>Fri, 23 Oct 2026 22:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный онлайн-генератор QR-кодов для онлайн-записи, оплаты по СБП, гостевого Wi-Fi, Telegram и визиток: выбор фирменных цветов, логотип в центр, рамки со слоганом и экспорт в PNG и векторный SVG.]]></description>
     </item>
     <item>
       <title>Индекс мойки авто — прогноз погоды и чистоты кузова</title>
-      <link>https://molniya-tech.ru/carwash-weather</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/carwash-weather</guid>
+      <link>https://molniya-tech.ru/tools/carwash-weather</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/carwash-weather</guid>
       <pubDate>Fri, 23 Oct 2026 21:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Интерактивный расчет индекса чистоты автомобиля на 5 дней по данным Open-Meteo: оценка осадков, дорожной слякоти, реагентов и вердикт, стоит ли мыть машину сегодня.]]></description>
     </item>
     <item>
       <title>Калькулятор маржинальности и юнит-экономики сервисного бизнеса</title>
-      <link>https://molniya-tech.ru/margin</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/margin</guid>
+      <link>https://molniya-tech.ru/tools/margin</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/margin</guid>
       <pubDate>Fri, 23 Oct 2026 18:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Бесплатный интерактивный калькулятор маржинальности, наценки, валовой прибыли, точки безубыточности и доли ФОТ для сервисного бизнеса с готовыми пресетами и копированием расчетов.]]></description>
     </item>
     <item>
       <title>Бесплатная проверка контрагентов по ИНН и ОГРН</title>
-      <link>https://molniya-tech.ru/inn</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/inn</guid>
+      <link>https://molniya-tech.ru/tools/inn</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/inn</guid>
       <pubDate>Fri, 23 Oct 2026 15:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Мгновенная проверка юридических лиц и ИП по официальным реестрам ФНС, ЕГРЮЛ/ЕГРИП, ЕФРСБ и реестрам проверок: статус, налоговый режим, руководитель и реквизиты.]]></description>
     </item>
     <item>
       <title>Производственный календарь 2026 года для бизнеса</title>
-      <link>https://molniya-tech.ru/calendar</link>
-      <guid isPermaLink="true">https://molniya-tech.ru/calendar</guid>
+      <link>https://molniya-tech.ru/tools/calendar</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tools/calendar</guid>
       <pubDate>Fri, 23 Oct 2026 11:00:00 +0300</pubDate>
       <category>Инструменты</category>
       <description><![CDATA[Интерактивный производственный календарь России на 2026 год: праздничные и предпраздничные дни, переносы выходных, нормы рабочего времени при 40, 36 и 24 часах и экспорт в CSV.]]></description>
