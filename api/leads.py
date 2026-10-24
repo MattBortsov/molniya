@@ -52,6 +52,7 @@ FORM_NAMES = {
     "salary": "Калькулятор зарплат — бесплатный доступ",
     "pricelist": "Конструктор прайс-листов — бесплатный доступ",
     "acquiring": "Калькулятор эквайринга — бесплатный доступ",
+    "tools": "Инструменты для бизнеса — бесплатный доступ",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -91,6 +92,7 @@ SOURCE_PATHS = {
     "salary": "/salary",
     "pricelist": "/pricelist",
     "acquiring": "/acquiring",
+    "tools": "/tools",
 }
 
 

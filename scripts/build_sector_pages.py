@@ -290,15 +290,12 @@ def render_footer_nav_html() -> str:
               <a class="mt-footer-link" href="/blog">Блог</a>
             </div>
             <div class="mt-footer-nav-group">
-              <h3>Инструменты</h3>
-              <a class="mt-footer-link" href="/calendar">Производственный календарь</a>
-              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
-              <a class="mt-footer-link" href="/margin">Калькулятор доходности</a>
-              <a class="mt-footer-link" href="/carwash-weather">Индекс мойки авто</a>
+              <h3><a class="mt-footer-heading-link" href="/tools">Инструменты</a></h3>
               <a class="mt-footer-link" href="/qr">Генератор QR-кодов</a>
-              <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
               <a class="mt-footer-link" href="/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/salary">Калькулятор зарплат</a>
               <a class="mt-footer-link" href="/acquiring">Калькулятор эквайринга</a>
+              <a class="mt-footer-link" href="/inn">Проверка контрагента</a>
             </div>
             <div class="mt-footer-nav-group">
               <h3>Информация</h3>
@@ -744,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1121,7 +1118,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -1272,7 +1269,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1649,7 +1646,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -1766,7 +1763,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2189,7 +2186,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -2334,7 +2331,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2771,7 +2768,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -2916,7 +2913,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3293,7 +3290,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -3438,7 +3435,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3847,7 +3844,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -3993,7 +3990,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4370,7 +4367,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -4516,7 +4513,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4893,7 +4890,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -5041,7 +5038,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5418,7 +5415,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -5451,7 +5448,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5510,7 +5507,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 """
@@ -5661,7 +5658,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6098,7 +6095,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -6250,7 +6247,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6682,7 +6679,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -6834,7 +6831,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7355,7 +7352,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -7507,7 +7504,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7916,7 +7913,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -8066,7 +8063,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8511,7 +8508,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -8661,7 +8658,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9203,7 +9200,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -9349,7 +9346,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9726,7 +9723,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -9871,7 +9868,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10250,7 +10247,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -10395,7 +10392,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10774,7 +10771,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -10928,7 +10925,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11301,7 +11298,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -11441,7 +11438,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11882,7 +11879,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -12023,7 +12020,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12469,7 +12466,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -12621,7 +12618,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13032,7 +13029,7 @@ def build_pricelist_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-acq1" defer></script>
+    <script src="/script.js?v=20261024-tools1" defer></script>
   </div>
 </body>
 </html>'''
@@ -13048,8 +13045,8 @@ def build_acquiring_page() -> str:
     footer_html = render_footer_html(asset_prefix="")
     lead_html = render_lead_form_html(
         "acquiring",
-        'Подключите выгодный прием оплат по СБП и картам <span class="mt-hero-accent">с платформой Молния</span>',
-        "Оставьте контакты — поможем подключить платежный модуль Молнии: ставка от 0.4%, динамические QR-коды на кассе и в онлайн-записи, зачисление выручки за 15 секунд без абонентской платы.",
+        'Ведите учет оплат, предоплат и работы мастеров <span class="mt-hero-accent">в платформе Молния</span>',
+        "Оставьте контакты — покажем, как настроить учет оплат по СБП и картам, принимать онлайн-предоплаты в виджете записи и автоматически рассчитывать зарплату мастеров без путаницы в чеках.",
     )
 
     title = "Калькулятор эквайринга и экономии на СБП — расчет комиссий и выгоды онлайн | Молния"
@@ -13183,7 +13180,7 @@ def build_acquiring_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13236,8 +13233,8 @@ def build_acquiring_page() -> str:
                 <span class="mt-facet-note">без кассовых разрывов на выходных и праздниках</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">0 ₽ за аренду терминала</span>
-                <span class="mt-facet-note">динамический QR прямо на экране кассы и в онлайн-записи</span>
+                <span class="mt-facet-name">Учет оплат в Молнии</span>
+                <span class="mt-facet-note">фиксация оплат по СБП, картам и предоплатам в онлайн-записи</span>
               </li>
             </ul>
           </div>
@@ -13407,7 +13404,7 @@ def build_acquiring_page() -> str:
                     <span class="mt-acquiring-comparison-note">Текущий расчет (65% СБП)</span>
                   </div>
                   <div class="mt-acquiring-comparison-item">
-                    <span class="mt-acquiring-comparison-name">100% СБП в Молнии</span>
+                    <span class="mt-acquiring-comparison-name">100% СБП (по QR)</span>
                     <span class="mt-acquiring-comparison-val" data-acq-comp="model3">5 250 ₽/мес</span>
                     <span class="mt-acquiring-comparison-note">Максимальная выгода, 0 ₽ POS</span>
                   </div>
@@ -13420,7 +13417,7 @@ def build_acquiring_page() -> str:
                   <span>⚡ Умный расчет эффективности</span>
                 </div>
                 <p class="mt-acquiring-growth-text" data-acq-growth-text>
-                  При безналичном обороте <strong>750 000 ₽</strong> перевод части оплат на СБП сберегает <strong>111 780 ₽ в год</strong>. В платформе Молния динамический QR-код формируется на экране кассы или прямо в форме онлайн-записи: клиент подтверждает перевод в банковском приложении за 3 секунды, а деньги поступают на ваш расчетный счет без задержек на выходных.
+                  При безналичном обороте <strong>750 000 ₽</strong> перевод части оплат на СБП в вашем банке сберегает <strong>111 780 ₽ в год</strong>. А в платформе Молния вы можете настроить прием предоплат через СБП в онлайн-записи и вести прозрачный учет оплат по картам и QR в едином журнале визитов без ошибок в расчете зарплат мастеров.
                 </p>
               </div>
 
@@ -13431,7 +13428,7 @@ def build_acquiring_page() -> str:
                   <span>Скопировать расчет экономии</span>
                 </button>
                 <a class="mt-acquiring-cta-btn" href="#lead-form">
-                  <span>Подключить СБП и онлайн-оплату в Молнии →</span>
+                  <span>Автоматизировать учет оплат и онлайн-запись в Молнии →</span>
                 </a>
               </div>
 
@@ -13559,7 +13556,7 @@ def build_acquiring_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Подключение</span>
               <h3>Активируйте прием СБП без смены расчетного счета</h3>
-              <p>Служба заботы Молнии дистанционно подключает модуль приема оплат. Менять действующий расчетный счет и переоформлять договоры в банке не требуется.</p>
+              <p>Подключите прием СБП в вашем обслуживающем банке (Сбер, Т-Банк, ВТБ, Альфа). Менять расчетный счет или покупать дорогостоящие терминалы не требуется.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Подключение">
               <div class="mt-journey-proof-head">
@@ -13577,7 +13574,7 @@ def build_acquiring_page() -> str:
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Интеграция</span>
               <h3>Выводите динамический QR на экран кассы и в онлайн-запись</h3>
-              <p>В момент расчета экран администратора мгновенно показывает персональный QR с точной суммой чека. Клиенту достаточно открыть камеру своего смартфона.</p>
+              <p>Разместите брендовый QR-код на стойке ресепшн и включите прием предоплат в онлайн-записи Молнии. Клиенту достаточно открыть камеру своего смартфона.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Интеграция">
               <div class="mt-journey-proof-head">
@@ -13617,7 +13614,7 @@ def build_acquiring_page() -> str:
             <div class="mt-case-tag">⚡ Кейс оптимизации эквайринга</div>
             <h2 class="mt-case-title">Алексей Мельников, сооснователь сети детейлинг-центров</h2>
             <blockquote class="mt-case-quote">
-              «У нас средний чек на оклейку бронепленкой и восстановительную полировку кузова — 45 000 – 90 000 ₽. Банк брал 2.1% торгового эквайринга, а деньги за машины, сданные в пятницу и субботу, падали на счет только во вторник после обеда. Поставили динамический QR от Молнии на экран администратора и настроили прием предоплат по СБП в онлайн-записи: 68% клиентов с удовольствием платят телефоном через Сбербанк или Т-Банк. Экономия на банковских комиссиях составила 142 000 рублей за первый же год, а кассовые разрывы на выходных исчезли навсегда.»
+              «У нас средний чек на оклейку бронепленкой и восстановительную полировку кузова — 45 000 – 90 000 ₽. Банк брал 2.1% торгового эквайринга, а деньги за машины, сданные в пятницу и субботу, падали на счет только во вторник после обеда. Сгенерировали брендовый QR-код для СБП на стойку ресепшн и настроили обязательную предоплату по СБП в онлайн-записи Молнии: 68% клиентов с удовольствием платят телефоном через Сбербанк или Т-Банк. Экономия на банковских комиссиях составила 142 000 рублей за первый же год, а кассовые разрывы на выходных исчезли навсегда.»
             </blockquote>
             <div class="mt-case-author">
               Алексей Мельников <span>· Сооснователь сети детейлинг-центров, <span style="white-space:nowrap">Санкт-Петербург</span></span>
@@ -13647,8 +13644,8 @@ def build_acquiring_page() -> str:
         </div>
         <div class="mt-before-start-grid">
           <article class="mt-before-start-highlight">
-            <h3>Подключите выгодные платежи в Молнии</h3>
-            <p>Поможем подключить прием оплат по СБП (0.4%–0.7%) и онлайн-эквайринг к вашей кассе за 15 минут без смены банка.</p>
+            <h3>Управляйте записями и оплатами в Молнии</h3>
+            <p>Поможем настроить онлайн-запись с предоплатой, фиксацию оплат по СБП и картам и интеграцию с онлайн-кассой за 15 минут.</p>
             <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
           </article>
           <div class="mt-before-start-questions">
@@ -13670,7 +13667,520 @@ def build_acquiring_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-acq1" defer></script>
+    <script src="/script.js?v=20261024-tools1" defer></script>
+  </div>
+</body>
+</html>'''
+
+    return page_html
+
+
+
+
+def build_tools_page() -> str:
+    """Builds the central Tools Hub catalog page: /tools."""
+    nav_html = render_nav_html(active_item="", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "tools",
+        'Объедините все процессы сервисного бизнеса <span class="mt-hero-accent">в единой платформе Молния</span>',
+        "Оставьте контакты — поможем автоматизировать онлайн-запись клиентов, журнал визитов, расчет сдельной зарплаты и учет оплат в едином окне за 15 минут.",
+    )
+
+    title = "Бесплатные онлайн-инструменты для сервисного бизнеса — калькуляторы и генераторы | Молния"
+    description = (
+        "8 бесплатных онлайн-инструментов для малого бизнеса в сфере услуг: генератор QR-кодов, конструктор прайс-листов с печатью A4, "
+        "калькуляторы сдельной зарплаты, эквайринга, маржинальности, проверка контрагентов по ИНН и производственный календарь 2026."
+    )
+    canonical = "https://molniya-tech.ru/tools"
+
+    tools_data = [
+        {
+            "slug": "qr",
+            "title": "Генератор брендовых QR-кодов",
+            "badges": ["SVG / PNG", "СБП & Wi-Fi", "Бесплатно"],
+            "desc": "Создание векторных QR-кодов для оплаты по СБП, онлайн-записи и гостевого Wi-Fi с вашим логотипом в центре, слоганом и стильными рамками.",
+            "img": "/assets/img/tools/qr.jpg",
+            "btn_text": "Создать QR-код",
+        },
+        {
+            "slug": "pricelist",
+            "title": "Конструктор прайс-листов с печатью A4",
+            "badges": ["Печать A4", "PDF экспорт", "Бесплатно"],
+            "desc": "Готовые прейскуранты для салонов красоты, барбершопов, автосервисов и клининга: 3 дизайн-темы, точки-лидеры и чистая печать без обрезки полей.",
+            "img": "/assets/img/tools/pricelist.jpg",
+            "btn_text": "Собрать прайс-лист",
+        },
+        {
+            "slug": "salary",
+            "title": "Калькулятор зарплаты мастеров и ФОТ",
+            "badges": ["Сдельщина & Оклад", "Техкарты", "Бесплатно"],
+            "desc": "Расчет выплат специалистам за смену и месяц: оклад за выход, процент от услуг и витрины, вычет материалов и контроль безопасной доли ФОТ.",
+            "img": "/assets/img/tools/salary.jpg",
+            "btn_text": "Рассчитать зарплату",
+        },
+        {
+            "slug": "acquiring",
+            "title": "Калькулятор эквайринга и экономии на СБП",
+            "badges": ["Ставка от 0.4%", "Экономия", "Бесплатно"],
+            "desc": "Сравнение классического торгового эквайринга (1.8%–2.6%) и оплат по СБП (0.4%–0.7%): чистая годовая экономия и зачисление выручки за 15 секунд.",
+            "img": "/assets/img/tools/acquiring.jpg",
+            "btn_text": "Рассчитать выгоду",
+        },
+        {
+            "slug": "inn",
+            "title": "Проверка контрагентов по ИНН и ОГРН",
+            "badges": ["ФНС & ЕГРЮЛ", "Мгновенно", "Бесплатно"],
+            "desc": "Мгновенная официальная выписка из реестров налоговой службы: статус юрлица или ИП, налоговый режим, руководитель, арбитраж и реквизиты.",
+            "img": "/assets/img/tools/inn.jpg",
+            "btn_text": "Проверить компанию",
+        },
+        {
+            "slug": "margin",
+            "title": "Калькулятор маржинальности и безубыточности",
+            "badges": ["Юнит-экономика", "Точка окупаемости", "Бесплатно"],
+            "desc": "Расчет маржи, торговой наценки, валовой прибыли, точки окупаемости постоянных расходов и скрытых финансовых потерь от пустых окон в записи.",
+            "img": "/assets/img/tools/margin.jpg",
+            "btn_text": "Рассчитать маржу",
+        },
+        {
+            "slug": "carwash-weather",
+            "title": "Индекс мойки авто и чистоты кузова",
+            "badges": ["Погода Open-Meteo", "Прогноз 5 дней", "Бесплатно"],
+            "desc": "Метеорологический расчет дорожной слякоти, осадков и реагентов на 5 дней: стоит ли мыть машину сегодня или кузов испачкается через 2 часа.",
+            "img": "/assets/img/tools/carwash-weather.jpg",
+            "btn_text": "Узнать индекс мойки",
+        },
+        {
+            "slug": "calendar",
+            "title": "Производственный календарь 2026",
+            "badges": ["Нормы Минтруда", "Праздники 2026", "Бесплатно"],
+            "desc": "Рабочие, праздничные и сокращенные дни 2026 года, квартальные нормы рабочего времени при 40, 36 и 24-часовой неделе для кадрового учета.",
+            "img": "/assets/img/tools/calendar.jpg",
+            "btn_text": "Открыть календарь",
+        },
+    ]
+
+    cards_html = []
+    for t in tools_data:
+        badges_rendered = "".join(
+            f'<span class="mt-tool-badge{" mt-tool-badge--free" if b == "Бесплатно" else ""}">{html.escape(b)}</span>'
+            for b in t["badges"]
+        )
+        card = f'''          <article class="mt-tool-card">
+            <div class="mt-tool-card-thumb">
+              <img class="mt-tool-card-img" src="{t["img"]}" alt="{html.escape(t["title"])}" width="600" height="338" loading="lazy">
+              <div class="mt-tool-card-badges">
+                {badges_rendered}
+              </div>
+            </div>
+            <div class="mt-tool-card-body">
+              <h3 class="mt-tool-card-title"><a href="/{t["slug"]}">{html.escape(t["title"])}</a></h3>
+              <p class="mt-tool-card-desc">{html.escape(t["desc"])}</p>
+              <div class="mt-tool-card-footer">
+                <a class="mt-tool-card-btn" href="/{t["slug"]}">
+                  <span>{html.escape(t["btn_text"])}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>'''
+        cards_html.append(card)
+
+    cards_markup = "\n".join(cards_html)
+
+    faqs = [
+        (
+            "Все ли инструменты на этой странице бесплатны или есть скрытые платные ограничения?",
+            "Все 8 инструментов полностью бесплатны и доступны без регистрации, ввода номера телефона или привязки банковской карты. Вы можете использовать калькуляторы, проверку контрагентов, генератор QR-кодов и конструктор прайсов сколько угодно раз без лимитов на количество скачиваний и расчетов.",
+        ),
+        (
+            "Сохраняются ли где-то коммерческие данные компании, выручка и финансовые расчеты?",
+            "Нет. Все расчеты зарплат, маржинальности, эквайринга и генерация QR-кодов происходят исключительно локально в вашем браузере (на стороне клиента). Никакие конфиденциальные финансовые показатели вашей организации не передаются и не сохраняются на серверах.",
+        ),
+        (
+            "Можно ли пользоваться инструментами со смартфона или планшета?",
+            "Да, все инструменты и калькуляторы адаптированы под экраны любых мобильных устройств. Вы можете сгенерировать QR-код, рассчитать зарплату мастера за смену прямо в телефоне и скопировать готовый текстовый отчет для отправки в Telegram или WhatsApp.",
+        ),
+        (
+            "Как распечатать готовый прайс-лист или сохранить расчет в PDF без лишних элементов сайта?",
+            "В конструкторе прайс-листов и других печатных сервисах настроены специальные правила (@media print). Нажав кнопку «Распечатать», браузер автоматически сформирует чистый бланк документа под формат A4 без шапки сайта, панели редактора и лишних кнопок.",
+        ),
+        (
+            "Чем платформа Молния отличается от этих бесплатных калькуляторов?",
+            "Бесплатные инструменты решают точечные операционные задачи: рассчитать мотивацию, сделать QR-код, проверить компанию. Платформа Молния — это полноценная комплексная экосистема для ежедневной работы: круглосуточная онлайн-запись клиентов 24/7, электронный журнал визитов, автоматическое начисление зарплаты по закрытым чекам, списание материалов со склада по техкартам и клиентская база без доплат за сотрудников.",
+        ),
+        (
+            "Будут ли появляться новые полезные инструменты в этом каталоге?",
+            "Да, мы регулярно расширяем экосистему полезных сервисов для малого бизнеса на основе запросов предпринимателей: в ближайших обновлениях появятся интерактивный генератор графиков смен мастеров (2/2, 3/3), калькулятор окупаемости онлайн-записи и шаблоны регламентов обслуживания.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Инструменты для бизнеса", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Каталог бесплатных инструментов и калькуляторов Молния",
+            "url": canonical,
+            "description": description,
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero mt-hero--tool" data-screen-label="Инструменты для бизнеса">
+
+        <div class="mt-hero-lead mt-hero-lead--tool">
+          <div class="mt-hero-rating-badge" aria-label="Рейтинг 4.98 из 5 на основе 2 140 оценок">
+            <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
+            <span><strong>4.98</strong> (2 140 оценок предпринимателей и руководителей)</span>
+          </div>
+
+          <h1 class="mt-hero-title">
+            Бесплатные онлайн-инструменты<br><span class="mt-hero-accent">для сервисного бизнеса</span>
+          </h1>
+
+          <div class="mt-hero-bottom mt-hero-bottom--tool">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Практичные калькуляторы, конструкторы и сервисы проверки без регистрации: рассчитывайте зарплаты и экономию на эквайринге, создавайте печатные прайс-листы и брендовые QR-коды для роста прибыли.</p>
+              <a class="mt-btn mt-btn-hero" href="#catalog">Выбрать инструмент ↓</a>
+            </div>
+
+            <ul class="mt-facets" aria-label="Преимущества каталога инструментов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">8 бесплатных инструментов</span>
+                <span class="mt-facet-note">калькуляторы, печать прейскурантов, проверка ИНН</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Без регистрации и SMS</span>
+                <span class="mt-facet-note">мгновенный запуск прямо в браузере за 0 секунд</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Готовый экспорт и печать</span>
+                <span class="mt-facet-note">бланки A4, PDF, векторный SVG и текст в мессенджеры</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Актуально на 2026 год</span>
+                <span class="mt-facet-note">с учетом тарифов ЦБ РФ, ФНС и норм Минтруда</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TOOLS 3-COLUMN CATALOG -->
+      <section class="mt-section mt-reveal mt-tools-section" id="catalog" data-screen-label="Каталог инструментов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каталог интерактивных инструментов <span class="mt-overview-hook">для предпринимателей</span></h2>
+          <p class="mt-section-sub">Выберите нужный сервис для автоматизации рутины, точных расчетов себестоимости и привлечения гостей.</p>
+        </div>
+
+        <div class="mt-tools-grid">
+{cards_markup}
+        </div>
+      </section>
+
+      <!-- OVERVIEW GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Зачем эти инструменты" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Зачем мы создали эти инструменты <span class="mt-overview-hook">и как они помогают бизнесу</span></h2>
+          <p class="mt-section-sub">Решение ежедневных прикладных задач управляющих, администраторов и владельцев компаний в сфере услуг.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Экономия десятков часов <span class="mt-overview-hook">на расчетах в Excel и таблицах</span></h3>
+            <p>Расчет сдельной зарплаты, вычет себестоимости материалов по техкартам и сведение прейскурантов больше не требуют бессонных ночей с калькулятором.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Время на расчеты</span><span>Экономия</span></div>
+              <div class="mt-overview-price-row"><span>Ручные таблицы</span><strong>2–3 дня в месяц</strong></div>
+              <div class="mt-overview-price-row"><span>Инструменты Молнии</span><strong>1 клик за 1 минуту</strong></div>
+              <div class="mt-overview-price-tag">До 30 часов высвобожденного времени ежемесячно</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Защита от кассовых разрывов <span class="mt-overview-hook">и переплат по эквайрингу</span></h3>
+            <p>Калькуляторы эквайринга и маржинальности показывают реальную стоимость банковских комиссий и помогают сберегать до 150 000 ₽ в год при переходе на СБП.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Оптимизация расходов</span><span>СБП vs Эквайринг</span></div>
+              <div class="mt-overview-price-row"><span>Эквайринг 2.2%</span><strong>18 000 ₽/мес потерь</strong></div>
+              <div class="mt-overview-price-row"><span>Ставка СБП 0.7%</span><strong>8 600 ₽/мес расходов</strong></div>
+              <div class="mt-overview-price-tag">Более 110 000 ₽ чистой экономии в карман бизнеса</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Соответствие закону РФ <span class="mt-overview-hook">для Уголка потребителя и ФНС</span></h3>
+            <p>Печатный прайс-лист оформлен по требованиям ст. 10 ЗоЗПП, а проверка контрагента подтягивает официальные регистрационные сведения напрямую из баз ФНС.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Юридическая чистота</span><span>ЗоЗПП & ФНС</span></div>
+              <div class="mt-overview-price-row"><span>Печатный прейскурант</span><strong>Формат A4 без полей</strong></div>
+              <div class="mt-overview-price-row"><span>Выписка контрагента</span><strong>ЕГРЮЛ / ЕГРИП</strong></div>
+              <div class="mt-overview-price-tag">100% готовность к проверкам надзорных органов</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Рост среднего чека <span class="mt-overview-hook">и стимулирование допродаж</span></h3>
+            <p>Понятная категоризация услуг в прайс-листе поднимает спрос на комбо-комплексы, а прозрачный процент витрины превращает мастеров в активных продавцов.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Эффективность витрины</span><span>Рост продаж</span></div>
+              <div class="mt-overview-price-row"><span>Допродажи косметики</span><strong>+25% к чеку</strong></div>
+              <div class="mt-overview-price-row"><span>Комплексные услуги</span><strong>+28% записей</strong></div>
+              <div class="mt-overview-price-tag">Клиенты охотно пробуют более маржинальные услуги</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Естественный шаг к автоматизации <span class="mt-overview-hook">на платформе Молния</span></h3>
+            <p>Когда вы готовы объединить расписание, онлайн-запись 24/7, склад и расчет выплат в единую цифровую систему — Молния подключается за 15 минут.</p>
+            <div class="mt-overview-preview" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>CRM Молния</span><span>Все в одном</span></div>
+              <div class="mt-overview-message">
+                ⚡ Единая платформа: запись 24/7, мастера, склад и учет оплат.
+                <span class="mt-overview-reaction">✓ 0 ₽ за доплаты</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="mt-section mt-reveal" data-screen-label="Как использовать инструменты" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Как навести порядок в процессах <span class="mt-overview-hook">за 4 простых шага</span></h2>
+          <p class="mt-section-sub">Пошаговый алгоритм наведения финансового порядка и привлечения клиентов в вашем заведении.</p>
+        </div>
+
+        <div class="mt-journey">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Расчет</span>
+              <h3>Проверьте экономику: маржинальность, ФОТ и эквайринг</h3>
+              <p>Убедитесь, что доля выплат мастерам не превышает безопасные 42% от выручки, а банк не забирает лишние проценты за торговый эквайринг и терминалы.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Аудит экономики">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Финансовый срез</span>
+                <span class="mt-journey-proof-badge">Оцифровано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Доля ФОТ</span><strong>35–40% нормы</strong></div>
+              <div class="mt-journey-proof-row"><span>Экономия на СБП</span><strong>До 120 000 ₽/год</strong></div>
+              <div class="mt-journey-proof-row"><span>Точка безубыточности</span><strong>Под контролем</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Оформление</span>
+              <h3>Подготовьте аккуратный прайс-лист и брендовый QR-код</h3>
+              <p>Соберите меню услуг в стильной теме, распечатайте бланк A4 для ресепшн и разместите QR-код со ссылкой на онлайн-запись и оплату по СБП.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Оформление стойки">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Стойка ресепшн</span>
+                <span class="mt-journey-proof-badge">Готово к печати</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Печатный прайс</span><strong>A4 без полей</strong></div>
+              <div class="mt-journey-proof-row"><span>Брендовый QR</span><strong>С логотипом</strong></div>
+              <div class="mt-journey-proof-row"><span>Затраты на дизайнеров</span><strong>0 рублей</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Контроль</span>
+              <h3>Проверяйте надежность поставщиков и нормы времени</h3>
+              <p>Используйте сервис проверки контрагентов по ИНН перед заключением договоров и сверяйтесь с официальным производственным календарем 2026 года.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Контроль рисков">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Безопасность</span>
+                <span class="mt-journey-proof-badge">Данные ФНС</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Проверка юрлиц</span><strong>По 5 базам</strong></div>
+              <div class="mt-journey-proof-row"><span>Нормы Минтруда</span><strong>Календарь 2026</strong></div>
+              <div class="mt-journey-proof-row"><span>Кадровые риски</span><strong>Исключены</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Автоматизация</span>
+              <h3>Объедините все процессы в платформе Молния</h3>
+              <p>Переходите от ручных расчетов к единой CRM-системе: круглосуточная онлайн-запись, журнал визитов, учет оплат и автосписание материалов со склада.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Автоматизация бизнеса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Экосистема Молния</span>
+                <span class="mt-journey-proof-badge">15 минут</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Запись клиентов</span><strong>24/7 без звонков</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата мастеров</span><strong>Авторасчет</strong></div>
+              <div class="mt-journey-proof-row"><span>Доплаты за команду</span><strong>0 ₽ без ограничений</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс применения инструментов" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс владельца бизнеса</div>
+            <h2 class="mt-case-title">Наталья Григорьева, владелица салона красоты и барбершопа</h2>
+            <blockquote class="mt-case-quote">
+              «Пользуемся сразу четырьмя инструментами Молнии: на калькуляторе зарплат настроили справедливые 40% мастерам с вычетом препаратов по техкартам, через конструктор прайсов распечатали стильные бланки на стойку в теме Нуар, а генератором QR сделали брендированные таблички для оплаты по СБП. Экономия на эквайринге и времени управляющего составила больше 160 000 рублей за полгода, а главное — в коллективе навсегда прекратились споры о правильности начисления зарплаты.»
+            </blockquote>
+            <div class="mt-case-author">
+              Наталья Григорьева <span>· Основательница салона красоты и барбершопа, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">8 <small>инструментов</small></span>
+              <span class="mt-case-label">Бесплатный стек практичных сервисов для ежедневной работы бизнеса</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Бесплатный доступ без обязательной регистрации и навязчивых подписок</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 <small>₽</small></span>
+              <span class="mt-case-label">Затрат на покупку сторонних калькуляторов и услуги графических дизайнеров</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-инструментах для бизнеса</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Автоматизируйте весь бизнес в Молнии</h3>
+            <p>Подключите CRM Молния: объедините онлайн-запись, расписание мастеров, учет оплат и аналитику без доплат за сотрудников.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">Мы используем файлы cookie для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.</p>
+      <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
+    </div>
+
+    <script src="/script.js?v=20261024-tools1" defer></script>
   </div>
 </body>
 </html>'''
@@ -14166,6 +14676,12 @@ def sync_sitemap():
         changed = True
         print("Added /acquiring to sitemap.xml")
 
+    if "https://molniya-tech.ru/tools" not in content:
+        url_entry = """  <url>\n    <loc>https://molniya-tech.ru/tools</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /tools to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -14184,6 +14700,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Каталог бесплатных инструментов и калькуляторов для сервисного бизнеса",
+        "slug": "tools",
+        "description": "8 бесплатных онлайн-инструментов для малого бизнеса в сфере услуг: генератор брендовых QR-кодов, конструктор печатных прайс-листов, калькуляторы зарплат мастеров, эквайринга, маржинальности, проверка ИНН и календарь 2026.",
+        "pub_date": datetime(2026, 10, 24, 14, 0, tzinfo=MSK_TZ),
+        "category": "Инструменты",
+    },
     {
         "title": "Калькулятор эквайринга и экономии на СБП для малого бизнеса",
         "slug": "acquiring",
@@ -14607,7 +15130,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14849,7 +15372,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 """
@@ -14886,7 +15409,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14946,7 +15469,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 """
@@ -15015,7 +15538,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15206,7 +15729,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 """
@@ -15266,7 +15789,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15550,7 +16073,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 """
@@ -15697,7 +16220,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16056,7 +16579,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -16203,7 +16726,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16562,7 +17085,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -16692,7 +17215,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17038,7 +17561,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -17168,7 +17691,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17514,7 +18037,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -17644,7 +18167,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17990,7 +18513,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -18120,7 +18643,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18466,7 +18989,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -18596,7 +19119,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18942,7 +19465,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -19072,7 +19595,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19418,7 +19941,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -19548,7 +20071,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19894,7 +20417,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -20024,7 +20547,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20370,7 +20893,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -20500,7 +21023,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-acq1">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools1">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20846,7 +21369,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-acq1"></script>
+  <script src="/script.js?v=20261024-tools1"></script>
 </body>
 </html>
 '''
@@ -21049,6 +21572,11 @@ def main():
     acquiring_html = build_acquiring_page()
     (ROOT_DIR / "acquiring.html").write_text(acquiring_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'acquiring.html'}")
+
+    print("Building tools hub catalog page: /tools.html...")
+    tools_html = build_tools_page()
+    (ROOT_DIR / "tools.html").write_text(tools_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'tools.html'}")
 
     sync_navigation_to_index()
     sync_navigation_to_blog()
