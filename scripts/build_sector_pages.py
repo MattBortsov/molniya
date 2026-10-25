@@ -2579,6 +2579,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Запись со звукорежиссером / без, бронь микрофонов Shure SM7B, видеоподкасты на 4 камеры и сведение треков.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/equipment-rental">
+            <div class="mt-subniche-icon">🎥</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Аренда съемочной техники (Рентал) <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Суточная тарификация, залоги и скоринг, бронь камер Sony FX3/RED, кинооптики и электронные акты приёмки.</div>
+            </div>
+          </a>
           <a class="mt-subniche-card" href="/quests">
             <div class="mt-subniche-icon">🗝️</div>
             <div class="mt-subniche-content">
@@ -14813,7 +14820,7 @@ def sync_sitemap():
 
     # Ensure all micro-landing sectors are present under clean URLs
     subniche_slugs = [
-        "photostudios", "videopavilion", "recording-studio", "quests", "vr-arena", "karting", "anticafe",
+        "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
         "stretching", "yoga", "trainers", "martial-arts", "psychologist",
     ]
@@ -14842,6 +14849,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "CRM для кинорентала и аренды съемочной техники",
+        "slug": "equipment-rental",
+        "description": "Программа для рентала фото- и кинооборудования: суточная тарификация, залоги и проверка арендаторов, бронь камер Sony FX3/RED, кинооптики, света и электронные акты приёма-передачи.",
+        "pub_date": datetime(2026, 10, 25, 13, 40, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "CRM для студий звукозаписи и подкастных студий",
         "slug": "recording-studio",
@@ -22495,6 +22509,483 @@ def build_recording_studio_page() -> str:
 
 
 
+def build_equipment_rental_page() -> str:
+    """Builds the complete camera and gear rental service micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "equipment-rental",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для кинорентала',
+        "Оставьте контакты — поможем настроить суточную шахматку техники, проверку арендаторов, электронные акты приема-передачи со сканером серийных номеров и договоры без залога для проверенных продакшнов.",
+    )
+
+    title = "Учет и онлайн-бронирование рентала съемочной техники — CRM для кинорентала"
+    description = (
+        "Программа для рентала фото- и видеотехники: "
+        "суточная шахматка камер Sony FX3/FX6/RED, кинооптики и света, залоги и скоринг, электронные акты приема-передачи."
+    )
+    canonical = "https://molniya-tech.ru/equipment-rental"
+
+    faqs = [
+        (
+            "Как работает онлайн-бронирование съемочной техники по суткам и сменам?",
+            "Клиент выбирает в каталоге нужные камеры (Sony FX3, FX6, RED Komodo, ARRI), комплекты кинооптики (DZOFilm Vespid, Cooke, Sony GM), свет (Aputure, Nanlite) и стедикамы. Выбираются даты выдачи и возврата (стандартная смена: с 10:00 до 10:00 следующего дня). Система мгновенно проверяет доступность каждой единицы по серийному номеру и резервирует комплект.",
+        ),
+        (
+            "Как работает залоговая система и проверка арендаторов (скоринг)?",
+            "При первой брони клиент загружает паспорт и водительское удостоверение, либо проходит быструю проверку через Госуслуги и базы ФССП/МВД на благонадежность. Вы сами настраиваете условия: залог с холдированием суммы на карте, поручительство либо выдача без залога для аккредитованных кинокомпаний и продакшнов.",
+        ),
+        (
+            "Как устроен тариф «Выходного дня» (Weekend)?",
+            "В программе предусмотрен стандартный индустриальный тариф: выдача техники в пятницу после 18:00, возврат в понедельник до 12:00 рассчитывается как 1.5 суток аренды вместо 3. Это привлекает операторов на съемки клипов и коротких метров в субботу и воскресенье.",
+        ),
+        (
+            "Как формируются электронные акты приема-передачи с фиксацией дефектов?",
+            "При выдаче и возврате инженер сканирует штрихкод или серийный номер каждой позиции. В электронном акте отмечаются существующие следы эксплуатации (потертости байонета, микроцарапины на фильтрах) и прикрепляются фото матрицы и оптики. Арендатор подписывает акт по SMS на экране смартфона.",
+        ),
+        (
+            "Что происходит в случае задержки возврата техники или дефектовки?",
+            "Если клиент опаздывает со сдачей, система начисляет почасовую просрочку согласно прайсу. При выявлении повреждений (песок в зуме, скол линзы, сгоревшая лампа) инженер открывает кейс дефектовки с удержанием стоимости ремонта из залога.",
+        ),
+        (
+            "Как настроить B2B-договоры для кинокомпаний и юрлиц с оплатой по безналу?",
+            "Для кинокомпаний и продакшнов Молния генерирует долгосрочные рамочные договоры проката, счета с НДС/без НДС и закрывающие акты УПД. Бронь резервируется по гарантийному письму или предоплате.",
+        ),
+        (
+            "Как бесплатно перенести базу техники и серийных номеров из Excel или старой системы?",
+            "Служба заботы Молнии бесплатно импортирует ваш парк камер, объективов, света и обвеса со всеми серийными номерами, комплектацией и прайс-листами из таблиц Excel за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Пространства", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Аренда съемочной техники", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для кинорентала и проката съемочной техники",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и шахматка техники для кинорентала",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- EQUIPMENT RENTAL HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для рентала съёмочной техники: <span class="mt-hero-accent">учёт оборудования, залоги и акты</span></h1>
+          <p class="mt-hero-desc">Суточная шахматка камер Sony FX3/RED, кинооптики и света, скоринг арендаторов, электронные акты приёма-передачи по штрихкодам и тариф выходного дня.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_equipment_rental" target="_blank" rel="noopener">Подключить кинорентал</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для кинорентала и проката съемочной техники">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Камеры, оптика и свет</span>
+                <span class="mt-facet-note">Sony FX3/FX6, RED, Aputure, стедикамы</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Суточная сетка и Weekend</span>
+                <span class="mt-facet-note">1.5 смены с пятницы до понедельника</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Скоринг и залоги</span>
+                <span class="mt-facet-note">проверка паспорта и холдирование на карте</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Электронный акт сдачи</span>
+                <span class="mt-facet-note">сканер штрихкодов и фотофиксация дефектов</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для кинорентала: учет съемочной техники и бронирование оборудования" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Суточный календарь занятости кинооборудования, статусы бронирования, учет залогов и электронные акты приёма-передачи</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка техники" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый комплект техники, дата возврата и залог <span class="mt-overview-hook">под строгим контролем</span></h2>
+          <p class="mt-section-sub">Инженеры выдачи и менеджеры видят занятость камерных сетапов, сроки возврата, состояние залогов и задержки оборудования в реальном времени.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Комплект #1 «Sony FX6 Cinema Kit» · Серийный #FX6-8812</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В аренде</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Съемка рекламного ролика · Возврат завтра до 10:00</div>
+                <div class="mt-auto-car-tier">Sony FX6 + DZOFilm Vespid 35/50/85mm + Tilta Nucleus + 4x V-Mount · Залог 50 000 ₽</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎥</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Суточная аренда сетапа</span>
+              <span class="mt-auto-price">18 500 ₽ / сут · Выдано</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Инспекция и дефектовка · Зона возврата техники</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Приёмка</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Проверка матрицы Sony A7S III и чистка оптики 24-70 GM</div>
+                <div class="mt-auto-car-tier">Тест сенсора на битые пиксели · Осмотр просветления линз · Разблокировка депозита</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Техосмотр оборудования</span>
+              <span class="mt-auto-price">Дефектовка 15 мин · До 12:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Комплект #2 «Свет Aputure + Nanlite» · Бронь на Weekend</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Съемка клипа (Пт 18:00 – Пн 10:00) · Тариф Weekend 1.5 смены</div>
+                <div class="mt-auto-car-tier">2x Aputure 600d Pro + Nanlite Forza 60C + Стойки C-Stand · Договор B2B подписан</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💡</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Аренда света B2B</span>
+              <span class="mt-auto-price">27 000 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPMENT RENTAL OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для кинорентала" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для управления киноренталом и парком съёмочной техники <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо потерь дорогой оптики и споров с операторами: суточный онлайн-календарь 24/7, сканирование штрихкодов, проверка благонадежности и электронные акты сдачи.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Суточная шахматка и бронь комплектов <span class="mt-overview-hook">по серийным номерам</span></h3>
+            <p>Каждая тушка, кинообъектив, радиофокус и батарея имеют уникальный серийный номер и штрихкод. Исключено задвоение оборудования или выдача техники, стоящей на техобслуживании.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Учёт кинотехники</span><span>Серийный номер</span></div>
+              <div class="mt-overview-calendar"><span>10:00</span><div class="mt-overview-slot">Sony FX6 Kit <small>18 500 ₽/сут</small></div><span>10:00+1</span><div class="mt-overview-slot mt-overview-slot--light">Приёмка <small>15 мин</small></div><span>10:15+1</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Проверка арендаторов и залоги <span class="mt-overview-hook">без бумажной рутины</span></h3>
+            <p>Быстрый скоринг паспорта, автоматическое холдирование суммы страхового депозита на банковской карте или оформление безналичной выдачи без залога для проверенных продакшнов.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Безопасность парка</span><span>Залог и скоринг</span></div>
+              <div class="mt-overview-price-row"><span>Проверка паспорта</span><strong>Скоринг пройден ✓</strong></div>
+              <div class="mt-overview-price-row"><span>Холдирование карты</span><strong>50 000 ₽ залог</strong></div>
+              <div class="mt-overview-price-tag">0 потерь техники за счет проверки клиентов</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Тариф выходного дня (Weekend) <span class="mt-overview-hook">для роста загрузки</span></h3>
+            <p>Автоматический расчет 1.5 суток при выдаче в пятницу вечером и возврате в понедельник утром. Максимальная утилизация съемочного парка на субботу и воскресенье.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Спецтариф Weekend</span><span>Пт 18:00 – Пн 10:00</span></div>
+              <div class="mt-overview-message">
+                Бронь Weekend: Пакет света Aputure 600d + стойки. Расчет за 1.5 смены вместо 3 суток. Забронировано.
+                <span class="mt-overview-reaction">🎬</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Загрузка выходных</span><strong>+50% утилизация парка →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Электронные акты и фотофиксация <span class="mt-overview-hook">дефектов на смартфоне</span></h3>
+            <p>Фиксация сколов, микроцарапин, состояния матрицы и комплектности (крышки, бленды, кабели) при клиенте. Подписание акта выдачи и возврата кодом из SMS прямо у стойки.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Электронный акт</span><span>Подписание SMS</span></div>
+              <div class="mt-overview-stages"><span>Выдача</span><i></i><span>Фото дефекта</span><i></i><span>Возврат</span></div>
+              <div class="mt-overview-check">✓ <span>Серийные номера подтверждены сканером</span></div>
+              <div class="mt-overview-check">✓ <span>Акт приема-передачи подписан клиентом</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Контроль ТО, юстировки <span class="mt-overview-hook">и чистки матриц</span></h3>
+            <p>Журнал наработки часов съемочной техники: своевременные напоминания о чистке матриц от пыли, проверке бэк-фокуса кинооптики, замене байонетов и тесте емкости V-Mount аккумуляторов.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Техсостояние парка</span><span>Журнал сервиса</span></div>
+              <div class="mt-overview-metrics"><span>Матрицы<b>Чистые 100%</b></span><span>Оптика<b>Юстирована</b></span><span>Аккумуляторы<b>98% ёмкость</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- EQUIPMENT RENTAL JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь аренды съёмочной техники">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один заказ съёмочной техники. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу кинорентала: от онлайн-выбора камеры и оптики на сайте до проверки скоринга, выдачи по штрихкодам и возврата страхового депозита.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения аренды" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Аренда комплекта Sony FX6 + Оптика DZOFilm Vespid на 2 суток</strong><span>Оператор Владислав С. · Проверка паспорта пройдена · Залог заблокирован</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Оператор</span>
+              <h3>Онлайн-выбор камеры Sony FX6, оптики DZOFilm и дат аренды на сайте 24/7</h3>
+              <p>Оператор выбирает в каталоге тушку, сет оптики, радиофокус Tilta и батареи V-Mount на 2 суток, прикрепляет паспорт и отправляет заявку.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь сетапа</span>
+                <span class="mt-journey-proof-badge">Скоринг пройден</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Арендатор</span><strong>Владислав С. (Оператор-постановщик)</strong></div>
+              <div class="mt-journey-proof-row"><span>Оборудование</span><strong>Sony FX6 + DZOFilm Vespid Kit + Tilta</strong></div>
+              <div class="mt-journey-proof-row"><span>Период</span><strong>2 суток (Сб 10:00 – Пн 10:00)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Проверка доступности по серийным номерам, скоринг и бронь залога</h3>
+              <p>Система проверяет базу МВД/ФССП, резервирует серийные номера приборов в шахматке и холдирует страховой депозит 50 000 ₽ на карте оператора.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Наряд #RENT-904</span>
+                <span class="mt-journey-proof-badge">Одобрено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>37 000 ₽ (Аренда за 2 суток)</strong></div>
+              <div class="mt-journey-proof-row"><span>Залог</span><strong>50 000 ₽ (Холдинг на карте)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инженер</span><strong>Подготовка кофра к выдаче</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Инженер</span>
+              <h3>Выдача по штрихкодам, осмотр матрицы и электронный акт в SMS</h3>
+              <p>Инженер сканирует штрихкоды кофров, проверяет чистоту матрицы при операторе, фиксирует фото состояния байонета и отправляет SMS с кодом подписания.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Электронный акт выдачи</span>
+                <span class="mt-journey-proof-badge">Подписано SMS</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>SMS / Экран смартфона</strong></div>
+              <div class="mt-journey-proof-row"><span>Состав</span><strong>8 позиций со штрихкодами проверено</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Выдача заняла 4 минуты без очередей</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Рентал</span>
+              <h3>Приёмка техники, закрытие наряда и автоматический возврат залога</h3>
+              <p>Инженер сканирует возвращенные приборы, подтверждает отсутствие дефектов линз и матрицы, после чего система моментально разблокирует залог.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Результат аренды">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог заказа</span>
+                <span class="mt-journey-proof-badge">Закрыто</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>37 000 ₽ (Оплачено)</strong></div>
+              <div class="mt-journey-proof-row"><span>Залог</span><strong>50 000 ₽ (Разблокирован клиенту)</strong></div>
+              <div class="mt-journey-proof-row"><span>Состояние</span><strong>100% приборов в строю, без дефектов</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс кинорентала" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс кинорентала и проката съемочной техники</div>
+            <h2 class="mt-case-title">Илья Савельев, управляющий киноренталом «CineGear Rental»</h2>
+            <blockquote class="mt-case-quote">
+              «В рентале съемочной техники цена ошибки огромна: если оператор разбил кинообъектив за 250 000 ₽ или забыл вернуть дорогую батарею, а в бумажном акте это не зафиксировано — платит рентал из своего кармана. В Молнии мы перевели весь парк техники на штрихкоды, ввели электронные акты с фотофиксацией состояния матрицы и автоматический скоринг клиентов. Недостачи и споры прекратились полностью, а выручка на выходных выросла на 50% благодаря автоматическому тарифу Weekend.»
+            </blockquote>
+            <div class="mt-case-author">
+              Илья Савельев <span>· Управляющий киноренталом (парк из 40 камер, кинооптика, свет, звук), <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Спорных ситуаций по дефектам благодаря фотофиксации в электронных актах</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">4 мин</span>
+              <span class="mt-case-label">Среднее время выдачи полного съемочного комплекта по штрихкодам сканером</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+50%</span>
+              <span class="mt-case-label">Рост утилизации техники на выходных благодаря автоматическому тарифу Weekend</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPMENT RENTAL FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для кинорентала</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего кинорентала</h3>
+            <p>Бесплатно поможем настроить суточную шахматку техники, сканирование штрихкодов, проверку клиентов и электронные акты приёма-передачи.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261024-tools2"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
+
 def sync_navigation_to_index():
     """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
@@ -22668,6 +23159,11 @@ def main():
     recording_studio_html = build_recording_studio_page()
     (ROOT_DIR / "recording-studio.html").write_text(recording_studio_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'recording-studio.html'}")
+
+    print("Building sector landing page: /equipment-rental...")
+    equipment_rental_html = build_equipment_rental_page()
+    (ROOT_DIR / "equipment-rental.html").write_text(equipment_rental_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'equipment-rental.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
