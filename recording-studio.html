@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн-запись в студию звукозаписи — CRM для подкастных и студий звука</title>
+  <meta name="description" content="Система онлайн-бронирования для студий звукозаписи и подкастных: почасовая сетка с режиссером и без, микрофоны Shure SM7B, видеосъемка подкастов на 4 камеры, сведение и онлайн-оплата.">
+  <link rel="canonical" href="https://molniya-tech.ru/recording-studio">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+  <meta property="og:title" content="Онлайн-запись в студию звукозаписи — CRM для подкастных и студий звука">
+  <meta property="og:description" content="Система онлайн-бронирования для студий звукозаписи и подкастных: почасовая сетка с режиссером и без, микрофоны Shure SM7B, видеосъемка подкастов на 4 камеры, сведение и онлайн-оплата.">
+  <meta property="og:url" content="https://molniya-tech.ru/recording-studio">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Онлайн-запись в студию звукозаписи — CRM для подкастных и студий звука">
+  <meta name="twitter:description" content="Система онлайн-бронирования для студий звукозаписи и подкастных: почасовая сетка с режиссером и без, микрофоны Shure SM7B, видеосъемка подкастов на 4 камеры, сведение и онлайн-оплата.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Пространства", "item": "https://molniya-tech.ru/spaces"}, {"@type": "ListItem", "position": 3, "name": "Студии звукозаписи", "item": "https://molniya-tech.ru/recording-studio"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — программа и CRM для студий звукозаписи и подкастных", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/recording-studio", "description": "Система онлайн-бронирования для студий звукозаписи и подкастных: почасовая сетка с режиссером и без, микрофоны Shure SM7B, видеосъемка подкастов на 4 камеры, сведение и онлайн-оплата.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и почасовая шахматка для студии звукозаписи"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как работает выбор: запись со звукорежиссером или сухая аренда тон-зала?", "acceptedAnswer": {"@type": "Answer", "text": "В онлайн-виджете клиент указывает формат сессии: «Аренда тон-зала / контрольной комнаты» (самостоятельная работа музыкантов со своим сетапом) либо «Запись со звукорежиссером студии» (сопровождение инженера записи, калибровка преампов и трекинг). Стоимость и график режиссера рассчитываются автоматически."}}, {"@type": "Question", "name": "Как бронируются видеоподкасты на 2–4 камеры и свет?", "acceptedAnswer": {"@type": "Answer", "text": "Клиент выбирает зал подкастов, указывает число спикеров (от 1 до 4) и выбирает сетап: микрофоны Shure SM7B / Electro-Voice RE20, микшер Rodecaster Pro II, запись 4K-видео на камеры Sony FX3 с петличками или студийными микрофонами и световой сетап Nanlite/Aputure. Система резервирует весь комплект оборудования."}}, {"@type": "Question", "name": "Как предотвратить накладки и задержки между музыкальными репетициями и записями вокала?", "acceptedAnswer": {"@type": "Answer", "text": "Система автоматически закладывает технический буфер 15–30 минут между сессиями на проветривание тон-зала, замену поп-фильтров, протирку амбушюров наушников и сброс сессий в DAW (Pro Tools, Logic Pro, Ableton). Следующий артист заходит в подготовленную студию."}}, {"@type": "Question", "name": "Как устроен учет сведения, тюнинга вокала и мастеринга треков?", "acceptedAnswer": {"@type": "Answer", "text": "В карточке проекта звукорежиссер фиксирует этапы пост-продакшна: отбор удачных дублей, ручной тюнинг вокала (Melodyne), тайминг, сведение мультитрека и мастеринг. Заказчик видит прогресс, количество правок и получает готовые WAV-мастеры и стемы через защищенную ссылку."}}, {"@type": "Question", "name": "Как защитить студию от неявок и отмен в последний момент?", "acceptedAnswer": {"@type": "Answer", "text": "Вы можете подключить обязательную предоплату (от 30% до 100%) через СБП или банковскую карту прямо в виджете. Если музыканты отменяют запись менее чем за 24 часа, депозит удерживается согласно правилам студии."}}, {"@type": "Question", "name": "Как оформляются договоры и закрывающие документы для лейблов и B2B-заказчиков?", "acceptedAnswer": {"@type": "Answer", "text": "Молния автоматически формирует договоры об отчуждении смежных прав на фонограмму, счета для юридических лиц и закрывающие акты выполненных работ. Продюсеры лейблов и корпоративные подкастеры получают все документы в ЭДО."}}, {"@type": "Question", "name": "Как бесплатно перенести текущий график студии и контакты артистов?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно перенесет почасовую шахматку тон-залов и вокальных кабин, профили звукорежиссеров и контакты артистов из Google Календаря или других программ за 15 минут."}}]}]
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
+
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+    <div class="mt-page-content">
+
+      <!-- RECORDING STUDIO HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для студий звукозаписи: <span class="mt-hero-accent">почасовая бронь залов и режиссеров</span></h1>
+          <p class="mt-hero-desc">Почасовая сетка тон-залов и вокальных комнат 24/7, выбор записи со звукорежиссером или «сухой» аренды, видеоподкасты на 4 камеры, сведение треков и онлайн-предоплата.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_recording_studio" target="_blank" rel="noopener">Подключить студию звука</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий звукозаписи и подкастных">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Тон-зал и кабина</span>
+                <span class="mt-facet-note">акустическая развязка и микрофоны Shure</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">С режиссером или без</span>
+                <span class="mt-facet-note">гибкие почасовые тарифы и авторасчет</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Подкасты на 4 камеры</span>
+                <span class="mt-facet-note">микшер Rodecaster и свет Nanlite</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Сведение треков</span>
+                <span class="mt-facet-note">контроль правок и передача WAV/MP3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студий звукозаписи: расписание тон-залов и подкастной" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Почасовая сетка студии звукозаписи, занятость звукорежиссеров, бронь микрофонов Shure SM7B и онлайн-оплата</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка залов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый тон-зал, звукорежиссер и проект <span class="mt-overview-hook">в реальном времени</span></h2>
+          <p class="mt-section-sub">Администраторы и звукорежиссеры видят расписание записи вокала, видеоподкастов, буферы на проветривание и предоплату на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Тон-зал «Main Studio A» · Вокальная кабина · Neumann U87</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Запись</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Запись вокала + трекинг трека · 3 часа (15:00 – 18:00)</div>
+                <div class="mt-auto-car-tier">Звукорежиссер Артем К. · Артист Владлена М. · Ручной тюнинг вокала</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎙️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Студийная сессия + звукорежиссер</span>
+              <span class="mt-auto-price">7 500 ₽ · В процессе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Подкастная «Podcast Room» · 4 спикера · Shure SM7B</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Проветривание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв на проветривание и дезинфекцию поп-фильтров</div>
+                <div class="mt-auto-car-tier">Сброс мультикам-проекта 4K на накопитель клиента · Чай для гостей</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буфер между гостями</span>
+              <span class="mt-auto-price">Буфер 20 минут · До 18:20</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Подкастная «Podcast Room» · Съемка 3 камеры Sony FX3</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Бизнес-подкаст «Технологии и Деньги» · 2 часа</div>
+                <div class="mt-auto-car-tier">3 ведущих + оператор пульта · Предоплата 100% через СБП</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📹</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Видеоподкаст под ключ B2B</span>
+              <span class="mt-auto-price">14 000 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий звукозаписи" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для управления студией звукозаписи и подкастов <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и неявок музыкантов: почасовая онлайн-бронь 24/7, разделение тарифов с режиссером и без, мультикам-видеоподкасты и безопасная предоплата.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Запись с режиссером или аренда <span class="mt-overview-hook">в одном клике</span></h3>
+            <p>Гибкая тарификация в виджете: самостоятельная работа опытных продюсеров со своим сетапом либо запись под ключ с калибровкой преампов и ведением трекинга звукоинженером.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Студийные смены</span><span>Тон-зал и кабина</span></div>
+              <div class="mt-overview-calendar"><span>15:00</span><div class="mt-overview-slot">Вокал + Режиссер <small>7 500 ₽</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Буфер <small>20 мин</small></div><span>18:20</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Видеоподкасты под ключ <span class="mt-overview-hook">на 1–4 спикера</span></h3>
+            <p>Учет оборудования подкастной: микрофоны Shure SM7B, микшер Rodecaster Pro, 4K-камеры Sony, свет Nanlite и суфлер. Автоматический расчет стоимости по числу участников.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетап подкаста</span><span>Мультикам 4K</span></div>
+              <div class="mt-overview-price-row"><span>4 микрофона Shure</span><strong>Rodecaster Pro II</strong></div>
+              <div class="mt-overview-price-row"><span>3 камеры Sony FX3</span><strong>Свет Nanlite Forza</strong></div>
+              <div class="mt-overview-price-tag">Выгрузка исходников сразу после мотора</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Акустический буфер <span class="mt-overview-hook">на проветривание залов</span></h3>
+            <p>Резервирование 15–20 минут между сессиями для отдыха ушей звукорежиссера, проветривания вокальной кабины, замены поп-фильтров и сохранения проектных файлов DAW.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Подготовка зала</span><span>Буфер 20 мин</span></div>
+              <div class="mt-overview-message">
+                Сессия сохранена в Pro Tools. Тон-зал проветрен, поп-фильтр продезинфицирован к 18:20.
+                <span class="mt-overview-reaction">🎧</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Чистота воздуха</span><strong>Готово к приходу артиста →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сведение, тюнинг и мастеринг <span class="mt-overview-hook">с контролем правок</span></h3>
+            <p>Фиксация этапов пост-продакшна прямо в CRM: комментарии клиента, таймкоды, лимит бесплатных кругов правок и безопасная передача релизных WAV и стемов по ссылке.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пост-продакшн</span><span>Контроль версий</span></div>
+              <div class="mt-overview-stages"><span>Тюнинг</span><i></i><span>Сведение</span><i></i><span>Мастеринг</span></div>
+              <div class="mt-overview-check">✓ <span>Вокал выровнен в Melodyne</span></div>
+              <div class="mt-overview-check">✓ <span>Мастер-трек готов к дистрибуции</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Онлайн-предоплата СБП <span class="mt-overview-hook">и защита от срыва смен</span></h3>
+            <p>Обязательный депозит от 30% до 100% при бронировании исключает «музыкантов-призраков», которые забивают прайм-тайм и не приходят. Деньги поступают сразу на расчетный счет.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Финансовая защита</span><span>Залог за бронь</span></div>
+              <div class="mt-overview-metrics"><span>Неявки<b>0%</b></span><span>Оплата СБП<b>0.7% комиссия</b></span><span>Простои<b>0 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь записи в студии">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Одна студийная сессия. <span class="mt-hero-accent">Полный порядок в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу студии: от выбора зала и звукорежиссера на сайте до онлайн-предоплаты, трекинга вокала и передачи готовых дорожек.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Запись вокала в тон-зале «Studio A» (3 часа)</strong><span>Микрофон Neumann U87 + Преамп Avalon · Звукорежиссер Артем К. · Предоплата 50%</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Артист</span>
+              <h3>Онлайн-бронь тон-зала, времени и звукорежиссера на сайте 24/7</h3>
+              <p>Музыкант выбирает зал с вокальной кабиной, указывает сессию со звукорежиссером на 3 часа, вносит предоплату по СБП и загружает минус песни.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь сессии</span>
+                <span class="mt-journey-proof-badge">Предоплата СБП</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Артист</span><strong>Владлена М. (Сингл «Невесомость»)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зал</span><strong>Studio A (Neumann U87 + Avalon)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 15:00 – 18:00 (3 часа)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация слота, предоплата по СБП и резерв звукорежиссера</h3>
+              <p>Система резервирует время инженера Артема К., списывает депозит 3 750 ₽ и блокирует смежные часы от накладок и шумных барабанных репетиций.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка сессии">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сессия #REC-312</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>7 500 ₽ (Предоплата 50% внесена)</strong></div>
+              <div class="mt-journey-proof-row"><span>Режиссер</span><strong>Артем К. (Инженер записи)</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер</span><strong>18:00 – 18:20 (Проветривание кабины)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание с правилами студии, схема проезда и карточка трекинга</h3>
+              <p>Сервисный бот отправляет артисту адрес, код калитки и памятку для связок (не пить холодное и кофе перед записью), а звукорежиссеру — загруженный минус.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка вокалисту</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Студия готова · Минус загружен в Pro Tools</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Запись стартует ровно в 15:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Звукорежиссер</span>
+              <h3>Чистовой трекинг вокала, сброс дорожек и закрывающий чек</h3>
+              <p>Инженер записывает дубли, делает черновой баланс с минусом, отправляет мультитрек артисту на облако и списывает остаток оплаты.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Результат сессии">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог записи</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>7 500 ₽ (Доплата получена)</strong></div>
+              <div class="mt-journey-proof-row"><span>Материал</span><strong>Мультитрек 24bit/48kHz передан</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата</span><strong>+3 000 ₽ начислено режиссеру</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии звукозаписи" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии звукозаписи и подкастов</div>
+            <h2 class="mt-case-title">Максим Громов, основатель студии «Resonance Records»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше запись велась через переписку в Telegram: музыканты бронировали вечер пятницы на 4 часа и просто пропадали, а звукорежиссер сидел без дела. В Молнии мы ввели онлайн-предоплату 50% через СБП, разделили бронь тон-зала на форматы «с режиссером» и «без», а для подкастов добавили пакеты с видеосъемкой. В результате простои студии сократились до нуля, а средний чек вырос на 45% за счет видеоподкастов и заказа сведения.»
+            </blockquote>
+            <div class="mt-case-author">
+              Максим Громов <span>· Основатель студии звукозаписи (2 тон-зала, подкастная, пул из 5 звукорежиссеров), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0%</span>
+              <span class="mt-case-label">Срывов вечерних сессий благодаря онлайн-предоплате брони через СБП</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">15 мин</span>
+              <span class="mt-case-label">Автоматический буфер в графике на проветривание кабины и отдых ушей режиссера</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+45%</span>
+              <span class="mt-case-label">Рост среднего чека благодаря пакетным видеоподкастам на 4 камеры и сведению</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании студии звукозаписи</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своей студии звукозаписи</h3>
+            <p>Бесплатно поможем настроить почасовую шахматку тон-залов, выбор режиссера, видеоподкасты и безопасную предоплату по СБП.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+            <details><summary>Как работает выбор: запись со звукорежиссером или сухая аренда тон-зала?</summary><p>В онлайн-виджете клиент указывает формат сессии: «Аренда тон-зала / контрольной комнаты» (самостоятельная работа музыкантов со своим сетапом) либо «Запись со звукорежиссером студии» (сопровождение инженера записи, калибровка преампов и трекинг). Стоимость и график режиссера рассчитываются автоматически.</p></details>
+            <details><summary>Как бронируются видеоподкасты на 2–4 камеры и свет?</summary><p>Клиент выбирает зал подкастов, указывает число спикеров (от 1 до 4) и выбирает сетап: микрофоны Shure SM7B / Electro-Voice RE20, микшер Rodecaster Pro II, запись 4K-видео на камеры Sony FX3 с петличками или студийными микрофонами и световой сетап Nanlite/Aputure. Система резервирует весь комплект оборудования.</p></details>
+            <details><summary>Как предотвратить накладки и задержки между музыкальными репетициями и записями вокала?</summary><p>Система автоматически закладывает технический буфер 15–30 минут между сессиями на проветривание тон-зала, замену поп-фильтров, протирку амбушюров наушников и сброс сессий в DAW (Pro Tools, Logic Pro, Ableton). Следующий артист заходит в подготовленную студию.</p></details>
+            <details><summary>Как устроен учет сведения, тюнинга вокала и мастеринга треков?</summary><p>В карточке проекта звукорежиссер фиксирует этапы пост-продакшна: отбор удачных дублей, ручной тюнинг вокала (Melodyne), тайминг, сведение мультитрека и мастеринг. Заказчик видит прогресс, количество правок и получает готовые WAV-мастеры и стемы через защищенную ссылку.</p></details>
+            <details><summary>Как защитить студию от неявок и отмен в последний момент?</summary><p>Вы можете подключить обязательную предоплату (от 30% до 100%) через СБП или банковскую карту прямо в виджете. Если музыканты отменяют запись менее чем за 24 часа, депозит удерживается согласно правилам студии.</p></details>
+            <details><summary>Как оформляются договоры и закрывающие документы для лейблов и B2B-заказчиков?</summary><p>Молния автоматически формирует договоры об отчуждении смежных прав на фонограмму, счета для юридических лиц и закрывающие акты выполненных работ. Продюсеры лейблов и корпоративные подкастеры получают все документы в ЭДО.</p></details>
+            <details><summary>Как бесплатно перенести текущий график студии и контакты артистов?</summary><p>Служба заботы Молнии бесплатно перенесет почасовую шахматку тон-залов и вокальных кабин, профили звукорежиссеров и контакты артистов из Google Календаря или других программ за 15 минут.</p></details>
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии звукозаписи</h2>
+          <p class="mt-lead-sub">Оставьте контакты — поможем настроить почасовое бронирование залов, выбор режиссера, видеоподкасты на 4 камеры и онлайн-предоплату.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="recording-studio">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3><a class="mt-footer-heading-link" href="/tools">Инструменты</a></h3>
+              <a class="mt-footer-link" href="/tools/qr">Генератор QR-кодов</a>
+              <a class="mt-footer-link" href="/tools/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/tools/salary">Калькулятор зарплат</a>
+              <a class="mt-footer-link" href="/tools/acquiring">Калькулятор эквайринга</a>
+              <a class="mt-footer-link" href="/tools/inn">Проверка по ИНН</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261024-tools2"></script>
+</body>
+</html>

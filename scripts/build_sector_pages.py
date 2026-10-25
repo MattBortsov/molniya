@@ -2572,6 +2572,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Смены 4 и 8 часов, бронь телесуфлера и света Aputure/Nanlite, звукоизоляция и буфер на перекраску циклорамы.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/recording-studio">
+            <div class="mt-subniche-icon">🎙️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Студии звукозаписи и подкастные <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Запись со звукорежиссером / без, бронь микрофонов Shure SM7B, видеоподкасты на 4 камеры и сведение треков.</div>
+            </div>
+          </a>
           <a class="mt-subniche-card" href="/quests">
             <div class="mt-subniche-icon">🗝️</div>
             <div class="mt-subniche-content">
@@ -14806,7 +14813,7 @@ def sync_sitemap():
 
     # Ensure all micro-landing sectors are present under clean URLs
     subniche_slugs = [
-        "photostudios", "videopavilion", "quests", "vr-arena", "karting", "anticafe",
+        "photostudios", "videopavilion", "recording-studio", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
         "stretching", "yoga", "trainers", "martial-arts", "psychologist",
     ]
@@ -14835,6 +14842,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "CRM для студий звукозаписи и подкастных студий",
+        "slug": "recording-studio",
+        "description": "Почасовое бронирование студий звукозаписи и подкастов: выбор работы со звукорежиссером или аренда тон-зала, микрофоны Shure SM7B, многокамерные видеоподкасты и предоплата онлайн.",
+        "pub_date": datetime(2026, 10, 25, 13, 35, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "CRM для видеостудий, хромакей-павильонов и циклорам",
         "slug": "videopavilion",
@@ -22004,6 +22018,483 @@ def build_videopavilion_page() -> str:
 
 
 
+def build_recording_studio_page() -> str:
+    """Builds the complete recording studio and podcast studio micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "recording-studio",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии звукозаписи',
+        "Оставьте контакты — поможем настроить почасовое бронирование залов, выбор режиссера, видеоподкасты на 4 камеры и онлайн-предоплату.",
+    )
+
+    title = "Онлайн-запись в студию звукозаписи — CRM для подкастных и студий звука"
+    description = (
+        "Система онлайн-бронирования для студий звукозаписи и подкастных: "
+        "почасовая сетка с режиссером и без, микрофоны Shure SM7B, видеосъемка подкастов на 4 камеры, сведение и онлайн-оплата."
+    )
+    canonical = "https://molniya-tech.ru/recording-studio"
+
+    faqs = [
+        (
+            "Как работает выбор: запись со звукорежиссером или сухая аренда тон-зала?",
+            "В онлайн-виджете клиент указывает формат сессии: «Аренда тон-зала / контрольной комнаты» (самостоятельная работа музыкантов со своим сетапом) либо «Запись со звукорежиссером студии» (сопровождение инженера записи, калибровка преампов и трекинг). Стоимость и график режиссера рассчитываются автоматически.",
+        ),
+        (
+            "Как бронируются видеоподкасты на 2–4 камеры и свет?",
+            "Клиент выбирает зал подкастов, указывает число спикеров (от 1 до 4) и выбирает сетап: микрофоны Shure SM7B / Electro-Voice RE20, микшер Rodecaster Pro II, запись 4K-видео на камеры Sony FX3 с петличками или студийными микрофонами и световой сетап Nanlite/Aputure. Система резервирует весь комплект оборудования.",
+        ),
+        (
+            "Как предотвратить накладки и задержки между музыкальными репетициями и записями вокала?",
+            "Система автоматически закладывает технический буфер 15–30 минут между сессиями на проветривание тон-зала, замену поп-фильтров, протирку амбушюров наушников и сброс сессий в DAW (Pro Tools, Logic Pro, Ableton). Следующий артист заходит в подготовленную студию.",
+        ),
+        (
+            "Как устроен учет сведения, тюнинга вокала и мастеринга треков?",
+            "В карточке проекта звукорежиссер фиксирует этапы пост-продакшна: отбор удачных дублей, ручной тюнинг вокала (Melodyne), тайминг, сведение мультитрека и мастеринг. Заказчик видит прогресс, количество правок и получает готовые WAV-мастеры и стемы через защищенную ссылку.",
+        ),
+        (
+            "Как защитить студию от неявок и отмен в последний момент?",
+            "Вы можете подключить обязательную предоплату (от 30% до 100%) через СБП или банковскую карту прямо в виджете. Если музыканты отменяют запись менее чем за 24 часа, депозит удерживается согласно правилам студии.",
+        ),
+        (
+            "Как оформляются договоры и закрывающие документы для лейблов и B2B-заказчиков?",
+            "Молния автоматически формирует договоры об отчуждении смежных прав на фонограмму, счета для юридических лиц и закрывающие акты выполненных работ. Продюсеры лейблов и корпоративные подкастеры получают все документы в ЭДО.",
+        ),
+        (
+            "Как бесплатно перенести текущий график студии и контакты артистов?",
+            "Служба заботы Молнии бесплатно перенесет почасовую шахматку тон-залов и вокальных кабин, профили звукорежиссеров и контакты артистов из Google Календаря или других программ за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Пространства", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Студии звукозаписи", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для студий звукозаписи и подкастных",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и почасовая шахматка для студии звукозаписи",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- RECORDING STUDIO HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для студий звукозаписи: <span class="mt-hero-accent">почасовая бронь залов и режиссеров</span></h1>
+          <p class="mt-hero-desc">Почасовая сетка тон-залов и вокальных комнат 24/7, выбор записи со звукорежиссером или «сухой» аренды, видеоподкасты на 4 камеры, сведение треков и онлайн-предоплата.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_recording_studio" target="_blank" rel="noopener">Подключить студию звука</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий звукозаписи и подкастных">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Тон-зал и кабина</span>
+                <span class="mt-facet-note">акустическая развязка и микрофоны Shure</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">С режиссером или без</span>
+                <span class="mt-facet-note">гибкие почасовые тарифы и авторасчет</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Подкасты на 4 камеры</span>
+                <span class="mt-facet-note">микшер Rodecaster и свет Nanlite</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Сведение треков</span>
+                <span class="mt-facet-note">контроль правок и передача WAV/MP3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студий звукозаписи: расписание тон-залов и подкастной" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Почасовая сетка студии звукозаписи, занятость звукорежиссеров, бронь микрофонов Shure SM7B и онлайн-оплата</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка залов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый тон-зал, звукорежиссер и проект <span class="mt-overview-hook">в реальном времени</span></h2>
+          <p class="mt-section-sub">Администраторы и звукорежиссеры видят расписание записи вокала, видеоподкастов, буферы на проветривание и предоплату на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Тон-зал «Main Studio A» · Вокальная кабина · Neumann U87</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Запись</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Запись вокала + трекинг трека · 3 часа (15:00 – 18:00)</div>
+                <div class="mt-auto-car-tier">Звукорежиссер Артем К. · Артист Владлена М. · Ручной тюнинг вокала</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎙️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Студийная сессия + звукорежиссер</span>
+              <span class="mt-auto-price">7 500 ₽ · В процессе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Подкастная «Podcast Room» · 4 спикера · Shure SM7B</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Проветривание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв на проветривание и дезинфекцию поп-фильтров</div>
+                <div class="mt-auto-car-tier">Сброс мультикам-проекта 4K на накопитель клиента · Чай для гостей</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буфер между гостями</span>
+              <span class="mt-auto-price">Буфер 20 минут · До 18:20</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Подкастная «Podcast Room» · Съемка 3 камеры Sony FX3</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Бизнес-подкаст «Технологии и Деньги» · 2 часа</div>
+                <div class="mt-auto-car-tier">3 ведущих + оператор пульта · Предоплата 100% через СБП</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📹</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Видеоподкаст под ключ B2B</span>
+              <span class="mt-auto-price">14 000 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий звукозаписи" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для управления студией звукозаписи и подкастов <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и неявок музыкантов: почасовая онлайн-бронь 24/7, разделение тарифов с режиссером и без, мультикам-видеоподкасты и безопасная предоплата.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Запись с режиссером или аренда <span class="mt-overview-hook">в одном клике</span></h3>
+            <p>Гибкая тарификация в виджете: самостоятельная работа опытных продюсеров со своим сетапом либо запись под ключ с калибровкой преампов и ведением трекинга звукоинженером.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Студийные смены</span><span>Тон-зал и кабина</span></div>
+              <div class="mt-overview-calendar"><span>15:00</span><div class="mt-overview-slot">Вокал + Режиссер <small>7 500 ₽</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Буфер <small>20 мин</small></div><span>18:20</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Видеоподкасты под ключ <span class="mt-overview-hook">на 1–4 спикера</span></h3>
+            <p>Учет оборудования подкастной: микрофоны Shure SM7B, микшер Rodecaster Pro, 4K-камеры Sony, свет Nanlite и суфлер. Автоматический расчет стоимости по числу участников.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетап подкаста</span><span>Мультикам 4K</span></div>
+              <div class="mt-overview-price-row"><span>4 микрофона Shure</span><strong>Rodecaster Pro II</strong></div>
+              <div class="mt-overview-price-row"><span>3 камеры Sony FX3</span><strong>Свет Nanlite Forza</strong></div>
+              <div class="mt-overview-price-tag">Выгрузка исходников сразу после мотора</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Акустический буфер <span class="mt-overview-hook">на проветривание залов</span></h3>
+            <p>Резервирование 15–20 минут между сессиями для отдыха ушей звукорежиссера, проветривания вокальной кабины, замены поп-фильтров и сохранения проектных файлов DAW.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Подготовка зала</span><span>Буфер 20 мин</span></div>
+              <div class="mt-overview-message">
+                Сессия сохранена в Pro Tools. Тон-зал проветрен, поп-фильтр продезинфицирован к 18:20.
+                <span class="mt-overview-reaction">🎧</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Чистота воздуха</span><strong>Готово к приходу артиста →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сведение, тюнинг и мастеринг <span class="mt-overview-hook">с контролем правок</span></h3>
+            <p>Фиксация этапов пост-продакшна прямо в CRM: комментарии клиента, таймкоды, лимит бесплатных кругов правок и безопасная передача релизных WAV и стемов по ссылке.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Пост-продакшн</span><span>Контроль версий</span></div>
+              <div class="mt-overview-stages"><span>Тюнинг</span><i></i><span>Сведение</span><i></i><span>Мастеринг</span></div>
+              <div class="mt-overview-check">✓ <span>Вокал выровнен в Melodyne</span></div>
+              <div class="mt-overview-check">✓ <span>Мастер-трек готов к дистрибуции</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Онлайн-предоплата СБП <span class="mt-overview-hook">и защита от срыва смен</span></h3>
+            <p>Обязательный депозит от 30% до 100% при бронировании исключает «музыкантов-призраков», которые забивают прайм-тайм и не приходят. Деньги поступают сразу на расчетный счет.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Финансовая защита</span><span>Залог за бронь</span></div>
+              <div class="mt-overview-metrics"><span>Неявки<b>0%</b></span><span>Оплата СБП<b>0.7% комиссия</b></span><span>Простои<b>0 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь записи в студии">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Одна студийная сессия. <span class="mt-hero-accent">Полный порядок в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу студии: от выбора зала и звукорежиссера на сайте до онлайн-предоплаты, трекинга вокала и передачи готовых дорожек.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Запись вокала в тон-зале «Studio A» (3 часа)</strong><span>Микрофон Neumann U87 + Преамп Avalon · Звукорежиссер Артем К. · Предоплата 50%</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Артист</span>
+              <h3>Онлайн-бронь тон-зала, времени и звукорежиссера на сайте 24/7</h3>
+              <p>Музыкант выбирает зал с вокальной кабиной, указывает сессию со звукорежиссером на 3 часа, вносит предоплату по СБП и загружает минус песни.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь сессии</span>
+                <span class="mt-journey-proof-badge">Предоплата СБП</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Артист</span><strong>Владлена М. (Сингл «Невесомость»)</strong></div>
+              <div class="mt-journey-proof-row"><span>Зал</span><strong>Studio A (Neumann U87 + Avalon)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 15:00 – 18:00 (3 часа)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Фиксация слота, предоплата по СБП и резерв звукорежиссера</h3>
+              <p>Система резервирует время инженера Артема К., списывает депозит 3 750 ₽ и блокирует смежные часы от накладок и шумных барабанных репетиций.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка сессии">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сессия #REC-312</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>7 500 ₽ (Предоплата 50% внесена)</strong></div>
+              <div class="mt-journey-proof-row"><span>Режиссер</span><strong>Артем К. (Инженер записи)</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер</span><strong>18:00 – 18:20 (Проветривание кабины)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание с правилами студии, схема проезда и карточка трекинга</h3>
+              <p>Сервисный бот отправляет артисту адрес, код калитки и памятку для связок (не пить холодное и кофе перед записью), а звукорежиссеру — загруженный минус.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка вокалисту</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Студия готова · Минус загружен в Pro Tools</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Запись стартует ровно в 15:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Звукорежиссер</span>
+              <h3>Чистовой трекинг вокала, сброс дорожек и закрывающий чек</h3>
+              <p>Инженер записывает дубли, делает черновой баланс с минусом, отправляет мультитрек артисту на облако и списывает остаток оплаты.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Результат сессии">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог записи</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>7 500 ₽ (Доплата получена)</strong></div>
+              <div class="mt-journey-proof-row"><span>Материал</span><strong>Мультитрек 24bit/48kHz передан</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата</span><strong>+3 000 ₽ начислено режиссеру</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии звукозаписи" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии звукозаписи и подкастов</div>
+            <h2 class="mt-case-title">Максим Громов, основатель студии «Resonance Records»</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше запись велась через переписку в Telegram: музыканты бронировали вечер пятницы на 4 часа и просто пропадали, а звукорежиссер сидел без дела. В Молнии мы ввели онлайн-предоплату 50% через СБП, разделили бронь тон-зала на форматы «с режиссером» и «без», а для подкастов добавили пакеты с видеосъемкой. В результате простои студии сократились до нуля, а средний чек вырос на 45% за счет видеоподкастов и заказа сведения.»
+            </blockquote>
+            <div class="mt-case-author">
+              Максим Громов <span>· Основатель студии звукозаписи (2 тон-зала, подкастная, пул из 5 звукорежиссеров), <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0%</span>
+              <span class="mt-case-label">Срывов вечерних сессий благодаря онлайн-предоплате брони через СБП</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">15 мин</span>
+              <span class="mt-case-label">Автоматический буфер в графике на проветривание кабины и отдых ушей режиссера</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+45%</span>
+              <span class="mt-case-label">Рост среднего чека благодаря пакетным видеоподкастам на 4 камеры и сведению</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORDING STUDIO FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании студии звукозаписи</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своей студии звукозаписи</h3>
+            <p>Бесплатно поможем настроить почасовую шахматку тон-залов, выбор режиссера, видеоподкасты и безопасную предоплату по СБП.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261024-tools2"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
+
 def sync_navigation_to_index():
     """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
@@ -22172,6 +22663,11 @@ def main():
     videopavilion_html = build_videopavilion_page()
     (ROOT_DIR / "videopavilion.html").write_text(videopavilion_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'videopavilion.html'}")
+
+    print("Building sector landing page: /recording-studio...")
+    recording_studio_html = build_recording_studio_page()
+    (ROOT_DIR / "recording-studio.html").write_text(recording_studio_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'recording-studio.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()

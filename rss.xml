@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 25 Oct 2026 09:35:35 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 10:05:42 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>CRM для студий звукозаписи и подкастных студий</title>
+      <link>https://molniya-tech.ru/recording-studio</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/recording-studio</guid>
+      <pubDate>Sun, 25 Oct 2026 13:35:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Почасовое бронирование студий звукозаписи и подкастов: выбор работы со звукорежиссером или аренда тон-зала, микрофоны Shure SM7B, многокамерные видеоподкасты и предоплата онлайн.]]></description>
+    </item>
     <item>
       <title>CRM для видеостудий, хромакей-павильонов и циклорам</title>
       <link>https://molniya-tech.ru/videopavilion</link>
