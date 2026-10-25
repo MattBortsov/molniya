@@ -2565,6 +2565,13 @@ def build_spaces_page() -> str:
               <div class="mt-subniche-desc">Почасовая бронь залов 24/7, учёт импульсного и постоянного света, гримёрных мест и автонапоминания фотографам.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/videopavilion">
+            <div class="mt-subniche-icon">🎬</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Хромакей-павильоны и видеостудии <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Смены 4 и 8 часов, бронь телесуфлера и света Aputure/Nanlite, звукоизоляция и буфер на перекраску циклорамы.</div>
+            </div>
+          </a>
           <a class="mt-subniche-card" href="/quests">
             <div class="mt-subniche-icon">🗝️</div>
             <div class="mt-subniche-content">
@@ -14797,6 +14804,20 @@ def sync_sitemap():
             changed = True
             print(f"Added {loc} to sitemap.xml")
 
+    # Ensure all micro-landing sectors are present under clean URLs
+    subniche_slugs = [
+        "photostudios", "videopavilion", "quests", "vr-arena", "karting", "anticafe",
+        "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
+        "stretching", "yoga", "trainers", "martial-arts", "psychologist",
+    ]
+    for slug in subniche_slugs:
+        loc = f"https://molniya-tech.ru/{slug}"
+        if loc not in content:
+            url_entry = f"  <url>\n    <loc>{loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n"
+            content = content.replace("</urlset>", url_entry + "</urlset>")
+            changed = True
+            print(f"Added {loc} to sitemap.xml")
+
     if changed:
         SITEMAP_XML.write_text(content, encoding="utf-8")
 
@@ -14814,6 +14835,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "CRM для видеостудий, хромакей-павильонов и циклорам",
+        "slug": "videopavilion",
+        "description": "Специализированная система бронирования видеопавильонов: смены 4/8 часов, аренда телесуфлера, свет Aputure/Nanlite, звукоизоляция и буфер на перекраску циклорамы.",
+        "pub_date": datetime(2026, 10, 25, 13, 30, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4",
         "slug": "tools/shifts",
@@ -21499,6 +21527,483 @@ def build_pest_control_page() -> str:
 
 
 
+def build_videopavilion_page() -> str:
+    """Builds the complete video pavilion and chroma key studio micro-landing page."""
+    nav_html = render_nav_html(active_item="spaces", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "videopavilion",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для видеопавильона',
+        "Оставьте контакты — поможем настроить сменную сетку 4 и 8 часов, бронь света Aputure/Nanlite, буфер на перекраску циклорамы и договоры для кинокомпаний.",
+    )
+
+    title = "Онлайн-бронирование видеопавильонов — CRM и аренда видеостудий"
+    description = (
+        "Программа и система онлайн-бронирования для хромакей-павильонов и видеостудий: "
+        "расписание смен 4 и 8 часов, бронь телесуфлера и света, буфер на перекраску циклорамы."
+    )
+    canonical = "https://molniya-tech.ru/videopavilion"
+
+    faqs = [
+        (
+            "Как работает онлайн-бронирование смен видеопавильона (4, 8, 12 часов)?",
+            "В онлайн-виджете на сайте, в Telegram или соцсетях клиенты выбирают тип смены (половина смены 4 часа, полная смена 8 часов или ночная смена 12 часов) и дату съемок. Система автоматически рассчитывает время начала и завершения, бронирует свет и гримерки и блокирует накладки между съемочными группами.",
+        ),
+        (
+            "Как система предотвращает накладки на перекраску и сушку пола циклорамы?",
+            "При бронировании съемок с загрязнением (уличная обувь, танцы, жидкости, песок) система автоматически резервирует в шахматке технический буфер 1.5–2 часа на мытье, грунтовку, нанесение зеленой или белой краски Chromakey/Rosco и сушку промышленными тепловыми пушками. Другая группа не сможет занять это время.",
+        ),
+        (
+            "Как учитывается аренда съемочного света (Aputure, Nanlite) и телесуфлера?",
+            "В виджете клиент сразу отмечает требуемый сетап: моноблоки Aputure 600d/1200d, панели Nanlite Forza/Pavotube, оптические насадки Spotlight, C-Stand стойки, флаги и телесуфлер 19 дюймов с оператором текста. Оборудование резервируется под конкретную смену и исключается из общего рентала.",
+        ),
+        (
+            "Как обеспечивается акустический комфорт при синхронной чистовой записи звука?",
+            "Если продакшн отмечает опцию «Синхронная запись звука», система автоматически блокирует шумные демонтажи, репетиции и тяжелые погрузочно-разгрузочные работы в соседних залах павильона. Звукорежиссер получает гарантированную тишину без посторонних шумов.",
+        ),
+        (
+            "Как оформляются договоры, счета и закрывающие акты для кинокомпаний и юрлиц (B2B)?",
+            "Молния автоматически формирует счета с НДС или без, типовой договор аренды съемочного павильона с правилами противопожарной безопасности и электронный акт приема-передачи с перечнем оборудования по серийным номерам. Документы подписываются онлайн или отправляются в ЭДО.",
+        ),
+        (
+            "Как контролировать страховой залог за оборудование и правила работы с циклорамой?",
+            "Вы можете настроить сумму страхового депозита, который блокируется на карте или вносится наличными при заезде группы. При подтверждении брони бот отправляет продюсеру памятку: заклеивание подошвы скотчем (тейпом), правила подвеса приборов на фермы и регламент сдачи зала.",
+        ),
+        (
+            "Как бесплатно перенести расписание и базу продакшнов из Google Таблиц?",
+            "Служба заботы Молнии бесплатно настроит шахматку ваших павильонов, прайс-листы на смены и рентал света, а также перенесет базу постоянных продюсеров и режиссеров за 15 минут.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Пространства", "item": "https://molniya-tech.ru/spaces"},
+                {"@type": "ListItem", "position": 3, "name": "Видеопавильоны", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — программа и CRM для видеопавильонов и видеостудий",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и шахматка смен для видеопавильона",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <script type="application/ld+json">
+{json_ld_str}
+  </script>
+</head>
+<body>
+  <div class="mt-page">
+{nav_html}
+
+    <div class="mt-page-content">
+
+      <!-- VIDEOPAVILION HERO -->
+      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
+        <div class="mt-hero-col mt-hero-col--copy">
+          <h1 class="mt-hero-title">Программа для видеостудий и павильонов: <span class="mt-hero-accent">онлайн-бронирование смен и света</span></h1>
+          <p class="mt-hero-desc">Почасовая и посменная сетка (4/8/12 часов), аренда телесуфлера и приборов Aputure/Nanlite, бронь гримерок, звукоизоляция и автоматический буфер на перекраску циклорамы.</p>
+          <div class="mt-hero-actions">
+            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
+            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_videopavilion" target="_blank" rel="noopener">Подключить видеопавильон</a>
+          </div>
+          <div class="mt-hero-highlights">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для видеопавильонов и видеостудий">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Хромакей и циклорама</span>
+                <span class="mt-facet-note">зеленый, белый, серый и черный угол</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Смены 4, 8 и 12 часов</span>
+                <span class="mt-facet-note">без накладок между съемочными группами</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Свет и суфлер</span>
+                <span class="mt-facet-note">Aputure 600d/1200d, Nanlite, суфлер 19"</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Звукоизоляция</span>
+                <span class="mt-facet-note">тишина для синхронной записи звука</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для видеостудий: расписание смен хромакей-павильона" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Сменная шахматка видеопавильонов, бронь съемочного света, тайминг сушки циклорамы и статусы готовности залов</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка павильонов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый павильон, смена съёмок и прибор <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Продюсеры и администраторы видят занятость циклорам, буфер на перекраску пола, арендованный свет и статус готовности павильона на любом смартфоне.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Павильон 1 «Большая хромакей-циклорама 120 м²» · 380В / 63А</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Съёмка</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Рекламный ролик · Смена 8 часов (10:00 – 18:00)</div>
+                <div class="mt-auto-car-tier">Зеленый хром · Подвесной свет 6x Aputure 600c + Суфлер 19" · Продюсер Илья С.</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🎬</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Смена павильона + рентал света</span>
+              <span class="mt-auto-price">48 000 ₽ · В процессе</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Павильон 1 «Технический буфер циклорамы»</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Перекраска</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Очистка и перекраска пола циклорамы (зеленый хром)</div>
+                <div class="mt-auto-car-tier">Сушка промышленными пушками · Проверка подвесных ферм перед вечерней сменой</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⏱️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Технический перерыв</span>
+              <span class="mt-auto-price">Буфер 1.5 часа · До 19:30</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Павильон 2 «Черная студия 60 м² / Подкастная»</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Запись экспертного видеокурса · Смена 4 часа</div>
+                <div class="mt-auto-car-tier">3 камеры Sony FX3 + Nanlite Forza 500 + Петли Sennheiser · Синхронный звук</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📹</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Смена студии B2B</span>
+              <span class="mt-auto-price">22 000 ₽ (Оплачено)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDEOPAVILION OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для видеопавильонов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Всё для управления видеопавильоном и продакшном <span class="mt-overview-hook">в одной удобной системе</span></h2>
+          <p class="mt-section-sub">Один сервис вместо общих таблиц и неразберихи на площадке: сменное онлайн-бронирование 24/7, буферы на покраску циклорамы, учет съемочного света и договоры для юрлиц.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Смены 4, 8 и 12 часов <span class="mt-overview-hook">без накладок съемочных групп</span></h3>
+            <p>Гибкая сменная сетка: полсмены, полная смена или ночной монтаж. Автоматическое добавление времени на заезд техники и грим без сдвига общего графика студии.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сменная сетка</span><span>Бронь павильона</span></div>
+              <div class="mt-overview-calendar"><span>10:00</span><div class="mt-overview-slot">Смена 8ч · Хромакей <small>48 000 ₽</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Покраска <small>1.5 ч</small></div><span>19:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Буфер на перекраску пола <span class="mt-overview-hook">и сушку пушками</span></h3>
+            <p>Автоматическое резервирование 1.5–2 часов в графике после съемок обувью или красками. Маляры успевают перекрасить пол хромакея или белой циклорамы к следующей группе.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Чистота циклорамы</span><span>Авто-буфер</span></div>
+              <div class="mt-overview-price-row"><span>Покраска пола</span><strong>Краска Chromakey Green</strong></div>
+              <div class="mt-overview-price-row"><span>Сушка пушками</span><strong>90 минут в графике</strong></div>
+              <div class="mt-overview-price-tag">0 испорченных дублей из-за грязного пола</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт света Aputure, Nanlite <span class="mt-overview-hook">и суфлера без дефицита</span></h3>
+            <p>Клиент выбирает в виджете приборы Aputure 600d/1200d, Nanlite Pavotube, оптические насадки и суфлер 19" с оператором. Никакого задвоения оборудования между съемочными залами.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Сетап оборудования</span><span>Подвесной свет</span></div>
+              <div class="mt-overview-message">
+                Резерв на смену: 4x Aputure 600c Pro + Софтбоксы 150 см + Суфлер Prompter 19". Оборудование закреплено.
+                <span class="mt-overview-reaction">💡</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Готовность техники</span><strong>Проверено инженером →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Договоры B2B и акты сдачи <span class="mt-overview-hook">с фиксацией дефектов</span></h3>
+            <p>Генерация счетов для кинокомпаний и юрлиц, договоров аренды студии с залогом и электронных актов приема-передачи павильона с фиксацией состояния циклорамы и приборов.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Документы киносъёмок</span><span>ЭДО и акты</span></div>
+              <div class="mt-overview-stages"><span>Счёт</span><i></i><span>Договор</span><i></i><span>Акт сдачи</span></div>
+              <div class="mt-overview-check">✓ <span>Счёт на оплату юрлица сформирован</span></div>
+              <div class="mt-overview-check">✓ <span>Акт приема-передачи павильона подписан</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Акустическая подготовка <span class="mt-overview-hook">для чистового синхронного звука</span></h3>
+            <p>Автоматический запрет шумных работ и репетиций в соседних помещениях при съемках с синхронной записью. Звукорежиссер получает чистый аудиоканал без гула и эха.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Синхронный звук</span><span>Тишина в павильоне</span></div>
+              <div class="mt-overview-metrics"><span>Шум<b>&lt; 25 дБ</b></span><span>Плавающий пол<b>100% изоляция</b></span><span>Фермы<b>12 м подвес</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- VIDEOPAVILION JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь съёмочной смены">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Одна съёмочная смена. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния автоматизирует работу видеопавильона: от выбора смены и комплекта света в виджете до заезда съемочной группы, сушки пола циклорамы и закрывающего акта.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения смены" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Съемка рекламного ролика в хромакей-павильоне (120 м²)</strong><span>Смена 8 часов · Подвесной свет Aputure 600c + Телесуфлер 19" · Зеленый хром</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Продюсер</span>
+              <h3>Онлайн-выбор смены павильона, света и телесуфлера на сайте 24/7</h3>
+              <p>Продюсер выбирает смену 8 часов, отмечает подвесной свет Aputure, суфлер и гримерку, загружает реквизиты продакшна и получает счет на оплату.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример брони">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь павильона</span>
+                <span class="mt-journey-proof-badge">Оплачено B2B</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Продакшн</span><strong>ООO «МедиаКрафт»</strong></div>
+              <div class="mt-journey-proof-row"><span>Павильон</span><strong>Циклорама 120 м² (Зеленый хром)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Сегодня, 10:00 – 18:00 (8 часов)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Виджет</span>
+              <h3>Блокировка слота, резерв света на фермах и буфер на перекраску</h3>
+              <p>Система резервирует приборы Aputure на подвесах, назначает инженера площадки и автоматически резервирует 1.5 часа после смены на перекраску пола циклорамы.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка смены">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Смена #VP-4420</span>
+                <span class="mt-journey-proof-badge">В графике</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Стоимость</span><strong>48 000 ₽ (свет + суфлер включены)</strong></div>
+              <div class="mt-journey-proof-row"><span>Свет</span><strong>6x Aputure 600c + 2x Nanlite Forza</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер</span><strong>18:00 – 19:30 (Покраска Chromakey)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Чек-лист заезда группы, пропуск для автотранспорта и памятка звуку</h3>
+              <p>Сервисный бот отправляет продюсеру схему заезда на территорию, правила подвеса приборов на фермы и регламент заклеивания подошв обуви тейпом.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Памятка продакшну</span>
+                <span class="mt-journey-proof-badge">Отправлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот / Email</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Пропуск на 2 фургона · Гримерка открыта с 09:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Группа приступает к мотору без задержек</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор</span>
+              <h3>Приёмка чистоты павильона, сдача оборудования и закрывающий акт</h3>
+              <p>Инженер площадки осматривает свет и фермы по чек-листу, маляры приступают к нанесению краски на пол, а продюсер получает закрывающий акт в ЭДО.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Результат смены">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог смены</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Выручка</span><strong>48 000 ₽ (Закрыто в ЭДО)</strong></div>
+              <div class="mt-journey-proof-row"><span>Оборудование</span><strong>100% приборов возвращено в рентал</strong></div>
+              <div class="mt-journey-proof-row"><span>Циклорама</span><strong>Перекрашена и готова к вечерней смене</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс видеопавильона" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс видеокомплекса и хромакей-павильона</div>
+            <h2 class="mt-case-title">Павел Воронов, генеральный продюсер видеокомплекса «CineSpace Studio»</h2>
+            <blockquote class="mt-case-quote">
+              «До Молнии мы вели бронирование огромного хромакей-павильона в общих таблицах Google. Регулярно возникали скандалы: продакшн привозил фуру техники, а предыдущая группа еще не докрасила пол циклорамы или не освободила гримерку. В Молнии мы настроили авто-буферы на покраску циклорамы, жесткий учет приборов Aputure и Nanlite и онлайн-договоры для кинокомпаний. Накладки исчезли полностью, а павильон загружен на 92% без нервотрепки администраторов.»
+            </blockquote>
+            <div class="mt-case-author">
+              Павел Воронов <span>· Генеральный продюсер видеокомплекса (павильон 350 м², парки Aputure и Arri), <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок между заездами съемочных групп и продакшнов благодаря сменной шахматке</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">1.5 ч</span>
+              <span class="mt-case-label">Гарантированный авто-буфер в расписании на перекраску и сушку пола циклорамы</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+35%</span>
+              <span class="mt-case-label">Рост выручки студии от пакетной аренды телесуфлеров, света Aputure и гримерок</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDEOPAVILION FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для видеопавильонов</h2>
+        </div>
+        <div class="mt-before-start-grid">
+          <article class="mt-before-start-highlight">
+            <h3>Попробуйте Молнию для своего видеопавильона</h3>
+            <p>Бесплатно поможем настроить сетку смен, бронь телесуфлера и света, буфер на перекраску циклорамы и договоры для продакшнов.</p>
+            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
+          </article>
+          <div class="mt-before-start-questions">
+{faq_html}
+          </div>
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261024-tools2"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+
+
 def sync_navigation_to_index():
     """Syncs the DRY nav, footer, cookie banner, and sticky CTA into index.html."""
     content = INDEX_HTML.read_text(encoding="utf-8")
@@ -21662,6 +22167,11 @@ def main():
     pest_control_html = build_pest_control_page()
     (ROOT_DIR / "pest-control.html").write_text(pest_control_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'pest-control.html'}")
+
+    print("Building sector landing page: /videopavilion...")
+    videopavilion_html = build_videopavilion_page()
+    (ROOT_DIR / "videopavilion.html").write_text(videopavilion_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'videopavilion.html'}")
 
     print("Building sector landing page: /psychologist...")
     psychologist_html = build_psychologist_page()
