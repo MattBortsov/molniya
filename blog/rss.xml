@@ -5,7 +5,7 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 25 Oct 2026 10:10:47 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:27:40 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
@@ -35,6 +35,14 @@
       <pubDate>Sun, 25 Oct 2026 13:30:00 +0300</pubDate>
       <category>Отрасли</category>
       <description><![CDATA[Специализированная система бронирования видеопавильонов: смены 4/8 часов, аренда телесуфлера, свет Aputure/Nanlite, звукоизоляция и буфер на перекраску циклорамы.]]></description>
+    </item>
+    <item>
+      <title>Как мебельным шоурумам увеличить продажи: связка примерки в интерьере и записи в салон</title>
+      <link>https://molniya-tech.ru/blog/kak-mebelnym-shourumam-uvelichit-prodazhi-s-primerkoy-v-interiere</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/kak-mebelnym-shourumam-uvelichit-prodazhi-s-primerkoy-v-interiere</guid>
+      <pubDate>Sun, 25 Oct 2026 10:00:00 +0300</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Главный барьер покупки мебели — сомнение клиента, впишется ли предмет в габариты и цвет его комнаты. Связка мгновенной онлайн-примерки мебели по фотографии помещения и бронирования персонального визита в шоурум сокращает число ушедших «подумать» покупателей на 35–45% и повышает доходимость до сделки.]]></description>
     </item>
     <item>
       <title>Генератор графиков смен мастеров 2/2 и 3/3 с печатью А4</title>
