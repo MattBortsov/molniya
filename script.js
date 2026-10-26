@@ -4302,6 +4302,23 @@ function initApp() {
   initPricelistConstructor();
   initAcquiringCalculator();
   initShiftsMaker();
+  initFaqLock();
+}
+
+function initFaqLock() {
+  var faqDetails = document.querySelectorAll('.mt-before-start-questions details');
+  if (!faqDetails.length) return;
+  faqDetails.forEach(function(el) {
+    el.open = true;
+    el.addEventListener('click', function(e) {
+      if (e.target.closest('summary')) {
+        e.preventDefault();
+      }
+    });
+    el.addEventListener('toggle', function() {
+      if (!el.open) el.open = true;
+    });
+  });
 }
 
 if (document.readyState === 'loading') {

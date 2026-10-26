@@ -741,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1112,7 +1112,7 @@ def build_auto_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -1263,7 +1263,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1634,7 +1634,7 @@ def build_beauty_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -1751,7 +1751,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2168,7 +2168,7 @@ def build_health_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -2313,7 +2313,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2765,7 +2765,7 @@ def build_spaces_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -2910,7 +2910,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3281,7 +3281,7 @@ def build_photostudios_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -3426,7 +3426,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3829,7 +3829,7 @@ def build_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -3975,7 +3975,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4346,7 +4346,7 @@ def build_psychologist_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -4492,7 +4492,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4863,7 +4863,7 @@ def build_stretching_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -5011,7 +5011,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5382,7 +5382,7 @@ def build_yoga_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -5415,7 +5415,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5474,7 +5474,7 @@ def build_thanks_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 """
@@ -5626,7 +5626,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6075,7 +6075,7 @@ def build_calendar_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -6228,7 +6228,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6672,7 +6672,7 @@ def build_inn_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -6825,7 +6825,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7358,7 +7358,7 @@ def build_margin_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -7510,7 +7510,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7928,7 +7928,7 @@ def build_carwash_weather_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -8078,7 +8078,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8540,7 +8540,7 @@ def build_qr_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -8691,7 +8691,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9245,7 +9245,7 @@ def build_salary_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -9391,7 +9391,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9762,7 +9762,7 @@ def build_education_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -9907,7 +9907,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10280,7 +10280,7 @@ def build_pets_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -10425,7 +10425,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10798,7 +10798,7 @@ def build_repair_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -10952,7 +10952,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11319,7 +11319,7 @@ def build_pricing_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -11459,7 +11459,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11894,7 +11894,7 @@ def build_dikidi_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -12035,7 +12035,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12475,7 +12475,7 @@ def build_yclients_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -12628,7 +12628,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13051,7 +13051,7 @@ def build_pricelist_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-tools2" defer></script>
+    <script src="/script.js?v=20261026-faq12col" defer></script>
   </div>
 </body>
 </html>'''
@@ -13203,7 +13203,7 @@ def build_acquiring_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13702,7 +13702,7 @@ def build_acquiring_page() -> str:
       <button class="mt-cookie-btn" id="mt-cookie-accept" type="button">Хорошо</button>
     </div>
 
-    <script src="/script.js?v=20261024-tools2" defer></script>
+    <script src="/script.js?v=20261026-faq12col" defer></script>
   </div>
 </body>
 </html>'''
@@ -13942,7 +13942,7 @@ def build_tools_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14055,7 +14055,7 @@ def build_tools_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>'''
 
@@ -14204,7 +14204,7 @@ def build_shifts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14608,7 +14608,7 @@ def build_shifts_page() -> str:
     </div>
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>'''
 
@@ -15141,7 +15141,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15383,7 +15383,7 @@ def build_about_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 """
@@ -15420,7 +15420,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15480,7 +15480,7 @@ def build_404_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 """
@@ -15549,7 +15549,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15740,7 +15740,7 @@ def build_requisites_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 """
@@ -15800,7 +15800,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16084,7 +16084,7 @@ def build_privacy_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 """
@@ -16231,7 +16231,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16584,7 +16584,7 @@ def build_trainers_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -16731,7 +16731,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -17084,7 +17084,7 @@ def build_martial_arts_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -17214,7 +17214,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17554,7 +17554,7 @@ def build_quests_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -17684,7 +17684,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18024,7 +18024,7 @@ def build_vr_arena_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -18154,7 +18154,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18494,7 +18494,7 @@ def build_karting_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -18624,7 +18624,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18964,7 +18964,7 @@ def build_anticafe_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -19094,7 +19094,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19434,7 +19434,7 @@ def build_saunas_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -19564,7 +19564,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19904,7 +19904,7 @@ def build_glamping_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -20034,7 +20034,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20374,7 +20374,7 @@ def build_furniture_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -20504,7 +20504,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20844,7 +20844,7 @@ def build_window_cleaning_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -20974,7 +20974,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21314,7 +21314,7 @@ def build_pest_control_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -21445,7 +21445,7 @@ def build_videopavilion_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21789,7 +21789,7 @@ def build_videopavilion_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -21920,7 +21920,7 @@ def build_recording_studio_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -22264,7 +22264,7 @@ def build_recording_studio_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
@@ -22395,7 +22395,7 @@ def build_equipment_rental_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -22739,7 +22739,7 @@ def build_equipment_rental_page() -> str:
 
   </div>
 
-  <script src="/script.js?v=20261024-tools2"></script>
+  <script src="/script.js?v=20261026-faq12col"></script>
 </body>
 </html>
 '''
