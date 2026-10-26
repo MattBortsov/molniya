@@ -643,7 +643,7 @@ def build_auto_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        f'            <details open><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
         for item in faq_items
     )
 
@@ -741,7 +741,7 @@ def build_auto_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1081,15 +1081,9 @@ def build_auto_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для автомойки, детейлинга и автосервиса</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своего автобизнеса</h3>
-            <p>Бесплатно поможем перенести базу клиентов из тетради или Excel, настроить боксы, прайс по классам авто и зарплаты мастеров. Начните работу без пауз в сервисе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -1171,7 +1165,7 @@ def build_beauty_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        f'            <details open><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
         for item in faq_items
     )
 
@@ -1269,7 +1263,7 @@ def build_beauty_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -1609,15 +1603,9 @@ def build_beauty_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для салона красоты, барбершопа и студии маникюра</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своего салона красоты</h3>
-            <p>Бесплатно поможем перенести базу клиентов из тетради, Excel или старой CRM, настроить расписание мастеров, прайс-лист и схему зарплаты. Начните работу без пауз в сервисе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -1721,7 +1709,7 @@ def build_health_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -1763,7 +1751,7 @@ def build_health_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2149,15 +2137,9 @@ def build_health_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для клиник, массажных студий и частных кабинетов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своей клиники или студии</h3>
-            <p>Бесплатно поможем перенести базу пациентов из Excel или старой МИС, настроить расписание кабинетов, прайс-лист и схему зарплаты врачей. Начните прием без пауз в работе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -2242,7 +2224,7 @@ def build_spaces_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -2331,7 +2313,7 @@ def build_spaces_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -2752,15 +2734,9 @@ def build_spaces_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для аренды пространств, коворкингов и залов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своего пространства</h3>
-            <p>Бесплатно поможем настроить календарную сетку залов, тарифы по часам и дням недели, каталог оборудования и правила предоплаты. Начните принимать онлайн-брони уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -2845,7 +2821,7 @@ def build_photostudios_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -2934,7 +2910,7 @@ def build_photostudios_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3274,15 +3250,9 @@ def build_photostudios_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для фотостудий и видеопавильонов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своей фотостудии</h3>
-            <p>Бесплатно поможем настроить календарную шахматку залов, тарифы по часам и дням недели, каталог света и правила предоплаты. Начните принимать онлайн-брони уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -3367,7 +3337,7 @@ def build_cleaning_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -3456,7 +3426,7 @@ def build_cleaning_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -3828,15 +3798,9 @@ def build_cleaning_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для клининга и выездных бригад</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для клининговой службы</h3>
-            <p>Бесплатно поможем настроить калькулятор метража, расписание смен выездных бригад, каталог услуг и правила сдельной оплаты. Начните принимать онлайн-заказы уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -3921,7 +3885,7 @@ def build_psychologist_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -4011,7 +3975,7 @@ def build_psychologist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4351,15 +4315,9 @@ def build_psychologist_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для психологов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей частной практики</h3>
-            <p>Бесплатно поможем настроить персональную страницу записи, буферные интервалы между сессиями, форму приёма под ваши консультации и перенести базу клиентов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -4444,7 +4402,7 @@ def build_stretching_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -4534,7 +4492,7 @@ def build_stretching_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -4874,15 +4832,9 @@ def build_stretching_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для студий растяжки</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей студии растяжки</h3>
-            <p>Бесплатно поможем настроить расписание залов, лимиты мест, направления тренировок, форму онлайн-записи и перенести базу постоянных учеников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -4969,7 +4921,7 @@ def build_yoga_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -5059,7 +5011,7 @@ def build_yoga_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5399,15 +5351,9 @@ def build_yoga_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для студий йоги и пилатеса</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей студии йоги и пилатеса</h3>
-            <p>Бесплатно поможем настроить расписание залов, лимиты ковриков и реформеров, форму онлайн-записи и перенести базу постоянных учеников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -5469,7 +5415,7 @@ def build_thanks_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -5583,7 +5529,7 @@ def build_calendar_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -5680,7 +5626,7 @@ def build_calendar_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6098,15 +6044,9 @@ def build_calendar_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о нормах рабочего времени по ТК РФ и расчете зарплаты</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Автоматизируйте учет смен и зарплаты в Молнии</h3>
-            <p>Бесплатно поможем настроить индивидуальные графики мастеров, форму онлайн-записи и перенести базу клиентов из любой системы за 15 минут.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -6191,7 +6131,7 @@ def build_inn_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -6288,7 +6228,7 @@ def build_inn_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -6703,15 +6643,9 @@ def build_inn_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Частые вопросы о проверке контрагентов по ИНН</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Управляйте закупками и складом в Молнии</h3>
-            <p>Бесплатно поможем настроить учет остатков расходных материалов, техкарты услуг и контроль счетов поставщиков без кассовых разрывов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -6794,7 +6728,7 @@ def build_margin_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -6891,7 +6825,7 @@ def build_margin_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7395,15 +7329,9 @@ def build_margin_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о рентабельности и юнит-экономике бизнеса услуг</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Увеличьте загрузку вашей локации в Молнии</h3>
-            <p>Бесплатно поможем настроить виджет онлайн-записи 24/7, регламенты списания материалов и перенести базу постоянных клиентов за 15 минут.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -7485,7 +7413,7 @@ def build_carwash_weather_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -7582,7 +7510,7 @@ def build_carwash_weather_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -7971,19 +7899,10 @@ def build_carwash_weather_page() -> str:
           <p class="mt-section-sub">Практические советы детейлеров и автоэкспертов о правильной мойке в разные сезоны.</p>
         </div>
 
-        <div class="mt-before-start-grid">
-          <div class="mt-before-start-highlight">
-            <div class="mt-hero-rating-badge" style="margin-bottom:14px;">
-              <span class="mt-rating-stars-mini" aria-hidden="true">★★★★★</span>
-              <span>Экспертиза Молния Авто</span>
-            </div>
-            <p>Хотите подключить онлайн-запись на автомойку, шиномонтаж или детейлинг? Молния связывает расписание постов, учет химии и онлайн-запись водителей за 1 день.</p>
-            <a href="/auto" class="mt-link-accent" style="font-weight:600; text-decoration:none; display:inline-block; margin-top:10px;">Подробнее о CRM для автобизнеса →</a>
-          </div>
-
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
+
         </div>
       </section>
 
@@ -8066,7 +7985,7 @@ def build_qr_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -8159,7 +8078,7 @@ def build_qr_page() -> str:
   <meta name="twitter:description" content="{html.escape(description)}">
   <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/logo/molniya-logo-horizontal.svg">
 
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
   {json_ld_str}
   </script>
@@ -8587,17 +8506,16 @@ def build_qr_page() -> str:
 
     <!-- FAQ Accordion -->
     <section id="faq" class="mt-section mt-reveal" data-screen-label="Частые вопросы" data-mt-reveal>
-      <div class="mt-before-start-grid">
-        <div class="mt-before-start-highlight">
-          <h2>Частые вопросы о генераторе брендовых QR-кодов</h2>
-          <p>
-            Все, что нужно знать о считывании кодов с логотипом, векторном формате для типографий, настройке СБП и правилах размещения в офлайн-точках.
-          </p>
-        </div>
-        <div class="mt-before-start-questions">
-{faq_html}
-        </div>
+      <div class="mt-section-head">
+        <h2 class="mt-section-title">Частые вопросы о генераторе брендовых QR-кодов</h2>
+        <p class="mt-section-sub">
+          Все, что нужно знать о считывании кодов с логотипом, векторном формате для типографий, настройке СБП и правилах размещения в офлайн-точках.
+        </p>
       </div>
+      <div class="mt-before-start-questions">
+{faq_html}
+      </div>
+      <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
     </section>
 
     <!-- Final CTA Lead Form -->
@@ -8676,7 +8594,7 @@ def build_salary_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -8773,7 +8691,7 @@ def build_salary_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9298,15 +9216,9 @@ def build_salary_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об оплате труда и мотивации мастеров сферы услуг</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Настройте прозрачный расчет зарплаты в Молнии</h3>
-            <p>Бесплатно поможем настроить индивидуальные грейды мастеров, списание материалов по техкартам и мотивацию витрины за 15 минут.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -9390,7 +9302,7 @@ def build_education_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -9479,7 +9391,7 @@ def build_education_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -9819,15 +9731,9 @@ def build_education_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для учебных центров, курсов и студий танцев</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте CRM Молния для своего учебного центра</h3>
-            <p>Бесплатно поможем настроить расписание групп, типы абонементов, правила заморозок и формулы зарплат педагогов. Запустите центр без пауз в учебном процессе.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -9912,7 +9818,7 @@ def build_pets_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -10001,7 +9907,7 @@ def build_pets_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10342,15 +10248,9 @@ def build_pets_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для груминг-салонов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего груминг-салона</h3>
-            <p>Бесплатно поможем настроить расписание столов и ванн, прайс-лист по породам, зарплаты мастеров и перенести базу хвостатых клиентов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -10436,7 +10336,7 @@ def build_repair_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -10525,7 +10425,7 @@ def build_repair_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -10866,15 +10766,9 @@ def build_repair_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о программе для сервисных центров и мастерских</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего сервисного центра</h3>
-            <p>Бесплатно поможем настроить журнал заказов, статусы ремонта, печать квитанций и перенести базу постоянных клиентов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -10952,7 +10846,7 @@ def build_pricing_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        f'            <details open><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
         for item in faq_items
     )
 
@@ -11058,7 +10952,7 @@ def build_pricing_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11396,15 +11290,9 @@ def build_pricing_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Часто задаваемые вопросы о тарифах</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>14 дней тест-драйва без привязки карты</h3>
-            <p>Попробуйте полную версию Молнии в реальной работе. Наша служба заботы бесплатно перенесет базу и обучит команду.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Задать вопрос в мессенджере ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -11479,7 +11367,7 @@ def build_dikidi_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        f'            <details open><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
         for item in faq_items
     )
 
@@ -11571,7 +11459,7 @@ def build_dikidi_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -11977,15 +11865,9 @@ def build_dikidi_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о переходе с DIKIDI Business на Молнию</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>3 месяца бесплатно и бережный перенос базы</h3>
-            <p>Поможем выгрузить данные из DIKIDI, перенести клиентов, историю визитов, прайс и мастеров. Начните экономить на SMS уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -12060,7 +11942,7 @@ def build_yclients_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
+        f'            <details open><summary>{html.escape(item["q"])}</summary><p>{html.escape(item["a"])}</p></details>'
         for item in faq_items
     )
 
@@ -12153,7 +12035,7 @@ def build_yclients_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -12564,15 +12446,9 @@ def build_yclients_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о переходе с YCLIENTS на Молнию</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>3 месяца бесплатно и бережный перенос базы</h3>
-            <p>Поможем выгрузить данные из YCLIENTS, перенести клиентов, историю визитов, прайс и мастеров. Начните экономить на SMS уже сегодня.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -12655,7 +12531,7 @@ def build_pricelist_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -12752,7 +12628,7 @@ def build_pricelist_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13156,15 +13032,9 @@ def build_pricelist_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о составлении и печати прайс-листов в сфере услуг</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Управляйте ценами и онлайн-записью в Молнии</h3>
-            <p>Подключите CRM Молния: меняйте расценки в одном окне, и они автоматически обновятся в виджете записи, мобильном приложении и чеках.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -13236,7 +13106,7 @@ def build_acquiring_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -13333,7 +13203,7 @@ def build_acquiring_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -13813,15 +13683,9 @@ def build_acquiring_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об эквайринге, тарифах СБП и приеме платежей</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Управляйте записями и оплатами в Молнии</h3>
-            <p>Поможем настроить онлайн-запись с предоплатой, фиксацию оплат по СБП и картам и интеграцию с онлайн-кассой за 15 минут.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в Telegram ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -13997,7 +13861,7 @@ def build_tools_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -14078,7 +13942,7 @@ def build_tools_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14178,24 +14042,9 @@ def build_tools_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Часто задаваемые вопросы об онлайн-инструментах</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Автоматизируйте бизнес с платформой Молния</h3>
-            <p>Бесплатные сервисы решают точечные задачи. Платформа Молния объединяет онлайн-запись, расписание мастеров, склад и учет финансов в единое удобное окно.</p>
-            <div class="mt-before-start-contacts">
-              <div class="mt-before-start-contact-item">
-                <span class="mt-before-start-contact-label">Консультация</span>
-                <a href="tel:+78005553535">+7 (800) 555-35-35</a>
-              </div>
-              <div class="mt-before-start-contact-item">
-                <span class="mt-before-start-contact-label">Поддержка в Telegram</span>
-                <a href="https://t.me/molniya_support" target="_blank" rel="noopener">@molniya_support</a>
-              </div>
-            </div>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
       </section>
 
@@ -14258,7 +14107,7 @@ def build_shifts_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -14355,7 +14204,7 @@ def build_shifts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -14746,24 +14595,9 @@ def build_shifts_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы о составлении графиков смен и расписания</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Управляйте мастерами и записями в Молнии</h3>
-            <p>Поможем настроить электронный журнал записи, индивидуальные графики мастеров, онлайн-бронирование и автоматический расчет сдельной зарплаты за 15 минут.</p>
-            <div class="mt-before-start-contacts">
-              <div class="mt-before-start-contact-item">
-                <span class="mt-before-start-contact-label">Консультация</span>
-                <a href="tel:+78005553535">+7 (800) 555-35-35</a>
-              </div>
-              <div class="mt-before-start-contact-item">
-                <span class="mt-before-start-contact-label">Поддержка в Telegram</span>
-                <a href="https://t.me/molniya_support" target="_blank" rel="noopener">@molniya_support</a>
-              </div>
-            </div>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
       </section>
 
@@ -15307,7 +15141,7 @@ def build_about_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15586,7 +15420,7 @@ def build_404_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15715,7 +15549,7 @@ def build_requisites_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -15966,7 +15800,7 @@ def build_privacy_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16307,7 +16141,7 @@ def build_trainers_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -16397,7 +16231,7 @@ def build_trainers_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -16719,15 +16553,9 @@ def build_trainers_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для персональных тренеров</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию в своей работе тренера</h3>
-            <p>Бесплатно поможем настроить календарь тренировок, баланс пакетов занятий, персональную страницу записи и перенести базу подопечных.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -16813,7 +16641,7 @@ def build_martial_arts_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -16903,7 +16731,7 @@ def build_martial_arts_page() -> str:
 
   <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script src="/metrika.js" defer></script>
 </head>
 <body>
@@ -17225,15 +17053,9 @@ def build_martial_arts_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для клубов единоборств</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего бойцовского клуба</h3>
-            <p>Бесплатно поможем настроить расписание татами и рингов, лимиты мест в группах, форму онлайн-записи и перенести базу спортсменов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -17319,7 +17141,7 @@ def build_quests_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -17392,7 +17214,7 @@ def build_quests_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -17701,15 +17523,9 @@ def build_quests_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для квест-румов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего квест-рума</h3>
-            <p>Бесплатно поможем настроить расписание локаций, авто-буфер на сборку комнат, уровни контакта, форму онлайн-бронирования и тарифы доплаты за игроков.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -17795,7 +17611,7 @@ def build_vr_arena_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -17868,7 +17684,7 @@ def build_vr_arena_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18177,15 +17993,9 @@ def build_vr_arena_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для VR-арен и клубов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей VR-арены</h3>
-            <p>Бесплатно поможем настроить расписание сеансов, буфер на дезинфекцию шлемов, учет оборудования, форму онлайн-записи и пакеты праздников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -18271,7 +18081,7 @@ def build_karting_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -18344,7 +18154,7 @@ def build_karting_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -18653,15 +18463,9 @@ def build_karting_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для картинг-центров</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего картинг-центра</h3>
-            <p>Бесплатно поможем настроить расписание заездов, лимиты картов на треке, буфер на пит-лейне, форму онлайн-записи и пакеты турниров.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -18747,7 +18551,7 @@ def build_anticafe_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -18820,7 +18624,7 @@ def build_anticafe_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19129,15 +18933,9 @@ def build_anticafe_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для антикафе</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего антикафе</h3>
-            <p>Бесплатно поможем настроить сетку комнат, таймер минут и стоп-чеки, буфер на проветривание, виджет онлайн-бронирования и пакеты праздников.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -19223,7 +19021,7 @@ def build_saunas_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -19296,7 +19094,7 @@ def build_saunas_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -19605,15 +19403,9 @@ def build_saunas_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для бань и саун</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего банного комплекса</h3>
-            <p>Бесплатно поможем настроить расписание парных от 2 часов, санитарные часы, каталог веников и программ парения, виджет бронирования и онлайн-предоплату.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -19699,7 +19491,7 @@ def build_glamping_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -19772,7 +19564,7 @@ def build_glamping_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20081,15 +19873,9 @@ def build_glamping_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для глэмпингов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего глэмпинга</h3>
-            <p>Бесплатно поможем настроить шахматку домиков и беседок, залоги за чистоту, каталог чанов и дров, виджет бронирования и онлайн-предоплату.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -20175,7 +19961,7 @@ def build_furniture_cleaning_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -20248,7 +20034,7 @@ def build_furniture_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -20557,15 +20343,9 @@ def build_furniture_cleaning_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для химчистки мебели</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего сервиса химчистки</h3>
-            <p>Бесплатно поможем настроить калькулятор посадочных мест, маршрутизацию по районам, фотофиксацию пятен и сдельный расчет зарплат.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -20651,7 +20431,7 @@ def build_window_cleaning_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -20724,7 +20504,7 @@ def build_window_cleaning_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21033,15 +20813,9 @@ def build_window_cleaning_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для мойки окон</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей службы мойки окон</h3>
-            <p>Бесплатно поможем настроить калькулятор створок и балконов, районную маршрутизацию, чек-листы сдачи и сдельный расчет зарплат.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -21127,7 +20901,7 @@ def build_pest_control_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -21200,7 +20974,7 @@ def build_pest_control_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21509,15 +21283,9 @@ def build_pest_control_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для дезинсекции</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей службы дезинсекции</h3>
-            <p>Бесплатно поможем настроить калькулятор обработки помещений, районную маршрутизацию, акты СанПиН и складской учет инсектицидов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -21604,7 +21372,7 @@ def build_videopavilion_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -21677,7 +21445,7 @@ def build_videopavilion_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -21990,15 +21758,9 @@ def build_videopavilion_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для видеопавильонов</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего видеопавильона</h3>
-            <p>Бесплатно поможем настроить сетку смен, бронь телесуфлера и света, буфер на перекраску циклорамы и договоры для продакшнов.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -22085,7 +21847,7 @@ def build_recording_studio_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -22158,7 +21920,7 @@ def build_recording_studio_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -22471,15 +22233,9 @@ def build_recording_studio_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании студии звукозаписи</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своей студии звукозаписи</h3>
-            <p>Бесплатно поможем настроить почасовую шахматку тон-залов, выбор режиссера, видеоподкасты и безопасную предоплату по СБП.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
@@ -22566,7 +22322,7 @@ def build_equipment_rental_page() -> str:
     ]
 
     faq_html = "\n".join(
-        f'            <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
         for q, a in faqs
     )
 
@@ -22639,7 +22395,7 @@ def build_equipment_rental_page() -> str:
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css?v=20261024-tools2">
+  <link rel="stylesheet" href="/styles.css?v=20261026-faqfull">
   <script type="application/ld+json">
 {json_ld_str}
   </script>
@@ -22952,15 +22708,9 @@ def build_equipment_rental_page() -> str:
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-бронировании и программе для кинорентала</h2>
         </div>
-        <div class="mt-before-start-grid">
-          <article class="mt-before-start-highlight">
-            <h3>Попробуйте Молнию для своего кинорентала</h3>
-            <p>Бесплатно поможем настроить суточную шахматку техники, сканирование штрихкодов, проверку клиентов и электронные акты приёма-передачи.</p>
-            <a href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер ↗</a>
-          </article>
-          <div class="mt-before-start-questions">
+        <div class="mt-before-start-questions">
 {faq_html}
-          </div>
+
         </div>
         <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
