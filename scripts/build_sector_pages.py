@@ -21689,15 +21689,19 @@ def build_videopavilion_page() -> str:
     <div class="mt-page-content">
 
       <!-- VIDEOPAVILION HERO -->
-      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
-        <div class="mt-hero-col mt-hero-col--copy">
-          <h1 class="mt-hero-title">Программа для видеостудий и павильонов: <span class="mt-hero-accent">онлайн-бронирование смен и света</span></h1>
-          <p class="mt-hero-desc">Почасовая и посменная сетка (4/8/12 часов), аренда телесуфлера и приборов Aputure/Nanlite, бронь гримерок, звукоизоляция и автоматический буфер на перекраску циклорамы.</p>
-          <div class="mt-hero-actions">
-            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_videopavilion" target="_blank" rel="noopener">Подключить видеопавильон</a>
-          </div>
-          <div class="mt-hero-highlights">
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для видеостудий:<br><span class="mt-hero-accent">смены, циклорамы и свет</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Посменная сетка 4, 8 и 12 часов, бронь телесуфлера и света Aputure/Nanlite, звукоизоляция и авто-буфер на перекраску циклорамы</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для видеопавильонов и видеостудий">
               <li class="mt-facet">
                 <span class="mt-facet-name">Хромакей и циклорама</span>
@@ -21727,7 +21731,7 @@ def build_videopavilion_page() -> str:
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </div>
-            <p class="mt-hero-media-caption">Сменная шахматка видеопавильонов, бронь съемочного света, тайминг сушки циклорамы и статусы готовности залов</p>
+            <p class="mt-hero-media-caption">Сменная шахматка видеопавильонов, бронь съемочного света и статусы готовности залов</p>
           </div>
         </div>
 
@@ -22166,15 +22170,19 @@ def build_recording_studio_page() -> str:
     <div class="mt-page-content">
 
       <!-- RECORDING STUDIO HERO -->
-      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
-        <div class="mt-hero-col mt-hero-col--copy">
-          <h1 class="mt-hero-title">Программа для студий звукозаписи: <span class="mt-hero-accent">почасовая бронь залов и режиссеров</span></h1>
-          <p class="mt-hero-desc">Почасовая сетка тон-залов и вокальных комнат 24/7, выбор записи со звукорежиссером или «сухой» аренды, видеоподкасты на 4 камеры, сведение треков и онлайн-предоплата.</p>
-          <div class="mt-hero-actions">
-            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_recording_studio" target="_blank" rel="noopener">Подключить студию звука</a>
-          </div>
-          <div class="mt-hero-highlights">
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для студий звукозаписи:<br><span class="mt-hero-accent">почасовая бронь залов и звука</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Почасовая сетка тон-залов и вокальных комнат 24/7, выбор записи со звукорежиссером или сухой аренды, подкасты на 4 камеры и онлайн-предоплата</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий звукозаписи и подкастных">
               <li class="mt-facet">
                 <span class="mt-facet-name">Тон-зал и кабина</span>
@@ -22204,7 +22212,7 @@ def build_recording_studio_page() -> str:
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </div>
-            <p class="mt-hero-media-caption">Почасовая сетка студии звукозаписи, занятость звукорежиссеров, бронь микрофонов Shure SM7B и онлайн-оплата</p>
+            <p class="mt-hero-media-caption">Почасовая сетка студии звукозаписи, занятость звукорежиссеров и онлайн-оплата</p>
           </div>
         </div>
 
@@ -22643,15 +22651,19 @@ def build_equipment_rental_page() -> str:
     <div class="mt-page-content">
 
       <!-- EQUIPMENT RENTAL HERO -->
-      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
-        <div class="mt-hero-col mt-hero-col--copy">
-          <h1 class="mt-hero-title">Программа для рентала съёмочной техники: <span class="mt-hero-accent">учёт оборудования, залоги и акты</span></h1>
-          <p class="mt-hero-desc">Суточная шахматка камер Sony FX3/RED, кинооптики и света, скоринг арендаторов, электронные акты приёма-передачи по штрихкодам и тариф выходного дня.</p>
-          <div class="mt-hero-actions">
-            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_equipment_rental" target="_blank" rel="noopener">Подключить кинорентал</a>
-          </div>
-          <div class="mt-hero-highlights">
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            CRM для кинорентала:<br><span class="mt-hero-accent">учёт оборудования, залоги и акты</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Суточная шахматка камер Sony FX3/RED, кинооптики и света, скоринг арендаторов, электронные акты приёма-передачи по штрихкодам и тариф Weekend</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для кинорентала и проката съемочной техники">
               <li class="mt-facet">
                 <span class="mt-facet-name">Камеры, оптика и свет</span>
@@ -22681,7 +22693,7 @@ def build_equipment_rental_page() -> str:
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </div>
-            <p class="mt-hero-media-caption">Суточный календарь занятости кинооборудования, статусы бронирования, учет залогов и электронные акты приёма-передачи</p>
+            <p class="mt-hero-media-caption">Суточный календарь занятости кинооборудования, залоги и электронные акты приёма-передачи</p>
           </div>
         </div>
 
