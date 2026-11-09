@@ -1983,8 +1983,15 @@ def build_health_page() -> str:
           <a class="mt-subniche-card" href="/psychologist">
             <div class="mt-subniche-icon">🧠</div>
             <div class="mt-subniche-content">
-              <div class="mt-subniche-title">Психологи и психотерапевты <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-title">Частнопрактикующие психологи <span class="mt-subniche-arrow">→</span></div>
               <div class="mt-subniche-desc">Персональная страница записи 24/7, свободные слоты по 50 минут с буфером на заметки, формы приёма с вопросами под услугу и защищённый профиль клиента.</div>
+            </div>
+          </a>
+          <a class="mt-subniche-card" href="/psychotherapist">
+            <div class="mt-subniche-icon">🛋️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Врачи-психотерапевты и КПТ-специалисты <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Терапевтический сеттинг 50+10 мин, курсовое ведение пациентов, закрытые протоколы сессий по 152-ФЗ и сбор анамнеза до первого приёма.</div>
             </div>
           </a>
           <a class="mt-subniche-card" href="/stretching">
@@ -4316,6 +4323,507 @@ def build_psychologist_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для психологов</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_psychotherapist_page() -> str:
+    """Builds the complete psychotherapist micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="health", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "psychotherapist",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для практики психотерапевта',
+        "Оставьте контакты — покажем Молнию на примере вашей практики и поможем настроить страницу записи, сеттинг и протоколы сессий.",
+    )
+
+    title = "Онлайн-запись и CRM для психотерапевта — программа для частной практики"
+    description = (
+        "Программа и онлайн-запись для врачей-психотерапевтов и частнопрактикующих специалистов: "
+        "защищённые протоколы сессий по 152-ФЗ, сеттинг 50+10 мин, курсовая терапия и расписание."
+    )
+    canonical = "https://molniya-tech.ru/psychotherapist"
+
+    faqs = [
+        (
+            "Как клиенты записываются на консультации к психотерапевту через Молнию?",
+            "Вы получаете персональную страницу записи с вашим описанием, образованием, направлениями работы (КПТ, гештальт, психоанализ, семейная терапия) и перечнем форматов (очный прием в кабинете или онлайн-сессия). Ссылку можно разместить в Telegram, на личной странице или сайте. Клиент выбирает удобный день и свободный слот за 1 минуту без необходимости писать в мессенджеры для согласования графика.",
+        ),
+        (
+            "Как настраивается обязательный буфер 10–15 минут между сессиями?",
+            "В настройках услуги вы задаете длительность сессии (например, 50 минут) и обязательное буферное время после неё (например, 10 или 15 минут). Система автоматически учитывает буфер в календаре: клиенты физически не смогут записаться встык. У вас всегда будет фиксированное время на ведение протокола встречи, отдых и подготовку к следующему клиенту.",
+        ),
+        (
+            "Как собирать первичный анамнез и согласие с правилами терапевтического контракта?",
+            "К услуге первичного приёма прикрепляется форма анкеты: запрос, опыт предыдущей терапии, наблюдение у психиатра, принимаемые препараты и контакт доверенного лица на случай кризисных ситуаций. Также клиент знакомится с вашим терапевтическим контрактом (правило отмены сессии не позднее 24 часов) и подтверждает согласие прямо во время записи.",
+        ),
+        (
+            "Где хранятся протоколы сессий и как обеспечивается конфиденциальность по 152-ФЗ?",
+            "Все клиентские карточки, заметки терапевта и история сессий хранятся в защищённом облачном хранилище с шифрованием данных в строгом соответствии с требованиями Федерального закона № 152-ФЗ «О персональных данных». Доступ к записям защищен персональной двухфакторной авторизацией и открыт исключительно вам — посторонние лица, поисковые системы или другие пользователи сервиса не имеют доступа к конфиденциальной информации.",
+        ),
+        (
+            "Можно ли закрепить за клиентом постоянный еженедельный слот на весь курс психотерапии?",
+            "Да. В карточке клиента можно задать регулярный повторяющийся слот (например, каждый вторник в 16:00). Система забронирует это время на указанное число недель вперёд (например, на курс из 10 или 20 сессий). Этот слот будет скрыт для других пользователей на странице записи, а клиент накануне каждого сеанса будет получать своевременное напоминание.",
+        ),
+        (
+            "Подходит ли сервис для совмещения очного приема в кабинете и онлайн-консультаций?",
+            "Да. Вы можете разделить расписание по дням или часам: например, по понедельникам и средам вести очный приём в арендованном кабинете, а по вторникам и четвергам — онлайн-консультации через Яндекс Телемост, Google Meet или Zoom. Ссылка на видеозвонок отправляется клиенту автоматически сразу после подтверждения записи.",
+        ),
+        (
+            "Как бесплатно перенести текущую базу клиентов и расписание в Молнию?",
+            "Служба заботы Молнии бесплатно помогает перенести контакты клиентов, действующие еженедельные слоты и историю консультаций из таблиц Excel, блокнотов или других CRM-систем. Перенос занимает около 15 минут, не нарушает текущий терапевтический сеттинг и позволяет сразу продолжить практику в едином интерфейсе.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Здоровье и медицина", "item": "https://molniya-tech.ru/health"},
+                {"@type": "ListItem", "position": 3, "name": "Онлайн-запись для психотерапевтов", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для психотерапевтов",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания сессий психотерапевта",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261026-faq12col">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Онлайн-запись и CRM<br><span class="mt-hero-accent">для частной практики психотерапевта</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Персональная страница записи 24/7, жесткий сеттинг 50+10 минут с буфером на протокол сессии, курсовое ведение клиентов и конфиденциальность по 152-ФЗ без ручной переписки в мессенджерах</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для врачей-психотерапевтов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сеттинг 50 + 10 мин</span>
+                <span class="mt-facet-note">автоматический буфер на протокол и отдых</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Курсовая терапия</span>
+                <span class="mt-facet-note">фиксация постоянного слота за клиентом</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Анкета и контракт</span>
+                <span class="mt-facet-note">сбор первичного анамнеза до первой встречи</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">152-ФЗ и приватность</span>
+                <span class="mt-facet-note">изолированный защищённый профиль клиента</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <div class="mt-tablet">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для психотерапевта: расписание сессий и электронный журнал" width="1710" height="983" fetchpriority="high">
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </div>
+            <p class="mt-hero-media-caption">Электронный журнал терапевтических сессий, курсовая динамика и расписание приёма</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE SCHEDULE STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Расписание сессий" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая сессия, протокол и время на отдых <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Психотерапевт видит статус каждой встречи, вводные анкеты новых клиентов, формат сессии (кабинет или видеосвязь) и интервалы между приемами.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">09:00 · Индивидуальная сессия: КПТ</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В кабинете</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Алексей С. · Кабинет «Тишина»</div>
+                <div class="mt-auto-car-tier">Курс 12 сессий · Встреча №5 · Протокол открыт</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🛋️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Когнитивно-поведенческая терапия</span>
+              <span class="mt-auto-price">По контракту</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">10:00 · Буфер на протокол и перерыв</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Заполнение протокола сессии</div>
+                <div class="mt-auto-car-tier">Фиксация домашних заданий, инсайтов и 10 минут отдыха</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">☕</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буферное время 15 мин</span>
+              <span class="mt-auto-price">В расписании</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">10:15 · Семейная психотерапия: Парный прием</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Подтверждено</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Екатерина и Дмитрий В. · Онлайн</div>
+                <div class="mt-auto-car-tier">Сессия 80 минут · Видеосвязь (Яндекс Телемост)</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💻</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Парная консультация</span>
+              <span class="mt-auto-price">Предоплата 100%</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">12:00 · Первичный прием и диагностика</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Новый клиент</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Михаил Р. · Кабинет «Тишина»</div>
+                <div class="mt-auto-car-tier">Заполнена вводная анкета, анамнез и согласие с сеттингом</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📋</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Первичная диагностическая сессия</span>
+              <span class="mt-auto-price">Очный приём</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PSYCHOTHERAPIST OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для психотерапевта" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Ведите психотерапевтическую практику <span class="mt-overview-hook">без организационного хаоса и выгорания</span></h2>
+          <p class="mt-section-sub">Единое рабочее пространство психотерапевта: персональная страница бронирования сессий 24/7, соблюдение терапевтического сеттинга, защищённые протоколы консультаций и напоминания клиентам.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Сеттинг 50+10 минут <span class="mt-overview-hook">и защита от эмоционального истощения</span></h3>
+            <p>Настройте точную длительность сессии (например, 50 минут) и обязательный буфер между клиентами (10–15 минут). Программа автоматически резервирует интервал в календаре: клиенты физически не смогут записаться встык. У вас останется достаточно времени, чтобы записать ключевые выводы в протокол сессии, сформулировать домашнее задание и переключиться перед следующей консультацией.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание сессий</span><span>Буфер 15 мин</span></div>
+              <div class="mt-overview-calendar"><span>09:00</span><div class="mt-overview-slot">Сессия КПТ <small>50 мин · В кабинете</small></div><span>09:50</span><div class="mt-overview-slot mt-overview-slot--light">Буфер на протокол <small>10 мин перерыв</small></div><span>10:00</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Анкета первичного приёма <span class="mt-overview-hook">и терапевтический контракт</span></h3>
+            <p>Включите обязательные вопросы в форму записи на первую консультацию: с каким запросом обращается клиент, есть ли опыт психотерапии, наблюдается ли у психиатра и принимает ли фармакотерапию. Клиент знакомится с правилами терапевтического контракта и подтверждает согласие с регламентом отмены сессий прямо при бронировании.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Анкета при бронировании</span><span>Контракт</span></div>
+              <div class="mt-overview-price-row"><span>Запрос клиента</span><strong>Тревога, панические атаки</strong></div>
+              <div class="mt-overview-price-row"><span>Фармакотерапия</span><strong>СИОЗС по назначению врача</strong></div>
+              <div class="mt-overview-price-tag">Согласие с правилами отмены за 24 часа подтверждено</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Курсовая терапия и еженедельные слоты <span class="mt-overview-hook">без рутинных переписок</span></h3>
+            <p>Закрепляйте за постоянными клиентами регулярный еженедельный слот в расписании (например, каждый четверг в 19:00). Программа автоматически резервирует это время на нужный курс (10, 15 или 20 встреч), отслеживает номер текущей сессии и исключает случайную запись сторонних клиентов на занятые часы.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Курсовое ведение</span><span>Еженедельный слот</span></div>
+              <div class="mt-overview-price-row"><span>Постоянный клиент</span><strong>Четверг, 19:00 (еженедельно)</strong></div>
+              <div class="mt-overview-price-row"><span>Прогресс курса</span><strong>Встреча 7 из 15 сессий</strong></div>
+              <div class="mt-overview-price-tag">Слот автоматически забронирован на весь курс</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Конфиденциальный профиль клиента <span class="mt-overview-hook">строго по 152-ФЗ</span></h3>
+            <p>Храните заметки, протоколы встреч, динамику психологического состояния и домашние задания в закрытом профиле клиента. Доступ к карточке защищён шифрованием и персональной авторизацией по стандартам 152-ФЗ: посторонние лица и поисковые системы не имеют доступа к вашим конфиденциальным записям.</p>
+            <div class="mt-overview-preview mt-overview-preview--analytics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Профиль клиента</span><span>Защищено 152-ФЗ</span></div>
+              <div class="mt-overview-price-row"><span>История сессий</span><strong>6 завершено · 1 запланирована</strong></div>
+              <div class="mt-overview-price-row"><span>Протокол встречи</span><strong>Доступен только специалисту</strong></div>
+              <div class="mt-overview-price-tag">Шифрование данных и изолированное хранилище</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PSYCHOTHERAPIST JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиента">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">От первого обращения до завершения курса. <span class="mt-hero-accent">Полный порядок в практике.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует работу психотерапевта: от бронирования первого слота и сбора анамнеза до фиксации протоколов встреч и ведения регулярной терапии.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Курс КПТ: Сессия №4</strong><span>Врач-психотерапевт Елена В. · Кабинет «Тишина»</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Выбор формата консультации и запись в свободный слот</h3>
+              <p>Клиент переходит по вашей персональной ссылке или открывает виджет. Он выбирает формат (очный приём в кабинете или онлайн-сессия), видит свободные окна с учётом вашего сеттинга, заполняет анкету и подтверждает бронирование.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Подтверждение записи">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Выбор времени</span>
+                <span class="mt-journey-proof-badge">Забронировано</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Формат</span><strong>Очно в кабинете</strong></div>
+              <div class="mt-journey-proof-row"><span>Слот</span><strong>Вторник, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Итог</span><strong>Слот закрыт для других</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Психотерапевт</span>
+              <h3>Изучение вводной анкеты и подготовка к сессии</h3>
+              <p>В карточке записи вы видите первичный запрос, медицинские отметки (приём препаратов, диагнозы) и контакт для экстренной связи. Вся информация структурирована, что позволяет сфокусироваться на терапевтической гипотезе до встречи.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Вводные данные пациента">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Вводная анкета</span>
+                <span class="mt-journey-proof-badge">Проверено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Запрос</span><strong>Социальная тревожность</strong></div>
+              <div class="mt-journey-proof-row"><span>Препараты</span><strong>Не принимает</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Готовность к сессии</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Автоматическое напоминание с соблюдением правил сеттинга</h3>
+              <p>За 24 часа до консультации система направляет клиенту сообщение с датой, временем, адресом кабинета или ссылкой на защищённую видеоконференцию. Клиент помнит о правилах отмены, что сводит внезапные пропуски к нулю.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сообщение с напоминанием">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Мессенджер / E-mail / SMS</strong></div>
+              <div class="mt-journey-proof-row"><span>Условие</span><strong>Отмена не позднее чем за 24 ч</strong></div>
+              <div class="mt-journey-proof-row"><span>Результат</span><strong>Клиент подтвердил визит</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Психотерапевт</span>
+              <h3>Фиксация протокола встречи и планирование следующего шага</h3>
+              <p>После 50-минутной сессии 10-минутный буфер позволяет внести заметки в протокол: основные когнитивные искажения, сформулированное домашнее задание и тему следующей встречи. Запись закрепляется за курсом.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Результат консультации">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Итог сессии</span>
+                <span class="mt-journey-proof-badge">Сохранено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Протокол</span><strong>Заполнен в карточке</strong></div>
+              <div class="mt-journey-proof-row"><span>Домашнее задание</span><strong>СМЭР-дневник мыслей</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий шаг</span><strong>Встреча через неделю</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс психотерапевта" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс частнопрактикующего психотерапевта</div>
+            <h2 class="mt-case-title">Елена Воронова, врач-психотерапевт, член Ассоциации когнитивно-поведенческой психотерапии (АКПП)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше согласование времени с клиентами и напоминания отнимали до полутора часов ежедневно, а клиенты иногда забывали о правиле отмены за сутки. С Молнией каждый клиент видит актуальные слоты с буфером 15 минут, получает автонапоминания и заполняет анкету ещё до первой встречи. Практика стала более структурированной, а протоколы сессий теперь надёжно упорядочены в одном месте без риска утечки данных.»
+            </blockquote>
+            <div class="mt-case-author">
+              Елена Воронова <span>· Врач-психотерапевт, когнитивно-поведенческий терапевт, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Накладок между очными и онлайн-сессиями благодаря автоматическому буферу 15 минут</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">4.5 ч</span>
+              <span class="mt-case-label">В неделю сэкономлено на ручном согласовании слотов в мессенджерах и напоминаниях</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Соблюдение конфиденциальности заметок и протоколов сессий по стандартам 152-ФЗ</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PSYCHOTHERAPIST FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и программе для психотерапевта</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -14665,7 +15173,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "stretching", "yoga", "trainers", "martial-arts", "psychologist",
+        "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -14692,6 +15200,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "CRM и онлайн-запись для частной практики психотерапевта",
+        "slug": "psychotherapist",
+        "description": "Программа для врачей-психотерапевтов и частных специалистов: защищённые протоколы сессий по 152-ФЗ, сеттинг 50+10 минут, курсовая терапия и расписание онлайн и очных консультаций.",
+        "pub_date": datetime(2026, 11, 9, 23, 55, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Пользовательское соглашение и оферта сервиса Молния",
         "slug": "terms",
@@ -23228,6 +23743,11 @@ def main():
     psychologist_html = build_psychologist_page()
     (ROOT_DIR / "psychologist.html").write_text(psychologist_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'psychologist.html'}")
+
+    print("Building sector landing page: /psychotherapist...")
+    psychotherapist_html = build_psychotherapist_page()
+    (ROOT_DIR / "psychotherapist.html").write_text(psychotherapist_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'psychotherapist.html'}")
 
     print("Building sector landing page: /education...")
     education_html = build_education_page()
