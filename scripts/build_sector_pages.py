@@ -1087,7 +1087,6 @@ def build_auto_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -1609,7 +1608,6 @@ def build_beauty_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -1991,7 +1989,7 @@ def build_health_page() -> str:
             <div class="mt-subniche-icon">🛋️</div>
             <div class="mt-subniche-content">
               <div class="mt-subniche-title">Врачи-психотерапевты и КПТ-специалисты <span class="mt-subniche-arrow">→</span></div>
-              <div class="mt-subniche-desc">Терапевтический сеттинг 50+10 мин, курсовое ведение пациентов, закрытые протоколы сессий по 152-ФЗ и сбор анамнеза до первого приёма.</div>
+              <div class="mt-subniche-desc">Терапевтический сеттинг 50+10 мин, курсовое ведение клиентов, напоминания о сессиях за 24 ч и сбор анамнеза до первого приёма.</div>
             </div>
           </a>
           <a class="mt-subniche-card" href="/stretching">
@@ -2150,7 +2148,6 @@ def build_health_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -2747,7 +2744,6 @@ def build_spaces_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -3263,7 +3259,6 @@ def build_photostudios_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -3811,7 +3806,6 @@ def build_cleaning_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -3881,7 +3875,7 @@ def build_psychologist_page() -> str:
         ),
         (
             "Где сохраняются заметки по клиентам и конфиденциальна ли эта информация?",
-            "У каждого клиента формируется единый централизованный профиль: история прошлых и будущих встреч, формы приёма и ваши личные заметки. Доступ строго разграничен и защищен по 152-ФЗ — ваши заметки видите только вы со своего смартфона или компьютера.",
+            "У каждого клиента формируется единый централизованный профиль: история прошлых и будущих встреч, формы приёма и ваши личные заметки. Доступ строго разграничен — ваши личные заметки видите только вы со своего смартфона или компьютера.",
         ),
         (
             "Подходит ли программа для совмещения онлайн-консультаций и очных приёмов в кабинете?",
@@ -4328,7 +4322,6 @@ def build_psychologist_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -4374,8 +4367,8 @@ def build_psychotherapist_page() -> str:
 
     title = "Онлайн-запись и CRM для психотерапевта — программа для частной практики"
     description = (
-        "Программа и онлайн-запись для врачей-психотерапевтов и частнопрактикующих специалистов: "
-        "защищённые протоколы сессий по 152-ФЗ, сеттинг 50+10 мин, курсовая терапия и расписание."
+        "Программа и онлайн-запись для частнопрактикующих психотерапевтов: "
+        "терапевтический сеттинг 50+10 мин, курсовая терапия, анкета первичного приёма и напоминания о сессиях."
     )
     canonical = "https://molniya-tech.ru/psychotherapist"
 
@@ -4386,15 +4379,15 @@ def build_psychotherapist_page() -> str:
         ),
         (
             "Как настраивается обязательный буфер 10–15 минут между сессиями?",
-            "В настройках услуги вы задаете длительность сессии (например, 50 минут) и обязательное буферное время после неё (например, 10 или 15 минут). Система автоматически учитывает буфер в календаре: клиенты физически не смогут записаться встык. У вас всегда будет фиксированное время на ведение протокола встречи, отдых и подготовку к следующему клиенту.",
+            "В настройках услуги вы задаете длительность сессии (например, 50 минут) и обязательное буферное время после неё (например, 10 или 15 минут). Система автоматически учитывает буфер в календаре: клиенты физически не смогут записаться встык. У вас всегда будет фиксированное время на ведение заметок по встрече, отдых и подготовку к следующему клиенту.",
         ),
         (
             "Как собирать первичный анамнез и согласие с правилами терапевтического контракта?",
             "К услуге первичного приёма прикрепляется форма анкеты: запрос, опыт предыдущей терапии, наблюдение у психиатра, принимаемые препараты и контакт доверенного лица на случай кризисных ситуаций. Также клиент знакомится с вашим терапевтическим контрактом (правило отмены сессии не позднее 24 часов) и подтверждает согласие прямо во время записи.",
         ),
         (
-            "Где хранятся протоколы сессий и как обеспечивается конфиденциальность по 152-ФЗ?",
-            "Все клиентские карточки, заметки терапевта и история сессий хранятся в защищённом облачном хранилище с шифрованием данных в строгом соответствии с требованиями Федерального закона № 152-ФЗ «О персональных данных». Доступ к записям защищен персональной двухфакторной авторизацией и открыт исключительно вам — посторонние лица, поисковые системы или другие пользователи сервиса не имеют доступа к конфиденциальной информации.",
+            "Как организовать напоминания клиентам, чтобы избежать срывов и забытых сессий?",
+            "Система автоматически отправляет клиенту мгновенное подтверждение после бронирования и сервисное напоминание за 24 часа до консультации (по E-mail, в мессенджер или по SMS на выбор). В сообщении указывается дата, точное время, адрес кабинета или ссылка на видеоконференцию, а также напоминание о правиле отмены встречи за сутки согласно терапевтическому контракту.",
         ),
         (
             "Можно ли закрепить за клиентом постоянный еженедельный слот на весь курс психотерапии?",
@@ -4531,14 +4524,14 @@ def build_psychotherapist_page() -> str:
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Персональная страница записи 24/7, жесткий сеттинг 50+10 минут с буфером на протокол сессии, курсовое ведение клиентов и конфиденциальность по 152-ФЗ без ручной переписки в мессенджерах</p>
+              <p class="mt-hero-sub">Персональная страница записи 24/7, жесткий сеттинг 50+10 минут с буфером на заметки и отдых, курсовое ведение клиентов и автоматические напоминания без ручной переписки в мессенджерах</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для врачей-психотерапевтов">
               <li class="mt-facet">
                 <span class="mt-facet-name">Сеттинг 50 + 10 мин</span>
-                <span class="mt-facet-note">автоматический буфер на протокол и отдых</span>
+                <span class="mt-facet-note">автоматический буфер на заметки и отдых</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">Курсовая терапия</span>
@@ -4549,8 +4542,8 @@ def build_psychotherapist_page() -> str:
                 <span class="mt-facet-note">сбор первичного анамнеза до первой встречи</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name mt-facet-name--soon">152-ФЗ и приватность</span>
-                <span class="mt-facet-note">изолированный защищённый профиль клиента</span>
+                <span class="mt-facet-name mt-facet-name--soon">Онлайн и кабинет</span>
+                <span class="mt-facet-note">очный приём и ссылки на видеосвязь</span>
               </li>
             </ul>
           </div>
@@ -4656,49 +4649,57 @@ def build_psychotherapist_page() -> str:
       <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для психотерапевта" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Ведите психотерапевтическую практику <span class="mt-overview-hook">без организационного хаоса и выгорания</span></h2>
-          <p class="mt-section-sub">Единое рабочее пространство психотерапевта: персональная страница бронирования сессий 24/7, соблюдение терапевтического сеттинга, защищённые протоколы консультаций и напоминания клиентам.</p>
+          <p class="mt-section-sub">Единое рабочее пространство психотерапевта: персональная страница бронирования сессий 24/7, соблюдение терапевтического сеттинга, анкеты приёма и напоминания клиентам.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
             <h3>Сеттинг 50+10 минут <span class="mt-overview-hook">и защита от эмоционального истощения</span></h3>
-            <p>Настройте точную длительность сессии (например, 50 минут) и обязательный буфер между клиентами (10–15 минут). Программа автоматически резервирует интервал в календаре: клиенты физически не смогут записаться встык. У вас останется достаточно времени, чтобы записать ключевые выводы в протокол сессии, сформулировать домашнее задание и переключиться перед следующей консультацией.</p>
+            <p>Настройте точную длительность сессии (например, 50 минут) и обязательный буфер между клиентами (10–15 минут). Программа автоматически резервирует интервал в календаре: клиенты физически не смогут записаться встык. У вас останется достаточно времени, чтобы записать ключевые инсайты, сформулировать домашнее задание и переключиться перед следующей консультацией.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Расписание сессий</span><span>Буфер 15 мин</span></div>
-              <div class="mt-overview-calendar"><span>09:00</span><div class="mt-overview-slot">Сессия КПТ <small>50 мин · В кабинете</small></div><span>09:50</span><div class="mt-overview-slot mt-overview-slot--light">Буфер на протокол <small>10 мин перерыв</small></div><span>10:00</span><div></div></div>
+              <div class="mt-overview-calendar">
+                <span>09:00</span><div class="mt-overview-slot">Сессия КПТ <small>50 мин · Кабинет «Тишина»</small></div>
+                <span>09:50</span><div class="mt-overview-slot mt-overview-slot--light">Буфер на заметки <small>15 мин · Заметки и отдых</small></div>
+                <span>10:15</span><div class="mt-overview-slot">Парный приём <small>80 мин · Онлайн (Телемост)</small></div>
+              </div>
             </div>
           </article>
 
           <article class="mt-overview-card">
             <h3>Анкета первичного приёма <span class="mt-overview-hook">и терапевтический контракт</span></h3>
             <p>Включите обязательные вопросы в форму записи на первую консультацию: с каким запросом обращается клиент, есть ли опыт психотерапии, наблюдается ли у психиатра и принимает ли фармакотерапию. Клиент знакомится с правилами терапевтического контракта и подтверждает согласие с регламентом отмены сессий прямо при бронировании.</p>
-            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Анкета при бронировании</span><span>Контракт</span></div>
-              <div class="mt-overview-price-row"><span>Запрос клиента</span><strong>Тревога, панические атаки</strong></div>
-              <div class="mt-overview-price-row"><span>Фармакотерапия</span><strong>СИОЗС по назначению врача</strong></div>
-              <div class="mt-overview-price-tag">Согласие с правилами отмены за 24 часа подтверждено</div>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Анкета до консультации</span><span>Михаил Р.</span></div>
+              <div class="mt-overview-stages"><span>Анкета</span><i></i><span>Сеттинг</span><i></i><span>Контракт</span></div>
+              <div class="mt-overview-check">✓ <span>Запрос: тревожность и панические атаки</span></div>
+              <div class="mt-overview-check">✓ <span>Согласие с правилом отмены за 24 ч</span></div>
+              <div class="mt-overview-check">✓ <span>Контакты для экстренной связи указаны</span></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
             <h3>Курсовая терапия и еженедельные слоты <span class="mt-overview-hook">без рутинных переписок</span></h3>
             <p>Закрепляйте за постоянными клиентами регулярный еженедельный слот в расписании (например, каждый четверг в 19:00). Программа автоматически резервирует это время на нужный курс (10, 15 или 20 встреч), отслеживает номер текущей сессии и исключает случайную запись сторонних клиентов на занятые часы.</p>
-            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Курсовое ведение</span><span>Еженедельный слот</span></div>
               <div class="mt-overview-price-row"><span>Постоянный клиент</span><strong>Четверг, 19:00 (еженедельно)</strong></div>
-              <div class="mt-overview-price-row"><span>Прогресс курса</span><strong>Встреча 7 из 15 сессий</strong></div>
-              <div class="mt-overview-price-tag">Слот автоматически забронирован на весь курс</div>
+              <div class="mt-overview-price-row"><span>Прогресс курса</span><strong>Встреча 7 из 12 сессий</strong></div>
+              <div class="mt-overview-price-row"><span>Формат встреч</span><strong>Кабинет «Тишина» · Очно</strong></div>
+              <div class="mt-overview-price-tag">Слот автоматически зарезервирован на весь курс</div>
             </div>
           </article>
 
-          <article class="mt-overview-card">
-            <h3>Конфиденциальный профиль клиента <span class="mt-overview-hook">строго по 152-ФЗ</span></h3>
-            <p>Храните заметки, протоколы встреч, динамику психологического состояния и домашние задания в закрытом профиле клиента. Доступ к карточке защищён шифрованием и персональной авторизацией по стандартам 152-ФЗ: посторонние лица и поисковые системы не имеют доступа к вашим конфиденциальным записям.</p>
-            <div class="mt-overview-preview mt-overview-preview--analytics" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Профиль клиента</span><span>Защищено 152-ФЗ</span></div>
-              <div class="mt-overview-price-row"><span>История сессий</span><strong>6 завершено · 1 запланирована</strong></div>
-              <div class="mt-overview-price-row"><span>Протокол встречи</span><strong>Доступен только специалисту</strong></div>
-              <div class="mt-overview-price-tag">Шифрование данных и изолированное хранилище</div>
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Напоминания клиентам накануне сессий <span class="mt-overview-hook">и защита от срывов графика</span></h3>
+            <p>Клиент получает мгновенное подтверждение после бронирования, а за 24 часа до консультации — сервисное напоминание в мессенджер, по E-mail или SMS с адресом кабинета или ссылкой на видеозвонок. Клиент вовремя подтверждает визит или предупреждает о переносе по правилам вашего контракта.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоматические напоминания</span><span>Без рутины</span></div>
+              <div class="mt-overview-message">
+                Михаил, напоминаем о консультации завтра в 11:00 (Кабинет «Тишина»). Пожалуйста, подтвердите визит или предупредите об отмене по контракту за 24 ч.
+                <span class="mt-overview-reaction">🛋️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Канал напоминания</span><strong>Мессенджер / E-mail / SMS →</strong></div>
             </div>
           </article>
         </div>
@@ -4774,15 +4775,15 @@ def build_psychotherapist_page() -> str:
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Психотерапевт</span>
-              <h3>Фиксация протокола встречи и планирование следующего шага</h3>
-              <p>После 50-минутной сессии 10-минутный буфер позволяет внести заметки в протокол: основные когнитивные искажения, сформулированное домашнее задание и тему следующей встречи. Запись закрепляется за курсом.</p>
+              <h3>Фиксация заметок по встрече и планирование следующего шага</h3>
+              <p>После 50-минутной сессии 10-минутный буфер позволяет внести ключевые заметки: основные инсайты, сформулированное домашнее задание и тему следующей встречи. Запись закрепляется за курсом.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Результат консультации">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Итог сессии</span>
-                <span class="mt-journey-proof-badge">Сохранено</span>
+                <span class="mt-journey-proof-badge">Завершено</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Протокол</span><strong>Заполнен в карточке</strong></div>
+              <div class="mt-journey-proof-row"><span>Заметки</span><strong>Внесены в карточку</strong></div>
               <div class="mt-journey-proof-row"><span>Домашнее задание</span><strong>СМЭР-дневник мыслей</strong></div>
               <div class="mt-journey-proof-row"><span>Следующий шаг</span><strong>Встреча через неделю</strong></div>
             </div>
@@ -4797,7 +4798,7 @@ def build_psychotherapist_page() -> str:
             <div class="mt-case-tag">⚡ Кейс частнопрактикующего психотерапевта</div>
             <h2 class="mt-case-title">Елена Воронова, врач-психотерапевт, член Ассоциации когнитивно-поведенческой психотерапии (АКПП)</h2>
             <blockquote class="mt-case-quote">
-              «Раньше согласование времени с клиентами и напоминания отнимали до полутора часов ежедневно, а клиенты иногда забывали о правиле отмены за сутки. С Молнией каждый клиент видит актуальные слоты с буфером 15 минут, получает автонапоминания и заполняет анкету ещё до первой встречи. Практика стала более структурированной, а протоколы сессий теперь надёжно упорядочены в одном месте без риска утечки данных.»
+              «Раньше согласование времени с клиентами и напоминания отнимали до полутора часов ежедневно, а клиенты иногда забывали о правиле отмены за сутки. С Молнией каждый клиент видит актуальные слоты с буфером 15 минут, получает автонапоминания и заполняет анкету ещё до первой встречи. Практика стала более структурированной, а расписание онлайн и очных встреч теперь упорядочено в едином календаре без путаницы.»
             </blockquote>
             <div class="mt-case-author">
               Елена Воронова <span>· Врач-психотерапевт, когнитивно-поведенческий терапевт, <span style="white-space:nowrap">Санкт-Петербург</span></span>
@@ -4814,7 +4815,7 @@ def build_psychotherapist_page() -> str:
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">100%</span>
-              <span class="mt-case-label">Соблюдение конфиденциальности заметок и протоколов сессий по стандартам 152-ФЗ</span>
+              <span class="mt-case-label">Сессий подтверждены вовремя благодаря автоматическим напоминаниям за 24 часа</span>
             </div>
           </div>
         </div>
@@ -4829,7 +4830,6 @@ def build_psychotherapist_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -5346,7 +5346,6 @@ def build_stretching_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -5865,7 +5864,6 @@ def build_yoga_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -6558,7 +6556,6 @@ def build_calendar_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -7157,7 +7154,6 @@ def build_inn_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -7843,7 +7839,6 @@ def build_margin_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -9025,7 +9020,6 @@ def build_qr_page() -> str:
       <div class="mt-before-start-questions">
 {faq_html}
       </div>
-      <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
     </section>
 
     <!-- Final CTA Lead Form -->
@@ -9730,7 +9724,6 @@ def build_salary_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -10245,7 +10238,6 @@ def build_education_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -10762,7 +10754,6 @@ def build_pets_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- LEAD FORM -->
@@ -11280,7 +11271,6 @@ def build_repair_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
       <!-- LEAD FORM -->
@@ -11804,7 +11794,6 @@ def build_pricing_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {footer_html}
@@ -12379,7 +12368,6 @@ def build_dikidi_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {footer_html}
@@ -12960,7 +12948,6 @@ def build_yclients_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {footer_html}
@@ -13546,7 +13533,6 @@ def build_pricelist_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -14197,7 +14183,6 @@ def build_acquiring_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем персональные данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -15203,7 +15188,7 @@ RSS_ITEMS: list[dict[str, Any]] = [
     {
         "title": "CRM и онлайн-запись для частной практики психотерапевта",
         "slug": "psychotherapist",
-        "description": "Программа для врачей-психотерапевтов и частных специалистов: защищённые протоколы сессий по 152-ФЗ, сеттинг 50+10 минут, курсовая терапия и расписание онлайн и очных консультаций.",
+        "description": "Программа для частнопрактикующих психотерапевтов: терапевтический сеттинг 50+10 минут, курсовая терапия, напоминания о консультациях и расписание онлайн и очных сессий.",
         "pub_date": datetime(2026, 11, 9, 23, 55, tzinfo=MSK_TZ),
         "category": "Отрасли",
     },
@@ -17369,7 +17354,6 @@ def build_trainers_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -17869,7 +17853,6 @@ def build_martial_arts_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -18339,7 +18322,6 @@ def build_quests_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -18809,7 +18791,6 @@ def build_vr_arena_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -19279,7 +19260,6 @@ def build_karting_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -19749,7 +19729,6 @@ def build_anticafe_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -20219,7 +20198,6 @@ def build_saunas_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -20689,7 +20667,6 @@ def build_glamping_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -21159,7 +21136,6 @@ def build_furniture_cleaning_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -21629,7 +21605,6 @@ def build_window_cleaning_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -22099,7 +22074,6 @@ def build_pest_control_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -22574,7 +22548,6 @@ def build_videopavilion_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -23049,7 +23022,6 @@ def build_recording_studio_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
@@ -23524,7 +23496,6 @@ def build_equipment_rental_page() -> str:
 {faq_html}
 
         </div>
-        <p class="mt-before-start-privacy">Как мы обрабатываем данные — в <a href="/privacy">политике конфиденциальности</a>.</p>
       </section>
 
 {lead_html}
