@@ -58,6 +58,7 @@ FORM_NAMES = {
     "acquiring": "Калькулятор эквайринга — бесплатный доступ",
     "tools": "Инструменты для бизнеса — бесплатный доступ",
     "shifts": "Генератор графиков смен — бесплатный доступ",
+    "start": "Быстрый старт — заявка на подключение",
 }
 SOURCE_PATHS = {
     "home": "/",
@@ -103,6 +104,7 @@ SOURCE_PATHS = {
     "acquiring": "/tools/acquiring",
     "tools": "/tools",
     "shifts": "/tools/shifts",
+    "start": "/start",
 }
 
 

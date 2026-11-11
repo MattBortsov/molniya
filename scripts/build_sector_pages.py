@@ -800,12 +800,18 @@ def build_auto_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для автомойки и автосервиса: расписание боксов и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка боксов автомойки в реальном времени</p>
           </div>
         </div>
@@ -1321,12 +1327,18 @@ def build_beauty_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для салона красоты: расписание мастеров и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров салона в реальном времени</p>
           </div>
         </div>
@@ -1808,12 +1820,18 @@ def build_health_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клиники и медицинского центра: расписание врачей и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка кабинетов клиники в реальном времени</p>
           </div>
         </div>
@@ -2376,12 +2394,18 @@ def build_spaces_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для аренды пространств и залов: шахматка броней и электронное расписание" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Интерактивная шахматка броней и загрузка площадок в реальном времени</p>
           </div>
         </div>
@@ -2972,12 +2996,18 @@ def build_photostudios_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для фотостудий: шахматка броней съемочных залов и расписание" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Интерактивная шахматка броней студии и загрузка залов в реальном времени</p>
           </div>
         </div>
@@ -3487,12 +3517,18 @@ def build_cleaning_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клининга: расписание выездных бригад и журнал заказов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Интерактивное расписание выездных бригад и контроль заказов в реальном времени</p>
           </div>
         </div>
@@ -4035,12 +4071,18 @@ def build_psychologist_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для психолога: расписание сессий и электронный журнал записей" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание консультаций и свободные слоты специалиста в реальном времени</p>
           </div>
         </div>
@@ -4551,12 +4593,18 @@ def build_psychotherapist_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для психотерапевта: расписание сессий и электронный журнал" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал терапевтических сессий, курсовая динамика и расписание приёма</p>
           </div>
         </div>
@@ -5059,12 +5107,18 @@ def build_stretching_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии растяжки: расписание тренировок и залов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание тренировок и загрузка залов студии в реальном времени</p>
           </div>
         </div>
@@ -5577,12 +5631,18 @@ def build_yoga_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии йоги и пилатеса: расписание практик и залов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание практик и загрузка залов студии в реальном времени</p>
           </div>
         </div>
@@ -5983,6 +6043,172 @@ def build_thanks_page() -> str:
   </div>
 
   <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+"""
+
+
+def build_start_page() -> str:
+    """Builds the dedicated Quick Start video & registration page: /start."""
+    nav_html = render_nav_html(active_item="", asset_prefix="", beta_cta=True)
+    footer_html = render_footer_html(asset_prefix="")
+
+    title = "Быстрый старт в Молния Тех — видео и регистрация в сервисе онлайн-записи"
+    description = "Посмотрите короткое видео о возможностях CRM-системы Молния Тех и получите бесплатный доступ за 15 минут. Поможем перенести базу и запустить онлайн-запись."
+    canonical = "https://molniya-tech.ru/start"
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@graph": [
+      {{
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://molniya-tech.ru/"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Быстрый старт",
+            "item": "https://molniya-tech.ru/start"
+          }}
+        ]
+      }},
+      {{
+        "@type": "WebPage",
+        "@id": "https://molniya-tech.ru/start#webpage",
+        "url": "https://molniya-tech.ru/start",
+        "name": "{title}",
+        "description": "{description}",
+        "isPartOf": {{
+          "@id": "https://molniya-tech.ru/#website"
+        }}
+      }}
+    ]
+  }}
+  </script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-quickstart">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+    <linearGradient id="mtgrad2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#B8442E"></stop><stop offset="1" stop-color="#D2634A"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <main class="mt-main" id="main-content">
+        <section class="mt-section mt-start-section mt-reveal" data-screen-label="Быстрый старт" data-mt-reveal>
+          <div class="mt-start-grid">
+            <div class="mt-start-video-col">
+              <div class="mt-start-video-wrap">
+                <div style="position: relative; padding-top: 50.9%; width: 100%">
+                  <iframe src="https://kinescope.io/embed/qBvD9axYprmXFbmFEb14Jz?autoplay=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="mt-start-form-col">
+              <div class="mt-start-card">
+                <h1 class="mt-start-title">Быстрый старт</h1>
+                <p class="mt-start-sub">Подключите Молнию за 15 минут: покажем ключевые функции, бесплатно поможем загрузить базу клиентов и настроить онлайн-запись.</p>
+                <form class="mt-lead-form mt-start-form" data-lead-form data-lead-source="start">
+                  <div class="mt-start-fields">
+                    <label class="mt-lead-field" for="lead-name">Имя
+                      <input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required>
+                    </label>
+                    <label class="mt-lead-field" for="lead-phone">Телефон
+                      <input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required>
+                    </label>
+                    <label class="mt-lead-field" for="lead-email">Почта
+                      <input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+                    </label>
+                  </div>
+                  <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                  <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+                  <button class="mt-btn mt-btn-cta mt-lead-submit mt-start-submit" type="submit">Получить бесплатный доступ</button>
+                  <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261111-quickstart"></script>
 </body>
 </html>
 """
@@ -9951,12 +10177,18 @@ def build_education_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для учебных центров и курсов: расписание групп и электронный журнал посещаемости" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание занятий и загрузка аудиторий в реальном времени</p>
           </div>
         </div>
@@ -10466,12 +10698,18 @@ def build_pets_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для груминг-салонов: электронное расписание столов и запись питомцев" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание столов и мастеров груминга в реальном времени</p>
           </div>
         </div>
@@ -10983,12 +11221,18 @@ def build_repair_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для сервисного центра: учет заказ-нарядов и расписание инженеров" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал заказов и статус рабочих мест инженеров в реальном времени</p>
           </div>
         </div>
@@ -12020,12 +12264,18 @@ def build_dikidi_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Молния CRM: электронный журнал расписания и онлайн-запись клиентов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров в реальном времени</p>
           </div>
         </div>
@@ -12595,12 +12845,18 @@ def build_yclients_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Молния CRM: электронный журнал расписания и онлайн-запись клиентов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный журнал записи и загрузка мастеров в реальном времени</p>
           </div>
         </div>
@@ -15138,6 +15394,13 @@ def sync_sitemap():
         changed = True
         print("Added /terms to sitemap.xml")
 
+    # Ensure /start is present
+    if "https://molniya-tech.ru/start" not in content:
+        url_entry = "  <url>\n    <loc>https://molniya-tech.ru/start</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n"
+        content = content.replace("</urlset>", url_entry + "</urlset>")
+        changed = True
+        print("Added /start to sitemap.xml")
+
     # Ensure /tools is present
     if "https://molniya-tech.ru/tools" not in content:
         url_entry = """  <url>\n    <loc>https://molniya-tech.ru/tools</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n"""
@@ -15185,6 +15448,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Быстрый старт в Молния Тех: видео и бесплатное подключение",
+        "slug": "start",
+        "description": "Посмотрите короткое видео о возможностях CRM-системы Молния и оставьте заявку на быстрый старт: настроим онлайн-запись и перенесём клиентов за 15 минут.",
+        "pub_date": datetime(2026, 11, 11, 23, 30, tzinfo=MSK_TZ),
+        "category": "Компания",
+    },
     {
         "title": "CRM и онлайн-запись для частной практики психотерапевта",
         "slug": "psychotherapist",
@@ -17085,12 +17355,18 @@ def build_trainers_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для персонального тренера: расписание тренировок и учет подопечных" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание персональных тренировок и учет подопечных в реальном времени</p>
           </div>
         </div>
@@ -17584,12 +17860,18 @@ def build_martial_arts_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для клуба единоборств: расписание рингов, татами и учет спортсменов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание тренировок бойцовского клуба и загрузка залов в реальном времени</p>
           </div>
         </div>
@@ -18053,12 +18335,18 @@ def build_quests_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для квест-румов: расписание сеансов и онлайн-бронирование" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание сеансов квестов, бронь комнат и статус локаций в реальном времени</p>
           </div>
         </div>
@@ -18522,12 +18810,18 @@ def build_vr_arena_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для VR-арен и клубов: расписание сеансов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание сеансов VR-арены, бронь шлемов и комнат отдыха в реальном времени</p>
           </div>
         </div>
@@ -18991,12 +19285,18 @@ def build_karting_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для картинг-центров: расписание заездов и бронирование картов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание заездов на треке, статус картов и бронь пит-лейна в реальном времени</p>
           </div>
         </div>
@@ -19460,12 +19760,18 @@ def build_anticafe_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для антикафе: расписание комнат и таймер гостей" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронная шахматка комнат, таймер открытых визитов и статус стоп-чека в реальном времени</p>
           </div>
         </div>
@@ -19929,12 +20235,18 @@ def build_saunas_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для бань и саун: шахматка парных и бронирование" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронная шахматка парных, статус готовности пара и расписание банщиков в реальном времени</p>
           </div>
         </div>
@@ -20398,12 +20710,18 @@ def build_glamping_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для глэмпингов: шахматка бронирования домиков и беседок" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронная шахматка домиков и беседок, статус уборки и растопки чанов в реальном времени</p>
           </div>
         </div>
@@ -20867,12 +21185,18 @@ def build_furniture_cleaning_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для химчистки мебели: расписание выездов мастеров" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронное расписание выездов мастеров с экстракторами, адреса и статусы чистки в реальном времени</p>
           </div>
         </div>
@@ -21336,12 +21660,18 @@ def build_window_cleaning_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для мойки окон: расписание выездов мастеров" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный график выездов мастеров по мойке окон, адреса, этажность и статусы выполнения в реальном времени</p>
           </div>
         </div>
@@ -21805,12 +22135,18 @@ def build_pest_control_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для дезинсекции: расписание выездов дезинфекторов" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Электронный график выездов дезинфекторов, адреса, типы вредителей и статусы обработки в реальном времени</p>
           </div>
         </div>
@@ -22279,12 +22615,18 @@ def build_videopavilion_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для видеостудий: расписание смен хромакей-павильона" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Сменная шахматка видеопавильонов, бронь съемочного света и статусы готовности залов</p>
           </div>
         </div>
@@ -22753,12 +23095,18 @@ def build_recording_studio_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студий звукозаписи: расписание тон-залов и подкастной" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Почасовая сетка студии звукозаписи, занятость звукорежиссеров и онлайн-оплата</p>
           </div>
         </div>
@@ -23227,12 +23575,18 @@ def build_equipment_rental_page() -> str:
 
         <div id="product-preview" class="mt-hero-col mt-hero-col--media">
           <div class="mt-hero-media-motion">
-            <div class="mt-tablet">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
                 <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для кинорентала: учет съемочной техники и бронирование оборудования" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
-            </div>
+            </a>
             <p class="mt-hero-media-caption">Суточный календарь занятости кинооборудования, залоги и электронные акты приёма-передачи</p>
           </div>
         </div>
@@ -23833,6 +24187,11 @@ def main():
     shifts_html = build_shifts_page()
     (TOOLS_DIR / "shifts.html").write_text(shifts_html, encoding="utf-8")
     print(f"Generated {TOOLS_DIR / 'shifts.html'}")
+
+    print("Building quick start registration page: /start.html...")
+    start_html = build_start_page()
+    (ROOT_DIR / "start.html").write_text(start_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'start.html'}")
 
     # Remove obsolete top-level tool html files so Nginx 301 redirects work cleanly
     for old_file in ["calendar.html", "inn.html", "margin.html", "carwash-weather.html", "qr.html", "salary.html", "pricelist.html", "acquiring.html", "shifts.html"]:

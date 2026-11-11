@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 10 Nov 2026 06:23:14 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 19:28:16 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Быстрый старт в Молния Тех: видео и бесплатное подключение</title>
+      <link>https://molniya-tech.ru/start</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/start</guid>
+      <pubDate>Wed, 11 Nov 2026 23:30:00 +0300</pubDate>
+      <category>Компания</category>
+      <description><![CDATA[Посмотрите короткое видео о возможностях CRM-системы Молния и оставьте заявку на быстрый старт: настроим онлайн-запись и перенесём клиентов за 15 минут.]]></description>
+    </item>
     <item>
       <title>CRM и онлайн-запись для частной практики психотерапевта</title>
       <link>https://molniya-tech.ru/psychotherapist</link>
