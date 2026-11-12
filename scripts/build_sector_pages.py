@@ -605,41 +605,41 @@ def build_auto_page() -> str:
     footer_html = render_footer_html(asset_prefix="")
     lead_html = render_lead_form_html(
         "auto",
-        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для автобизнеса',
-        "Оставьте контакты — поможем запустить Молнию для автомойки, детейлинга или автосервиса.",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для детейлинга и автомойки',
+        "Оставьте контакты — поможем настроить журнал постов, акты осмотра кузова с фото дефектов ЛКП и сдельную зарплату мастеров.",
     )
 
-    title = "Программа для автомойки: CRM и онлайн-запись | Молния"
-    description = "Молния — программа и CRM для автомойки: онлайн-запись клиентов, расписание боксов, учёт услуг и зарплат сотрудников. Подходит для детейлинг-студий."
+    title = "CRM для детейлинга и автомойки: онлайн-запись, боксы и заказ-наряды"
+    description = "Программа для детейлинг-центров и автомоек: онлайн-запись 24/7, осмотр кузова с фото дефектов ЛКП, учет постов и сдельная зарплата мастеров."
     canonical = "https://molniya-tech.ru/auto"
 
     faq_items = [
         {
-            "q": "Подходит ли программа для небольшой автомойки на 2–3 бокса или компактного СТО?",
-            "a": "Да. Молния одинаково эффективна как для компактных автомоек на 2 поста, так и для крупных детейлинг-центров и СТО с десятками постов и мастеров. Вы настраиваете количество боксов, перечень услуг и нормативы за 15 минут."
+            "q": "Подходит ли программа одновременно для детейлинг-студии и постов автомойки?",
+            "a": "Да. В Молнии можно разделить расписание на сухие посты детейлинга (полировка, химчистка салона, оклейка пленкой на 4–8 часов) и мокрые посты быстрой мойки (экспресс, 3-фазная мойка на 30–60 минут). Каждый пост имеет свои нормативы времени, требования к квалификации мастера и прайс-лист."
         },
         {
-            "q": "Как программа учитывает класс автомобиля (седан, кроссовер, внедорожник)?",
-            "a": "В Молнии встроен классификатор автомобилей. Вы один раз привязываете длительность и цену услуги к категории авто (седан, кроссовер, рамный джип, микроавтобус). При онлайн-записи система автоматически бронирует в расписании бокса нужное окно."
+            "q": "Как работает цифровой акт осмотра ЛКП и фотофиксация дефектов кузова?",
+            "a": "Мастер открывает электронный заказ-наряд на смартфоне или планшете перед заездом автомобиля: отмечает на интерактивной схеме кузова сколы, царапины, вмятины, делает фото повреждений и указывает толщину ЛКП. Акт сохраняется в карточке заказа со штампом времени, что полностью исключает спорные претензии клиентов при выдаче."
         },
         {
-            "q": "Как рассчитывается сдельная зарплата автомойщиков, детейлеров и механиков?",
-            "a": "В карточке каждого сотрудника настраивается персональная схема: процент от чека (например, мойка 30%, полировка 40%), фиксированная ставка за операцию или нормочасы. После выдачи авто выработка начисляется мгновенно на баланс смены."
+            "q": "Как программа учитывает класс автомобиля (седан, кроссовер, внедорожник, микроавтобус)?",
+            "a": "В Молнии встроен классификатор кузовов. Вы один раз привязываете длительность и стоимость услуг к классу авто. При онлайн-записи система определяет класс машины и автоматически бронирует в расписании поста слот нужной длины (например, полировка седана — 6 часов, а большого внедорожника — 8 часов)."
         },
         {
-            "q": "Как работает электронный заказ-наряд и фотоосмотр повреждений кузова?",
-            "a": "Мастер открывает электронный заказ-наряд на смартфоне или планшете перед заездом авто, делает фото царапин, сколов и уровня топлива и сохраняет в карточке заказа. Это надёжная защита от необоснованных претензий клиентов при выдаче."
+            "q": "Как рассчитывается сдельная зарплата детейлеров, оклейщиков и автомойщиков?",
+            "a": "Для каждого мастера настраивается гибкая схема: процент от чека конкретной категории (например, оклейка 40%, полировка 35%, мойка 30%), фиксированная выплата за операцию или оплата нормочасов. После закрытия заказ-наряда начисленная сумма мгновенно отображается на персональном балансе сотрудника."
         },
         {
-            "q": "Как клиенты записываются на автомойку и получают уведомления в мессенджере?",
-            "a": "Клиенты записываются онлайн через виджет на сайте, по ссылке в соцсетях или QR-коду. Сервисный бот в мессенджере автоматически присылает подтверждение бронирования, напоминание за 2 часа до визита и оповещение «Ваш автомобиль готов к выдаче» со ссылкой на чек."
+            "q": "Как списываются расходные материалы, автохимия и полиуретановые плёнки?",
+            "a": "В технологической карте услуги можно закрепить нормы расхода: например, количество пасты на кузов, полировальные круги, миллилитры керамики или погонные метры плёнки. При закрытии наряда материалы автоматически списываются со склада студии, предотвращая перерасход."
         },
         {
-            "q": "Подходит ли программа для шиномонтажа в период сезонного ажиотажа?",
-            "a": "Да, Молния идеально справляется с пиковыми сезонными нагрузками шиномонтажа: плотная запись без накладок, учет диаметра колес (R15–R22), сезонное хранение шин и оперативное распределение авто по постам переобувки."
+            "q": "Как клиенты записываются на детейлинг и получают уведомления о готовности авто?",
+            "a": "Клиент выбирает услугу и удобную дату через виджет на вашем сайте, в Telegram или по QR-коду на ресепшене. Сервисный бот присылает подтверждение бронирования, напоминание накануне визита, статус «Машина в работе» и сообщение «Автомобиль готов к выдаче» со ссылкой на электронный чек."
         },
         {
-            "q": "Как бесплатно перенести базу клиентов и историю авто из другой программы или Excel?",
+            "q": "Как бесплатно перенести базу клиентов, историю авто и прайс из другой CRM или Excel?",
             "a": "Наша служба заботы бесплатно помогает импортировать базу клиентов, историю визитов, прайс-лист и автомобили при подключении. Вы начинаете работу без остановки сервиса и потери постоянных клиентов."
         }
     ]
@@ -653,7 +653,7 @@ def build_auto_page() -> str:
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Молния — CRM для автомойки",
+            "name": "Молния — CRM для детейлинга и автомойки",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web, iOS, Android",
             "offers": {
@@ -683,7 +683,7 @@ def build_auto_page() -> str:
                 {
                     "@type": "ListItem",
                     "position": 3,
-                    "name": "Автобизнес",
+                    "name": "Детейлинг и автобизнес",
                     "item": canonical
                 }
             ]
@@ -768,27 +768,27 @@ def build_auto_page() -> str:
 
         <div class="mt-hero-lead">
           <h1 class="mt-hero-title">
-            CRM для автомойки,<br><span class="mt-hero-accent">детейлинга и автосервиса</span>
+            CRM для детейлинга,<br><span class="mt-hero-accent">автомойки и автосервиса</span>
           </h1>
 
           <div class="mt-hero-bottom">
             <div class="mt-hero-intro">
-              <p class="mt-hero-sub">Онлайн-запись, расписание, электронные заказ-наряды и прозрачный расчет зарплат</p>
+              <p class="mt-hero-sub">Онлайн-запись клиентов 24/7, шахматка боксов, акты приёмки авто с картой сколов и автоматический расчёт сдельной зарплаты мастеров</p>
               <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
             </div>
 
-            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для автобизнеса">
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для детейлинга и автобизнеса">
               <li class="mt-facet">
                 <span class="mt-facet-name">Боксы и посты</span>
-                <span class="mt-facet-note">онлайн-запись и учет габаритов авто</span>
+                <span class="mt-facet-note">запись на полировку, оклейку и мойку</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Акт осмотра ЛКП</span>
+                <span class="mt-facet-note">фотофиксация сколов со смартфона</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">Сдельная оплата</span>
-                <span class="mt-facet-note">нормочасы и % от чека за смену</span>
-              </li>
-              <li class="mt-facet">
-                <span class="mt-facet-name">Электронный заказ-наряд</span>
-                <span class="mt-facet-note">фотофиксация дефектов до заезда</span>
+                <span class="mt-facet-note">нормочасы и % за смену в телефоне</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">AI & Сезон</span>
@@ -802,7 +802,7 @@ def build_auto_page() -> str:
           <div class="mt-hero-media-motion">
             <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
               <span class="mt-tablet-screen">
-                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для автомойки и автосервиса: расписание боксов и электронный журнал записи" width="1710" height="983" fetchpriority="high">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для детейлинга и автомойки: расписание боксов и электронный журнал записи" width="1710" height="983" fetchpriority="high">
                 <span class="mt-tablet-overlay">
                   <span class="mt-tablet-play-btn" aria-hidden="true">
                     <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -812,7 +812,7 @@ def build_auto_page() -> str:
               </span>
               <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
             </a>
-            <p class="mt-hero-media-caption">Электронный журнал записи и загрузка боксов автомойки в реальном времени</p>
+            <p class="mt-hero-media-caption">Электронный журнал записи и загрузка постов детейлинга в реальном времени</p>
           </div>
         </div>
 
@@ -822,32 +822,14 @@ def build_auto_page() -> str:
       <section class="mt-section mt-reveal" data-screen-label="Загрузка боксов" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Все посты, боксы и заказ-наряды <span class="mt-overview-hook">под полным контролем</span></h2>
-          <p class="mt-section-sub">Администратор и мастера видят статус каждого бокса, закреплённого мастера, марку авто и сумму заказ-наряда в одну секунду на любом устройстве.</p>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого поста, закреплённого детейлера, марку авто и сумму заказ-наряда в одну секунду на любом устройстве.</p>
         </div>
 
         <div class="mt-auto-bays">
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Бокс 1 · Мойка</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
-            </div>
-            <div class="mt-auto-car">
-              <div>
-                <div class="mt-auto-car-name">BMW X5 (М 777 АА)</div>
-                <div class="mt-auto-car-tier">II класс · Внедорожник</div>
-              </div>
-              <span class="mt-dropdown-footer-icon">🚗</span>
-            </div>
-            <div class="mt-auto-service">
-              <span>Комплекс «Люкс»</span>
-              <span class="mt-auto-price">3 400 ₽</span>
-            </div>
-          </div>
-
-          <div class="mt-auto-bay">
-            <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Бокс 2 · Детейлинг</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+              <span class="mt-auto-bay-title">Пост 1 · Детейлинг</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе (день 2)</span>
             </div>
             <div class="mt-auto-car">
               <div>
@@ -857,107 +839,107 @@ def build_auto_page() -> str:
               <span class="mt-dropdown-footer-icon">✨</span>
             </div>
             <div class="mt-auto-service">
-              <span>Полировка + Керамика</span>
-              <span class="mt-auto-price">14 500 ₽</span>
+              <span>Полировка + Керамика 9H</span>
+              <span class="mt-auto-price">38 000 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Пост 3 · СТО</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+              <span class="mt-auto-bay-title">Пост 2 · Оклейка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Geely Monjaro</div>
-                <div class="mt-auto-car-tier">Заказ-наряд #1428 · ТО</div>
+                <div class="mt-auto-car-name">BMW X5 (М 777 АА)</div>
+                <div class="mt-auto-car-tier">II класс · Внедорожник</div>
               </div>
-              <span class="mt-dropdown-footer-icon">🔧</span>
+              <span class="mt-dropdown-footer-icon">🛡️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Замена масла + ТО</span>
-              <span class="mt-auto-price">7 800 ₽</span>
+              <span>Зоны риска в полиуретан</span>
+              <span class="mt-auto-price">48 000 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Пост 4 · Шины</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+              <span class="mt-auto-bay-title">Пост 3 · Детейлинг-мойка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Готово к выдаче</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Zeekr 001 (14:30)</div>
-                <div class="mt-auto-car-tier">Сезонная смена шин</div>
+                <div class="mt-auto-car-name">Mercedes E-Class</div>
+                <div class="mt-auto-car-tier">I класс · Седан</div>
               </div>
-              <span class="mt-dropdown-footer-icon">🛞</span>
+              <span class="mt-dropdown-footer-icon">🚗</span>
             </div>
             <div class="mt-auto-service">
-              <span>Шиномонтаж R21</span>
-              <span class="mt-auto-price">5 200 ₽</span>
+              <span>3-фазный комплекс + Антидождь</span>
+              <span class="mt-auto-price">4 500 ₽</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- AUTO OVERVIEW VALUE GRID -->
-      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для автобизнеса" data-mt-reveal>
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для детейлинга" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
-          <h2 class="mt-section-title">Ведите автобизнес <span class="mt-overview-hook">от заезда до чистой прибыли</span></h2>
-          <p class="mt-section-sub">Программа для учета на автомойке, в детейлинге и автосервисе: расписание боксов, акты осмотра кузова, нормативы по классам авто и сдельные зарплаты без рутины в Excel.</p>
+          <h2 class="mt-section-title">Управляйте детейлингом и автомойкой <span class="mt-overview-hook">без потерь и рутины в тетрадях</span></h2>
+          <p class="mt-section-sub">Специализированная программа для учета в автобизнесе: электронные заказ-наряды, фиксация дефектов кузова, нормативы по классам авто и сдельные зарплаты без ручного сведения таблиц.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3><span class="mt-overview-hook">Журнал записи</span> по боксам и постам</h3>
-            <p>Клиенты записываются онлайн 24/7, а администратор распределяет авто по постам мойки, детейлинга или слесарного цеха СТО. Программа исключает накладки и простой оборудования.</p>
+            <h3><span class="mt-overview-hook">Журнал записи</span> по постам и сухим зонам</h3>
+            <p>Клиенты записываются онлайн 24/7, а администратор планирует многочасовые работы: полировка на 8 часов, керамика на 2 дня или 3-фазная мойка на 60 минут. Программа исключает овербукинг и простой постов.</p>
             <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Расписание боксов</span><span>Сегодня</span></div>
-              <div class="mt-overview-calendar"><span>09:00</span><div></div><span>10:00</span><div class="mt-overview-slot">Бокс 1 <small>BMW X5 · Комплекс</small></div><span>11:30</span><div class="mt-overview-slot mt-overview-slot--light">Бокс 2 <small>Porsche · Полировка</small></div></div>
+              <div class="mt-overview-ui-head"><span>Расписание постов</span><span>Сегодня</span></div>
+              <div class="mt-overview-calendar"><span>09:00</span><div></div><span>10:00</span><div class="mt-overview-slot">Пост 1 <small>Porsche · Керамика 2 дня</small></div><span>14:00</span><div class="mt-overview-slot mt-overview-slot--light">Пост 2 <small>BMW X5 · Оклейка зон риска</small></div></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3><span class="mt-overview-hook">Акт осмотра и фото кузова</span> до начала работ</h3>
-            <p>Электронный заказ-наряд с фотофиксацией со смартфона за 60 секунд: сколы, царапины, состояние дисков и салона. Чек-лист сохраняется в CRM и защищает от спорных претензий при выдаче.</p>
+            <h3><span class="mt-overview-hook">Акт приёмки и фото ЛКП</span> до начала работ</h3>
+            <p>Цифровой акт осмотра кузова со смартфона за 90 секунд: фото сколов, царапин, замер толщины ЛКП, состояние дисков и салона. Чек-лист сохраняется в наряде и защищает студию от необоснованных претензий при выдаче.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Чек-лист приёмки</span><span>Бокс 1</span></div>
+              <div class="mt-overview-ui-head"><span>Чек-лист приёмки ЛКП</span><span>Пост 1</span></div>
               <div class="mt-overview-stages"><span>Осмотр</span><i></i><span>В работе</span><i></i><span>Выдача</span></div>
-              <div class="mt-overview-check">✓ <span>Фото кузова по кругу (4 фото)</span></div>
-              <div class="mt-overview-check">✓ <span>Скол на капоте зафиксирован</span></div>
+              <div class="mt-overview-check">✓ <span>Фото кузова по кругу (8 фото)</span></div>
+              <div class="mt-overview-check">✓ <span>Замер толщины ЛКП: 110–135 мкм</span></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
             <h3>Нормативы и прайс <span class="mt-overview-hook">по классам автомобилей</span></h3>
-            <p>Молния автоматически пересчитывает длительность и стоимость услуг: седан (40 мин), кроссовер (55 мин), рамный внедорожник (70 мин). Поддержка динамических тарифов в часы пик и непогоду.</p>
+            <p>Молния автоматически пересчитывает время и стоимость детейлинга: седан (полировка 6 ч), кроссовер (8 ч), рамный внедорожник (10 ч). Поддержка динамических тарифов в выходные и сезонную непогоду.</p>
             <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Прайс по классам</span><span>Мойка «Люкс»</span></div>
-              <div class="mt-overview-price-row"><span>I класс (Седан)</span><strong>2 200 ₽ · 40 мин</strong></div>
-              <div class="mt-overview-price-row"><span>II класс (Кроссовер)</span><strong>2 700 ₽ · 55 мин</strong></div>
-              <div class="mt-overview-price-tag">Выходные · Часы пик · Праздники</div>
+              <div class="mt-overview-ui-head"><span>Прайс по классам</span><span>Полировка + Керамика</span></div>
+              <div class="mt-overview-price-row"><span>I класс (Седан)</span><strong>28 000 ₽ · 6 часов</strong></div>
+              <div class="mt-overview-price-row"><span>II класс (Кроссовер)</span><strong>38 000 ₽ · 8 часов</strong></div>
+              <div class="mt-overview-price-tag">Автоматический расчёт слота по марке авто</div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Уведомления в мессенджер <span class="mt-overview-hook">и клиентская база</span></h3>
-            <p>Клиент получает подтверждение бронирования, напоминание за 2 часа и уведомление «Автомобиль готов к выдаче» со ссылкой на электронный чек. Вся история визитов и ТО сохраняется в карточке авто.</p>
+            <h3>Уведомления в мессенджер <span class="mt-overview-hook">и сервисная история авто</span></h3>
+            <p>Клиент получает подтверждение записи, статус «Автомобиль загнан на полировку» и сообщение «Готов к выдаче» с фото результата и чеком. Вся история процедур, толщина ЛКП и даты ТО сохраняются в профиле авто.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Статус готовности</span><span>Мессенджер</span></div>
               <div class="mt-overview-message">
-                Ваш Porsche Macan готов к выдаче в Боксе №2. Сумма к оплате: 4 500 ₽.
-                <span class="mt-overview-reaction">🚗</span>
+                Ваш Porsche Cayenne готов к выдаче на Посту №1. Защитный состав полимеризован.
+                <span class="mt-overview-reaction">✨</span>
               </div>
               <div class="mt-overview-client-row"><span>База клиентов CRM</span><strong>История визитов и ТО →</strong></div>
             </div>
           </article>
 
           <article class="mt-overview-card mt-overview-card--featured">
-            <h3>Сдельная оплата <span class="mt-overview-hook">мойщиков и мастеров</span></h3>
-            <p>Автоматический расчет зарплаты мойщиков, детейлеров и автомехаников: процент от чека или ставка за операцию начисляются сразу после закрытия заказ-наряда. Мастера видят баланс смены в телефоне.</p>
+            <h3>Сдельная оплата <span class="mt-overview-hook">детейлеров и мастеров</span></h3>
+            <p>Автоматический расчет зарплаты мастеров: процент от наряда (полировка 35%, оклейка 40%, мойка 30%) или нормочасы начисляются сразу после закрытия наряда. Мастер видит баланс смены в своем телефоне.</p>
             <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Выработка за смену</span><span>Смена №1</span></div>
-              <div class="mt-overview-metrics"><span>Мойка<b>30%</b></span><span>Детейлинг<b>40%</b></span><span>Баланс<b>₽</b></span></div>
+              <div class="mt-overview-metrics"><span>Полировка<b>35%</b></span><span>Оклейка<b>40%</b></span><span>Баланс<b>₽</b></span></div>
               <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
           </article>
@@ -971,12 +953,12 @@ def build_auto_page() -> str:
       <!-- AUTO JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь визита авто">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
-          <h2 class="mt-section-title">Один заезд авто. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
-          <p class="mt-section-sub">Посмотрите, как специализированная программа автоматизирует обслуживание автомобиля от онлайн-записи до выдачи ключей и начисления сдельной зарплаты.</p>
+          <h2 class="mt-section-title">Один детейлинг-заказ. <span class="mt-hero-accent">Полный контроль в Молнии.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как система автоматизирует обслуживание автомобиля от онлайн-записи до выдачи ключей и начисления сдельной оплаты мастеру.</p>
         </div>
 
         <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
-          <span>Пример</span><strong>Комплексная мойка + Твёрдый воск</strong><span>Geely Monjaro · Бокс №1</span>
+          <span>Пример</span><strong>Детейлинг-полировка кузова + Керамика 2 слоя</strong><span>Li Auto L9 · Пост №1 детейлинга</span>
         </div>
 
         <div class="mt-journey-list">
@@ -984,70 +966,70 @@ def build_auto_page() -> str:
             <div class="mt-journey-index">01</div>
             <div class="mt-journey-copy">
               <span class="mt-journey-actor">Клиент</span>
-              <h3>Онлайн-запись с автоматическим учетом класса авто</h3>
-              <p>Клиент выбирает марку, тип кузова и комплекс услуг на сайте или через мессенджер. Программа сразу резервирует окно нужной длительности (55 минут вместо 40) с учетом габаритов кроссовера.</p>
+              <h3>Онлайн-запись с автоматическим учетом габаритов и класса авто</h3>
+              <p>Владелец выбирает детейлинг-комплекс и удобный день на сайте или в Telegram. Программа сразу резервирует окно нужной длительности (полный рабочий день 8 часов) с учетом класса большого кроссовера.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Пример онлайн-записи">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Онлайн-запись</span>
                 <span class="mt-journey-proof-badge">Подтверждена</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Автомобиль</span><strong>Geely Monjaro (II класс)</strong></div>
-              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Комплекс + Воск</strong></div>
-              <div class="mt-journey-proof-row"><span>Бокс</span><strong>Бокс №1 (мойка)</strong></div>
+              <div class="mt-journey-proof-row"><span>Автомобиль</span><strong>Li Auto L9 (II класс)</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Полировка + Керамика 9H</strong></div>
+              <div class="mt-journey-proof-row"><span>Пост</span><strong>Пост №1 (детейлинг)</strong></div>
             </div>
           </article>
 
           <article class="mt-journey-step">
             <div class="mt-journey-index">02</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Администратор / Мастер</span>
-              <h3>Заезд в бокс и электронный заказ-наряд с фото</h3>
-              <p>Мастер открывает электронный заказ-наряд со смартфона и за 60 секунд фотографирует сколы на капоте и дисках. Акт осмотра прикрепляется к заказу до начала работ.</p>
+              <span class="mt-journey-actor">Мастер-приёмщик</span>
+              <h3>Заезд на пост и цифровой акт осмотра ЛКП с фото со смартфона</h3>
+              <p>Мастер открывает электронный заказ-наряд со смартфона и за 2 минуты фотографирует сколы на капоте, царапины на лаке и замеряет толщину ЛКП. Акт фиксируется в CRM до касания полировальной машинкой.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Чек-лист приёмки">
               <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Заказ-наряд #1428</span>
-                <span class="mt-journey-proof-badge">Осмотр пройден</span>
+                <span class="mt-journey-proof-title">Чек-лист ЛКП</span>
+                <span class="mt-journey-proof-badge">Акт подписан</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Фотофиксация</span><strong>4 фото сохранены</strong></div>
-              <div class="mt-journey-proof-row"><span>Ценные вещи</span><strong>В салоне отсутствуют</strong></div>
-              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Александр В. (смена 1)</strong></div>
+              <div class="mt-journey-proof-row"><span>Фото кузова</span><strong>8 ракурсов прикреплено</strong></div>
+              <div class="mt-journey-proof-row"><span>Толщина лака</span><strong>115–130 мкм (норма)</strong></div>
+              <div class="mt-journey-proof-row"><span>Дефекты</span><strong>Скол на капоте зафиксирован</strong></div>
             </div>
           </article>
 
           <article class="mt-journey-step">
             <div class="mt-journey-index">03</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Мастер</span>
-              <h3>Выполнение работ и допродажа услуг в 1 тап</h3>
-              <p>Мастер заметил битумные пятна на порогах и добавил удаление битума (900 ₽) прямо в электронный заказ-наряд со смартфона. Сумма автоматически пересчиталась.</p>
+              <span class="mt-journey-actor">Детейлер</span>
+              <h3>Выполнение работ по регламенту, допуслуги и списание материалов</h3>
+              <p>Мастер отмечает этапы в заказ-наряде: очистка глиной, двухшаговая полировка, обезжиривание, нанесение керамического состава. Программа списывает флакон керамики со склада студии.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Состав заказа">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Выполненные работы</span>
                 <span class="mt-journey-proof-badge">Готово к выдаче</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Комплекс «Люкс»</span><strong>2 700 ₽</strong></div>
-              <div class="mt-journey-proof-row"><span>Антидождь лобового</span><strong>1 200 ₽</strong></div>
-              <div class="mt-journey-proof-row"><span>Итого заказ-наряд</span><strong>3 900 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Полировка кузова</span><strong>18 000 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Керамика 9H (2 слоя)</span><strong>14 000 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Итого заказ-наряд</span><strong>32 000 ₽</strong></div>
             </div>
           </article>
 
           <article class="mt-journey-step">
             <div class="mt-journey-index">04</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Система & Владелец</span>
-              <h3>Выдача авто, чек в мессенджер и расчет зарплаты мастеров</h3>
-              <p>Клиент получает оповещение о готовности и ссылку на чек в мессенджере. Программа моментально начисляет мастеру 35% (1 365 ₽) на баланс смены — без ручных записей и споров.</p>
+              <span class="mt-journey-actor">Система & Руководитель</span>
+              <h3>Выдача авто, чек в мессенджер и моментальный расчет зарплаты мастера</h3>
+              <p>Клиент получает уведомление о готовности с фото сияющего кузова. Программа мгновенно начисляет мастеру 35% (11 200 ₽) на баланс смены — без споров, таблиц и ручных сверок в блокноте.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
                 <span class="mt-journey-proof-title">Расчёт мастера</span>
                 <span class="mt-journey-proof-badge">Начислено</span>
               </div>
-              <div class="mt-journey-proof-row"><span>Александр В. (35%)</span><strong>+1 365 ₽</strong></div>
-              <div class="mt-journey-proof-row"><span>Выручка автомойки</span><strong>+2 535 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Денис М. (35%)</span><strong>+11 200 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Выручка студии</span><strong>+20 800 ₽</strong></div>
               <div class="mt-journey-proof-row"><span>Статус в мессенджере</span><strong>«Автомобиль выдан»</strong></div>
             </div>
           </article>
@@ -1058,27 +1040,27 @@ def build_auto_page() -> str:
       <section class="mt-case-section mt-reveal" data-screen-label="Кейс детейлинга" data-mt-reveal>
         <div class="mt-case-card">
           <div class="mt-case-header">
-            <div class="mt-case-tag">⚡ Кейс автоматизации автобизнеса</div>
-            <h2 class="mt-case-title">Детейлинг-студия «Вектор», 4 поста</h2>
+            <div class="mt-case-tag">⚡ Кейс автоматизации детейлинга</div>
+            <h2 class="mt-case-title">Детейлинг-центр «Вектор», 4 поста</h2>
             <blockquote class="mt-case-quote">
-              «Раньше каждый вечер уходил час на сведение тетради с мойщиками, а по выходным была давка из-за джипов, которые не влезали по времени. В CRM Молния мы настроили онлайн-запись и нормативы по классам авто — расписание боксов стало идеальным, а выработка мастеров прозрачной.»
+              «Раньше каждый вечер уходил час на сведение тетрадей с мастерами, а клиенты спорили о каждой старой царапине при выдаче машины после полировки. В Молнии мы ввели цифровой акт осмотра со смартфона с фотофиксацией ЛКП и настроили онлайн-запись с учетом классов авто. За полгода число спорных ситуаций свелось к нулю, расписание постов заполнено на две недели вперед, а на подсчет сдельных зарплат мы больше не тратим ни минуты.»
             </blockquote>
             <div class="mt-case-author">
-              Алексей Смирнов <span>· Руководитель детейлинг-центра, <span style="white-space:nowrap">Санкт-Петербург</span></span>
+              Алексей Смирнов <span>· Руководитель детейлинг-центра (4 поста), <span style="white-space:nowrap">Санкт-Петербург</span></span>
             </div>
           </div>
           <div class="mt-case-stats">
             <div class="mt-case-stat">
-              <span class="mt-case-num">+35%</span>
-              <span class="mt-case-label">Рост выручки автомойки за счёт плотной сетки записи</span>
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Спорных претензий по кузову благодаря фотофиксации ЛКП до начала работ</span>
             </div>
             <div class="mt-case-stat">
-              <span class="mt-case-num">-86%</span>
-              <span class="mt-case-label">Снижение неявок благодаря напоминаниям в мессенджере</span>
+              <span class="mt-case-num">+35%</span>
+              <span class="mt-case-label">Рост выручки студии за счет плотной сетки записи многочасовых услуг</span>
             </div>
             <div class="mt-case-stat">
               <span class="mt-case-num">0 <small>мин</small></span>
-              <span class="mt-case-label">На подсчёт зарплат и выработки мастеров</span>
+              <span class="mt-case-label">На подсчет сдельной выработки и зарплат мастеров в конце смены</span>
             </div>
           </div>
         </div>
@@ -1087,7 +1069,7 @@ def build_auto_page() -> str:
       <!-- AUTO FAQ -->
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
-          <h2 class="mt-section-title">Вопросы о программе для автомойки, детейлинга и автосервиса</h2>
+          <h2 class="mt-section-title">Вопросы о программе для детейлинга, автомойки и автосервиса</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -21033,41 +21015,41 @@ def build_furniture_cleaning_page() -> str:
         "Оставьте контакты — поможем настроить калькулятор посадочных мест, график выезда мастеров, фотофиксацию пятен и расчет зарплат.",
     )
 
-    title = "Онлайн-запись на химчистку мебели и ковров — CRM и выезд мастеров"
+    title = "Программа для химчистки мебели: CRM, калькулятор посадочных мест и выезд мастеров"
     description = (
-        "Программа для химчистки мягкой мебели и ковров: калькулятор посадочных мест диванов 24/7, "
-        "маршруты выездных мастеров, фото «до/после» и сдельная зарплата."
+        "CRM для выездной химчистки мягкой мебели и ковров: калькулятор стоимости по посадочным местам диванов 24/7, "
+        "маршруты мастеров с экстракторами, фото пятен «до/после» и сдельная зарплата."
     )
     canonical = "https://molniya-tech.ru/furniture-cleaning"
 
     faqs = [
         (
-            "Как клиенты рассчитывают стоимость и вызывают мастера по химчистке через Молнию?",
-            "Вы получаете интерактивный виджет-калькулятор для сайта, группы VK, Telegram и карт. Клиент выбирает тип мебели (прямой или угловой диван, кресло, матрас, стулья, ковер), указывает количество посадочных мест, ткань (жаккард, флок, велюр, кожа) и характер загрязнений. Система мгновенно показывает точную цену и предлагает свободные окна в графике мастеров.",
+            "Как клиенты рассчитывают стоимость и вызывают мастера по химчистке мебели через Молнию?",
+            "Вы получаете интерактивный виджет-калькулятор для сайта, группы VK, Telegram и гео-сервисов. Клиент выбирает тип мебели (прямой или угловой диван, кресло, матрас, стулья), указывает количество посадочных мест, материал ткани (жаккард, рогожка, флок, велюр, кожа) и характер загрязнений. Система мгновенно показывает точную стоимость и предлагает свободные окна в графике мастеров.",
         ),
         (
-            "Как устроен расчет стоимости от посадочных мест, подушек и спального места?",
-            "В калькуляторе настраиваются прозрачные базовые тарифы: стандартное посадочное место (например, 700–900 ₽), угловая секция, раскладное спальное место и диванные подушки. Программа также учитывает дополнительные опции: выведение сложных пятен (урина, кровь, маркеры, кофе), нейтрализация запахов энзимами и экспресс-сушка мебели феном.",
+            "Как настраивается расчет стоимости от посадочных мест, спального места и подушек?",
+            "В калькуляторе задаются базовые тарифы: посадочное место (например, 700–900 ₽), угловой сегмент, выдвижное спальное место и диванные подушки. Программа также учитывает дополнительные опции: выведение застарелых пятен (урина, кровь, маркеры, жир, кофе), нейтрализацию запахов энзимами и экспресс-сушку мебели мебельным феном.",
         ),
         (
-            "Как система составляет маршруты выездных мастеров с экстракторами по районам?",
-            "Программа распределяет заявки с учетом геолокации и районов города, автоматически закладывая буферное время (30–45 минут) на дорогу между адресами и погрузку экстракторов (Santoemma, Karcher Puzzi). Это исключает опоздания мастеров и лишний холостой пробег по пробкам.",
+            "Как система распределяет заказы и строит маршруты мастеров с экстракторами по районам?",
+            "Программа группирует заявки с учетом геолокации и районов города, автоматически закладывая буферное время (30–45 минут) на дорогу между адресами и перенос экстракторов (Santoemma, Karcher Puzzi). Это исключает опоздания мастеров и нерациональный холостой пробег по пробкам.",
         ),
         (
-            "Как работает фотофиксация состояния обивки «до» и «после» чистки?",
-            "Мастер прикрепляет фотографии мебели со своего смартфона прямо в цифровой заказ-наряд перед началом работы (фиксируя застарелые пятна, потертости и повреждения ткани) и после завершения экстракции. Фотографии защищают компанию от необоснованных претензий и автоматически попадают в архив заказа.",
+            "Как работает фотофиксация обивки «до» и «после» чистки и защита от претензий?",
+            "Мастер прикрепляет фотографии мебели со смартфона прямо в цифровой заказ-наряд перед началом работы (фиксируя износ, застарелые пятна, потертости и срыв красителя от бытовой химии) и после завершения сушки. Фотографии защищают компанию от необоснованных претензий и сохраняются в архиве заказа со штампом времени.",
         ),
         (
             "Как рассчитывается сдельная зарплата мастеров химчистки?",
-            "Для каждого специалиста можно задать процент от чека (например, 35–45% в зависимости от квалификации и использования собственной или корпоративной химии) либо фиксированную ставку за посадочное место. Сразу после подписания акта и закрытия заказа наряд отправляется в зарплатную ведомость.",
+            "Для каждого специалиста задается процент от чека (например, 35–45% в зависимости от квалификации, стажа и использования собственной химии) либо ставка за посадочное место. Сразу после подтверждения оплаты заказ-наряд автоматически формирует начисление в зарплатной ведомости смены.",
         ),
         (
-            "Как система отправляет напоминания клиентам накануне выезда?",
-            "Сервисный бот отправляет клиенту подтверждение сразу после оформления, а накануне и за 1 час до визита — уведомление в Telegram или SMS с именем мастера, временем прибытия, напоминанием освободить диван от вещей и ссылкой на карточку заказа.",
+            "Как бот напоминает клиентам подготовить мебель накануне выезда?",
+            "Сервисный бот отправляет клиенту подтверждение сразу после оформления, а накануне и за 1 час до выезда — уведомление в мессенджер с именем мастера, временем прибытия, напоминанием освободить диван от вещей и ссылкой на карточку заказа.",
         ),
         (
-            "Как бесплатно перенести клиентскую базу и прайс-лист из Excel или старой CRM?",
-            "Служба заботы Молнии бесплатно настроит каталог вашей мебели, формулы расчета по посадочным местам, перенесет базу постоянных клиентов с историей чисток и адресами из Excel или любой CRM за 15 минут.",
+            "Как бесплатно перенести базу постоянных клиентов и каталог цен из Excel или старой CRM?",
+            "Служба заботы Молнии бесплатно настроит каталог вашей мебели, формулы расчета по посадочным местам, перенесет базу постоянных клиентов с историей чисток и адресами из Excel, Google Таблиц или сторонних CRM за 15 минут.",
         ),
     ]
 
@@ -21089,7 +21071,7 @@ def build_furniture_cleaning_page() -> str:
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Молния Тех — программа и CRM для выездной химчистки мебели",
+            "name": "Молния — программа и CRM для выездной химчистки мебели",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web, iOS, Android, macOS, Windows",
             "url": canonical,
@@ -21122,66 +21104,94 @@ def build_furniture_cleaning_page() -> str:
             ],
         },
     ]
-    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False).replace("<", "\\u003c")
 
     page_html = f'''<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <meta name="description" content="{description}">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
   <link rel="canonical" href="{canonical}">
   <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
-  <meta property="og:title" content="{title}">
-  <meta property="og:description" content="{description}">
-  <meta property="og:url" content="{canonical}">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{title}">
-  <meta name="twitter:description" content="{description}">
-  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+  <meta name="theme-color" content="#FFFEFD">
+
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
-  <script type="application/ld+json">
-{json_ld_str}
-  </script>
+  <script src="/metrika.js" defer></script>
 </head>
 <body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
   <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
 {nav_html}
 
-    <div class="mt-page-content">
-
       <!-- FURNITURE HERO -->
-      <section class="mt-hero mt-reveal" data-screen-label="Главный экран" data-mt-reveal>
-        <div class="mt-hero-col mt-hero-col--copy">
-          <h1 class="mt-hero-title">Программа для химчистки мебели: <span class="mt-hero-accent">калькулятор посадочных мест и выезд мастеров</span></h1>
-          <p class="mt-hero-desc">Онлайн-расчёт стоимости чистки диванов и матрасов 24/7, маршруты мастеров с экстракторами по районам, фотофиксация пятен «до/после» и сдельная зарплата без рутины.</p>
-          <div class="mt-hero-actions">
-            <a class="mt-btn mt-btn-cta" href="https://rutube.ru/video/cb37952e428c0c451b6dd013c7068593/" target="_blank" rel="noopener">Смотреть видео о Молнии ↗</a>
-            <a class="mt-btn mt-btn-secondary" href="https://t.me/molniya_tex?start=sector_furniture_cleaning" target="_blank" rel="noopener">Подключить химчистку</a>
-          </div>
-          <div class="mt-hero-highlights">
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для химчистки мебели: <span class="mt-hero-accent">калькулятор посадочных мест и выезд мастеров</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-расчёт стоимости чистки диванов и матрасов 24/7, маршруты мастеров с экстракторами по районам, фотофиксация пятен «до/после» и сдельная зарплата без рутины в чатах</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
             <ul class="mt-facets mt-facets--full" aria-label="Преимущества для выездной химчистки">
               <li class="mt-facet">
                 <span class="mt-facet-name">Посадочные места</span>
-                <span class="mt-facet-note">точный расчёт диванов и матрасов</span>
+                <span class="mt-facet-note">калькулятор диванов и матрасов</span>
               </li>
               <li class="mt-facet">
-                <span class="mt-facet-name">График мастеров</span>
-                <span class="mt-facet-note">маршруты по районам без пробок</span>
+                <span class="mt-facet-name">Маршруты мастеров</span>
+                <span class="mt-facet-note">выезды по районам с авто-буфером</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name">Фото «до/после»</span>
-                <span class="mt-facet-note">фиксация пятен и акт приёмки</span>
+                <span class="mt-facet-note">фиксация пятен со смартфона</span>
               </li>
               <li class="mt-facet">
                 <span class="mt-facet-name mt-facet-name--soon">Зарплата 35–45%</span>
-                <span class="mt-facet-note">прозрачный расчёт за смену</span>
+                <span class="mt-facet-note">автоматический расчёт за смену</span>
               </li>
             </ul>
           </div>
@@ -21217,55 +21227,55 @@ def build_furniture_cleaning_page() -> str:
         <div class="mt-auto-bays">
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Мастер Антон К. · Santoemma Sabrina · Приморский р-н</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--work">Экстракция</span>
+              <span class="mt-auto-bay-title">Бригада 1 · Экстрактор Santoemma #1</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
             </div>
             <div class="mt-auto-car">
               <div>
                 <div class="mt-auto-car-name">Диван угловой 4 места + Выдвижное спальное место</div>
-                <div class="mt-auto-car-tier">Выведение пятен кофе и слайма · Защитная сушка феном</div>
+                <div class="mt-auto-car-tier">Приморский р-н · Ткань велюр · Удаление кофе и слайма</div>
               </div>
               <span class="mt-dropdown-footer-icon">🛋️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Химчистка дивана (2.5 часа)</span>
-              <span class="mt-auto-price">4 800 ₽ · В работе</span>
+              <span>Химчистка + Экспресс-сушка</span>
+              <span class="mt-auto-price">5 400 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Мастер Антон К. · Дорога между заказами</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+              <span class="mt-auto-bay-title">Бригада 2 · Экстрактор Sabrina Maxi</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Сушка мебели</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Технический перерыв на дорогу (40 мин)</div>
-                <div class="mt-auto-car-tier">Переезд: ул. Оптиков → Комендантский пр., погрузка химии</div>
+                <div class="mt-auto-car-name">Прямой диван 3 места + 2 кресла</div>
+                <div class="mt-auto-car-tier">Выборгский р-н · Жаккард · Защитная сушка феном</div>
               </div>
               <span class="mt-dropdown-footer-icon">⏱️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Буфер на маршрут</span>
-              <span class="mt-auto-price">До 16:00</span>
+              <span>Чистка обивки + Сушка</span>
+              <span class="mt-auto-price">4 600 ₽</span>
             </div>
           </div>
 
           <div class="mt-auto-bay">
             <div class="mt-auto-bay-head">
-              <span class="mt-auto-bay-title">Мастер Антон К. · Выезд на дом (Комендантский пр.)</span>
-              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Подтверждено</span>
+              <span class="mt-auto-bay-title">Бригада 3 · Karcher Puzzi 10/1</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--ready">Выезд на адрес</span>
             </div>
             <div class="mt-auto-car">
               <div>
-                <div class="mt-auto-car-name">Матрас ортопедический 180×200 (две стороны)</div>
-                <div class="mt-auto-car-tier">Удаление пятен и запахов · Предоплата 50% онлайн</div>
+                <div class="mt-auto-car-name">Матрас King Size 180×200 + Ковёр 9 м²</div>
+                <div class="mt-auto-car-tier">Московский р-н · Удаление запахов · Предоплата онлайн</div>
               </div>
               <span class="mt-dropdown-footer-icon">🛏️</span>
             </div>
             <div class="mt-auto-service">
-              <span>Химчистка матраса</span>
-              <span class="mt-auto-price">3 900 ₽ (Оплачено)</span>
+              <span>Химчистка матраса и ковра</span>
+              <span class="mt-auto-price">6 200 ₽ (Оплачено)</span>
             </div>
           </div>
         </div>
@@ -21275,37 +21285,37 @@ def build_furniture_cleaning_page() -> str:
       <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для химчистки мебели" data-mt-reveal>
         <div class="mt-section-head mt-section-head--center">
           <h2 class="mt-section-title">Всё для работы сервиса химчистки мебели <span class="mt-overview-hook">в одной удобной системе</span></h2>
-          <p class="mt-section-sub">Один сервис вместо блокнотов, споров о цене на пороге и накладок: онлайн-калькулятор посадочных мест 24/7, маршруты мастеров по районам, фото «до/после» и сдельная зарплата.</p>
+          <p class="mt-section-sub">Избавьтесь от ручных созвонов с клиентами и путаницы в маршрутах: интерактивный калькулятор диванов, цифровой наряд с фото пятен, учет профессиональной химии и авторасчет зарплат мастеров.</p>
         </div>
 
         <div class="mt-overview-grid">
           <article class="mt-overview-card">
-            <h3>Калькулятор посадочных мест 24/7 <span class="mt-overview-hook">вместо долгих переписок</span></h3>
-            <p>Клиент выбирает прямой или угловой диван, спальное место, матрас или кресла. Калькулятор показывает прозрачную смету с учетом выведения пятен и антибактериальной сушки феном.</p>
-            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Калькулятор дивана</span><span>Выезд мастера</span></div>
-              <div class="mt-overview-calendar"><span>13:30</span><div class="mt-overview-slot">Угловой 4 места <small>4 800 ₽</small></div><span>16:00</span><div class="mt-overview-slot mt-overview-slot--light">Дорога <small>40 мин</small></div><span>16:40</span><div></div></div>
+            <h3><span class="mt-overview-hook">Калькулятор посадочных мест</span> и типов ткани 24/7</h3>
+            <p>Клиент указывает тип мебели (прямой, угловой диван, матрас, кресло), число посадочных мест, материал обивки и характер загрязнений. Программа мгновенно рассчитывает точную смету и предлагает свободные окна мастеров.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Калькулятор мебели</span><span>Онлайн 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Угловой диван (4 места)</span><strong>3 600 ₽ · 2 ч</strong></div>
+              <div class="mt-overview-price-row"><span>Спальное место + Сушка</span><strong>1 200 ₽ · 30 мин</strong></div>
+              <div class="mt-overview-price-tag">Точный расчёт без сюрпризов на адресе</div>
             </div>
           </article>
 
           <article class="mt-overview-card">
-            <h3>Маршруты мастеров по районам <span class="mt-overview-hook">без опозданий и пробок</span></h3>
-            <p>Система распределяет адреса по территориальным секторам и закладывает 30–45 минут на дорогу между выездами. Мастера приезжают строго к назначенному времени без накладок.</p>
-            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
-              <div class="mt-overview-ui-head"><span>Логистика бригад</span><span>Без холостого пробега</span></div>
-              <div class="mt-overview-price-row"><span>Приморский район</span><strong>3 выезда в секторе</strong></div>
-              <div class="mt-overview-price-row"><span>Буфер на переезд</span><strong>40 минут в графике</strong></div>
-              <div class="mt-overview-price-tag">Экономия до 2 часов на разъездах в день</div>
+            <h3><span class="mt-overview-hook">Маршруты мастеров</span> и буфер времени на дорогу</h3>
+            <p>Система группирует выездные заказы по районам города и автоматически закладывает 30–45 минут на переезд и занос оборудования (Santoemma, Puzzi). Мастера не застревают в пробках, а приезжают минута в минуту.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Маршрут мастера</span><span>Приморский р-н</span></div>
+              <div class="mt-overview-calendar"><span>10:30</span><div class="mt-overview-slot">ул. Оптиков <small>Диван 4 места</small></div><span>13:30</span><div class="mt-overview-slot mt-overview-slot--light">Дорога <small>35 мин буфер</small></div><span>14:15</span><div class="mt-overview-slot">Комендантский <small>Матрас</small></div></div>
             </div>
           </article>
 
           <article class="mt-overview-card">
             <h3>Фотофиксация пятен «до» и «после» <span class="mt-overview-hook">в карточке заказа</span></h3>
-            <p>Мастер фотографирует мебель со смартфона до начала экстракции, фиксируя износ обивки и застарелые загрязнения. Фото защищают компанию от необоснованных претензий и споров.</p>
+            <p>Мастер фотографирует мебель со смартфона до начала экстракции, фиксируя износ обивки, разрывы нитей и застарелые пятна. Фото сохраняются в цифровом наряде и защищают компанию от необоснованных претензий.</p>
             <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Цифровой наряд</span><span>Фотофиксация</span></div>
               <div class="mt-overview-message">
-                Заказ #4120: Фото обивки «до» прикреплены (кофе, следы фломастера). Акт согласован с клиентом.
+                Заказ #5420: Фото обивки «до» прикреплены (кофе, следы фломастера). Акт согласован с клиентом.
                 <span class="mt-overview-reaction">📸</span>
               </div>
               <div class="mt-overview-client-row"><span>Состояние ткани</span><strong>Защита от претензий 100% →</strong></div>
@@ -21313,8 +21323,8 @@ def build_furniture_cleaning_page() -> str:
           </article>
 
           <article class="mt-overview-card">
-            <h3>Сдельная зарплата мастеров (35–45%) <span class="mt-overview-hook">в один клик</span></h3>
-            <p>Автоматический расчёт выработки мастера сразу после закрытия наряда. Программа учитывает надбавки за сложные ткани, сушку и продажу защитной пропитки от пятен.</p>
+            <h3>Сдельная зарплата мастеров (35–45%) <span class="mt-overview-hook">без ручных сверок</span></h3>
+            <p>Автоматический расчёт выработки мастера сразу после закрытия наряда. Программа учитывает персональный процент от чека, надбавки за сложные ткани, экспресс-сушку и допродажу защитных гидрофобных пропиток.</p>
             <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Расчёт выработки</span><span>Сдельная оплата</span></div>
               <div class="mt-overview-stages"><span>Заказ</span><i></i><span>Акт</span><i></i><span>Выплата</span></div>
@@ -21324,8 +21334,8 @@ def build_furniture_cleaning_page() -> str:
           </article>
 
           <article class="mt-overview-card mt-overview-card--featured">
-            <h3>Склад профессиональной химии <span class="mt-overview-hook">и контроль экстракторов</span></h3>
-            <p>Контролируйте выдачу пятновыводителей, энзимов, нейтрализаторов запахов и закрепление дорогостоящих экстракторов (Santoemma, Karcher Puzzi) за конкретными специалистами.</p>
+            <h3>Склад профессиональной химии <span class="mt-overview-hook">и контроль оборудования</span></h3>
+            <p>Контролируйте выдачу пятновыводителей, энзимов, кислотных ополаскивателей и закрепление дорогостоящих экстракторов за конкретными специалистами. Исключите потери химии и нецелевое использование техники.</p>
             <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
               <div class="mt-overview-ui-head"><span>Оборудование и химия</span><span>Складской учёт</span></div>
               <div class="mt-overview-metrics"><span>Экстракторы<b>6 аппаратов</b></span><span>Пятновыводители<b>100% учёт</b></span><span>Потери<b>0 ₽</b></span></div>
@@ -21372,9 +21382,9 @@ def build_furniture_cleaning_page() -> str:
           <article class="mt-journey-step">
             <div class="mt-journey-index">02</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Виджет</span>
-              <h3>Фиксация наряда, выбор опций сушки и назначение мастера</h3>
-              <p>Система проверяет геолокацию, назначает мастера Антона К., работающего в Приморском районе, и бронирует слот в его мобильном календаре.</p>
+              <span class="mt-journey-actor">Система</span>
+              <h3>Проверка адреса по району и назначение мастера с оборудованием</h3>
+              <p>Система проверяет геолокацию, назначает мастера Антона К., работающего в Приморском районе, закрепляет за заказом экстрактор Santoemma и бронирует слот в его мобильном календаре.</p>
             </div>
             <div class="mt-journey-proof" aria-label="Карточка наряда">
               <div class="mt-journey-proof-head">
@@ -21390,7 +21400,7 @@ def build_furniture_cleaning_page() -> str:
           <article class="mt-journey-step">
             <div class="mt-journey-index">03</div>
             <div class="mt-journey-copy">
-              <span class="mt-journey-actor">Система</span>
+              <span class="mt-journey-actor">Сервисный бот</span>
               <h3>Маршрутный лист мастера, напоминание клиенту и чек-лист химии</h3>
               <p>Сервисный бот отправляет клиенту статус «Мастер выехал к вам», а мастеру — точный адрес, код домофона и состав пятен для подбора энзимов.</p>
             </div>
@@ -21412,14 +21422,14 @@ def build_furniture_cleaning_page() -> str:
               <h3>Фото «до», глубокая экстракция, сушка и сдача работы</h3>
               <p>Мастер делает фото «до», выводит пятна, сушит мебель феном и закрывает наряд. Программа начисляет мастеру 40% (1 920 ₽) на баланс смены.</p>
             </div>
-            <div class="mt-journey-proof" aria-label="Результат выезда">
+            <div class="mt-journey-proof" aria-label="Финансовый расчёт">
               <div class="mt-journey-proof-head">
-                <span class="mt-journey-proof-title">Итог заказа</span>
-                <span class="mt-journey-proof-badge">Выполнено</span>
+                <span class="mt-journey-proof-title">Закрытие заказа</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
               </div>
               <div class="mt-journey-proof-row"><span>Выручка</span><strong>4 800 ₽ (Оплачено)</strong></div>
               <div class="mt-journey-proof-row"><span>Зарплата мастера</span><strong>+1 920 ₽ (40% начислено)</strong></div>
-              <div class="mt-journey-proof-row"><span>Следующий адрес</span><strong>Выезд на Комендантский в 16:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий адрес</span><strong>Выезд на Комендантский в 16:30</strong></div>
             </div>
           </article>
         </div>
@@ -21495,7 +21505,6 @@ def build_furniture_cleaning_page() -> str:
 </html>
 '''
     return page_html
-
 
 
 def build_window_cleaning_page() -> str:
