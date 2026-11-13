@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 13 Nov 2026 17:07:45 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 17:36:52 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Онлайн-запись и CRM для студий маникюра и ногтевого сервиса</title>
+      <link>https://molniya-tech.ru/nails</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/nails</guid>
+      <pubDate>Fri, 13 Nov 2026 21:30:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Программа для ногтевых студий: запись в 4 руки, учет снятия и дизайна, расписание столов и реклайнеров, напоминания в мессенджерах за 0 ₽ и склад гель-лаков.]]></description>
+    </item>
     <item>
       <title>Онлайн-запись и CRM для барбершопов и мужских парикмахерских</title>
       <link>https://molniya-tech.ru/barbershop</link>

@@ -1492,6 +1492,13 @@ def build_beauty_page() -> str:
               <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, расписание кресел и грейдов барберов, автонапоминания в мессенджерах за 0 ₽, склад мужской косметики и сдельная зарплата.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/nails">
+            <div class="mt-subniche-icon">💅</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Студии маникюра и ногтевого сервиса <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, комплекс «в 4 руки», расписание столов и реклайнеров, автонапоминания за 0 ₽ и складской учет гель-лаков.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -2119,6 +2126,510 @@ def build_barbershop_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для барбершопов</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_nails_page() -> str:
+    """Builds the complete nails and manicure studio micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="beauty", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "nails",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для ногтевой студии',
+        "Оставьте контакты — покажем Молнию на примере вашей студии, поможем настроить расписание столов, реклайнеров и онлайн-запись.",
+    )
+
+    title = "CRM для студии маникюра: программа и онлайн-запись на ногтевой сервис"
+    description = (
+        "Программа для студии маникюра: онлайн-запись клиентов 24/7, запись в 4 руки, "
+        "расписание столов и педикюрных зон, напоминания за 0 ₽ и склад гель-лаков."
+    )
+    canonical = "https://molniya-tech.ru/nails"
+
+    faqs = [
+        (
+            "Как клиентки записываются на маникюр и педикюр через Молнию?",
+            "Вы получаете персональную страницу онлайн-записи и виджет для сайта, карт (Яндекс, 2ГИС) и соцсетей. Клиентка выбирает вид маникюра (комбинированный, аппаратный, японский Masura), снятие старого покрытия, укрепление гелем или полигелем и сложность дизайна. Система автоматически рассчитывает суммарную продолжительность и показывает только свободные слоты без риска сдвинуть следующий визит.",
+        ),
+        (
+            "Как работает онлайн-запись на услугу «в 4 руки» (одновременный маникюр и педикюр)?",
+            "Система синхронизирует расписание сразу трех ресурсов: свободного мастера маникюра, свободного мастера педикюра и доступного педикюрного кресла или реклайнера с возможностью параллельной работы. Запись бронируется в один клик, экономя время клиентки до 1,5–2 часов вместо 3,5 часов раздельных визитов.",
+        ),
+        (
+            "Как настроить разный тайминг под сложность дизайна, снятие и укрепление?",
+            "В конструкторе услуг к базовому маникюру привязываются модификаторы: «снятие чужого покрытия» (+15 мин), «укрепление полигелем/акригелем» (+20 мин), «френч / лунки» (+30 мин), «сложная роспись / градиент» (+40 мин). Мастер получает именно столько времени, сколько требуется на сложную работу, исключая спешку и задержки следующих гостей.",
+        ),
+        (
+            "Сколько стоят напоминания клиенткам в мессенджеры и как они снижают опоздания?",
+            "Сервисные напоминания в мессенджерах (Telegram, WhatsApp) отправляются за 0 ₽ — без абонентской платы и платы за каждое сообщение. Бот присылает подтверждение бронирования сразу, а затем напоминает за 24 часа и 2 часа до начала с кнопкой подтверждения. Опоздания на 15–20 минут, ломающие расписание всего дня, снижаются на 88%.",
+        ),
+        (
+            "Как работает автоворонка повторной записи по циклу носки гель-лака?",
+            "Безопасный срок носки гель-лака составляет 2,5–3 недели (16–21 день), после чего покрытие перерастает и повышается риск онихолизиса и сломов. Молния отслеживает дату визита каждой клиентки и автоматически отправляет персональное заботливое сообщение с ссылкой на любимого мастера, когда наступает идеальный момент для коррекции.",
+        ),
+        (
+            "Как устроен складской учёт баз, топов, гель-лаков и расходников по СанПиН?",
+            "Расходные материалы (одноразовые пилочки, бафы, апельсиновые палочки, крафт-пакеты для сухожара, перчатки, смарт-диски) и препараты списываются автоматически по техкартам при закрытии визита. Домашний уход (масла для кутикулы, кремы, свечи для рук) списывается в момент продажи на кассе.",
+        ),
+        (
+            "Как бесплатно перенести базу клиентов, прайс-лист и историю из YClients или DIKIDI?",
+            "Служба заботы Молнии бесплатно переносит базу контактов, историю визитов, прайс-лист и график мастеров из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает 15 минут и проходит без прерывания текущей онлайн-записи студии.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Красота", "item": "https://molniya-tech.ru/beauty"},
+                {"@type": "ListItem", "position": 3, "name": "CRM для студий маникюра", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для студий маникюра и ногтевого сервиса",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания студии маникюра",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для студии маникюра:<br><span class="mt-hero-accent">онлайн-запись и расписание столов</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, расписание столов и реклайнеров, комплекс «в 4 руки», напоминания за 0 ₽, учет гель-лаков и зарплата мастеров без рутины</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий маникюра">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Столы и реклайнеры</span>
+                <span class="mt-facet-note">учет снятия, укрепления и дизайна</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Услуга «в 4 руки»</span>
+                <span class="mt-facet-note">синхронизация мастеров и кресел</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp без переплат за SMS</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Склад по СанПиН</span>
+                <span class="mt-facet-note">крафт-пакеты, базы и гель-лаки</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии маникюра: расписание столов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронный журнал ногтевой студии: занятость столов, реклайнеров и график смен</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE WORKSTATIONS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость рабочих мест" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый стол, реклайнер и мастер <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого рабочего места, этап процедуры и время до следующей записи в реальном времени с любого устройства.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Стол 1 · Top Master Алина</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Полина К. · Снятие + френч</div>
+                <div class="mt-auto-car-tier">Снятие фрезой + укрепление полигелем + френч</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💅</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Маникюр + дизайн (1 ч 45 мин)</span>
+              <span class="mt-auto-price">3 400 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Реклайнер 1 · Мастер Дарья</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ольга М. · SMART-педикюр</div>
+                <div class="mt-auto-car-tier">Обработка стоп дисками + покрытие гель-лаком</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>SMART-педикюр с покрытием</span>
+              <span class="mt-auto-price">3 800 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зона «4 руки» · Алина и Екатерина</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Валерия С. (16:30)</div>
+                <div class="mt-auto-car-tier">Одновременный маникюр и SMART-педикюр</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⚡</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс «В 4 руки» (1 ч 30 мин)</span>
+              <span class="mt-auto-price">6 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NAILS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для ногтевых студий" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте студией маникюра <span class="mt-overview-hook">без задержек смен, очередей и переплат за SMS</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание столов и реклайнеров, запись «в 4 руки», точный учет снятия и дизайна, склад гель-лаков и прозрачный расчет сдельной зарплаты.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Умная сетка записи и тайминг <span class="mt-overview-hook">без накладок и задержек смен</span></h3>
+            <p>Программа рассчитывает точное время процедуры с учетом снятия покрытия (чужое/свое), выравнивания, укрепления гелем или акрилом и сложности дизайна. Никаких ситуаций, когда клиентка записалась на 1 час, а на месте попросила наращивание с френчем.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание столов</span><span>Тайминг с дизайном</span></div>
+              <div class="mt-overview-calendar"><span>11:00</span><div class="mt-overview-slot">Стол 1: Снятие + френч <small>Top Master Алина</small></div><span>12:45</span><div class="mt-overview-slot mt-overview-slot--light">Стол 2: SMART-педикюр <small>Мастер Дарья</small></div><span>14:00</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись «в 4 руки» в один клик <span class="mt-overview-hook">с синхронизацией мастеров и кресел</span></h3>
+            <p>Клиентка выбирает параллельный маникюр и педикюр, а система мгновенно резервирует двух свободных мастеров и реклайнер на одинаковое время. Вы увеличиваете средний чек вдвое, а гостья экономит полтора часа.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись</span><span>Комплекс «4 руки»</span></div>
+              <div class="mt-overview-price-row"><span>Маникюр + SMART-педикюр</span><strong>90 мин · 2 мастера параллельно</strong></div>
+              <div class="mt-overview-price-row"><span>Автоматический подбор реклайнера</span><strong>Синхронизация смен без рутины</strong></div>
+              <div class="mt-overview-price-tag">Клиентки записываются сами в любое время 24/7</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания в мессенджеры за 0 ₽ <span class="mt-overview-hook">и защита от опозданий</span></h3>
+            <p>Бот отправляет подтверждение бронирования и напоминания за 24 и 2 часа в Telegram и WhatsApp с кнопками «Подтверждаю» и «Перенести». Неявки падают на 88%, а опоздания на 15 минут перестают разрушать график студии.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание о визите</span><span>Без переплат за SMS</span></div>
+              <div class="mt-overview-message">
+                Анна, напоминаем о записи: маникюр + френч завтра в 11:00, Стол 1, Top Master Алина. Ждём вас!
+                <span class="mt-overview-reaction">💅</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Сервисные уведомления 0 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автоворонка повторных визитов <span class="mt-overview-hook">по циклу носки гель-лака 16–21 день</span></h3>
+            <p>Молния фиксирует дату визита и средний интервал клиентки. Через 18 дней бот присылает заботливое сообщение с предложением обновить покрытие, защищая ногти от отслоек и сколов, а студию — от потери клиентов.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоворонка возврата</span><span>Цикл носки 18 дней</span></div>
+              <div class="mt-overview-stages"><span>Визит</span><i></i><span>18 дней</span><i></i><span>Автонапоминание</span></div>
+              <div class="mt-overview-check">✓ <span>Клиентка приглашена до появления сломов</span></div>
+              <div class="mt-overview-check">✓ <span>Возвращаемость постоянных гостей +28%</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад гель-лаков, расходники по СанПиН <span class="mt-overview-hook">и сдельная зарплата мастеров</span></h3>
+            <p>Крафт-пакеты, одноразовые пилочки, апельсиновые палочки и базы списываются по технологическим картам. Мастера прямо в телефоне видят свой процент за услуги (40–45%) и комиссию с проданных масел для кутикулы.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена мастера</span><span>Top Master Алина</span></div>
+              <div class="mt-overview-metrics"><span>Услуги<b>5 визитов</b></span><span>Масла<b>3 шт</b></span><span>Зарплата<b>7 600 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- NAILS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиентки в студию маникюра">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиентки. <span class="mt-hero-accent">Полный контроль без сдвигов графика.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в студию маникюра: от онлайн-бронирования в Telegram с учетом дизайна до вскрытия крафт-пакета и автоприглашения на коррекцию через 3 недели.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Комплекс «Снятие + комбинированный маникюр + укрепление полигелем + френч»</strong><span>Длительность 1 час 45 минут · Top Master Алина · Стол №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиентка</span>
+              <h3>Онлайн-запись через Telegram или виджет за 45 секунд с выбором доп. услуг</h3>
+              <p>Гостья выбирает маникюр, снятие старого покрытия и сложный френч. Система автоматически резервирует 1 час 45 минут в расписании мастера Алины, исключая сдвиг следующих визитов.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование маникюра</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиентка</span><strong>Полина К.</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуги</span><strong>Снятие + укрепление + френч (1 ч 45 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Рабочее место</span><strong>Стол №1 · Среда, 11:00 – 12:45</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Мгновенный резерв стола №1 и сервисное напоминание за 0 ₽</h3>
+              <p>Слот закрепляется за столом №1. За 24 часа и за 2 часа гостья получает напоминание в Telegram с адресом студии, схемой прохода и кнопкой подтверждения присутствия.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уведомление #5218</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Стол 1, Top Master Алина, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Подтверждено клиенткой кнопкой</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер</span>
+              <h3>Вскрытие крафт-пакета при гостье, чистый маникюр и рекомендация масла</h3>
+              <p>Мастер открывает карточку в телефоне: видит предпочтительную форму ногтей и чувствительность кутикулы. Вскрывает крафт-пакет с индикатором 4 класса и после покрытия наносит сухое масло.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Визит в работе</span>
+                <span class="mt-journey-proof-badge">За столом</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Алина (Top Master)</strong></div>
+              <div class="mt-journey-proof-row"><span>Техкарта СанПиН</span><strong>Крафт-пакет ГП-10, пилка 180/240, баф</strong></div>
+              <div class="mt-journey-proof-row"><span>Допродажа</span><strong>Сухое масло для кутикулы с пипеткой</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Оплата, автосписание расходников и приглашение на коррекцию через 18 дней</h3>
+              <p>Администратор закрывает чек: крафт-пакет и масло списываются со склада, мастеру начисляется 45% за работу и 15% с масла, а через 18 дней гостье придет приглашение обновить покрытие.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #9342</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Сумма чека</span><strong>3 400 ₽ услуги + 650 ₽ масло</strong></div>
+              <div class="mt-journey-proof-row"><span>Склад и зарплата</span><strong>Расходники списаны · Мастеру 1 627 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий контакт</span><strong>Автоприглашение через 18 дней</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии маникюра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии ногтевого сервиса</div>
+            <h2 class="mt-case-title">Екатерина Белова, владелица ногтевой студии «MonAmie Nails» (8 столов маникюра, 4 кресла педикюра, Санкт-Петербург)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше из-за опозданий на 15–20 минут и неправильно выбранного клиентом времени на дизайн (записалась на нюд, а захотела сложный френч) у нас постоянно сдвигался график, а мастера задерживались до полуночи. В Молнии мы настроили пошаговый выбор услуг в виджете записи и жесткие напоминания за 2 часа с подтверждением. График стал работать минута в минуту, а возвращаемость через 3 недели выросла на 28%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Екатерина Белова <span>· Владелица студии ногтевого сервиса «MonAmie Nails», <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0</span>
+              <span class="mt-case-label">Сдвигов графика благодаря точному учету времени снятия и сложности дизайна</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-88%</span>
+              <span class="mt-case-label">Неявок и опозданий благодаря сервисным напоминаниям в Telegram и WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+28%</span>
+              <span class="mt-case-label">Повторных визитов через 18–21 день по умной автоворонке носки покрытия</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NAILS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий маникюра</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -15929,7 +16440,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -15956,6 +16467,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для студий маникюра и ногтевого сервиса",
+        "slug": "nails",
+        "description": "Программа для ногтевых студий: запись в 4 руки, учет снятия и дизайна, расписание столов и реклайнеров, напоминания в мессенджерах за 0 ₽ и склад гель-лаков.",
+        "pub_date": datetime(2026, 11, 13, 21, 30, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для барбершопов и мужских парикмахерских",
         "slug": "barbershop",
@@ -24520,6 +25038,11 @@ def main():
     barbershop_html = build_barbershop_page()
     (ROOT_DIR / "barbershop.html").write_text(barbershop_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'barbershop.html'}")
+
+    print("Building sector landing page: /nails...")
+    nails_html = build_nails_page()
+    (ROOT_DIR / "nails.html").write_text(nails_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'nails.html'}")
 
     print("Building sector landing page: /photostudios...")
     photostudios_html = build_photostudios_page()
