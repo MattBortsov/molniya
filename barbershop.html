@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>CRM для барбершопа: программа и онлайн-запись в мужскую парикмахерскую</title>
+  <meta name="description" content="Программа для барбершопа: онлайн-запись клиентов 24/7, расписание кресел, напоминания в мессенджерах за 0 ₽, склад мужской косметики и зарплата барберов.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://molniya-tech.ru/barbershop">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="CRM для барбершопа: программа и онлайн-запись в мужскую парикмахерскую">
+  <meta property="og:description" content="Программа для барбершопа: онлайн-запись клиентов 24/7, расписание кресел, напоминания в мессенджерах за 0 ₽, склад мужской косметики и зарплата барберов.">
+  <meta property="og:url" content="https://molniya-tech.ru/barbershop">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM для барбершопа: программа и онлайн-запись в мужскую парикмахерскую">
+  <meta name="twitter:description" content="Программа для барбершопа: онлайн-запись клиентов 24/7, расписание кресел, напоминания в мессенджерах за 0 ₽, склад мужской косметики и зарплата барберов.">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"}, {"@type": "ListItem", "position": 2, "name": "Красота", "item": "https://molniya-tech.ru/beauty"}, {"@type": "ListItem", "position": 3, "name": "CRM для барбершопов", "item": "https://molniya-tech.ru/barbershop"}]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Молния Тех — онлайн-запись и CRM для барбершопов", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, iOS, Android, macOS, Windows", "url": "https://molniya-tech.ru/barbershop", "description": "Программа для барбершопа: онлайн-запись клиентов 24/7, расписание кресел, напоминания в мессенджерах за 0 ₽, склад мужской косметики и зарплата барберов.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB", "description": "Бесплатный демо-доступ и настройка расписания кресел барбершопа"}, "publisher": {"@type": "Organization", "name": "ООО «МОЛНИЯ ТЕХ»", "url": "https://molniya-tech.ru"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как клиенты записываются в барбершоп через Молнию?", "acceptedAnswer": {"@type": "Answer", "text": "Вы получаете персональную страницу онлайн-записи и виджет для сайта, карт (Яндекс, 2ГИС) и соцсетей. Клиент выбирает удобный филиал, услугу (стрижка, моделирование бороды опасной бритвой, камуфляж седины), мастера по грейду (Junior, Barber, Top Barber) и свободный слот. Бронирование занимает 40 секунд без регистрации и скачивания приложений, а запись мгновенно появляется в электронном журнале администратора."}}, {"@type": "Question", "name": "Как настроить разную длительность услуг под грейды мастеров?", "acceptedAnswer": {"@type": "Answer", "text": "Для каждой услуги и каждого барбера можно задать индивидуальный хронометраж и стоимость. Например, Top Barber выполняет стрижку Fade за 45 минут, а Junior Barber — за 60 минут. Система учитывает эти настройки в сетке расписания, исключая пересечения и накладки по креслам."}}, {"@type": "Question", "name": "Сколько стоят напоминания клиентам в мессенджеры и как они снижают неявки?", "acceptedAnswer": {"@type": "Answer", "text": "Сервисные напоминания в мессенджерах (Telegram, WhatsApp) отправляются за 0 ₽ — без абонентской платы и без скрытых тарифов за каждое сообщение. Бот присылает подтверждение записи сразу, а затем напоминает за 24 часа и 2 часа до визита с кнопками «Подтверждаю» и «Перенести». Неявки мужчин падают на 80–85%, а барбершоп экономит от 8 000 до 18 000 ₽ в месяц на SMS."}}, {"@type": "Question", "name": "Как работает автоворонка повторных визитов по циклу мужской стрижки?", "acceptedAnswer": {"@type": "Answer", "text": "Мужская стрижка и форма бороды требуют коррекции каждые 14–21 день. Система фиксирует средний интервал посещений каждого клиента и через заданный срок (например, на 18-й день) автоматически отправляет персональное ненавязчивое сообщение с предложением обновить стрижку. Это увеличивает возвращаемость постоянных гостей на 20–25% без затрат на рекламу."}}, {"@type": "Question", "name": "Как устроен складской учёт мужской косметики и расходных материалов?", "acceptedAnswer": {"@type": "Answer", "text": "При продаже домашнего ухода (помады, матовые глины, солевые спреи, масла для бороды брендов Reuzel, Uppercut, Morgans) товар автоматически списывается со склада в момент пробития чека. Расходники для бритья (одноразовые лезвия, пена, крем после бритья, полотенца, барбицид) списываются по технологическим картам услуг."}}, {"@type": "Question", "name": "Как рассчитывается сдельная зарплата барберов и процент с продаж?", "acceptedAnswer": {"@type": "Answer", "text": "В профиле каждого мастера настраивается гибкая мотивация: например, 40–50% от чека за стрижки и бритьё, плюс 10–15% от проданной мужской косметики. Мастер видит в телефоне свой заработок за смену и месяц в реальном времени, что исключает споры на пересменке и мотивирует рекомендовать средства для ухода."}}, {"@type": "Question", "name": "Как бесплатно перенести базу клиентов и историю из YClients, DIKIDI или Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Служба заботы Молнии бесплатно переносит контакты клиентов, историю стрижек, прайс-лист и график работы мастеров из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает около 15 минут и проходит бесшовно: ваши клиенты продолжают записываться без пауз и потери данных."}}]}]</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+      <!-- NAV -->
+      <nav class="mt-nav">
+        <div class="mt-nav-inner">
+          <a class="mt-brand" href="/">
+            <img class="mt-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+          </a>
+
+          <ul class="mt-nav-links">
+            <li class="mt-nav-item mt-nav-item--dropdown">
+              <button class="mt-nav-link mt-nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                Для кого
+                <svg class="mt-nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="mt-dropdown-menu" role="menu">
+                <div class="mt-dropdown-grid">
+              <a class="mt-dropdown-card" href="/auto" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Автобизнес</div>
+                  <div class="mt-dropdown-desc">Автомойки, детейлинг, автосервисы, шиномонтаж</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card mt-dropdown-card--active" href="/beauty" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Красота</div>
+                  <div class="mt-dropdown-desc">Салоны красоты, барбершопы, ногтевые студии</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/health" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Здоровье</div>
+                  <div class="mt-dropdown-desc">Клиники, массаж, частные кабинеты, спа</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/spaces" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M15 15h1"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Аренда пространств</div>
+                  <div class="mt-dropdown-desc">Коворкинги, спортивные площадки, залы, лофты</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/photostudios" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Фотостудии</div>
+                  <div class="mt-dropdown-desc">Интерьерные студии, циклорамы, видеопавильоны, гримерки</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/cleaning" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Клининг</div>
+                  <div class="mt-dropdown-desc">Уборка квартир и офисов, химчистка мебели, мойка окон</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/education" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Образование</div>
+                  <div class="mt-dropdown-desc">Курсы, студии танцев, языковые школы, секции</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/pets" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="7" cy="19" r="2"/><path d="M12 10a4 4 0 0 0-4 4c0 2.2 1.8 4 4 4s4-1.8 4-4a4 4 0 0 0-4-4z"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Груминг-салоны</div>
+                  <div class="mt-dropdown-desc">Запись к грумерам, карточки питомцев, расписание</div>
+                </div>
+              </a>
+              <a class="mt-dropdown-card" href="/repair" role="menuitem">
+                <div class="mt-dropdown-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></div>
+                <div class="mt-dropdown-info">
+                  <div class="mt-dropdown-title">Ремонт и сервис</div>
+                  <div class="mt-dropdown-desc">Сервисные центры, ремонт техники, ателье</div>
+                </div>
+              </a>
+                </div>
+                <div class="mt-dropdown-footer">
+                  <div class="mt-dropdown-footer-text">
+                    <span class="mt-dropdown-footer-icon">⚡</span>
+                    <span>Не нашли свою сферу? Молния гибко адаптируется под любой бизнес</span>
+                  </div>
+                  <a class="mt-dropdown-footer-link" href="https://t.me/molniya_tex" target="_blank" rel="noopener">Написать в мессенджер →</a>
+                </div>
+              </div>
+            </li>
+            <li><a class="mt-nav-link" href="/#how-it-works">Как это работает</a></li>
+            <li><a class="mt-nav-link" href="/#features">Функции</a></li>
+            <li><a class="mt-nav-link" href="/pricing">Тарифы</a></li>
+            <li><a class="mt-nav-link" href="/about">О компании</a></li>
+            <li><a class="mt-nav-link" href="/blog">Блог</a></li>
+          </ul>
+
+          <div class="mt-nav-actions">
+            <a class="mt-nav-phone" href="tel:+78127242124" aria-label="Позвонить: 8 (812) 724-21-24">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>8 (812) 724-21-24</span>
+            </a>
+
+            <a class="mt-btn mt-btn-nav" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+              Подписаться
+            </a>
+
+            <button class="mt-nav-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mt-mobile-menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="mt-mobile-menu" class="mt-mobile-menu">
+          <div class="mt-mobile-accordion">
+            <button class="mt-mobile-accordion-btn" type="button" aria-expanded="false">
+              <span>Для кого</span>
+              <svg class="mt-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mt-mobile-accordion-body">
+            <a class="mt-mobile-sublink" href="/auto">
+              <span class="mt-mobile-sublink-icon">🚗</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Автобизнес</strong>
+                <small>Автомойки, детейлинг, автосервисы, шиномонтаж</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink mt-mobile-sublink--highlight" href="/beauty">
+              <span class="mt-mobile-sublink-icon">✂️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Красота</strong>
+                <small>Салоны красоты, барбершопы, ногтевые студии</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/health">
+              <span class="mt-mobile-sublink-icon">🩺</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Здоровье</strong>
+                <small>Клиники, массаж, частные кабинеты, спа</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/spaces">
+              <span class="mt-mobile-sublink-icon">🏟️</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Аренда пространств</strong>
+                <small>Коворкинги, спортивные площадки, залы, лофты</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/photostudios">
+              <span class="mt-mobile-sublink-icon">📸</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Фотостудии</strong>
+                <small>Интерьерные студии, циклорамы, видеопавильоны, гримерки</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/cleaning">
+              <span class="mt-mobile-sublink-icon">✨</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Клининг</strong>
+                <small>Уборка квартир и офисов, химчистка мебели, мойка окон</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/education">
+              <span class="mt-mobile-sublink-icon">🎓</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Образование</strong>
+                <small>Курсы, студии танцев, языковые школы, секции</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/pets">
+              <span class="mt-mobile-sublink-icon">🐾</span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Груминг-салоны</strong>
+                <small>Запись к грумерам, карточки питомцев, расписание</small>
+              </span>
+            </a>
+            <a class="mt-mobile-sublink" href="/repair">
+              <span class="mt-mobile-sublink-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 19h2M13 8l-3 3 3 2-4 4 2 2"/></svg></span>
+              <span class="mt-mobile-sublink-info">
+                <strong>Ремонт и сервис</strong>
+                <small>Сервисные центры, ремонт техники, ателье</small>
+              </span>
+            </a>
+            </div>
+          </div>
+          <a class="mt-mobile-link" href="/#how-it-works">Как это работает</a>
+          <a class="mt-mobile-link" href="/#features">Функции</a>
+          <a class="mt-mobile-link" href="/pricing">Тарифы</a>
+          <a class="mt-mobile-link" href="/about">О компании</a>
+          <a class="mt-mobile-link" href="/blog">Блог</a>
+          <a class="mt-mobile-phone" href="tel:+78127242124">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>8 (812) 724-21-24</span>
+          </a>
+          <a class="mt-btn mt-btn-hero mt-mobile-cta" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"></path></svg>
+            Подписаться в мессенджере
+          </a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для барбершопа:<br><span class="mt-hero-accent">онлайн-запись и расписание кресел</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, журнал загрузки кресел по грейдам мастеров, напоминания без переплат за SMS, учёт косметики и сдельная зарплата барберов</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для барбершопов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сетка кресел</span>
+                <span class="mt-facet-note">интервалы 30, 45 и 60 минут</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Запись 24/7</span>
+                <span class="mt-facet-note">в мессенджерах за 2 клика</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp без SMS</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Склад косметики</span>
+                <span class="mt-facet-note">автосписание глин и помад</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для барбершопа: расписание кресел и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронный журнал барбершопа: занятость кресел и график мастеров в реальном времени</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE CHAIRS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость кресел" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждое кресло, барбер и запись <span class="mt-overview-hook">под вашим контролем</span></h2>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого рабочего места, время окончания стрижки и запланированные визиты с любого устройства.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кресло 1 · Top Barber Денис</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Александр К. · Постоянный клиент</div>
+                <div class="mt-auto-car-tier">Стрижка Fade + борода опасной бритвой</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💈</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс «Стрижка и борода»</span>
+              <span class="mt-auto-price">3 200 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кресло 2 · Barber Михаил</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Артем Р. · Онлайн-запись из TG</div>
+                <div class="mt-auto-car-tier">Мужская стрижка + камуфляж седины</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Стрижка + камуфляж</span>
+              <span class="mt-auto-price">2 600 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кресло 3 · Junior Barber Артем</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Дмитрий С. (16:30)</div>
+                <div class="mt-auto-car-tier">Стрижка машинкой + укладка Reuzel Clay</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💈</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Fade машинкой (2 насадки)</span>
+              <span class="mt-auto-price">1 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BARBERSHOP OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для барбершопов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте барбершопом <span class="mt-overview-hook">без накладок, путаницы и переплат за SMS</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание кресел по грейдам мастеров, онлайн-запись 24/7 в мессенджерах, склад косметики и прозрачный расчет сдельной зарплаты.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Журнал записи по креслам и грейдам <span class="mt-overview-hook">без накладок и задержек</span></h3>
+            <p>Настраивайте интервалы под каждого мастера: 30 минут для быстрой стрижки машинкой, 45 минут для фейда и 60 минут для королевского бритья с распариванием полотенцем. Учитывайте время на дезинфекцию инструмента в барбициде.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кресел</span><span>Грейды барберов</span></div>
+              <div class="mt-overview-calendar"><span>11:00</span><div class="mt-overview-slot">Кресло 1: Fade + борода <small>Top Barber Денис</small></div><span>11:45</span><div class="mt-overview-slot mt-overview-slot--light">Кресло 2: Камуфляж <small>Barber Михаил</small></div><span>12:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись в Telegram и WhatsApp <span class="mt-overview-hook">за 2 клика без приложений</span></h3>
+            <p>Короткая ссылка для шапки профиля, карт Яндекс и 2ГИС или сайта. Клиент выбирает филиал, кресло, грейд барбера (Junior, Barber, Top Barber) и удобный слот за 40 секунд. Запись сразу резервируется в журнале.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись</span><span>Доступно 24/7</span></div>
+              <div class="mt-overview-price-row"><span>Стрижка Fade + борода</span><strong>60 мин · Top Barber Денис</strong></div>
+              <div class="mt-overview-price-row"><span>Быстрая ссылка для Telegram</span><strong>Запись без скачивания приложений</strong></div>
+              <div class="mt-overview-price-tag">Клиенты записываются сами в любое время</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания в мессенджеры за 0 ₽ <span class="mt-overview-hook">вместо разорительных SMS</span></h3>
+            <p>Бот отправляет напоминание за 24 и 2 часа до визита с кнопками «Подтверждаю» и «Перенести». Мужчины не забывают о стрижке, неявки падают на 82%, а вы не тратите по 5–7 ₽ на каждое SMS.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание о визите</span><span>Без переплат</span></div>
+              <div class="mt-overview-message">
+                Александр, напоминаем о записи: Fade + борода завтра в 11:00, Top Barber Денис. Ждём вас!
+                <span class="mt-overview-reaction">💈</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Сервисные уведомления 0 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автоворонка повторных визитов <span class="mt-overview-hook">по циклу мужской стрижки 14–21 день</span></h3>
+            <p>Мужчины стригутся регулярно, но забывают записаться заранее. Система фиксирует средний цикл каждого гостя и автоматически отправляет напоминание: «Иван, прошло 18 дней, пора обновить фейд и контуры бороды».</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоворонка возврата</span><span>Цикл стрижки</span></div>
+              <div class="mt-overview-stages"><span>Визит #1</span><i></i><span>18 дней</span><i></i><span>Автонапоминание</span></div>
+              <div class="mt-overview-check">✓ <span>Клиент получает приглашение вовремя</span></div>
+              <div class="mt-overview-check">✓ <span>Возвращаемость постоянных гостей +24%</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад мужской косметики и зарплата барберов <span class="mt-overview-hook">в телефоне мастера</span></h3>
+            <p>Помады, матовые глины, солевые спреи и масла для бороды списываются со склада при продаже на кассе. Барбер прямо в телефоне видит свой баланс смены: процент за стрижки (40–50%) и комиссию с косметики.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена мастера</span><span>Top Barber Денис</span></div>
+              <div class="mt-overview-metrics"><span>Стрижки<b>6</b></span><span>Косметика<b>2 шт</b></span><span>Зарплата<b>8 400 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- BARBERSHOP JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь гостя в барбершоп">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиента. <span class="mt-hero-accent">Полный цикл без суеты администратора.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния ведет клиента от записи на стрижку в Telegram до списания глины на кассе и напоминания обновить фейд через 2 недели.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Комплекс «Стрижка Fade + моделирование бороды опасной бритвой»</strong><span>Длительность 60 минут · Top Barber Денис · Кресло №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Онлайн-запись через Telegram или виджет на картах за 40 секунд</h3>
+              <p>Гость открывает страницу записи по ссылке из профиля, выбирает комплекс «Стрижка + борода», Top Barber Дениса и видит только реальные свободные слоты.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование стрижки</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Александр К.</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуга</span><strong>Стрижка Fade + борода (60 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Кресло и время</span><strong>Кресло №1 · Пятница, 11:00 – 12:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Фиксация в журнале и напоминание в мессенджер за 0 ₽</h3>
+              <p>Слот резервируется в расписании кресла №1. За 24 часа и за 2 часа гость получает напоминание в Telegram с адресом барбершопа и кнопкой подтверждения.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уведомление #4182</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Кресло 1, Top Barber Денис, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Подтверждено клиентом кнопкой</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Барбер</span>
+              <h3>Приём клиента, качественная стрижка и рекомендация ухода</h3>
+              <p>Мастер открывает карточку в телефоне: видит предпочтения по стрижке, тип кожи и любимый стайлинг. После моделирования бороды мастер рекомендует матовую глину Reuzel.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка стрижки">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Визит в работе</span>
+                <span class="mt-journey-proof-badge">В кресле</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Денис (Top Barber)</strong></div>
+              <div class="mt-journey-proof-row"><span>Техкарта</span><strong>Лезвие Feather, распаривание, крем Proraso</strong></div>
+              <div class="mt-journey-proof-row"><span>Допродажа</span><strong>Матовая глина Reuzel Clay Matte Pomade</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Оплата, списание глины со склада и автоприглашение через 18 дней</h3>
+              <p>Администратор закрывает чек: глина списывается со склада, барберу начисляется процент с работы (45%) и бонус с продажи (10%), а через 18 дней гость получит автонапоминание обновить стрижку.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #8914</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Сумма чека</span><strong>3 200 ₽ услуги + 1 800 ₽ глина</strong></div>
+              <div class="mt-journey-proof-row"><span>Склад и зарплата</span><strong>Глина списана · Мастеру начислено 1 620 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий контакт</span><strong>Автоприглашение через 18 дней</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс сети барбершопов" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс сети барбершопов</div>
+            <h2 class="mt-case-title">Артем Казарян, управляющий сети барбершопов «TopFade» (3 филиала, 14 кресел, Москва)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше администраторы тратили по 3 часа в день на переписки и звонки с подтверждением записи, а каждый месяц мы отдавали больше 18 000 ₽ только за пакеты SMS-напоминаний. Перейдя на Молнию, перевели все напоминания в мессенджеры за 0 ₽ — неявки упали в 5 раз. А автоматические напоминания постоянным клиентам через 18–20 дней после стрижки подняли возвращаемость на 24% без скидок и рекламы.»
+            </blockquote>
+            <div class="mt-case-author">
+              Артем Казарян <span>· Управляющий сети барбершопов «TopFade», <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-82%</span>
+              <span class="mt-case-label">Снижение неявок благодаря напоминаниям в Telegram и WhatsApp с кнопкой подтверждения</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные сервисные уведомления и напоминания в мессенджеры</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+24%</span>
+              <span class="mt-case-label">Рост повторных записей благодаря умной автоворонке по циклу стрижки 14–21 день</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BARBERSHOP FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для барбершопов</h2>
+        </div>
+        <div class="mt-before-start-questions">
+            <details open><summary>Как клиенты записываются в барбершоп через Молнию?</summary><p>Вы получаете персональную страницу онлайн-записи и виджет для сайта, карт (Яндекс, 2ГИС) и соцсетей. Клиент выбирает удобный филиал, услугу (стрижка, моделирование бороды опасной бритвой, камуфляж седины), мастера по грейду (Junior, Barber, Top Barber) и свободный слот. Бронирование занимает 40 секунд без регистрации и скачивания приложений, а запись мгновенно появляется в электронном журнале администратора.</p></details>
+            <details open><summary>Как настроить разную длительность услуг под грейды мастеров?</summary><p>Для каждой услуги и каждого барбера можно задать индивидуальный хронометраж и стоимость. Например, Top Barber выполняет стрижку Fade за 45 минут, а Junior Barber — за 60 минут. Система учитывает эти настройки в сетке расписания, исключая пересечения и накладки по креслам.</p></details>
+            <details open><summary>Сколько стоят напоминания клиентам в мессенджеры и как они снижают неявки?</summary><p>Сервисные напоминания в мессенджерах (Telegram, WhatsApp) отправляются за 0 ₽ — без абонентской платы и без скрытых тарифов за каждое сообщение. Бот присылает подтверждение записи сразу, а затем напоминает за 24 часа и 2 часа до визита с кнопками «Подтверждаю» и «Перенести». Неявки мужчин падают на 80–85%, а барбершоп экономит от 8 000 до 18 000 ₽ в месяц на SMS.</p></details>
+            <details open><summary>Как работает автоворонка повторных визитов по циклу мужской стрижки?</summary><p>Мужская стрижка и форма бороды требуют коррекции каждые 14–21 день. Система фиксирует средний интервал посещений каждого клиента и через заданный срок (например, на 18-й день) автоматически отправляет персональное ненавязчивое сообщение с предложением обновить стрижку. Это увеличивает возвращаемость постоянных гостей на 20–25% без затрат на рекламу.</p></details>
+            <details open><summary>Как устроен складской учёт мужской косметики и расходных материалов?</summary><p>При продаже домашнего ухода (помады, матовые глины, солевые спреи, масла для бороды брендов Reuzel, Uppercut, Morgans) товар автоматически списывается со склада в момент пробития чека. Расходники для бритья (одноразовые лезвия, пена, крем после бритья, полотенца, барбицид) списываются по технологическим картам услуг.</p></details>
+            <details open><summary>Как рассчитывается сдельная зарплата барберов и процент с продаж?</summary><p>В профиле каждого мастера настраивается гибкая мотивация: например, 40–50% от чека за стрижки и бритьё, плюс 10–15% от проданной мужской косметики. Мастер видит в телефоне свой заработок за смену и месяц в реальном времени, что исключает споры на пересменке и мотивирует рекомендовать средства для ухода.</p></details>
+            <details open><summary>Как бесплатно перенести базу клиентов и историю из YClients, DIKIDI или Excel?</summary><p>Служба заботы Молнии бесплатно переносит контакты клиентов, историю стрижек, прайс-лист и график работы мастеров из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает около 15 минут и проходит бесшовно: ваши клиенты продолжают записываться без пауз и потери данных.</p></details>
+
+        </div>
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="mt-section mt-section--lead mt-reveal" id="contact" data-screen-label="Бесплатный доступ" data-mt-reveal>
+        <div class="mt-lead">
+          <h2 class="mt-lead-title">Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для барбершопа</h2>
+          <p class="mt-lead-sub">Оставьте контакты — покажем Молнию на примере вашего барбершопа, поможем настроить расписание кресел, прайс-лист и онлайн-запись.</p>
+          <form class="mt-lead-form" data-lead-form data-lead-source="barbershop">
+            <div class="mt-lead-fields">
+              <label class="mt-lead-field" for="lead-name">Имя<input id="lead-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required></label>
+              <label class="mt-lead-field" for="lead-email">Почта<input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required></label>
+              <label class="mt-lead-field" for="lead-phone">Телефон<input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 999 123-45-67" required></label>
+            </div>
+            <div class="mt-lead-honeypot" aria-hidden="true"><label for="lead-website">Сайт</label><input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="mt-lead-consent"><input name="consent" type="checkbox" required><span>Я даю своё согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
+            <button class="mt-btn mt-btn-cta mt-lead-submit" type="submit">Получить бесплатный доступ</button>
+            <p class="mt-lead-status" data-lead-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-footer">
+        <div class="mt-footer-inner">
+          <div class="mt-footer-brand-col">
+            <div class="mt-footer-brand">
+              <img class="mt-footer-brand-logo" src="/assets/img/logo/molniya-logo-horizontal.svg" width="327" height="96" alt="Молния Тех">
+            </div>
+            <p class="mt-footer-sub">Заряжает ваш бизнес на генерацию заработка</p>
+            <p class="mt-footer-legal">ООО «МОЛНИЯ ТЕХ» · ИНН 7806637461 · ОГРН 1267800068458 · Санкт-Петербург</p>
+          </div>
+          <nav class="mt-footer-nav" aria-label="Разделы сайта">
+            <div class="mt-footer-nav-group">
+              <h3>Для кого</h3>
+              <a class="mt-footer-link" href="/auto">Автобизнес</a>
+              <a class="mt-footer-link" href="/beauty">Красота</a>
+              <a class="mt-footer-link" href="/health">Здоровье</a>
+              <a class="mt-footer-link" href="/spaces">Аренда пространств</a>
+              <a class="mt-footer-link" href="/photostudios">Фотостудии</a>
+              <a class="mt-footer-link" href="/cleaning">Клининг</a>
+              <a class="mt-footer-link" href="/education">Образование</a>
+              <a class="mt-footer-link" href="/pets">Груминг-салоны</a>
+              <a class="mt-footer-link" href="/repair">Ремонт и сервис</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Компания</h3>
+              <a class="mt-footer-link" href="/#how-it-works">Как это работает</a>
+              <a class="mt-footer-link" href="/#features">Функции</a>
+              <a class="mt-footer-link" href="/pricing">Тарифы</a>
+              <a class="mt-footer-link" href="/about">О компании</a>
+              <a class="mt-footer-link" href="/#beta">Бета-тестирование</a>
+              <a class="mt-footer-link" href="/blog">Блог</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3><a class="mt-footer-heading-link" href="/tools">Инструменты</a></h3>
+              <a class="mt-footer-link" href="/tools/qr">Генератор QR-кодов</a>
+              <a class="mt-footer-link" href="/tools/pricelist">Конструктор прайс-листов</a>
+              <a class="mt-footer-link" href="/tools/salary">Калькулятор зарплат</a>
+              <a class="mt-footer-link" href="/tools/acquiring">Калькулятор эквайринга</a>
+              <a class="mt-footer-link" href="/tools/inn">Проверка по ИНН</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Информация</h3>
+              <a class="mt-footer-link" href="/requisites">Реквизиты</a>
+              <a class="mt-footer-link" href="/privacy">Конфиденциальность</a>
+              <a class="mt-footer-link" href="/terms">Пользовательское соглашение</a>
+            </div>
+            <div class="mt-footer-nav-group">
+              <h3>Контакты</h3>
+              <a class="mt-footer-link mt-footer-contact-item" href="tel:+78127242124">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>8 (812) 724-21-24</span>
+              </a>
+              <a class="mt-footer-link mt-footer-contact-item" href="mailto:info@molniya-tech.ru">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@molniya-tech.ru</span>
+              </a>
+              <div class="mt-footer-socials" aria-label="Социальные сети">
+                <a class="mt-footer-social-btn" href="https://t.me/molniya_tex" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram @molniya_tex">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+                </a>
+                <a class="mt-footer-social-btn" href="https://www.linkedin.com/company/molniya-tech" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 0 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-footer-bottom">
+          <p class="mt-footer-copy">© 2026 ООО «МОЛНИЯ ТЕХ»</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
