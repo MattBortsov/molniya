@@ -2668,6 +2668,510 @@ def build_nails_page() -> str:
     return page_html
 
 
+def build_massage_page() -> str:
+    """Builds the complete massage and spa salon micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="health", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "massage",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для массажного салона',
+        "Оставьте контакты — покажем Молнию на примере вашей студии, поможем настроить расписание кабинетов, учет абонементов и онлайн-запись.",
+    )
+
+    title = "CRM для массажного салона: программа и онлайн-запись на массаж и SPA"
+    description = (
+        "Программа для массажного салона и студии коррекции фигуры: онлайн-запись клиентов 24/7, "
+        "учет курсов и абонементов, расписание кабинетов, напоминания за 0 ₽."
+    )
+    canonical = "https://molniya-tech.ru/massage"
+
+    faqs = [
+        (
+            "Как клиенты записываются на массаж и спа-программы через Молнию?",
+            "Вы получаете персональную страницу онлайн-записи и виджет для соцсетей, сайта и карт (Яндекс, 2ГИС). Клиент выбирает вид массажа (общий классический, спортивный, лимфодренажный, антицеллюлитный, аппаратный или парный для двоих), мастера и удобное время. Система автоматически учитывает длительность сеанса (60, 90 или 120 минут) и обязательный буфер на отдых и подготовку кабинета.",
+        ),
+        (
+            "Как вести учет курсов процедур и абонементов (на 5, 10 или 15 сеансов)?",
+            "В профиле клиента создается абонемент с фиксацией типа курса, количества оплаченных сеансов, срока действия и условий заморозки. При отметке визита сеанс автоматически списывается с баланса, а клиент получает уведомление об остатке занятий и рекомендованной дате следующей процедуры.",
+        ),
+        (
+            "Как настроить буферное время между сеансами на проветривание, душ и смену белья?",
+            "К каждой услуге можно привязать обязательный технологический перерыв (например, 15–20 минут). Программа автоматически резервирует это время в расписании кабинета: гость успевает спокойно принять душ, массажист меняет одноразовую простынь и проветривает помещение, а следующий клиент не ждет в коридоре.",
+        ),
+        (
+            "Как работает онлайн-запись на парный массаж и спа-программы для двоих?",
+            "Для услуги «массаж для двоих» программа синхронизирует занятость двух массажистов и двухместного спа-кабинета. Клиенты бронируют одновременный сеанс в один клик без долгих телефонных согласований с администратором.",
+        ),
+        (
+            "Где фиксируются противопоказания по здоровью и зоны повышенного внимания?",
+            "В форму онлайн-записи можно включить мини-анкету (наличие варикоза, травм, гипертонии, беременность) или заполнить анамнез при первом визите. Массажист видит эти медицинские пометки в карточке записи со своего смартфона до начала процедуры.",
+        ),
+        (
+            "Как работает автоворонка реактивации клиентов при паузе в курсе более 14 дней?",
+            "Для эффекта от моделирующего, антицеллюлитного или лечебного массажа важна регулярность с шагом 2–4 дня. Если клиент не записывался дольше 10–14 дней, бот отправляет персональное заботливое напоминание: «Игорь, для закрепления результата рекомендуем продолжить курс массажа, выберите удобный слот». Это возвращает до 32% «уснувших» клиентов.",
+        ),
+        (
+            "Как бесплатно перенести базу клиентов, остатки абонементов и график из YClients или Excel?",
+            "Служба заботы Молнии бесплатно переносит базу контактов, действующие абонементы с остатками процедур, прайс-лист и смены массажистов из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает около 15 минут без сбоев в записи.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Здоровье и медицина", "item": "https://molniya-tech.ru/health"},
+                {"@type": "ListItem", "position": 3, "name": "CRM для массажных салонов", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для массажных салонов и SPA",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания кабинетов массажа",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для массажного салона:<br><span class="mt-hero-accent">онлайн-запись и расписание кабинетов</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, расписание кабинетов со свободными кушетками, учёт абонементов на курсы, автонапоминания за 0 ₽ и реактивация клиентов</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для массажных салонов">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Кабинеты и кушетки</span>
+                <span class="mt-facet-note">буфер 15–20 мин на душ и смену белья</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Курсы и абонементы</span>
+                <span class="mt-facet-note">автосписание сеансов и контроль сроков</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp без переплат за SMS</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Спа для двоих</span>
+                <span class="mt-facet-note">синхронизация двух мастеров в кабинете</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для массажного салона: расписание кабинетов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронное расписание массажного салона: занятость кабинетов, кушеток и курсы процедур</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE ROOMS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость кабинетов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый кабинет, массажист и сеанс <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор видит в реальном времени статус каждого кабинета: сеанс в процессе, душ гостя, подготовка кушетки или парный спа-комплекс.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 1 · Мастер Михаил</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Игорь В. · Курс «Здоровая спина»</div>
+                <div class="mt-auto-car-tier">Сеанс 6 из 10 · Миофасциальный массаж спины</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">💆‍♂️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Лечебный массаж спины (60 мин)</span>
+              <span class="mt-auto-price">По абонементу</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 2 · Мастер Екатерина</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Буфер</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Технический перерыв</div>
+                <div class="mt-auto-car-tier">Душ гостя, проветривание, смена одноразового белья</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Буферное время (15 мин)</span>
+              <span class="mt-auto-price">В графике</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Спа-люкс · Михаил и Анна</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Дмитрий и Елена (17:00)</div>
+                <div class="mt-auto-car-tier">Парный аромамассаж для двоих с фитобочкой</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🌿</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>СПА «Релакс для двоих»</span>
+              <span class="mt-auto-price">9 800 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MASSAGE OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для массажных салонов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте массажным салоном <span class="mt-overview-hook">без очередей, пропущенных курсов и переплат за SMS</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание кабинетов с обязательным буфером на отдых, учет курсовых абонементов, автонапоминания и прозрачный расчет сдельной зарплаты.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Шахматка кабинетов и буферное время <span class="mt-overview-hook">без очередей у входа</span></h3>
+            <p>Программа автоматически закладывает технический перерыв (15–20 минут) после каждого массажа. Клиент успевает принять душ и выпить травяной чай, мастер меняет простынь и проветривает помещение, а следующий гость не ждет в коридоре.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кабинетов</span><span>Буфер на отдых</span></div>
+              <div class="mt-overview-calendar"><span>11:00</span><div class="mt-overview-slot">Кабинет 1: Спина 60м <small>Мастер Михаил</small></div><span>12:00</span><div class="mt-overview-slot mt-overview-slot--light">Буфер 15 мин <small>Душ и проветривание</small></div><span>12:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт курсовых абонементов и заморозок <span class="mt-overview-hook">в карточке клиента</span></h3>
+            <p>Продавайте блоки по 5, 10 или 15 процедур с разной скидкой. Система автоматически списывает пройденный сеанс, фиксирует остаток посещений, противопоказания по здоровью и предупреждает об окончании срока действия абонемента.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Абонемент на курс</span><span>Игорь В.</span></div>
+              <div class="mt-overview-stages"><span>Курс 10</span><i></i><span>Пройдено 6</span><i></i><span>Остаток 4</span></div>
+              <div class="mt-overview-check">✓ <span>Сеанс списывается автоматически в один клик</span></div>
+              <div class="mt-overview-check">✓ <span>История зон и противопоказаний сохранена</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания в мессенджеры за 0 ₽ <span class="mt-overview-hook">вместо дорогих SMS</span></h3>
+            <p>Бот отправляет подтверждение записи сразу, а накануне визита напоминает время, кабинет и имя мастера в Telegram и WhatsApp. Гость не забудет о сеансе, неявки снижаются на 85%, а салон экономит до 15 000 ₽ в месяц на SMS.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание о сеансе</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Игорь, напоминаем о сеансе массажа спины завтра в 11:00, Кабинет 1, мастер Михаил. Ждём вас!
+                <span class="mt-overview-reaction">💆‍♂️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Сервисные уведомления 0 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автоворонка реактивации клиентов <span class="mt-overview-hook">при перерыве в курсе более 10–14 дней</span></h3>
+            <p>Если гость прервал курс антицеллюлитного или оздоровительного массажа, бот автоматически присылает персональное заботливое сообщение: «Алексей, прошло 12 дней с прошлого сеанса, для стойкого эффекта пора продолжить курс».</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоворонка курса</span><span>Реактивация</span></div>
+              <div class="mt-overview-price-row"><span>Перерыв 12 дней</span><strong>Автоматическое сообщение ботом</strong></div>
+              <div class="mt-overview-price-row"><span>Завершаемость курсов</span><strong>Вырастает до 84% без звонков</strong></div>
+              <div class="mt-overview-price-tag">Возвращает до 32% «уснувших» клиентов</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад масел, спа-расходников <span class="mt-overview-hook">и сдельная зарплата мастеров</span></h3>
+            <p>Одноразовые простыни, бикини, шапочки и масла (миндальное, виноградное) списываются по технологическим картам сеансов. Массажист прямо в телефоне видит свою сдельную выработку (40–50% от чека) и комиссию с проданных абонементов.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена мастера</span><span>Мастер Михаил</span></div>
+              <div class="mt-overview-metrics"><span>Сеансы<b>5</b></span><span>Абонементы<b>1 продан</b></span><span>Зарплата<b>9 200 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- MASSAGE JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиента в массажный салон">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиента. <span class="mt-hero-accent">Полный релакс без суеты администратора.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в массажный салон: от онлайн-бронирования в Telegram до списания сеанса с абонемента и автоматического буфера на душ.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Курс «Здоровая спина: миофасциальный массаж спины и ШВЗ»</strong><span>Длительность 60 минут + 15 минут буфер · Мастер Михаил · Кабинет №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Онлайн-запись через Telegram или виджет за 40 секунд</h3>
+              <p>Гость переходит по ссылке из профиля, выбирает массаж спины, мастера Михаила и видит только реальные свободные слоты с учетом времени на подготовку.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование массажа</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Игорь В.</strong></div>
+              <div class="mt-journey-proof-row"><span>Программа</span><strong>Массаж спины и ШВЗ (60 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Кабинет и время</span><strong>Кабинет №1 · Среда, 11:00 – 12:00</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Резерв кабинета №1, запуск буфера 15 минут и напоминание за 0 ₽</h3>
+              <p>Система бронирует кушетку и автоматически блокирует следующие 15 минут на душ и смену белья. За 24 часа и за 2 часа гость получает напоминание в Telegram.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уведомление #6104</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Кабинет 1, мастер Михаил, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Буфер</span><strong>15 минут на душ заложено в графике</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Массажист</span>
+              <h3>Ознакомление с противопоказаниями в телефоне, процедура и чай</h3>
+              <p>Мастер открывает карточку в телефоне: видит пометку о сидячей работе и зажимах в трапециях. Проводит сеанс с миндальным маслом, после чего гость принимает душ.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка сеанса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сеанс в работе</span>
+                <span class="mt-journey-proof-badge">В кабинете</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Михаил (Специалист по медмассажу)</strong></div>
+              <div class="mt-journey-proof-row"><span>Анамнез</span><strong>Триггерные точки в ШВЗ, варикоза нет</strong></div>
+              <div class="mt-journey-proof-row"><span>Масло</span><strong>Натуральное миндальное без отдушек</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Списание сеанса с абонемента, списание расходников и следующий шаг</h3>
+              <p>Администратор закрывает визит: сеанс списывается с абонемента (осталось 4 из 10), одноразовая простынь списана, массажисту начислена сдельная оплата, а в календаре зафиксирован следующий визит в пятницу.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #9872</span>
+                <span class="mt-journey-proof-badge">По абонементу</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Баланс курса</span><strong>Сеанс 6 из 10 · Остаток 4</strong></div>
+              <div class="mt-journey-proof-row"><span>Расходники</span><strong>Простынь, шапочка, масло списаны</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий сеанс</span><strong>Пятница, 11:00 (шаг 2 дня)</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс массажного салона" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии массажа и спа</div>
+            <h2 class="mt-case-title">Сергей Грачёв, основатель массажного салона «Рельеф & Спа» (6 кабинетов, Санкт-Петербург)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше курсы массажа разваливались: клиенты отхаживали 2–3 раза и пропадали на месяц, а администраторы забывали им писать. В Молнии мы настроили автонапоминания с шагом в 3 дня и автоворонку возврата, если перерыв больше 10 дней. Возвращаемость на полный курс из 10 сеансов выросла до 84%, а благодаря буферу в 15 минут между сеансами гости больше никогда не ждут в холле.»
+            </blockquote>
+            <div class="mt-case-author">
+              Сергей Грачёв <span>· Основатель массажного салона «Рельеф & Спа», <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+32%</span>
+              <span class="mt-case-label">Рост завершаемости курсов из 10 сеансов благодаря автонапоминаниям с шагом 3 дня</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные подтверждения и напоминания в Telegram и WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">100%</span>
+              <span class="mt-case-label">Соблюдение буферного времени: гости больше никогда не пересекаются в кабинете</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MASSAGE FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для массажных салонов</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
 def build_health_page() -> str:
     """Builds the complete health landing page matching the exact design system."""
     nav_html = render_nav_html(active_item="health", asset_prefix="")
@@ -3011,6 +3515,13 @@ def build_health_page() -> str:
         </div>
 
         <div class="mt-subniche-grid">
+          <a class="mt-subniche-card" href="/massage">
+            <div class="mt-subniche-icon">💆‍♂️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Массажные салоны и студии коррекции фигуры <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, учёт курсов и абонементов, расписание кабинетов, буфер на отдых мастера и напоминания за 0 ₽.</div>
+            </div>
+          </a>
           <a class="mt-subniche-card" href="/psychologist">
             <div class="mt-subniche-icon">🧠</div>
             <div class="mt-subniche-content">
@@ -16440,7 +16951,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -16467,6 +16978,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для массажных салонов и спа-студий",
+        "slug": "massage",
+        "description": "Программа для массажных салонов: расписание кабинетов, буферное время на душ и смену белья, курсовые абонементы, автонапоминания в мессенджерах за 0 ₽.",
+        "pub_date": datetime(2026, 11, 13, 21, 45, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для студий маникюра и ногтевого сервиса",
         "slug": "nails",
@@ -25043,6 +25561,11 @@ def main():
     nails_html = build_nails_page()
     (ROOT_DIR / "nails.html").write_text(nails_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'nails.html'}")
+
+    print("Building sector landing page: /massage...")
+    massage_html = build_massage_page()
+    (ROOT_DIR / "massage.html").write_text(massage_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'massage.html'}")
 
     print("Building sector landing page: /photostudios...")
     photostudios_html = build_photostudios_page()
