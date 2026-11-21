@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 21 Nov 2026 17:20:08 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 17:23:40 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Онлайн-запись и CRM для тату-студий и мастеров перманента</title>
+      <link>https://molniya-tech.ru/tattoo</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/tattoo</guid>
+      <pubDate>Sat, 21 Nov 2026 21:30:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Программа для тату-студий: онлайн-запись 24/7, бронь сеанса на день, предоплата через СБП, памятки по заживлению за 0 ₽ и склад картриджей.]]></description>
+    </item>
     <item>
       <title>Онлайн-запись и CRM для студий танцев и школ хореографии</title>
       <link>https://molniya-tech.ru/dance</link>

@@ -2012,6 +2012,13 @@ def build_beauty_page() -> str:
               <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, автоворонка курсов из 6–10 сеансов, памятки до/после за 0 ₽, учет зон и абонементов.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/tattoo">
+            <div class="mt-subniche-icon">🖋️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Тату-студии и студии перманентного макияжа <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись 24/7, бронь сеанса на день, предоплата через СБП, памятки заживления за 0 ₽ и склад расходников.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -4655,6 +4662,487 @@ def build_epilation_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий эпиляции</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_tattoo_page() -> str:
+    """Builds the complete tattoo studio micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="beauty", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "tattoo",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для тату-студии',
+        "Оставьте контакты — покажем Молнию на примере вашей тату-студии, поможем настроить бронь дневных сеансов, предоплату через СБП и учет расходников.",
+    )
+
+    title = "CRM для тату-студии: программа для тату-мастеров и студий перманента"
+    description = (
+        "Программа для тату-студий и студий перманентного макияжа: онлайн-запись 24/7, бронь сеанса на день, "
+        "предоплата через СБП, заживляющие памятки за 0 ₽, склад картриджей и пигментов."
+    )
+    canonical = "https://molniya-tech.ru/tattoo"
+
+    faqs = [
+        (
+            "Как настроить бронь сеансов на целый день (full day session) и почасовую запись?",
+            "В Молнии можно настроить разные типы сеансов: дневной сеанс на масштабный рукав или спину (блокирует кушетку на 6–8 часов), средний проект (2–4 часа) и быструю мини-татуировку (1 час). Программа автоматически резервирует буферное время на подготовку рабочего места, дезинфекцию и перевод трансфера.",
+        ),
+        (
+            "Как работает онлайн-прием предоплаты через СБП для подтверждения записи?",
+            "Чтобы защитить студию от неявок и пустого простоя кушетки, виджет записи формирует ссылку или QR-код СБП на фиксированный аванс (например, 3 000 ₽ или стоимость разработки эскиза). После зачисления платежа бронь дня моментально закрепляется за клиентом, а сумма аванса учитывается в финальном чеке.",
+        ),
+        (
+            "Как отправляются памятки по подготовке к сеансу и заживлению татуировки?",
+            "За 24 часа бот в Telegram или WhatsApp присылает памятку подготовки (хорошо выспаться, плотно поесть за час, исключить алкоголь и аспирин). Сразу после сеанса бот автоматически отправляет памятку по заживлению (правила ношения заживляющей пленки Dermalize/Suprasorb F, промывание мылом, крем с пантенолом и защита от ультрафиолета).",
+        ),
+        (
+            "Как списываются расходники: картриджи Kwadron/Cheyenne, пигменты и барьерная защита?",
+            "Для каждого сеанса настраивается технологическая карта. Модульные картриджи (Round Liner, Magnum), колпачки для краски, барьерная защита на клип-корд и машинку, трансферная бумага и перчатки списываются со склада студии в момент закрытия заказа. Это позволяет точно знать себестоимость каждого проекта.",
+        ),
+        (
+            "Как рассчитывается сдельная оплата мастеров при процентной схеме и субаренде кушетки?",
+            "Молния поддерживает обе популярные модели: процентная ставка мастера (например, 50/50 или 60/40 с вычетом стоимости студийных расходников) и аренда рабочего места (фиксированная плата за рабочий день или месяц). Баланс мастера и начисленная выплата рассчитываются в реальном времени.",
+        ),
+        (
+            "Подходит ли программа для студии перманентного макияжа (губы, брови, межресничка)?",
+            "Да. Для мастеров перманента предусмотрен учет зон лица (пудровое напыление бровей, акварельные губы, заполнение межресничного пространства), фотофиксация зажившего результата «до и после», а также автоворонка приглашения на обязательную коррекцию через 30–45 дней.",
+        ),
+        (
+            "Как бесплатно перенести клиентскую базу, эскизы и прайс из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно перенесет базу клиентов с номерами телефонов, историю сеансов, эскизы и прайс-лист из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает около 15 минут без сбоев в рабочем графике мастеров.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния — CRM для тату-студий и мастеров перманента",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для тату-студии:<br><span class="mt-hero-accent">онлайн-запись и бронь сеансов</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 с прикреплением эскизов, бронирование дневных сеансов с предоплатой через СБП, памятки по заживлению за 0 ₽, учет пигментов и картриджей, сдельная зарплата тату-мастеров</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для тату-студий">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Дневные сеансы</span>
+                <span class="mt-facet-note">блокировка кушетки под крупные проекты</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Предоплата СБП</span>
+                <span class="mt-facet-note">защита от срывов и отмен в день сеанса</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Памятка заживления</span>
+                <span class="mt-facet-note">инструкция по уходу за 0 ₽ в Telegram</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Склад игл и пигментов</span>
+                <span class="mt-facet-note">учет картриджей Kwadron и стерилизации</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для тату-студии: расписание кушеток и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Расписание тату-студии: занятость кушеток, дневные проекты и учет предоплат</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE BAYS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость мест" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая тату-кушетка, мастер и сеанс <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор видит статус рабочих мест в реальном времени: масштабные дневные сеансы, мини-тату, перманентный макияж и консультации по эскизам.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кушетка 1 · Master Zone</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе (Full Day)</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Рукав «Япония» · Сеанс #2</div>
+                <div class="mt-auto-car-tier">Тату-мастер Артём · 12:00 – 19:00</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🐉</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Сеанс на весь день</span>
+              <span class="mt-auto-price">32 000 ₽ (Аванс 5k)</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кушетка 2 · Перманентный макияж</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Пудровые брови + Межресничка</div>
+                <div class="mt-auto-car-tier">Мастер Ксения · Памятка отправлена</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс перманента</span>
+              <span class="mt-auto-price">14 000 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кушетка 3 · Графика & Мини-тату</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Мини-тату надпись (19:30)</div>
+                <div class="mt-auto-car-tier">Гостья Мария · Эскиз согласован</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🖋️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Мини-татуировка (1 ч)</span>
+              <span class="mt-auto-price">6 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TATTOO OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для тату-студий" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте тату-студией <span class="mt-overview-hook">без сорванных сеансов и споров о процентах</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и переписок: онлайн-запись с эскизами, предоплата брони через СБП, бесплатные памятки заживления и разделение чека с мастером.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Бронирование дневных сеансов и мини-тату <span class="mt-overview-hook">без накладок и пустых окон</span></h3>
+            <p>Бронируйте сеансы на полный день (6–8 часов) под масштабные проекты или короткие слоты на мини-тату. Система закладывает буфер на подготовку рабочего места и стерилизацию инструмента.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кушетки #1</span><span>Full Day Session</span></div>
+              <div class="mt-overview-calendar"><span>12:00</span><div class="mt-overview-slot">Рукав Нео-традишнл <small>Мастер Артём · Сеанс до 19:00</small></div><span>19:00</span><div class="mt-overview-slot mt-overview-slot--light">Уборка и стерилизация</div><span>19:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Предоплата через СБП при онлайн-записи <span class="mt-overview-hook">снижение пустых отмен на 94%</span></h3>
+            <p>Клиент бронирует время и сразу оплачивает аванс по QR-коду СБП за разработку эскиза и бронь дня. Если гость не явился, студия и мастер не теряют деньги за сорванный день.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Бронь сеанса</span><span>Предоплата СБП</span></div>
+              <div class="mt-overview-price-row"><span>Стоимость сеанса</span><strong>32 000 ₽ · Рукав</strong></div>
+              <div class="mt-overview-price-row"><span>Аванс через СБП</span><strong>Внесено 5 000 ₽ · Подтверждено</strong></div>
+              <div class="mt-overview-price-tag">Кушетка закреплена за клиентом</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Памятки подготовки и заживления за 0 ₽ <span class="mt-overview-hook">прямо в Telegram и WhatsApp</span></h3>
+            <p>Бот за 24 часа напоминает не пить алкоголь и хорошо поесть, а после сеанса присылает подробную иллюстрированную инструкцию по заживляющей пленке Dermalize и крему с пантенолом.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Памятка по заживлению</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Роман, поздравляем с новой татуировкой! Носите пленку Suprasorb F 4–5 дней. Не распаривайте в душе и берегите от солнца. 🖤
+                <span class="mt-overview-reaction">🩹</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Инструкции без переплат за SMS →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Склад картриджей Kwadron, пигментов и барьерки <span class="mt-overview-hook">учет себестоимости сеанса</span></h3>
+            <p>Модули, носики, колпачки, трансферная бумага, перчатки и барьерная защита списываются автоматически по технологической карте проекта. Вы точно знаете чистую прибыль студии.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расход на сеанс</span><span>Наряд #2190</span></div>
+              <div class="mt-overview-stages"><span>Картриджи</span><i></i><span>Пигменты</span><i></i><span>Пленка</span></div>
+              <div class="mt-overview-check">✓ <span>3 картриджа Kwadron списаны со склада</span></div>
+              <div class="mt-overview-check">✓ <span>Заживляющая пленка Dermalize учтена</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата мастеров и субаренда <span class="mt-overview-hook">50/50, 60/40 или фиксированная аренда</span></h3>
+            <p>Программа автоматически делит чек между мастером и студией с учетом студийных расходников или ведет учет оплаты аренды кушеток резидентами. Мастер видит баланс смены в своем телефоне.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка мастера</span><span>Тату-мастер Артём</span></div>
+              <div class="mt-overview-metrics"><span>Сеансы<b>4</b></span><span>Ставка<b>60%</b></span><span>Баланс<b>58 400 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- TATTOO JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиента в тату-студию">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один сеанс татуировки. <span class="mt-hero-accent">Полный контроль от эскиза до заживления.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в тату-студию: от прикрепления референса и предоплаты через СБП до списания модулей и автоотправки памятки по заживлению.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Дневной сеанс татуировки (Рукав Япония, дракон и пионы)</strong><span>Длительность 7 часов · Мастер Артём · Кушетка Master Zone #1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Онлайн-запись, загрузка референса и предоплата 5 000 ₽ через СБП</h3>
+              <p>Гость выбирает мастера Артёма, прикрепляет фото идеи и вносит аванс 5 000 ₽ по QR-коду СБП. Слот на полный день блокируется в расписании кушетки.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронь дневного сеанса</span>
+                <span class="mt-journey-proof-badge">Предоплата 5 000 ₽</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиент</span><strong>Роман К.</strong></div>
+              <div class="mt-journey-proof-row"><span>Проект</span><strong>Рукав «Япония» (Дракон, контур + тени)</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Суббота, 12:00 – 19:00 (Кушетка #1)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Памятка подготовки за 24 ч и бронь расходников за 0 ₽</h3>
+              <p>Бот присылает напоминание: адрес студии, правила подготовки (выспаться, не пить кофе/энергетики) и резервирует картриджи Kwadron на складе.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание #6102</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Суббота, 12:00, кушетка Master #1</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка</span><strong>Плотный завтрак, удобная одежда без тугих резинок</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Тату-мастер</span>
+              <h3>Перевод трансфера, сеанс 6.5 часов и поклейка заживляющей пленки</h3>
+              <p>Мастер наносит трансфер, выполняет контур и тени. По окончании наклеивает заживляющую пленку Dermalize, а бот отправляет гостю инструкцию по уходу.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка сеанса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сеанс завершен</span>
+                <span class="mt-journey-proof-badge">Пленка наклеена</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Артём (Ведущий тату-мастер)</strong></div>
+              <div class="mt-journey-proof-row"><span>Расходники</span><strong>3 картриджа Kwadron, чернила Dynamic, Dermalize</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка после</span><strong>Отправлена в Telegram (Suprasorb F 5 дней)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Оплата остатка 27 000 ₽, списание картриджей и выплата мастеру 60%</h3>
+              <p>Администратор принимает доплату с учетом аванса. Чек закрыт: расходники списаны, мастеру начислено 18 400 ₽, а клиент записан на покрас через 4 недели.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие сеанса">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #9182</span>
+                <span class="mt-journey-proof-badge">Оплачено 32 000 ₽</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Расчет</span><strong>Аванс 5 000 ₽ + Доплата 27 000 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата</span><strong>Мастеру Артёму начислено 18 400 ₽ (60%)</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий сеанс</span><strong>Запись на покрас через 28 дней</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс тату-студии" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">🖋️ Кейс тату-студии</div>
+            <h2 class="mt-case-title">Кирилл Власов, основатель тату-пространства «Ink & Iron Tattoo» (6 мастеров, студия перманента, Екатеринбург)</h2>
+            <blockquote class="mt-case-quote">
+              «Специфика татуировки — если клиент не пришел на дневной сеанс, мастер теряет заработок за целый день. В Молнии мы включили обязательную предоплату через СБП прямо в виджете онлайн-записи. Число срывов сеансов упало на 94%! А автоматическая отправка памяток по уходу за 0 ₽ избавила мастеров от ежедневного повторения одних и тех же правил заживления.»
+            </blockquote>
+            <div class="mt-case-author">
+              Кирилл Власов <span>· Основатель тату-пространства «Ink & Iron Tattoo», <span style="white-space:nowrap">Екатеринбург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-94%</span>
+              <span class="mt-case-label">Срывов дневных сеансов благодаря автоматической предоплате за бронь кушетки через СБП</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные памятки подготовки и заживления татуировок в Telegram и WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">1 клик</span>
+              <span class="mt-case-label">Для списания картриджей, барьерной защиты и автоматического разделения чека с мастером</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TATTOO FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для тату-студий</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -18971,7 +19459,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "brows", "epilation", "detailing", "dance", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "epilation", "detailing", "dance", "tattoo", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -18998,6 +19486,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для тату-студий и мастеров перманента",
+        "slug": "tattoo",
+        "description": "Программа для тату-студий: онлайн-запись 24/7, бронь сеанса на день, предоплата через СБП, памятки по заживлению за 0 ₽ и склад картриджей.",
+        "pub_date": datetime(2026, 11, 21, 21, 30, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для студий танцев и школ хореографии",
         "slug": "dance",
@@ -27629,6 +28124,11 @@ def main():
     epilation_html = build_epilation_page()
     (ROOT_DIR / "epilation.html").write_text(epilation_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'epilation.html'}")
+
+    print("Building sector landing page: /tattoo...")
+    tattoo_html = build_tattoo_page()
+    (ROOT_DIR / "tattoo.html").write_text(tattoo_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'tattoo.html'}")
 
     print("Building sector landing page: /photostudios...")
     photostudios_html = build_photostudios_page()
