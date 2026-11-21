@@ -950,6 +950,24 @@ def build_auto_page() -> str:
         </div>
       </section>
 
+      <!-- AUTO SUB-NICHES -->
+      <section class="mt-section mt-reveal" data-screen-label="Направления автобизнеса" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для автобизнеса</span></h2>
+          <p class="mt-section-sub">Специализированные возможности под ваш формат: онлайн-запись 24/7, акты осмотра кузова с фотодефектами, расчет сметы и сдельная зарплата мастеров.</p>
+        </div>
+
+        <div class="mt-subniche-grid">
+          <a class="mt-subniche-card" href="/detailing">
+            <div class="mt-subniche-icon">✨</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Детейлинг-центры и студии автоухода <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, фотофиксация ЛКП со смартфона, учет бронирования пленки и керамики, сдельная оплата детейлеров.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- AUTO JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь визита авто">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
@@ -1089,6 +1107,487 @@ def build_auto_page() -> str:
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
         подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_detailing_page() -> str:
+    """Builds the complete detailing center micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="auto", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "detailing",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для детейлинг-центра',
+        "Оставьте контакты — покажем Молнию на примере вашего детейлинга, поможем настроить акты осмотра кузова со смартфона, учет пленок и расчет сдельной зарплаты.",
+    )
+
+    title = "CRM для детейлинга: программа для детейлинг-центра, студии автоухода и оклейки"
+    description = (
+        "Программа для детейлинг-центров и студий оклейки: онлайн-запись 24/7, акт осмотра кузова с фото дефектов "
+        "ЛКП со смартфона, расчет сметы, склад автохимии и пленок."
+    )
+    canonical = "https://molniya-tech.ru/detailing"
+
+    faqs = [
+        (
+            "Как устроен цифровой акт осмотра кузова и фотофиксация дефектов со смартфона?",
+            "Мастер открывает электронный заказ-наряд со своего телефона прямо во время заезда автомобиля в бокс. На интерактивной 3D-схеме кузова мастер отмечает сколы, притертости, вмятины, прикрепляет фотографии повреждений крупным планом и замеры толщины ЛКП толщиномером. Акт сохраняется с датой и временем, а клиент получает цифровую копию в мессенджер. Это полностью защищает студию от необоснованных претензий при выдаче.",
+        ),
+        (
+            "Как программа учитывает класс автомобиля (седан, кроссовер, внедорожник, микроавтобус)?",
+            "В Молнии настроен гибкий классификатор кузовов: I класс (компактные седаны и хэтчбеки), II класс (бизнес-седаны и компакт-кроссоверы), III класс (полноразмерные внедорожники и премиум-SUV) и IV класс (минивэны, пикапы). Длительность процедур (полировка, оклейка) и стоимость автоматически масштабируются под габариты, поэтому в расписании бокса всегда бронируется реалистичное окно.",
+        ),
+        (
+            "Как управлять длительными детейлинг-заказами, которые находятся в боксах от 2 до 5 дней?",
+            "В календаре Молнии длительный заказ бронирует бокс на несколько рабочих смен. Система разбивает процесс на технологические этапы: мойка и деконтаминация кузова, сушка, маскировка резины и хрома, многоэтапная полировка (роторные и эксцентриковые машинки), обезжиривание, нанесение керамики 9H и сушка под инфракрасными лампами. Каждый этап виден на канбан-доске постов.",
+        ),
+        (
+            "Как отправлять клиенту фотоотчеты этапов работ и согласовывать доп. услуги в мессенджерах?",
+            "Детейлер делает фото скрытых дефектов (например, прожженные пятна на коже, битумные точки, вмятина под ребром жесткости) прямо из наряда. Бот отправляет клиенту в Telegram или WhatsApp фото и предложение: «Обнаружили вмятину на задней двери. Удалить без покраски PDR (+3 500 ₽)?». Клиент подтверждает нажатием кнопки «Согласовать», и услуга автоматически добавляется в заказ-наряд.",
+        ),
+        (
+            "Как списываются полиуретановые плёнки, керамические составы и полировальные круги?",
+            "Для каждого комплекса настраивается технологическая карта. Например, на бронирование ударной части уходит 3.8 погонных метра пленки Stek DynoShield, а на 2 слоя керамики — 30 мл Gyeon Q2 MOHS. Материалы и одноразовые круги Rupes списываются автоматически при переводе заказа в статус «Выполнен». Это исключает нецелевой расход дорогой химии.",
+        ),
+        (
+            "Как рассчитывается сдельная зарплата полировщиков, оклейщиков и мастеров химчистки?",
+            "В детейлинге у каждого направления своя специфика: оклейка пленкой (35–45% от стоимости работ), детейлинг-полировка (30–40%), химчистка салона и озонирование (30–35%). Молния автоматически распределяет начисления между мастерами одной бригады, если над машиной работали арматурщик и полировщик одновременно.",
+        ),
+        (
+            "Как бесплатно перенести историю авто, клиентскую базу и прайс-лист из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно переносит контакты владельцев, марки, модели и госномера автомобилей, историю заказ-нарядов и технологические карты из YClients, МойСклад, Автодилер или файлов Excel. Перенос выполняется за 15 минут без остановки записи и приема машин.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния — CRM для детейлинга и студий оклейки",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для детейлинга:<br><span class="mt-hero-accent">онлайн-запись и акты осмотра кузова</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, цифровой акт осмотра кузова с замером толщины ЛКП, контроль боксов на 2–4 дня, списание пленок и керамики, сдельная зарплата мастеров</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для детейлинг-центров">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Боксы и посты</span>
+                <span class="mt-facet-note">заезды на 1–3 дня и точные нормочасы</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Акт осмотра ЛКП</span>
+                <span class="mt-facet-note">фото дефектов и замер толщиномером</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Смета и допы</span>
+                <span class="mt-facet-note">согласование скрытых работ в Telegram</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Склад пленок</span>
+                <span class="mt-facet-note">учет погонных метров и керамики 9H</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для детейлинга: расписание боксов и электронные заказ-наряды" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Журнал постов детейлинга: занятость боксов, этапы полировки и оклейки авто</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE BAYS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Загрузка боксов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Все посты, боксы и заказ-наряды <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого бокса, марку авто, закрепленного детейлера и прогресс работ в реальном времени.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Бокс 1 · Детейлинг-полировка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе (день 2)</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Li Auto L9 (III класс)</div>
+                <div class="mt-auto-car-tier">Мастер Алексей · Финишная паста Rupes</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Полировка + Керамика 2 слоя</span>
+              <span class="mt-auto-price">48 000 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Бокс 2 · Зона оклейки полиуретаном</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Оклейка</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Porsche Macan (II класс)</div>
+                <div class="mt-auto-car-tier">Мастер Дмитрий · Пленка Stek DynoShield</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🛡️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Морда + Зоны риска</span>
+              <span class="mt-auto-price">85 000 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Бокс 3 · Химчистка и сушка</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово к выдаче</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">BMW X5 G05 (III класс)</div>
+                <div class="mt-auto-car-tier">Химчистка с разбором + озонирование салона</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🧼</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Детейлинг-химчистка</span>
+              <span class="mt-auto-price">28 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILING OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для детейлинг-центров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте детейлинг-студией <span class="mt-overview-hook">без споров о сколах и потерь на расходе химии</span></h2>
+          <p class="mt-section-sub">Один сервис вместо бумажных актов и таблиц: цифровой осмотр кузова с фото, график боксов на несколько дней, склад пленок и керамики и сдельная зарплата мастеров.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Цифровой акт осмотра кузова и замер ЛКП <span class="mt-overview-hook">со смартфона за 5 минут</span></h3>
+            <p>Мастер отмечает сколы, притертости и вмятины на интерактивной схеме кузова, делает фото дефектов и фиксирует толщину краски в микронах. Акт с цифровой подписью отправляется клиенту в WhatsApp и исключает споры при выдаче.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Акт осмотра кузова</span><span>Porsche Macan</span></div>
+              <div class="mt-overview-calendar"><span>Капот</span><div class="mt-overview-slot">3 скола, толщина ЛКП 115 мкм <small>Фото прикреплено</small></div><span>Крыло ПЛ</span><div class="mt-overview-slot mt-overview-slot--light">Притертость лака без деформации металла</div><span>Дверь</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Управление длительными заездами в боксы <span class="mt-overview-hook">от 1 до 4 рабочих дней</span></h3>
+            <p>Детейлинг-полировка и нанесение керамики занимают от 24 до 72 часов. Система бронирует бокс на несколько смен, контролирует технологические паузы на полимеризацию состава и не допускает накладок в расписании постов.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Календарь боксов</span><span>Бокс №1 Детейлинг</span></div>
+              <div class="mt-overview-stages"><span>День 1: Подготовка</span><i></i><span>День 2: Полировка</span><i></i><span>День 3: Керамика</span></div>
+              <div class="mt-overview-check">✓ <span>Бронирование поста на 3 дня без разрывов</span></div>
+              <div class="mt-overview-check">✓ <span>Учет времени сушки под ИК-лампами</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Согласование доп. работ с фото в мессенджере <span class="mt-overview-hook">рост среднего чека на 34%</span></h3>
+            <p>Обнаружили скрытую царапину или пятно на коже? Мастер делает фото прямо в заказ-наряде, а бот присылает клиенту в Telegram предложение с ценой. Клиент одобряет доп. услугу нажатием одной кнопки в телефоне.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Согласование работ</span><span>Telegram-бот</span></div>
+              <div class="mt-overview-message">
+                Алексей, при осмотре выявили вмятину на заднем крыле. Удалить без покраски PDR (+3 500 ₽)?
+                <span class="mt-overview-reaction">👍</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Клиент согласовал</span><strong>Добавлено в наряд: +3 500 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт полиуретановых плёнок и керамики 9H <span class="mt-overview-hook">в погонных метрах и миллилитрах</span></h3>
+            <p>Техкарты автоматически списывают раскроенный полиуретан Stek/SunTek в погонных метрах, миллилитры керамики Gyeon/Ceramic Pro и полировальные круги. Вы видите остатки на складе и себестоимость каждого заказа.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расход материалов</span><span>Наряд #4812</span></div>
+              <div class="mt-overview-price-row"><span>Пленка Stek DynoShield</span><strong>Списано: 3.8 пог. м</strong></div>
+              <div class="mt-overview-price-row"><span>Керамика Gyeon Q2 MOHS</span><strong>Списано: 30 мл (флакон)</strong></div>
+              <div class="mt-overview-price-tag">Себестоимость материалов учтена</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата мастеров и бригад <span class="mt-overview-hook">полировка, оклейка, химчистка</span></h3>
+            <p>Гибкие ставки под каждую специальность: оклейка 40%, полировка кузова 35%, химчистка салона 30%. При совместной работе над сложным проектом программа автоматически делит фонд между полировщиком и арматурщиком.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка мастера</span><span>Мастер Дмитрий</span></div>
+              <div class="mt-overview-metrics"><span>Заказы<b>3</b></span><span>Оклейка<b>40%</b></span><span>Баланс<b>34 200 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- DETAILING JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь детейлинг-заказа">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один детейлинг-заказ. <span class="mt-hero-accent">Полный контроль от заезда до выдачи.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует работу детейлинг-центра: от бронирования слота до фотофиксации кузова, списания пленки и отправки фотоотчета о готовности авто владельцу.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения заказа" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Комплекс «Антигравийная защита ударной части кузова полиуретаном Stek + Керамика на кузов 2 слоя»</strong><span>Porsche Macan · Бокс №2 оклейки</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиент</span>
+              <h3>Онлайн-запись и выбор комплекса с автоматическим учетом класса авто</h3>
+              <p>Владелец выбирает комплекс оклейки и полировки на сайте или в Telegram. Система учитывает II класс кроссовера и резервирует бокс №2 на 2 рабочих дня.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование бокса</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Автомобиль</span><strong>Porsche Macan (II класс)</strong></div>
+              <div class="mt-journey-proof-row"><span>Комплекс</span><strong>Оклейка морды + Керамика 2 слоя</strong></div>
+              <div class="mt-journey-proof-row"><span>Бокс</span><strong>Бокс №2 оклейки · 2 дня</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Мастер-приемщик</span>
+              <h3>Электронный акт осмотра со смартфона: фото сколов и замер ЛКП</h3>
+              <p>Приемщик осматривает авто, отмечает 4 скола на бампере и толщину краски 110–125 мкм. Клиент подписывает акт на экране смартфона и получает копию в Telegram за 0 ₽.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Акт осмотра ЛКП">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Акт осмотра #3920</span>
+                <span class="mt-journey-proof-badge">Подписан</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Дефекты</span><strong>4 скола на переднем бампере (фото в базе)</strong></div>
+              <div class="mt-journey-proof-row"><span>Толщина ЛКП</span><strong>В норме (110–125 мкм, заводской окрас)</strong></div>
+              <div class="mt-journey-proof-row"><span>Уведомление</span><strong>Копия акта отправлена владельцу в Telegram</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Детейлер</span>
+              <h3>Оклейка, полировка и согласование удаления вмятины через мессенджер</h3>
+              <p>Мастер оклеивает кузов пленкой Stek. Заметив мелкую вмятину без повреждения краски, мастер отправляет фото владельцу — клиент одобряет PDR за 3 500 ₽ в один клик.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Заказ-наряд в работе">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Наряд в работе</span>
+                <span class="mt-journey-proof-badge">Бокс №2</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Дмитрий (Оклейщик полиуретаном)</strong></div>
+              <div class="mt-journey-proof-row"><span>Материалы</span><strong>Пленка Stek DynoShield 3.8 м, праймер 3M</strong></div>
+              <div class="mt-journey-proof-row"><span>Доп. услуга</span><strong>PDR задней двери (+3 500 ₽ согласовано)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Автоуведомление о готовности, акт гарантии, списание пленки и зарплата</h3>
+              <p>Бот присылает клиенту сообщение о готовности авто. Заказ закрывается: пленка и керамика списаны со склада, мастеру начислено 34 200 ₽, а клиенту выдан гарантийный сертификат.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие заказ-наряда">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Заказ-наряд #8291</span>
+                <span class="mt-journey-proof-badge">Оплачен 88 500 ₽</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Склад</span><strong>Пленка Stek и керамика списаны по техкарте</strong></div>
+              <div class="mt-journey-proof-row"><span>Зарплата</span><strong>Мастеру Дмитрию начислено 34 200 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Гарантия</span><strong>Электронный гарантийный талон на 5 лет</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс детейлинг-центра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">✨ Кейс детейлинг-центра</div>
+            <h2 class="mt-case-title">Владислав Нестеров, совладелец студии премиум-автоухода «Apex Detailing» (4 сухих поста, 2 мокрых бокса, Москва)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше приемка дорогой машины на оклейку полиуретаном и керамику занимала кучу бумаги, а клиенты иногда спорили по поводу старых царапин при выдаче. В Молнии мастер за 5 минут обходит кузов со смартфоном, фотографирует сколы и отмечает толщину ЛКП. Согласование скрытых дефектов через фото в WhatsApp подняло средний чек на 38 000 ₽, а спорные претензии сошли на ноль.»
+            </blockquote>
+            <div class="mt-case-author">
+              Владислав Нестеров <span>· Совладелец детейлинг-центра «Apex Detailing», <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 претензий</span>
+              <span class="mt-case-label">По скрытым сколам и дефектам ЛКП благодаря цифровому акту осмотра со смартфона</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+34%</span>
+              <span class="mt-case-label">Рост среднего чека за счет быстрого согласования доп. услуг (PDR, реставрация кожи) в WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные фотоотчеты этапов полировки и уведомления о готовности авто</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILING FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для детейлинга</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -17973,7 +18472,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "brows", "epilation", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "epilation", "detailing", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -18000,6 +18499,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для детейлинг-центров и студий оклейки",
+        "slug": "detailing",
+        "description": "Программа для детейлинга: онлайн-запись 24/7, акты осмотра кузова с фото дефектов ЛКП со смартфона, учет пленок и сдельная зарплата мастеров.",
+        "pub_date": datetime(2026, 11, 21, 21, 20, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для студий лазерной эпиляции и депиляции",
         "slug": "epilation",
@@ -26572,6 +27078,11 @@ def main():
     auto_html = build_auto_page()
     (ROOT_DIR / "auto.html").write_text(auto_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'auto.html'}")
+
+    print("Building sector landing page: /detailing...")
+    detailing_html = build_detailing_page()
+    (ROOT_DIR / "detailing.html").write_text(detailing_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'detailing.html'}")
 
     print("Building sector landing page: /beauty...")
     beauty_html = build_beauty_page()
