@@ -1499,6 +1499,13 @@ def build_beauty_page() -> str:
               <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, комплекс «в 4 руки», расписание столов и реклайнеров, автонапоминания за 0 ₽ и складской учет гель-лаков.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/brows">
+            <div class="mt-subniche-icon">👁️</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Студии ресниц и бровей Lash & Brow <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, схемы наращивания и изгибы, автонапоминания за 0 ₽, памятки по уходу и склад материалов.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -3134,6 +3141,510 @@ def build_massage_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для массажных салонов</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_brows_page() -> str:
+    """Builds the complete lash and brow studio micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="beauty", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "brows",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии ресниц и бровей',
+        "Оставьте контакты — покажем Молнию на примере вашей студии, поможем настроить расписание кушеток, броу-баров и онлайн-запись.",
+    )
+
+    title = "CRM для студии ресниц и бровей: программа и онлайн-запись Lash & Brow"
+    description = (
+        "Программа для студии ресниц и бровей: онлайн-запись клиентов 24/7, схемы наращивания и изгибы, "
+        "автонапоминания за 0 ₽, памятки по уходу и склад материалов."
+    )
+    canonical = "https://molniya-tech.ru/brows"
+
+    faqs = [
+        (
+            "Как клиентки выбирают объем, эффект и изгиб при онлайн-записи?",
+            "В форме записи клиентка выбирает нужную услугу (классика, 1.5D, 2D, 3D, мокрый эффект, ламинирование InLei или оформление бровей) и желаемый изгиб (C, D, L, M). Система автоматически рассчитывает длительность сеанса (от 1 до 2,5 часов) и предлагает только реальные свободные слоты выбранного мастера.",
+        ),
+        (
+            "Как настроить разную длительность процедур под категорию мастера?",
+            "Для каждого мастера можно задать персональный тайминг на каждую процедуру. Например, Top Lashmaker выполняет объемное наращивание 2D за 1 час 45 минут, а мастер-юниор — за 2,5 часа. Программа защищает от накладок и исключает ситуации, когда следующая клиентка ждет в коридоре.",
+        ),
+        (
+            "Сколько стоят напоминания клиенткам в мессенджеры и как они защищают от срывов записи?",
+            "Сервисные напоминания в мессенджерах (Telegram, WhatsApp) отправляются за 0 ₽ — без тарифов за сообщения и без скрытых комиссий. Бот присылает подтверждение бронирования сразу, а затем напоминает за 24 часа и 2 часа до начала с кнопкой подтверждения. Неявки на длинные процедуры снижаются на 85–90%.",
+        ),
+        (
+            "Как программа отправляет памятку по уходу за ресницами после наращивания?",
+            "Сразу после закрытия визита на кассе бот автоматически отправляет клиентке в мессенджер красивую и понятную памятку: как умываться в первые 24 часа, какими щеточками расчесывать ресницы, почему нельзя спать лицом в подушку и использовать масляные средства.",
+        ),
+        (
+            "Как работает автоворонка повторной записи по циклу носки ресниц (3–4 недели)?",
+            "Натуральные ресницы обновляются в среднем за 21–28 дней. Отросшие пучки начинают перекручиваться и утяжелять корень. Молния отслеживает дату процедуры и через 21–24 дня автоматически присылает персональное заботливое сообщение с предложением обновить наращивание или сделать бережное снятие.",
+        ),
+        (
+            "Как устроен складской учет палеток ресниц, клеев, патчей и красителей для бровей?",
+            "Расходные материалы (гидрогелевые патчи, микробраши, одноразовые простыни, щеточки) списываются автоматически по технологической карте при закрытии визита. Препараты (клей, обезжириватель, ремувер, краска Thuya/Bronsun, составы для ламинирования) и домашний уход (пенки для ресниц, закрепители) списываются со склада студии.",
+        ),
+        (
+            "Как бесплатно перенести базу клиентов с историей эффектов и изгибов из YClients или Excel?",
+            "Служба заботы Молнии бесплатно переносит базу контактов, историю визитов, прайс-лист и график мастеров из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает 15 минут и проходит без остановки текущей записи студии.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Красота", "item": "https://molniya-tech.ru/beauty"},
+                {"@type": "ListItem", "position": 3, "name": "CRM для студий ресниц и бровей", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для студий ресниц и бровей Lash & Brow",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания студии ресниц и бровей",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для студии ресниц и бровей:<br><span class="mt-hero-accent">онлайн-запись и расписание кушеток</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, фиксация схем и изгибов в карточке гостя, напоминания за 0 ₽, памятки по уходу и сдельная зарплата мастеров</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий ресниц и бровей">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сетка кушеток</span>
+                <span class="mt-facet-note">тайминг под объемы от 1.5 до 3 часов</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Схемы и изгибы</span>
+                <span class="mt-facet-note">C, D, L, M, длины и эффекты в профиле</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp без срывов записей</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Памятки ухода</span>
+                <span class="mt-facet-note">автоотправка в мессенджер после сеанса</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии ресниц и бровей: расписание кушеток и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронный журнал студии взгляда: занятость кушеток, броу-баров и схемы наращивания</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE COUCHES STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость кушеток и зон" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждая кушетка, броу-бар и запись <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и мастера видят статус каждого рабочего места в реальном времени: объемное наращивание, ламинирование или архитектура бровей.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кушетка 1 · Top Lashmaker Алина</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Валерия С. · Наращивание 2D</div>
+                <div class="mt-auto-car-tier">Мокрый эффект · Изгиб L · Длина 8–12 мм</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">👁️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Объём 2D (2 часа)</span>
+              <span class="mt-auto-price">3 600 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кушетка 2 · Мастер Ксения</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Дарья М. · Ламинирование</div>
+                <div class="mt-auto-car-tier">Ламинирование InLei + Lash Botox</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс «Лами + Ботокс»</span>
+              <span class="mt-auto-price">3 200 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зона бровей · Brow-мастер Яна</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Елена К. (17:30)</div>
+                <div class="mt-auto-car-tier">Архитектура воском Lycon + краска Bronsun</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Оформление + окрашивание</span>
+              <span class="mt-auto-price">1 800 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BROWS OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий ресниц и бровей" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте студией взгляда <span class="mt-overview-hook">без потерь двухчасовых слотов, срывов записей и переплат за SMS</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание кушеток с учетом опыта мастеров, фиксация схем моделирования, автоворонка коррекции через 3 недели и прозрачная зарплата.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Умная сетка записи и тайминг кушеток <span class="mt-overview-hook">без накладок и пустых окон</span></h3>
+            <p>Наращивание ресниц длится от 1,5 до 3 часов. Программа рассчитывает точный тайминг с учетом выбранного объема (классика, 2D, голливуд), эффекта (лучи, мокрый) и грейда мастера, исключая задержки и очереди.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кушеток</span><span>Слоты под объёмы</span></div>
+              <div class="mt-overview-calendar"><span>11:00</span><div class="mt-overview-slot">Кушетка 1: 2D мокрый <small>Top Lashmaker Алина</small></div><span>13:00</span><div class="mt-overview-slot mt-overview-slot--light">Кушетка 2: Лами InLei <small>Мастер Ксения</small></div><span>14:15</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Фиксация схем, эффектов и изгибов <span class="mt-overview-hook">в электронной карте клиентки</span></h3>
+            <p>Сохраняйте точные параметры каждого визита: длины по секторам (8–13 мм), изгибы (C, D, L, M), толщину (0.07/0.10) и эффект. Клиентке не нужно вспоминать детали, а любой мастер студии сразу повторит безупречный результат.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Карточка наращивания</span><span>Схема взгляда</span></div>
+              <div class="mt-overview-price-row"><span>Объём 2D · Изгиб L</span><strong>Длины 8-9-10-11-12 мм</strong></div>
+              <div class="mt-overview-price-row"><span>Мокрый эффект (лучи)</span><strong>Толщина 0.07 · Клей 0.5 сек</strong></div>
+              <div class="mt-overview-price-tag">Вся история и предпочтения сохранены</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания в мессенджеры за 0 ₽ <span class="mt-overview-hook">и защита от срыва длинных слотов</span></h3>
+            <p>Неявка на 2-часовое наращивание лишает мастера трети дневной выручки. Бот отправляет напоминание за 24 и 2 часа в Telegram и WhatsApp с кнопками подтверждения. Неявки снижаются на 89%, а вы не тратите бюджет на SMS.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание о записи</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Валерия, напоминаем о записи: наращивание 2D завтра в 11:00, Кушетка 1, мастер Алина. Ждём вас!
+                <span class="mt-overview-reaction">👁️</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Сервисные уведомления 0 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автоворонка коррекции и снятия <span class="mt-overview-hook">по циклу смены ресниц 21–28 дней</span></h3>
+            <p>Отросшие ресницы начинают провисать и травмировать натуральный волос. Молния отсчитывает 22–24 дня с процедуры и присылает персональное заботливое приглашение обновить наращивание или сделать бережное снятие.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоворонка возврата</span><span>Цикл смены 24 дня</span></div>
+              <div class="mt-overview-stages"><span>Наращивание</span><i></i><span>24 дня</span><i></i><span>Автонапоминание</span></div>
+              <div class="mt-overview-check">✓ <span>Клиентка приглашена до перекручивания ресниц</span></div>
+              <div class="mt-overview-check">✓ <span>Возвращаемость постоянных гостей +31%</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад ресниц, клеев и расходников <span class="mt-overview-hook">и сдельная зарплата мастеров</span></h3>
+            <p>Патчи, микробраши, щеточки, клей и палетки ресниц списываются по технологическим картам сеансов. Лешмейкер прямо в телефоне видит свой процент за работу (40–50%) и комиссию с проданных пенок для умывания.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена лешмейкера</span><span>Top Master Алина</span></div>
+              <div class="mt-overview-metrics"><span>Наращивания<b>3</b></span><span>Пенки<b>2 шт</b></span><span>Зарплата<b>6 800 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- BROWS JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиентки в студию взгляда">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиентки. <span class="mt-hero-accent">Полный порядок без срывов расписания.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в студию ресниц и бровей: от выбора объема в Telegram до сохранения схемы изгибов и автоотправки памятки по уходу.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Комплекс «Снятие + наращивание 2D в мокром эффекте (L-изгиб) + оформление бровей»</strong><span>Длительность 2 часа 30 минут · Top Lashmaker Алина · Кушетка №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиентка</span>
+              <h3>Онлайн-запись через Telegram или виджет за 40 секунд</h3>
+              <p>Гостья выбирает объемное наращивание 2D, мокрый эффект и бровиста. Система закладывает 2,5 часа в расписании Алины, защищая от спешки и накладок.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование сеанса</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиентка</span><strong>Валерия С.</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуги</span><strong>2D мокрый эффект + брови (2 ч 30 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>Кушетка</span><strong>Кушетка №1 · Четверг, 11:00 – 13:30</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Бронь анатомической кушетки и сервисное напоминание за 0 ₽</h3>
+              <p>Слот закрепляется за кушеткой №1. За 24 часа и за 2 часа гостья получает напоминание в Telegram с адресом студии и кнопкой быстрого подтверждения.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уведомление #7124</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Кушетка 1, мастер Алина, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Статус</span><strong>Подтверждено клиенткой кнопкой</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Лешмейкер</span>
+              <h3>Проверка схемы в телефоне, процедура и отправка памятки по уходу</h3>
+              <p>Мастер открывает карточку в телефоне: видит изгиб L и длины 8–12 мм. После процедуры бот автоматически присылает гостье памятку по правилам умывания и сна.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сеанс в работе</span>
+                <span class="mt-journey-proof-badge">На кушетке</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Алина (Top Lashmaker)</strong></div>
+              <div class="mt-journey-proof-row"><span>Схема</span><strong>Изгиб L, толщина 0.07, длины 8–12 мм</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка</span><strong>Отправлена автоматически в Telegram</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Оплата, списание расходников и приглашение на коррекцию через 24 дня</h3>
+              <p>Администратор закрывает чек: гидрогелевые патчи и пенка списаны со склада, мастеру начислена сдельная оплата, а через 24 дня гостье придет приглашение обновить взгляд.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #10418</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Сумма чека</span><strong>3 600 ₽ услуги + 750 ₽ пенка</strong></div>
+              <div class="mt-journey-proof-row"><span>Склад и зарплата</span><strong>Патчи списаны · Мастеру 1 732 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий контакт</span><strong>Автоприглашение через 24 дня</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии взгляда" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии взгляда Lash & Brow</div>
+            <h2 class="mt-case-title">Полина Романова, основательница студии взгляда «LashArt Studio» (6 кушеток, 3 броу-бара, Москва)</h2>
+            <blockquote class="mt-case-quote">
+              «В нашей сфере неявка клиента — это катастрофа, ведь мастер теряет сразу 2,5 часа времени. До Молнии администратор полдня сидела в переписках, а клиенты все равно забывали прийти. Подключив бесплатные напоминания в Telegram и WhatsApp, мы снизили неявки почти до нуля. А электронные карточки со схемами изгибов и автонапоминания через 3 недели подняли возвращаемость на 31%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Полина Романова <span>· Основательница студии взгляда «LashArt Studio», <span style="white-space:nowrap">Москва</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-89%</span>
+              <span class="mt-case-label">Снижение неявок благодаря напоминаниям в Telegram и WhatsApp с кнопками подтверждения</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные сервисные уведомления и памятки по уходу в мессенджеры</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+31%</span>
+              <span class="mt-case-label">Рост повторных записей через 3–4 недели благодаря автоворонке цикла смены ресниц</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BROWS FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий ресниц и бровей</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -16951,7 +17462,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -16978,6 +17489,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для студий ресниц и бровей Lash & Brow",
+        "slug": "brows",
+        "description": "Программа для студий ресниц и бровей: расписание кушеток, схемы наращивания и изгибы, автонапоминания в мессенджерах за 0 ₽ и памятки по уходу.",
+        "pub_date": datetime(2026, 11, 21, 21, 0, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для массажных салонов и спа-студий",
         "slug": "massage",
@@ -25566,6 +26084,11 @@ def main():
     massage_html = build_massage_page()
     (ROOT_DIR / "massage.html").write_text(massage_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'massage.html'}")
+
+    print("Building sector landing page: /brows...")
+    brows_html = build_brows_page()
+    (ROOT_DIR / "brows.html").write_text(brows_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'brows.html'}")
 
     print("Building sector landing page: /photostudios...")
     photostudios_html = build_photostudios_page()
