@@ -13396,6 +13396,24 @@ def build_education_page() -> str:
         </div>
       </section>
 
+      <!-- EDUCATION SUB-NICHES -->
+      <section class="mt-section mt-reveal" data-screen-label="Направления образования" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Готовые решения <span class="mt-overview-hook">для школ и студий</span></h2>
+          <p class="mt-section-sub">Специализированные возможности под ваш формат: учет абонементов, расписание залов, онлайн-запись на пробные уроки и автоуведомления родителям.</p>
+        </div>
+
+        <div class="mt-subniche-grid">
+          <a class="mt-subniche-card" href="/dance">
+            <div class="mt-subniche-icon">💃</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Студии танцев и хореографические школы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись на пробные уроки 24/7, вместимость залов со станками, учет абонементов на 8–12 занятий, автонапоминания за 0 ₽.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- EDUCATION JOURNEY -->
       <section class="mt-section mt-journey" data-screen-label="Путь ученика">
         <div class="mt-section-head mt-section-head--center" data-mt-reveal>
@@ -13535,6 +13553,487 @@ def build_education_page() -> str:
         Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
         Продолжая пользоваться сайтом, вы соглашаетесь с этим —
         подробнее в <a href="/privacy#cookies" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_dance_page() -> str:
+    """Builds the complete dance studio micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="education", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "dance",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии танцев',
+        "Оставьте контакты — покажем Молнию на примере вашей танцевальной студии, поможем настроить расписание залов, учет абонементов и онлайн-запись на пробные уроки.",
+    )
+
+    title = "CRM для студии танцев: программа для танцевальной школы и онлайн-запись"
+    description = (
+        "Программа для студии танцев и хореографии: онлайн-запись на пробные уроки 24/7, расписание залов, "
+        "абонементы на 8–12 занятий, автонапоминания за 0 ₽, зарплата хореографов."
+    )
+    canonical = "https://molniya-tech.ru/dance"
+
+    faqs = [
+        (
+            "Как настроить лимит учеников в зале, чтобы в группе не было тесноты?",
+            "Вы указываете максимальную вместимость для каждого зала исходя из его площади (например, 12 человек в зале 45 м² для High Heels или 18 человек в зале 80 м² для Contemporary). Как только лимит исчерпан, виджет онлайн-записи автоматически закрывает бронирование или предлагает записаться в лист ожидания.",
+        ),
+        (
+            "Как работает списание абонементов на 8, 12 или 16 занятий при посещении урока?",
+            "Администратор или хореограф отмечает присутствие ученика в электронном журнале в один клик (или по сканированию персонального QR-кода гостя со смартфона). Занятие автоматически списывается с баланса. Система рассчитывает остаток уроков и срок действия (например, 30 или 45 дней).",
+        ),
+        (
+            "Можно ли настроить заморозку абонемента на время болезни, отпуска или сессии?",
+            "Да. В карточке ученика можно активировать заморозку на указанное количество дней (например, на 7 или 14 дней). Срок действия абонемента автоматически сдвигается вперед, сохраняя все оплаченные занятия без путаницы в тетрадях и Excel-таблицах.",
+        ),
+        (
+            "Как клиенты записываются на пробные уроки через Telegram, WhatsApp или сайт?",
+            "Клиент выбирает танцевальное направление (High Heels, Бачата, K-Pop, Тверк, Стретчинг), преподавателя и удобный день в виджете онлайн-записи прямо в соцсетях, на сайте или в Telegram-боте. Заявка с пометкой «Пробное занятие» сразу отображается в расписании зала.",
+        ),
+        (
+            "Как начисляется сдельная зарплата педагогам и хореографам студии танцев?",
+            "Молния поддерживает любые отраслевые модели оплаты: фиксированная ставка за тренировку (например, 1 500 ₽ за 1.5 часа), ставка + доплата за каждого пришедшего ученика (например, +150 ₽ за человека свыше 8), процент от проданных абонементов или ставка за индивидуальную постановку свадебного танца.",
+        ),
+        (
+            "Можно ли вести учет разовой и постоянной почасовой аренды танцевальных залов?",
+            "Да. В расписании можно бронировать залы под почасовую субаренду для сторонних хореографов, фотосессий или репетиций. Система учитывает свободные окна между регулярными группами, фиксирует предоплату и исключает накладки.",
+        ),
+        (
+            "Как бесплатно перенести базу учеников, абонементы и расписание из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно импортирует контакты учеников, балансы действующих абонементов, направления и график педагогов из YClients, Мой Класс, Параплан или таблиц Excel. Перенос занимает около 15 минут без срыва тренировочного процесса.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния — CRM для студий танцев и школ хореографии",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для студии танцев:<br><span class="mt-hero-accent">онлайн-запись и абонементы</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 на пробные уроки в Telegram и WhatsApp, расписание залов с лимитом учеников, учет абонементов на 8–12 занятий, заморозка по болезни, сдельная зарплата хореографов</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий танцев">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сетка залов</span>
+                <span class="mt-facet-note">лимит мест у станков и зеркал</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Абонементы 8–12</span>
+                <span class="mt-facet-note">автосписание и заморозка по справкам</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Пробные уроки</span>
+                <span class="mt-facet-note">онлайн-запись и доходимость 82%</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Зарплата тренеров</span>
+                <span class="mt-facet-note">ставка за урок и % с учеников группы</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии танцев: расписание залов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Расписание танцевальных залов: загрузка площадок, группы и учет абонементов</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE HALLS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость залов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый танцевальный зал, группа и преподаватель <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор видит занятость залов в реальном времени: открытые группы, индивидуальные уроки, количество свободных мест и аренду площадок.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зал 1 · Большой зал 90 м² (Зеркала)</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Идет занятие</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">High Heels · Продвинутый уровень</div>
+                <div class="mt-auto-car-tier">14 из 15 мест · Хореограф Алина Р.</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">👠</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Группа 19:00 – 20:30</span>
+              <span class="mt-auto-price">По абонементам</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зал 2 · Хореографический со станками</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Урок завершен</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Детский балет (6–9 лет)</div>
+                <div class="mt-auto-car-tier">11 учениц отмечено · Педагог Екатерина</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🩰</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Списано 11 занятий</span>
+              <span class="mt-auto-price">Педагогу 1 800 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Зал 3 · Малый зал 35 м²</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Свадебный танец · Постановка (20:30)</div>
+                <div class="mt-auto-car-tier">Пара Максим и Юлия · Индивидуально</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Индивидуальный урок</span>
+              <span class="mt-auto-price">3 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DANCE OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий танцев" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте школой танцев <span class="mt-overview-hook">без тесноты в залах и ручных перерасчетов абонементов</span></h2>
+          <p class="mt-section-sub">Один сервис вместо бумажных журналов и таблиц: расписание залов по направлениям, онлайн-запись на пробные уроки, автоматический учет абонементов и расчет зарплаты хореографов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Расписание залов и лимиты мест в группах <span class="mt-overview-hook">без переполненных зеркал и толкотни</span></h3>
+            <p>Задайте лимит участников под площадь зала (12–15 человек). Система автоматически прекращает прием заявок при заполнении группы или предлагает записаться в лист ожидания.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание залов</span><span>Зал №1 (Зеркала)</span></div>
+              <div class="mt-overview-calendar"><span>18:30</span><div class="mt-overview-slot">Bachata Lady Style <small>12 из 12 мест · Группа полная</small></div><span>20:00</span><div class="mt-overview-slot mt-overview-slot--light">K-Pop Cover Dance <small>9 из 14 мест · Свободно 5 мест</small></div><span>21:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт абонементов на 8–12 уроков <span class="mt-overview-hook">и заморозка по болезни в 1 клик</span></h3>
+            <p>Отметка посещения в журнале мгновенно списывает занятие. Программа отслеживает остаток уроков, срок действия (30–45 дней) и позволяет в один клик заморозить абонемент по справке или на время отпуска.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Абонемент ученицы</span><span>Полина Смирнова</span></div>
+              <div class="mt-overview-price-row"><span>Абонемент «8 занятий»</span><strong>Остаток: 5 из 8 · До 24 ноября</strong></div>
+              <div class="mt-overview-price-row"><span>Статус заморозки</span><strong>Заморожен на 7 дней (по справке)</strong></div>
+              <div class="mt-overview-price-tag">Автоматический сдвиг срока действия</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания ученикам за 0 ₽ <span class="mt-overview-hook">прямо в Telegram и WhatsApp</span></h3>
+            <p>Бот напоминает о тренировке за 24 и 2 часа: указывает зал, напоминает взять форму, наколенники или сменную обувь на каблуке. Доходимость до уроков вырастает до 91% без расходов на SMS.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Напоминание о тренировке</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Полина, ждём вас сегодня в 19:00 на High Heels в Зале №1! Пожалуйста, не забудьте наколенники и хилсы. 👠
+                <span class="mt-overview-reaction">💃</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Напоминания без переплат за SMS →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись на пробные уроки 24/7 <span class="mt-overview-hook">конверсия в постоянный абонемент 68%</span></h3>
+            <p>Новые ученицы бронируют пробное занятие прямо со страницы студии в соцсетях или сайта. Система собирает контакты, бронирует слот и присылает схему проезда и правила дресс-кода.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись на урок</span><span>High Heels для начинающих</span></div>
+              <div class="mt-overview-stages"><span>Направление</span><i></i><span>Зал №1</span><i></i><span>Пробное</span></div>
+              <div class="mt-overview-check">✓ <span>Слот забронирован на среду 19:00</span></div>
+              <div class="mt-overview-check">✓ <span>Памятка по форме отправлена в Telegram</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата хореографов <span class="mt-overview-hook">ставка за урок, % или доплата за ученика</span></h3>
+            <p>Настройте любые тарифы: фикс за урок (1 500 ₽), доплата за каждого ученика свыше базового лимита или процент от абонементов. Хореограф видит свою зарплату за каждую тренировку прямо в телефоне.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка хореографа</span><span>Алина Р. (High Heels)</span></div>
+              <div class="mt-overview-metrics"><span>Уроки<b>14</b></span><span>Ученицы<b>168</b></span><span>Зарплата<b>26 400 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- DANCE JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь ученицы в студию танцев">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один пробный урок. <span class="mt-hero-accent">Постоянная ученица на полный абонемент.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в студию танцев: от онлайн-бронирования пробного занятия до автонапоминания о форме, быстрой отметки в зале и продажи абонемента.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Запись на пробный урок High Heels (начинающие)</strong><span>Зал №1 (Зеркала) · Длительность 1.5 часа · Хореограф Алина Р.</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Ученица</span>
+              <h3>Онлайн-запись на пробный урок через виджет за 40 секунд</h3>
+              <p>Девушка выбирает стиль High Heels, удобный вечер среды и филиал. Система резервирует 11-е место из 14 и закрепляет бронь без звонков администратора.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование пробного</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Ученица</span><strong>Полина С.</strong></div>
+              <div class="mt-journey-proof-row"><span>Направление</span><strong>High Heels (начинающие) · Зал №1</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Среда, 19:00 – 20:30 (11/14 мест)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание о тренировке за 24 ч и памятка по форме за 0 ₽</h3>
+              <p>Бот присылает напоминание в Telegram: точный адрес студии, код от домофона и памятку (взять удобную обувь на каблуке, носочки и наколенники).</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание #4219</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Студия на Невском, Зал 1, 19:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка</span><strong>Хилсы, наколенники, бутылка воды</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор и хореограф</span>
+              <h3>Быстрая отметка в журнале и продажа абонемента на 8 занятий</h3>
+              <p>Ученица приходит в студию, администратор отмечает визит в 1 клик на планшете. После урока Полина покупает абонемент на 8 занятий со скидкой первого дня.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Оформление абонемента">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Продажа абонемента</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Абонемент</span><strong>Курс High Heels 8 занятий (5 600 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Срок действия</span><strong>35 дней · 1 заморозка включена</strong></div>
+              <div class="mt-journey-proof-row"><span>Баланс</span><strong>8 уроков доступно в личном кабинете</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Расчет зарплаты</span>
+              <h3>Автоматическое начисление оплаты хореографу за группу из 12 человек</h3>
+              <p>После окончания тренировки система автоматически начисляет хореографу Алине ставку за урок 1 500 ₽ + доплату за аншлаг в группе 600 ₽ прямо на баланс.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Начисление зарплаты">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Ведомость смены</span>
+                <span class="mt-journey-proof-badge">Начислено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Хореограф</span><strong>Алина Р. (High Heels)</strong></div>
+              <div class="mt-journey-proof-row"><span>Группа</span><strong>12 учениц в зале (1.5 часа)</strong></div>
+              <div class="mt-journey-proof-row"><span>К выплате</span><strong>2 100 ₽ за тренировку (баланс в телефоне)</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии танцев" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">💃 Кейс школы танцев</div>
+            <h2 class="mt-case-title">Алена Морозова, основательница школы танцев «Vibe Dance Studio» (3 зала, 14 направлений, Санкт-Петербург)</h2>
+            <blockquote class="mt-case-quote">
+              «Раньше запись велась в чатах WhatsApp, и залы то пустовали, то были переполнены так, что девушкам не хватало места у зеркал. В Молнии мы ввели жесткие лимиты залов и онлайн-запись. Теперь в группе ровно 14 человек, доходимость до пробных выросла на 38% благодаря автонапоминаниям с памяткой о форме, а учет абонементов и списаний стал полностью прозрачным.»
+            </blockquote>
+            <div class="mt-case-author">
+              Алена Морозова <span>· Основательница танцевальной школы «Vibe Dance Studio», <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+38%</span>
+              <span class="mt-case-label">Рост доходимости до пробных занятий благодаря автопамяткам в Telegram с правилами формы</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 переполнений</span>
+              <span class="mt-case-label">Залов благодаря автоматическому ограничению мест у зеркал и станков в виджете записи</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные напоминания ученикам и продление абонементов в мессенджерах</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DANCE FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий танцев</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
       </p>
       <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
     </div>
@@ -18472,7 +18971,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "brows", "epilation", "detailing", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "epilation", "detailing", "dance", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -18499,6 +18998,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для студий танцев и школ хореографии",
+        "slug": "dance",
+        "description": "Программа для студий танцев: онлайн-запись на пробные уроки 24/7, расписание залов с лимитом мест, абонементы на 8–12 занятий и зарплата тренеров.",
+        "pub_date": datetime(2026, 11, 21, 21, 25, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для детейлинг-центров и студий оклейки",
         "slug": "detailing",
@@ -27228,6 +27734,11 @@ def main():
     education_html = build_education_page()
     (ROOT_DIR / "education.html").write_text(education_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'education.html'}")
+
+    print("Building sector landing page: /dance...")
+    dance_html = build_dance_page()
+    (ROOT_DIR / "dance.html").write_text(dance_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'dance.html'}")
 
     print("Building sector landing page: /pets...")
     pets_html = build_pets_page()
