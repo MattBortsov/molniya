@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 21 Nov 2026 17:23:40 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 17:27:08 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Онлайн-запись и CRM для детских развивающих центров и клубов</title>
+      <link>https://molniya-tech.ru/kids-center</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/kids-center</guid>
+      <pubDate>Sat, 21 Nov 2026 21:35:00 +0300</pubDate>
+      <category>Отрасли</category>
+      <description><![CDATA[Программа для детских центров: онлайн-запись детей по возрастам, учет справок о болезни и перерасчет абонементов, автоуведомления родителям за 0 ₽.]]></description>
+    </item>
     <item>
       <title>Онлайн-запись и CRM для тату-студий и мастеров перманента</title>
       <link>https://molniya-tech.ru/tattoo</link>

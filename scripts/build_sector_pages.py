@@ -13899,6 +13899,13 @@ def build_education_page() -> str:
               <div class="mt-subniche-desc">Онлайн-запись на пробные уроки 24/7, вместимость залов со станками, учет абонементов на 8–12 занятий, автонапоминания за 0 ₽.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/kids-center">
+            <div class="mt-subniche-icon">🎨</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Детские развивающие центры и клубы <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись детей по возрастам, учет справок и заморозок абонементов, автоуведомления родителям в мессенджеры за 0 ₽.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -14503,6 +14510,487 @@ def build_dance_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий танцев</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_kids_center_page() -> str:
+    """Builds the complete kids center micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="education", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "kids-center",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для детского центра',
+        "Оставьте контакты — покажем Молнию на примере вашего детского центра или клуба, поможем настроить группы по возрасту, учет справок и онлайн-запись.",
+    )
+
+    title = "CRM для детского центра: программа для детского клуба, онлайн-запись и абонементы"
+    description = (
+        "Программа для детских развивающих центров и клубов: онлайн-запись детей по возрастам, "
+        "учет абонементов и справок о болезни, автоуведомления родителям за 0 ₽, зарплата педагогов."
+    )
+    canonical = "https://molniya-tech.ru/kids-center"
+
+    faqs = [
+        (
+            "Как настроить группы по возрастам детей (1–3 года, 4–5 лет, 6–7 лет) в расписании?",
+            "В Молнии вы создаете направления с жесткой привязкой к возрастной категории: раннее развитие (1.5–3 года вместе с мамой), средняя группа (3–4 года), подготовка к школе (5–6 и 6–7 лет), робототехника, скорочтение или логопед. При онлайн-записи родитель указывает дату рождения ребенка, и система предлагает только подходящие по возрасту группы.",
+        ),
+        (
+            "Как устроен перерасчет абонементов по справкам о болезни и оформление заморозки?",
+            "Когда ребенок заболел, мама отправляет фото справки от педиатра в Telegram-бот или администратору. В карточке ученика администратор нажимает «Заморозка по болезни» — пропущенные уроки автоматически переносятся на следующий месяц, а срок действия абонемента продлевается на количество дней больничного без споров.",
+        ),
+        (
+            "Как родители записывают детей на пробные уроки через Telegram, WhatsApp или сайт?",
+            "В виджете онлайн-записи мама выбирает удобный филиал, интересующее направление (например, ментальная арифметика или шахматы) и видит свободные места в группе нужного возраста. Заявка с пометкой «Пробное занятие» мгновенно закрепляет ребенка за группой, а маме приходит схема проезда и напоминание взять сменную обувь.",
+        ),
+        (
+            "Как отправляются автоматические напоминания и отчеты родителям в мессенджеры?",
+            "Сервисный бот за 24 и 2 часа присылает родителям напоминание об уроке за 0 ₽ без оплаты за SMS. Педагог или администратор может отправить маме фотоотчет с поделками ребенка или комментарий логопеда о динамике звукопроизношения прямо в мессенджер.",
+        ),
+        (
+            "Как рассчитывается сдельная зарплата педагогов, логопедов и преподавателей кружков?",
+            "Вы можете настроить любую систему мотивации: фиксированная ставка за проведенный групповой урок (например, 1 200 ₽), доплата за каждого присутствующего ребенка сверх нормы, процент от стоимости абонементов или повышенная ставка за индивидуальные занятия с логопедом и нейропсихологом.",
+        ),
+        (
+            "Можно ли вести учет нескольких филиалов, разновозрастных направлений и летних лагерей?",
+            "Да. Программа позволяет объединить несколько детских клубов в единой панели. Руководитель видит загрузку кабинетов каждого филиала, динамику продления абонементов, продажи в мини-садике и смены летнего городского лагеря.",
+        ),
+        (
+            "Как бесплатно перенести базу учеников, родителей, историю оплат и график из другой CRM или Excel?",
+            "Служба заботы Молнии бесплатно импортирует контакты детей и родителей, даты рождения, балансы абонементов и график занятий из Мой Класс, Параплан, Холл Ди или таблиц Excel. Перенос занимает около 15 минут без сбоев в расписании кружков.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния — CRM для детских центров и развивающих клубов",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для детского центра:<br><span class="mt-hero-accent">онлайн-запись и учет абонементов</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 по возрастным группам в Telegram и WhatsApp, учет справок о болезни и перерасчет абонементов, расписание кабинетов, автоуведомления родителям за 0 ₽, сдельная зарплата педагогов</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для детских центров">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Группы по возрасту</span>
+                <span class="mt-facet-note">лимит 6–8 детей и точный подбор кружка</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Справки и заморозка</span>
+                <span class="mt-facet-note">перенос уроков по болезни в 1 клик</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp родителям о сменке</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Зарплата педагогов</span>
+                <span class="mt-facet-note">ставка за урок и учет присутствующих</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для детского центра: расписание кабинетов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Расписание детского центра: занятость кабинетов, группы по возрасту и учет посещений</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE CLASSROOMS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость кабинетов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый кабинет, возрастная группа и педагог <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор видит занятость кабинетов в реальном времени: раннее развитие, подготовка к школе, робототехника и занятия с логопедом.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 1 · Монтессори & Малыши</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">Идет занятие</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">«Мама и малыш» (1.5–3 года)</div>
+                <div class="mt-auto-car-tier">6 из 6 деток (Группа заполнена) · Педагог Ольга В.</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🧸</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Урок 11:00 – 11:50</span>
+              <span class="mt-auto-price">По абонементам</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 2 · Подготовка к школе</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Урок завершен</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Группа «Будущий первоклассник» (6 лет)</div>
+                <div class="mt-auto-car-tier">8 детей отмечено · Педагог Наталья К.</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">📚</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Списано 8 занятий</span>
+              <span class="mt-auto-price">Педагогу 1 600 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 3 · Кабинет логопеда</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Индивидуальный логопед (17:30)</div>
+                <div class="mt-auto-car-tier">Ученик Миша Д. (5 лет) · Постановка звуков</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🗣️</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Индивидуальный урок</span>
+              <span class="mt-auto-price">2 200 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KIDS CENTER OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для детских центров" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте детским центром <span class="mt-overview-hook">без споров о справках и потерь на срывах абонементов</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание групп по возрастам, онлайн-запись на пробные занятия, учет справок от педиатра и сдельная зарплата педагогов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Расписание кабинетов и группы по возрастам <span class="mt-overview-hook">без переполненных групп и шума</span></h3>
+            <p>Задайте лимит мини-групп (6–8 детей) и возрастные рамки (2–3, 4–5, 6–7 лет). Система автоматически закрывает запись в переполненные группы и исключает накладки в игровых комнатах.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кабинетов</span><span>Кабинет «Подготовка к школе»</span></div>
+              <div class="mt-overview-calendar"><span>16:30</span><div class="mt-overview-slot">Группа 5–6 лет <small>7 из 8 детей · Свободно 1 место</small></div><span>18:00</span><div class="mt-overview-slot mt-overview-slot--light">Группа 6–7 лет <small>8 из 8 детей · Мест нет</small></div><span>19:30</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт справок о болезни и перерасчет абонементов <span class="mt-overview-hook">прозрачно и в 1 клик</span></h3>
+            <p>Мама присылает фото справки в мессенджер — администратор активирует заморозку на указанное число дней. Пропущенные уроки автоматически переносятся без скандалов и ручных пересчетов.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Абонемент ребенка</span><span>Артём Васильев (5 лет)</span></div>
+              <div class="mt-overview-price-row"><span>Курс «Развивайка 8 уроков»</span><strong>Остаток: 6 из 8 · Активен</strong></div>
+              <div class="mt-overview-price-row"><span>Справка от педиатра</span><strong>Заморозка на 10 дней применена</strong></div>
+              <div class="mt-overview-price-tag">Срок абонемента продлен до 18 декабря</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные уведомления родителям за 0 ₽ <span class="mt-overview-hook">прямо в Telegram и WhatsApp</span></h3>
+            <p>Бот напоминает родителям о занятии за 24 и 2 часа: напоминает взять сменную обувь и форму, присылает фотоотчет с урока и предупреждает об окончании абонемента за 0 ₽ за SMS.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Уведомление родителям</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Екатерина, напоминаем: сегодня в 17:00 у Миши занятие по робототехнике в Кабинете №3. Не забудьте сменку! 🤖
+                <span class="mt-overview-reaction">🎨</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Напоминания без переплат за SMS →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Онлайн-запись на пробные занятия 24/7 <span class="mt-overview-hook">конверсия в постоянный абонемент 74%</span></h3>
+            <p>Родители записывают ребенка на пробный урок прямо со страницы детского клуба в соцсетях. Система проверяет возраст, закрепляет слот и присылает маме правила посещения и схему проезда.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Онлайн-запись ребенка</span><span>Ментальная арифметика</span></div>
+              <div class="mt-overview-stages"><span>Возраст 6 лет</span><i></i><span>Кабинет №2</span><i></i><span>Пробное</span></div>
+              <div class="mt-overview-check">✓ <span>Слот забронирован на вторник 17:30</span></div>
+              <div class="mt-overview-check">✓ <span>Памятка для мамы отправлена в Telegram</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Сдельная зарплата педагогов и логопедов <span class="mt-overview-hook">ставка за урок и % с присутствующих</span></h3>
+            <p>Гибкие схемы: фиксированная оплата за урок (1 200 ₽), доплата за каждого ребенка в группе или повышенная ставка за индивидуальные уроки логопеда. Педагог видит свой доход в телефоне.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Выработка педагога</span><span>Ольга В. (Раннее развитие)</span></div>
+              <div class="mt-overview-metrics"><span>Уроки<b>18</b></span><span>Дети<b>126</b></span><span>Зарплата<b>31 500 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- KIDS CENTER JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь ребенка в детский центр">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один пробный урок. <span class="mt-hero-accent">Постоянный ученик на весь учебный год.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в детский центр: от онлайн-записи на пробный урок с фильтром по возрасту до автонапоминания маме о сменке и продажи абонемента.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Запись на пробный урок «Подготовка к школе (5–6 лет)»</strong><span>Длительность 50 минут · Кабинет №2 · Педагог Наталья К.</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Родитель</span>
+              <h3>Онлайн-запись на пробный урок через Telegram за 40 секунд</h3>
+              <p>Мама выбирает направление подготовки к школе, указывает возраст сына (5.5 лет) и удобный вечер. Система бронирует 6-е место из 8 в мини-группе.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование пробного</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Ребенок</span><strong>Миша Д. (5 лет 6 мес) · Мама Екатерина</strong></div>
+              <div class="mt-journey-proof-row"><span>Программа</span><strong>Подготовка к школе · Кабинет №2</strong></div>
+              <div class="mt-journey-proof-row"><span>Время</span><strong>Вторник, 17:00 – 17:50 (6/8 мест)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Напоминание маме за 24 ч и памятка по сменной обуви за 0 ₽</h3>
+              <p>Бот присылает напоминание: точный адрес детского клуба, правила безопасности и памятку (взять удобную сменку и легкую одежду без застежек).</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Напоминание #7821</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Филиал «Северный», Кабинет 2, 17:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка</span><strong>Сменная обувь, пенал с цветными карандашами</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Администратор и педагог</span>
+              <h3>Быстрая отметка прихода и продажа абонемента на месяц в 1 клик</h3>
+              <p>Мама с сыном приходят в клуб. Администратор отмечает приход на планшете. После урока мама покупает абонемент на 8 занятий с гарантией заморозки по справке.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Оформление абонемента">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Продажа абонемента</span>
+                <span class="mt-journey-proof-badge">Оплачено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Абонемент</span><strong>Курс «Школа 8 уроков» (4 800 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Заморозка</span><strong>До 14 дней по справке включено</strong></div>
+              <div class="mt-journey-proof-row"><span>Баланс</span><strong>8 уроков в личном кабинете мамы</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Педагог и касса</span>
+              <h3>Сдельная оплата педагогу за урок и баланс занятий у мамы в телефоне</h3>
+              <p>Занятие завершено: педагогу Наталье начислена ставка 1 600 ₽ за 7 детей, занятие списано с баланса, а бот отправил маме фотоотчет с урока за 0 ₽.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие урока">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Ведомость смены</span>
+                <span class="mt-journey-proof-badge">Начислено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Педагог</span><strong>Наталья К. (Подготовка к школе)</strong></div>
+              <div class="mt-journey-proof-row"><span>Ученики</span><strong>7 детей в группе (50 мин)</strong></div>
+              <div class="mt-journey-proof-row"><span>К выплате</span><strong>1 600 ₽ за урок (баланс в телефоне)</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс детского центра" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">🎨 Кейс детского развивающего центра</div>
+            <h2 class="mt-case-title">Екатерина Белова, руководитель сети детских клубов «Умка Клуб» (4 филиала, 28 педагогов, Нижний Новгород)</h2>
+            <blockquote class="mt-case-quote">
+              «Главная головная боль любого детского центра — бесконечные болезни детей и перерасчеты абонементов в конце месяца. Раньше администраторы тратили часы на проверку справок в тетрадях. В Молнии родитель присылает фото справки в бот, и заморозка применяется в один клик с автоматическим сдвигом дат. Конфликты с родителями сошли на нет, а продления абонементов выросли на 31%.»
+            </blockquote>
+            <div class="mt-case-author">
+              Екатерина Белова <span>· Руководитель детских клубов «Умка Клуб», <span style="white-space:nowrap">Нижний Новгород</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 споров</span>
+              <span class="mt-case-label">По перерасчетам и справкам о болезни детей благодаря автоматическому продлению абонементов</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+31%</span>
+              <span class="mt-case-label">Рост регулярных продлений абонементов за счет автонапоминаний родителям в Telegram и WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Расходов на SMS: бесплатные уведомления родителям о расписании, сменке и открытых уроках</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KIDS CENTER FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для детских центров</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -19459,7 +19947,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "brows", "epilation", "detailing", "dance", "tattoo", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "epilation", "detailing", "dance", "tattoo", "kids-center", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -19486,6 +19974,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для детских развивающих центров и клубов",
+        "slug": "kids-center",
+        "description": "Программа для детских центров: онлайн-запись детей по возрастам, учет справок о болезни и перерасчет абонементов, автоуведомления родителям за 0 ₽.",
+        "pub_date": datetime(2026, 11, 21, 21, 35, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для тату-студий и мастеров перманента",
         "slug": "tattoo",
@@ -28239,6 +28734,11 @@ def main():
     dance_html = build_dance_page()
     (ROOT_DIR / "dance.html").write_text(dance_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'dance.html'}")
+
+    print("Building sector landing page: /kids-center...")
+    kids_center_html = build_kids_center_page()
+    (ROOT_DIR / "kids-center.html").write_text(kids_center_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'kids-center.html'}")
 
     print("Building sector landing page: /pets...")
     pets_html = build_pets_page()
