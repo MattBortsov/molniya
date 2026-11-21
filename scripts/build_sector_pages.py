@@ -1506,6 +1506,13 @@ def build_beauty_page() -> str:
               <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, схемы наращивания и изгибы, автонапоминания за 0 ₽, памятки по уходу и склад материалов.</div>
             </div>
           </a>
+          <a class="mt-subniche-card" href="/epilation">
+            <div class="mt-subniche-icon">⚡</div>
+            <div class="mt-subniche-content">
+              <div class="mt-subniche-title">Студии лазерной эпиляции и депиляции <span class="mt-subniche-arrow">→</span></div>
+              <div class="mt-subniche-desc">Онлайн-запись клиентов 24/7, автоворонка курсов из 6–10 сеансов, памятки до/после за 0 ₽, учет зон и абонементов.</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -3645,6 +3652,510 @@ def build_brows_page() -> str:
       <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
         <div class="mt-section-head">
           <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий ресниц и бровей</h2>
+        </div>
+        <div class="mt-before-start-questions">
+{faq_html}
+
+        </div>
+      </section>
+
+{lead_html}
+
+{footer_html}
+
+    </div>
+
+    <!-- cookie notice -->
+    <div class="mt-cookie-banner" id="mt-cookie-banner" role="dialog" aria-live="polite">
+      <p class="mt-cookie-text">
+        Мы используем файлы cookie и Яндекс.Метрику для аналитики сайта.
+        Продолжая пользоваться сайтом, вы соглашаетесь с этим —
+        подробнее в <a href="/privacy" class="mt-link-accent">политике конфиденциальности</a>.
+      </p>
+      <button class="mt-btn mt-cookie-accept" type="button" id="mt-cookie-accept">Понятно</button>
+    </div>
+
+    <!-- sticky floating CTA -->
+    <a class="mt-btn mt-btn-sticky" href="https://t.me/molniya_tex" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 2.9 11.64c-1.07.43-1.06 1.03-.2 1.3l4.88 1.52 1.88 5.78c.23.63.41.88.86.88.45 0 .64-.2.88-.5l2.35-2.28 4.9 3.62c.9.5 1.55.24 1.78-.83l3.2-15.1c.33-1.31-.5-1.9-1.37-1.5z"/></svg>
+      Обновления в ТГ-канале
+    </a>
+
+  </div>
+
+  <script src="/script.js?v=20261026-faq12col"></script>
+</body>
+</html>
+'''
+    return page_html
+
+
+def build_epilation_page() -> str:
+    """Builds the complete epilation and depilation studio micro-landing page matching the canonical design system."""
+    nav_html = render_nav_html(active_item="beauty", asset_prefix="")
+    footer_html = render_footer_html(asset_prefix="")
+    lead_html = render_lead_form_html(
+        "epilation",
+        'Получите <span class="mt-hero-accent">бесплатный доступ навсегда</span> для студии эпиляции',
+        "Оставьте контакты — покажем Молнию на примере вашей студии, поможем настроить расписание аппаратов, автоворонку курса и онлайн-запись.",
+    )
+
+    title = "CRM для студии эпиляции: программа и онлайн-запись на лазер и депиляцию"
+    description = (
+        "Программа для студии эпиляции и депиляции: онлайн-запись 24/7, автоворонка курса из 6–10 сеансов, "
+        "памятки до/после за 0 ₽, учет зон и абонементов."
+    )
+    canonical = "https://molniya-tech.ru/epilation"
+
+    faqs = [
+        (
+            "Как клиентки выбирают зоны и комплексы при онлайн-записи?",
+            "В виджете онлайн-записи клиентка выбирает нужные зоны (подмышки, глубокое бикини, ноги полностью, руки, лицо) или выгодный комплекс. Система автоматически суммирует длительность процедур (от 15 до 60 минут) и предлагает только те слоты, где свободен подходящий аппарат и специалист.",
+        ),
+        (
+            "Как работает автоворонка ведения клиентки по курсу из 6–10 процедур?",
+            "Лазер воздействует только на волоски в активной фазе роста (анаген) с интервалом 4–6 недель. Если пропустить срок, фолликулы восстанавливаются. Молния фиксирует дату каждого визита и за 5 дней до наступления идеального окна присылает заботливое напоминание: «Пора на 4-й сеанс для закрепления гладкости». Это повышает завершаемость курсов до 86%.",
+        ),
+        (
+            "Как отправляются памятки по подготовке до визита и уходу после сеанса?",
+            "Сервисный бот за 24 часа напоминает о визите и автоматически присылает правила подготовки (за 24 ч сбрить бритвой, не использовать воск/эпилятор, исключить загар 7 дней). Сразу после закрытия чека бот присылает рекомендации по уходу (не посещать сауну 48 ч, наносить пантенол, использовать крем с SPF 50+).",
+        ),
+        (
+            "Сколько стоит отправка напоминаний и памяток в мессенджеры?",
+            "Сервисные уведомления в мессенджерах (Telegram, WhatsApp) отправляются за 0 ₽ — без абонентской платы за подключение и платы за каждое сообщение. Студия на 3–4 кабинета экономит от 12 000 до 25 000 ₽ в месяц на SMS.",
+        ),
+        (
+            "Как фиксируются параметры вспышек, фототип кожи и противопоказания?",
+            "В электронной карточке клиентки специалист фиксирует фототип по Фитцпатрику, плотность и цвет волоса, мощность лазера (Дж/см²), длительность импульса и противопоказания (свежий загар, варикоз, прием ретиноидов). При следующем визите мастер видит всю динамику и безопасно корректирует настройки.",
+        ),
+        (
+            "Как устроен складской учёт контактного геля, одноразовых расходников и косметики?",
+            "Одноразовые простыни, шпатели, салфетки, перчатки и контактный ультразвуковой гель списываются автоматически по техкартам процедур при закрытии визита. Домашний уход (энзимные пудры от вросших волос, увлажняющие лосьоны, SPF-кремы) списывается в момент продажи на кассе.",
+        ),
+        (
+            "Как бесплатно перенести базу клиентов, абонементы и график с YClients или Excel?",
+            "Служба заботы Молнии бесплатно переносит базу контактов, историю процедур, действующие абонементы с остатком сеансов и график специалистов из YClients, DIKIDI, Altegio или таблиц Excel. Перенос занимает около 15 минут без сбоев в записи.",
+        ),
+    ]
+
+    faq_html = "\n".join(
+        f'            <details open><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>'
+        for q, a in faqs
+    )
+
+    json_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://molniya-tech.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Красота", "item": "https://molniya-tech.ru/beauty"},
+                {"@type": "ListItem", "position": 3, "name": "CRM для студий эпиляции", "item": canonical},
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Молния Тех — онлайн-запись и CRM для студий эпиляции и депиляции",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, macOS, Windows",
+            "url": canonical,
+            "description": description,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "RUB",
+                "description": "Бесплатный демо-доступ и настройка расписания студии эпиляции",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "ООО «МОЛНИЯ ТЕХ»",
+                "url": "https://molniya-tech.ru",
+            },
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": a,
+                    },
+                }
+                for q, a in faqs
+            ],
+        },
+    ]
+    json_ld_str = json.dumps(json_ld, ensure_ascii=False)
+
+    page_html = f'''<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12100E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Молния Тех — RSS" href="https://molniya-tech.ru/rss.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/molniya-mark-theme.svg?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-32.png?v=20260930">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/molniya-mark-mono-white-32.png?v=20260930" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/molniya-mark-180.png?v=20260930">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Молния Тех">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{html.escape(title)}">
+  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(title)}">
+  <meta name="twitter:description" content="{html.escape(description)}">
+  <meta name="twitter:image" content="https://molniya-tech.ru/assets/img/schedule.jpg">
+
+  <script type="application/ld+json">{json_ld_str}</script>
+
+  <link rel="preload" href="/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=20261111-start-wide">
+  <script src="/metrika.js" defer></script>
+</head>
+<body>
+
+  <!-- shared SVG gradients used across icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="mtgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D2634A"></stop><stop offset="1" stop-color="#B8442E"></stop></linearGradient>
+  </defs></svg>
+
+  <div class="mt-page">
+
+    <!-- background atmosphere -->
+    <div class="mt-atmosphere mt-atmosphere--glow" aria-hidden="true"></div>
+    <div class="mt-atmosphere mt-atmosphere--grid" aria-hidden="true"></div>
+
+    <div class="mt-content">
+
+{nav_html}
+
+      <!-- HERO -->
+      <section class="mt-hero" data-screen-label="Герой" data-mt-hero-scene>
+
+        <div class="mt-hero-lead">
+          <h1 class="mt-hero-title">
+            Программа для студии эпиляции:<br><span class="mt-hero-accent">онлайн-запись и курсы процедур</span>
+          </h1>
+
+          <div class="mt-hero-bottom">
+            <div class="mt-hero-intro">
+              <p class="mt-hero-sub">Онлайн-запись 24/7 в Telegram и WhatsApp, автоворонка курсов из 6–10 сеансов, напоминания и памятки до/после за 0 ₽, учет зон и сдельная зарплата мастеров</p>
+              <a class="mt-btn mt-btn-hero" href="#contact">Получить бесплатный доступ</a>
+            </div>
+
+            <ul class="mt-facets mt-facets--full" aria-label="Преимущества для студий эпиляции">
+              <li class="mt-facet">
+                <span class="mt-facet-name">Сетка аппаратов</span>
+                <span class="mt-facet-note">суммирование зон и точный тайминг</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Курсы 6–10 сеансов</span>
+                <span class="mt-facet-note">автоворонка по фазам роста волос</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name">Напоминания 0 ₽</span>
+                <span class="mt-facet-note">Telegram и WhatsApp без переплат за SMS</span>
+              </li>
+              <li class="mt-facet">
+                <span class="mt-facet-name mt-facet-name--soon">Памятки до/после</span>
+                <span class="mt-facet-note">правила подготовки и ухода за кожей</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="product-preview" class="mt-hero-col mt-hero-col--media">
+          <div class="mt-hero-media-motion">
+            <a class="mt-tablet" href="/start" aria-label="Быстрый старт: смотреть видео и подключить">
+              <span class="mt-tablet-screen">
+                <img class="mt-tablet-img" src="/assets/img/schedule.jpg" alt="Программа для студии эпиляции: расписание аппаратов и онлайн-запись" width="1710" height="983" fetchpriority="high">
+                <span class="mt-tablet-overlay">
+                  <span class="mt-tablet-play-btn" aria-hidden="true">
+                    <svg class="mt-tablet-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="mt-tablet-play-label">Быстрый старт</span>
+                </span>
+              </span>
+              <img class="mt-tablet-frame" src="/assets/img/ipad-mockup.svg?v=20260925-8" alt="" aria-hidden="true" width="1280" height="950" fetchpriority="high">
+            </a>
+            <p class="mt-hero-media-caption">Электронное расписание студии эпиляции: занятость аппаратов, кабинетов и курсы сеансов</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- LIVE APPARATUS STATUS -->
+      <section class="mt-section mt-reveal" data-screen-label="Занятость аппаратов" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Каждый аппарат, кабинет и сеанс <span class="mt-overview-hook">под полным контролем</span></h2>
+          <p class="mt-section-sub">Администратор и специалисты видят статус кабинетов в реальном времени: лазерная эпиляция комплекса зон, шугаринг или подготовка аппарата.</p>
+        </div>
+
+        <div class="mt-auto-bays">
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 1 · Диодный лазер 808 нм</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--work">В работе</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Анна В. · Курс «Гладкость»</div>
+                <div class="mt-auto-car-tier">Сеанс 4 из 8 · Бикини + подмышки + голени</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">⚡</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс Макси (45 мин)</span>
+              <span class="mt-auto-price">По абонементу</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 2 · Александрит Motus AX</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--done">Готово</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ольга Т. · Moveo</div>
+                <div class="mt-auto-car-tier">Александрит без боли · Руки полностью</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">✨</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Александрит Moveo</span>
+              <span class="mt-auto-price">4 200 ₽</span>
+            </div>
+          </div>
+
+          <div class="mt-auto-bay">
+            <div class="mt-auto-bay-head">
+              <span class="mt-auto-bay-title">Кабинет 3 · Сахар & Воск</span>
+              <span class="mt-auto-bay-status mt-auto-bay-status--wait">Ожидание</span>
+            </div>
+            <div class="mt-auto-car">
+              <div>
+                <div class="mt-auto-car-name">Ксения М. (17:30)</div>
+                <div class="mt-auto-car-tier">Шугаринг Italwax · Глубокое бикини + ноги</div>
+              </div>
+              <span class="mt-dropdown-footer-icon">🍯</span>
+            </div>
+            <div class="mt-auto-service">
+              <span>Комплекс депиляции</span>
+              <span class="mt-auto-price">2 900 ₽</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPILATION OVERVIEW VALUE GRID -->
+      <section class="mt-section mt-section--overview mt-reveal" data-screen-label="Функции для студий эпиляции" data-mt-reveal>
+        <div class="mt-section-head mt-section-head--center">
+          <h2 class="mt-section-title">Управляйте студией эпиляции <span class="mt-overview-hook">без потерь клиенток посреди курса и переплат за SMS</span></h2>
+          <p class="mt-section-sub">Один сервис вместо блокнотов и таблиц: расписание лазерных аппаратов по зонам, автоворонка курса из 6–10 сеансов, бесплатные памятки до/после и учет абонементов.</p>
+        </div>
+
+        <div class="mt-overview-grid">
+          <article class="mt-overview-card">
+            <h3>Умная сетка записи и тайминг зон <span class="mt-overview-hook">без накладок и простоя лазеров</span></h3>
+            <p>Каждая зона требует разного времени: подмышки 10 минут, тотальное бикини 20 минут, ноги полностью 35 минут. Программа автоматически суммирует длительность выбранных зон и резервирует точный слот без накладок.</p>
+            <div class="mt-overview-preview mt-overview-preview--schedule" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Расписание кабинетов</span><span>Тайминг по зонам</span></div>
+              <div class="mt-overview-calendar"><span>11:00</span><div class="mt-overview-slot">Кабинет 1: Бикини + ноги <small>Диодный лазер 808 нм</small></div><span>11:50</span><div class="mt-overview-slot mt-overview-slot--light">Кабинет 2: Подмышки <small>Александрит Motus</small></div><span>12:20</span><div></div></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Автоворонка доведения курса из 6–10 сеансов <span class="mt-overview-hook">по циклу фаз роста волос</span></h3>
+            <p>Лазер разрушает только фолликулы в фазе анагена с шагом 4–6 недель. Если клиентка затягивает, курс приходится начинать заново. Молния рассчитывает идеальную дату следующего сеанса и присылает заботливое напоминание.</p>
+            <div class="mt-overview-preview mt-overview-preview--process" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Автоворонка курса</span><span>Цикл анагена 4 недели</span></div>
+              <div class="mt-overview-stages"><span>Сеанс #3</span><i></i><span>28 дней</span><i></i><span>Автонапоминание</span></div>
+              <div class="mt-overview-check">✓ <span>Клиентка приглашена в фазу активного роста</span></div>
+              <div class="mt-overview-check">✓ <span>Завершаемость полного курса вырастает до 86%</span></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Сервисные напоминания и памятки до/после за 0 ₽ <span class="mt-overview-hook">прямо в Telegram и WhatsApp</span></h3>
+            <p>Бот подтверждает запись и автоматически отправляет памятку подготовки (за 24 ч сбрить бритвой, исключить загар 7 дней), а после визита — правила ухода (не греть кожу 48 ч, наносить SPF). Неявки снижаются на 87%.</p>
+            <div class="mt-overview-preview mt-overview-preview--clients" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Памятка подготовки</span><span>0 ₽ за сообщения</span></div>
+              <div class="mt-overview-message">
+                Анна, напоминаем о сеансе завтра в 11:00! Пожалуйста, сбрейте волоски бритвой за 12–24 часа до визита. Ждём вас! ⚡
+                <span class="mt-overview-reaction">🧴</span>
+              </div>
+              <div class="mt-overview-client-row"><span>Telegram и WhatsApp</span><strong>Сервисные уведомления 0 ₽ →</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card">
+            <h3>Учёт абонементов на курсы и зон <span class="mt-overview-hook">в карте клиентки</span></h3>
+            <p>Продавайте курсы на 5, 8 или 10 сеансов. Система автоматически списывает пройденную процедуру, сохраняет фототипы кожи, параметры мощности импульса (Дж/см²) и предупреждает об окончании срока абонемента.</p>
+            <div class="mt-overview-preview mt-overview-preview--prices" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Абонемент «Гладкость»</span><span>Курс из 8 сеансов</span></div>
+              <div class="mt-overview-price-row"><span>Пройдено 4 сеанса</span><strong>Остаток: 4 сеанса в курсе</strong></div>
+              <div class="mt-overview-price-row"><span>Параметры манипулы</span><strong>Фототип II · 24 Дж/см² · 30 мс</strong></div>
+              <div class="mt-overview-price-tag">Все зоны и параметры сохранены</div>
+            </div>
+          </article>
+
+          <article class="mt-overview-card mt-overview-card--featured">
+            <h3>Склад расходников, геля и вспышек <span class="mt-overview-hook">и сдельная зарплата мастеров</span></h3>
+            <p>Одноразовые простыни, шпатели, салфетки, контактный гель и вспышки лазера списываются по технологическим картам сеансов. Мастер прямо в телефоне видит свой процент за смену (35–45%) и премию за проданные курсы.</p>
+            <div class="mt-overview-preview mt-overview-preview--metrics" aria-hidden="true">
+              <div class="mt-overview-ui-head"><span>Смена специалиста</span><span>Мастер Виктория</span></div>
+              <div class="mt-overview-metrics"><span>Сеансы<b>7</b></span><span>Курсы<b>2 продано</b></span><span>Зарплата<b>9 800 ₽</b></span></div>
+              <div class="mt-overview-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-overview-action">
+          <a class="mt-btn mt-btn-cta" href="#contact">Получить бесплатный доступ</a>
+        </div>
+      </section>
+
+      <!-- EPILATION JOURNEY -->
+      <section class="mt-section mt-journey" data-screen-label="Путь клиентки в студию эпиляции">
+        <div class="mt-section-head mt-section-head--center" data-mt-reveal>
+          <h2 class="mt-section-title">Один визит клиентки. <span class="mt-hero-accent">Полный курс гладкости без пропусков.</span></h2>
+          <p class="mt-section-sub">Посмотрите, как Молния организует визит в студию эпиляции: от онлайн-бронирования комплекса зон до отправки правил подготовки и автоприглашения на следующий сеанс через 4 недели.</p>
+        </div>
+
+        <div class="mt-journey-example" aria-label="Пример прохождения записи" data-mt-reveal data-mt-delay="80">
+          <span>Пример</span><strong>Курс лазерной эпиляции «Комплекс Макси: тотальное бикини + ноги полностью + подмышки»</strong><span>Длительность 45 минут · Диодный лазер 808 нм · Кабинет №1</span>
+        </div>
+
+        <div class="mt-journey-list">
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">01</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Клиентка</span>
+              <h3>Онлайн-запись через Telegram или виджет за 40 секунд</h3>
+              <p>Гостья выбирает комплекс зон (бикини + ноги + подмышки). Система автоматически закладывает 45 минут в расписании диодного лазера и мастера Виктории.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Пример бронирования">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Бронирование сеанса</span>
+                <span class="mt-journey-proof-badge">Подтверждено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Клиентка</span><strong>Анна В.</strong></div>
+              <div class="mt-journey-proof-row"><span>Услуги</span><strong>Комплекс Макси: бикини + ноги + подмышки</strong></div>
+              <div class="mt-journey-proof-row"><span>Кабинет</span><strong>Кабинет №1 · Среда, 11:00 – 11:45</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">02</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Система</span>
+              <h3>Бронь лазера и автоотправка правил подготовки за 24 ч за 0 ₽</h3>
+              <p>Слот закрепляется за аппаратом. Бот присылает напоминание в Telegram с адресом студии и памяткой подготовки (сбрить волоски бритвой, не загорать 7 дней).</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Сервисное напоминание">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Уведомление #8241</span>
+                <span class="mt-journey-proof-badge">Доставлено</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Канал</span><strong>Telegram-бот (стоимость: 0 ₽)</strong></div>
+              <div class="mt-journey-proof-row"><span>Инфо</span><strong>Кабинет 1, диодный лазер, 11:00</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка до</span><strong>Правила бритья и защиты от загара</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">03</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Специалист</span>
+              <h3>Проверка параметров вспышки в телефоне, процедура и памятка ухода</h3>
+              <p>Специалист открывает карту в телефоне: видит фототип II и мощность 24 Дж/см². Проводит сеанс с охлаждающим гелем, а бот отправляет гостье памятку ухода после лазера.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Карточка визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Сеанс в работе</span>
+                <span class="mt-journey-proof-badge">В кабинете</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Мастер</span><strong>Виктория (Специалист лазерной эпиляции)</strong></div>
+              <div class="mt-journey-proof-row"><span>Параметры</span><strong>Диод 808 нм, 24 Дж/см², импульс 30 мс</strong></div>
+              <div class="mt-journey-proof-row"><span>Памятка после</span><strong>Отправлена в Telegram (пантенол, без сауны)</strong></div>
+            </div>
+          </article>
+
+          <article class="mt-journey-step">
+            <div class="mt-journey-index">04</div>
+            <div class="mt-journey-copy">
+              <span class="mt-journey-actor">Касса и склад</span>
+              <h3>Списание 4-го сеанса из 8, расходники учтены, автоприглашение через 30 дней</h3>
+              <p>Администратор закрывает чек: сеанс списан с абонемента (осталось 4 из 8), гель и простынь списаны, специалисту начислена сдельная оплата, а через 30 дней придет приглашение на 5-й сеанс.</p>
+            </div>
+            <div class="mt-journey-proof" aria-label="Закрытие визита">
+              <div class="mt-journey-proof-head">
+                <span class="mt-journey-proof-title">Чек #11280</span>
+                <span class="mt-journey-proof-badge">По абонементу</span>
+              </div>
+              <div class="mt-journey-proof-row"><span>Баланс курса</span><strong>Сеанс 4 из 8 · Остаток 4</strong></div>
+              <div class="mt-journey-proof-row"><span>Склад и зарплата</span><strong>Гель и простынь списаны · Мастеру 1 575 ₽</strong></div>
+              <div class="mt-journey-proof-row"><span>Следующий сеанс</span><strong>Автоприглашение через 30 дней (фаза анагена)</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD CASE STUDY -->
+      <section class="mt-case-section mt-reveal" data-screen-label="Кейс студии эпиляции" data-mt-reveal>
+        <div class="mt-case-card">
+          <div class="mt-case-header">
+            <div class="mt-case-tag">⚡ Кейс студии лазерной эпиляции</div>
+            <h2 class="mt-case-title">Марина Захарова, управляющая сетью студий лазерной эпиляции «LaserPro» (3 филиала, 8 кабинетов, Санкт-Петербург)</h2>
+            <blockquote class="mt-case-quote">
+              «Главная проблема лазерной эпиляции — клиентки видят первый результат на 2–3 сеансе и перестают ходить регулярно, а потом жалуются на возврат волос. В Молнии мы настроили автоворонку курса: бот сам считает интервал 30–35 дней и ненавязчиво предлагает выбрать время. Завершаемость полного курса из 8 сеансов выросла с 42% до 86%, а автопамятки подготовки полностью исключили ожоги и сорванные визиты.»
+            </blockquote>
+            <div class="mt-case-author">
+              Марина Захарова <span>· Управляющая сетью студий «LaserPro», <span style="white-space:nowrap">Санкт-Петербург</span></span>
+            </div>
+          </div>
+          <div class="mt-case-stats">
+            <div class="mt-case-stat">
+              <span class="mt-case-num">+44%</span>
+              <span class="mt-case-label">Рост доходимости до конца курса из 8 сеансов благодаря автоворонке с интервалом 4 недели</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">0 ₽</span>
+              <span class="mt-case-label">Переплат за SMS: бесплатные памятки подготовки и напоминания в Telegram и WhatsApp</span>
+            </div>
+            <div class="mt-case-stat">
+              <span class="mt-case-num">-87%</span>
+              <span class="mt-case-label">Снижение сорванных сеансов благодаря автоматическим правилам подготовки за 24 часа</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPILATION FAQ -->
+      <section id="faq" class="mt-section mt-reveal" data-screen-label="Вопросы и ответы" data-mt-reveal>
+        <div class="mt-section-head">
+          <h2 class="mt-section-title">Вопросы об онлайн-записи и CRM для студий эпиляции</h2>
         </div>
         <div class="mt-before-start-questions">
 {faq_html}
@@ -17462,7 +17973,7 @@ def sync_sitemap():
     subniche_slugs = [
         "photostudios", "videopavilion", "recording-studio", "equipment-rental", "quests", "vr-arena", "karting", "anticafe",
         "saunas", "glamping", "furniture-cleaning", "window-cleaning", "pest-control",
-        "barbershop", "nails", "brows", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
+        "barbershop", "nails", "brows", "epilation", "massage", "stretching", "yoga", "trainers", "martial-arts", "psychologist", "psychotherapist",
     ]
     for slug in subniche_slugs:
         loc = f"https://molniya-tech.ru/{slug}"
@@ -17489,6 +18000,13 @@ def sync_sitemap():
 # }
 
 RSS_ITEMS: list[dict[str, Any]] = [
+    {
+        "title": "Онлайн-запись и CRM для студий лазерной эпиляции и депиляции",
+        "slug": "epilation",
+        "description": "Программа для студий эпиляции: автоворонка курсов из 6–10 сеансов по фазам роста волос, памятки до/после за 0 ₽, учет зон и расписание лазеров.",
+        "pub_date": datetime(2026, 11, 21, 21, 15, tzinfo=MSK_TZ),
+        "category": "Отрасли",
+    },
     {
         "title": "Онлайн-запись и CRM для студий ресниц и бровей Lash & Brow",
         "slug": "brows",
@@ -26089,6 +26607,11 @@ def main():
     brows_html = build_brows_page()
     (ROOT_DIR / "brows.html").write_text(brows_html, encoding="utf-8")
     print(f"Generated {ROOT_DIR / 'brows.html'}")
+
+    print("Building sector landing page: /epilation...")
+    epilation_html = build_epilation_page()
+    (ROOT_DIR / "epilation.html").write_text(epilation_html, encoding="utf-8")
+    print(f"Generated {ROOT_DIR / 'epilation.html'}")
 
     print("Building sector landing page: /photostudios...")
     photostudios_html = build_photostudios_page()
