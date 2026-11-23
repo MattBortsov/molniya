@@ -148,6 +148,7 @@
   --mt-space-section-y-tight: clamp(32px, 4vw, 48px);
   --mt-space-section-x: 24px;
   --mt-content-max: 1180px;
+  --mt-nav-height: 76px;
 
   /* effects */
   --mt-blur-nav: blur(14px);
@@ -9515,18 +9516,23 @@ a.mt-origin-model-row:focus-visible {
    QUICK START PAGE (/start)
    ============================================================ */
 .mt-start-section {
-  max-width: 100%;
+  max-width: 1680px;
   width: 100%;
-  margin: 0;
-  padding: 24px clamp(24px, 5vw, 64px) clamp(48px, 6vw, 84px);
+  margin: 0 auto;
+  min-height: calc(100vh - var(--mt-nav-height, 76px));
+  min-height: calc(100dvh - var(--mt-nav-height, 76px));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(16px, 2.5vh, 32px) clamp(24px, 4vw, 64px);
   box-sizing: border-box;
 }
 
 .mt-start-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(380px, 28vw, 460px);
-  gap: clamp(32px, 4vw, 64px);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) clamp(360px, 28vw, 440px);
+  gap: clamp(28px, 3.5vw, 56px);
+  align-items: end;
   width: 100%;
 }
 
@@ -9536,7 +9542,7 @@ a.mt-origin-model-row:focus-visible {
 }
 
 .mt-start-head {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .mt-start-title {
@@ -9546,7 +9552,7 @@ a.mt-origin-model-row:focus-visible {
   line-height: 1.12;
   letter-spacing: -0.025em;
   color: var(--mt-text-heading);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .mt-start-sub {
@@ -9569,16 +9575,22 @@ a.mt-origin-model-row:focus-visible {
 .mt-start-form-col {
   width: 100%;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: end;
 }
 
 .mt-start-card {
   background: var(--mt-surface, #FFFFFF);
   border: 1px solid var(--mt-border);
   border-radius: 24px;
-  padding: clamp(24px, 3vw, 36px);
+  padding: clamp(22px, 2.5vw, 32px);
   box-shadow: 0 12px 36px rgba(18, 16, 14, 0.05);
   box-sizing: border-box;
   width: 100%;
+  margin: 0;
+  align-self: end;
 }
 
 .mt-start-card-title {
@@ -9668,27 +9680,45 @@ a.mt-origin-model-row:focus-visible {
 .mt-start-submit {
   width: 100%;
   margin-top: 20px;
-  min-height: 54px;
+  min-height: 52px;
   font-size: 16px;
   justify-content: center;
   box-sizing: border-box;
 }
 
+.mt-start-form .mt-lead-status:empty {
+  display: none;
+  min-height: 0;
+  margin: 0;
+}
+
+.mt-start-form .mt-lead-status:not(:empty) {
+  margin-top: 14px;
+  min-height: 20px;
+}
+
 @media (max-width: 1024px) {
   .mt-start-grid {
-    grid-template-columns: minmax(0, 1fr) 380px;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 28px;
   }
 }
 
 @media (max-width: 900px) {
   .mt-start-section {
+    min-height: auto;
+    display: block;
     padding-top: 16px;
     padding-bottom: 48px;
   }
   .mt-start-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .mt-start-form-col,
+  .mt-start-card {
+    align-self: auto;
   }
 }
 
