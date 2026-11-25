@@ -5,13 +5,21 @@
     <link>https://molniya-tech.ru</link>
     <description>Платформа для сервисного бизнеса: онлайн-запись, расписание, клиенты, расчет зарплат и бесплатные инструменты для предпринимателей.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 23 Nov 2026 14:26:10 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 19:16:39 +0300</lastBuildDate>
     <atom:link href="https://molniya-tech.ru/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://molniya-tech.ru/assets/img/logo/molniya-mark-180.png</url>
       <title>Молния Тех</title>
       <link>https://molniya-tech.ru</link>
     </image>
+    <item>
+      <title>Что делать, если мастер увёл клиентов: как защитить базу в сервисном бизнесе</title>
+      <link>https://molniya-tech.ru/blog/chto-delat-esli-master-uvel-klientov-iz-salona-ili</link>
+      <guid isPermaLink="true">https://molniya-tech.ru/blog/chto-delat-esli-master-uvel-klientov-iz-salona-ili</guid>
+      <pubDate>Tue, 24 Nov 2026 13:59:31 +0000</pubDate>
+      <category>Статьи</category>
+      <description><![CDATA[Если сотрудник или мастер ушёл и пытается увести клиентов, действуйте без паники и строго по шагам: в день увольнения отключите доступы к CRM и рабочим каналам, выгрузите историю визитов за 6–12 месяцев, разделите постоянных клиентов на сегменты и свяжитесь с ними от имени компании, предложив альтернативного специалиста с сохранением всех предпочтений. Долгосрочно базу защищают не юридические запреты, а системные процессы: запись строго через единые каналы бизнеса, ролевой доступ в CRM со скрытием контактов, автоматический прозрачный расчёт зарплаты и высокий уровень сервиса, при котором клиент привязан к компании, а не к личному номеру сотрудника.]]></description>
+    </item>
     <item>
       <title>Онлайн-запись и CRM для детских развивающих центров и клубов</title>
       <link>https://molniya-tech.ru/kids-center</link>

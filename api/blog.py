@@ -250,7 +250,6 @@ def render_blog(articles: list[dict[str, Any]] | None = None) -> str:
             href = f"/blog/{quote(article['slug'])}"
             cards.append(
                 '<a class="mt-post-card mt-post-card--published" href="' + href + '">'
-                '<span class="mt-post-status">Статья</span>'
                 '<h2 class="mt-post-topic">' + _escape(article["title"]) + '</h2>'
                 '<p class="mt-post-desc">' + _escape(_description(article)) + '</p>'
                 '<span class="mt-post-read">Читать статью →</span></a>'
